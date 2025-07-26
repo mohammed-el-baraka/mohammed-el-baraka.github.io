@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed EL BARAKA - Portfolio</title>
+    <title>Mohammed El Baraka - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #111827;
@@ -29,10 +32,16 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-radius: 0.75rem;
             overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .project-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+        .project-card .p-6 {
+            flex-grow: 1;
         }
         /* Glassmorphism effect for cards */
         .glass-card {
@@ -48,7 +57,7 @@
             width: 60px;
             height: 4px;
             background-color: #3b82f6;
-            margin-top: 8px;
+            margin: 8px auto 0;
             border-radius: 2px;
             transition: width 0.3s ease;
         }
@@ -62,11 +71,12 @@
     <!-- Header -->
     <header class="fixed w-full top-0 z-50 transition-all duration-300" id="header">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-wider">Mohammed EL BARAKA</div>
+            <div class="text-2xl font-bold tracking-wider">Mohammed El Baraka</div>
             <nav class="hidden md:flex space-x-8">
                 <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
                 <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
                 <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#leadership" class="hover:text-blue-400 transition-colors">Leadership</a>
                 <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
             </nav>
         </div>
@@ -76,10 +86,10 @@
         <!-- Hero Section -->
         <section id="hero" class="min-h-screen flex items-center hero-gradient">
             <div class="container mx-auto px-6 text-center">
-                <img src="https://placehold.co/160x160/1f2937/e5e7eb?text=You" alt="Your Profile Picture" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-gray-700 shadow-lg">
-                <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">I Build Digital Experiences</h1>
+                <img src="https://placehold.co/160x160/1f2937/e5e7eb?text=MEB" alt="Mohammed El Baraka" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-gray-700 shadow-lg">
+                <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">Industrial Engineering & Data Science</h1>
                 <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-                    Welcome to my corner of the internet. I'm a passionate developer/designer who loves creating beautiful, functional, and user-centered digital solutions.
+                    An Engineering student at EMINES-UM6P specializing in Industrial Management with a passion for Optimization, Data Science, and Machine Learning.
                 </p>
                 <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105">
                     View My Work
@@ -93,12 +103,12 @@
                 <h2 class="section-header text-4xl font-bold mb-12 text-center">About Me</h2>
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="md:w-2/3 text-lg text-gray-300 leading-relaxed space-y-4">
-                        <p>Hello! I'm Mohammed EL BARAKA, a developer with a passion for web development, data science, cyber security. I have experience in building and deploying full-stack applications with a focus on performance and user experience.</p>
-                        <p>Over the years, I've had the opportunity to work on a variety of exciting projects, which has allowed me to develop a strong skill set in both front-end and back-end technologies. I thrive on solving complex problems and am always eager to learn new things.</p>
-                        <p>When I'm not coding, you can find me playing football, volleyball , swimming,reading a book, or experimenting with new recipes.</p>
+                        <p>Hello! I'm Mohammed El Baraka, an Industrial Management engineering student at the prestigious Mohammed VI Polytechnic University (UM6P). My academic journey, beginning with an intensive program in Mathematics and Physics, has instilled in me a strong analytical and problem-solving mindset.</p>
+                        <p>I am driven by the challenge of solving complex problems, particularly through the application of Data Science, Machine Learning, and Optimization algorithms. My project work reflects my ability to bridge theoretical knowledge with practical application, from modeling oxygen diffusion in biomedical engineering to optimizing agricultural production with linear programming.</p>
+                        <p>Fluent in Arabic, French, and English, I am a strong communicator and leader, actively involved in numerous university clubs and sports teams. I am always eager to learn and apply my skills to impactful, real-world scenarios.</p>
                     </div>
                     <div class="md:w-1/3 flex justify-center">
-                         <img src="https://placehold.co/400x400/1f2937/e5e7eb?text=Pic" alt="A picture of you" class="rounded-lg shadow-2xl w-full max-w-sm">
+                         <img src="https://placehold.co/400x400/1f2937/e5e7eb?text=Pic" alt="A picture of Mohammed El Baraka" class="rounded-lg shadow-2xl w-full max-w-sm">
                     </div>
                 </div>
             </div>
@@ -110,39 +120,73 @@
                 <h2 class="section-header text-4xl font-bold mb-12 text-center">My Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-                    <!-- === PROJECT 1 === -->
+                    <!-- === PROJECT: Predictive Analytics for Student Mental Health === -->
                     <div class="project-card glass-card">
-                        <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Project+1" alt="Project 1 Screenshot" class="w-full h-48 object-cover">
+                        <img src="https://placehold.co/600x400/3b82f6/ffffff?text=ML+Project" alt="Mental Health Project" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Étude des attaques contre le partage de
-module RSA</h3>
-                            <p class="text-gray-400 mb-4">This project explores fundamental principles of modern cryptography, with a focus on secure message exchange and RSA encryption techniques. The report covers key cryptographic methods such as the Diffie-Hellma, ElGam,RSA module sharing strategies</p>
-                            <!-- === HOW TO LINK A PDF === -->
-                            <!-- 1. Upload your PDF to a folder in your GitHub repository (e.g., a folder named 'reports'). -->
-                            <!-- 2. Link to it like this: href="reports/your-report-name.pdf" -->
-                            <a href="/Rapport_Crypto.pdf" target="_blank" class="text-blue-400 hover:underline">View Full Report (PDF) &rarr;</a>
+                            <h3 class="text-2xl font-bold mb-2">Predictive Analytics for Student Mental Health</h3>
+                            <p class="text-gray-400 mb-4">Developed predictive models to assess student mental health using questionnaire and text data, achieving high accuracy in predicting anxiety, depression, and stress levels.</p>
+                            <p class="text-sm text-gray-500 mb-4"><b>Technologies:</b> Machine Learning, NLP, Python (Scikit-learn, NLTK), Classification Models.</p>
+                            <a href="#" target="_blank" class="text-blue-400 hover:underline mt-auto">View Full Report (PDF) &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- === PROJECT 2 === -->
+                    <!-- === PROJECT: Optimization for Red Fruit Production === -->
                     <div class="project-card glass-card">
-                        <img src="https://placehold.co/600x400/10b981/ffffff?text=Project+2" alt="Project 2 Screenshot" class="w-full h-48 object-cover">
+                        <img src="https://placehold.co/600x400/10b981/ffffff?text=Optimization" alt="Red Fruit Production Project" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Project Title 2</h3>
-                            <p class="text-gray-400 mb-4">A brief description of the project. Explain the problem it solves and the technologies you used.</p>
-                            <a href="#" target="_blank" class="text-blue-400 hover:underline">View Full Report (PDF) &rarr;</a>
+                            <h3 class="text-2xl font-bold mb-2">Optimization of Red Fruit Production</h3>
+                            <p class="text-gray-400 mb-4">Designed and implemented a Linear Programming model to maximize profit for red fruit production in greenhouses, considering various constraints and scenarios.</p>
+                             <p class="text-sm text-gray-500 mb-4"><b>Technologies:</b> Linear Programming, Pulp (Python), Optimization Modeling, Algorithm Design.</p>
+                            <a href="#" target="_blank" class="text-blue-400 hover:underline mt-auto">View Full Report (PDF) &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- === PROJECT 3 === -->
+                    <!-- === PROJECT: Bank Statement Integration with Power BI === -->
                     <div class="project-card glass-card">
-                        <img src="https://placehold.co/600x400/ef4444/ffffff?text=Project+3" alt="Project 3 Screenshot" class="w-full h-48 object-cover">
+                        <img src="https://placehold.co/600x400/ef4444/ffffff?text=Power+BI" alt="Power BI Dashboard Project" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Project Title 3</h3>
-                            <p class="text-gray-400 mb-4">A brief description of the project. Explain the problem it solves and the technologies you used.</p>
-                            <a href="#" target="_blank" class="text-blue-400 hover:underline">View Full Report (PDF) &rarr;</a>
+                            <h3 class="text-2xl font-bold mb-2">Bank Statement Integration with Power BI</h3>
+                            <p class="text-gray-400 mb-4">Developed an interactive Power BI dashboard to integrate and visualize key financial metrics from bank statements and delivery notes for a connected data view.</p>
+                            <p class="text-sm text-gray-500 mb-4"><b>Technologies:</b> Power BI, Excel, Data Analysis, Dashboard Design.</p>
+                            <a href="#" target="_blank" class="text-blue-400 hover:underline mt-auto">View Full Report (PDF) &rarr;</a>
                         </div>
                     </div>
+
+                    <!-- === PROJECT: Cryptography: Attacks Against Shared Module RSA === -->
+                    <div class="project-card glass-card">
+                        <img src="https://placehold.co/600x400/f97316/ffffff?text=Crypto" alt="Cryptography Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Attacks Against Shared Module RSA</h3>
+                            <p class="text-gray-400 mb-4">Studied and simulated attacks against the RSA cryptosystem, focusing on vulnerabilities arising from shared modules to demonstrate cryptographic weaknesses.</p>
+                            <p class="text-sm text-gray-500 mb-4"><b>Technologies:</b> Cryptography, RSA Algorithm, Cryptanalysis, Number Theory, Sagemath.</p>
+                            <a href="#" target="_blank" class="text-blue-400 hover:underline mt-auto">View Full Report (PDF) &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- === PROJECT: Biomedical Eng: Oxygen Diffusion in Acinus === -->
+                    <div class="project-card glass-card">
+                        <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=Biomedical" alt="Biomedical Engineering Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Oxygen Diffusion in Pulmonary Acinus</h3>
+                            <p class="text-gray-400 mb-4">Conducted a biomedical engineering project to model oxygen diffusion in the pulmonary acinus, resolving the diffusion equation in 2D using numerical methods.</p>
+                             <p class="text-sm text-gray-500 mb-4"><b>Technologies:</b> Mathematical Modeling, Numerical Methods, Python (NumPy, SciPy, Matplotlib).</p>
+                            <a href="#" target="_blank" class="text-blue-400 hover:underline mt-auto">View Full Report (PDF) &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- === PROJECT: Reducing Noise Pollution === -->
+                    <div class="project-card glass-card">
+                        <img src="https://placehold.co/600x400/ec4899/ffffff?text=Acoustics" alt="Noise Pollution Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Reducing Noise Pollution from Road Traffic</h3>
+                            <p class="text-gray-400 mb-4">Investigated methods for reducing road traffic noise using porous materials, involving noise modeling and experimental tests with a Kundt's tube.</p>
+                            <p class="text-sm text-gray-500 mb-4"><b>Technologies:</b> Acoustics, Noise Modeling, Material Science, Experimental Design.</p>
+                            <a href="#" target="_blank" class="text-blue-400 hover:underline mt-auto">View Full Report (PDF) &rarr;</a>
+                        </div>
+                    </div>
+                    
+                    <!-- To add a new project, copy and paste one of the blocks above and edit the content. -->
 
                 </div>
             </div>
@@ -151,29 +195,62 @@ module RSA</h3>
         <!-- Skills Section -->
         <section id="skills" class="py-20 scroll-mt-16">
             <div class="container mx-auto px-6">
-                <h2 class="section-header text-4xl font-bold mb-12 text-center">My Skills</h2>
+                <h2 class="section-header text-4xl font-bold mb-12 text-center">Technical Skills</h2>
                 <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-4">
-                    <!-- Add your skills here -->
-                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">JavaScript</span>
-                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">React</span>
-                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Node.js</span>
                     <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Python</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">C</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Java</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">JavaScript</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Bash</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">SageMath</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Data Analysis</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Optimization Algorithms</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Machine Learning</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Power BI</span>
                     <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">SQL</span>
-                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">HTML5 & CSS3</span>
-                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Tailwind CSS</span>
-                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Git & GitHub</span>
-                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Docker</span>                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Docker</span>
-                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">PowerBI</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Project Management</span>
+                </div>
+            </div>
+        </section>
 
+        <!-- Leadership Section -->
+        <section id="leadership" class="py-20 bg-gray-900 scroll-mt-16">
+            <div class="container mx-auto px-6">
+                <h2 class="section-header text-4xl font-bold mb-12 text-center">Leadership & Activities</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="glass-card p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">UM6P Rubik's Cube Club</h3>
+                        <p class="text-blue-400 font-semibold">President</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">E++ Club, EMINES</h3>
+                        <p class="text-blue-400 font-semibold">Sponsoring Manager</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">E-Astronomy Club, EMINES</h3>
+                        <p class="text-blue-400 font-semibold">Logistics Manager</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">ROTARACT EMINES Club</h3>
+                        <p class="text-blue-400 font-semibold">Communication & Content Manager</p>
+                    </div>
+                     <div class="glass-card p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">UM6P Ping Pong Club</h3>
+                        <p class="text-blue-400 font-semibold">Logistics Manager</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">University Sports</h3>
+                        <p class="text-blue-400 font-semibold">Player for Handball, Volleyball, and Football teams</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-gray-900 scroll-mt-16">
+        <section id="contact" class="py-20 scroll-mt-16">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-header text-4xl font-bold mb-4">Get In Touch</h2>
-                <p class="text-gray-400 text-lg mb-8">I'm currently open to new opportunities. Feel free to reach out!</p>
+                <p class="text-gray-400 text-lg mb-8">I'm currently open to new opportunities and collaborations. Feel free to reach out!</p>
                 <a href="mailto:mohammed.elbaraka@emines.um6p.ma" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105">
                     Say Hello
                 </a>
@@ -183,7 +260,7 @@ module RSA</h3>
 
     <!-- Footer -->
     <footer class="py-6 text-center text-gray-500">
-        <p>&copy; 2025 Mohammed EL BARAKA. All Rights Reserved.</p>
+        <p>&copy; 2025 Mohammed El Baraka. All Rights Reserved.</p>
     </footer>
 
     <script>

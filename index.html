@@ -1,10 +1,220 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Awesome Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed EL BARAKA - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            color: #e5e7eb;
+        }
+        /* Animation for elements fading in on scroll */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-element {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        /* Add a subtle gradient background to the hero section */
+        .hero-gradient {
+            background: linear-gradient(180deg, #111827 0%, rgba(17, 24, 39, 0.8) 50%, #111827 100%);
+        }
+        /* Style for the project cards */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+        /* Glassmorphism effect for cards */
+        .glass-card {
+            background: rgba(31, 41, 55, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Animated underline for section headers */
+        .section-header::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #3b82f6;
+            margin-top: 8px;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        .section-header:hover::after {
+            width: 100px;
+        }
+    </style>
 </head>
-<body>
-  <h1>Hello, World!</h1>
-  <p>My website is live on GitHub Pages.</p>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-wider">Mohammed EL BARAKA</div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center hero-gradient">
+            <div class="container mx-auto px-6 text-center">
+                <img src="https://placehold.co/160x160/1f2937/e5e7eb?text=You" alt="Your Profile Picture" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-gray-700 shadow-lg">
+                <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">I Build Digital Experiences</h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+                    Welcome to my corner of the internet. I'm a passionate developer/designer who loves creating beautiful, functional, and user-centered digital solutions.
+                </p>
+                <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105">
+                    View My Work
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 scroll-mt-16">
+            <div class="container mx-auto px-6">
+                <h2 class="section-header text-4xl font-bold mb-12 text-center">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-2/3 text-lg text-gray-300 leading-relaxed space-y-4">
+                        <p>Hello! I'm Mohammed EL BARAKA, a developer with a passion for web development, data science, cyber security. I have experience in building and deploying full-stack applications with a focus on performance and user experience.</p>
+                        <p>Over the years, I've had the opportunity to work on a variety of exciting projects, which has allowed me to develop a strong skill set in both front-end and back-end technologies. I thrive on solving complex problems and am always eager to learn new things.</p>
+                        <p>When I'm not coding, you can find me playing football, volleyball , swimming,reading a book, or experimenting with new recipes.</p>
+                    </div>
+                    <div class="md:w-1/3 flex justify-center">
+                         <img src="https://placehold.co/400x400/1f2937/e5e7eb?text=Pic" alt="A picture of you" class="rounded-lg shadow-2xl w-full max-w-sm">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-gray-900 scroll-mt-16">
+            <div class="container mx-auto px-6">
+                <h2 class="section-header text-4xl font-bold mb-12 text-center">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                    <!-- === PROJECT 1 === -->
+                    <div class="project-card glass-card">
+                        <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Project+1" alt="Project 1 Screenshot" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Étude des attaques contre le partage de
+module RSA</h3>
+                            <p class="text-gray-400 mb-4">This project explores fundamental principles of modern cryptography, with a focus on secure message exchange and RSA encryption techniques. The report covers key cryptographic methods such as the Diffie-Hellma, ElGam,RSA module sharing strategies</p>
+                            <!-- === HOW TO LINK A PDF === -->
+                            <!-- 1. Upload your PDF to a folder in your GitHub repository (e.g., a folder named 'reports'). -->
+                            <!-- 2. Link to it like this: href="reports/your-report-name.pdf" -->
+                            <a href="Rapport_Crypto.pdf" target="_blank" class="text-blue-400 hover:underline">View Full Report (PDF) &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- === PROJECT 2 === -->
+                    <div class="project-card glass-card">
+                        <img src="https://placehold.co/600x400/10b981/ffffff?text=Project+2" alt="Project 2 Screenshot" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Project Title 2</h3>
+                            <p class="text-gray-400 mb-4">A brief description of the project. Explain the problem it solves and the technologies you used.</p>
+                            <a href="#" target="_blank" class="text-blue-400 hover:underline">View Full Report (PDF) &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- === PROJECT 3 === -->
+                    <div class="project-card glass-card">
+                        <img src="https://placehold.co/600x400/ef4444/ffffff?text=Project+3" alt="Project 3 Screenshot" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Project Title 3</h3>
+                            <p class="text-gray-400 mb-4">A brief description of the project. Explain the problem it solves and the technologies you used.</p>
+                            <a href="#" target="_blank" class="text-blue-400 hover:underline">View Full Report (PDF) &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 scroll-mt-16">
+            <div class="container mx-auto px-6">
+                <h2 class="section-header text-4xl font-bold mb-12 text-center">My Skills</h2>
+                <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-4">
+                    <!-- Add your skills here -->
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">JavaScript</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">React</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Node.js</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Python</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">SQL</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">HTML5 & CSS3</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Tailwind CSS</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Git & GitHub</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Docker</span>                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Docker</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">PowerBI</span>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-900 scroll-mt-16">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-header text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-gray-400 text-lg mb-8">I'm currently open to new opportunities. Feel free to reach out!</p>
+                <a href="mailto:mohammed.elbaraka@emines.um6p.ma" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105">
+                    Say Hello
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-gray-500">
+        <p>&copy; 2025 Mohammed EL BARAKA. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for scroll animations and header background
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- Header background on scroll ---
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-gray-800', 'shadow-lg');
+                } else {
+                    header.classList.remove('bg-gray-800', 'shadow-lg');
+                }
+            });
+
+            // --- Intersection Observer for fade-in animations ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-element');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Observe all sections and project cards
+            document.querySelectorAll('section > div').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>

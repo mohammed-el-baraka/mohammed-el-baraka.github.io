@@ -313,7 +313,7 @@
 
         // This is a placeholder for your API key.
         // In a real application, this should be handled securely.
-        const apiKey = ""; 
+        const apiKey = "AIzaSyD1-6B-Twm0NhgLr-2LSVILoFsWP6qF71g"; 
 
         function openModal() {
             modalBody.innerHTML = loaderHTML;
@@ -328,7 +328,7 @@
 
         async function callGemini(prompt) {
             openModal();
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${AIzaSyD1-6B-Twm0NhgLr-2LSVILoFsWP6qF71g}`;
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apikey}`;
             
             try {
                 const response = await fetch(apiUrl, {

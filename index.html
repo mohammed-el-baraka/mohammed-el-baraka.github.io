@@ -5,303 +5,541 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammed El Baraka - Industrial Engineering & Data Science</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: #000000; color: #f5f5f7; }
+        body { font-family: 'Inter', sans-serif; background-color: #0d1117; color: #e6edf3; }
 
-        /* --- Animations & "Pro" Style Effects --- */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
+        /* --- Elegant Hero & Animations --- */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .fade-in-element { animation: fadeIn 1s ease-out forwards; }
-        
-        .section-container {
-            position: relative;
-            padding: 120px 24px;
-            overflow: hidden;
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-down {
+             opacity: 0; /* Start hidden */
+             animation: fadeInDown 0.8s ease-out forwards;
+        }
+        .hero-gradient {
+            background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.3), #0D1117);
+        }
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-10px); }
         }
 
-        .background-visual {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            width: 100%; height: 100%;
-            object-fit: cover;
-            opacity: 0.15;
-            z-index: -1;
-        }
-
-        /* --- Card & Button Hover Effects --- */
-        .dynamic-card {
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            border-radius: 1.5rem;
+        /* --- Project Card Styling --- */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 0.75rem; overflow: hidden; height: 100%; display: flex; flex-direction: column;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(22, 27, 34, 0.5);
-            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+        .project-card .p-6 { flex-grow: 1; display: flex; flex-direction: column; }
+
+        /* --- Glassmorphism Effect --- */
+        .glass-card {
+            background: rgba(22, 27, 34, 0.6);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .shine-button {
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+        /* --- Section Header Underline --- */
+        .section-header::after {
+            content: ''; display: block; width: 60px; height: 4px;
+            background-color: #3b82f6; margin: 12px auto 0;
+            border-radius: 2px; transition: width 0.3s ease;
+        }
+        .section-header:hover::after { width: 120px; }
+
+        /* --- Skill Tag Styling & Shine Effect --- */
+        .skill-tag { transition: all 0.3s ease; cursor: pointer; }
+        .skill-tag:hover {
+            transform: scale(1.1); background: #3b82f6; color: #ffffff;
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
         }
 
-        .shine-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -150%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
-            transform: skewX(-25deg);
-            transition: left 0.6s ease;
+        /* --- Modal Styling --- */
+        .modal { transition: opacity 0.25s ease; }
+        .modal-content { transition: transform 0.25s ease; }
+
+        /* --- Loading Spinner --- */
+        .loader {
+            border: 4px solid #30363d; border-top: 4px solid #3b82f6;
+            border-radius: 50%; width: 40px; height: 40px;
+            animation: spin 1s linear infinite;
         }
 
-        .dynamic-card:hover .shine-button:hover::before {
-            left: 150%;
-        }
-        
-        .dynamic-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 30px 50px -15px rgba(0, 0, 0, 0.5);
-        }
 
-        /* --- Other Styles --- */
-        .glass-header { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid #222; }
-        .skill-tag:hover { transform: scale(1.1); background: #0071e3; color: #fff; box-shadow: 0 0 25px rgba(0, 113, 227, 0.7); }
-        .modal { transition: opacity 0.3s ease; }
-        .modal-content { transition: transform 0.3s ease; }
-        .loader { border: 4px solid #30363d; border-top: 4px solid #0071e3; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+.textLayer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+.textLayer > span {
+    color: transparent;
+    position: absolute;
+    white-space: pre;
+    cursor: text;
+    transform-origin: 0% 0%;
+}
+
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
-<body class="antialiased">
-
-    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="header">
+<body id="page-top" class="antialiased"> <header class="fixed w-full top-0 z-50 transition-all duration-300" id="header">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold tracking-wider hover:text-gray-300 transition-colors">Mohammed El Baraka</a>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#internships" class="hover:text-white transition-colors">Internships</a>
-                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
-                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            <a href="#page-top" class="text-2xl font-bold tracking-wider hover:text-blue-400 transition-colors">
+                Mohammed El Baraka
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#leadership" class="hover:text-blue-400 transition-colors">Leadership</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="min-h-screen flex items-center justify-center text-center section-container">
-             <img src="path/to/hero-background.jpg" alt="Abstract background" class="background-visual">
-            <div class="fade-in-element">
-                <h1 class="text-5xl md:text-8xl font-bold mb-4">Engineer. Innovator.</h1>
-                <h2 class="text-2xl md:text-4xl text-gray-400 max-w-4xl mx-auto">
-                    Bridging industrial management with data science, machine learning, and automation to build efficient systems for the future.
-                </h2>
-            </div>
-        </section>
-        
-        <section id="about" class="section-container bg-black">
-            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-                <div class="fade-in-element">
-                     <img src="path/to/your/photo.jpg" alt="Mohammed El Baraka" class="rounded-3xl shadow-2xl">
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-center hero-gradient p-6">
+            <div class="text-center">
+                <img src="mmee.jpg" alt="Mohammed El Baraka" class="animate-fade-in-down w-40 h-40 rounded-full mx-auto mb-6 border-4 border-gray-700 shadow-lg">
+                <h1 class="animate-fade-in-down text-5xl md:text-7xl font-black mb-4 leading-tight" style="animation-delay: 0.2s;">
+                    Industrial Engineering<br>& Data Science
+                </h1>
+                <p class="animate-fade-in-down text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8" style="animation-delay: 0.4s;">
+                    An Engineering student at EMINES-UM6P specializing in Industrial Management with a passion for Optimization, Data Science, and leveraging technology to solve real-world challenges.
+                </p>
+                <div class="animate-fade-in-down" style="animation-delay: 0.6s;">
+                    <a href="#projects" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105">
+                        View My Work
+                    </a>
                 </div>
-                <div class="fade-in-element">
-                    <h2 class="text-4xl font-bold mb-6">A Passion for Problem-Solving.</h2>
-                    <div class="text-lg text-gray-300 space-y-4 leading-relaxed">
-                        <p>I am an Industrial Management engineering student at UM6P, driven by a foundational passion for robotics and cybersecurity that began in childhood. This curiosity led me to master programming, complete Harvard's CS50, and dive deep into algorithms and AI.</p>
-                        <p>My work is about turning complex theory into practical solutions. I thrive on challenges that demand a blend of analytical rigor and creative thinking, whether it's optimizing a production line or building a predictive model.</p>
-                        <p>With a 65 WPM typing speed and fluency in tools from GitHub to Overleaf, I focus on efficiency and precision in everything I do. I am a collaborative leader and a lifelong learner, eager to apply my skills to impactful new challenges.</p>
+            </div>
+             <a href="#about" class="scroll-indicator absolute bottom-10 animate-fade-in-down" style="animation-delay: 1s;">
+                <svg class="w-6 h-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </a>
+        </section>
+
+        <section id="about" class="py-20 scroll-mt-16">
+            <div class="container mx-auto px-6">
+                <h2 class="section-header text-4xl font-bold mb-12 text-center">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-2/3 text-lg text-gray-300 leading-relaxed space-y-4">
+                        <p>Hello! I'm Mohammed El Baraka, an Industrial Management engineering student at the prestigious Mohammed VI Polytechnic University (UM6P). My academic journey, beginning with an intensive program in Mathematics and Physics, has instilled in me a strong analytical and problem-solving mindset.</p>
+                        <p>I am driven by the challenge of untangling complex problems, particularly through the application of Data Science, Machine Learning, and Optimization algorithms. From a young age, I've been captivated by the worlds of robotics and cybersecurity, passions that I continue to explore through personal projects and continuous learning, including completing Harvard's CS50.</p>
+                        <p>My work philosophy is centered on bridging the gap between theoretical knowledge and practical application. Whether it's modeling oxygen diffusion in biomedical engineering or optimizing agricultural production, I thrive on seeing code and algorithms translate into tangible results. I am a proactive leader, fluent in Arabic, French, and English, and actively contribute to numerous university clubs and sports teams. I am always eager to learn, collaborate, and apply my skills to impactful scenarios.</p>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                             <button onclick="viewPdf('https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/my_resume.pdf', 'My Resume')" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105">📄 View My Resume</button>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3 flex justify-center">
+                        <img src="123.jpg" alt="A picture of Mohammed El Baraka" class="rounded-lg shadow-2xl w-full max-w-sm">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="internships" class="section-container">
-            <img src="path/to/internship-background.jpg" alt="Industrial background" class="background-visual">
-            <div class="text-center mb-16 fade-in-element">
-                <h2 class="text-5xl font-bold">Professional Experience</h2>
-                <p class="text-xl text-gray-400 mt-4">Applying academic knowledge in real-world industrial settings.</p>
-            </div>
-            <div id="internship-grid" class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                </div>
-        </section>
-
-        <section id="projects" class="section-container bg-black">
-            <div class="text-center mb-16 fade-in-element">
-                <h2 class="text-5xl font-bold">Portfolio of Projects</h2>
-                <p class="text-xl text-gray-400 mt-4">A selection of work demonstrating my technical and analytical capabilities.</p>
-            </div>
-            <div id="project-grid" class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                </div>
-            <div class="text-center mt-16" id="view-more-container">
-                <button id="view-more-btn" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full transition-all text-lg">
-                    View More Projects
-                </button>
-            </div>
-        </section>
-
-        <section id="skills" class="section-container">
-            <img src="path/to/skills-background.jpg" alt="Code background" class="background-visual">
-            <div class="text-center mb-16 fade-in-element">
-                <h2 class="text-5xl font-bold">Core Competencies</h2>
-                <p class="text-xl text-gray-400 mt-4">A versatile toolkit for development, analysis, and management.</p>
-            </div>
-            <div id="skills-container" class="max-w-5xl mx-auto flex flex-wrap justify-center gap-4 fade-in-element">
-                </div>
-        </section>
-
-        <section id="contact" class="section-container bg-black">
-             <div class="text-center max-w-3xl mx-auto fade-in-element">
-                <h2 class="text-5xl font-bold">Let's Build Together.</h2>
-                <p class="text-xl text-gray-400 my-8">I am currently available for new opportunities and collaborations. If you have a project in mind or believe my skills would be a good fit for your team, I would be delighted to connect.</p>
-                <button onclick="openModal('contact-modal')" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-full transition-all text-xl mb-12">
-                    Get in Touch
-                </button>
-                <div class="flex justify-center space-x-6">
-                    <a href="#" target="_blank" class="text-gray-500 hover:text-white transition-colors"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                    <a href="#" target="_blank" class="text-gray-500 hover:text-white transition-colors"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-.424.727-.666 1.581-.666 2.477 0 1.921.92 3.619 2.514 4.603-.91-.028-1.748-.278-2.529-.693v.064c0 2.682 1.84 4.942 4.413 5.423-.523.142-1.09.195-1.68.165.734 2.199 2.923 3.708 5.508 3.749-2.018 1.574-4.549 2.455-7.182 2.025 2.109 1.354 4.618 2.158 7.29 2.158 9.018 0 13.965-7.83 13.59-14.393 1.034-.748 1.86-1.666 2.454-2.67z"/></svg></a>
+        <section id="projects" class="py-20 bg-gray-800/50 scroll-mt-16">
+            <div class="container mx-auto px-6">
+                <h2 class="section-header text-4xl font-bold mb-12 text-center">My Projects</h2>
+                <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     </div>
-             </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20 scroll-mt-16">
+            <div class="container mx-auto px-6">
+                <h2 class="section-header text-4xl font-bold mb-12 text-center">Technical Skills</h2>
+                <div id="skills-container" class="max-w-5xl mx-auto flex flex-wrap justify-center gap-4">
+                     </div>
+            </div>
+        </section>
+
+        <section id="leadership" class="py-20 bg-gray-800/50 scroll-mt-16">
+            <div class="container mx-auto px-6">
+                <h2 class="section-header text-4xl font-bold mb-12 text-center">Leadership & Activities</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="glass-card p-6 rounded-lg text-center"><h3 class="text-xl font-bold mb-2">UM6P Rubik's Cube Club</h3><p class="text-blue-400 font-semibold">President</p></div>
+                    <div class="glass-card p-6 rounded-lg text-center"><h3 class="text-xl font-bold mb-2">E++ Club, EMINES</h3><p class="text-blue-400 font-semibold">Sponsoring Manager</p></div>
+                    <div class="glass-card p-6 rounded-lg text-center"><h3 class="text-xl font-bold mb-2">E-Astronomy Club, EMINES</h3><p class="text-blue-400 font-semibold">Logistics Manager</p></div>
+                    <div class="glass-card p-6 rounded-lg text-center"><h3 class="text-xl font-bold mb-2">ROTARACT EMINES Club</h3><p class="text-blue-400 font-semibold">Communication & Content Manager</p></div>
+                    <div class="glass-card p-6 rounded-lg text-center"><h3 class="text-xl font-bold mb-2">UM6P Ping Pong Club</h3><p class="text-blue-400 font-semibold">Logistics Manager</p></div>
+                    <div class="glass-card p-6 rounded-lg text-center"><h3 class="text-xl font-bold mb-2">University Sports</h3><p class="text-blue-400 font-semibold">Player for Handball, Volleyball, and Football teams</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 scroll-mt-16">
+             <div class="container mx-auto px-6 text-center">
+                <h2 class="section-header text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious vision. Let's connect.</p>
+                <button onclick="openContactModal()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105 mb-10">
+                    Contact Me
+                </button>
+                 <div class="flex justify-center space-x-6">
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-.424.727-.666 1.581-.666 2.477 0 1.921.92 3.619 2.514 4.603-.91-.028-1.748-.278-2.529-.693v.064c0 2.682 1.84 4.942 4.413 5.423-.523.142-1.09.195-1.68.165.734 2.199 2.923 3.708 5.508 3.749-2.018 1.574-4.549 2.455-7.182 2.025 2.109 1.354 4.618 2.158 7.29 2.158 9.018 0 13.965-7.83 13.59-14.393 1.034-.748 1.86-1.666 2.454-2.67z"/></svg></a>
+                </div>
+            </div>
         </section>
     </main>
-    
-    <div id="ai-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 opacity-0 pointer-events-none">
-        <div class="modal-content dynamic-card w-full max-w-2xl rounded-3xl shadow-lg p-6 md:p-8 m-4 transform scale-95">
+
+    <footer class="py-6 text-center text-gray-500 border-t border-gray-800">
+        <p>&copy; 2025 Mohammed El Baraka. All Rights Reserved.</p>
+    </footer>
+
+    <div id="ai-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 opacity-0 pointer-events-none">
+        <div class="modal-content glass-card w-full max-w-2xl rounded-lg shadow-lg p-6 md:p-8 m-4 transform scale-95">
             <div class="flex justify-between items-center mb-4">
-                <h3 id="modal-title" class="text-2xl font-bold text-white"></h3>
+                <h3 id="modal-title" class="text-2xl font-bold text-white">✨ AI-Powered Insight</h3>
                 <button onclick="closeModal('ai-modal')" class="text-3xl text-gray-400 hover:text-white">&times;</button>
             </div>
-            <div id="modal-body" class="text-gray-300 leading-relaxed max-h-[60vh] overflow-y-auto pr-2"></div>
+            <div id="modal-body" class="text-gray-300 leading-relaxed max-h-[60vh] overflow-y-auto">
+                <div class="flex justify-center items-center h-32"><div class="loader"></div></div>
+            </div>
             <div id="modal-footer" class="mt-6"></div>
         </div>
     </div>
-    <script>
-        // --- DATA HUB ---
-        // Storing all data here makes the website easily updateable.
-        const internshipsData = [
-            {
-                id: 'stage-ouvrier',
-                title: 'Process Automation Internship',
-                description: 'A hands-on role focusing on automating and optimizing office tasks using VBA within Excel and creating insightful dashboards with Power BI.',
-                technologies: ['Power BI', 'Excel', 'VBA', 'Task Automation'],
-                reportUrl: 'path/to/stage-ouvrier-report.pdf',
-                presentationUrl: 'path/to/stage-ouvrier-presentation.pdf'
-            },
-            {
-                id: 'stage-shadowing',
-                title: 'Marketing & Analytics Shadowing',
-                description: 'An observational internship focused on understanding marketing strategies, customer outreach, and the use of Power BI for performance tracking.',
-                technologies: ['Marketing Strategy', 'Power BI', 'Data Observation'],
-                reportUrl: 'path/to/stage-shadowing-report.pdf',
-                presentationUrl: 'path/to/stage-shadowing-presentation.pdf'
-            },
-            {
-                id: 'stage-geologie',
-                title: 'Geological Internship (Sidi Ali)',
-                description: 'Observational internship at the Sidi Ali factory to understand the geological and industrial processes involved in its operations.',
-                technologies: ['Geology', 'Industrial Processes', 'Observation'],
-                reportUrl: 'path/to/stage-geologie-report.pdf',
-                presentationUrl: 'path/to/stage-geologie-presentation.pdf'
-            }
-        ];
-        
-        const featuredProjectsData = [
-             {
-                id: 'robotics-vision',
-                title: 'Robotics and Image Detection',
-                description: 'Developed a complete robotic system with image detection capabilities, from 3D modeling in SolidWorks to implementing image processing algorithms in Python.',
-                technologies: ['Robotics', 'Python', 'Image Detection', 'SolidWorks', 'OpenCV', 'Management'],
-                reportUrl: 'path/to/robotics-report.pdf',
-                presentationUrl: 'path/to/robotics-presentation.pdf'
-            },
-             {
-                id: 'analytics-edge',
-                title: 'Analytics Edge: Mental Health Prediction',
-                description: 'A machine learning project to predict student mental health levels from questionnaire and text data, deploying the model via a custom user interface.',
-                technologies: ['Machine Learning', 'Python', 'ML Libraries', 'NLP'],
-                reportUrl: 'path/to/analytics-edge-report.pdf',
-                presentationUrl: 'path/to/analytics-edge-presentation.pdf'
-            },
-            {
-                id: 'cybersecurity-pentesting',
-                title: 'Cybersecurity & Pentesting',
-                description: 'Practical exploration of network vulnerabilities using wireless network tools, pentesting frameworks, and advanced search techniques (Google Dorking).',
-                technologies: ['Wireless Networks', 'Pentesting Tools', 'Google Dork'],
-                reportUrl: 'path/to/cybersec-report.pdf',
-                presentationUrl: 'path/to/cybersec-presentation.pdf'
-            },
-            // ... Add 3 more of your best projects here to make a total of 6 featured projects
-        ];
 
-        const moreProjectsData = [
-            // This is where ALL your other projects go.
-            { id: 'optim', title: 'Greenhouse Optimization', technologies: ['Python', 'Pulp', 'Linear Programming'] },
-            { id: 'crypto', title: 'RSA Cryptography Attacks', technologies: ['SageMath', 'Python', 'Number Theory', 'Cryptanalysis'] },
-            { id: 'data-science', title: 'Data Science Project', technologies: ['Python', 'Data Analysis'] },
-            { id: 'qgis', title: 'Geotechnical Analysis with QGIS', technologies: ['QGIS', 'Geotechnical Skills', 'Problem Solving'] },
-            { id: 'auto', title: 'System Automation & Correction', technologies: ['Python', 'Automation', 'Control Systems'] },
-            { id:e: 'vba-powerbi', title: 'Advanced VBA & Power BI', technologies: ['Excel', 'VBA', 'Power BI'] },
-            { id: 'spl', title: 'SPL: Real-Case Problem Solving', technologies: ['Problem Solving', 'Case Analysis'] },
-            { id: 'stats', title: 'Statistical Theory & ML', technologies: ['Statistics', 'Machine Learning', 'Data Science'] },
-            { id: 'rmte', title: 'RMTE: Problem Analysis', technologies: ['Problem Solving', 'Analysis'] },
-            { id: 'ae', title: 'Acte d\'Entreprendre (AE)', technologies: ['HTML', 'CSS', 'Management'] },
-            { id: 'tipe', title: 'TIPE Project', technologies: ['Physics', 'Mathematics'] },
-            { id: 'mmc', title: 'MMC Project', technologies: ['Physics', 'Mathematics', 'SolidWorks'] },
-            { id: 'biome', title: 'BIOME: Biological Simulation', technologies: ['Mathematics', 'Simulation', 'Python'] },
-            { id: 'info', title: 'Web Dev with Django & Java', technologies: ['Django', 'Java'] },
-            { id: 'imi', title: 'Intro to Industrial Management (IMI)', technologies: ['Management'] },
-            { id: 'controverse', title: 'Epistemology & Controversies', technologies: ['Philosophy', 'Epistemology'] },
-            { id: 'r', title: 'Project R', technologies: ['R'] },
-            { id: 'kaggle', title: 'Kaggle Competition', technologies: ['Machine Learning', 'Python'] }
-        ];
 
-        // --- DYNAMIC CONTENT RENDERING ---
-        document.addEventListener('DOMContentLoaded', () => {
-            const internshipGrid = document.getElementById('internship-grid');
-            internshipsData.forEach(item => createCard(item, internshipGrid));
-
-            const projectGrid = document.getElementById('project-grid');
-            featuredProjectsData.forEach(item => createCard(item, projectGrid));
-
-            document.getElementById('view-more-btn').addEventListener('click', () => {
-                moreProjectsData.forEach(item => createCard(item, projectGrid, true));
-                document.getElementById('view-more-container').style.display = 'none';
-            });
+<div id="pdf-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 opacity-0 pointer-events-none">
+    <div class="modal-content glass-card w-full h-full max-w-5xl rounded-lg shadow-lg p-4 md:p-6 m-4 transform scale-95 flex flex-col">
+        <div class="flex flex-wrap justify-between items-center gap-4 mb-4 flex-shrink-0">
+            <h3 id="pdf-modal-title" class="text-2xl font-bold text-white">PDF Viewer</h3>
             
-            // ... [rest of the DOMContentLoaded logic like skills and header scroll]
+            <div class="flex items-center gap-2 sm:gap-4">
+                <button onclick="zoomOut()" class="px-3 py-1 bg-gray-600 hover:bg-gray-500 rounded-md transition-colors" title="Zoom Out">➖</button>
+                <span id="zoom-level" class="text-sm font-medium w-16 text-center">100%</span>
+                <button onclick="zoomIn()" class="px-3 py-1 bg-gray-600 hover:bg-gray-500 rounded-md transition-colors" title="Zoom In">➕</button>
+                <button onclick="downloadPdf()" class="px-3 py-1 bg-gray-600 hover:bg-gray-500 rounded-md transition-colors" title="Download">📥</button>
+                <button onclick="openInNewTab()" class="px-3 py-1 bg-gray-600 hover:bg-gray-500 rounded-md transition-colors" title="Open in New Tab">↗️</button>
+            </div>
+
+            <button onclick="closeModal('pdf-modal')" class="text-3xl text-gray-400 hover:text-white">&times;</button>
+        </div>
+        <div id="pdf-viewer" class="w-full h-full overflow-auto rounded bg-gray-900/50"></div>
+    </div>
+</div>
+    
+    <div id="contact-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 opacity-0 pointer-events-none">
+        <div class="modal-content glass-card w-full max-w-md rounded-lg shadow-lg p-8 m-4 transform scale-95">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-white">Contact Me</h3>
+                <button onclick="closeModal('contact-modal')" class="text-3xl text-gray-400 hover:text-white">&times;</button>
+            </div>
+            <div class="space-y-4">
+                <a href="mailto:mohammed.elbaraka@emines.um6p.ma" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all">Send an Email</a>
+                <a href="https://wa.me/+212666774426" target="_blank" class="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-all">Message on WhatsApp</a>
+                <a href="tel:+212666774426" class="block w-full text-center bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-all">Make a Call</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script>
+        // --- CONFIGURATION ---
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js`;
+
+        // --- DATA (No Changes) ---
+        const projectsData = [
+            { id: 'mental-health-analytics', title: 'Predictive Analytics for Student Mental Health', description: 'Developed predictive models using questionnaire and text data to assess student mental health, achieving high accuracy in predicting anxiety, depression, and stress levels.', technologies: ['Machine Learning', 'NLP', 'Python', 'Scikit-learn', 'NLTK', 'Classification Models'], reportUrl: 'path/to/report1.pdf', presentationUrl: 'presentation1.pdf' },
+            { id: 'red-fruit-optimization', title: 'Optimization of Red Fruit Production', description: 'Designed and implemented a Linear Programming model to maximize profit for red fruit production in greenhouses, considering various constraints and scenarios.', technologies: ['Linear Programming', 'Python', 'Pulp', 'Optimization Modeling', 'Algorithm Design'], reportUrl: 'path/to/report2.pdf', presentationUrl: 'path/to/presentation2.pdf' },
+            { id: 'powerbi-dashboard', title: 'Bank Statement Integration with Power BI', description: 'Developed an interactive Power BI dashboard to integrate and visualize key financial metrics from bank statements and delivery notes for a connected data view.', technologies: ['Power BI', 'Excel', 'Data Analysis', 'Dashboard Design', 'VBA'], reportUrl: 'path/to/report3.pdf', presentationUrl: 'path/to/presentation3.pdf' },
+            { id: 'rsa-cryptography', title: 'Attacks Against Shared Module RSA', description: 'Studied and simulated attacks against the RSA cryptosystem, focusing on vulnerabilities from shared modules to demonstrate cryptographic weaknesses.', technologies: ['Cryptography', 'RSA Algorithm', 'Cryptanalysis', 'Number Theory', 'SageMath', 'Python'], reportUrl: 'path/to/report4.pdf', presentationUrl: 'path/to/presentation4.pdf' },
+            { id: 'biomedical-diffusion', title: 'Oxygen Diffusion in Pulmonary Acinus', description: 'Conducted a biomedical engineering project to model oxygen diffusion in the pulmonary acinus, resolving the 2D diffusion equation using numerical methods.', technologies: ['Mathematical Modeling', 'Numerical Methods', 'Python', 'NumPy', 'SciPy', 'Matplotlib'], reportUrl: 'path/to/report5.pdf', presentationUrl: 'path/to/presentation5.pdf' },
+            { id: 'robotics-vision', title: 'Robotics and Image Detection', description: 'Developed a complete robotic system with image detection capabilities, from 3D modeling in SolidWorks to implementing image processing algorithms in Python.', technologies: ['Robotics', 'Python', 'Image Detection', 'SolidWorks', 'OpenCV'], reportUrl: 'path/to/robotics_report.pdf', presentationUrl: 'path/to/robotics_presentation.pdf' }
+        ];
+        const skillsData = [ 'Python', 'Java', 'C', 'JavaScript', 'Bash', 'SQL', 'HTML', 'CSS', 'Machine Learning', 'Data Analysis', 'NLP', 'Optimization Algorithms', 'Linear Programming', 'Power BI', 'VBA', 'Excel', 'Robotics', 'SolidWorks', 'QGIS', 'Image Detection', 'Cryptography', 'Cybersecurity', 'Pentesting Tools', 'Django', 'SageMath', 'Manim', 'Overleaf', 'Git', 'AI Prompt Engineering' ];
+
+        // --- MODAL & UI ---
+        const loaderHTML = `<div class="flex justify-center items-center h-32"><div class="loader"></div></div>`;
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.querySelector('.modal-content').classList.remove('scale-95');
+        }
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.querySelector('.modal-content').classList.add('scale-95');
+        }
+        function openContactModal() { openModal('contact-modal'); }
+
+        // --- DYNAMIC CONTENT GENERATION (No Changes) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectGrid = document.getElementById('project-grid');
+            projectsData.forEach(project => {
+                const card = document.createElement('div');
+                card.className = 'project-card glass-card';
+                card.innerHTML = `
+                    <div class="p-6">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">${project.title}</h3>
+                            <p class="text-gray-400 mb-4 text-sm">${project.description}</p>
+                            <p class="text-xs text-gray-500 mb-4"><b>Technologies:</b> ${project.technologies.join(', ')}</p>
+                        </div>
+                        <div class="mt-auto pt-4 grid grid-cols-2 gap-2 text-sm">
+                            <button onclick="viewPdf('${project.reportUrl}', '${project.title} Report')" class="bg-gray-700/50 hover:bg-gray-600/50 p-2 rounded-md transition-colors">View Report</button>
+                            <button onclick="viewPdf('${project.presentationUrl}', '${project.title} Presentation')" class="bg-gray-700/50 hover:bg-gray-600/50 p-2 rounded-md transition-colors">View Presentation</button>
+                            <button onclick="explainProject('${project.id}')" class="bg-indigo-600/80 hover:bg-indigo-700/80 p-2 rounded-md transition-colors col-span-1">✨ Explain</button>
+                            <button onclick="summarizeProject('${project.id}')" class="bg-teal-600/80 hover:bg-teal-700/80 p-2 rounded-md transition-colors col-span-1">✨ Summarize</button>
+                        </div>
+                    </div>`;
+                projectGrid.appendChild(card);
+            });
+
+
+            // In your 'DOMContentLoaded' event listener
+projectsData.forEach(project => {
+    const card = document.createElement('div');
+    card.className = 'project-card glass-card';
+    card.innerHTML = `
+        <div class="p-6">
+            <div>
+                <h3 class="text-2xl font-bold mb-2">${project.title}</h3>
+                <p class="text-gray-400 mb-4 text-sm">${project.description}</p>
+            </div>
+            <div class="mt-auto pt-4 flex gap-4">
+                <button onclick="viewPdf('${project.reportUrl}', '${project.title} Report')" class="w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-all">
+                    View Report
+                </button>
+                </div>
+        </div>
+    `;
+    projectGrid.appendChild(card);
+});
+
+
+
+            const skillsContainer = document.getElementById('skills-container');
+            skillsData.forEach(skill => {
+                const tag = document.createElement('span');
+                tag.className = 'skill-tag bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full';
+                tag.textContent = skill;
+                tag.onclick = () => showSkillDetails(skill);
+                skillsContainer.appendChild(tag);
+            });
+
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                const isScrolled = window.scrollY > 50;
+                header.classList.toggle('bg-gray-800/80', isScrolled);
+                header.classList.toggle('shadow-lg', isScrolled);
+                header.classList.toggle('backdrop-blur-sm', isScrolled);
+            });
         });
 
-        function createCard(item, grid, isMore = false) {
-            const card = document.createElement('div');
-            card.className = 'dynamic-card p-6 flex flex-col';
-            if (isMore) card.classList.add('fade-in-element'); // Animate new cards
-            
-            // Simplified description for "more" projects if no description is provided
-            let description = item.description ? `<p class="text-gray-400 mb-4 text-sm flex-grow">${item.description}</p>` : `<p class="text-gray-400 mb-4 text-sm flex-grow">A project focused on the application of ${item.technologies[0]} and ${item.technologies[1]}.</p>`;
 
-            card.innerHTML = `
-                <div class="flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold mb-2">${item.title}</h3>
-                    ${description}
-                    <p class="text-xs text-gray-500 mb-6"><b>Skills:</b> ${item.technologies.join(', ')}</p>
-                </div>
-                <div class="mt-auto pt-4 grid grid-cols-2 gap-2 text-sm font-medium">
-                    <button onclick="viewPdf('${item.reportUrl}', '${item.title} Report')" class="shine-button bg-gray-700/50 hover:bg-gray-600/50 p-2 rounded-lg transition-colors">Report</button>
-                    <button onclick="viewPdf('${item.presentationUrl}', '${item.title} Presentation')" class="shine-button bg-gray-700/50 hover:bg-gray-600/50 p-2 rounded-lg transition-colors">Presentation</button>
-                    <button onclick="explainProject('${item.id}')" class="shine-button bg-blue-600/80 hover:bg-blue-700/80 p-2 rounded-lg transition-colors col-span-1">✨ Explain</button>
-                    <button onclick="summarizeProject('${item.id}')" class="shine-button bg-teal-600/80 hover:bg-teal-700/80 p-2 rounded-lg transition-colors col-span-1">✨ Sum Up</button>
-                </div>
-            `;
-            grid.appendChild(card);
+// --- COMPLETE PDF VIEWER LOGIC ---
+
+// --- COMPLETE PDF VIEWER LOGIC ---
+
+// --- State Management ---
+let pdfDoc = null;
+let currentScale = 1.0;
+let currentPdfUrl = '';
+const pdfViewer = document.getElementById('pdf-viewer');
+
+// --- Main Function to Open and Render PDF ---
+async function viewPdf(url, title) {
+    currentPdfUrl = url;
+    document.getElementById('pdf-modal-title').textContent = title;
+    pdfViewer.innerHTML = loaderHTML;
+    openModal('pdf-modal');
+
+    try {
+        pdfDoc = await pdfjsLib.getDocument(url).promise;
+        const firstPage = await pdfDoc.getPage(1);
+        const viewport = firstPage.getViewport({ scale: 1.0 });
+        currentScale = pdfViewer.clientWidth / viewport.width;
+        await renderAllPages();
+    } catch (error) {
+        pdfViewer.innerHTML = `<p class="text-red-400 text-center">Sorry, the PDF could not be loaded. Error: ${error.message}</p>`;
+    }
+}
+
+// --- Renders all pages at the current scale ---
+async function renderAllPages() {
+    if (!pdfDoc) return;
+    pdfViewer.innerHTML = '';
+    document.getElementById('zoom-level').textContent = `${Math.round(currentScale * 100)}%`;
+
+    for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
+        const page = await pdfDoc.getPage(pageNum);
+        const viewport = page.getViewport({ scale: currentScale });
+        
+        const pageContainer = document.createElement('div');
+        pageContainer.className = 'mx-auto mb-4 relative';
+        pageContainer.style.width = `${viewport.width}px`;
+        pageContainer.style.height = `${viewport.height}px`;
+
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        const devicePixelRatio = window.devicePixelRatio || 1;
+        canvas.width = viewport.width * devicePixelRatio;
+        canvas.height = viewport.height * devicePixelRatio;
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        pageContainer.appendChild(canvas);
+
+        const renderContext = {
+            canvasContext: context,
+            viewport: viewport,
+            transform: devicePixelRatio !== 1 ? [devicePixelRatio, 0, 0, devicePixelRatio, 0, 0] : null
+        };
+
+        const textLayerDiv = document.createElement('div');
+        textLayerDiv.className = 'textLayer';
+        pageContainer.appendChild(textLayerDiv);
+        pdfViewer.appendChild(pageContainer);
+
+        await page.render(renderContext).promise;
+        const textContent = await page.getTextContent();
+        pdfjsLib.renderTextLayer({
+            textContent: textContent,
+            container: textLayerDiv,
+            viewport: viewport,
+            textDivs: []
+        });
+    }
+}
+
+// --- Control Functions ---
+function zoomIn() {
+    if (!pdfDoc) return;
+    currentScale += 0.2;
+    renderAllPages();
+}
+
+function zoomOut() {
+    if (!pdfDoc || currentScale <= 0.2) return;
+    currentScale -= 0.2;
+    renderAllPages();
+}
+
+function downloadPdf() {
+    if (!currentPdfUrl) return;
+    const link = document.createElement('a');
+    link.href = currentPdfUrl;
+    link.download = currentPdfUrl.split('/').pop() || 'download.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+// THIS IS THE NEW FUNCTION
+function openInNewTab() {
+    if (!currentPdfUrl) return;
+    window.open(currentPdfUrl, '_blank');
+}
+
+        // --- SECURE GEMINI AI INTEGRATION ---
+        // MODIFIED: This function is now secure!
+        async function callGemini(prompt) {
+            const modalBody = document.getElementById('modal-body');
+            modalBody.innerHTML = loaderHTML;
+            openModal('ai-modal');
+
+            try {
+                // This calls YOUR secure serverless function, not Google's API directly.
+                const response = await fetch('/.netlify/functions/gemini', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt: prompt })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+                
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0) {
+                    let formattedText = result.candidates[0].content.parts[0].text;
+                    // Basic Markdown to HTML
+                    formattedText = formattedText
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                        .replace(/\* (.*?)\n/g, '<li class="ml-4 list-disc">$1</li>')
+                        .replace(/\n/g, '<br>');
+                    modalBody.innerHTML = `<div class="prose prose-invert max-w-none">${formattedText}</div>`;
+                } else {
+                    throw new Error("No content received from API.");
+                }
+            } catch (error) {
+                console.error("Gemini API call failed:", error);
+                modalBody.innerHTML = `<p class="text-red-400">Sorry, something went wrong. This may be due to a missing or invalid API key in the server configuration. <br><br>Error: ${error.message}</p>`;
+            }
+        }
+
+        // --- Functions to create prompts (No changes needed) ---
+        function getProjectById(projectId) {
+            return projectsData.find(p => p.id === projectId);
+        }
+
+        function explainProject(projectId) {
+            const project = getProjectById(projectId);
+            if (!project) return;
+            document.getElementById('modal-title').innerText = `✨ Explaining: ${project.title}`;
+            document.getElementById('modal-footer').innerHTML = '';
+            const prompt = `Explain the following project in simple, engaging terms for a non-technical audience like a recruiter or hiring manager. Focus on the real-world application, the problem it solves, and the business value. Keep it concise (2-3 short paragraphs).
+            \n\nProject Title: "${project.title}"\nDescription: "${project.description}"\nTechnologies Used: "${project.technologies.join(', ')}"`;
+            callGemini(prompt);
+        }
+
+        function summarizeProject(projectId) {
+            const project = getProjectById(projectId);
+            if (!project) return;
+            document.getElementById('modal-title').innerText = `✨ Summarizing: ${project.title}`;
+            document.getElementById('modal-footer').innerHTML = '';
+            const prompt = `Summarize this project in one or two compelling sentences. Focus on the core achievement.
+            \n\nProject Title: "${project.title}"\nDescription: "${project.description}"`;
+            callGemini(prompt);
+        }
+
+        function showSkillDetails(skillName) {
+            document.getElementById('modal-title').innerText = `💡 Skill: ${skillName}`;
+            const modalFooter = document.getElementById('modal-footer');
+            modalFooter.innerHTML = `<button onclick="showProjectsForSkill('${skillName}')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">Show Projects Using This Skill</button>`;
+            const prompt = `Explain the technical skill "${skillName}" in simple terms. What is it used for in the industry? Keep it to 2-3 sentences.`;
+            callGemini(prompt);
         }
         
-        // ... [The rest of your JavaScript (Modals, AI Calls, PDF Viewer, etc.) remains here] ...
-        // It should work seamlessly with the new data structure. Just ensure you combine
-        // all project arrays when the AI needs the full context, like for the skills feature.
-    </script>
+        function showProjectsForSkill(skillName) {
+            document.getElementById('modal-title').innerText = `🚀 Projects with ${skillName}`;
+            document.getElementById('modal-footer').innerHTML = '';
+            const projectsString = projectsData.map(p => `Title: ${p.title}, Description: ${p.description}, Technologies: ${p.technologies.join(', ')}`).join('\n\n');
+            const prompt = `Based on the following list of projects, identify which ones used the skill "${skillName}". For each project you identify, list its title and briefly (one sentence) explain how "${skillName}" was specifically applied in that context. Format the output clearly.
+            \n\n---PROJECTS---\n${projectsString}`;
+            callGemini(prompt);
+        }
 
+        // Close modals on escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal('ai-modal');
+                closeModal('pdf-modal');
+                closeModal('contact-modal');
+            }
+        });
+    </script>
 </body>
 </html>

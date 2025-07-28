@@ -15,7 +15,6 @@
             background-color: #111827;
             color: #e5e7eb;
         }
-        /* Animation for elements fading in on scroll */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -23,11 +22,9 @@
         .fade-in-element {
             animation: fadeIn 0.8s ease-out forwards;
         }
-        /* Add a subtle gradient background to the hero section */
         .hero-gradient {
             background: linear-gradient(180deg, #111827 0%, rgba(17, 24, 39, 0.8) 50%, #111827 100%);
         }
-        /* Style for the project cards */
         .project-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-radius: 0.75rem;
@@ -45,14 +42,12 @@
             display: flex;
             flex-direction: column;
         }
-        /* Glassmorphism effect for cards */
         .glass-card {
             background: rgba(31, 41, 55, 0.6);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        /* Animated underline for section headers */
         .section-header::after {
             content: '';
             display: block;
@@ -66,14 +61,12 @@
         .section-header:hover::after {
             width: 100px;
         }
-        /* Modal styles */
         .modal {
             transition: opacity 0.25s ease;
         }
         .modal-content {
             transition: transform 0.25s ease;
         }
-        /* Loading spinner */
         .loader {
             border: 4px solid #f3f3f3;
             border-top: 4px solid #3b82f6;
@@ -90,7 +83,6 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header -->
     <header class="fixed w-full top-0 z-50 transition-all duration-300" id="header">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold tracking-wider">Mohammed El Baraka</div>
@@ -105,10 +97,9 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section id="hero" class="min-h-screen flex items-center hero-gradient">
             <div class="container mx-auto px-6 text-center">
-                <img src="https://placehold.co/160x160/1f2937/e5e7eb?text=MEB" alt="Mohammed El Baraka" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-gray-700 shadow-lg">
+                <img src="path/to/your/photo.jpg" alt="Mohammed El Baraka" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-gray-700 shadow-lg">
                 <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">Industrial Engineering & Data Science</h1>
                 <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8">
                     An Engineering student at EMINES-UM6P specializing in Industrial Management with a passion for Optimization, Data Science, and Machine Learning.
@@ -119,7 +110,6 @@
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="py-20 scroll-mt-16">
             <div class="container mx-auto px-6">
                 <h2 class="section-header text-4xl font-bold mb-12 text-center">About Me</h2>
@@ -127,27 +117,69 @@
                     <div class="md:w-2/3 text-lg text-gray-300 leading-relaxed space-y-4">
                         <p>Hello! I'm Mohammed El Baraka, an Industrial Management engineering student at the prestigious Mohammed VI Polytechnic University (UM6P). My academic journey, beginning with an intensive program in Mathematics and Physics, has instilled in me a strong analytical and problem-solving mindset.</p>
                         <p>I am driven by the challenge of solving complex problems, particularly through the application of Data Science, Machine Learning, and Optimization algorithms. My project work reflects my ability to bridge theoretical knowledge with practical application, from modeling oxygen diffusion in biomedical engineering to optimizing agricultural production with linear programming.</p>
+                        <p>I am passionate about cybersecurity and robotics, and I am constantly exploring new technologies. I have completed the CS50 course from Harvard and am always looking for new challenges to tackle. I am a lifelong learner, and I am excited to apply my skills to real-world problems.</p>
                         <p>Fluent in Arabic, French, and English, I am a strong communicator and leader, actively involved in numerous university clubs and sports teams. I am always eager to learn and apply my skills to impactful, real-world scenarios.</p>
-                        <!-- Gemini API Buttons -->
                         <div class="mt-8 flex flex-wrap gap-4">
                             <button onclick="getCareerAdvice()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105">✨ Suggest Career Paths</button>
                             <button onclick="getProjectIdea()" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105">✨ Brainstorm a Project</button>
+                            <button onclick="openResume()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105">📄 View My Resume</button>
                         </div>
                     </div>
                     <div class="md:w-1/3 flex justify-center">
-                         <img src="https://placehold.co/400x400/1f2937/e5e7eb?text=Pic" alt="A picture of Mohammed El Baraka" class="rounded-lg shadow-2xl w-full max-w-sm">
+                         <img src="path/to/your/second_photo.jpg" alt="A picture of Mohammed El Baraka" class="rounded-lg shadow-2xl w-full max-w-sm">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="py-20 bg-gray-900 scroll-mt-16">
             <div class="container mx-auto px-6">
                 <h2 class="section-header text-4xl font-bold mb-12 text-center">My Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-                    <!-- === PROJECT: Predictive Analytics for Student Mental Health === -->
+                    <div class="project-card glass-card">
+                        <img src="path/to/your/project_image.jpg" alt="Project Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Cybersecurity and Pentesting</h3>
+                                <p class="text-gray-400 mb-4">Exploring wireless network security, pentesting tools, and Google dorking techniques to identify and mitigate vulnerabilities.</p>
+                                <p class="text-sm text-gray-500 mb-4"><b>Technologies:</b> Wireless network tools, Pentesting tools, Google Dork.</p>
+                            </div>
+                            <div class="mt-auto pt-4">
+                                <button onclick="explainProject(this)" class="text-indigo-400 hover:underline">✨ Explain Simply &rarr;</button>
+                                <a href="path/to/your/report.pdf" target="_blank" class="text-blue-400 hover:underline ml-4">View Full Report (PDF) &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card glass-card">
+                        <img src="path/to/your/project_image.jpg" alt="Project Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Robotics and Image Detection</h3>
+                                <p class="text-gray-400 mb-4">Developing a robotic system with image detection capabilities, from SolidWorks design to Python-based image processing.</p>
+                                <p class="text-sm text-gray-500 mb-4"><b>Technologies:</b> SolidWorks, Python, Image Detection.</p>
+                            </div>
+                            <div class="mt-auto pt-4">
+                                <button onclick="explainProject(this)" class="text-indigo-400 hover:underline">✨ Explain Simply &rarr;</button>
+                                <a href="path/to/your/report.pdf" target="_blank" class="text-blue-400 hover:underline ml-4">View Full Report (PDF) &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card glass-card">
+                        <img src="path/to/your/project_image.jpg" alt="Project Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Web Development with Django and Java</h3>
+                                <p class="text-gray-400 mb-4">Building dynamic web applications using the Django framework and Java, with a focus on backend development and database integration.</p>
+                                <p class="text-sm text-gray-500 mb-4"><b>Technologies:</b> Django, Java, HTML, CSS.</p>
+                            </div>
+                            <div class="mt-auto pt-4">
+                                <button onclick="explainProject(this)" class="text-indigo-400 hover:underline">✨ Explain Simply &rarr;</button>
+                                <a href="path/to/your/report.pdf" target="_blank" class="text-blue-400 hover:underline ml-4">View Full Report (PDF) &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="project-card glass-card">
                         <img src="https://placehold.co/600x400/3b82f6/ffffff?text=ML+Project" alt="Mental Health Project" class="w-full h-48 object-cover">
                         <div class="p-6">
@@ -163,7 +195,6 @@
                         </div>
                     </div>
 
-                    <!-- === PROJECT: Optimization for Red Fruit Production === -->
                     <div class="project-card glass-card">
                         <img src="https://placehold.co/600x400/10b981/ffffff?text=Optimization" alt="Red Fruit Production Project" class="w-full h-48 object-cover">
                         <div class="p-6">
@@ -179,7 +210,6 @@
                         </div>
                     </div>
 
-                    <!-- === PROJECT: Bank Statement Integration with Power BI === -->
                     <div class="project-card glass-card">
                         <img src="https://placehold.co/600x400/ef4444/ffffff?text=Power+BI" alt="Power BI Dashboard Project" class="w-full h-48 object-cover">
                         <div class="p-6">
@@ -195,7 +225,6 @@
                         </div>
                     </div>
 
-                    <!-- === PROJECT: Cryptography: Attacks Against Shared Module RSA === -->
                     <div class="project-card glass-card">
                         <img src="https://placehold.co/600x400/f97316/ffffff?text=Crypto" alt="Cryptography Project" class="w-full h-48 object-cover">
                         <div class="p-6">
@@ -211,15 +240,14 @@
                         </div>
                     </div>
 
-                    <!-- === PROJECT: Biomedical Eng: Oxygen Diffusion in Acinus === -->
                     <div class="project-card glass-card">
                         <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=Biomedical" alt="Biomedical Engineering Project" class="w-full h-48 object-cover">
                         <div class="p-6">
-                           <div>
+                            <div>
                                 <h3 class="text-2xl font-bold mb-2">Oxygen Diffusion in Pulmonary Acinus</h3>
                                 <p class="text-gray-400 mb-4">Conducted a biomedical engineering project to model oxygen diffusion in the pulmonary acinus, resolving the diffusion equation in 2D using numerical methods.</p>
                                  <p class="text-sm text-gray-500 mb-4"><b>Technologies:</b> Mathematical Modeling, Numerical Methods, Python (NumPy, SciPy, Matplotlib).</p>
-                           </div>
+                            </div>
                             <div class="mt-auto pt-4">
                                 <button onclick="explainProject(this)" class="text-indigo-400 hover:underline">✨ Explain Simply &rarr;</button>
                                 <a href="#" target="_blank" class="text-blue-400 hover:underline ml-4">View Full Report (PDF) &rarr;</a>
@@ -227,7 +255,6 @@
                         </div>
                     </div>
 
-                    <!-- === PROJECT: Reducing Noise Pollution === -->
                     <div class="project-card glass-card">
                         <img src="https://placehold.co/600x400/ec4899/ffffff?text=Acoustics" alt="Noise Pollution Project" class="w-full h-48 object-cover">
                         <div class="p-6">
@@ -246,17 +273,36 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="py-20 scroll-mt-16">
             <div class="container mx-auto px-6">
                 <h2 class="section-header text-4xl font-bold mb-12 text-center">Technical Skills</h2>
                 <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-4">
-                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Python</span><span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">C</span><span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Java</span><span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">JavaScript</span><span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Bash</span><span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">SageMath</span><span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Data Analysis</span><span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Optimization Algorithms</span><span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Machine Learning</span><span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Power BI</span><span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">SQL</span><span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Project Management</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Python</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">C</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Java</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">JavaScript</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Bash</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">SageMath</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Data Analysis</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Optimization Algorithms</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Machine Learning</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Power BI</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">SQL</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Project Management</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Django</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">HTML</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">CSS</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">VBA</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">SolidWorks</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">QGIS</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">AI Prompt Engineering</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Canva</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Overleaf</span>
+                    <span class="bg-gray-700 text-lg font-semibold px-4 py-2 rounded-full">Manim</span>
                 </div>
             </div>
         </section>
 
-        <!-- Leadership Section -->
         <section id="leadership" class="py-20 bg-gray-900 scroll-mt-16">
             <div class="container mx-auto px-6">
                 <h2 class="section-header text-4xl font-bold mb-12 text-center">Leadership & Activities</h2>
@@ -271,7 +317,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="py-20 scroll-mt-16">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-header text-4xl font-bold mb-4">Get In Touch</h2>
@@ -283,12 +328,10 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="py-6 text-center text-gray-500">
         <p>&copy; 2025 Mohammed El Baraka. All Rights Reserved.</p>
     </footer>
 
-    <!-- Gemini Response Modal -->
     <div id="gemini-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 opacity-0 pointer-events-none">
         <div class="modal-content glass-card w-full max-w-2xl rounded-lg shadow-lg p-8 m-4 transform scale-95">
             <div class="flex justify-between items-center mb-4">
@@ -302,18 +345,27 @@
             </div>
         </div>
     </div>
+    
+    <div id="pdf-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 opacity-0 pointer-events-none">
+        <div class="modal-content glass-card w-full h-full max-w-4xl rounded-lg shadow-lg p-8 m-4 transform scale-95">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="pdf-modal-title" class="text-2xl font-bold text-white">PDF Viewer</h3>
+                <button onclick="closePdfModal()" class="text-gray-400 hover:text-white">&times;</button>
+            </div>
+            <div id="pdf-viewer" class="w-full h-full"></div>
+        </div>
+    </div>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script>
         // --- Gemini API Integration ---
         const modal = document.getElementById('gemini-modal');
         const modalTitle = document.getElementById('modal-title');
         const modalBody = document.getElementById('modal-body');
         const loaderHTML = `<div class="flex justify-center items-center h-32"><div class="loader"></div></div>`;
-
-        // This is a placeholder for your API key.
-        // In a real application, this should be handled securely.
-        const apiKey = "AIzaSyBaSwtL5oaPiRqMUE4JAUTuaCofo6UaGvo"; 
+        
+        const apiKey = "YOUR_API_KEY";
 
         function openModal() {
             modalBody.innerHTML = loaderHTML;
@@ -328,7 +380,7 @@
 
         async function callGemini(prompt) {
             openModal();
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apikey}`;
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
             
             try {
                 const response = await fetch(apiUrl, {
@@ -404,6 +456,7 @@
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeModal();
+                closePdfModal();
             }
         });
 
@@ -432,6 +485,42 @@
                 observer.observe(el);
             });
         });
+        
+        // --- PDF Viewer ---
+        const pdfModal = document.getElementById('pdf-modal');
+        const pdfViewer = document.getElementById('pdf-viewer');
+
+        function openPdfModal() {
+            pdfModal.classList.remove('opacity-0', 'pointer-events-none');
+            pdfModal.querySelector('.modal-content').classList.remove('scale-95');
+        }
+
+        function closePdfModal() {
+            pdfModal.classList.add('opacity-0', 'pointer-events-none');
+            pdfModal.querySelector('.modal-content').classList.add('scale-95');
+        }
+
+        function openResume() {
+            openPdfModal();
+            const url = 'path/to/your/resume.pdf'; // Replace with your resume's path
+            pdfjsLib.getDocument(url).promise.then(pdf => {
+                pdfViewer.innerHTML = ''; // Clear previous content
+                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                    pdf.getPage(pageNum).then(page => {
+                        const canvas = document.createElement('canvas');
+                        pdfViewer.appendChild(canvas);
+                        const context = canvas.getContext('2d');
+                        const viewport = page.getViewport({ scale: 1.5 });
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+                        page.render({
+                            canvasContext: context,
+                            viewport: viewport
+                        });
+                    });
+                }
+            });
+        }
     </script>
 </body>
 </html>

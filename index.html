@@ -454,41 +454,40 @@ function openInNewTab() {
 
         // --- SECURE GEMINI AI INTEGRATION ---
         // MODIFIED: This function is now secure!
-        async function callGemini(prompt) {
-            const modalBody = document.getElementById('modal-body');
-            modalBody.innerHTML = loaderHTML;
-            openModal('ai-modal');
+async function callGemini(prompt) {
+    const modalBody = document.getElementById('modal-body');
+    modalBody.innerHTML = loaderHTML;
+    openModal('ai-modal');
 
-            try {
-                // This calls YOUR secure serverless function, not Google's API directly.
-                const response = await fetch('/.netlify/functions/gemini', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ prompt: prompt })
-                });
+    try {
+        // This relative path calls your secure Netlify function
+        const response = await fetch('/.netlify/functions/gemini', {
+            method: 'POST', // This line is required to prevent the 405 error
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: prompt })
+        });
 
-                if (!response.ok) {
-                    throw new Error(`API request failed with status ${response.status}`);
-                }
-                
-                const result = await response.json();
-
-                if (result.candidates && result.candidates.length > 0) {
-                    let formattedText = result.candidates[0].content.parts[0].text;
-                    // Basic Markdown to HTML
-                    formattedText = formattedText
-                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                        .replace(/\* (.*?)\n/g, '<li class="ml-4 list-disc">$1</li>')
-                        .replace(/\n/g, '<br>');
-                    modalBody.innerHTML = `<div class="prose prose-invert max-w-none">${formattedText}</div>`;
-                } else {
-                    throw new Error("No content received from API.");
-                }
-            } catch (error) {
-                console.error("Gemini API call failed:", error);
-                modalBody.innerHTML = `<p class="text-red-400">Sorry, something went wrong. This may be due to a missing or invalid API key in the server configuration. <br><br>Error: ${error.message}</p>`;
-            }
+        if (!response.ok) {
+            throw new Error(`API request failed with status ${response.status}`);
         }
+        
+        const result = await response.json();
+
+        if (result.candidates && result.candidates.length > 0) {
+            let formattedText = result.candidates[0].content.parts[0].text;
+            formattedText = formattedText
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\* (.*?)\n/g, '<li class="ml-4 list-disc">$1</li>')
+                .replace(/\n/g, '<br>');
+            modalBody.innerHTML = `<div class="prose prose-invert max-w-none">${formattedText}</div>`;
+        } else {
+            throw new Error("No content received from API.");
+        }
+    } catch (error) {
+        console.error("Gemini API call failed:", error);
+        modalBody.innerHTML = `<p class="text-red-400">Sorry, something went wrong. This may be due to a missing or invalid API key in the server configuration. <br><br>${error.message}</p>`;
+    }
+}
 
         // --- Functions to create prompts (No changes needed) ---
         function getProjectById(projectId) {

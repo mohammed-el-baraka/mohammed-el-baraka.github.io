@@ -264,7 +264,9 @@
                         <p data-translate-key="about_p2"></p>
                         <p data-translate-key="about_p3"></p>
                         <div class="mt-8">
-                            <button onclick="viewPdf('https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/my_resume.pdf', 'resume', null)" class="btn-primary" data-translate-key="view_resume_button">📄</button>
+            
+                            <button onclick="viewPdf('https://drive.google.com/file/d/164y_gvKAJmPwEQkmJtNp0Z9E1P9V6d9F/view?usp=sharing', 'resume', null)" class="btn-primary" data-translate-key="view_resume_button">📄</button>
+
                         </div>
                     </div>
                     <div class="md:w-1/3 flex justify-center p-4">
@@ -337,20 +339,19 @@
 
     <div id="pdf-modal" class="modal fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none">
         <div class="modal-content w-full h-full max-w-5xl rounded-lg shadow-lg p-4 md:p-6 flex flex-col">
-            <div class="flex flex-wrap justify-between items-center gap-4 mb-4 flex-shrink-0">
-                <h3 id="pdf-modal-title" class="text-2xl font-bold text-white"></h3>
-                <div class="flex items-center gap-2 sm:gap-4">
-                    <button onclick="zoomOut()" class="px-3 py-1 bg-gray-600 hover:bg-gray-500 rounded-md transition-colors" title="Zoom Out">➖</button>
-                    <span id="zoom-level" class="text-sm font-medium w-16 text-center">100%</span>
-                    <button onclick="zoomIn()" class="px-3 py-1 bg-gray-600 hover:bg-gray-500 rounded-md transition-colors" title="Zoom In">➕</button>
-                    <button onclick="downloadPdf()" class="px-3 py-1 bg-gray-600 hover:bg-gray-500 rounded-md transition-colors" title="Download">📥</button>
-                    <button onclick="openInNewTab()" class="px-3 py-1 bg-gray-600 hover:bg-gray-500 rounded-md transition-colors" title="Open in New Tab">↗️</button>
+            <div class="flex justify-between items-center gap-4 mb-4 flex-shrink-0">
+                <h3 id="pdf-modal-title" class="text-2xl font-bold text-white">PDF Viewer</h3>
+                <div class="flex items-center gap-4">
+                    <a id="pdf-new-tab-link" href="#" target="_blank" class="px-3 py-1 bg-gray-600 hover:bg-gray-500 rounded-md transition-colors" title="Open in New Tab">↗️</a>
+                    <button onclick="closeModal('pdf-modal')" class="text-3xl text-gray-400 hover:text-white">×</button>
                 </div>
-                <button onclick="closeModal('pdf-modal')" class="text-3xl text-gray-400 hover:text-white">×</button>
             </div>
-            <div id="pdf-viewer" class="w-full h-full overflow-auto rounded bg-black/50"></div>
+            <div class="w-full h-full bg-black/50">
+                <iframe id="pdf-iframe" src="" class="w-full h-full" style="border:0;"></iframe>
+            </div>
         </div>
     </div>
+
     
     <div id="contact-modal" class="modal fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none p-4">
         <div class="modal-content w-full max-w-md rounded-lg shadow-lg p-8 transform scale-95">
@@ -419,12 +420,12 @@
                  { id: 'robotics-vision', title: 'Robotics and Image Detection', description: 'Developed a complete robotic system with image detection capabilities, from 3D modeling in SolidWorks to implementing image processing algorithms in Python.' }
             ],
             leadership: [
-                { id: 'rubiks-club', title: "UM6P Rubik's Cube Club", role: "President", description: "As President, I led the club's activities, organized workshops, and fostered a community of problem-solvers. [ADD MORE DETAILS HERE]" },
-                { id: 'eplus-club', title: "E++ Club, EMINES", role: "Sponsoring Manager", description: "I was responsible for securing sponsorships and managing partnerships to fund our club's technical projects and events. [ADD MORE DETAILS HERE]" },
-                { id: 'eastro-club', title: "E-Astronomy Club, EMINES", role: "Logistics Manager", description: "I coordinated the logistics for observation nights and educational seminars, ensuring all equipment and resources were available. [ADD MORE DETAILS HERE]" },
-                { id: 'rotaract-club', title: "ROTARACT EMINES Club", role: "Communication & Content Manager", description: "I managed the club's social media presence and created engaging content to promote our community service projects. [ADD MORE DETAILS HERE]" },
-                { id: 'pingpong-club', title: "UM6P Ping Pong Club", role: "Logistics Manager", description: "I organized tournaments and practice sessions, handling all logistical aspects from scheduling to equipment management. [ADD MORE DETAILS HERE]" },
-                { id: 'university-sports', title: "University Sports", role: "Player for Handball, Volleyball, and Football teams", description: "As an active member of multiple university sports teams, I developed strong teamwork, discipline, and leadership skills. [ADD MORE DETAILS HERE]" }
+                { id: 'rubiks-club', title: "UM6P Rubik's Cube Club", role: "President", description: "As President, I led the club's activities, organized workshops, and fostered a community of problem-solvers." },
+                { id: 'eplus-club', title: "E++ Club, EMINES", role: "Sponsoring Manager", description: "Secured sponsors for the National Data Science Competition (NDSC) and the Intelligent Robot Competition (IRC) by contacting potential partners, presenting proposals, and ensuring their support for both events." },
+                { id: 'eastro-club', title: "E-Astronomy Club, EMINES", role: "Logistics Manager", description: "I orchestrated the logistics for observation nights and educational seminars, ensuring seamless availability of all equipment and resources, and served as an astronomy expert at the Moroccan Day of Mathematics." },
+                { id: 'rotaract-club', title: "ROTARACT EMINES Club", role: "Communication & Content Manager", description: "I managed the club’s communication and content creation, developing engaging materials to promote the activities, events, and initiatives of Rotaract EMINES." },
+                { id: 'pingpong-club', title: "UM6P Ping Pong Club", role: "Logistics Manager", description: "I organized tournaments and practice sessions, handling all logistical aspects from scheduling to equipment management." },
+                { id: 'university-sports', title: "University Sports", role: "Player for Handball, Volleyball, and Football teams", description: "As an active member of multiple university sports teams, I developed strong teamwork, discipline, and leadership skills." }
             ],
         },
         // French
@@ -474,12 +475,12 @@
                 { id: 'robotics-vision', title: 'Robotique et Détection d\'Images', description: 'Développement d\'un système robotique complet avec des capacités de détection d\'images, de la modélisation 3D sur SolidWorks à la mise en œuvre d\'algorithmes de traitement d\'images en Python.' }
             ],
             leadership: [
-                { id: 'rubiks-club', title: "Club de Rubik's Cube UM6P", role: "Président", description: "En tant que Président, j'ai dirigé les activités du club, organisé des ateliers et encouragé une communauté de solutionneurs de problèmes. [AJOUTER PLUS DE DÉTAILS ICI]" },
-                { id: 'eplus-club', title: "Club E++, EMINES", role: "Responsable Sponsoring", description: "J'étais responsable de la recherche de sponsors et de la gestion des partenariats pour financer les projets techniques et événements de notre club. [AJOUTER PLUS DE DÉTAILS ICI]" },
-                { id: 'eastro-club', title: "Club E-Astronomie, EMINES", role: "Responsable Logistique", description: "J'ai coordonné la logistique pour les soirées d'observation et les séminaires éducatifs, en veillant à la disponibilité de tout l'équipement et des ressources. [AJOUTER PLUS DE DÉTAILS ICI]" },
-                { id: 'rotaract-club', title: "Club ROTARACT EMINES", role: "Responsable Communication & Contenu", description: "J'ai géré la présence du club sur les réseaux sociaux et créé du contenu engageant pour promouvoir nos projets de service communautaire. [AJOUTER PLUS DE DÉTAILS ICI]" },
-                { id: 'pingpong-club', title: "Club de Ping Pong UM6P", role: "Responsable Logistique", description: "J'ai organisé des tournois et des séances d'entraînement, gérant tous les aspects logistiques, de la planification à la gestion du matériel. [AJOUTER PLUS DE DÉTAILS ICI]" },
-                { id: 'university-sports', title: "Sports Universitaires", role: "Joueur des équipes de Handball, Volleyball et Football", description: "En tant que membre actif de plusieurs équipes sportives universitaires, j'ai développé de solides compétences en travail d'équipe, discipline et leadership. [AJOUTER PLUS DE DÉTAILS ICI]" }
+                { id: 'rubiks-club', title: "Club de Rubik's Cube UM6P", role: "Président", description: "En tant que Président, j'ai dirigé les activités du club, organisé des ateliers et encouragé une communauté de solutionneurs de problèmes." },
+                { id: 'eplus-club', title: "Club E++, EMINES", role: "Responsable Sponsoring", description: "Obtenu des sponsors pour le National Data Science Competition (NDSC) et l’Intelligent Robot Competition (IRC) en contactant des partenaires potentiels, en présentant des propositions et en assurant leur soutien aux deux événements." },
+                { id: 'eastro-club', title: "Club E-Astronomie, EMINES", role: "Responsable Logistique", description: "J’ai orchestré la logistique des soirées d’observation et des séminaires éducatifs, en veillant à la disponibilité sans faille de tout l’équipement et des ressources, et j’ai participé en tant qu’expert en astronomie à la Journée marocaine des mathématiques." },
+                { id: 'rotaract-club', title: "Club ROTARACT EMINES", role: "Responsable Communication & Contenu", description: "J’ai géré la communication du club et la création de contenu, en concevant des supports captivants pour promouvoir les activités, événements et initiatives du Rotaract EMINES." },
+                { id: 'pingpong-club', title: "Club de Ping Pong UM6P", role: "Responsable Logistique", description: "J'ai organisé des tournois et des séances d'entraînement, gérant tous les aspects logistiques, de la planification à la gestion du matériel." },
+                { id: 'university-sports', title: "Sports Universitaires", role: "Joueur des équipes de Handball, Volleyball et Football", description: "En tant que membre actif de plusieurs équipes sportives universitaires, j'ai développé de solides compétences en travail d'équipe, discipline et leadership." }
             ],
         },
         // Arabic
@@ -529,12 +530,12 @@
                  { id: 'robotics-vision', title: 'الروبوتات وكشف الصور', description: 'تطوير نظام روبوتي كامل مع إمكانات كشف الصور، من النمذجة ثلاثية الأبعاد في SolidWorks إلى تنفيذ خوارزميات معالجة الصور في Python.' }
             ],
             leadership: [
-                { id: 'rubiks-club', title: "نادي مكعب روبيك UM6P", role: "رئيس", description: "بصفتي رئيسًا، قمت بقيادة أنشطة النادي، وتنظيم ورش عمل، وتعزيز مجتمع من حلالي المشكلات. [أضف المزيد من التفاصيل هنا]" },
-                { id: 'eplus-club', title: "نادي E++، EMINES", role: "مدير الرعاية", description: "كنت مسؤولاً عن تأمين الرعاية وإدارة الشراكات لتمويل المشاريع الفنية والفعاليات في نادينا. [أضف المزيد من التفاصيل هنا]" },
-                { id: 'eastro-club', title: "نادي علم الفلك، EMINES", role: "مدير الخدمات اللوجستية", description: "لقد قمت بتنسيق الخدمات اللوجستية لليالي المراقبة والندوات التعليمية، مع ضمان توفر جميع المعدات والموارد. [أضف المزيد من التفاصيل هنا]" },
-                { id: 'rotaract-club', title: "نادي روتاراكت EMINES", role: "مدير الاتصالات والمحتوى", description: "لقد أدرت تواجد النادي على وسائل التواصل الاجتماعي وأنشأت محتوى جذابًا للترويج لمشاريع خدمة المجتمع لدينا. [أضف المزيد من التفاصيل هنا]" },
-                { id: 'pingpong-club', title: "نادي تنس الطاولة UM6P", role: "مدير الخدمات اللوجستية", description: "نظمت بطولات وجلسات تدريبية، وتوليت جميع الجوانب اللوجستية من الجدولة إلى إدارة المعدات. [أضف المزيد من التفاصيل هنا]" },
-                { id: 'university-sports', title: "الرياضة الجامعية", role: "لاعب في فرق كرة اليد والكرة الطائرة وكرة القدم", description: "كعضو نشط في العديد من الفرق الرياضية الجامعية، طورت مهارات قوية في العمل الجماعي والانضباط والقيادة. [أضف المزيد من التفاصيل هنا]" }
+                { id: 'rubiks-club', title: "نادي مكعب روبيك UM6P", role: "رئيس", description: "بصفتي رئيسًا، قمت بقيادة أنشطة النادي، وتنظيم ورش عمل، وتعزيز مجتمع من حلالي المشكلات." },
+                { id: 'eplus-club', title: "نادي E++، EMINES", role: "مدير الرعاية", description: "حصلت على رعاة للمسابقة الوطنية لعلوم البيانات (NDSC) ومسابقة الروبوت الذكي (IRC) من خلال التواصل مع شركاء محتملين، وعرض المقترحات، وضمان دعمهم لكلا الحدثين." },
+                { id: 'eastro-club', title: "نادي علم الفلك، EMINES", role: "مدير الخدمات اللوجستية", description: "نظمت الخدمات اللوجستية لليالي المراقبة والندوات التعليمية، مؤكدًا توفر جميع المعدات والموارد بسلاسة، وشاركت كخبير في علم الفلك في اليوم المغربي للرياضيات." },
+                { id: 'rotaract-club', title: "نادي روتاراكت EMINES", role: "مدير الاتصالات والمحتوى", description: "لقد أدرت تواجد النادي على وسائل التواصل الاجتماعي وأنشأت محتوى جذابًا للترويج لمشاريع خدمة المجتمع لدينا." },
+                { id: 'pingpong-club', title: "نادي تنس الطاولة UM6P", role: "مدير الخدمات اللوجستية", description: "نظمت بطولات وجلسات تدريبية، وتوليت جميع الجوانب اللوجستية من الجدولة إلى إدارة المعدات." },
+                { id: 'university-sports', title: "الرياضة الجامعية", role: "لاعب في فرق كرة اليد والكرة الطائرة وكرة القدم", description: "كعضو نشط في العديد من الفرق الرياضية الجامعية، طورت مهارات قوية في العمل الجماعي والانضباط والقيادة. " }
             ],
         },
         // Spanish
@@ -584,12 +585,12 @@
                 { id: 'robotics-vision', title: 'Robótica y Detección de Imágenes', description: 'Desarrollé un sistema robótico completo con capacidades de detección de imágenes, desde el modelado 3D en SolidWorks hasta la implementación de algoritmos de procesamiento de imágenes en Python.' }
             ],
             leadership: [
-                { id: 'rubiks-club', title: "Club de Cubo de Rubik UM6P", role: "Presidente", description: "Como Presidente, lideré las actividades del club, organicé talleres y fomenté una comunidad de solucionadores de problemas. [AÑADIR MÁS DETALLES AQUÍ]" },
-                { id: 'eplus-club', title: "Club E++, EMINES", role: "Gerente de Patrocinios", description: "Fui responsable de asegurar patrocinios y gestionar alianzas para financiar los proyectos técnicos y eventos de nuestro club. [AÑADIR MÁS DETALLES AQUÍ]" },
-                { id: 'eastro-club', title: "Club de E-Astronomía, EMINES", role: "Gerente de Logística", description: "Coordiné la logística para las noches de observación y seminarios educativos, asegurando que todo el equipo y los recursos estuvieran disponibles. [AÑADIR MÁS DETALLES AQUÍ]" },
-                { id: 'rotaract-club', title: "Club ROTARACT EMINES", role: "Gerente de Comunicación y Contenido", description: "Gestioné la presencia del club en las redes sociales y creé contenido atractivo para promover nuestros proyectos de servicio comunitario. [AÑADIR MÁS DETALLES AQUÍ]" },
-                { id: 'pingpong-club', title: "Club de Ping Pong UM6P", role: "Gerente de Logística", description: "Organicé torneos y sesiones de práctica, manejando todos los aspectos logísticos desde la programación hasta la gestión de equipos. [AÑADIR MÁS DETALLES AQUÍ]" },
-                { id: 'university-sports', title: "Deportes Universitarios", role: "Jugador de los equipos de Balonmano, Voleibol y Fútbol", description: "Como miembro activo de múltiples equipos deportivos universitarios, desarrollé sólidas habilidades de trabajo en equipo, disciplina y liderazgo. [AÑADIR MÁS DETALLES AQUÍ]" }
+                { id: 'rubiks-club', title: "Club de Cubo de Rubik UM6P", role: "Presidente", description: "Como Presidente, lideré las actividades del club, organicé talleres y fomenté una comunidad de solucionadores de problemas." },
+                { id: 'eplus-club', title: "Club E++, EMINES", role: "Gerente de Patrocinios", description: "Obtuve patrocinadores para la Competencia Nacional de Ciencia de Datos (NDSC) y la Competencia de Robots Inteligentes (IRC) contactando a socios potenciales, presentando propuestas y asegurando su apoyo para ambos eventos." },
+                { id: 'eastro-club', title: "Club de E-Astronomía, EMINES", role: "Gerente de Logística", description: "Coordiné la logística de noches de observación y seminarios educativos, garantizando la disponibilidad impecable de todo el equipo y recursos, y participé como experto en astronomía en el Día Marroquí de las Matemáticas." },
+                { id: 'rotaract-club', title: "Club ROTARACT EMINES", role: "Gerente de Comunicación y Contenido", description: "Gestioné la comunicación del club y la creación de contenido, desarrollando materiales atractivos para promover las actividades, eventos e iniciativas de Rotaract EMINES." },
+                { id: 'pingpong-club', title: "Club de Ping Pong UM6P", role: "Gerente de Logística", description: "Organicé torneos y sesiones de práctica, manejando todos los aspectos logísticos desde la programación hasta la gestión de equipos." },
+                { id: 'university-sports', title: "Deportes Universitarios", role: "Jugador de los equipos de Balonmano, Voleibol y Fútbol", description: "Como miembro activo de múltiples equipos deportivos universitarios, desarrollé sólidas habilidades de trabajo en equipo, disciplina y liderazgo." }
             ],
         },
         // Mandarin Chinese
@@ -639,12 +640,12 @@
                 { id: 'robotics-vision', title: '机器人技术与图像检测', description: '开发了一个完整的具有图像检测功能的机器人系统，从在SolidWorks中进行3D建模到在Python中实现图像处理算法。' }
             ],
             leadership: [
-                { id: 'rubiks-club', title: "UM6P 魔方俱乐部", role: "主席", description: "作为主席，我领导了俱乐部的活动，组织了研讨会，并培养了一个解决问题的社区。 [在此处添加更多详细信息]" },
-                { id: 'eplus-club', title: "E++ 俱乐部, EMINES", role: "赞助经理", description: "我负责获得赞助和管理合作伙伴关系，以资助我们俱乐部的技术项目和活动。 [在此处添加更多详细信息]" },
-                { id: 'eastro-club', title: "E-天文学俱乐部, EMINES", role: "后勤经理", description: "我协调了观察之夜和教育研讨会的后勤工作，确保所有设备和资源都可用。 [在此处添加更多详细信息]" },
-                { id: 'rotaract-club', title: "ROTARACT EMINES 俱乐部", role: "沟通与内容经理", description: "我管理了俱乐部的社交媒体形象，并创建了引人入胜的内容来推广我们的社区服务项目。 [在此处添加更多详细信息]" },
-                { id: 'pingpong-club', title: "UM6P 乒乓球俱乐部", role: "后勤经理", description: "我组织了比赛和练习赛，处理从日程安排到设备管理的所有后勤方面。 [在此处添加更多详细信息]" },
-                { id: 'university-sports', title: "大学体育", role: "手球、排球和足球队队员", description: "作为多个大学运动队的活跃成员，我培养了强大的团队合作、纪律和领导能力。 [在此处添加更多详细信息]" }
+                { id: 'rubiks-club', title: "UM6P 魔方俱乐部", role: "主席", description: "作为主席，我领导了俱乐部的活动，组织了研讨会，并培养了一个解决问题的社区。" },
+                { id: 'eplus-club', title: "E++ 俱乐部, EMINES", role: "赞助经理", description: "通过联系潜在合作伙伴、提交提案并确保他们对两项赛事（国家数据科学竞赛（NDSC）和智能机器人竞赛（IRC））的支持，成功获得了赞助。" },
+                { id: 'eastro-club', title: "E-天文学俱乐部, EMINES", role: "后勤经理", description: "我协调了观测之夜和教育研讨会的后勤工作，确保所有设备和资源的无缝可用，并作为天文学专家参加了摩洛哥数学日。" },
+                { id: 'rotaract-club', title: "ROTARACT EMINES 俱乐部", role: "沟通与内容经理", description: "我管理了俱乐部的沟通和内容创作，开发引人入胜的材料，以推广Rotaract EMINES的活动、赛事和倡议。" },
+                { id: 'pingpong-club', title: "UM6P 乒乓球俱乐部", role: "后勤经理", description: "我组织了比赛和练习赛，处理从日程安排到设备管理的所有后勤方面。 " },
+                { id: 'university-sports', title: "大学体育", role: "手球、排球和足球队队员", description: "作为多个大学运动队的活跃成员，我培养了强大的团队合作、纪律和领导能力。 " }
             ],
         },
         // Portuguese
@@ -694,23 +695,23 @@
                 { id: 'robotics-vision', title: 'Robótica e Detecção de Imagem', description: 'Desenvolvi um sistema robótico completo com capacidades de detecção de imagem, desde a modelagem 3D no SolidWorks até a implementação de algoritmos de processamento de imagem em Python.' }
             ],
             leadership: [
-                { id: 'rubiks-club', title: "Clube do Cubo de Rubik da UM6P", role: "Presidente", description: "Como Presidente, liderei as atividades do clube, organizei workshops e promovi uma comunidade de solucionadores de problemas. [ADICIONE MAIS DETALHES AQUI]" },
-                { id: 'eplus-club', title: "Clube E++, EMINES", role: "Gerente de Patrocínios", description: "Fui responsável por garantir patrocínios e gerenciar parcerias para financiar os projetos técnicos e eventos do nosso clube. [ADICIONE MAIS DETALHES AQUI]" },
-                { id: 'eastro-club', title: "Clube de E-Astronomia, EMINES", role: "Gerente de Logística", description: "Coordenei a logística para noites de observação e seminários educacionais, garantindo que todos os equipamentos e recursos estivessem disponíveis. [ADICIONE MAIS DETALHES AQUI]" },
-                { id: 'rotaract-club', title: "Clube ROTARACT EMINES", role: "Gerente de Comunicação e Conteúdo", description: "Gerenciei a presença do clube nas redes sociais e criei conteúdo envolvente para promover nossos projetos de serviço comunitário. [ADICIONE MAIS DETALHES AQUI]" },
-                { id: 'pingpong-club', title: "Clube de Tênis de Mesa da UM6P", role: "Gerente de Logística", description: "Organizei torneios e sessões de treinamento, cuidando de todos os aspectos logísticos, desde o agendamento até a gestão de equipamentos. [ADICIONE MAIS DETALHES AQUI]" },
-                { id: 'university-sports', title: "Esportes Universitários", role: "Jogador das equipes de Handebol, Voleibol e Futebol", description: "Como membro ativo de várias equipes esportivas universitárias, desenvolvi fortes habilidades de trabalho em equipe, disciplina e liderança. [ADICIONE MAIS DETALHES AQUI]" }
+                { id: 'rubiks-club', title: "Clube do Cubo de Rubik da UM6P", role: "Presidente", description: "Como Presidente, liderei as atividades do clube, organizei workshops e promovi uma comunidade de solucionadores de problemas." },
+                { id: 'eplus-club', title: "Clube E++, EMINES", role: "Gerente de Patrocínios", description: "Consegui patrocinadores para a Competição Nacional de Ciência de Dados (NDSC) e a Competição de Robô Inteligente (IRC) entrando em contato com parceiros potenciais, apresentando propostas e garantindo seu apoio para os dois eventos." },
+                { id: 'eastro-club', title: "Clube de E-Astronomia, EMINES", role: "Gerente de Logística", description: "Organizei a logística para noites de observação e seminários educacionais, garantindo a disponibilidade impecável de todos os equipamentos e recursos, e atuei como especialista em astronomia no Dia Marroquino de Matemática." },
+                { id: 'rotaract-club', title: "Clube ROTARACT EMINES", role: "Gerente de Comunicação e Conteúdo", description: "Gerenciei a comunicação do clube e a criação de conteúdo, desenvolvendo materiais envolventes para promover as atividades, eventos e iniciativas do Rotaract EMINES." },
+                { id: 'pingpong-club', title: "Clube de Tênis de Mesa da UM6P", role: "Gerente de Logística", description: "Organizei torneios e sessões de treinamento, cuidando de todos os aspectos logísticos, desde o agendamento até a gestão de equipamentos. " },
+                { id: 'university-sports', title: "Esportes Universitários", role: "Jogador das equipes de Handebol, Voleibol e Futebol", description: "Como membro ativo de várias equipes esportivas universitárias, desenvolvi fortes habilidades de trabalho em equipe, disciplina e liderança." }
             ],
         },
     };
 
     const projectsData = [
-        { id: 'mental-health-analytics', technologies: ['Machine Learning', 'NLP', 'Python', 'Scikit-learn', 'NLTK', 'Classification Models'], reportUrl: 'https://drive.google.com/uc?export=download&id=1Cp_Cupva8F4uSI2EazpcSfWHdSHvJQ9E', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_analytics_edge.pdf' },
-        { id: 'red-fruit-optimization', technologies: ['Linear Programming', 'Python', 'Pulp', 'Optimization Modeling', 'Algorithm Design'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_optimization.pdf', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_optimization.pdf' },
-        { id: 'powerbi-dashboard', technologies: ['Power BI', 'Excel', 'Data Analysis', 'Dashboard Design', 'VBA'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_power_bi.pdf', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_power_bi.pdf' },
-        { id: 'rsa-cryptography', technologies: ['Cryptography', 'RSA Algorithm', 'Cryptanalysis', 'Number Theory', 'SageMath', 'Python'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_cryptography.pdf', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_cryptography.pdf' },
-        { id: 'biomedical-diffusion', technologies: ['Mathematical Modeling', 'Numerical Methods', 'Python', 'NumPy', 'SciPy', 'Matplotlib'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_biomedical_engineering.pdf', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_biomedical_engineering.pdf' },
-        { id: 'robotics-vision', technologies: ['Robotics', 'Python', 'Image Detection', 'SolidWorks', 'OpenCV'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_robotics.pdf', presentationUrl: 'https://drive.google.com/file/d/1wfSLCAMlytJtU9o-8Wmbm4LTd2gfQ4Fz/view?usp=drive_link' }
+        { id: 'mental-health-analytics', technologies: ['Machine Learning', 'NLP', 'Python', 'Scikit-learn', 'NLTK', 'Classification Models'], reportUrl: 'https://drive.google.com/file/d/1HOFF_SywL49TlsOnuertwlaaWZrOq8Vn/view?usp=sharing', presentationUrl: 'https://drive.google.com/file/d/1N2X0nVZxP2OwwLzlIdJ-LYeLmeGt4_uu/view?usp=drive_link' },
+        { id: 'red-fruit-optimization', technologies: ['Linear Programming', 'Python', 'Pulp', 'Optimization Modeling', 'Algorithm Design'], reportUrl: 'https://drive.google.com/file/d/1pU34qkKTJsIPJPAfX8AUcACUQAjINbOG/view?usp=sharing', presentationUrl: 'https://drive.google.com/file/d/11yrl2LQlbk03yFPFXyaRRbM6juZFemUd/view?usp=sharing' },
+        { id: 'powerbi-dashboard', technologies: ['Power BI', 'Excel', 'Data Analysis', 'Dashboard Design', 'VBA'], reportUrl: 'https://drive.google.com/file/d/1hprde0Kd4Tsi4D9BBQsdlpKLj5D3WIFj/view?usp=sharing', presentationUrl: 'https://drive.google.com/file/d/1JH7sEdd0Ulb_Hs9c1dNfDMbdE7s8jpXa/view?usp=sharing' },
+        { id: 'rsa-cryptography', technologies: ['Cryptography', 'RSA Algorithm', 'Cryptanalysis', 'Number Theory', 'SageMath', 'Python'], reportUrl: 'https://drive.google.com/file/d/1e3hIOIsfj5ZOvqIK-ey-Bew5HXZwI69l/view?usp=sharing', presentationUrl: 'https://drive.google.com/file/d/14zBJ0cRRHfBgGoerNRfXe2z7y9sv5oZ-/view?usp=sharing' },
+        { id: 'biomedical-diffusion', technologies: ['Mathematical Modeling', 'Numerical Methods', 'Python', 'NumPy', 'SciPy', 'Matplotlib'], reportUrl: 'https://drive.google.com/file/d/1X9aQBQ8qnkGaZF9ZD9vQb4T_A_D5GYnT/view?usp=sharing', presentationUrl: 'https://drive.google.com/file/d/1SOKxBawlC51whiwh9lZ1I8KE1WcRuN7L/view?usp=sharing' },
+        { id: 'robotics-vision', technologies: ['Robotics', 'Python', 'Image Detection', 'SolidWorks', 'OpenCV'], reportUrl: 'https://drive.google.com/file/d/148jUa5mRyydjS2Ht8fpk8rGQDJ9yQJok/view?usp=sharing', presentationUrl: 'https://drive.google.com/file/d/1VI5hfPQouqk4th9hAxw9NYShz_brn1Pi/view?usp=sharing' }
     ];
 
     const skillsData = [ 'Python', 'Java', 'C', 'JavaScript', 'Bash', 'SQL', 'HTML', 'CSS', 'Machine Learning', 'Data Analysis', 'NLP', 'Optimization Algorithms', 'Linear Programming', 'Power BI', 'VBA', 'Excel', 'Robotics', 'SolidWorks', 'QGIS', 'Image Detection', 'Cryptography', 'Cybersecurity', 'Pentesting Tools', 'Django', 'SageMath', 'Manim', 'Overleaf', 'Git', 'AI Prompt Engineering' ];
@@ -863,10 +864,15 @@
     const pdfViewer = document.getElementById('pdf-viewer');
 
     async function viewPdf(url, type, id) {
-        currentPdfUrl = url;
+        // Stop if the URL is not a valid Google Drive link
+        if (!url || !url.includes('drive.google.com')) {
+            alert('This document is not available for preview.');
+            return;
+        }
+
+        // --- 1. Set Modal Title ---
         const langStrings = translations[currentLang];
         let title = '';
-
         if (type === 'resume') {
              title = langStrings.pdf_modal_title_resume;
         } else {
@@ -875,71 +881,20 @@
                 title = (type === 'report' ? langStrings.pdf_modal_title_report : langStrings.pdf_modal_title_presentation).replace('{title}', project.title);
              }
         }
-        
         document.getElementById('pdf-modal-title').textContent = title;
-        pdfViewer.innerHTML = loaderHTML;
+
+        // --- 2. Create the Embed Link ---
+        const urlParts = url.split('/');
+        const fileId = urlParts[urlParts.indexOf('d') + 1];
+        const embedUrl = `https://drive.google.com/file/d/${fileId}/preview`;
+
+        // --- 3. Update Modal Content and Show ---
+        document.getElementById('pdf-iframe').src = embedUrl;
+        document.getElementById('pdf-new-tab-link').href = url; // Set link for the "Open in new tab" button
+
         openModal('pdf-modal');
-        
-        try {
-            pdfDoc = await pdfjsLib.getDocument(url).promise;
-            const firstPage = await pdfDoc.getPage(1);
-            currentScale = pdfViewer.clientWidth / firstPage.getViewport({ scale: 1.0 }).width;
-            await renderAllPages();
-        } catch (error) {
-            pdfViewer.innerHTML = `<p class="text-red-400 text-center p-4">Sorry, the PDF could not be loaded. It might be unavailable or blocked by browser security (CORS).<br><br>Error: ${error.message}</p>`;
-        }
     }
 
-    async function renderAllPages() {
-        if (!pdfDoc) return;
-        pdfViewer.innerHTML = '';
-        document.getElementById('zoom-level').textContent = `${Math.round(currentScale * 100)}%`;
-        
-        for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
-            const page = await pdfDoc.getPage(pageNum);
-            const viewport = page.getViewport({ scale: currentScale });
-            const pageContainer = document.createElement('div');
-            pageContainer.className = 'mx-auto mb-4 relative';
-            pageContainer.style.width = `${viewport.width}px`;
-            pageContainer.style.height = `${viewport.height}px`;
-            
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            const devicePixelRatio = window.devicePixelRatio || 1;
-            canvas.width = viewport.width * devicePixelRatio;
-            canvas.height = viewport.height * devicePixelRatio;
-            canvas.style.width = '100%';
-            canvas.style.height = '100%';
-            pageContainer.appendChild(canvas);
-            
-            const renderContext = {
-                canvasContext: context,
-                viewport: viewport,
-                transform: devicePixelRatio !== 1 ? [devicePixelRatio, 0, 0, devicePixelRatio, 0, 0] : null
-            };
-            
-            await page.render(renderContext).promise;
-            
-            const textLayerDiv = document.createElement('div');
-            textLayerDiv.className = 'textLayer';
-            pageContainer.appendChild(textLayerDiv);
-            
-            const textContent = await page.getTextContent();
-            pdfjsLib.renderTextLayer({ textContent, container: textLayerDiv, viewport, textDivs: [] });
-        }
-    }
-
-    function zoomIn() { if (pdfDoc) { currentScale += 0.2; renderAllPages(); } }
-    function zoomOut() { if (pdfDoc && currentScale > 0.3) { currentScale -= 0.2; renderAllPages(); } }
-    function downloadPdf() {
-        if (!currentPdfUrl) return;
-        const link = document.createElement('a');
-        link.href = currentPdfUrl;
-        link.download = currentPdfUrl.split('/').pop() || 'download.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
     function openInNewTab() { if (currentPdfUrl) { window.open(currentPdfUrl, '_blank'); } }
 
     async function getTextFromPdf(url) {

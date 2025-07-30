@@ -1,37 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed El Baraka - Industrial Management & Data Science</title>
+    <title>Mohammed El Baraka</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
         :root {
-            /* --- NEW: Premium Purple Color Scheme --- */
             --primary-color: #A78BFA; /* Premium Purple Accent (Tailwind violet-400) */
             --secondary-color: #1a1a1a; /* Deep Charcoal */
             --text-color: #EAEAEA; /* Off-White Text */
             --bg-color: #121212; /* Rich Black */
             --card-bg: #1F1F1F; /* Slightly Lighter Card Background */
             
+            /* Define font stacks */
             --heading-font: 'Playfair Display', serif;
-            --body-font: 'Lato', sans-serif;
+            --body-font-latin: 'Lato', sans-serif;
+            --body-font-ar: 'Noto Sans Arabic', sans-serif;
+            --body-font-zh: 'Noto Sans SC', sans-serif;
         }
 
         /* --- Base & Fonts --- */
         html { scroll-behavior: smooth; }
-        body { 
-            font-family: var(--body-font); 
-            background-color: var(--bg-color); 
-            color: var(--text-color); 
+        body {
+            font-family: var(--body-font-latin); /* Default font */
+            background-color: var(--bg-color);
+            color: var(--text-color);
             overflow-x: hidden;
+            text-align: left; /* Default LTR alignment */
         }
+        
+        /* Language-specific font overrides */
+        html[lang="ar"] body { font-family: var(--body-font-ar); }
+        html[lang="zh"] body { font-family: var(--body-font-zh); }
+        
+        /* RTL support */
+        html[dir="rtl"] body { text-align: right; }
+        html[dir="rtl"] nav { margin-left: auto; margin-right: 0; }
+        html[dir="rtl"] .section-title::after { margin: 10px auto 0; }
+
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--heading-font);
             color: var(--primary-color);
@@ -51,12 +64,25 @@
         #header {
             background-color: rgba(18, 18, 18, 0.85);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(167, 139, 250, 0.2); /* UPDATED COLOR */
+            border-bottom: 1px solid rgba(167, 139, 250, 0.2);
             transition: all 0.3s ease;
         }
         #header a { color: var(--text-color); transition: color 0.3s; }
         #header a:hover { color: var(--primary-color); }
         #header .brand-name { font-family: var(--heading-font); font-weight: 700; font-size: 1.5rem; color: var(--primary-color); }
+        
+        /* Language selector styling */
+        #lang-selector {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            border-radius: 6px;
+            padding: 4px 8px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            cursor: pointer;
+        }
 
         /* --- Hero Section --- */
         .hero {
@@ -91,16 +117,16 @@
             opacity: 0;
         }
         .hero-content h1 {
-            font-size: 3rem; /* Adjusted for long text */
-             md:font-size: 4.5rem;
+            font-size: 3rem;
+            md:font-size: 4.5rem;
             color: white;
             font-weight: bold;
             text-shadow: 0px 0px 20px rgba(0,0,0,0.9);
         }
-         .hero-content p {
+        .hero-content p {
             font-size: 1.1rem;
-             md:font-size: 1.25rem;
-            max-width: 800px; /* Wider for professional summary */
+            md:font-size: 1.25rem;
+            max-width: 800px;
             margin: 1rem auto 2rem;
             text-shadow: 0px 0px 15px rgba(0,0,0,0.9);
             color: #ccc;
@@ -116,13 +142,13 @@
             font-size: 1rem;
             border-radius: 50px;
             transition: all 0.4s ease;
-            box-shadow: 0 0 15px rgba(167, 139, 250, 0.4); /* UPDATED COLOR */
+            box-shadow: 0 0 15px rgba(167, 139, 250, 0.4);
         }
         .btn-primary:hover {
             background-color: white;
             border-color: white;
             transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(167, 139, 250, 0.8); /* UPDATED COLOR */
+            box-shadow: 0 0 25px rgba(167, 139, 250, 0.8);
         }
         
         /* --- Section Styling --- */
@@ -138,10 +164,10 @@
             font-size: 1.5rem; margin: 10px auto 0;
         }
 
-        /* --- Project & Leadership Card Styling --- */
+        /* --- Card Styling --- */
         .item-card {
             background-color: var(--card-bg);
-            border: 1px solid rgba(167, 139, 250, 0.2); /* UPDATED COLOR */
+            border: 1px solid rgba(167, 139, 250, 0.2);
             border-radius: 15px;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -159,22 +185,22 @@
         .item-card .card-text { color: #ccc; flex-grow: 1; }
         
         /* --- Skill Tag Styling --- */
-        .skill-tag { 
-            background: var(--card-bg); color: var(--text-color); border: 1px solid rgba(167, 139, 250, 0.2); /* UPDATED COLOR */
+        .skill-tag {
+            background: var(--card-bg); color: var(--text-color); border: 1px solid rgba(167, 139, 250, 0.2);
             transition: all 0.3s ease; cursor: pointer;
         }
         .skill-tag:hover {
             transform: scale(1.1); background: var(--primary-color); color: var(--bg-color);
-            box-shadow: 0 0 25px rgba(167, 139, 250, 0.7); /* UPDATED COLOR */
+            box-shadow: 0 0 25px rgba(167, 139, 250, 0.7);
             border-color: var(--primary-color);
         }
 
         /* --- Modal Styling --- */
         .modal { transition: opacity 0.25s ease; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
-        .modal-content { 
+        .modal-content {
             background: var(--card-bg);
-            border: 1px solid rgba(167, 139, 250, 0.3); /* UPDATED COLOR */
-            transition: transform 0.25s ease; 
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            transition: transform 0.25s ease;
             border-radius: 15px;
         }
         .modal-header h3 { color: var(--primary-color); font-family: var(--heading-font); }
@@ -195,52 +221,54 @@
 
     <header class="fixed w-full top-0 z-50" id="header">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#page-top" class="brand-name">
-                Mohammed El Baraka
-            </a>
-            <nav class="hidden md:flex space-x-6 font-bold">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#leadership">Leadership</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <a href="#page-top" class="brand-name">Mohammed El Baraka</a>
+            <div class="flex items-center space-x-4 md:space-x-6">
+                <nav class="hidden md:flex space-x-6 font-bold">
+                    <a href="#about" data-translate-key="nav_about"></a>
+                    <a href="#projects" data-translate-key="nav_projects"></a>
+                    <a href="#skills" data-translate-key="nav_skills"></a>
+                    <a href="#leadership" data-translate-key="nav_leadership"></a>
+                    <a href="#contact" data-translate-key="nav_contact"></a>
+                </nav>
+                <select id="lang-selector" onchange="switchLanguage(this.value)" class="text-sm">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="ar">العربية</option>
+                    <option value="es">Español</option>
+                    <option value="zh">中文</option>
+                    <option value="pt">Português</option>
+                </select>
+            </div>
         </div>
     </header>
 
     <main>
         <section id="hero" class="hero">
-             <div class="hero-background"></div>
-             <div class="hero-content">
-                <img src="mmee.jpg" alt="Mohammed El Baraka" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 border-4" style="border-color: var(--primary-color);">
-                <h1>
-                    Industrial Management,<br>& Data Science
-                </h1>
-                <p>
-                    An Engineering student at EMINES-UM6P specializing in Industrial Management with a passion for Optimization, Data Science, and leveraging technology to solve real-world challenges.
-                </p>
+            <div class="hero-background"></div>
+            <div class="hero-content">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjq_VFdOY1ipe7dB3oiLIm3Ds5q-g8zrvR00nZnyJo-Gs7Mo26sIT9MxZfI4oUgu_h1Tq57FUBEBnakh85VEiDFbitNmcgRCHAD0cwZffAc7rSneAXSddqI8pRV0nsGoiHVDYS2Xvfqa-f5UeLbUUIe3GufvETzhlFAQT6OuFFt5RqAXRmyBn09E8vhLMo/s320/mmee.jpg" alt="Mohammed El Baraka" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 border-4" style="border-color: var(--primary-color);">
+                <h1 data-translate-key="hero_title"></h1>
+                <p data-translate-key="hero_subtitle"></p>
                 <div>
-                    <a href="#projects" class="btn-primary">
-                        View My Work
-                    </a>
+                    <a href="#projects" class="btn-primary" data-translate-key="hero_cta_button"></a>
                 </div>
             </div>
         </section>
 
         <section id="about" class="py-24 scroll-mt-16">
             <div class="container mx-auto px-6">
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title" data-translate-key="about_title"></h2>
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="md:w-2/3 text-lg text-gray-300 leading-relaxed space-y-4">
-                        <p>Hello! I'm Mohammed El Baraka, an Industrial Management engineering student at the prestigious Mohammed VI Polytechnic University (UM6P). My academic journey, beginning with an intensive program in Mathematics and Physics, has instilled in me a strong analytical and problem-solving mindset.</p>
-                        <p>I am driven by the challenge of untangling complex problems, particularly through the application of Data Science, Machine Learning, and Optimization algorithms. My work philosophy is centered on bridging the gap between theoretical knowledge and practical application to create tangible results.</p>
-                        <p>I am a proactive leader, fluent in Arabic, French, and English, and always eager to learn, collaborate, and apply my skills to impactful scenarios.</p>
+                        <p data-translate-key="about_p1"></p>
+                        <p data-translate-key="about_p2"></p>
+                        <p data-translate-key="about_p3"></p>
                         <div class="mt-8">
-                             <button onclick="viewPdf('https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/my_resume.pdf', 'My Resume')" class="btn-primary">📄 View My Resume</button>
+                            <button onclick="viewPdf('https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/my_resume.pdf', 'resume', null)" class="btn-primary" data-translate-key="view_resume_button">📄</button>
                         </div>
                     </div>
                     <div class="md:w-1/3 flex justify-center p-4">
-                        <img src="123.jpg" alt="A picture of Mohammed El Baraka" class="rounded-lg shadow-2xl w-full max-w-sm border-2" style="border-color: rgba(167, 139, 250, 0.3);">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi94RjxOr4HaOi3E-9mwGiYYKe5-RZQEXrtzKwksSnDcgiGPQBqKAwQfzEI27vz67PEntfXeMb8jnkrSI6x4mmhR4Xj9g6DdXb2np1eLWnteFVoCxvNoMK5lGYmXD5dXiEPKxP88lanqqMdh5QC_D6kPE68i-M1hOpN2B1H-XwGr6pKvxTfaUivnC2PREo/s320/123.jpg" alt="A picture of Mohammed El Baraka" class="rounded-lg shadow-2xl w-full max-w-sm border-2" style="border-color: rgba(167, 139, 250, 0.3);">
                     </div>
                 </div>
             </div>
@@ -248,47 +276,41 @@
 
         <section id="projects" class="py-24 bg-black/20 scroll-mt-16">
             <div class="container mx-auto px-6">
-                <h2 class="section-title">My Projects</h2>
+                <h2 class="section-title" data-translate-key="projects_title"></h2>
                 <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project cards will be injected here by JavaScript -->
-                </div>
+                    </div>
             </div>
         </section>
 
         <section id="skills" class="py-24 scroll-mt-16">
             <div class="container mx-auto px-6">
-                <h2 class="section-title">Technical Skills</h2>
+                <h2 class="section-title" data-translate-key="skills_title"></h2>
                 <div id="skills-container" class="max-w-5xl mx-auto flex flex-wrap justify-center gap-4">
-                     <!-- Skill tags will be injected here by JavaScript -->
-                </div>
+                     </div>
             </div>
         </section>
 
         <section id="leadership" class="py-24 bg-black/20 scroll-mt-16">
             <div class="container mx-auto px-6">
-                <h2 class="section-title">Leadership & Activities</h2>
+                <h2 class="section-title" data-translate-key="leadership_title"></h2>
                 <div id="leadership-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Leadership cards will be injected here by JavaScript -->
-                </div>
+                    </div>
             </div>
         </section>
 
         <section id="contact" class="py-24 scroll-mt-16">
-             <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">I'm always open to discussing new projects, creative ideas, or opportunities. Let's connect.</p>
-                <button onclick="openContactModal()" class="btn-primary mb-10">
-                    Contact Me
-                </button>
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title" data-translate-key="contact_title"></h2>
+                <p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto" data-translate-key="contact_subtitle"></p>
+                <button onclick="openContactModal()" class="btn-primary" data-translate-key="contact_button"></button>
             </div>
         </section>
     </main>
 
     <footer class="py-6 text-center text-gray-500 border-t" style="border-color: rgba(167, 139, 250, 0.2);">
-        <p>© 2025 Mohammed El Baraka. All Rights Reserved.</p>
+        <p data-translate-key="footer_text"></p>
     </footer>
 
-    <!-- AI/Skill Modal -->
     <div id="ai-modal" class="modal fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none p-4">
         <div class="modal-content w-full max-w-2xl rounded-lg shadow-lg p-6 md:p-8 transform scale-95">
             <div class="modal-header flex justify-between items-center mb-4">
@@ -296,11 +318,10 @@
                 <button onclick="closeModal('ai-modal')" class="modal-close-btn text-3xl">×</button>
             </div>
             <div id="modal-body" class="modal-body leading-relaxed max-h-[60vh] overflow-y-auto"></div>
-            <div id="modal-footer" class="mt-6"></div>
-        </div>
+            <div id="modal-footer" class="mt-6"></div> </div>
     </div>
+
     
-    <!-- Leadership Modal -->
     <div id="leadership-modal" class="modal fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none p-4">
         <div class="modal-content w-full max-w-2xl rounded-lg shadow-lg transform scale-95">
             <div class="modal-header flex justify-between items-center p-6 border-b" style="border-color: rgba(167, 139, 250, 0.2);">
@@ -314,12 +335,10 @@
         </div>
     </div>
 
-
-    <!-- PDF Modal -->
     <div id="pdf-modal" class="modal fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none">
         <div class="modal-content w-full h-full max-w-5xl rounded-lg shadow-lg p-4 md:p-6 flex flex-col">
-             <div class="flex flex-wrap justify-between items-center gap-4 mb-4 flex-shrink-0">
-                <h3 id="pdf-modal-title" class="text-2xl font-bold text-white">PDF Viewer</h3>
+            <div class="flex flex-wrap justify-between items-center gap-4 mb-4 flex-shrink-0">
+                <h3 id="pdf-modal-title" class="text-2xl font-bold text-white"></h3>
                 <div class="flex items-center gap-2 sm:gap-4">
                     <button onclick="zoomOut()" class="px-3 py-1 bg-gray-600 hover:bg-gray-500 rounded-md transition-colors" title="Zoom Out">➖</button>
                     <span id="zoom-level" class="text-sm font-medium w-16 text-center">100%</span>
@@ -333,260 +352,739 @@
         </div>
     </div>
     
-    <!-- Contact Modal -->
     <div id="contact-modal" class="modal fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none p-4">
         <div class="modal-content w-full max-w-md rounded-lg shadow-lg p-8 transform scale-95">
             <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold text-white">Contact Me</h3>
+                <h3 class="text-2xl font-bold text-white" data-translate-key="contact_modal_title"></h3>
                 <button onclick="closeModal('contact-modal')" class="modal-close-btn text-3xl">×</button>
             </div>
             <div class="space-y-4">
-                 <a href="mailto:mohammed.elbaraka@emines.um6p.ma" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all">Send an Email</a>
-                <a href="https://wa.me/+212666774426" target="_blank" class="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-all">Message on WhatsApp</a>
-                <a href="tel:+212666774426" class="block w-full text-center bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-all">Make a Call</a>
+                <a href="mailto:mohammed.elbaraka@emines.um6p.ma" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all" data-translate-key="contact_modal_email"></a>
+                <a href="https://wa.me/+212666774426" target="_blank" class="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-all" data-translate-key="contact_modal_whatsapp"></a>
+                <a href="tel:+212666774426" class="block w-full text-center bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-all" data-translate-key="contact_modal_call"></a>
             </div>
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script>
+
         pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js`;
 
-        const projectsData = [
-            { id: 'mental-health-analytics', title: 'Predictive Analytics for Student Mental Health', description: 'Developed predictive models using questionnaire and text data to assess student mental health, achieving high accuracy in predicting anxiety, depression, and stress levels.', technologies: ['Machine Learning', 'NLP', 'Python', 'Scikit-learn', 'NLTK', 'Classification Models'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_analytics_edge.pdf', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_analytics_edge.pdf' },
-            { id: 'red-fruit-optimization', title: 'Optimization of Red Fruit Production', description: 'Designed and implemented a Linear Programming model to maximize profit for red fruit production in greenhouses, considering various constraints and scenarios.', technologies: ['Linear Programming', 'Python', 'Pulp', 'Optimization Modeling', 'Algorithm Design'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_optimization.pdf', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_optimization.pdf' },
-            { id: 'powerbi-dashboard', title: 'Bank Statement Integration with Power BI', description: 'Developed an interactive Power BI dashboard to integrate and visualize key financial metrics from bank statements and delivery notes for a connected data view.', technologies: ['Power BI', 'Excel', 'Data Analysis', 'Dashboard Design', 'VBA'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_power_bi.pdf', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_power_bi.pdf' },
-            { id: 'rsa-cryptography', title: 'Attacks Against Shared Module RSA', description: 'Studied and simulated attacks against the RSA cryptosystem, focusing on vulnerabilities from shared modules to demonstrate cryptographic weaknesses.', technologies: ['Cryptography', 'RSA Algorithm', 'Cryptanalysis', 'Number Theory', 'SageMath', 'Python'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_cryptography.pdf', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_cryptography.pdf' },
-            { id: 'biomedical-diffusion', title: 'Oxygen Diffusion in Pulmonary Acinus', description: 'Conducted a biomedical engineering project to model oxygen diffusion in the pulmonary acinus, resolving the 2D diffusion equation using numerical methods.', technologies: ['Mathematical Modeling', 'Numerical Methods', 'Python', 'NumPy', 'SciPy', 'Matplotlib'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_biomedical_engineering.pdf', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_biomedical_engineering.pdf' },
-            { id: 'robotics-vision', title: 'Robotics and Image Detection', description: 'Developed a complete robotic system with image detection capabilities, from 3D modeling in SolidWorks to implementing image processing algorithms in Python.', technologies: ['Robotics', 'Python', 'Image Detection', 'SolidWorks', 'OpenCV'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_robotics.pdf', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_robotics.pdf' },
-            { id: 'robotics-vision', title: 'Robotics and Image Detection', description: 'Developed a complete robotic system with image detection capabilities, from 3D modeling in SolidWorks to implementing image processing algorithms in Python.', technologies: ['Robotics', 'Python', 'Image Detection', 'SolidWorks', 'OpenCV'], reportUrl: 'path/to/robotics_report.pdf', presentationUrl: 'https://drive.google.com/file/d/1wfSLCAMlytJtU9o-8Wmbm4LTd2gfQ4Fz/view?usp=drive_link' }
-        ];
+    const translations = {
+        // English (Base)
+        en: {
+            page_title: "Mohammed EL BARAKA - Industrial Management & Data Science",
+            nav_about: "About",
+            nav_projects: "Projects",
+            nav_skills: "Skills",
+            nav_leadership: "Leadership",
+            nav_contact: "Contact",
+            hero_title: "Industrial Management,<br>& Data Science",
+            hero_subtitle: "An Engineering student at EMINES-UM6P specializing in Industrial Management with a passion for Optimization, Data Science, and leveraging technology to solve real-world challenges.",
+            hero_cta_button: "View My Work",
+            about_title: "About Me",
+            about_p1: "Hello! I'm Mohammed EL BARAKA, an Industrial Management engineering student at the prestigious Mohammed VI Polytechnic University (UM6P). My academic journey, beginning with an intensive program in Mathematics and Physics, has instilled in me a strong analytical and problem-solving mindset.",
+            about_p2: "I am driven by the challenge of untangling complex problems, particularly through the application of Data Science, Machine Learning, and Optimization algorithms. My work philosophy is centered on bridging the gap between theoretical knowledge and practical application to create tangible results.",
+            about_p3: "I am a proactive leader, fluent in Arabic, French, and English, and always eager to learn, collaborate, and apply my skills to impactful scenarios.",
+            view_resume_button: "📄 View My Resume",
+            projects_title: "My Projects",
+            skills_title: "Technical Skills",
+            leadership_title: "Leadership & Activities",
+            contact_title: "Get In Touch",
+            contact_subtitle: "I'm always open to discussing new projects, creative ideas, or opportunities. Let's connect.",
+            contact_button: "Contact Me",
+            footer_text: `© ${new Date().getFullYear()} Mohammed EL BARAKA. All Rights Reserved.`,
+            contact_modal_title: "Contact Me",
+            contact_modal_email: "Send an Email",
+            contact_modal_whatsapp: "Message on WhatsApp",
+            contact_modal_call: "Make a Call",
+            project_button_report: "Report",
+            project_button_presentation: "Presentation",
+            project_button_explain: "✨ Explain",
+            project_button_summarize: "✨ Summarize",
+            modal_explaining_title: `✨ Explaining: {title}`,
+            modal_summarizing_title: `✨ Summarizing: {title}`,
+            modal_skill_projects_title: `🚀 Projects with {skill}`,
+            modal_list_intro: `Here are the projects where I used <strong>{skill}</strong>:`,
+            pdf_modal_title_report: `{title} Report`,
+            pdf_modal_title_presentation: `{title} Presentation`,
+            pdf_modal_title_resume: `My Resume`,
+            projects: [
+                 { id: 'mental-health-analytics', title: 'Predictive Analytics for Student Mental Health', description: 'Developed predictive models using questionnaire and text data to assess student mental health, achieving high accuracy in predicting anxiety, depression, and stress levels.' },
+                 { id: 'red-fruit-optimization', title: 'Optimization of Red Fruit Production', description: 'Designed and implemented a Linear Programming model to maximize profit for red fruit production in greenhouses, considering various constraints and scenarios.' },
+                 { id: 'powerbi-dashboard', title: 'Bank Statement Integration with Power BI', description: 'Developed an interactive Power BI dashboard to integrate and visualize key financial metrics from bank statements and delivery notes for a connected data view.' },
+                 { id: 'rsa-cryptography', title: 'Attacks Against Shared Module RSA', description: 'Studied and simulated attacks against the RSA cryptosystem, focusing on vulnerabilities from shared modules to demonstrate cryptographic weaknesses.' },
+                 { id: 'biomedical-diffusion', title: 'Oxygen Diffusion in Pulmonary Acinus', description: 'Conducted a biomedical engineering project to model oxygen diffusion in the pulmonary acinus, resolving the 2D diffusion equation using numerical methods.' },
+                 { id: 'robotics-vision', title: 'Robotics and Image Detection', description: 'Developed a complete robotic system with image detection capabilities, from 3D modeling in SolidWorks to implementing image processing algorithms in Python.' }
+            ],
+            leadership: [
+                { id: 'rubiks-club', title: "UM6P Rubik's Cube Club", role: "President", description: "As President, I led the club's activities, organized workshops, and fostered a community of problem-solvers. [ADD MORE DETAILS HERE]" },
+                { id: 'eplus-club', title: "E++ Club, EMINES", role: "Sponsoring Manager", description: "I was responsible for securing sponsorships and managing partnerships to fund our club's technical projects and events. [ADD MORE DETAILS HERE]" },
+                { id: 'eastro-club', title: "E-Astronomy Club, EMINES", role: "Logistics Manager", description: "I coordinated the logistics for observation nights and educational seminars, ensuring all equipment and resources were available. [ADD MORE DETAILS HERE]" },
+                { id: 'rotaract-club', title: "ROTARACT EMINES Club", role: "Communication & Content Manager", description: "I managed the club's social media presence and created engaging content to promote our community service projects. [ADD MORE DETAILS HERE]" },
+                { id: 'pingpong-club', title: "UM6P Ping Pong Club", role: "Logistics Manager", description: "I organized tournaments and practice sessions, handling all logistical aspects from scheduling to equipment management. [ADD MORE DETAILS HERE]" },
+                { id: 'university-sports', title: "University Sports", role: "Player for Handball, Volleyball, and Football teams", description: "As an active member of multiple university sports teams, I developed strong teamwork, discipline, and leadership skills. [ADD MORE DETAILS HERE]" }
+            ],
+        },
+        // French
+        fr: {
+            page_title: "Mohammed EL BARAKA - Gestion Industrielle & Science des Données",
+            nav_about: "À propos",
+            nav_projects: "Projets",
+            nav_skills: "Compétences",
+            nav_leadership: "Leadership",
+            nav_contact: "Contact",
+            hero_title: "Gestion Industrielle,<br>& Science des Données",
+            hero_subtitle: "Étudiant ingénieur à l'EMINES-UM6P spécialisé en Gestion Industrielle, passionné par l'Optimisation, la Science des Données et l'utilisation de la technologie pour résoudre des défis concrets.",
+            hero_cta_button: "Voir mes travaux",
+            about_title: "À propos de moi",
+            about_p1: "Bonjour ! Je suis Mohammed EL BARAKA, étudiant ingénieur en Gestion Industrielle à la prestigieuse Université Mohammed VI Polytechnique (UM6P). Mon parcours académique, débutant par un programme intensif en Mathématiques et Physique, m'a doté d'un solide esprit d'analyse et de résolution de problèmes.",
+            about_p2: "Je suis motivé par le défi de démêler des problèmes complexes, notamment par l'application de la Science des Données, de l'Apprentissage Automatique et des algorithmes d'Optimisation. Ma philosophie de travail est de combler le fossé entre les connaissances théoriques et l'application pratique pour créer des résultats tangibles.",
+            about_p3: "Je suis un leader proactif, parlant couramment l'arabe, le français et l'anglais, et toujours désireux d'apprendre, de collaborer et d'appliquer mes compétences à des scénarios percutants.",
+            view_resume_button: "📄 Voir mon CV",
+            projects_title: "Mes Projets",
+            skills_title: "Compétences Techniques",
+            leadership_title: "Leadership & Activités",
+            contact_title: "Contactez-moi",
+            contact_subtitle: "Je suis toujours ouvert à la discussion de nouveaux projets, d'idées créatives ou d'opportunités. Connectons-nous.",
+            contact_button: "Me Contacter",
+            footer_text: `© ${new Date().getFullYear()} Mohammed EL BARAKA. Tous droits réservés.`,
+            contact_modal_title: "Me Contacter",
+            contact_modal_email: "Envoyer un E-mail",
+            contact_modal_whatsapp: "Message sur WhatsApp",
+            contact_modal_call: "Passer un appel",
+            project_button_report: "Rapport",
+            project_button_presentation: "Présentation",
+            project_button_explain: "✨ Expliquer",
+            project_button_summarize: "✨ Résumer",
+            modal_explaining_title: `✨ Explication : {title}`,
+            modal_summarizing_title: `✨ Résumé : {title}`,
+            modal_skill_projects_title: `🚀 Projets avec {skill}`,
+            modal_list_intro: `Voici les projets où j'ai utilisé <strong>{skill}</strong> :`,
+            pdf_modal_title_report: `Rapport - {title}`,
+            pdf_modal_title_presentation: `Présentation - {title}`,
+            pdf_modal_title_resume: `Mon CV`,
+            projects: [
+                { id: 'mental-health-analytics', title: 'Analyse Prédictive de la Santé Mentale des Étudiants', description: 'Développement de modèles prédictifs utilisant des données de questionnaires et textuelles pour évaluer la santé mentale des étudiants, atteignant une grande précision dans la prédiction de l\'anxiété, la dépression et le stress.' },
+                { id: 'red-fruit-optimization', title: 'Optimisation de la Production de Fruits Rouges', description: 'Conception et mise en œuvre d\'un modèle de programmation linéaire pour maximiser le profit de la production de fruits rouges en serre, en tenant compte de diverses contraintes et scénarios.' },
+                { id: 'powerbi-dashboard', title: 'Intégration de Relevés Bancaires avec Power BI', description: 'Développement d\'un tableau de bord Power BI interactif pour intégrer et visualiser les indicateurs financiers clés des relevés bancaires et des bons de livraison pour une vue de données connectée.' },
+                { id: 'rsa-cryptography', title: 'Attaques contre le RSA à Module Partagé', description: 'Étude et simulation d\'attaques contre le cryptosystème RSA, en se concentrant sur les vulnérabilités des modules partagés pour démontrer les faiblesses cryptographiques.' },
+                { id: 'biomedical-diffusion', title: 'Diffusion d\'Oxygène dans l\'Acinus Pulmonaire', description: 'Réalisation d\'un projet d\'ingénierie biomédicale pour modéliser la diffusion d\'oxygène dans l\'acinus pulmonaire, en résolvant l\'équation de diffusion 2D par des méthodes numériques.' },
+                { id: 'robotics-vision', title: 'Robotique et Détection d\'Images', description: 'Développement d\'un système robotique complet avec des capacités de détection d\'images, de la modélisation 3D sur SolidWorks à la mise en œuvre d\'algorithmes de traitement d\'images en Python.' }
+            ],
+            leadership: [
+                { id: 'rubiks-club', title: "Club de Rubik's Cube UM6P", role: "Président", description: "En tant que Président, j'ai dirigé les activités du club, organisé des ateliers et encouragé une communauté de solutionneurs de problèmes. [AJOUTER PLUS DE DÉTAILS ICI]" },
+                { id: 'eplus-club', title: "Club E++, EMINES", role: "Responsable Sponsoring", description: "J'étais responsable de la recherche de sponsors et de la gestion des partenariats pour financer les projets techniques et événements de notre club. [AJOUTER PLUS DE DÉTAILS ICI]" },
+                { id: 'eastro-club', title: "Club E-Astronomie, EMINES", role: "Responsable Logistique", description: "J'ai coordonné la logistique pour les soirées d'observation et les séminaires éducatifs, en veillant à la disponibilité de tout l'équipement et des ressources. [AJOUTER PLUS DE DÉTAILS ICI]" },
+                { id: 'rotaract-club', title: "Club ROTARACT EMINES", role: "Responsable Communication & Contenu", description: "J'ai géré la présence du club sur les réseaux sociaux et créé du contenu engageant pour promouvoir nos projets de service communautaire. [AJOUTER PLUS DE DÉTAILS ICI]" },
+                { id: 'pingpong-club', title: "Club de Ping Pong UM6P", role: "Responsable Logistique", description: "J'ai organisé des tournois et des séances d'entraînement, gérant tous les aspects logistiques, de la planification à la gestion du matériel. [AJOUTER PLUS DE DÉTAILS ICI]" },
+                { id: 'university-sports', title: "Sports Universitaires", role: "Joueur des équipes de Handball, Volleyball et Football", description: "En tant que membre actif de plusieurs équipes sportives universitaires, j'ai développé de solides compétences en travail d'équipe, discipline et leadership. [AJOUTER PLUS DE DÉTAILS ICI]" }
+            ],
+        },
+        // Arabic
+        ar: {
+            page_title: "محمد البركا - الإدارة الصناعية وعلوم البيانات",
+            nav_about: "عني",
+            nav_projects: "مشاريعي",
+            nav_skills: "مهاراتي",
+            nav_leadership: "القيادة",
+            nav_contact: "تواصل",
+            hero_title: "الإدارة الصناعية،<br>وعلوم البيانات",
+            hero_subtitle: "طالب هندسة في EMINES-UM6P متخصص في الإدارة الصناعية وشغوف بالتحسين وعلوم البيانات وتسخير التكنولوجيا لمواجهة تحديات العالم الحقيقي.",
+            hero_cta_button: "اكتشف أعمالي",
+            about_title: "عني",
+            about_p1: "مرحباً! أنا محمد البركا، طالب هندسة في الإدارة الصناعية بجامعة محمد السادس للفنون التطبيقية (UM6P) المرموقة. رحلتي الأكاديمية، التي بدأت ببرنامج مكثف في الرياضيات والفيزياء، غرست فيّ عقلية تحليلية قوية وقدرة على حل المشكلات.",
+            about_p2: "يدفعني تحدي حل المشكلات المعقدة، خاصة من خلال تطبيق علوم البيانات والتعلم الآلي وخوارزميات التحسين. تتمحور فلسفة عملي حول سد الفجوة بين المعرفة النظرية والتطبيق العملي لتحقيق نتائج ملموسة.",
+            about_p3: "أنا قائد استباقي، وأتقن اللغات العربية والفرنسية والإنجليزية، وأنا حريص دائمًا على التعلم والتعاون وتطبيق مهاراتي في سيناريوهات مؤثرة.",
+            view_resume_button: "📄 عرض سيرتي الذاتية",
+            projects_title: "مشاريعي",
+            skills_title: "المهارات التقنية",
+            leadership_title: "القيادة والأنشطة",
+            contact_title: "تواصل معي",
+            contact_subtitle: "أنا منفتح دائمًا لمناقشة المشاريع الجديدة أو الأفكار الإبداعية أو الفرص. لنتواصل.",
+            contact_button: "تواصل معي",
+            footer_text: `© ${new Date().getFullYear()} محمد البركا. كل الحقوق محفوظة.`,
+            contact_modal_title: "تواصل معي",
+            contact_modal_email: "أرسل بريدًا إلكترونيًا",
+            contact_modal_whatsapp: "راسلني على واتساب",
+            contact_modal_call: "أجرِ مكالمة",
+            project_button_report: "التقرير",
+            project_button_presentation: "التقديم",
+            project_button_explain: "✨ اشرح",
+            project_button_summarize: "✨ لخّص",
+            modal_explaining_title: `✨ شرح: {title}`,
+            modal_summarizing_title: `✨ تلخيص: {title}`,
+            modal_skill_projects_title: `🚀 مشاريع تستخدم {skill}`,
+            modal_list_intro: `هذه هي المشاريع التي استخدمت فيها <strong>{skill}</strong>:`,
+            pdf_modal_title_report: `تقرير - {title}`,
+            pdf_modal_title_presentation: `عرض تقديمي - {title}`,
+            pdf_modal_title_resume: `سيرتي الذاتية`,
+            projects: [
+                 { id: 'mental-health-analytics', title: 'تحليلات تنبؤية للصحة النفسية للطلاب', description: 'تطوير نماذج تنبؤية باستخدام بيانات الاستبيانات والنصوص لتقييم الصحة النفسية للطلاب، وتحقيق دقة عالية في التنبؤ بمستويات القلق والاكتئاب والتوتر.' },
+                 { id: 'red-fruit-optimization', title: 'تحسين إنتاج الفواكه الحمراء', description: 'تصميم وتنفيذ نموذج برمجة خطية لتعظيم الربح من إنتاج الفاكهة الحمراء في البيوت المحمية، مع مراعاة مختلف القيود والسيناريوهات.' },
+                 { id: 'powerbi-dashboard', title: 'دمج كشوف الحسابات البنكية مع Power BI', description: 'تطوير لوحة تحكم Power BI تفاعلية لدمج وتصور المقاييس المالية الرئيسية من كشوف الحسابات البنكية ومذكرات التسليم للحصول على عرض بيانات متصل.' },
+                 { id: 'rsa-cryptography', title: 'هجمات ضد RSA ذات المعامل المشترك', description: 'دراسة ومحاكاة الهجمات ضد نظام التشفير RSA، مع التركيز على نقاط الضعف الناتجة عن الوحدات المشتركة لإظهار نقاط الضعف في التشفير.' },
+                 { id: 'biomedical-diffusion', title: 'انتشار الأكسجين في الحويصلات الرئوية', description: 'إجراء مشروع هندسة طبية حيوية لنمذجة انتشار الأكسجين في الحويصلات الرئوية، وحل معادلة الانتشار ثنائية الأبعاد باستخدام الطرق العددية.' },
+                 { id: 'robotics-vision', title: 'الروبوتات وكشف الصور', description: 'تطوير نظام روبوتي كامل مع إمكانات كشف الصور، من النمذجة ثلاثية الأبعاد في SolidWorks إلى تنفيذ خوارزميات معالجة الصور في Python.' }
+            ],
+            leadership: [
+                { id: 'rubiks-club', title: "نادي مكعب روبيك UM6P", role: "رئيس", description: "بصفتي رئيسًا، قمت بقيادة أنشطة النادي، وتنظيم ورش عمل، وتعزيز مجتمع من حلالي المشكلات. [أضف المزيد من التفاصيل هنا]" },
+                { id: 'eplus-club', title: "نادي E++، EMINES", role: "مدير الرعاية", description: "كنت مسؤولاً عن تأمين الرعاية وإدارة الشراكات لتمويل المشاريع الفنية والفعاليات في نادينا. [أضف المزيد من التفاصيل هنا]" },
+                { id: 'eastro-club', title: "نادي علم الفلك، EMINES", role: "مدير الخدمات اللوجستية", description: "لقد قمت بتنسيق الخدمات اللوجستية لليالي المراقبة والندوات التعليمية، مع ضمان توفر جميع المعدات والموارد. [أضف المزيد من التفاصيل هنا]" },
+                { id: 'rotaract-club', title: "نادي روتاراكت EMINES", role: "مدير الاتصالات والمحتوى", description: "لقد أدرت تواجد النادي على وسائل التواصل الاجتماعي وأنشأت محتوى جذابًا للترويج لمشاريع خدمة المجتمع لدينا. [أضف المزيد من التفاصيل هنا]" },
+                { id: 'pingpong-club', title: "نادي تنس الطاولة UM6P", role: "مدير الخدمات اللوجستية", description: "نظمت بطولات وجلسات تدريبية، وتوليت جميع الجوانب اللوجستية من الجدولة إلى إدارة المعدات. [أضف المزيد من التفاصيل هنا]" },
+                { id: 'university-sports', title: "الرياضة الجامعية", role: "لاعب في فرق كرة اليد والكرة الطائرة وكرة القدم", description: "كعضو نشط في العديد من الفرق الرياضية الجامعية، طورت مهارات قوية في العمل الجماعي والانضباط والقيادة. [أضف المزيد من التفاصيل هنا]" }
+            ],
+        },
+        // Spanish
+        es: {
+            page_title: "Mohammed EL BARAKA - Gestión Industrial y Ciencia de Datos",
+            nav_about: "Sobre mí",
+            nav_projects: "Proyectos",
+            nav_skills: "Habilidades",
+            nav_leadership: "Liderazgo",
+            nav_contact: "Contacto",
+            hero_title: "Gestión Industrial,<br>y Ciencia de Datos",
+            hero_subtitle: "Estudiante de Ingeniería en EMINES-UM6P especializado en Gestión Industrial con pasión por la Optimización, la Ciencia de Datos y el aprovechamiento de la tecnología para resolver desafíos del mundo real.",
+            hero_cta_button: "Ver mi trabajo",
+            about_title: "Sobre Mí",
+            about_p1: "¡Hola! Soy Mohammed EL BARAKA, un estudiante de ingeniería en Gestión Industrial en la prestigiosa Universidad Politécnica Mohammed VI (UM6P). Mi trayectoria académica, que comenzó con un programa intensivo en Matemáticas y Física, me ha inculcado una fuerte mentalidad analítica y de resolución de problemas.",
+            about_p2: "Me impulsa el desafío de desentrañar problemas complejos, particularmente a través de la aplicación de la Ciencia de Datos, el Aprendizaje Automático y los algoritmos de Optimización. Mi filosofía de trabajo se centra en cerrar la brecha entre el conocimiento teórico y la aplicación práctica para crear resultados tangibles.",
+            about_p3: "Soy un líder proactivo, con fluidez en árabe, francés e inglés, y siempre estoy ansioso por aprender, colaborar y aplicar mis habilidades en escenarios de impacto.",
+            view_resume_button: "📄 Ver mi CV",
+            projects_title: "Mis Proyectos",
+            skills_title: "Habilidades Técnicas",
+            leadership_title: "Liderazgo y Actividades",
+            contact_title: "Ponte en Contacto",
+            contact_subtitle: "Siempre estoy abierto a discutir nuevos proyectos, ideas creativas u oportunidades. Conectemos.",
+            contact_button: "Contáctame",
+            footer_text: `© ${new Date().getFullYear()} Mohammed EL BARAKA. Todos los derechos reservados.`,
+            contact_modal_title: "Contáctame",
+            contact_modal_email: "Enviar un Correo",
+            contact_modal_whatsapp: "Mensaje en WhatsApp",
+            contact_modal_call: "Hacer una Llamada",
+            project_button_report: "Informe",
+            project_button_presentation: "Presentación",
+            project_button_explain: "✨ Explicar",
+            project_button_summarize: "✨ Resumir",
+            modal_explaining_title: `✨ Explicando: {title}`,
+            modal_summarizing_title: `✨ Resumiendo: {title}`,
+            modal_skill_projects_title: `🚀 Proyectos con {skill}`,
+            modal_list_intro: `Aquí están los proyectos donde usé <strong>{skill}</strong>:`,
+            pdf_modal_title_report: `Informe - {title}`,
+            pdf_modal_title_presentation: `Presentación - {title}`,
+            pdf_modal_title_resume: `Mi Currículum`,
+            projects: [
+                { id: 'mental-health-analytics', title: 'Análisis Predictivo de la Salud Mental Estudiantil', description: 'Desarrollé modelos predictivos utilizando datos de cuestionarios y texto para evaluar la salud mental de los estudiantes, logrando una alta precisión en la predicción de los niveles de ansiedad, depresión y estrés.' },
+                { id: 'red-fruit-optimization', title: 'Optimización de la Producción de Frutos Rojos', description: 'Diseñé e implementé un modelo de Programación Lineal para maximizar el beneficio de la producción de frutos rojos en invernaderos, considerando diversas restricciones y escenarios.' },
+                { id: 'powerbi-dashboard', title: 'Integración de Extractos Bancarios con Power BI', description: 'Desarrollé un panel de Power BI interactivo para integrar y visualizar métricas financieras clave de extractos bancarios y albaranes de entrega para una vista de datos conectada.' },
+                { id: 'rsa-cryptography', title: 'Ataques Contra RSA de Módulo Compartido', description: 'Estudié y simulé ataques contra el criptosistema RSA, centrándome en las vulnerabilidades de los módulos compartidos para demostrar las debilidades criptográficas.' },
+                { id: 'biomedical-diffusion', title: 'Difusión de Oxígeno en el Acino Pulmonar', description: 'Realicé un proyecto de ingeniería biomédica para modelar la difusión de oxígeno en el acino pulmonar, resolviendo la ecuación de difusión 2D utilizando métodos numéricos.' },
+                { id: 'robotics-vision', title: 'Robótica y Detección de Imágenes', description: 'Desarrollé un sistema robótico completo con capacidades de detección de imágenes, desde el modelado 3D en SolidWorks hasta la implementación de algoritmos de procesamiento de imágenes en Python.' }
+            ],
+            leadership: [
+                { id: 'rubiks-club', title: "Club de Cubo de Rubik UM6P", role: "Presidente", description: "Como Presidente, lideré las actividades del club, organicé talleres y fomenté una comunidad de solucionadores de problemas. [AÑADIR MÁS DETALLES AQUÍ]" },
+                { id: 'eplus-club', title: "Club E++, EMINES", role: "Gerente de Patrocinios", description: "Fui responsable de asegurar patrocinios y gestionar alianzas para financiar los proyectos técnicos y eventos de nuestro club. [AÑADIR MÁS DETALLES AQUÍ]" },
+                { id: 'eastro-club', title: "Club de E-Astronomía, EMINES", role: "Gerente de Logística", description: "Coordiné la logística para las noches de observación y seminarios educativos, asegurando que todo el equipo y los recursos estuvieran disponibles. [AÑADIR MÁS DETALLES AQUÍ]" },
+                { id: 'rotaract-club', title: "Club ROTARACT EMINES", role: "Gerente de Comunicación y Contenido", description: "Gestioné la presencia del club en las redes sociales y creé contenido atractivo para promover nuestros proyectos de servicio comunitario. [AÑADIR MÁS DETALLES AQUÍ]" },
+                { id: 'pingpong-club', title: "Club de Ping Pong UM6P", role: "Gerente de Logística", description: "Organicé torneos y sesiones de práctica, manejando todos los aspectos logísticos desde la programación hasta la gestión de equipos. [AÑADIR MÁS DETALLES AQUÍ]" },
+                { id: 'university-sports', title: "Deportes Universitarios", role: "Jugador de los equipos de Balonmano, Voleibol y Fútbol", description: "Como miembro activo de múltiples equipos deportivos universitarios, desarrollé sólidas habilidades de trabajo en equipo, disciplina y liderazgo. [AÑADIR MÁS DETALLES AQUÍ]" }
+            ],
+        },
+        // Mandarin Chinese
+        zh: {
+            page_title: "Mohammed EL BARAKA - 工业管理与数据科学",
+            nav_about: "关于",
+            nav_projects: "项目",
+            nav_skills: "技能",
+            nav_leadership: "领导力",
+            nav_contact: "联系",
+            hero_title: "工业管理<br>与数据科学",
+            hero_subtitle: "一名EMINES-UM6P的工程专业学生，主修工业管理，热衷于优化、数据科学，并利用技术解决现实世界中的挑战。(Pinyin: Yī míng EMINES-UM6P de gōngchéng zhuānyè xuéshēng, zhǔ xiū gōngyè guǎnlǐ, rèzhōng yú yōuhuà, shùjù kēxué, bìng lìyòng jìshù jiějué xiànshí shìjiè zhōng de tiǎozhàn.)",
+            hero_cta_button: "查看我的作品",
+            about_title: "关于我",
+            about_p1: "你好！我是Mohammed EL BARAKA，是著名的穆罕默德六世理工大学（UM6P）工业管理工程专业的学生。我的学术旅程始于数学和物理的强化课程，这培养了我强大的分析和解决问题的思维能力。(Pinyin: Nǐ hǎo! Wǒ shì Mohammed EL BARAKA, shì zhùmíng de Mùhǎnmòdé liùshì lǐgōng dàxué (UM6P) gōngyè guǎnlǐ gōngchéng zhuānyè de xuéshēng. Wǒ de xuéshù lǚchéng shǐ yú shùxué hé wùlǐ de qiánghuà kèchéng, zhè péiyǎngle wǒ qiángdà de fēnxī hé jiějué wèntí de sīwéi nénglì.)",
+            about_p2: "我被解决复杂问题的挑战所驱动，特别是通过应用数据科学、机器学习和优化算法。我的工作理念是弥合理论知识与实际应用之间的差距，以创造切实的成果。(Pinyin: Wǒ bèi jiějué fùzá wèntí de tiǎozhàn suǒ qūdòng, tèbié shì tōngguò yìngyòng shùjù kēxué, jīqì xuéxí hé yōuhuà suànfǎ. Wǒ de gōngzuò lǐniàn shì míhé lǐlùn zhīshì yǔ shíjì yìngyòng zhī jiān de chājù, yǐ chuàngzào qièshí de chéngguǒ.)",
+            about_p3: "我是一个积极主动的领导者，精通阿拉伯语、法语和英语，并总是渴望学习、合作，并将我的技能应用于有影响力的场景中。(Pinyin: Wǒ shì yīgè jījí zhǔdòng de lǐngdǎo zhě, jīngtōng ā lābó yǔ, fǎyǔ hé yīngyǔ, bìng zǒng shì kěwàng xuéxí, hézuò, bìng jiāng wǒ de jìnéng yìngyòng yú yǒu yǐngxiǎng lì de chǎngjǐng zhōng.)",
+            view_resume_button: "📄 查看我的简历",
+            projects_title: "我的项目",
+            skills_title: "技术技能",
+            leadership_title: "领导力与活动",
+            contact_title: "联系我",
+            contact_subtitle: "我随时乐意讨论新项目、创意或机会。让我们建立联系吧。",
+            contact_button: "联系我",
+            footer_text: `© ${new Date().getFullYear()} Mohammed EL BARAKA. 版权所有。`,
+            contact_modal_title: "联系我",
+            contact_modal_email: "发送电子邮件",
+            contact_modal_whatsapp: "在WhatsApp上留言",
+            contact_modal_call: "拨打电话",
+            project_button_report: "报告",
+            project_button_presentation: "演示",
+            project_button_explain: "✨ 解释",
+            project_button_summarize: "✨ 总结",
+            modal_explaining_title: `✨ 解释：{title}`,
+            modal_summarizing_title: `✨ 总结：{title}`,
+            modal_skill_projects_title: `🚀 使用 {skill} 的项目`,
+            modal_list_intro: `这是我使用 <strong>{skill}</strong> 的项目：`,
+            pdf_modal_title_report: `报告 - {title}`,
+            pdf_modal_title_presentation: `演示 - {title}`,
+            pdf_modal_title_resume: `我的简历`,
+            projects: [
+                { id: 'mental-health-analytics', title: '学生心理健康预测分析', description: '使用问卷和文本数据开发预测模型来评估学生的心理健康状况，在预测焦虑、抑郁和压力水平方面实现了高准确性。' },
+                { id: 'red-fruit-optimization', title: '红果生产优化', description: '设计并实施了一个线性规划模型，以最大化温室中红果生产的利润，同时考虑了各种约束和情景。' },
+                { id: 'powerbi-dashboard', title: '银行对账单与Power BI集成', description: '开发了一个交互式Power BI仪表板，用于整合和可视化银行对账单和交货单中的关键财务指标，以实现连接的数据视图。' },
+                { id: 'rsa-cryptography', title: '针对共享模数RSA的攻击', description: '研究并模拟了针对RSA密码系统的攻击，重点关注共享模数带来的漏洞，以展示密码学弱点。' },
+                { id: 'biomedical-diffusion', title: '肺腺泡中的氧气扩散', description: '进行了一个生物医学工程项目，对肺腺泡中的氧气扩散进行建模，使用数值方法求解二维扩散方程。' },
+                { id: 'robotics-vision', title: '机器人技术与图像检测', description: '开发了一个完整的具有图像检测功能的机器人系统，从在SolidWorks中进行3D建模到在Python中实现图像处理算法。' }
+            ],
+            leadership: [
+                { id: 'rubiks-club', title: "UM6P 魔方俱乐部", role: "主席", description: "作为主席，我领导了俱乐部的活动，组织了研讨会，并培养了一个解决问题的社区。 [在此处添加更多详细信息]" },
+                { id: 'eplus-club', title: "E++ 俱乐部, EMINES", role: "赞助经理", description: "我负责获得赞助和管理合作伙伴关系，以资助我们俱乐部的技术项目和活动。 [在此处添加更多详细信息]" },
+                { id: 'eastro-club', title: "E-天文学俱乐部, EMINES", role: "后勤经理", description: "我协调了观察之夜和教育研讨会的后勤工作，确保所有设备和资源都可用。 [在此处添加更多详细信息]" },
+                { id: 'rotaract-club', title: "ROTARACT EMINES 俱乐部", role: "沟通与内容经理", description: "我管理了俱乐部的社交媒体形象，并创建了引人入胜的内容来推广我们的社区服务项目。 [在此处添加更多详细信息]" },
+                { id: 'pingpong-club', title: "UM6P 乒乓球俱乐部", role: "后勤经理", description: "我组织了比赛和练习赛，处理从日程安排到设备管理的所有后勤方面。 [在此处添加更多详细信息]" },
+                { id: 'university-sports', title: "大学体育", role: "手球、排球和足球队队员", description: "作为多个大学运动队的活跃成员，我培养了强大的团队合作、纪律和领导能力。 [在此处添加更多详细信息]" }
+            ],
+        },
+        // Portuguese
+        pt: {
+            page_title: "Mohammed EL BARAKA - Gestão Industrial & Ciência de Dados",
+            nav_about: "Sobre",
+            nav_projects: "Projetos",
+            nav_skills: "Habilidades",
+            nav_leadership: "Liderança",
+            nav_contact: "Contato",
+            hero_title: "Gestão Industrial,<br>& Ciência de Dados",
+            hero_subtitle: "Estudante de Engenharia na EMINES-UM6P, especializado em Gestão Industrial, com paixão por Otimização, Ciência de Dados e por alavancar a tecnologia para resolver desafios do mundo real.",
+            hero_cta_button: "Ver Meus Trabalhos",
+            about_title: "Sobre Mim",
+            about_p1: "Olá! Sou Mohammed EL BARAKA, um estudante de engenharia em Gestão Industrial na prestigiosa Universidade Politécnica Mohammed VI (UM6P). Minha jornada acadêmica, começando com um programa intensivo em Matemática e Física, incutiu em mim uma forte mentalidade analítica e de resolução de problemas.",
+            about_p2: "Sou motivado pelo desafio de desvendar problemas complexos, particularmente através da aplicação de Ciência de Dados, Aprendizado de Máquina e algoritmos de Otimização. Minha filosofia de trabalho está centrada em preencher a lacuna entre o conhecimento teórico e a aplicação prática para criar resultados tangíveis.",
+            about_p3: "Sou um líder proativo, fluente em árabe, francês e inglês, e sempre ansioso para aprender, colaborar e aplicar minhas habilidades em cenários de impacto.",
+            view_resume_button: "📄 Ver Meu Currículo",
+            projects_title: "Meus Projetos",
+            skills_title: "Habilidades Técnicas",
+            leadership_title: "Liderança & Atividades",
+            contact_title: "Entre em Contato",
+            contact_subtitle: "Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades. Vamos nos conectar.",
+            contact_button: "Contate-me",
+            footer_text: `© ${new Date().getFullYear()} Mohammed EL BARAKA. Todos os direitos reservados.`,
+            contact_modal_title: "Contate-me",
+            contact_modal_email: "Enviar um E-mail",
+            contact_modal_whatsapp: "Mensagem no WhatsApp",
+            contact_modal_call: "Fazer uma Chamada",
+            project_button_report: "Relatório",
+            project_button_presentation: "Apresentação",
+            project_button_explain: "✨ Explicar",
+            project_button_summarize: "✨ Resumir",
+            modal_explaining_title: `✨ Explicando: {title}`,
+            modal_summarizing_title: `✨ Resumindo: {title}`,
+            modal_skill_projects_title: `🚀 Projetos com {skill}`,
+            modal_list_intro: `Aqui estão os projetos onde usei <strong>{skill}</strong>:`,
+            pdf_modal_title_report: `Relatório - {title}`,
+            pdf_modal_title_presentation: `Apresentação - {title}`,
+            pdf_modal_title_resume: `Meu Currículo`,
+            projects: [
+                { id: 'mental-health-analytics', title: 'Análise Preditiva da Saúde Mental de Estudantes', description: 'Desenvolvi modelos preditivos usando dados de questionários e textos para avaliar a saúde mental dos estudantes, alcançando alta precisão na previsão de níveis de ansiedade, depressão e estresse.' },
+                { id: 'red-fruit-optimization', title: 'Otimização da Produção de Frutas Vermelhas', description: 'Projetei e implementei um modelo de Programação Linear para maximizar o lucro da produção de frutas vermelhas em estufas, considerando várias restrições e cenários.' },
+                { id: 'powerbi-dashboard', title: 'Integração de Extratos Bancários com Power BI', description: 'Desenvolvi um painel interativo do Power BI para integrar e visualizar métricas financeiras chave de extratos bancários e notas de entrega para uma visão de dados conectada.' },
+                { id: 'rsa-cryptography', title: 'Ataques Contra RSA de Módulo Compartilhado', description: 'Estudei e simulei ataques contra o criptossistema RSA, focando nas vulnerabilidades de módulos compartilhados para demonstrar fraquezas criptográficas.' },
+                { id: 'biomedical-diffusion', title: 'Difusão de Oxigênio no Ácino Pulmonar', description: 'Conduzi um projeto de engenharia biomédica para modelar a difusão de oxigênio no ácino pulmonar, resolvendo a equação de difusão 2D usando métodos numéricos.' },
+                { id: 'robotics-vision', title: 'Robótica e Detecção de Imagem', description: 'Desenvolvi um sistema robótico completo com capacidades de detecção de imagem, desde a modelagem 3D no SolidWorks até a implementação de algoritmos de processamento de imagem em Python.' }
+            ],
+            leadership: [
+                { id: 'rubiks-club', title: "Clube do Cubo de Rubik da UM6P", role: "Presidente", description: "Como Presidente, liderei as atividades do clube, organizei workshops e promovi uma comunidade de solucionadores de problemas. [ADICIONE MAIS DETALHES AQUI]" },
+                { id: 'eplus-club', title: "Clube E++, EMINES", role: "Gerente de Patrocínios", description: "Fui responsável por garantir patrocínios e gerenciar parcerias para financiar os projetos técnicos e eventos do nosso clube. [ADICIONE MAIS DETALHES AQUI]" },
+                { id: 'eastro-club', title: "Clube de E-Astronomia, EMINES", role: "Gerente de Logística", description: "Coordenei a logística para noites de observação e seminários educacionais, garantindo que todos os equipamentos e recursos estivessem disponíveis. [ADICIONE MAIS DETALHES AQUI]" },
+                { id: 'rotaract-club', title: "Clube ROTARACT EMINES", role: "Gerente de Comunicação e Conteúdo", description: "Gerenciei a presença do clube nas redes sociais e criei conteúdo envolvente para promover nossos projetos de serviço comunitário. [ADICIONE MAIS DETALHES AQUI]" },
+                { id: 'pingpong-club', title: "Clube de Tênis de Mesa da UM6P", role: "Gerente de Logística", description: "Organizei torneios e sessões de treinamento, cuidando de todos os aspectos logísticos, desde o agendamento até a gestão de equipamentos. [ADICIONE MAIS DETALHES AQUI]" },
+                { id: 'university-sports', title: "Esportes Universitários", role: "Jogador das equipes de Handebol, Voleibol e Futebol", description: "Como membro ativo de várias equipes esportivas universitárias, desenvolvi fortes habilidades de trabalho em equipe, disciplina e liderança. [ADICIONE MAIS DETALHES AQUI]" }
+            ],
+        },
+    };
 
-        const skillsData = [ 'Python', 'Java', 'C', 'JavaScript', 'Bash', 'SQL', 'HTML', 'CSS', 'Machine Learning', 'Data Analysis', 'NLP', 'Optimization Algorithms', 'Linear Programming', 'Power BI', 'VBA', 'Excel', 'Robotics', 'SolidWorks', 'QGIS', 'Image Detection', 'Cryptography', 'Cybersecurity', 'Pentesting Tools', 'Django', 'SageMath', 'Manim', 'Overleaf', 'Git', 'AI Prompt Engineering' ];
+    const projectsData = [
+        { id: 'mental-health-analytics', technologies: ['Machine Learning', 'NLP', 'Python', 'Scikit-learn', 'NLTK', 'Classification Models'], reportUrl: 'https://drive.google.com/uc?export=download&id=1Cp_Cupva8F4uSI2EazpcSfWHdSHvJQ9E', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_analytics_edge.pdf' },
+        { id: 'red-fruit-optimization', technologies: ['Linear Programming', 'Python', 'Pulp', 'Optimization Modeling', 'Algorithm Design'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_optimization.pdf', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_optimization.pdf' },
+        { id: 'powerbi-dashboard', technologies: ['Power BI', 'Excel', 'Data Analysis', 'Dashboard Design', 'VBA'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_power_bi.pdf', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_power_bi.pdf' },
+        { id: 'rsa-cryptography', technologies: ['Cryptography', 'RSA Algorithm', 'Cryptanalysis', 'Number Theory', 'SageMath', 'Python'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_cryptography.pdf', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_cryptography.pdf' },
+        { id: 'biomedical-diffusion', technologies: ['Mathematical Modeling', 'Numerical Methods', 'Python', 'NumPy', 'SciPy', 'Matplotlib'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_biomedical_engineering.pdf', presentationUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/presentations/presentation_biomedical_engineering.pdf' },
+        { id: 'robotics-vision', technologies: ['Robotics', 'Python', 'Image Detection', 'SolidWorks', 'OpenCV'], reportUrl: 'https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/main/reports/report_robotics.pdf', presentationUrl: 'https://drive.google.com/file/d/1wfSLCAMlytJtU9o-8Wmbm4LTd2gfQ4Fz/view?usp=drive_link' }
+    ];
+
+    const skillsData = [ 'Python', 'Java', 'C', 'JavaScript', 'Bash', 'SQL', 'HTML', 'CSS', 'Machine Learning', 'Data Analysis', 'NLP', 'Optimization Algorithms', 'Linear Programming', 'Power BI', 'VBA', 'Excel', 'Robotics', 'SolidWorks', 'QGIS', 'Image Detection', 'Cryptography', 'Cybersecurity', 'Pentesting Tools', 'Django', 'SageMath', 'Manim', 'Overleaf', 'Git', 'AI Prompt Engineering' ];
+
+    const leadershipData = [
+         { id: 'rubiks-club', imageUrl: 'https://via.placeholder.com/600x400.png/1F1F1F/A78BFA?text=Rubiks+Club' },
+         { id: 'eplus-club', imageUrl: 'https://via.placeholder.com/600x400.png/1F1F1F/A78BFA?text=E++Club' },
+         { id: 'eastro-club', imageUrl: 'https://via.placeholder.com/600x400.png/1F1F1F/A78BFA?text=Astronomy+Club' },
+         { id: 'rotaract-club', imageUrl: 'https://via.placeholder.com/600x400.png/1F1F1F/A78BFA?text=Rotaract' },
+         { id: 'pingpong-club', imageUrl: 'https://via.placeholder.com/600x400.png/1F1F1F/A78BFA?text=PingPong+Club' },
+         { id: 'university-sports', imageUrl: 'https://via.placeholder.com/600x400.png/1F1F1F/A78BFA?text=Sports' }
+    ];
+
+    let currentLang = 'en';
+
+    function switchLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('preferredLanguage', lang);
         
-        const leadershipData = [
-            { id: 'rubiks-club', title: "UM6P Rubik's Cube Club", role: "President", imageUrl: 'https://via.placeholder.com/600x400.png/1F1F1F/A78BFA?text=Rubiks+Club+Image', description: "As President, I led the club's activities, organized workshops, and fostered a community of problem-solvers. [ADD MORE DETAILS HERE]" },
-            { id: 'eplus-club', title: "E++ Club, EMINES", role: "Sponsoring Manager", imageUrl: 'https://via.placeholder.com/600x400.png/1F1F1F/A78BFA?text=E++Club+Image', description: "I was responsible for securing sponsorships and managing partnerships to fund our club's technical projects and events. [ADD MORE DETAILS HERE]" },
-            { id: 'eastro-club', title: "E-Astronomy Club, EMINES", role: "Logistics Manager", imageUrl: 'https://via.placeholder.com/600x400.png/1F1F1F/A78BFA?text=Astronomy+Club+Image', description: "I coordinated the logistics for observation nights and educational seminars, ensuring all equipment and resources were available. [ADD MORE DETAILS HERE]" },
-            { id: 'rotaract-club', title: "ROTARACT EMINES Club", role: "Communication & Content Manager", imageUrl: 'https://via.placeholder.com/600x400.png/1F1F1F/A78BFA?text=Rotaract+Image', description: "I managed the club's social media presence and created engaging content to promote our community service projects. [ADD MORE DETAILS HERE]" },
-            { id: 'pingpong-club', title: "UM6P Ping Pong Club", role: "Logistics Manager", imageUrl: 'https://via.placeholder.com/600x400.png/1F1F1F/A78BFA?text=PingPong+Club+Image', description: "I organized tournaments and practice sessions, handling all logistical aspects from scheduling to equipment management. [ADD MORE DETAILS HERE]" },
-            { id: 'university-sports', title: "University Sports", role: "Player for Handball, Volleyball, and Football teams", imageUrl: 'https://via.placeholder.com/600x400.png/1F1F1F/A78BFA?text=Sports+Image', description: "As an active member of multiple university sports teams, I developed strong teamwork, discipline, and leadership skills. [ADD MORE DETAILS HERE]" }
-        ];
+        const langData = translations[lang];
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
-        // --- MODAL & UI ---
-        const loaderHTML = `<div class="flex justify-center items-center h-32"><div class="loader"></div></div>`;
-        
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (!modal) return;
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modal.querySelector('.modal-content').classList.remove('scale-95');
-        }
-
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (!modal) return;
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            modal.querySelector('.modal-content').classList.add('scale-95');
-        }
-
-        function openContactModal() { openModal('contact-modal'); }
-
-        // --- DYNAMIC CONTENT GENERATION ---
-        document.addEventListener('DOMContentLoaded', () => {
-            const projectGrid = document.getElementById('project-grid');
-            projectsData.forEach(project => {
-                const card = document.createElement('div');
-                card.className = 'item-card';
-                card.innerHTML = `
-                    <div class="card-body">
-                        <div>
-                            <h3 class="card-title text-xl mb-2">${project.title}</h3>
-                            <p class="card-text text-gray-400 mb-4 text-sm">${project.description}</p>
-                            <p class="text-xs text-gray-500 mb-4"><b>Technologies:</b> ${project.technologies.join(', ')}</p>
-                        </div>
-                        <div class="mt-auto pt-4 grid grid-cols-2 gap-2 text-sm">
-                            <button onclick="viewPdf('${project.reportUrl}', '${project.title} Report')" class="bg-gray-700/50 hover:bg-gray-600/50 p-2 rounded-md transition-colors">View Report</button>
-                            <button onclick="viewPdf('${project.presentationUrl}', '${project.title} Presentation')" class="bg-gray-700/50 hover:bg-gray-600/50 p-2 rounded-md transition-colors">View Presentation</button>
-                            <button onclick="explainProject('${project.id}')" class="bg-violet-700/80 hover:bg-violet-600/80 p-2 rounded-md transition-colors col-span-1">✨ Explain</button>
-                            <button onclick="summarizeProject('${project.id}')" class="bg-purple-700/80 hover:bg-purple-600/80 p-2 rounded-md transition-colors col-span-1">✨ Summarize</button>
-                        </div>
-                    </div>`;
-                projectGrid.appendChild(card);
-            });
-
-            const skillsContainer = document.getElementById('skills-container');
-            skillsData.forEach(skill => {
-                const tag = document.createElement('span');
-                tag.className = 'skill-tag font-semibold px-4 py-2 rounded-full text-base';
-                tag.textContent = skill;
-                tag.onclick = () => showSkillDetails(skill);
-                skillsContainer.appendChild(tag);
-            });
-            
-            const leadershipGrid = document.getElementById('leadership-grid');
-            leadershipData.forEach(activity => {
-                 const card = document.createElement('div');
-                 card.className = 'item-card clickable';
-                 card.onclick = () => openLeadershipModal(activity.id);
-                 card.innerHTML = `
-                    <div class="card-body text-center">
-                        <h3 class="card-title text-xl">${activity.title}</h3>
-                        <p class="font-semibold" style="color: var(--primary-color);">${activity.role}</p>
-                    </div>`;
-                leadershipGrid.appendChild(card);
-            });
-
-        });
-
-        function openLeadershipModal(activityId) {
-            const activity = leadershipData.find(item => item.id === activityId);
-            if (!activity) return;
-
-            document.getElementById('leadership-modal-title').textContent = activity.title;
-            document.getElementById('leadership-modal-img').src = activity.imageUrl;
-            document.getElementById('leadership-modal-img').alt = activity.title;
-            document.getElementById('leadership-modal-desc').textContent = activity.description;
-            
-            openModal('leadership-modal');
-        }
-
-
-        // --- COMPLETE PDF VIEWER LOGIC ---
-        let pdfDoc = null;
-        let currentScale = 1.0;
-        let currentPdfUrl = '';
-        const pdfViewer = document.getElementById('pdf-viewer');
-
-        async function viewPdf(url, title) {
-            currentPdfUrl = url;
-            document.getElementById('pdf-modal-title').textContent = title;
-            pdfViewer.innerHTML = loaderHTML;
-            openModal('pdf-modal');
-            try {
-                pdfDoc = await pdfjsLib.getDocument(url).promise;
-                const firstPage = await pdfDoc.getPage(1);
-                const viewport = firstPage.getViewport({ scale: 3 });
-                currentScale = pdfViewer.clientWidth / viewport.width;
-                await renderAllPages();
-            } catch (error) {
-                pdfViewer.innerHTML = `<p class="text-red-400 text-center">Sorry, the PDF could not be loaded. Error: ${error.message}</p>`;
+        document.querySelectorAll('[data-translate-key]').forEach(el => {
+            const key = el.dataset.translateKey;
+            if (langData[key]) {
+                el.innerHTML = langData[key];
             }
+        });
+        
+        document.title = langData.page_title;
+        
+        renderProjects(lang);
+        renderLeadership(lang);
+        renderSkills();
+    }
+    
+    function renderProjects(lang) {
+        const projectGrid = document.getElementById('project-grid');
+        projectGrid.innerHTML = '';
+        const langProjects = translations[lang].projects;
+        const langStrings = translations[lang];
+
+        projectsData.forEach(pData => {
+            const translatedProject = langProjects.find(t => t.id === pData.id);
+            if (!translatedProject) return;
+
+            const card = document.createElement('div');
+            card.className = 'item-card';
+            card.innerHTML = `
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title text-xl mb-2">${translatedProject.title}</h3>
+                        <p class="card-text text-gray-400 mb-4 text-sm">${translatedProject.description}</p>
+                        <p class="text-xs text-gray-500 mb-4"><b>Technologies:</b> ${pData.technologies.join(', ')}</p>
+                    </div>
+                    <div class="mt-auto pt-4 grid grid-cols-2 gap-2 text-sm">
+                        <button onclick="viewPdf('${pData.reportUrl}', 'report', '${pData.id}')" class="bg-gray-700/50 hover:bg-gray-600/50 p-2 rounded-md transition-colors">${langStrings.project_button_report}</button>
+                        <button onclick="viewPdf('${pData.presentationUrl}', 'presentation', '${pData.id}')" class="bg-gray-700/50 hover:bg-gray-600/50 p-2 rounded-md transition-colors">${langStrings.project_button_presentation}</button>
+                        <button onclick="explainProject('${pData.id}')" class="bg-violet-700/80 hover:bg-violet-600/80 p-2 rounded-md transition-colors col-span-1">${langStrings.project_button_explain}</button>
+                        <button onclick="summarizeProject('${pData.id}')" class="bg-purple-700/80 hover:bg-purple-600/80 p-2 rounded-md transition-colors col-span-1">${langStrings.project_button_summarize}</button>
+                    </div>
+                </div>`;
+            projectGrid.appendChild(card);
+        });
+    }
+
+    function renderSkills() {
+        const skillsContainer = document.getElementById('skills-container');
+        skillsContainer.innerHTML = '';
+        skillsData.forEach(skill => {
+            const tag = document.createElement('span');
+            tag.className = 'skill-tag font-semibold px-4 py-2 rounded-full text-base';
+            tag.textContent = skill;
+            tag.onclick = () => showSkillDetails(skill);
+            skillsContainer.appendChild(tag);
+        });
+    }
+
+    function renderLeadership(lang) {
+        const leadershipGrid = document.getElementById('leadership-grid');
+        leadershipGrid.innerHTML = '';
+        const langLeadership = translations[lang].leadership;
+
+        leadershipData.forEach(lData => {
+            const translatedActivity = langLeadership.find(t => t.id === lData.id);
+            if (!translatedActivity) return;
+
+            const card = document.createElement('div');
+            card.className = 'item-card clickable';
+            card.onclick = () => openLeadershipModal(lData.id);
+            card.innerHTML = `
+                <div class="card-body text-center">
+                    <h3 class="card-title text-xl">${translatedActivity.title}</h3>
+                    <p class="font-semibold" style="color: var(--primary-color);">${translatedActivity.role}</p>
+                </div>`;
+            leadershipGrid.appendChild(card);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('preferredLanguage');
+        const browserLang = navigator.language.split('-')[0];
+        
+        let initialLang = 'en';
+        if (savedLang && translations[savedLang]) {
+            initialLang = savedLang;
+        } else if (translations[browserLang]) {
+            initialLang = browserLang;
         }
 
-        async function renderAllPages() {
-            if (!pdfDoc) return;
-            pdfViewer.innerHTML = '';
-            document.getElementById('zoom-level').textContent = `${Math.round(currentScale * 100)}%`;
-            for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
-                const page = await pdfDoc.getPage(pageNum);
-                const viewport = page.getViewport({ scale: currentScale });
-                const pageContainer = document.createElement('div');
-                pageContainer.className = 'mx-auto mb-4 relative';
-                pageContainer.style.width = `${viewport.width}px`;
-                pageContainer.style.height = `${viewport.height}px`;
-                const canvas = document.createElement('canvas');
-                const context = canvas.getContext('2d');
-                const devicePixelRatio = window.devicePixelRatio || 1;
-                canvas.width = viewport.width * devicePixelRatio;
-                canvas.height = viewport.height * devicePixelRatio;
-                canvas.style.width = '100%';
-                canvas.style.height = '100%';
-                pageContainer.appendChild(canvas);
-                const renderContext = { canvasContext: context, viewport: viewport, transform: devicePixelRatio !== 1 ? [devicePixelRatio, 0, 0, devicePixelRatio, 0, 0] : null };
-                const textLayerDiv = document.createElement('div');
-                textLayerDiv.className = 'textLayer';
-                pageContainer.appendChild(textLayerDiv);
-                pdfViewer.appendChild(pageContainer);
-                await page.render(renderContext).promise;
+        document.getElementById('lang-selector').value = initialLang;
+        switchLanguage(initialLang);
+    });
+    
+    const loaderHTML = `<div class="flex justify-center items-center h-32"><div class="loader"></div></div>`;
+    
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (!modal) return;
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.querySelector('.modal-content').classList.remove('scale-95');
+    }
+
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (!modal) return;
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        modal.querySelector('.modal-content').classList.add('scale-95');
+    }
+
+    function openContactModal() { openModal('contact-modal'); }
+
+    function openLeadershipModal(activityId) {
+        const activity = leadershipData.find(item => item.id === activityId);
+        const translatedActivity = translations[currentLang].leadership.find(item => item.id === activityId);
+        if (!activity || !translatedActivity) return;
+
+        document.getElementById('leadership-modal-title').textContent = translatedActivity.title;
+        document.getElementById('leadership-modal-img').src = activity.imageUrl;
+        document.getElementById('leadership-modal-img').alt = translatedActivity.title;
+        document.getElementById('leadership-modal-desc').textContent = translatedActivity.description;
+        
+        openModal('leadership-modal');
+    }
+
+    let pdfDoc = null;
+    let currentScale = 1.0;
+    let currentPdfUrl = '';
+    const pdfViewer = document.getElementById('pdf-viewer');
+
+    async function viewPdf(url, type, id) {
+        currentPdfUrl = url;
+        const langStrings = translations[currentLang];
+        let title = '';
+
+        if (type === 'resume') {
+             title = langStrings.pdf_modal_title_resume;
+        } else {
+             const project = translations[currentLang].projects.find(p => p.id === id);
+             if (project) {
+                title = (type === 'report' ? langStrings.pdf_modal_title_report : langStrings.pdf_modal_title_presentation).replace('{title}', project.title);
+             }
+        }
+        
+        document.getElementById('pdf-modal-title').textContent = title;
+        pdfViewer.innerHTML = loaderHTML;
+        openModal('pdf-modal');
+        
+        try {
+            pdfDoc = await pdfjsLib.getDocument(url).promise;
+            const firstPage = await pdfDoc.getPage(1);
+            currentScale = pdfViewer.clientWidth / firstPage.getViewport({ scale: 1.0 }).width;
+            await renderAllPages();
+        } catch (error) {
+            pdfViewer.innerHTML = `<p class="text-red-400 text-center p-4">Sorry, the PDF could not be loaded. It might be unavailable or blocked by browser security (CORS).<br><br>Error: ${error.message}</p>`;
+        }
+    }
+
+    async function renderAllPages() {
+        if (!pdfDoc) return;
+        pdfViewer.innerHTML = '';
+        document.getElementById('zoom-level').textContent = `${Math.round(currentScale * 100)}%`;
+        
+        for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
+            const page = await pdfDoc.getPage(pageNum);
+            const viewport = page.getViewport({ scale: currentScale });
+            const pageContainer = document.createElement('div');
+            pageContainer.className = 'mx-auto mb-4 relative';
+            pageContainer.style.width = `${viewport.width}px`;
+            pageContainer.style.height = `${viewport.height}px`;
+            
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            const devicePixelRatio = window.devicePixelRatio || 1;
+            canvas.width = viewport.width * devicePixelRatio;
+            canvas.height = viewport.height * devicePixelRatio;
+            canvas.style.width = '100%';
+            canvas.style.height = '100%';
+            pageContainer.appendChild(canvas);
+            
+            const renderContext = {
+                canvasContext: context,
+                viewport: viewport,
+                transform: devicePixelRatio !== 1 ? [devicePixelRatio, 0, 0, devicePixelRatio, 0, 0] : null
+            };
+            
+            await page.render(renderContext).promise;
+            
+            const textLayerDiv = document.createElement('div');
+            textLayerDiv.className = 'textLayer';
+            pageContainer.appendChild(textLayerDiv);
+            
+            const textContent = await page.getTextContent();
+            pdfjsLib.renderTextLayer({ textContent, container: textLayerDiv, viewport, textDivs: [] });
+        }
+    }
+
+    function zoomIn() { if (pdfDoc) { currentScale += 0.2; renderAllPages(); } }
+    function zoomOut() { if (pdfDoc && currentScale > 0.3) { currentScale -= 0.2; renderAllPages(); } }
+    function downloadPdf() {
+        if (!currentPdfUrl) return;
+        const link = document.createElement('a');
+        link.href = currentPdfUrl;
+        link.download = currentPdfUrl.split('/').pop() || 'download.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+    function openInNewTab() { if (currentPdfUrl) { window.open(currentPdfUrl, '_blank'); } }
+
+    async function getTextFromPdf(url) {
+        // A 'proxy' is needed for cross-origin (CORS) URLs like from Google Drive.
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const fetchUrl = url.includes('drive.google.com') ? proxyUrl + url : url;
+        
+        try {
+            const loadingTask = pdfjsLib.getDocument(fetchUrl);
+            const pdf = await loadingTask.promise;
+            let fullText = '';
+            for (let i = 1; i <= pdf.numPages; i++) {
+                const page = await pdf.getPage(i);
                 const textContent = await page.getTextContent();
-                pdfjsLib.renderTextLayer({ textContent: textContent, container: textLayerDiv, viewport: viewport, textDivs: [] });
+                fullText += textContent.items.map(item => item.str).join(' ') + '\n';
             }
+            return fullText;
+        } catch (error) {
+            console.error(`Could not get text from PDF ${url}:`, error);
+            return `[Content from ${url.split('/').pop()} could not be loaded.]`;
         }
+    }
 
-        function zoomIn() { if (pdfDoc) { currentScale += 0.2; renderAllPages(); } }
-        function zoomOut() { if (pdfDoc && currentScale > 0.2) { currentScale -= 0.2; renderAllPages(); } }
-        function downloadPdf() {
-            if (!currentPdfUrl) return;
-            const link = document.createElement('a');
-            link.href = currentPdfUrl;
-            link.download = currentPdfUrl.split('/').pop() || 'download.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-        function openInNewTab() { if (currentPdfUrl) { window.open(currentPdfUrl, '_blank'); } }
-
-        // --- SECURE GEMINI AI INTEGRATION ---
-        async function callGemini(prompt) {
-            const modalBody = document.getElementById('modal-body');
-            modalBody.innerHTML = loaderHTML;
-            openModal('ai-modal');
-            try {
-                const response = await fetch('/.netlify/functions/gemini', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ prompt: prompt })
-                });
-                if (!response.ok) throw new Error(`API request failed with status ${response.status}`);
-                const result = await response.json();
-                if (result.candidates && result.candidates.length > 0) {
-                    let formattedText = result.candidates[0].content.parts[0].text;
-                    formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\* (.*?)\n/g, '<li class="ml-4 list-disc">$1</li>').replace(/\n/g, '<br>');
-                    modalBody.innerHTML = `<div class="prose prose-invert max-w-none">${formattedText}</div>`;
-                } else {
-                    throw new Error("No content received from API.");
-                }
-            } catch (error) {
-                console.error("Gemini API call failed:", error);
-                modalBody.innerHTML = `<p class="text-red-400">Sorry, something went wrong. This may be due to a missing or invalid API key in the server configuration. <br><br>${error.message}</p>`;
+    async function callGemini(prompt) {
+        const modalBody = document.getElementById('modal-body');
+        modalBody.innerHTML = loaderHTML;
+        // Clear footer when making a new call
+        document.getElementById('modal-footer').innerHTML = ''; 
+        openModal('ai-modal');
+        try {
+            const response = await fetch('/.netlify/functions/gemini', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt })
+            });
+            if (!response.ok) throw new Error(`API request failed with status ${response.status}`);
+            const result = await response.json();
+            if (result.candidates && result.candidates[0].content) {
+                let formattedText = result.candidates[0].content.parts[0].text;
+                formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/^\* (.*?)$/gm, '<li class="ml-4 list-disc">$1</li>').replace(/\n/g, '<br>');
+                modalBody.innerHTML = `<div class="prose prose-invert max-w-none">${formattedText}</div>`;
+            } else {
+                throw new Error("No valid content received from API.");
             }
+        } catch (error) {
+            console.error("Gemini API call failed:", error);
+            modalBody.innerHTML = `<p class="text-red-400">Sorry, something went wrong. This may be due to a missing or invalid API key in the server configuration.<br><br>${error.message}</p>`;
+        }
+    }
+
+    async function handleProjectAI(projectId, type) {
+        const project = projectsData.find(p => p.id === projectId);
+        const translatedProject = translations[currentLang].projects.find(p => p.id === projectId);
+        if (!project || !translatedProject) return;
+
+        const langStrings = translations[currentLang];
+        const modalTitle = type === 'explain' 
+            ? langStrings.modal_explaining_title.replace('{title}', translatedProject.title) 
+            : langStrings.modal_summarizing_title.replace('{title}', translatedProject.title);
+        document.getElementById('modal-title').innerText = modalTitle;
+
+        const modalBody = document.getElementById('modal-body');
+        modalBody.innerHTML = loaderHTML;
+        document.getElementById('modal-footer').innerHTML = ''; // Clear footer
+        openModal('ai-modal');
+
+        const reportText = await getTextFromPdf(project.reportUrl);
+        const presentationText = await getTextFromPdf(project.presentationUrl);
+
+        let action_prompt = '';
+        if (type === 'explain') {
+            action_prompt = `Based on the following information, explain the project in simple, engaging terms for a non-technical audience. Focus on the real-world application, the problem it solved, and the business value.`;
+        } else {
+            action_prompt = `Based on the provided report and presentation text, summarize this project's core achievement in one or two compelling sentences.`;
         }
 
-        function getProjectById(projectId) { return projectsData.find(p => p.id === projectId); }
+        const full_prompt = `${action_prompt}
+        **IMPORTANT: Your entire response MUST be in the following language: ${translations[currentLang].page_title.includes('Français') ? 'French' : 'English'}.** Project Title: "${translatedProject.title}"
+        Project Description: "${translatedProject.description}"
+        Technologies Used: "${project.technologies.join(', ')}"
+        --- Content from Report ---
+        ${reportText}
+        --- End of Report Content ---
+        --- Content from Presentation ---
+        ${presentationText}
+        --- End of Presentation Content ---`;
+        
+        await callGemini(full_prompt);
+    }
 
-        function explainProject(projectId) {
-            const project = getProjectById(projectId);
-            if (!project) return;
-            document.getElementById('modal-title').innerText = `✨ Explaining: ${project.title}`;
-            document.getElementById('modal-footer').innerHTML = '';
-            const prompt = `Explain the following project in simple, engaging terms for a non-technical audience like a recruiter or hiring manager. Focus on the real-world application, the problem it solves, and the business value. Keep it concise (2-3 short paragraphs).\n\nProject Title: "${project.title}"\nDescription: "${project.description}"\nTechnologies Used: "${project.technologies.join(', ')}"`;
-            callGemini(prompt);
-        }
+    function explainProject(projectId) {
+        handleProjectAI(projectId, 'explain');
+    }
 
-        function summarizeProject(projectId) {
-            const project = getProjectById(projectId);
-            if (!project) return;
-            document.getElementById('modal-title').innerText = `✨ Summarizing: ${project.title}`;
-            document.getElementById('modal-footer').innerHTML = '';
-            const prompt = `Summarize this project in one or two compelling sentences. Focus on the core achievement.\n\nProject Title: "${project.title}"\nDescription: "${project.description}"`;
-            callGemini(prompt);
-        }
+    function summarizeProject(projectId) {
+        handleProjectAI(projectId, 'summarize');
+    }
 
-        function showSkillDetails(skillName) {
-            document.getElementById('modal-title').innerText = `💡 Skill: ${skillName}`;
-            const modalFooter = document.getElementById('modal-footer');
-            modalFooter.innerHTML = `<button onclick="showProjectsForSkill('${skillName}')" class="w-full text-center bg-violet-700/80 hover:bg-violet-600/80 text-white font-bold py-2 px-4 rounded-lg">Show Projects Using This Skill</button>`;
-            const prompt = `Explain the technical skill "${skillName}" in simple terms. What is it used for in the industry? Keep it to 2-3 sentences.`;
-            callGemini(prompt);
+    function showSkillDetails(skillName) {
+        document.getElementById('modal-title').innerText = `💡 Skill: ${skillName}`;
+        const modalFooter = document.getElementById('modal-footer');
+        
+        modalFooter.innerHTML = `<button onclick="showProjectsForSkill('${skillName}')" class="w-full text-center bg-violet-700/80 hover:bg-violet-600/80 text-white font-bold py-2 px-4 rounded-lg">Show Projects Using This Skill</button>`;
+        
+        const prompt = `Explain the technical skill "${skillName}" in simple terms, as you would to a recruiter. What is it used for in the industry? Keep it to 2-3 sentences. **IMPORTANT: Your entire response MUST be in the following language: ${translations[currentLang].page_title.includes('Français') ? 'French' : 'English'}.**`;
+        
+        callGemini(prompt);
+    }
+
+    function showProjectsForSkill(skillName) {
+        const langStrings = translations[currentLang];
+        document.getElementById('modal-title').innerText = `🚀 Projects with ${skillName}`;
+        
+        const modalBody = document.getElementById('modal-body');
+        document.getElementById('modal-footer').innerHTML = ''; // Clear footer for this view
+        
+        const relevantProjects = projectsData.filter(p => p.technologies.includes(skillName));
+        
+        if (relevantProjects.length === 0) {
+            modalBody.innerHTML = `<p>No projects currently use this skill.</p>`;
+        } else {
+            const translatedProjects = translations[currentLang].projects;
+            let projectListHTML = `<p class="mb-4">${langStrings.modal_list_intro.replace('{skill}', skillName)}</p><ul class="list-disc ml-5 space-y-2">`;
+            
+            relevantProjects.forEach(p => {
+                const translatedTitle = translatedProjects.find(tp => tp.id === p.id)?.title || p.id;
+                projectListHTML += `<li>${translatedTitle}</li>`;
+            });
+            
+            projectListHTML += `</ul>`;
+            modalBody.innerHTML = projectListHTML;
         }
         
-        function showProjectsForSkill(skillName) {
-            document.getElementById('modal-title').innerText = `🚀 Projects with ${skillName}`;
-            document.getElementById('modal-footer').innerHTML = '';
-            const projectsString = projectsData.map(p => `Title: ${p.title}, Description: ${p.description}, Technologies: ${p.technologies.join(', ')}`).join('\n\n');
-            const prompt = `Based on the following list of projects, identify which ones used the skill "${skillName}". For each project you identify, list its title and briefly (one sentence) explain how "${skillName}" was specifically applied in that context. Format the output clearly.\n\n---PROJECTS---\n${projectsString}`;
-            callGemini(prompt);
-        }
+        openModal('ai-modal');
+    }
 
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeModal('ai-modal');
-                closeModal('pdf-modal');
-                closeModal('contact-modal');
-                closeModal('leadership-modal');
-            }
-        });
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal('ai-modal');
+            closeModal('pdf-modal');
+            closeModal('contact-modal');
+            closeModal('leadership-modal');
+        }
+    });
+
     </script>
 </body>
 </html>

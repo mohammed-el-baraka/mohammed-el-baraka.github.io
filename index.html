@@ -214,6 +214,24 @@
         .textLayer > span { color: transparent; position: absolute; white-space: pre; cursor: text; transform-origin: 0% 0%; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .loader { animation: spin 1s linear infinite; border-radius: 50%; width: 40px; height: 40px; }
+
+
+        /* --- Mobile Responsive Hero (Corrected Layout) --- */
+        @media (max-width: 76557px) {
+            .hero {
+                /* This is the key fix: Adds space at the top to clear the fixed header */
+                padding-top: 5rem; /* 80px */
+            }
+            .hero-content img {
+                display: none; /* Hides the image on small screens for a cleaner look */
+            }
+            .hero-content h1 {
+                font-size: 2.5rem; /* Slightly smaller title for small screens */
+            }
+        }
+
+
+
     </style>
 </head>
 
@@ -270,7 +288,7 @@
                         </div>
                     </div>
                     <div class="md:w-1/3 flex justify-center p-4">
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi94RjxOr4HaOi3E-9mwGiYYKe5-RZQEXrtzKwksSnDcgiGPQBqKAwQfzEI27vz67PEntfXeMb8jnkrSI6x4mmhR4Xj9g6DdXb2np1eLWnteFVoCxvNoMK5lGYmXD5dXiEPKxP88lanqqMdh5QC_D6kPE68i-M1hOpN2B1H-XwGr6pKvxTfaUivnC2PREo/s320/123.jpg" alt="A picture of Mohammed El Baraka" class="rounded-lg shadow-2xl w-full max-w-sm border-2" style="border-color: rgba(167, 139, 250, 0.3);">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnkO5Zw_gV3YsDH1inwjPsnBccsCTuVerQz41d6esdMWGLEWKp0zeT-NvblyBaUoh_nXk4Yk7QJaGsFIMRxS9ZLMXiW8DujFnV1uXdZv7FpIpdrsfaINPs-lQ7Ha73R8YPhUIhyL95aJ85QfetEhC0_AFLdwDi2HI1MEO8IBDznHCaF4uxE1J8-07p8vA/s320/me.jpg" alt="A picture of Mohammed El Baraka" class="rounded-lg shadow-2xl w-full max-w-sm border-2" style="border-color: rgba(167, 139, 250, 0.3);">
                     </div>
                 </div>
             </div>
@@ -304,14 +322,45 @@
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-title" data-translate-key="contact_title"></h2>
                 <p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto" data-translate-key="contact_subtitle"></p>
-                <button onclick="openContactModal()" class="btn-primary" data-translate-key="contact_button"></button>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button onclick="openContactModal()" class="btn-primary" data-translate-key="contact_button"></button>
+                    <button onclick="openHelpModal()" class="btn-primary" data-translate-key="help_button"></button>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="py-6 text-center text-gray-500 border-t" style="border-color: rgba(167, 139, 250, 0.2);">
+
+    <footer class="py-8 text-center text-gray-400 border-t" style="border-color: rgba(167, 139, 250, 0.2);">
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-300 mb-4">Follow Me</h3>
+            <div class="flex items-center justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/mohammed-el-baraka-151244302/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-color transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/elbaraka59/?_rdr" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-color transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.142v3.24h-1.918c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.323-1.325z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/mohammed_el.baraka/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-color transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/>
+                    </svg>
+                </a>
+                <a href="YOUR_TWITTER_URL" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-color transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
         <p data-translate-key="footer_text"></p>
     </footer>
+
+
 
     <div id="ai-modal" class="modal fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none p-4">
         <div class="modal-content w-full max-w-2xl rounded-lg shadow-lg p-6 md:p-8 transform scale-95">
@@ -364,6 +413,17 @@
                 <a href="https://wa.me/+212666774426" target="_blank" class="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-all" data-translate-key="contact_modal_whatsapp"></a>
                 <a href="tel:+212666774426" class="block w-full text-center bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-all" data-translate-key="contact_modal_call"></a>
             </div>
+        </div>
+    </div>
+
+    <div id="help-modal" class="modal fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none p-4">
+        <div class="modal-content w-full max-w-2xl rounded-lg shadow-lg p-6 md:p-8 transform scale-95">
+            <div class="modal-header flex justify-between items-center mb-4">
+                <h3 id="help-modal-title" class="text-2xl font-bold" data-translate-key="help_modal_title"></h3>
+                <button onclick="closeModal('help-modal')" class="modal-close-btn text-3xl">×</button>
+            </div>
+            <div id="help-modal-body" class="modal-body leading-relaxed max-h-[60vh] overflow-y-auto">
+                </div>
         </div>
     </div>
 
@@ -427,6 +487,13 @@
                 { id: 'pingpong-club', title: "UM6P Ping Pong Club", role: "Logistics Manager", description: "I organized tournaments and practice sessions, handling all logistical aspects from scheduling to equipment management." },
                 { id: 'university-sports', title: "University Sports", role: "Player for Handball, Volleyball, and Football teams", description: "As an active member of multiple university sports teams, I developed strong teamwork, discipline, and leadership skills." }
             ],
+
+            help_button: "How Can I Help You?",
+            help_modal_title: "Describe Your Needs",
+            help_modal_placeholder: "Tell me about the project, challenge, or role you have in mind. For example: 'I need someone to build a predictive model for customer data' or 'I am looking for a project manager with a technical background.'",
+            help_modal_submit: "Analyze My Need",
+            help_modal_response_title: "Here's How I Can Help",
+            contact_button_after_ai: "Contact Mohammed",
         },
         // French
         fr: {
@@ -482,6 +549,15 @@
                 { id: 'pingpong-club', title: "Club de Ping Pong UM6P", role: "Responsable Logistique", description: "J'ai organisé des tournois et des séances d'entraînement, gérant tous les aspects logistiques, de la planification à la gestion du matériel." },
                 { id: 'university-sports', title: "Sports Universitaires", role: "Joueur des équipes de Handball, Volleyball et Football", description: "En tant que membre actif de plusieurs équipes sportives universitaires, j'ai développé de solides compétences en travail d'équipe, discipline et leadership." }
             ],
+
+
+            help_button: "Comment puis-je vous aider ?",
+            help_modal_title: "Décrivez vos besoins",
+            help_modal_placeholder: "Parlez-moi du projet, du défi ou du rôle que vous avez en tête. Par exemple : 'J'ai besoin de quelqu'un pour créer un modèle prédictif pour les données clients' ou 'Je recherche un chef de projet avec un bagage technique.'",
+            help_modal_submit: "Analyser mon besoin",
+            help_modal_response_title: "Voici comment je peux aider",
+            contact_button_after_ai: "Contacter Mohammed"
+        
         },
         // Arabic
         ar: {
@@ -537,6 +613,16 @@
                 { id: 'pingpong-club', title: "نادي تنس الطاولة UM6P", role: "مدير الخدمات اللوجستية", description: "نظمت بطولات وجلسات تدريبية، وتوليت جميع الجوانب اللوجستية من الجدولة إلى إدارة المعدات." },
                 { id: 'university-sports', title: "الرياضة الجامعية", role: "لاعب في فرق كرة اليد والكرة الطائرة وكرة القدم", description: "كعضو نشط في العديد من الفرق الرياضية الجامعية، طورت مهارات قوية في العمل الجماعي والانضباط والقيادة. " }
             ],
+
+
+            help_button: "كيف يمكنني المساعدة؟",
+            help_modal_title: "صف احتياجاتك",
+            help_modal_placeholder: "أخبرني عن المشروع أو التحدي أو الدور الذي تفكر فيه. على سبيل المثال: 'أحتاج إلى شخص لبناء نموذج تنبؤي لبيانات العملاء' أو 'أبحث عن مدير مشروع بخلفية تقنية.'",
+            help_modal_submit: "حلل احتياجي",
+            help_modal_response_title: "إليك كيف يمكنني المساعدة",
+            contact_button_after_ai: "تواصل مع محمد"
+
+
         },
         // Spanish
         es: {
@@ -592,6 +678,14 @@
                 { id: 'pingpong-club', title: "Club de Ping Pong UM6P", role: "Gerente de Logística", description: "Organicé torneos y sesiones de práctica, manejando todos los aspectos logísticos desde la programación hasta la gestión de equipos." },
                 { id: 'university-sports', title: "Deportes Universitarios", role: "Jugador de los equipos de Balonmano, Voleibol y Fútbol", description: "Como miembro activo de múltiples equipos deportivos universitarios, desarrollé sólidas habilidades de trabajo en equipo, disciplina y liderazgo." }
             ],
+
+            help_button: "¿Cómo puedo ayudarte?",
+            help_modal_title: "Describe tus necesidades",
+            help_modal_placeholder: "Háblame sobre el proyecto, desafío o rol que tienes en mente. Por ejemplo: 'Necesito a alguien que construya un modelo predictivo para datos de clientes' o 'Estoy buscando un gerente de proyectos con experiencia técnica.'",
+            help_modal_submit: "Analizar mi necesidad",
+            help_modal_response_title: "Así es como puedo ayudar",
+            contact_button_after_ai: "Contactar a Mohammed"
+
         },
         // Mandarin Chinese
         zh: {
@@ -647,6 +741,15 @@
                 { id: 'pingpong-club', title: "UM6P 乒乓球俱乐部", role: "后勤经理", description: "我组织了比赛和练习赛，处理从日程安排到设备管理的所有后勤方面。 " },
                 { id: 'university-sports', title: "大学体育", role: "手球、排球和足球队队员", description: "作为多个大学运动队的活跃成员，我培养了强大的团队合作、纪律和领导能力。 " }
             ],
+
+
+            help_button: "我能为您做些什么？",
+            help_modal_title: "描述您的需求",
+            help_modal_placeholder: "请告诉我您心目中的项目、挑战或职位。例如：'我需要有人为客户数据建立一个预测模型'或'我正在寻找一位有技术背景的项目经理。'",
+            help_modal_submit: "分析我的需求",
+            help_modal_response_title: "我可以这样帮助您",
+            contact_button_after_ai: "联系 Mohammed"
+
         },
         // Portuguese
         pt: {
@@ -703,6 +806,16 @@
                 { id: 'university-sports', title: "Esportes Universitários", role: "Jogador das equipes de Handebol, Voleibol e Futebol", description: "Como membro ativo de várias equipes esportivas universitárias, desenvolvi fortes habilidades de trabalho em equipe, disciplina e liderança." }
             ],
         },
+
+
+            help_button: "Como posso ajudar?",
+            help_modal_title: "Descreva suas necessidades",
+            help_modal_placeholder: "Fale-me sobre o projeto, desafio ou função que você tem em mente. Por exemplo: 'Preciso de alguém para construir um modelo preditivo para dados de clientes' ou 'Estou procurando um gerente de projetos com formação técnica.'",
+            help_modal_submit: "Analisar minha necessidade",
+            help_modal_response_title: "É assim que posso ajudar",
+            contact_button_after_ai: "Contatar Mohammed"
+
+
     };
 
     const projectsData = [
@@ -1039,6 +1152,85 @@
             closeModal('leadership-modal');
         }
     });
+
+    function openHelpModal() {
+        // Set the initial content of the modal with a textarea and a submit button
+        const langStrings = translations[currentLang];
+        const modalBody = document.getElementById('help-modal-body');
+        
+        modalBody.innerHTML = `
+            <textarea id="help-textarea" class="w-full h-32 p-3 rounded-lg bg-black/50 border border-gray-600 focus:border-primary-color focus:ring-primary-color transition-colors" placeholder="${langStrings.help_modal_placeholder}"></textarea>
+            <button id="help-submit-btn" class="w-full mt-4 bg-violet-700 hover:bg-violet-600 text-white font-bold py-3 px-4 rounded-lg transition-colors">
+                ${langStrings.help_modal_submit}
+            </button>
+        `;
+        
+        // Add the event listener to the new button
+        document.getElementById('help-submit-btn').addEventListener('click', handleHelpRequest);
+        
+        openModal('help-modal');
+    }
+
+    async function handleHelpRequest() {
+        const userInput = document.getElementById('help-textarea').value;
+        if (!userInput.trim()) {
+            alert('Please describe your need.');
+            return;
+        }
+
+        const modalBody = document.getElementById('help-modal-body');
+        const langStrings = translations[currentLang];
+        
+        // Show loader while we process the request
+        modalBody.innerHTML = loaderHTML;
+        document.getElementById('help-modal-title').textContent = langStrings.help_modal_response_title;
+
+        // --- IMPORTANT: Paste your resume's Google Drive share link here ---
+        const resumeUrl = 'https://drive.google.com/file/d/164y_gvKAJmPwEQkmJtNp0Z9E1P9V6d9F/view?usp=sharing';
+        const resumeText = await getTextFromPdf(resumeUrl);
+
+        const prompt = `You are an expert career assistant for Mohammed EL BARAKA. A potential client has described their need. Your task is to analyze their request and explain which of Mohammed's skills and experiences from his resume are most relevant to solve their problem.
+        
+        **IMPORTANT: Your entire response MUST be in the same language as the user's request below.**
+
+        --- MOHAMMED'S RESUME ---
+        ${resumeText}
+        --- END OF RESUME ---
+
+        --- USER'S REQUEST ---
+        ${userInput}
+        --- END OF REQUEST ---
+
+        Structure your response in a helpful, professional tone. Start by briefly acknowledging their need, then list the most relevant skills with a 1-2 sentence explanation of how they apply. End with a positive, action-oriented closing statement.
+        `;
+
+        // This part is similar to the callGemini function but tailored for this modal
+        try {
+            const response = await fetch('/.netlify/functions/gemini', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt })
+            });
+            if (!response.ok) throw new Error(`API request failed with status ${response.status}`);
+            const result = await response.json();
+            if (result.candidates && result.candidates[0].content) {
+                let formattedText = result.candidates[0].content.parts[0].text;
+                formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/^\* (.*?)$/gm, '<li class="ml-4 list-disc">$1</li>').replace(/\n/g, '<br>');
+                
+                // Display the AI response and add the contact button below it
+                modalBody.innerHTML = `
+                    <div class="prose prose-invert max-w-none">${formattedText}</div>
+                    <button onclick="openContactModal(); closeModal('help-modal');" class="w-full mt-6 bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-4 rounded-lg transition-colors">
+                        ${langStrings.contact_button_after_ai}
+                    </button>
+                `;
+            } else {
+                throw new Error("No valid content received from API.");
+            }
+        } catch (error) {
+            modalBody.innerHTML = `<p class="text-red-400">Sorry, something went wrong. ${error.message}</p>`;
+        }
+    }
 
     </script>
 </body>

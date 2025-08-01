@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammed El Baraka</title>
-    
+ 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
@@ -215,22 +220,17 @@
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .loader { animation: spin 1s linear infinite; border-radius: 50%; width: 40px; height: 40px; }
 
-
-        /* --- Mobile Responsive Hero (Corrected Layout) --- */
-        @media (max-width: 76557px) {
+        /* --- Mobile Responsive Hero (Final Layout Fix) --- */
+        @media (max-width: 767px) {
             .hero {
-                /* This is the key fix: Adds space at the top to clear the fixed header */
-                padding-top: 5rem; /* 80px */
-            }
-            .hero-content img {
-                display: none; /* Hides the image on small screens for a cleaner look */
+                /* This is the important fix: It pushes the content down below the fixed header. */
+                padding-top: 8rem; /* 80px */
             }
             .hero-content h1 {
-                font-size: 2.5rem; /* Slightly smaller title for small screens */
+                /* This keeps the title looking good on small screens. */
+                font-size: 2.5rem; 
             }
         }
-
-
 
     </style>
 </head>
@@ -264,7 +264,6 @@
         <section id="hero" class="hero">
             <div class="hero-background"></div>
             <div class="hero-content">
-                <img src="https://github.com/mohammed-el-baraka/mohammed-el-baraka.github.io/blob/608bf437d61f9215b1d79165f0356e05c5a5fd15/me.jpg" alt="Mohammed El Baraka" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 border-4" style="border-color: var(--primary-color);">
                 <h1 data-translate-key="hero_title"></h1>
                 <p data-translate-key="hero_subtitle"></p>
                 <div>
@@ -1191,7 +1190,7 @@
 
         const prompt = `You are an expert career assistant for Mohammed EL BARAKA. A potential client has described their need. Your task is to analyze their request and explain which of Mohammed's skills and experiences from his resume are most relevant to solve their problem.
         
-        **IMPORTANT: Your entire response MUST be in the same language as the user's request below.**
+        IMPORTANT: Your entire response MUST be in the same language as the user's request below.
 
         --- MOHAMMED'S RESUME ---
         ${resumeText}

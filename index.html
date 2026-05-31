@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mohammed EL BARAKA - Industrial Management Engineering Graduate from EMINES-UM6P. Specializing in Data Science, Optimization, and Machine Learning.">
     <title>Mohammed El Baraka</title>
  
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -14,13 +15,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Lato:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body id="page-top" class="antialiased">
+    <div id="scroll-progress"></div>
     <div class="hero-background"></div>
+    <div class="ambient-aurora blob-1"></div>
+    <div class="ambient-aurora blob-2"></div>
+    <div class="ambient-aurora blob-3"></div>
 
     <header class="fixed w-full top-0 z-50" id="header">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
@@ -51,7 +54,7 @@
 
 
             <div class="hero-content relative z-10">
-                <h1 data-translate-key="hero_title"></h1>
+                <h1 class="hero-title"><span id="typewriter-text"></span><span class="typewriter-cursor">|</span></h1>
                 <p data-translate-key="hero_subtitle"></p>
                 <div>
                     <a href="#projects" class="btn-primary" data-translate-key="hero_cta_button"></a>
@@ -75,7 +78,7 @@
                         </div>
                     </div>
                     <div class="md:w-1/3 flex justify-center p-4 reveal-scale-up">
-                        <img src="https://raw.githubusercontent.com/mohammed-el-baraka/mohammed-el-baraka.github.io/refs/heads/main/me.png" alt="A picture of Mohammed El Baraka" class="rounded-lg shadow-2xl w-full max-w-sm border-2" style="border-color: rgba(167, 139, 250, 0.3);">
+                        <img src="./me.png" alt="A picture of Mohammed El Baraka" loading="lazy" decoding="async" class="rounded-lg shadow-2xl w-full max-w-sm border-2" style="border-color: rgba(167, 139, 250, 0.3);">
                     </div>
                 </div>
             </div>
@@ -219,7 +222,6 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script src="data.js"></script>
     <script src="app.js"></script>
 </body>

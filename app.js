@@ -1,4 +1,3 @@
-pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js`;
 
 let currentLang = 'en';
 let showAllProjects = false;
@@ -24,7 +23,7 @@ function switchLanguage(lang) {
     renderLeadership(lang);
     renderSkills();
     
-    applyScrollAnimations();
+    initTypewriter(lang);
 }
 
 function renderProjects(lang) {
@@ -40,8 +39,7 @@ function renderProjects(lang) {
         if (!translatedProject) return;
 
         const card = document.createElement('div');
-        const isNew = index >= 3;
-        card.className = `item-card ${isNew ? 'reveal-scale-up' : ''}`;
+        card.className = 'item-card';
         card.innerHTML = `
             <div class="card-body">
                 <div>
@@ -55,13 +53,6 @@ function renderProjects(lang) {
                 </div>
             </div>`;
         projectGrid.appendChild(card);
-
-        if (isNew) {
-            // Trigger animation
-            setTimeout(() => {
-                card.classList.add('revealed');
-            }, (index - 3) * 80);
-        }
     });
 
     updateToggleButton();
@@ -83,7 +74,6 @@ function updateToggleButton() {
 function toggleProjects() {
     showAllProjects = !showAllProjects;
     renderProjects(currentLang);
-    applyScrollAnimations();
     
     if (!showAllProjects) {
         document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
@@ -112,7 +102,7 @@ function renderLeadership(lang) {
         if (!translatedActivity) return;
 
         const card = document.createElement('div');
-        card.className = 'item-card clickable reveal-scale-up';
+        card.className = 'item-card clickable';
         card.onclick = () => openLeadershipModal(lData.id);
         card.innerHTML = `
             <div class="card-body text-center">
@@ -123,25 +113,7 @@ function renderLeadership(lang) {
     });
 }
 
-// Scroll reveal observer
-const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
-        }
-    });
-}, {
-    root: null,
-    rootMargin: '0px -10% -10% 0px',
-    threshold: 0.05
-});
-
-function applyScrollAnimations() {
-    document.querySelectorAll('.reveal-fade-in:not(.revealed), .reveal-scale-up:not(.revealed)').forEach(el => {
-        revealObserver.observe(el);
-    });
-}
+// Scroll animations disabled per user request
 
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLanguage');
@@ -157,7 +129,33 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('lang-selector').value = initialLang;
     switchLanguage(initialLang);
 
-    // Removed background canvas particle animation
+    // Initialize Intersection Observer for active nav link styling
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('#header nav a');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-30% 0px -60% 0px',
+        threshold: 0
+    };
+
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        navObserver.observe(section);
+    });
 });
 
 const loaderHTML = `<div class="flex justify-center items-center h-32"><div class="loader"></div></div>`;
@@ -296,3 +294,84 @@ window.addEventListener('keydown', (e) => {
     }
 });
 
+// Typewriter animation state and logic
+let typewriterTimeout = null;
+let isDeleting = false;
+let phraseIndex = 0;
+let charIndex = 0;
+
+function initTypewriter(lang) {
+    if (typewriterTimeout) {
+        clearTimeout(typewriterTimeout);
+    }
+    
+    const typewriterEl = document.getElementById('typewriter-text');
+    if (!typewriterEl) return;
+    
+    const phrases = translations[lang].hero_typing || ["Industrial Management", "Data Science"];
+    
+    isDeleting = false;
+    phraseIndex = 0;
+    charIndex = 0;
+    typewriterEl.textContent = '';
+    
+    function type() {
+        const currentPhrase = phrases[phraseIndex];
+        
+        if (isDeleting) {
+            charIndex--;
+        } else {
+            charIndex++;
+        }
+        
+        typewriterEl.textContent = currentPhrase.substring(0, charIndex);
+        
+        let typeSpeed = isDeleting ? 40 : 80;
+        
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            typeSpeed = 1800; // Pause at the end of the phrase
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            typeSpeed = 400; // Pause before starting next phrase
+        }
+        
+        typewriterTimeout = setTimeout(type, typeSpeed);
+    }
+    
+    type();
+}
+
+// Mouse Spotlight glow tracking for Cards
+document.addEventListener('mousemove', (e) => {
+    const card = e.target.closest('.item-card');
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--mouse-x', `${x}px`);
+    card.style.setProperty('--mouse-y', `${y}px`);
+}, { passive: true });
+
+// Scroll Event: Scroll Progress Bar (Throttled using requestAnimationFrame)
+let ticking = false;
+const scrollProgressEl = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            updateScrollProgress();
+            ticking = false;
+        });
+        ticking = true;
+    }
+}, { passive: true });
+
+function updateScrollProgress() {
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+    if (scrollProgressEl) {
+        scrollProgressEl.style.width = scrolled + '%';
+    }
+}

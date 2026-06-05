@@ -6,9 +6,9 @@
     <meta name="description" content="Mohammed EL BARAKA - Industrial Management Engineering Graduate from EMINES-UM6P. Specializing in Data Science, Optimization, and Machine Learning.">
     <title>Mohammed El Baraka</title>
  
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,13 +19,14 @@
 </head>
 
 <body id="page-top" class="antialiased">
+    <div id="custom-cursor"></div>
     <div id="scroll-progress"></div>
     <div class="hero-background"></div>
     <div class="ambient-aurora blob-1"></div>
     <div class="ambient-aurora blob-2"></div>
     <div class="ambient-aurora blob-3"></div>
 
-    <header class="fixed w-full top-0 z-50" id="header">
+    <header class="fixed w-full top-0 z-50 animate-header" id="header">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#page-top" class="brand-name">Mohammed El Baraka</a>
             <div class="flex items-center space-x-4 md:space-x-6">
@@ -54,9 +55,9 @@
 
 
             <div class="hero-content relative z-10">
-                <h1 class="hero-title"><span id="typewriter-text"></span><span class="typewriter-cursor">|</span></h1>
-                <p data-translate-key="hero_subtitle"></p>
-                <div>
+                <h1 class="hero-title animate-hero-title"><span id="typewriter-text"></span><span class="typewriter-cursor">|</span></h1>
+                <p class="animate-hero-subtitle" data-translate-key="hero_subtitle"></p>
+                <div class="animate-hero-cta">
                     <a href="#projects" class="btn-primary" data-translate-key="hero_cta_button"></a>
                 </div>
             </div>
@@ -78,7 +79,7 @@
                         </div>
                     </div>
                     <div class="md:w-1/3 flex justify-center p-4 reveal-scale-up">
-                        <img src="./me.png" alt="A picture of Mohammed El Baraka" loading="lazy" decoding="async" class="rounded-lg shadow-2xl w-full max-w-sm border-2" style="border-color: rgba(167, 139, 250, 0.3);">
+                        <img src="assets/images/me.png" alt="A picture of Mohammed El Baraka" width="475" height="741" loading="lazy" decoding="async" class="rounded-lg shadow-2xl w-full max-w-sm border-2" style="border-color: rgba(167, 139, 250, 0.3);">
                     </div>
                 </div>
             </div>
@@ -102,7 +103,7 @@
 
             <div class="container mx-auto px-6 relative z-10">
                 <h2 class="section-title reveal-fade-in" data-translate-key="skills_title"></h2>
-                <div id="skills-container" class="max-w-5xl mx-auto flex flex-wrap justify-center gap-4 reveal-scale-up">
+                <div id="skills-container" class="max-w-5xl mx-auto flex flex-wrap justify-center gap-4">
                      </div>
             </div>
         </section>
@@ -181,7 +182,7 @@
                         <p id="leadership-modal-desc" class="text-gray-300 text-base leading-relaxed"></p>
                     </div>
                     <div class="md:w-2/5 order-1 md:order-2 flex justify-center w-full">
-                        <img id="leadership-modal-img" src="./me.jpg" alt="Mohammed El Baraka" class="rounded-xl object-cover w-full max-w-xs md:max-w-none max-h-64 shadow-md border border-white/10">
+                        <img id="leadership-modal-img" src="assets/images/me.jpg" width="450" height="800" alt="Mohammed El Baraka" class="rounded-xl object-cover w-full max-w-xs md:max-w-none max-h-64 shadow-md border border-white/10">
                     </div>
                 </div>
             </div>
@@ -222,7 +223,7 @@
         </div>
     </div>
 
-    <script src="data.js"></script>
-    <script src="app.js"></script>
+    <script src="data.js" defer></script>
+    <script src="app.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,17 @@
+[
+  {
+    "path": "/*",
+    "resourceSizes": [
+      { "resourceType": "script", "budget": 150 },
+      { "resourceType": "image", "budget": 300 },
+      { "resourceType": "third-party", "budget": 50 }
+    ],
+    "assertions": {
+      "first-contentful-paint": ["warn", {"maxNumericValue": 1000}],
+      "largest-contentful-paint": ["error", {"maxNumericValue": 1500}],
+      "cumulative-layout-shift": ["error", {"maxNumericValue": 0.05}],
+      "categories:performance": ["error", {"minScore": 0.95}],
+      "categories:accessibility": ["error", {"minScore": 0.98}]
+    }
+  }
+]

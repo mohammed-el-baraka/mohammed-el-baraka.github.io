@@ -39,7 +39,8 @@ function renderProjects(lang) {
         if (!translatedProject) return;
 
         const card = document.createElement('div');
-        card.className = 'item-card';
+        card.className = 'item-card reveal-scale-up';
+        card.style.transitionDelay = `${index * 0.05}s`;
         card.innerHTML = `
             <div class="card-body">
                 <div>
@@ -53,6 +54,7 @@ function renderProjects(lang) {
                 </div>
             </div>`;
         projectGrid.appendChild(card);
+        revealObserver.observe(card);
     });
 
     updateToggleButton();
@@ -83,12 +85,14 @@ function toggleProjects() {
 function renderSkills() {
     const skillsContainer = document.getElementById('skills-container');
     skillsContainer.innerHTML = '';
-    skillsData.forEach(skill => {
+    skillsData.forEach((skill, index) => {
         const tag = document.createElement('span');
-        tag.className = 'skill-tag font-semibold px-4 py-2 rounded-full text-base';
+        tag.className = 'skill-tag reveal-scale-up font-semibold px-4 py-2 rounded-full text-base';
+        tag.style.transitionDelay = `${index * 0.015}s`;
         tag.textContent = skill;
         tag.onclick = () => showSkillDetails(skill);
         skillsContainer.appendChild(tag);
+        revealObserver.observe(tag);
     });
 }
 
@@ -97,12 +101,13 @@ function renderLeadership(lang) {
     leadershipGrid.innerHTML = '';
     const langLeadership = translations[lang].leadership;
 
-    leadershipData.forEach(lData => {
+    leadershipData.forEach((lData, index) => {
         const translatedActivity = langLeadership.find(t => t.id === lData.id);
         if (!translatedActivity) return;
 
         const card = document.createElement('div');
-        card.className = 'item-card clickable';
+        card.className = 'item-card clickable reveal-scale-up';
+        card.style.transitionDelay = `${index * 0.05}s`;
         card.onclick = () => openLeadershipModal(lData.id);
         card.innerHTML = `
             <div class="card-body text-center">
@@ -110,10 +115,22 @@ function renderLeadership(lang) {
                 <p class="font-semibold" style="color: var(--primary-color);">${translatedActivity.role}</p>
             </div>`;
         leadershipGrid.appendChild(card);
+        revealObserver.observe(card);
     });
 }
 
-// Scroll animations disabled per user request
+// Hardware-Accelerated Scroll Reveals
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, {
+    root: null,
+    rootMargin: '50px 0px 50px 0px',
+    threshold: 0
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLanguage');
@@ -128,6 +145,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('lang-selector').value = initialLang;
     switchLanguage(initialLang);
+
+    // Observe reveal elements
+    document.querySelectorAll('.reveal-fade-in, .reveal-scale-up, .reveal-slide-left').forEach(el => {
+        revealObserver.observe(el);
+    });
 
     // Initialize Intersection Observer for active nav link styling
     const sections = document.querySelectorAll('section');
@@ -182,7 +204,7 @@ function openLeadershipModal(activityId) {
     if (!activity || !translatedActivity) return;
 
     document.getElementById('leadership-modal-title').textContent = translatedActivity.title;
-    document.getElementById('leadership-modal-img').src = './me.jpg';
+    document.getElementById('leadership-modal-img').src = 'assets/images/me.jpg';
     document.getElementById('leadership-modal-img').alt = translatedActivity.title;
     document.getElementById('leadership-modal-desc').textContent = translatedActivity.description;
     
@@ -343,15 +365,35 @@ function initTypewriter(lang) {
     type();
 }
 
-// Mouse Spotlight glow tracking for Cards
+// 3D Glass Card Tilt & Spotlight
 document.addEventListener('mousemove', (e) => {
     const card = e.target.closest('.item-card');
     if (!card) return;
+    
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
+    
+    // Spotlight
     card.style.setProperty('--mouse-x', `${x}px`);
     card.style.setProperty('--mouse-y', `${y}px`);
+    
+    // 3D Tilt calculation (max 5 degrees)
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -5;
+    const rotateY = ((x - centerX) / centerX) * 5;
+    
+    card.style.transition = 'none';
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+}, { passive: true });
+
+document.addEventListener('mouseout', (e) => {
+    const card = e.target.closest('.item-card');
+    if (!card) return;
+    // Only transition compositor-friendly transform on mouse leave
+    card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
 }, { passive: true });
 
 // Scroll Event: Scroll Progress Bar (Throttled using requestAnimationFrame)
@@ -370,8 +412,42 @@ window.addEventListener('scroll', () => {
 function updateScrollProgress() {
     const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+    const scrolled = height > 0 ? (winScroll / height) : 0;
     if (scrollProgressEl) {
-        scrollProgressEl.style.width = scrolled + '%';
+        scrollProgressEl.style.transform = `scaleX(${scrolled})`;
     }
+}
+
+// Instant Custom Cursor
+const cursor = document.getElementById('custom-cursor');
+if (cursor && matchMedia('(pointer: fine)').matches) {
+    document.addEventListener('mousemove', (e) => {
+        // Direct assignment for instant tracking, no lag
+        cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+    }, { passive: true });
+
+    document.addEventListener('mouseover', (e) => {
+        const target = e.target;
+        if (target.tagName.toLowerCase() === 'a' || 
+            target.tagName.toLowerCase() === 'button' || 
+            target.closest('a') || 
+            target.closest('button') ||
+            target.closest('.clickable') ||
+            target.tagName.toLowerCase() === 'select') {
+            cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%) scale(2.5)`;
+        }
+    }, { passive: true });
+
+    document.addEventListener('mouseout', (e) => {
+        const target = e.target;
+        if (target.tagName.toLowerCase() === 'a' || 
+            target.tagName.toLowerCase() === 'button' || 
+            target.closest('a') || 
+            target.closest('button') ||
+            target.closest('.clickable') ||
+            target.tagName.toLowerCase() === 'select') {
+            // Scale back to 1 — transform will update on next mousemove
+            cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%) scale(1)`;
+        }
+    }, { passive: true });
 }

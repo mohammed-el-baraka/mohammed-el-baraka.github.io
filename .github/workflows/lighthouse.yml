@@ -1,0 +1,35 @@
+name: Performance Automation Audit
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lighthouse-audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Serve the static files locally to run Lighthouse against them
+      - name: Start Local Server
+        run: |
+          npm install -g serve
+          serve -s . -l 3000 &
+          echo "Waiting for server to spin up..."
+          sleep 3
+
+      # Run Lighthouse CI against the local instance
+      - name: Run Lighthouse CI Audit
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            http://localhost:3000/
+          budgetPath: ./lighthouse-budgets.json # Defines your performance budget
+          uploadArtifacts: true # Saves the HTML report for deep-dive inspection

@@ -418,36 +418,3 @@ function updateScrollProgress() {
     }
 }
 
-// Instant Custom Cursor
-const cursor = document.getElementById('custom-cursor');
-if (cursor && matchMedia('(pointer: fine)').matches) {
-    document.addEventListener('mousemove', (e) => {
-        // Direct assignment for instant tracking, no lag
-        cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
-    }, { passive: true });
-
-    document.addEventListener('mouseover', (e) => {
-        const target = e.target;
-        if (target.tagName.toLowerCase() === 'a' || 
-            target.tagName.toLowerCase() === 'button' || 
-            target.closest('a') || 
-            target.closest('button') ||
-            target.closest('.clickable') ||
-            target.tagName.toLowerCase() === 'select') {
-            cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%) scale(2.5)`;
-        }
-    }, { passive: true });
-
-    document.addEventListener('mouseout', (e) => {
-        const target = e.target;
-        if (target.tagName.toLowerCase() === 'a' || 
-            target.tagName.toLowerCase() === 'button' || 
-            target.closest('a') || 
-            target.closest('button') ||
-            target.closest('.clickable') ||
-            target.tagName.toLowerCase() === 'select') {
-            // Scale back to 1 — transform will update on next mousemove
-            cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%) scale(1)`;
-        }
-    }, { passive: true });
-}

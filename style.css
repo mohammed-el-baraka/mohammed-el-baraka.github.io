@@ -204,33 +204,6 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
     transform: none;
 }
-
-/* --- Custom Magnetic Cursor --- */
-@media (pointer: fine) {
-    body, a, button, .clickable, input, select, textarea {
-        cursor: none !important;
-    }
-}
-#custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(167, 139, 250, 0.6);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99999;
-    transform: translate(-50%, -50%);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-    will-change: transform;
-}
-#custom-cursor.cursor-hover {
-    transform: translate(-50%, -50%) scale(2.5);
-    background-color: rgba(167, 139, 250, 0.25);
-    border: 1px solid rgba(167, 139, 250, 0.5);
-}
-
 /* --- Dynamic Animations --- */
 @keyframes heroSlideUp {
     from {

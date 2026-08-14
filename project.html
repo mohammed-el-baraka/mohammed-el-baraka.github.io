@@ -22,7 +22,7 @@
         }
 
         .case-study-container {
-            max-width: 1100px;
+            max-width: 1050px;
             margin: 0 auto;
             padding: 2rem 1.5rem 6rem;
         }
@@ -141,84 +141,13 @@
             transform: translateY(-2px);
         }
 
-        .btn-cs-ai {
-            background: rgba(167, 139, 250, 0.12);
-            color: #c4b5fd;
-            border-color: rgba(167, 139, 250, 0.35);
-        }
-        .btn-cs-ai:hover {
-            background: var(--primary-color);
-            color: #121212;
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        .cs-content-card {
-            background: rgba(20, 20, 26, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 18px;
-            padding: 2.5rem;
+        .ai-assistant-card {
+            background: linear-gradient(135deg, rgba(28, 25, 65, 0.6), rgba(15, 15, 22, 0.85));
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            border-radius: 20px;
+            padding: 2.25rem;
             margin-bottom: 2rem;
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        .cs-content-card h1, .cs-content-card h2, .cs-content-card h3 {
-            font-family: 'Outfit', sans-serif;
-            color: #ffffff;
-            font-weight: 700;
-        }
-
-        .cs-content-card h2 {
-            font-size: 1.45rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--primary-color);
-        }
-
-        .cs-content-card h3 {
-            font-size: 1.15rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: #e5e7eb;
-        }
-
-        .cs-content-card p {
-            margin-bottom: 1.25rem;
-            color: #d1d5db;
-        }
-
-        .cs-content-card ul, .cs-content-card ol {
-            margin-left: 1.5rem;
-            margin-bottom: 1.25rem;
-            color: #d1d5db;
-        }
-
-        .cs-content-card li {
-            margin-bottom: 0.5rem;
-        }
-
-        .cs-content-card code {
-            font-family: 'JetBrains Mono', Courier, monospace;
-            background: rgba(0, 0, 0, 0.45);
-            color: #c4b5fd;
-            padding: 0.2rem 0.5rem;
-            border-radius: 6px;
-            font-size: 0.88rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .ai-assistant-box {
-            background: linear-gradient(135deg, rgba(30, 27, 75, 0.5), rgba(17, 24, 39, 0.8));
-            border: 1px solid rgba(167, 139, 250, 0.35);
-            border-radius: 18px;
-            padding: 2rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
 
         .cs-project-nav {
@@ -262,11 +191,11 @@
             </h1>
 
             <p id="cs-project-desc" class="text-gray-300 text-base md:text-lg leading-relaxed mb-6 max-w-3xl">
-                Loading project summary...
+                Loading project overview...
             </p>
 
             <div class="mb-4">
-                <span class="text-xs text-gray-400 block mb-2 font-bold uppercase tracking-wider">Technologies & Methodologies</span>
+                <span class="text-xs text-gray-400 block mb-2 font-bold uppercase tracking-wider">Technologies Used</span>
                 <div id="cs-project-tech" class="flex flex-wrap gap-2"></div>
             </div>
 
@@ -291,45 +220,40 @@
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" /></svg>
                     <span>Slides & Presentation</span>
                 </a>
-
-                <button type="button" onclick="askAiAboutCurrentProject('explain')" class="btn-cs-action btn-cs-ai">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" /></svg>
-                    <span>AI Architecture Analysis</span>
-                </button>
             </div>
         </header>
 
-        <!-- AI Assistant Box -->
-        <section class="ai-assistant-box">
-            <div class="flex justify-between items-center mb-4 flex-wrap gap-3">
-                <div class="flex items-center gap-2">
-                    <span class="w-8 h-8 rounded-lg bg-violet-900/40 border border-violet-500/30 flex items-center justify-center font-bold text-violet-300 text-sm">AI</span>
-                    <div>
-                        <h3 class="font-bold text-white text-base">Interactive Engineering Assistant</h3>
-                        <p class="text-xs text-gray-400">Powered by Netlify Serverless Functions & Gemini 2.5</p>
-                    </div>
+        <!-- Interactive AI Project Assistant (Chat & Q&A) -->
+        <section class="ai-assistant-card">
+            <div class="mb-5">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-violet-900/50 border border-violet-500/40 text-violet-300">AI Assistant</span>
+                    <h2 class="text-xl font-bold text-white">Ask Anything About This Project</h2>
                 </div>
-                
-                <div class="flex gap-2">
-                    <button onclick="askAiAboutCurrentProject('explain')" class="btn-cs-action btn-cs-secondary text-xs py-1.5 px-3">Explain Methodology</button>
-                    <button onclick="askAiAboutCurrentProject('summarize')" class="btn-cs-action btn-cs-secondary text-xs py-1.5 px-3">3-Bullet Summary</button>
-                </div>
+                <p class="text-xs text-gray-400">
+                    Ask questions regarding the mathematical formulation, architecture, algorithms, or results.
+                </p>
             </div>
 
-            <div id="ai-response-area" class="p-4 rounded-xl bg-black/40 border border-white/10 text-sm text-gray-300 leading-relaxed min-h-[70px]">
-                Click an analysis button above or ask a question to query this project report.
+            <!-- Input Query Form -->
+            <form onsubmit="event.preventDefault(); submitCaseStudyAiQuestion();" class="flex gap-2 mb-3">
+                <input type="text" id="cs-ai-input" class="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-violet-400 transition-colors" placeholder="Ask a question... (e.g. 'How did you formulate the constraints?' or 'What algorithms were tested?')">
+                <button type="submit" class="btn-cs-action btn-cs-primary text-sm flex-shrink-0">Ask AI</button>
+            </form>
+
+            <!-- Quick Action Prompt Chips -->
+            <div class="flex gap-2 flex-wrap mb-5">
+                <button type="button" onclick="runCaseStudyAiQuery('explain')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">Explain Methodology</button>
+                <button type="button" onclick="runCaseStudyAiQuery('summarize')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">3-Bullet Summary</button>
+                <button type="button" onclick="runCaseStudyAiQuery(null, 'Explain the mathematical modeling, formulas, and algorithms used in this project.')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">Mathematical Modeling</button>
+                <button type="button" onclick="runCaseStudyAiQuery(null, 'What were the key measurable outcomes, accuracy metrics, and business/engineering impact?')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">Key Results & Metrics</button>
+            </div>
+
+            <!-- AI Response Box -->
+            <div id="cs-ai-response" class="p-4 rounded-xl bg-black/45 border border-white/10 min-h-[90px] text-sm text-gray-300 leading-relaxed">
+                Type a question above or click any prompt to query the AI assistant.
             </div>
         </section>
-
-        <!-- Detailed Technical Report from Markdown -->
-        <main class="cs-content-card" id="cs-markdown-body">
-            <div class="animate-pulse space-y-4">
-                <div class="h-6 bg-white/10 rounded w-1/3"></div>
-                <div class="h-4 bg-white/5 rounded w-full"></div>
-                <div class="h-4 bg-white/5 rounded w-5/6"></div>
-                <div class="h-4 bg-white/5 rounded w-4/6"></div>
-            </div>
-        </main>
 
         <!-- Project Pagination / Navigation Footer -->
         <footer class="cs-project-nav">
@@ -365,16 +289,16 @@
         function formatMarkdownToHTML(md) {
             if (!md) return '';
             return md
-                .replace(/^# (.*$)/gim, '<h1 class="text-2xl md:text-3xl font-extrabold text-white mb-4 pb-2 border-b border-white/10">$1</h1>')
-                .replace(/^## (.*$)/gim, '<h2 class="text-xl md:text-2xl font-bold text-violet-300 mt-6 mb-3 pb-1 border-b border-white/5">$1</h2>')
-                .replace(/^### (.*$)/gim, '<h3 class="text-lg font-semibold text-gray-200 mt-4 mb-2">$1</h3>')
+                .replace(/^# (.*$)/gim, '<h2 class="text-xl font-bold text-white mb-2 pb-1 border-b border-white/10">$1</h2>')
+                .replace(/^## (.*$)/gim, '<h3 class="text-lg font-bold text-violet-300 mt-4 mb-2 pb-1 border-b border-white/5">$1</h3>')
+                .replace(/^### (.*$)/gim, '<h4 class="text-base font-semibold text-gray-200 mt-3 mb-1">$1</h4>')
                 .replace(/\*\*(.*?)\*\*/gim, '<strong class="text-white font-semibold">$1</strong>')
                 .replace(/\*(.*?)\*/gim, '<em class="text-gray-300">$1</em>')
-                .replace(/```([\s\S]*?)```/gim, '<pre class="bg-black/60 border border-white/10 p-4 rounded-xl overflow-x-auto text-xs font-mono text-violet-200 my-4"><code>$1</code></pre>')
+                .replace(/```([\s\S]*?)```/gim, '<pre class="bg-black/60 border border-white/10 p-3 rounded-xl overflow-x-auto text-xs font-mono text-violet-200 my-3"><code>$1</code></pre>')
                 .replace(/`([^`]+)`/gim, '<code class="bg-black/50 text-violet-300 px-1.5 py-0.5 rounded text-xs">$1</code>')
-                .replace(/^\s*-\s+(.*$)/gim, '<li class="ml-5 list-disc text-gray-300 mb-1.5">$1</li>')
-                .replace(/^\s*\d+\.\s+(.*$)/gim, '<li class="ml-5 list-decimal text-gray-300 mb-1.5">$1</li>')
-                .replace(/\n\n/gim, '<p class="mb-4 text-gray-300 leading-relaxed"></p>')
+                .replace(/^\s*-\s+(.*$)/gim, '<li class="ml-5 list-disc text-gray-300 mb-1">$1</li>')
+                .replace(/^\s*\d+\.\s+(.*$)/gim, '<li class="ml-5 list-decimal text-gray-300 mb-1">$1</li>')
+                .replace(/\n\n/gim, '<p class="mb-3 text-gray-300 leading-relaxed"></p>')
                 .replace(/\n/gim, '<br>');
         }
 
@@ -445,39 +369,43 @@
             document.getElementById('nav-next-project').href = `project.html?id=${nextProject.id}`;
             document.getElementById('next-project-name').textContent = nextTrans?.title || 'Next';
 
-            // Fetch Markdown Report
+            // Preload report markdown for AI backend
             try {
                 const res = await fetch(`projects/${currentProjectId}.md`);
                 if (res.ok) {
                     currentProjectRawMarkdown = await res.text();
-                    document.getElementById('cs-markdown-body').innerHTML = formatMarkdownToHTML(currentProjectRawMarkdown);
-                } else {
-                    document.getElementById('cs-markdown-body').innerHTML = `
-                        <h2 class="text-xl font-bold text-white mb-2">Project Overview</h2>
-                        <p class="text-gray-300 leading-relaxed">${enTrans.description}</p>
-                    `;
                 }
             } catch (err) {
-                document.getElementById('cs-markdown-body').innerHTML = `
-                    <h2 class="text-xl font-bold text-white mb-2">Project Overview</h2>
-                    <p class="text-gray-300 leading-relaxed">${enTrans.description}</p>
-                `;
+                console.warn('Could not load markdown report', err);
             }
         }
 
-        async function askAiAboutCurrentProject(action) {
-            const aiArea = document.getElementById('ai-response-area');
-            aiArea.innerHTML = '<div class="flex items-center gap-2 text-violet-300"><div class="animate-spin w-4 h-4 border-2 border-violet-400 border-t-transparent rounded-full"></div><span>Analyzing technical report via serverless AI...</span></div>';
+        function submitCaseStudyAiQuestion() {
+            const input = document.getElementById('cs-ai-input');
+            const question = input ? input.value.trim() : '';
+            if (!question) return;
+            runCaseStudyAiQuery(null, question);
+        }
 
-            const localApiKey = localStorage.getItem('gemini_api_key') || localStorage.getItem('ai_api_key');
+        async function runCaseStudyAiQuery(action = null, customPrompt = null) {
+            const responseBox = document.getElementById('cs-ai-response');
+            if (!responseBox) return;
 
-            // 1. Try Netlify Serverless Function first
+            responseBox.innerHTML = `
+                <div class="flex items-center gap-2 text-violet-300 text-xs py-3">
+                    <div class="animate-spin w-4 h-4 border-2 border-violet-400 border-t-transparent rounded-full"></div>
+                    <span>Querying project AI assistant...</span>
+                </div>
+            `;
+
+            // 1. Try Netlify Serverless Function
             try {
                 const netlifyRes = await fetch('/.netlify/functions/ai', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         action,
+                        customPrompt,
                         projectId: currentProjectId,
                         reportMarkdown: currentProjectRawMarkdown,
                         language: 'en'
@@ -487,20 +415,26 @@
                 if (netlifyRes.ok) {
                     const data = await netlifyRes.json();
                     if (data.text) {
-                        aiArea.innerHTML = `<div class="space-y-2 text-sm leading-relaxed">${formatMarkdownToHTML(data.text)}</div>`;
+                        responseBox.innerHTML = `<div class="space-y-2 text-sm leading-relaxed">${formatMarkdownToHTML(data.text)}</div>`;
                         return;
                     }
                 }
             } catch (e) {
-                console.log('Netlify function not reachable, trying direct fallback...');
+                console.log('Netlify function not reachable, checking local key...');
             }
 
-            // 2. Fallback to client-side Gemini call if local key exists
+            // 2. Client-side fallback if a local key exists
+            const localApiKey = localStorage.getItem('gemini_api_key') || localStorage.getItem('ai_api_key');
             if (localApiKey) {
                 try {
-                    const prompt = action === 'explain' 
-                        ? `Explain this engineering project in 3 concise paragraphs:\n\n${currentProjectRawMarkdown}`
-                        : `Provide a 3-bullet executive summary of this engineering project:\n\n${currentProjectRawMarkdown}`;
+                    let prompt = '';
+                    if (action === 'explain') {
+                        prompt = `Explain this engineering project in 3 concise paragraphs:\n\n${currentProjectRawMarkdown}`;
+                    } else if (action === 'summarize') {
+                        prompt = `Provide a 3-bullet executive summary of this engineering project:\n\n${currentProjectRawMarkdown}`;
+                    } else {
+                        prompt = `Answer this question about the engineering project based on the report:\n\nQuestion: ${customPrompt}\n\nReport:\n${currentProjectRawMarkdown}`;
+                    }
 
                     const directRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${localApiKey}`, {
                         method: 'POST',
@@ -512,7 +446,7 @@
                         const directData = await directRes.json();
                         const text = directData.candidates?.[0]?.content?.parts?.[0]?.text;
                         if (text) {
-                            aiArea.innerHTML = `<div class="space-y-2 text-sm leading-relaxed">${formatMarkdownToHTML(text)}</div>`;
+                            responseBox.innerHTML = `<div class="space-y-2 text-sm leading-relaxed">${formatMarkdownToHTML(text)}</div>`;
                             return;
                         }
                     }
@@ -521,13 +455,11 @@
                 }
             }
 
-            // 3. Fallback to structured markdown display
-            aiArea.innerHTML = `
-                <div class="space-y-2 text-sm text-gray-300">
-                    <p><strong>Executive Note:</strong> ${action === 'explain' ? 'Technical Architecture and formulation summary available in the report below.' : 'Summary extracted from project documentation.'}</p>
-                    <div class="mt-2 pt-2 border-t border-white/10 text-xs text-gray-400">
-                        To enable live serverless AI responses, configure your <code>GEMINI_API_KEY</code> in your Netlify Dashboard environment variables.
-                    </div>
+            // 3. Clean unavailable state (no raw markdown dump)
+            responseBox.innerHTML = `
+                <div class="p-3 text-center text-xs text-gray-400">
+                    <p class="mb-1">AI response is currently unavailable.</p>
+                    <p class="text-violet-300/80">Configure <code>GEMINI_API_KEY</code> in your Netlify environment variables to enable live answers.</p>
                 </div>
             `;
         }

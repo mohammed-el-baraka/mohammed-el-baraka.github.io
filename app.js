@@ -172,7 +172,7 @@ function formatMarkdownToHTML(md) {
         .replace(/\n/gim, '<br>');
 }
 
-async function explainProject(projectId) {
+async function openProjectAiModal(projectId, initialAction = null, customQuery = null) {
     const project = translations[currentLang]?.projects?.find(p => p.id === projectId);
     const projectTitle = project ? project.title : projectId;
 
@@ -180,94 +180,65 @@ async function explainProject(projectId) {
     const modalBody = document.getElementById('modal-body');
     const modalFooter = document.getElementById('modal-footer');
 
-    modalTitle.innerHTML = `<span class="shimmer-text">Explaining: ${projectTitle}</span>`;
-    modalBody.innerHTML = loaderHTML;
+    modalTitle.innerHTML = `<span class="shimmer-text">AI Assistant: ${projectTitle}</span>`;
+    
+    // Render the interactive search/query UI
+    modalBody.innerHTML = `
+        <div class="space-y-4">
+            <form onsubmit="event.preventDefault(); submitModalAiQuestion('${projectId}');" class="flex gap-2">
+                <input type="text" id="modal-ai-input" class="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-violet-400 transition-colors" placeholder="Ask anything about this project... (e.g. What algorithm was used?)">
+                <button type="submit" class="btn-primary text-xs px-4 py-2 flex-shrink-0">Ask AI</button>
+            </form>
+            <div class="flex gap-1.5 flex-wrap">
+                <button onclick="runModalAiQuery('${projectId}', 'explain')" class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">Explain Methodology</button>
+                <button onclick="runModalAiQuery('${projectId}', 'summarize')" class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">3-Bullet Summary</button>
+                <button onclick="runModalAiQuery('${projectId}', null, 'What mathematical models and algorithms were used in this project?')" class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">Algorithms & Math</button>
+                <button onclick="runModalAiQuery('${projectId}', null, 'What were the key measurable outcomes and performance results of this project?')" class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">Key Results</button>
+            </div>
+            <div id="modal-ai-response" class="p-4 rounded-xl bg-black/40 border border-white/10 min-h-[100px] text-sm text-gray-300 leading-relaxed">
+                ${loaderHTML}
+            </div>
+        </div>
+    `;
     modalFooter.innerHTML = '';
     openModal('ai-modal');
 
-    const markdownText = await fetchProjectMarkdown(projectId);
-
-    // 1. Try Netlify Serverless Function (reads GEMINI_API_KEY from Netlify environment variables)
-    try {
-        const netlifyRes = await fetch('/.netlify/functions/ai', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                action: 'explain',
-                projectId,
-                reportMarkdown: markdownText,
-                language: currentLang
-            })
-        });
-
-        if (netlifyRes.ok) {
-            const netlifyData = await netlifyRes.json();
-            if (netlifyData.text) {
-                modalBody.innerHTML = `<div class="prose prose-invert max-w-none space-y-3 text-sm leading-relaxed">${formatMarkdownToHTML(netlifyData.text)}</div>`;
-                return;
-            }
-        }
-    } catch (e) {
-        console.log('Netlify function not available, checking local key...');
+    // Run initial query
+    if (initialAction || customQuery) {
+        runModalAiQuery(projectId, initialAction, customQuery);
+    } else {
+        runModalAiQuery(projectId, 'explain');
     }
-
-    // 2. Client-side fallback if a local key is saved in browser
-    const apiKey = localStorage.getItem('gemini_api_key') || localStorage.getItem('ai_api_key');
-    if (apiKey) {
-        try {
-            const prompt = `You are an AI engineering assistant for Mohammed El Baraka's portfolio. Explain this project report clearly in 3 concise paragraphs (1. Problem Context, 2. Technical Architecture & Algorithms, 3. Results & Impact). Write in ${currentLang === 'fr' ? 'French' : 'English'}.\n\nReport:\n${markdownText}`;
-            
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    contents: [{ parts: [{ text: prompt }] }]
-                })
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text;
-                if (aiText) {
-                    modalBody.innerHTML = `<div class="prose prose-invert max-w-none space-y-3 text-sm leading-relaxed">${formatMarkdownToHTML(aiText)}</div>`;
-                    return;
-                }
-            }
-        } catch (err) {
-            console.error('Gemini API call failed, using report text directly', err);
-        }
-    }
-
-    // 3. Direct Report Display
-    modalBody.innerHTML = `
-        <div class="prose prose-invert max-w-none text-sm leading-relaxed">
-            <div class="mb-4 p-3 rounded-lg bg-violet-950/40 border border-violet-500/30 text-xs text-violet-300 flex items-center justify-between"><span><strong>Executive Technical Report</strong></span></div>
-            ${formatMarkdownToHTML(markdownText)}
-        </div>`;
 }
 
-async function summarizeProject(projectId) {
-    const project = translations[currentLang]?.projects?.find(p => p.id === projectId);
-    const projectTitle = project ? project.title : projectId;
+function submitModalAiQuestion(projectId) {
+    const input = document.getElementById('modal-ai-input');
+    const question = input ? input.value.trim() : '';
+    if (!question) return;
+    runModalAiQuery(projectId, null, question);
+}
 
-    const modalTitle = document.getElementById('modal-title');
-    const modalBody = document.getElementById('modal-body');
-    const modalFooter = document.getElementById('modal-footer');
+async function runModalAiQuery(projectId, action = null, customPrompt = null) {
+    const responseBox = document.getElementById('modal-ai-response');
+    if (!responseBox) return;
 
-    modalTitle.innerHTML = `<span class="shimmer-text">Executive Summary: ${projectTitle}</span>`;
-    modalBody.innerHTML = loaderHTML;
-    modalFooter.innerHTML = '';
-    openModal('ai-modal');
+    responseBox.innerHTML = `
+        <div class="flex items-center gap-2 text-violet-300 text-xs py-3">
+            <div class="animate-spin w-4 h-4 border-2 border-violet-400 border-t-transparent rounded-full"></div>
+            <span>Analyzing project knowledge base...</span>
+        </div>
+    `;
 
     const markdownText = await fetchProjectMarkdown(projectId);
 
-    // 1. Try Netlify Serverless Function (reads GEMINI_API_KEY from Netlify environment variables)
+    // 1. Try Netlify Serverless Function
     try {
         const netlifyRes = await fetch('/.netlify/functions/ai', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                action: 'summarize',
+                action,
+                customPrompt,
                 projectId,
                 reportMarkdown: markdownText,
                 language: currentLang
@@ -277,7 +248,7 @@ async function summarizeProject(projectId) {
         if (netlifyRes.ok) {
             const netlifyData = await netlifyRes.json();
             if (netlifyData.text) {
-                modalBody.innerHTML = `<div class="prose prose-invert max-w-none space-y-3 text-sm leading-relaxed">${formatMarkdownToHTML(netlifyData.text)}</div>`;
+                responseBox.innerHTML = `<div class="prose prose-invert max-w-none space-y-2 text-sm leading-relaxed">${formatMarkdownToHTML(netlifyData.text)}</div>`;
                 return;
             }
         }
@@ -289,35 +260,49 @@ async function summarizeProject(projectId) {
     const apiKey = localStorage.getItem('gemini_api_key') || localStorage.getItem('ai_api_key');
     if (apiKey) {
         try {
-            const prompt = `You are an AI assistant for Mohammed El Baraka's engineering portfolio. Provide a punchy 3-bullet executive summary of what this project achieved, technologies used, and key metrics. Language: ${currentLang === 'fr' ? 'French' : 'English'}.\n\nReport:\n${markdownText}`;
-            
+            let prompt = '';
+            if (action === 'explain') {
+                prompt = `Explain this engineering project clearly in 3 concise paragraphs:\n\n${markdownText}`;
+            } else if (action === 'summarize') {
+                prompt = `Provide a 3-bullet executive summary of what this engineering project achieved:\n\n${markdownText}`;
+            } else {
+                prompt = `Answer the following question about this engineering project based on the report:\n\nQuestion: ${customPrompt}\n\nReport:\n${markdownText}`;
+            }
+
             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    contents: [{ parts: [{ text: prompt }] }]
-                })
+                body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
             });
 
             if (response.ok) {
                 const data = await response.json();
                 const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text;
                 if (aiText) {
-                    modalBody.innerHTML = `<div class="prose prose-invert max-w-none space-y-3 text-sm leading-relaxed">${formatMarkdownToHTML(aiText)}</div>`;
+                    responseBox.innerHTML = `<div class="prose prose-invert max-w-none space-y-2 text-sm leading-relaxed">${formatMarkdownToHTML(aiText)}</div>`;
                     return;
                 }
             }
         } catch (err) {
-            console.error('Gemini API call failed, using report text directly', err);
+            console.error('Gemini API call failed', err);
         }
     }
 
-    // 3. Direct Report Display
-    modalBody.innerHTML = `
-        <div class="prose prose-invert max-w-none text-sm leading-relaxed">
-            <div class="mb-4 p-3 rounded-lg bg-violet-950/40 border border-violet-500/30 text-xs text-violet-300 flex items-center justify-between"><span><strong>Executive Technical Report</strong></span></div>
-            ${formatMarkdownToHTML(markdownText)}
-        </div>`;
+    // 3. Clean unavailable state (no raw markdown dump)
+    responseBox.innerHTML = `
+        <div class="p-3 text-center text-xs text-gray-400">
+            <p class="mb-1">AI dynamic response is unavailable right now.</p>
+            <p class="text-violet-300/80">Configure <code>GEMINI_API_KEY</code> in your Netlify dashboard environment variables to enable real-time answers.</p>
+        </div>
+    `;
+}
+
+function explainProject(projectId) {
+    openProjectAiModal(projectId, 'explain');
+}
+
+function summarizeProject(projectId) {
+    openProjectAiModal(projectId, 'summarize');
 }
 
 function updateToggleButton() {

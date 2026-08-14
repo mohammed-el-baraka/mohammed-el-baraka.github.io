@@ -172,30 +172,40 @@ async function openProjectAiModal(projectId, initialAction = null, customQuery =
     const project = translations[currentLang]?.projects?.find(p => p.id === projectId);
     const projectTitle = project ? project.title : projectId;
 
+    const modal = document.getElementById('ai-modal');
+    if (modal) {
+        const modalContent = modal.querySelector('.modal-content');
+        if (modalContent) {
+            modalContent.classList.add('ai-modal-content');
+        }
+    }
+
     const modalTitle = document.getElementById('modal-title');
     const modalBody = document.getElementById('modal-body');
     const modalFooter = document.getElementById('modal-footer');
 
-    modalTitle.innerHTML = `<span class="shimmer-text">AI Deep Dive: ${projectTitle}</span>`;
+    modalTitle.innerHTML = `<span class="shimmer-text">AI Assistant: ${projectTitle}</span>`;
     
-    // Render the interactive search/query UI
+    // Render the polished interactive search/query UI
     modalBody.innerHTML = `
         <div class="space-y-4">
-            <div class="p-3 bg-violet-950/20 border border-violet-500/20 rounded-xl text-xs text-violet-300 flex items-center justify-between">
-                <span>Ask custom engineering questions or choose an instant analysis topic below:</span>
+            <div class="flex gap-2 flex-wrap items-center">
+                <button type="button" onclick="runModalAiQuery('${projectId}', 'explain')" class="ai-chip-pill">✨ How was this built?</button>
+                <button type="button" onclick="runModalAiQuery('${projectId}', 'summarize')" class="ai-chip-pill">⚡ 3-Bullet Summary</button>
+                <button type="button" onclick="runModalAiQuery('${projectId}', null, 'What mathematical models, formulas, and optimization algorithms were used in this project?')" class="ai-chip-pill">📐 Math & Algorithms</button>
+                <button type="button" onclick="runModalAiQuery('${projectId}', null, 'What were the key measurable outcomes, accuracy metrics, and real-world results?')" class="ai-chip-pill">📈 Results & Impact</button>
             </div>
-            <div class="flex gap-2 flex-wrap">
-                <button onclick="runModalAiQuery('${projectId}', 'explain')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all font-semibold">🔍 Explain Methodology</button>
-                <button onclick="runModalAiQuery('${projectId}', 'summarize')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all font-semibold">⚡ 3-Bullet Summary</button>
-                <button onclick="runModalAiQuery('${projectId}', null, 'What mathematical models, formulas, and optimization algorithms were used in this project?')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all font-semibold">📐 Math & Algorithms</button>
-                <button onclick="runModalAiQuery('${projectId}', null, 'What were the key measurable outcomes, accuracy metrics, and performance results?')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all font-semibold">📈 Results & Metrics</button>
-            </div>
-            <div id="modal-ai-response" class="p-5 rounded-2xl bg-black/60 border border-white/10 min-h-[140px] text-sm text-gray-300 leading-relaxed shadow-inner">
+            
+            <div id="modal-ai-response" class="ai-response-card">
                 ${loaderHTML}
             </div>
-            <form onsubmit="event.preventDefault(); submitModalAiQuestion('${projectId}');" class="flex gap-2 pt-2">
-                <input type="text" id="modal-ai-input" class="w-full bg-black/80 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-violet-400 transition-colors shadow-sm" placeholder="Ask a custom question about this project...">
-                <button type="submit" class="btn-primary text-xs px-5 py-3 flex-shrink-0 font-bold">Ask AI</button>
+
+            <form onsubmit="event.preventDefault(); submitModalAiQuestion('${projectId}');" class="ai-input-wrapper">
+                <input type="text" id="modal-ai-input" class="ai-input-field" placeholder="Ask anything about this project... (e.g. How does the model work?)">
+                <button type="submit" class="ai-send-btn">
+                    <span>Ask</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>
+                </button>
             </form>
         </div>
     `;
@@ -222,9 +232,9 @@ async function runModalAiQuery(projectId, action = null, customPrompt = null) {
     if (!responseBox) return;
 
     responseBox.innerHTML = `
-        <div class="flex items-center gap-2 text-violet-300 text-xs py-3">
+        <div class="flex items-center gap-3 text-violet-300 text-sm py-4">
             <div class="animate-spin w-4 h-4 border-2 border-violet-400 border-t-transparent rounded-full"></div>
-            <span>Analyzing project knowledge base...</span>
+            <span>Analyzing project engineering context...</span>
         </div>
     `;
 
@@ -252,7 +262,7 @@ async function runModalAiQuery(projectId, action = null, customPrompt = null) {
             }
         }
     } catch (e) {
-        console.log('Netlify function not available, checking local key...');
+        console.log('Netlify function connection error');
     }
 
     // 2. Client-side fallback if a local key is saved in browser
@@ -268,7 +278,7 @@ async function runModalAiQuery(projectId, action = null, customPrompt = null) {
                 prompt = `Answer the following question about this engineering project based on the report:\n\nQuestion: ${customPrompt}\n\nReport:\n${markdownText}`;
             }
 
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=${apiKey}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
@@ -287,11 +297,11 @@ async function runModalAiQuery(projectId, action = null, customPrompt = null) {
         }
     }
 
-    // 3. Clean unavailable state (no raw markdown dump)
+    // 3. Fallback when AI is not responding
     responseBox.innerHTML = `
-        <div class="p-3 text-center text-xs text-gray-400">
-            <p class="mb-1">AI dynamic response is unavailable right now.</p>
-            <p class="text-violet-300/80">Configure <code>GEMINI_API_KEY</code> in your Netlify dashboard environment variables to enable real-time answers.</p>
+        <div class="p-4 text-center text-sm text-gray-300">
+            <p class="text-violet-200 font-semibold mb-1">The AI is not working for the moment.</p>
+            <p class="text-xs text-gray-400">Please feel free to explore the project deliverables or contact Mohammed directly.</p>
         </div>
     `;
 }

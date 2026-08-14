@@ -63,14 +63,14 @@
         }
 
         .cs-hero-card {
-            background: rgba(24, 24, 32, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
+            background: rgba(22, 22, 28, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 24px;
             padding: 2.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
             position: relative;
             overflow: hidden;
         }
@@ -142,12 +142,14 @@
         }
 
         .ai-assistant-card {
-            background: linear-gradient(135deg, rgba(28, 25, 65, 0.6), rgba(15, 15, 22, 0.85));
-            border: 1px solid rgba(167, 139, 250, 0.3);
-            border-radius: 20px;
+            background: rgba(22, 22, 28, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(167, 139, 250, 0.25);
+            border-radius: 24px;
             padding: 2.25rem;
             margin-bottom: 2rem;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(167, 139, 250, 0.08);
         }
 
         .cs-project-nav {
@@ -235,24 +237,27 @@
                 </p>
             </div>
 
-            <!-- Input Query Form -->
-            <form onsubmit="event.preventDefault(); submitCaseStudyAiQuestion();" class="flex gap-2 mb-3">
-                <input type="text" id="cs-ai-input" class="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-violet-400 transition-colors" placeholder="Ask a question... (e.g. 'How did you formulate the constraints?' or 'What algorithms were tested?')">
-                <button type="submit" class="btn-cs-action btn-cs-primary text-sm flex-shrink-0">Ask AI</button>
-            </form>
-
             <!-- Quick Action Prompt Chips -->
-            <div class="flex gap-2 flex-wrap mb-5">
-                <button type="button" onclick="runCaseStudyAiQuery('explain')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">Explain Methodology</button>
-                <button type="button" onclick="runCaseStudyAiQuery('summarize')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">3-Bullet Summary</button>
-                <button type="button" onclick="runCaseStudyAiQuery(null, 'Explain the mathematical modeling, formulas, and algorithms used in this project.')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">Mathematical Modeling</button>
-                <button type="button" onclick="runCaseStudyAiQuery(null, 'What were the key measurable outcomes, accuracy metrics, and business/engineering impact?')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">Key Results & Metrics</button>
+            <div class="flex gap-2 flex-wrap mb-4">
+                <button type="button" onclick="runCaseStudyAiQuery('explain')" class="ai-chip-pill">✨ How was this built?</button>
+                <button type="button" onclick="runCaseStudyAiQuery('summarize')" class="ai-chip-pill">⚡ 3-Bullet Summary</button>
+                <button type="button" onclick="runCaseStudyAiQuery(null, 'Explain the mathematical modeling, formulas, and algorithms used in this project.')" class="ai-chip-pill">📐 Math & Algorithms</button>
+                <button type="button" onclick="runCaseStudyAiQuery(null, 'What were the key measurable outcomes, accuracy metrics, and business/engineering impact?')" class="ai-chip-pill">📈 Results & Impact</button>
             </div>
 
             <!-- AI Response Box -->
-            <div id="cs-ai-response" class="p-4 rounded-xl bg-black/45 border border-white/10 min-h-[90px] text-sm text-gray-300 leading-relaxed">
-                Type a question above or click any prompt to query the AI assistant.
+            <div id="cs-ai-response" class="ai-response-card mb-4">
+                Type a question below or click any prompt chip to explore this project with AI.
             </div>
+
+            <!-- Input Query Form -->
+            <form onsubmit="event.preventDefault(); submitCaseStudyAiQuestion();" class="ai-input-wrapper">
+                <input type="text" id="cs-ai-input" class="ai-input-field" placeholder="Ask a question... (e.g. 'How did you formulate the constraints?' or 'What models were tested?')">
+                <button type="submit" class="ai-send-btn">
+                    <span>Ask</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>
+                </button>
+            </form>
         </section>
 
         <!-- Project Pagination / Navigation Footer -->
@@ -392,9 +397,9 @@
             if (!responseBox) return;
 
             responseBox.innerHTML = `
-                <div class="flex items-center gap-2 text-violet-300 text-xs py-3">
+                <div class="flex items-center gap-3 text-violet-300 text-sm py-4">
                     <div class="animate-spin w-4 h-4 border-2 border-violet-400 border-t-transparent rounded-full"></div>
-                    <span>Querying project AI assistant...</span>
+                    <span>Analyzing project engineering context...</span>
                 </div>
             `;
 
@@ -420,7 +425,7 @@
                     }
                 }
             } catch (e) {
-                console.log('Netlify function not reachable, checking local key...');
+                console.log('Netlify function connection error');
             }
 
             // 2. Client-side fallback if a local key exists
@@ -436,7 +441,7 @@
                         prompt = `Answer this question about the engineering project based on the report:\n\nQuestion: ${customPrompt}\n\nReport:\n${currentProjectRawMarkdown}`;
                     }
 
-                    const directRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${localApiKey}`, {
+                    const directRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=${localApiKey}`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
@@ -455,11 +460,11 @@
                 }
             }
 
-            // 3. Clean unavailable state (no raw markdown dump)
+            // 3. Fallback when AI is not responding
             responseBox.innerHTML = `
-                <div class="p-3 text-center text-xs text-gray-400">
-                    <p class="mb-1">AI response is currently unavailable.</p>
-                    <p class="text-violet-300/80">Configure <code>GEMINI_API_KEY</code> in your Netlify environment variables to enable live answers.</p>
+                <div class="p-4 text-center text-sm text-gray-300">
+                    <p class="text-violet-200 font-semibold mb-1">The AI is not working for the moment.</p>
+                    <p class="text-xs text-gray-400">Please feel free to explore the project deliverables or contact Mohammed directly.</p>
                 </div>
             `;
         }

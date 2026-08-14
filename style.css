@@ -610,6 +610,99 @@ section + section::before {
     color: var(--bg-color);
 }
 
+/* --- AI Project Assistant & Deep Dive Interface --- */
+.ai-modal-content {
+    background: rgba(18, 18, 24, 0.95);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.65), 0 0 30px rgba(167, 139, 250, 0.1);
+    border-radius: 24px;
+}
+
+.ai-chip-pill {
+    background: rgba(167, 139, 250, 0.08);
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    color: #e0e7ff;
+    padding: 0.45rem 0.95rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    user-select: none;
+}
+.ai-chip-pill:hover {
+    background: rgba(167, 139, 250, 0.25);
+    border-color: var(--primary-color);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(167, 139, 250, 0.25);
+}
+
+.ai-response-card {
+    background: rgba(10, 10, 15, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 1.5rem;
+    color: #e5e7eb;
+    line-height: 1.75;
+    font-size: 0.92rem;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+    min-height: 140px;
+}
+
+.ai-input-wrapper {
+    background: rgba(12, 12, 18, 0.95);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 16px;
+    padding: 0.35rem 0.45rem 0.35rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.ai-input-wrapper:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.2), 0 0 20px rgba(167, 139, 250, 0.15);
+}
+
+.ai-input-field {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+.ai-input-field::placeholder {
+    color: #6b7280;
+}
+
+.ai-send-btn {
+    background: var(--primary-color);
+    color: #121212;
+    border: none;
+    border-radius: 12px;
+    padding: 0.6rem 1.1rem;
+    font-size: 0.85rem;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+.ai-send-btn:hover {
+    box-shadow: 0 0 18px rgba(167, 139, 250, 0.45);
+    transform: translateY(-1px);
+}
+
 /* --- Modal Styling (Liquid Glass Modals) --- */
 .modal { 
     transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1); 

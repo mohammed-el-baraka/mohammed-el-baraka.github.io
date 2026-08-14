@@ -138,6 +138,9 @@ function renderProjects(lang) {
 }
 
 async function fetchProjectMarkdown(projectId) {
+    if (typeof projectReports !== 'undefined' && projectReports[projectId]) {
+        return projectReports[projectId];
+    }
     try {
         const response = await fetch(`projects/${projectId}.md`);
         if (response.ok) {

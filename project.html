@@ -380,13 +380,17 @@
             document.getElementById('next-project-name').textContent = nextTrans?.title || 'Next';
 
             // Preload report markdown for AI backend
-            try {
-                const res = await fetch(`projects/${currentProjectId}.md`);
-                if (res.ok) {
-                    currentProjectRawMarkdown = await res.text();
+            if (typeof projectReports !== 'undefined' && projectReports[currentProjectId]) {
+                currentProjectRawMarkdown = projectReports[currentProjectId];
+            } else {
+                try {
+                    const res = await fetch(`projects/${currentProjectId}.md`);
+                    if (res.ok) {
+                        currentProjectRawMarkdown = await res.text();
+                    }
+                } catch (err) {
+                    console.warn('Could not load markdown report', err);
                 }
-            } catch (err) {
-                console.warn('Could not load markdown report', err);
             }
         }
 

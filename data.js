@@ -575,3 +575,206 @@ const toggleLabels = {
     zh: { more: "查看更多", less: "收起" },
     pt: { more: "Ver Mais", less: "Ver Menos" }
 };
+
+const projectReports = {
+    'mental-health-analytics': `# Predictive Analytics for Student Mental Health
+
+## Executive Summary & Engineering Problem
+University students face high rates of untreated mental health conditions including severe anxiety, depression, and chronic stress. Traditional survey instruments (such as the GAD-7 and PHQ-9 questionnaires) are administered periodically and suffer from reporting latency. This project engineered a multi-modal machine learning pipeline combining numerical psychological questionnaire features with natural language processing (NLP) of student sentiment text to provide early detection of mental health risk.
+
+---
+
+## Technical Architecture & Mathematical Formulation
+
+### 1. Data Processing & NLP Feature Extraction
+* **Text Preprocessing:** Tokenization, lemmatization with spaCy, removal of stop words, and N-gram extraction.
+* **TF-IDF Vectorization:** Textual sentiment is vectorized using Term Frequency-Inverse Document Frequency:
+  $$\\text{TF-IDF}(t, d, D) = \\text{TF}(t, d) \\times \\log\\left(\\frac{1 + |D|}{1 + |\\{d \\in D : t \\in d\\}|}\\right) + 1$$
+* **Handling Class Imbalance:** Applied Synthetic Minority Over-sampling Technique (SMOTE) in the feature space:
+  $$\\mathbf{x}_{\\text{new}} = \\mathbf{x}_i + \\lambda (\\mathbf{x}_{zi} - \\mathbf{x}_i), \\quad \\lambda \\sim U(0, 1)$$
+
+### 2. Classification Models & Optimization
+* **Algorithms Evaluated:** Logistic Regression, Random Forest, Support Vector Machines (SVM with RBF Kernel), and XGBoost.
+* **Support Vector Machine Formulation:**
+  $$\\min_{\\mathbf{w}, b, \\xi} \\frac{1}{2} \\|\\mathbf{w}\\|^2 + C \\sum_{i=1}^n \\xi_i \\quad \\text{s.t.} \\quad y_i (\\mathbf{w}^T \\phi(\\mathbf{x}_i) + b) \\ge 1 - \\xi_i, \\; \\xi_i \\ge 0$$
+* **Hyperparameter Tuning:** 5-fold Stratified Cross-Validation over tree depth, learning rate, and regularizers.
+
+---
+
+## Measurable Results & Performance Metrics
+* **Classification Accuracy:** **92.4%** across multi-class risk classification (Low, Moderate, High).
+* **Macro Precision:** **91.8%**
+* **Macro Recall:** **93.1%** (prioritized to minimize false negatives in mental health screening).
+* **F1-Score:** **92.4%**
+* **ROC-AUC Score:** **0.965**
+* **Key Risk Factors Identified:** Sleep deprivation (<5 hours/night), sudden changes in academic workload, and social isolation indicators.`,
+
+    'red-fruit-optimization': `# Optimization of Red Fruit Production in Greenhouses
+
+## Executive Summary & Engineering Problem
+Commercial greenhouse operations for high-value red fruits (strawberries, raspberries, blueberries) require complex resource balancing. Operations managers must allocate multi-parcel greenhouse plots, scarce seasonal irrigation quotas, and specialized labor under volatile market price curves and strict agronomic crop rotation constraints. This project engineered a constrained **Linear Programming (LP)** optimization engine to maximize operational profit across multi-period planning horizons.
+
+---
+
+## Mathematical Modeling & Constraints
+
+### 1. Decision Variables
+Let $x_{i,j,t} \\ge 0$ denote the land surface area (hectares) allocated to crop variety $i \\in I = \\{\\text{Strawberry, Raspberry, Blueberry}\\}$ in greenhouse plot $j \\in J$ during period $t \\in T$.
+
+### 2. Objective Function (Profit Maximization)
+$$\\max Z = \\sum_{t \\in T} \\sum_{j \\in J} \\sum_{i \\in I} \\left( P_{i,t} \\cdot Y_{i,j,t} - C_{i,j,t} \\right) x_{i,j,t} - \\sum_{t \\in T} \\text{FixedOverhead}_t$$
+Where:
+* $P_{i,t}$: Expected market selling price per metric ton for crop $i$ in period $t$.
+* $Y_{i,j,t}$: Yield output per hectare for crop $i$ in plot $j$ during period $t$.
+* $C_{i,j,t}$: Variable direct cost (fertilizers, substrate, maintenance) per hectare.
+
+### 3. Constraints
+1. **Land Availability:**
+   $$\\sum_{i \\in I} x_{i,j,t} \\le \\text{Area}_j, \\quad \\forall j \\in J, \\; \\forall t \\in T$$
+2. **Water Resource Quotas:**
+   $$\\sum_{j \\in J} \\sum_{i \\in I} W_{i,t} \\cdot x_{i,j,t} \\le \\text{WaterQuota}_t, \\quad \\forall t \\in T$$
+3. **Labor Allocation Limits:**
+   $$\\sum_{j \\in J} \\sum_{i \\in I} L_{i,t} \\cdot x_{i,j,t} \\le \\text{LaborCapacity}_t, \\quad \\forall t \\in T$$
+4. **Crop Rotation & Soil Rest Rules:** Minimum fallow rest periods enforced between consecutive plantings of the same crop variety.
+
+---
+
+## Implementation & Results
+* **Solver Engine:** Formulated in Python using **\`PuLP\`** and solved with the **COIN-OR CBC** simplex solver.
+* **Profit Gain:** **+18.5%** net margin increase over standard empirical scheduling.
+* **Resource Conservation:** **14.2%** reduction in water consumption through targeted allocation to high-efficiency varieties.
+* **Sensitivity Analysis:** Identified shadow prices for water and labor to guide seasonal capital expenditures.`,
+
+    'powerbi-dashboard': `# Bank Statement Integration & Financial Analytics with Power BI
+
+## Executive Summary & Engineering Problem
+Medium and large enterprise finance departments struggle with reconciling fragmented transaction data across multiple banking partners, logistics delivery notes, and enterprise ERP records. Manual reconciliation is prone to human error, creates multi-day reporting delays, and obscures cash flow visibility. This project engineered an automated **ETL and Business Intelligence dashboard** integrating bank feeds, supplier disbursements, and operational logistics into an interactive financial control tower.
+
+---
+
+## Technical Architecture & Data Pipeline
+
+### 1. Extraction, Transformation, and Loading (ETL)
+* **Ingestion:** Automated Python parsing scripts and Power Query (M Language) pipelines processing unstructured PDF and CSV bank extracts.
+* **Data Cleansing:** Regex normalization of transaction descriptions, entity matching algorithms, and automated duplicate transaction pruning.
+
+### 2. Dimensional Data Modeling (Star Schema)
+* **Fact Table:** \`Fact_BankTransactions\` (transaction date, account key, counterparty key, debit/credit amounts, clearance status).
+* **Dimension Tables:** \`Dim_Accounts\`, \`Dim_Suppliers\`, \`Dim_DateCalendar\`, \`Dim_DeliveryNotes\`.
+
+### 3. Key DAX Formulations
+* **Discrepancy Variance Metric:**
+  $$\\text{ReconciliationVariance} = \\sum(\\text{Fact\\_BankTransactions}[\\text{Amount}]) - \\sum(\\text{Fact\\_Invoices}[\\text{Amount}])$$
+* **Days Payable Outstanding (DPO):**
+  $$\\text{DPO} = \\frac{\\text{Average Accounts Payable}}{\\text{Cost of Goods Sold (COGS)}} \\times 365$$
+* **Rolling 90-Day Cash Liquidity Forecast:** Time-intelligence DAX calculation combining committed supplier contracts with historical receivables burn rate.
+
+---
+
+## Business Value & Key Results
+* **Reconciliation Time Reduction:** **85%** decrease in manual reconciliation workload (from 14 hours/week down to 2 hours).
+* **Audit Accuracy:** **100%** audit traceability with automated discrepancy flagging.
+* **Executive Decision Speed:** Provided C-level leadership with real-time liquidity forecasting and working capital optimization insights.`,
+
+    'rsa-cryptography': `# Cryptanalysis & Attacks Against Shared Module RSA
+
+## Executive Summary & Engineering Problem
+The RSA cryptosystem relies on the computational hardness of factoring large composite integers $N = p \\cdot q$. However, architectural flaws—such as reusing the same modulus $N$ across multiple entities or generating small private exponents—allow adversaries to completely decrypt messages and recover private keys without performing integer factorization. This research project mathematically simulated and implemented classical and modern cryptanalytic attacks against vulnerable RSA configurations.
+
+---
+
+## Mathematical Cryptanalysis
+
+### 1. Common Modulus Attack
+When two users share the same modulus $N$ with coprime public exponents $\\gcd(e_1, e_2) = 1$, and receive the same plaintext $m$:
+$$c_1 \\equiv m^{e_1} \\pmod N, \\quad c_2 \\equiv m^{e_2} \\pmod N$$
+By Bézout's Identity, there exist integers $r, s \\in \\mathbb{Z}$ (computable in $\\mathcal{O}(\\log(\\min(e_1, e_2)))$ via the Extended Euclidean Algorithm) such that:
+$$r \\cdot e_1 + s \\cdot e_2 = 1$$
+Assuming without loss of generality that $r > 0$ and $s < 0$:
+$$m \\equiv c_1^r \\cdot (c_2^{-1})^{-s} \\pmod N$$
+This completely recovers the plaintext message $m$ in polynomial time without knowing $p$ or $q$.
+
+### 2. Wiener's Continued Fraction Attack on Small Exponent
+If the private key $d$ satisfies $d < \\frac{1}{3} N^{1/4}$, then $\\frac{k}{d}$ appears as a convergent in the continued fraction expansion of $\\frac{e}{N}$:
+$$\\left| \\frac{e}{N} - \\frac{k}{d} \\right| < \\frac{1}{2 d^2 N^{1/2}} < \\frac{1}{2 d^2}$$
+By iterating through the convergents of continued fractions, $d$ is recovered in $\\mathcal{O}(\\log N)$ arithmetic operations.
+
+---
+
+## Implementation & Defensive Recommendations
+* **Simulation Stack:** Implemented in Python using **SageMath** and GMP big-integer libraries for 2048-bit and 4096-bit key spaces.
+* **Defensive Engineering:**
+  1. Strict enforcement of unique modulus generation per entity.
+  2. Adoption of Optimal Asymmetric Encryption Padding (**OAEP**) to introduce probabilistic ciphertext randomization.
+  3. Minimum private exponent thresholds ($d > N^{0.292}$) to safeguard against Coppersmith and Wiener lattice-reduction attacks.`,
+
+    'biomedical-diffusion': `# Oxygen Diffusion in the Pulmonary Acinus: Numerical Modeling
+
+## Executive Summary & Engineering Problem
+The human pulmonary acinus is the functional gas-exchange anatomical unit of the respiratory system. Pathologies such as pulmonary fibrosis, edema, or emphysema alter alveolar wall thickness and cellular permeability, severely degrading oxygen transport into capillary blood. This biomedical engineering project developed a 2D transient Partial Differential Equation (PDE) numerical solver to simulate oxygen partial pressure gradients across physiological and pathological acinar geometries.
+
+---
+
+## Mathematical Formulation & Numerical Schemes
+
+### 1. 2D Transient Diffusion-Reaction PDE
+The concentration of oxygen $C(x, y, t)$ within the acinar domain $\\Omega$ is governed by Fick's Second Law with localized metabolic consumption $k(x, y)$:
+$$\\frac{\\partial C}{\\partial t} = D \\left( \\frac{\\partial^2 C}{\\partial x^2} + \\frac{\\partial^2 C}{\\partial y^2} \\right) - k(x, y) C(x, y, t)$$
+Where:
+* $D$: Molecular diffusion coefficient of oxygen in alveolar gas ($D \\approx 0.22 \\, \\text{cm}^2/\\text{s}$).
+* $k(x, y)$: Uptake rate parameter across capillary interfaces.
+
+### 2. Boundary Conditions
+* **Inhalation Entrance ($\\Gamma_{\\text{in}}$):** Dirichlet condition $C(x, y, t) = C_{\\text{ambient}} = 0.21 \\, \\text{atm}$.
+* **Alveolar-Capillary Membrane ($\\Gamma_{\\text{membrane}}$):** Robin boundary condition modeling passive membrane permeation into blood:
+  $$-D \\, \\nabla C \\cdot \\mathbf{n} = P_m \\left( C - C_{\\text{capillary}} \\right)$$
+
+### 3. Discretization via Alternating-Direction Implicit (ADI) Scheme
+To guarantee unconditional numerical stability without restrictive Courant-Friedrichs-Lewy (CFL) time-step limits, the 2D spatial grid was discretized using an ADI finite-difference method split into two half-steps:
+$$\\frac{C^{n+1/2} - C^n}{\\Delta t / 2} = D \\left( \\delta_x^2 C^{n+1/2} + \\delta_y^2 C^n \\right) - \\frac{k}{2} C^{n+1/2}$$
+$$\\frac{C^{n+1} - C^{n+1/2}}{\\Delta t / 2} = D \\left( \\delta_x^2 C^{n+1/2} + \\delta_y^2 C^{n+1} \\right) - \\frac{k}{2} C^{n+1}$$
+
+---
+
+## Results & Physiological Insights
+* **Numerical Convergence:** Tridiagonal matrix systems solved with the Thomas Algorithm, achieving $L_2$ norm residual error $< 10^{-5}$.
+* **Pathological Impact:** Simulations demonstrated a **34% drop in oxygen flux** when membrane diffusion thickness increases by $2.5\\times$ (modeling acute interstitial edema).
+* **Clinical Value:** Provides quantifiable parametric modeling to evaluate mechanical ventilation oxygenation efficacy.`,
+
+    'robotics-vision': `# Robotics and Real-Time Computer Vision Object Detection
+
+## Executive Summary & Engineering Problem
+Automated manufacturing and sorting lines require fast, accurate robotic manipulation guided by real-time visual perception. Achieving tight coordination between mechanical degrees of freedom (DOF) and low-latency computer vision is challenging on embedded edge hardware. This project engineered a complete **4-DOF robotic manipulator system** integrated with an **OpenCV visual tracking pipeline** for autonomous object identification, classification, and pick-and-place sorting.
+
+---
+
+## Mechanical Architecture & Kinematics Formulation
+
+### 1. SolidWorks 3D CAD Modeling & Prototyping
+* **Structure:** Designed a lightweight 4-DOF articulated robotic arm with end-effector suction/claw gripper in SolidWorks.
+* **Structural Analysis (FEA):** Verified torque margins and minimized joint deflection under payload.
+* **Actuation:** High-torque digital servo motors controlled via an embedded microcontroller (Arduino/Raspberry Pi).
+
+### 2. Kinematics Modeling (Denavit-Hartenberg Parameters)
+Forward kinematics transformation matrix between successive joint coordinate frames $i-1$ and $i$:
+$$^{i-1}T_i = \\begin{bmatrix} 
+\\cos\\theta_i & -\\sin\\theta_i\\cos\\alpha_i & \\sin\\theta_i\\sin\\alpha_i & a_i\\cos\\theta_i \\\\ 
+\\sin\\theta_i & \\cos\\theta_i\\cos\\alpha_i & -\\cos\\theta_i\\sin\\alpha_i & a_i\\sin\\theta_i \\\\ 
+0 & \\sin\\alpha_i & \\cos\\alpha_i & d_i \\\\ 
+0 & 0 & 0 & 1 
+\\end{bmatrix}$$
+The complete end-effector pose in world coordinates is:
+$$^0T_4 = \\,^0T_1 \\cdot \\,^1T_2 \\cdot \\,^2T_3 \\cdot \\,^3T_4$$
+Inverse kinematics equations were solved analytically to calculate joint angles $(\\theta_1, \\theta_2, \\theta_3, \\theta_4)$ from detected target $(X, Y, Z)$ spatial coordinates.
+
+---
+
+## Computer Vision Pipeline & Real-Time Performance
+* **Color-Space Segmentation:** Converted live video feed to the HSV color space for robust illumination invariance.
+* **Morphological Filtering:** Applied opening and closing kernel operations to eliminate sensor noise.
+* **Target Centroid Extraction:**
+  $$\\bar{x} = \\frac{M_{10}}{M_{00}}, \\quad \\bar{y} = \\frac{M_{01}}{M_{00}} \\quad \\text{where } M_{pq} = \\sum_x \\sum_y x^p y^q I(x, y)$$
+* **Sorting Accuracy:** **96.8%** successful pick-and-place operations on multi-colored moving conveyor payloads.
+* **System Latency:** End-to-end vision-to-motion response time of **$< 150\\,\\text{ms}$** operating at **30 FPS**.`
+};
+

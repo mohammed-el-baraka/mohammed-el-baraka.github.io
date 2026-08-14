@@ -3,4 +3,6 @@ Thumbs.db
 node_modules/
 .netlify/
 admin.html
-
+projects/
+.cursorrules
+CLAUDE.md

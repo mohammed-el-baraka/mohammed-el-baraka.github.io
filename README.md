@@ -2,9 +2,9 @@
 
 [![Live Site](https://img.shields.io/badge/Live-Portfolio-7c3aed?style=for-the-badge&logo=google-chrome&logoColor=white)](https://mohammed-el-baraka.github.io)
 [![Netlify Status](https://img.shields.io/badge/Netlify-Serverless_AI-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://www.netlify.com)
-[![Google Gemini](https://img.shields.io/badge/Gemini_3.7_Flash-AI_Assistant-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev)
+[![Google Gemini](https://img.shields.io/badge/Gemini_3.6_Flash-AI_Assistant-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev)
 
-A modern, high-performance portfolio showcasing projects in **Industrial Management**, **Operations Research & Optimization**, **Machine Learning**, and **Biomedical Modeling**. Built with a lightweight, vanilla stack and enhanced by a serverless **AI Engineering Assistant** powered by Google Gemini 3.7 Flash.
+A modern, high-performance portfolio showcasing projects in **Industrial Management**, **Operations Research & Optimization**, **Machine Learning**, and **Biomedical Modeling**. Built with a lightweight, vanilla stack and enhanced by a serverless **AI Engineering Assistant** powered by Google Gemini 3.6 Flash.
 
 ---
 
@@ -41,7 +41,7 @@ Each engineering project features an interactive AI assistant that answers techn
                                         │
                                         ▼
              ┌──────────────────────────────────────────────────────┐
-             │ Google Gemini 3.7 Flash API                          │
+             │ Google Gemini 3.6 Flash API                          │
              │ Analyzes report & generates structured markdown      │
              └──────────────────────────┬───────────────────────────┘
                                         │

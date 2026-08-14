@@ -278,7 +278,7 @@ async function runModalAiQuery(projectId, action = null, customPrompt = null) {
                 prompt = `Answer the following question about this engineering project based on the report:\n\nQuestion: ${customPrompt}\n\nReport:\n${markdownText}`;
             }
 
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=${apiKey}`, {
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${apiKey}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })

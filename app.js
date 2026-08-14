@@ -168,6 +168,25 @@ function formatMarkdownToHTML(md) {
         .replace(/\n/gim, '<br>');
 }
 
+function renderMathInBox(container) {
+    if (!container) return;
+    if (window.renderMathInElement) {
+        try {
+            window.renderMathInElement(container, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\[', right: '\\]', display: true},
+                    {left: '\\(', right: '\\)', display: false}
+                ],
+                throwOnError: false
+            });
+        } catch (e) {
+            console.warn('KaTeX render error', e);
+        }
+    }
+}
+
 async function openProjectAiModal(projectId, initialAction = null, customQuery = null) {
     const project = translations[currentLang]?.projects?.find(p => p.id === projectId);
     const projectTitle = project ? project.title : projectId;
@@ -186,7 +205,7 @@ async function openProjectAiModal(projectId, initialAction = null, customQuery =
 
     modalTitle.innerHTML = `<span class="shimmer-text">AI Assistant: ${projectTitle}</span>`;
     
-    // Render the polished interactive search/query UI
+    // Render the interactive search/query UI without auto-triggering
     modalBody.innerHTML = `
         <div class="space-y-4">
             <div class="flex gap-2 flex-wrap items-center">
@@ -197,7 +216,10 @@ async function openProjectAiModal(projectId, initialAction = null, customQuery =
             </div>
             
             <div id="modal-ai-response" class="ai-response-card">
-                ${loaderHTML}
+                <div class="text-center py-6 px-4">
+                    <p class="text-sm text-gray-200 mb-1.5 font-semibold">What would you like to explore about this project?</p>
+                    <p class="text-xs text-gray-400">Ask any question below or choose a suggestion chip above to see the methodology, mathematical model, or results.</p>
+                </div>
             </div>
 
             <form onsubmit="event.preventDefault(); submitModalAiQuestion('${projectId}');" class="ai-input-wrapper">
@@ -212,11 +234,9 @@ async function openProjectAiModal(projectId, initialAction = null, customQuery =
     modalFooter.innerHTML = '';
     openModal('ai-modal');
 
-    // Run initial query
+    // Only run query if explicitly requested with a specific action or query
     if (initialAction || customQuery) {
         runModalAiQuery(projectId, initialAction, customQuery);
-    } else {
-        runModalAiQuery(projectId, 'explain');
     }
 }
 
@@ -258,6 +278,7 @@ async function runModalAiQuery(projectId, action = null, customPrompt = null) {
             const netlifyData = await netlifyRes.json();
             if (netlifyData.text) {
                 responseBox.innerHTML = `<div class="prose prose-invert max-w-none space-y-2 text-sm leading-relaxed">${formatMarkdownToHTML(netlifyData.text)}</div>`;
+                renderMathInBox(responseBox);
                 return;
             }
         }
@@ -289,6 +310,7 @@ async function runModalAiQuery(projectId, action = null, customPrompt = null) {
                 const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text;
                 if (aiText) {
                     responseBox.innerHTML = `<div class="prose prose-invert max-w-none space-y-2 text-sm leading-relaxed">${formatMarkdownToHTML(aiText)}</div>`;
+                    renderMathInBox(responseBox);
                     return;
                 }
             }

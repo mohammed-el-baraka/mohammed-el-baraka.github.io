@@ -29,15 +29,16 @@ exports.handler = async function(event, context) {
 
         let systemPrompt = '';
         const langName = language === 'fr' ? 'French' : 'English';
+        const mathInstruction = " When writing formulas, variables, optimization objectives, or mathematical models, always use clean standard LaTeX notation formatted with $...$ for inline math and $$...$$ for block equations.";
 
         if (action === 'explain') {
-            systemPrompt = `You are an AI engineering assistant for Mohammed El Baraka's portfolio. Using the following technical project report, provide a clear, structured 3-paragraph explanation: 1. Core Engineering Problem & Context, 2. Technical & Mathematical Architecture (algorithms/tools), 3. Key Results & Value. Write in ${langName}.\n\nReport:\n${reportMarkdown || ''}`;
+            systemPrompt = `You are an AI engineering assistant for Mohammed El Baraka's portfolio. Using the following technical project report, provide a clear, structured 3-paragraph explanation: 1. Core Engineering Problem & Context, 2. Technical & Mathematical Architecture (algorithms/tools), 3. Key Results & Value. Write in ${langName}.${mathInstruction}\n\nReport:\n${reportMarkdown || ''}`;
         } else if (action === 'summarize') {
-            systemPrompt = `You are an AI assistant for Mohammed El Baraka's engineering portfolio. Using the following technical project report, provide a punchy 3-bullet executive summary covering what was built, algorithms used, and measurable results. Use bold keywords. Write in ${langName}.\n\nReport:\n${reportMarkdown || ''}`;
+            systemPrompt = `You are an AI assistant for Mohammed El Baraka's engineering portfolio. Using the following technical project report, provide a punchy 3-bullet executive summary covering what was built, algorithms used, and measurable results. Use bold keywords. Write in ${langName}.${mathInstruction}\n\nReport:\n${reportMarkdown || ''}`;
         } else if (customPrompt) {
-            systemPrompt = `You are an AI engineering assistant for Mohammed El Baraka's portfolio. Answer the following question based on the project report in ${langName}.\n\nQuestion: ${customPrompt}\n\nReport:\n${reportMarkdown || ''}`;
+            systemPrompt = `You are an AI engineering assistant for Mohammed El Baraka's portfolio. Answer the following question based on the project report in ${langName}.${mathInstruction}\n\nQuestion: ${customPrompt}\n\nReport:\n${reportMarkdown || ''}`;
         } else {
-            systemPrompt = `Summarize this engineering project report in ${langName}:\n\n${reportMarkdown || ''}`;
+            systemPrompt = `Summarize this engineering project report in ${langName}.${mathInstruction}\n\n${reportMarkdown || ''}`;
         }
 
         const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${apiKey}`;

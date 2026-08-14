@@ -13,6 +13,11 @@
     <!-- Base Stylesheet -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- KaTeX for mathematical formulas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
     <style>
         body {
             background-color: #0c0c10;
@@ -403,6 +408,25 @@
                 </div>
             `;
 
+            function renderMathInBox(container) {
+                if (!container) return;
+                if (window.renderMathInElement) {
+                    try {
+                        window.renderMathInElement(container, {
+                            delimiters: [
+                                {left: '$$', right: '$$', display: true},
+                                {left: '$', right: '$', display: false},
+                                {left: '\\[', right: '\\]', display: true},
+                                {left: '\\(', right: '\\)', display: false}
+                            ],
+                            throwOnError: false
+                        });
+                    } catch (e) {
+                        console.warn('KaTeX render error', e);
+                    }
+                }
+            }
+
             // 1. Try Netlify Serverless Function
             try {
                 const netlifyRes = await fetch('/.netlify/functions/ai', {
@@ -421,6 +445,7 @@
                     const data = await netlifyRes.json();
                     if (data.text) {
                         responseBox.innerHTML = `<div class="space-y-2 text-sm leading-relaxed">${formatMarkdownToHTML(data.text)}</div>`;
+                        renderMathInBox(responseBox);
                         return;
                     }
                 }
@@ -452,6 +477,7 @@
                         const text = directData.candidates?.[0]?.content?.parts?.[0]?.text;
                         if (text) {
                             responseBox.innerHTML = `<div class="space-y-2 text-sm leading-relaxed">${formatMarkdownToHTML(text)}</div>`;
+                            renderMathInBox(responseBox);
                             return;
                         }
                     }

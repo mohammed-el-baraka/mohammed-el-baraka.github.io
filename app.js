@@ -120,14 +120,10 @@ function renderProjects(lang) {
                                 <span>${langStrings.project_button_presentation || 'Presentation'}</span>
                             </button>
                         </div>
-                        <div class="grid grid-cols-2 gap-2 text-sm">
-                            <button onclick="explainProject('${pData.id}')" class="btn-ai-action">
-                                <span>${langStrings.project_button_explain || 'Explain'}</span>
-                            </button>
-                            <button onclick="summarizeProject('${pData.id}')" class="btn-ai-action">
-                                <span>${langStrings.project_button_summarize || 'Summarize'}</span>
-                            </button>
-                        </div>
+                        <button onclick="openProjectAiModal('${pData.id}')" class="btn-ai-action w-full">
+                            <svg class="w-4 h-4 text-violet-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" /></svg>
+                            <span>${langStrings.project_button_explore_ai || 'Explore with AI'}</span>
+                        </button>
                     </div>
                 </div>`;
             cardsContainer.appendChild(card);
@@ -180,24 +176,27 @@ async function openProjectAiModal(projectId, initialAction = null, customQuery =
     const modalBody = document.getElementById('modal-body');
     const modalFooter = document.getElementById('modal-footer');
 
-    modalTitle.innerHTML = `<span class="shimmer-text">AI Assistant: ${projectTitle}</span>`;
+    modalTitle.innerHTML = `<span class="shimmer-text">AI Deep Dive: ${projectTitle}</span>`;
     
     // Render the interactive search/query UI
     modalBody.innerHTML = `
         <div class="space-y-4">
-            <form onsubmit="event.preventDefault(); submitModalAiQuestion('${projectId}');" class="flex gap-2">
-                <input type="text" id="modal-ai-input" class="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-violet-400 transition-colors" placeholder="Ask anything about this project... (e.g. What algorithm was used?)">
-                <button type="submit" class="btn-primary text-xs px-4 py-2 flex-shrink-0">Ask AI</button>
-            </form>
-            <div class="flex gap-1.5 flex-wrap">
-                <button onclick="runModalAiQuery('${projectId}', 'explain')" class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">Explain Methodology</button>
-                <button onclick="runModalAiQuery('${projectId}', 'summarize')" class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">3-Bullet Summary</button>
-                <button onclick="runModalAiQuery('${projectId}', null, 'What mathematical models and algorithms were used in this project?')" class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">Algorithms & Math</button>
-                <button onclick="runModalAiQuery('${projectId}', null, 'What were the key measurable outcomes and performance results of this project?')" class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all">Key Results</button>
+            <div class="p-3 bg-violet-950/20 border border-violet-500/20 rounded-xl text-xs text-violet-300 flex items-center justify-between">
+                <span>Ask custom engineering questions or choose an instant analysis topic below:</span>
             </div>
-            <div id="modal-ai-response" class="p-4 rounded-xl bg-black/40 border border-white/10 min-h-[100px] text-sm text-gray-300 leading-relaxed">
+            <div class="flex gap-2 flex-wrap">
+                <button onclick="runModalAiQuery('${projectId}', 'explain')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all font-semibold">🔍 Explain Methodology</button>
+                <button onclick="runModalAiQuery('${projectId}', 'summarize')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all font-semibold">⚡ 3-Bullet Summary</button>
+                <button onclick="runModalAiQuery('${projectId}', null, 'What mathematical models, formulas, and optimization algorithms were used in this project?')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all font-semibold">📐 Math & Algorithms</button>
+                <button onclick="runModalAiQuery('${projectId}', null, 'What were the key measurable outcomes, accuracy metrics, and performance results?')" class="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-violet-300 hover:bg-violet-900/30 hover:border-violet-500/40 transition-all font-semibold">📈 Results & Metrics</button>
+            </div>
+            <div id="modal-ai-response" class="p-5 rounded-2xl bg-black/60 border border-white/10 min-h-[140px] text-sm text-gray-300 leading-relaxed shadow-inner">
                 ${loaderHTML}
             </div>
+            <form onsubmit="event.preventDefault(); submitModalAiQuestion('${projectId}');" class="flex gap-2 pt-2">
+                <input type="text" id="modal-ai-input" class="w-full bg-black/80 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-violet-400 transition-colors shadow-sm" placeholder="Ask a custom question about this project...">
+                <button type="submit" class="btn-primary text-xs px-5 py-3 flex-shrink-0 font-bold">Ask AI</button>
+            </form>
         </div>
     `;
     modalFooter.innerHTML = '';

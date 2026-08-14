@@ -26,38 +26,298 @@ function switchLanguage(lang) {
     initTypewriter(lang);
 }
 
+function formatProjectDate(dateStr, lang) {
+    if (!dateStr) return '';
+    try {
+        const [year, month] = dateStr.split('-');
+        const dateObj = new Date(parseInt(year, 10), parseInt(month || 1, 10) - 1, 1);
+        const formatter = new Intl.DateTimeFormat(lang || 'en', { month: 'short', year: 'numeric' });
+        return formatter.format(dateObj);
+    } catch (e) {
+        return dateStr;
+    }
+}
+
 function renderProjects(lang) {
     const projectGrid = document.getElementById('project-grid');
+    if (!projectGrid) return;
     projectGrid.innerHTML = '';
     const langProjects = translations[lang].projects;
     const langStrings = translations[lang];
 
-    const visibleProjects = showAllProjects ? projectsData : projectsData.slice(0, 3);
+    // Sort projects chronologically (descending, newest first)
+    const sortedProjects = [...projectsData].sort((a, b) => {
+        const dateA = a.date || '1970-01';
+        const dateB = b.date || '1970-01';
+        return dateB.localeCompare(dateA);
+    });
 
-    visibleProjects.forEach((pData, index) => {
-        const translatedProject = langProjects.find(t => t.id === pData.id);
-        if (!translatedProject) return;
+    const visibleProjects = showAllProjects ? sortedProjects : sortedProjects.slice(0, 3);
 
-        const card = document.createElement('div');
-        card.className = 'item-card reveal-scale-up';
-        card.style.transitionDelay = `${index * 0.05}s`;
-        card.innerHTML = `
-            <div class="card-body">
-                <div>
-                    <h3 class="card-title text-xl mb-2 font-bold">${translatedProject.title}</h3>
-                    <p class="card-text text-gray-400 mb-4 text-sm leading-relaxed">${translatedProject.description}</p>
-                    <p class="text-xs text-gray-500 mb-4"><b>Technologies:</b> ${pData.technologies.join(', ')}</p>
+    // Group visible projects by Year (Google Photos style)
+    const yearGroups = {};
+    visibleProjects.forEach(pData => {
+        const year = pData.date ? pData.date.split('-')[0] : 'Other';
+        if (!yearGroups[year]) yearGroups[year] = [];
+        yearGroups[year].push(pData);
+    });
+
+    const sortedYears = Object.keys(yearGroups).sort((a, b) => b.localeCompare(a));
+
+    sortedYears.forEach((year, yIdx) => {
+        const yearGroupEl = document.createElement('div');
+        yearGroupEl.className = 'year-group reveal-fade-in';
+        yearGroupEl.style.transitionDelay = `${yIdx * 0.08}s`;
+
+        yearGroupEl.innerHTML = `
+            <div class="year-header">
+                <div class="year-chip">
+                    <svg class="w-4 h-4 text-primary-color inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                    </svg>
+                    <span>${year}</span>
                 </div>
-                <div class="mt-auto pt-4 grid grid-cols-2 gap-2 text-sm">
-                    <button onclick="viewPdf('${pData.reportUrl}', 'report', '${pData.id}')" class="bg-white/5 hover:bg-white/15 border border-white/10 hover:border-white/20 text-gray-200 hover:text-white p-2.5 rounded-full transition-all duration-300 flex items-center justify-center gap-1">${langStrings.project_button_report}</button>
-                    <button onclick="viewPdf('${pData.presentationUrl}', 'presentation', '${pData.id}')" class="bg-white/5 hover:bg-white/15 border border-white/10 hover:border-white/20 text-gray-200 hover:text-white p-2.5 rounded-full transition-all duration-300 flex items-center justify-center gap-1">${langStrings.project_button_presentation}</button>
-                </div>
-            </div>`;
-        projectGrid.appendChild(card);
-        revealObserver.observe(card);
+                <div class="year-line"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        `;
+
+        const cardsContainer = yearGroupEl.querySelector('.grid');
+
+        yearGroups[year].forEach((pData, cIdx) => {
+            const translatedProject = langProjects.find(t => t.id === pData.id);
+            if (!translatedProject) return;
+
+            const formattedDate = formatProjectDate(pData.date, lang);
+            const dateTagHTML = formattedDate 
+                ? `<span class="project-time-tag"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span>${formattedDate}</span></span>` 
+                : '';
+
+            const card = document.createElement('div');
+            card.className = 'item-card reveal-scale-up';
+            card.style.transitionDelay = `${(yIdx * 3 + cIdx) * 0.05}s`;
+            card.innerHTML = `
+                <div class="card-body">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            ${dateTagHTML}
+                            <a href="project.html?id=${pData.id}" class="text-xs font-bold text-violet-400 hover:text-white transition-colors">Case Study →</a>
+                        </div>
+                        <a href="project.html?id=${pData.id}" class="block group">
+                            <h3 class="card-title text-xl mb-2 font-bold group-hover:text-primary-color transition-colors">${translatedProject.title}</h3>
+                        </a>
+                        <p class="card-text text-gray-400 mb-4 text-sm leading-relaxed">${translatedProject.description}</p>
+                        <p class="text-xs text-gray-500 mb-4"><b>Technologies:</b> ${pData.technologies.join(', ')}</p>
+                    </div>
+                    <div class="mt-auto pt-4 flex flex-col gap-2">
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <button onclick="viewPdf('${pData.reportUrl}', 'report', '${pData.id}')" class="btn-doc-action">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                                <span>${langStrings.project_button_report || 'Report'}</span>
+                            </button>
+                            <button onclick="viewPdf('${pData.presentationUrl}', 'presentation', '${pData.id}')" class="btn-doc-action">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" /></svg>
+                                <span>${langStrings.project_button_presentation || 'Presentation'}</span>
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <button onclick="explainProject('${pData.id}')" class="btn-ai-action">
+                                <span>${langStrings.project_button_explain || 'Explain'}</span>
+                            </button>
+                            <button onclick="summarizeProject('${pData.id}')" class="btn-ai-action">
+                                <span>${langStrings.project_button_summarize || 'Summarize'}</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>`;
+            cardsContainer.appendChild(card);
+            revealObserver.observe(card);
+        });
+
+        projectGrid.appendChild(yearGroupEl);
+        revealObserver.observe(yearGroupEl);
     });
 
     updateToggleButton();
+}
+
+async function fetchProjectMarkdown(projectId) {
+    try {
+        const response = await fetch(`projects/${projectId}.md`);
+        if (response.ok) {
+            return await response.text();
+        }
+    } catch (e) {
+        console.warn('Could not fetch markdown file directly', e);
+    }
+    
+    // Fallback if local file protocol blocks direct fetch
+    const project = translations[currentLang]?.projects?.find(p => p.id === projectId);
+    const meta = projectsData.find(p => p.id === projectId);
+    return `# ${project?.title || projectId}\n\n**Technologies:** ${meta?.technologies?.join(', ')}\n\n## Overview\n${project?.description || ''}`;
+}
+
+function formatMarkdownToHTML(md) {
+    if (!md) return '';
+    return md
+        .replace(/^# (.*$)/gim, '<h2 class="text-xl font-bold text-white mb-2 pb-1 border-b border-white/10">$1</h2>')
+        .replace(/^## (.*$)/gim, '<h3 class="text-lg font-semibold text-primary-color mt-4 mb-2">$1</h3>')
+        .replace(/^### (.*$)/gim, '<h4 class="text-base font-medium text-gray-200 mt-3 mb-1">$1</h4>')
+        .replace(/\*\*(.*?)\*\*/gim, '<strong class="text-white font-semibold">$1</strong>')
+        .replace(/\*(.*?)\*/gim, '<em class="text-gray-300">$1</em>')
+        .replace(/`([^`]+)`/gim, '<code class="bg-black/50 text-violet-300 px-1.5 py-0.5 rounded text-xs">$1</code>')
+        .replace(/^\s*-\s+(.*$)/gim, '<li class="ml-4 list-disc text-gray-300 mb-1">$1</li>')
+        .replace(/^\s*\d+\.\s+(.*$)/gim, '<li class="ml-4 list-decimal text-gray-300 mb-1">$1</li>')
+        .replace(/\n\n/gim, '<p class="mb-3 text-gray-300 leading-relaxed"></p>')
+        .replace(/\n/gim, '<br>');
+}
+
+async function explainProject(projectId) {
+    const project = translations[currentLang]?.projects?.find(p => p.id === projectId);
+    const projectTitle = project ? project.title : projectId;
+
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    const modalFooter = document.getElementById('modal-footer');
+
+    modalTitle.innerHTML = `<span class="shimmer-text">Explaining: ${projectTitle}</span>`;
+    modalBody.innerHTML = loaderHTML;
+    modalFooter.innerHTML = '';
+    openModal('ai-modal');
+
+    const markdownText = await fetchProjectMarkdown(projectId);
+
+    // 1. Try Netlify Serverless Function (reads GEMINI_API_KEY from Netlify environment variables)
+    try {
+        const netlifyRes = await fetch('/.netlify/functions/ai', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                action: 'explain',
+                projectId,
+                reportMarkdown: markdownText,
+                language: currentLang
+            })
+        });
+
+        if (netlifyRes.ok) {
+            const netlifyData = await netlifyRes.json();
+            if (netlifyData.text) {
+                modalBody.innerHTML = `<div class="prose prose-invert max-w-none space-y-3 text-sm leading-relaxed">${formatMarkdownToHTML(netlifyData.text)}</div>`;
+                return;
+            }
+        }
+    } catch (e) {
+        console.log('Netlify function not available, checking local key...');
+    }
+
+    // 2. Client-side fallback if a local key is saved in browser
+    const apiKey = localStorage.getItem('gemini_api_key') || localStorage.getItem('ai_api_key');
+    if (apiKey) {
+        try {
+            const prompt = `You are an AI engineering assistant for Mohammed El Baraka's portfolio. Explain this project report clearly in 3 concise paragraphs (1. Problem Context, 2. Technical Architecture & Algorithms, 3. Results & Impact). Write in ${currentLang === 'fr' ? 'French' : 'English'}.\n\nReport:\n${markdownText}`;
+            
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    contents: [{ parts: [{ text: prompt }] }]
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (aiText) {
+                    modalBody.innerHTML = `<div class="prose prose-invert max-w-none space-y-3 text-sm leading-relaxed">${formatMarkdownToHTML(aiText)}</div>`;
+                    return;
+                }
+            }
+        } catch (err) {
+            console.error('Gemini API call failed, using report text directly', err);
+        }
+    }
+
+    // 3. Direct Report Display
+    modalBody.innerHTML = `
+        <div class="prose prose-invert max-w-none text-sm leading-relaxed">
+            <div class="mb-4 p-3 rounded-lg bg-violet-950/40 border border-violet-500/30 text-xs text-violet-300 flex items-center justify-between"><span><strong>Executive Technical Report</strong></span></div>
+            ${formatMarkdownToHTML(markdownText)}
+        </div>`;
+}
+
+async function summarizeProject(projectId) {
+    const project = translations[currentLang]?.projects?.find(p => p.id === projectId);
+    const projectTitle = project ? project.title : projectId;
+
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    const modalFooter = document.getElementById('modal-footer');
+
+    modalTitle.innerHTML = `<span class="shimmer-text">Executive Summary: ${projectTitle}</span>`;
+    modalBody.innerHTML = loaderHTML;
+    modalFooter.innerHTML = '';
+    openModal('ai-modal');
+
+    const markdownText = await fetchProjectMarkdown(projectId);
+
+    // 1. Try Netlify Serverless Function (reads GEMINI_API_KEY from Netlify environment variables)
+    try {
+        const netlifyRes = await fetch('/.netlify/functions/ai', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                action: 'summarize',
+                projectId,
+                reportMarkdown: markdownText,
+                language: currentLang
+            })
+        });
+
+        if (netlifyRes.ok) {
+            const netlifyData = await netlifyRes.json();
+            if (netlifyData.text) {
+                modalBody.innerHTML = `<div class="prose prose-invert max-w-none space-y-3 text-sm leading-relaxed">${formatMarkdownToHTML(netlifyData.text)}</div>`;
+                return;
+            }
+        }
+    } catch (e) {
+        console.log('Netlify function not available, checking local key...');
+    }
+
+    // 2. Client-side fallback if a local key is saved in browser
+    const apiKey = localStorage.getItem('gemini_api_key') || localStorage.getItem('ai_api_key');
+    if (apiKey) {
+        try {
+            const prompt = `You are an AI assistant for Mohammed El Baraka's engineering portfolio. Provide a punchy 3-bullet executive summary of what this project achieved, technologies used, and key metrics. Language: ${currentLang === 'fr' ? 'French' : 'English'}.\n\nReport:\n${markdownText}`;
+            
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    contents: [{ parts: [{ text: prompt }] }]
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (aiText) {
+                    modalBody.innerHTML = `<div class="prose prose-invert max-w-none space-y-3 text-sm leading-relaxed">${formatMarkdownToHTML(aiText)}</div>`;
+                    return;
+                }
+            }
+        } catch (err) {
+            console.error('Gemini API call failed, using report text directly', err);
+        }
+    }
+
+    // 3. Direct Report Display
+    modalBody.innerHTML = `
+        <div class="prose prose-invert max-w-none text-sm leading-relaxed">
+            <div class="mb-4 p-3 rounded-lg bg-violet-950/40 border border-violet-500/30 text-xs text-violet-300 flex items-center justify-between"><span><strong>Executive Technical Report</strong></span></div>
+            ${formatMarkdownToHTML(markdownText)}
+        </div>`;
 }
 
 function updateToggleButton() {

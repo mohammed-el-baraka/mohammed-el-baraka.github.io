@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Case Study | Mohammed EL BARAKA</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Lato:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Base Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #0c0c10;
+            color: #e5e7eb;
+            font-family: 'Lato', sans-serif;
+            min-height: 100vh;
+        }
+
+        .case-study-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 6rem;
+        }
+
+        .cs-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.75rem;
+            background: rgba(22, 22, 28, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 16px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #d1d5db;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+        }
+        .btn-back:hover {
+            color: #ffffff;
+            border-color: var(--primary-color);
+            background: rgba(167, 139, 250, 0.15);
+            transform: translateX(-2px);
+        }
+
+        .cs-hero-card {
+            background: rgba(24, 24, 32, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cs-hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+        }
+
+        .cs-metric-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #6ee7b7;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .action-button-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.75rem;
+        }
+
+        .btn-cs-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.25rem;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            border: 1px solid transparent;
+        }
+
+        .btn-cs-primary {
+            background: var(--primary-color);
+            color: #121212;
+            border-color: var(--primary-color);
+        }
+        .btn-cs-primary:hover {
+            box-shadow: 0 0 20px rgba(167, 139, 250, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .btn-cs-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e5e7eb;
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+        .btn-cs-secondary:hover {
+            background: rgba(167, 139, 250, 0.15);
+            border-color: var(--primary-color);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .btn-cs-ai {
+            background: rgba(167, 139, 250, 0.12);
+            color: #c4b5fd;
+            border-color: rgba(167, 139, 250, 0.35);
+        }
+        .btn-cs-ai:hover {
+            background: var(--primary-color);
+            color: #121212;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .cs-content-card {
+            background: rgba(20, 20, 26, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 18px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .cs-content-card h1, .cs-content-card h2, .cs-content-card h3 {
+            font-family: 'Outfit', sans-serif;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .cs-content-card h2 {
+            font-size: 1.45rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--primary-color);
+        }
+
+        .cs-content-card h3 {
+            font-size: 1.15rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #e5e7eb;
+        }
+
+        .cs-content-card p {
+            margin-bottom: 1.25rem;
+            color: #d1d5db;
+        }
+
+        .cs-content-card ul, .cs-content-card ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: #d1d5db;
+        }
+
+        .cs-content-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .cs-content-card code {
+            font-family: 'JetBrains Mono', Courier, monospace;
+            background: rgba(0, 0, 0, 0.45);
+            color: #c4b5fd;
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .ai-assistant-box {
+            background: linear-gradient(135deg, rgba(30, 27, 75, 0.5), rgba(17, 24, 39, 0.8));
+            border: 1px solid rgba(167, 139, 250, 0.35);
+            border-radius: 18px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+        }
+
+        .cs-project-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="case-study-container">
+
+        <!-- Top Navigation -->
+        <nav class="cs-navbar">
+            <a href="index.html" class="btn-back">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+                <span>Back to Portfolio</span>
+            </a>
+
+            <div class="flex items-center gap-3">
+                <span class="text-xs text-gray-400 font-mono" id="cs-project-slug">project-id</span>
+            </div>
+        </nav>
+
+        <!-- Project Hero Card -->
+        <header class="cs-hero-card">
+            <div class="flex items-center gap-3 flex-wrap mb-4">
+                <span class="project-time-tag font-mono" id="cs-project-date">2024</span>
+                <span id="cs-project-metric" class="cs-metric-chip">Production Ready</span>
+            </div>
+
+            <h1 id="cs-project-title" class="text-3xl md:text-4xl font-extrabold text-white mb-4" style="font-family: 'Outfit', sans-serif;">
+                Project Title
+            </h1>
+
+            <p id="cs-project-desc" class="text-gray-300 text-base md:text-lg leading-relaxed mb-6 max-w-3xl">
+                Loading project summary...
+            </p>
+
+            <div class="mb-4">
+                <span class="text-xs text-gray-400 block mb-2 font-bold uppercase tracking-wider">Technologies & Methodologies</span>
+                <div id="cs-project-tech" class="flex flex-wrap gap-2"></div>
+            </div>
+
+            <!-- Action Buttons Grid -->
+            <div class="action-button-grid">
+                <a id="btn-github" href="#" target="_blank" class="btn-cs-action btn-cs-primary">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>View GitHub Repo</span>
+                </a>
+
+                <a id="btn-demo" href="#" target="_blank" class="btn-cs-action btn-cs-secondary hidden">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                    <span>Live Interactive Demo</span>
+                </a>
+
+                <a id="btn-report" href="#" target="_blank" class="btn-cs-action btn-cs-secondary">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                    <span>Technical Report (PDF)</span>
+                </a>
+
+                <a id="btn-presentation" href="#" target="_blank" class="btn-cs-action btn-cs-secondary">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" /></svg>
+                    <span>Slides & Presentation</span>
+                </a>
+
+                <button type="button" onclick="askAiAboutCurrentProject('explain')" class="btn-cs-action btn-cs-ai">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" /></svg>
+                    <span>AI Architecture Analysis</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- AI Assistant Box -->
+        <section class="ai-assistant-box">
+            <div class="flex justify-between items-center mb-4 flex-wrap gap-3">
+                <div class="flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-violet-900/40 border border-violet-500/30 flex items-center justify-center font-bold text-violet-300 text-sm">AI</span>
+                    <div>
+                        <h3 class="font-bold text-white text-base">Interactive Engineering Assistant</h3>
+                        <p class="text-xs text-gray-400">Powered by Netlify Serverless Functions & Gemini 2.5</p>
+                    </div>
+                </div>
+                
+                <div class="flex gap-2">
+                    <button onclick="askAiAboutCurrentProject('explain')" class="btn-cs-action btn-cs-secondary text-xs py-1.5 px-3">Explain Methodology</button>
+                    <button onclick="askAiAboutCurrentProject('summarize')" class="btn-cs-action btn-cs-secondary text-xs py-1.5 px-3">3-Bullet Summary</button>
+                </div>
+            </div>
+
+            <div id="ai-response-area" class="p-4 rounded-xl bg-black/40 border border-white/10 text-sm text-gray-300 leading-relaxed min-h-[70px]">
+                Click an analysis button above or ask a question to query this project report.
+            </div>
+        </section>
+
+        <!-- Detailed Technical Report from Markdown -->
+        <main class="cs-content-card" id="cs-markdown-body">
+            <div class="animate-pulse space-y-4">
+                <div class="h-6 bg-white/10 rounded w-1/3"></div>
+                <div class="h-4 bg-white/5 rounded w-full"></div>
+                <div class="h-4 bg-white/5 rounded w-5/6"></div>
+                <div class="h-4 bg-white/5 rounded w-4/6"></div>
+            </div>
+        </main>
+
+        <!-- Project Pagination / Navigation Footer -->
+        <footer class="cs-project-nav">
+            <a id="nav-prev-project" href="#" class="btn-back">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                <span id="prev-project-name">Previous Project</span>
+            </a>
+
+            <a href="index.html" class="text-sm font-semibold text-gray-400 hover:text-white transition-colors">
+                All Projects
+            </a>
+
+            <a id="nav-next-project" href="#" class="btn-back">
+                <span id="next-project-name">Next Project</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+            </a>
+        </footer>
+
+    </div>
+
+    <!-- Load data.js for Project Metadata -->
+    <script src="data.js"></script>
+
+    <script>
+        let currentProjectId = '';
+        let currentProjectRawMarkdown = '';
+
+        function getProjectIdFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id') || (projectsData && projectsData[0] ? projectsData[0].id : 'mental-health-analytics');
+        }
+
+        function formatMarkdownToHTML(md) {
+            if (!md) return '';
+            return md
+                .replace(/^# (.*$)/gim, '<h1 class="text-2xl md:text-3xl font-extrabold text-white mb-4 pb-2 border-b border-white/10">$1</h1>')
+                .replace(/^## (.*$)/gim, '<h2 class="text-xl md:text-2xl font-bold text-violet-300 mt-6 mb-3 pb-1 border-b border-white/5">$1</h2>')
+                .replace(/^### (.*$)/gim, '<h3 class="text-lg font-semibold text-gray-200 mt-4 mb-2">$1</h3>')
+                .replace(/\*\*(.*?)\*\*/gim, '<strong class="text-white font-semibold">$1</strong>')
+                .replace(/\*(.*?)\*/gim, '<em class="text-gray-300">$1</em>')
+                .replace(/```([\s\S]*?)```/gim, '<pre class="bg-black/60 border border-white/10 p-4 rounded-xl overflow-x-auto text-xs font-mono text-violet-200 my-4"><code>$1</code></pre>')
+                .replace(/`([^`]+)`/gim, '<code class="bg-black/50 text-violet-300 px-1.5 py-0.5 rounded text-xs">$1</code>')
+                .replace(/^\s*-\s+(.*$)/gim, '<li class="ml-5 list-disc text-gray-300 mb-1.5">$1</li>')
+                .replace(/^\s*\d+\.\s+(.*$)/gim, '<li class="ml-5 list-decimal text-gray-300 mb-1.5">$1</li>')
+                .replace(/\n\n/gim, '<p class="mb-4 text-gray-300 leading-relaxed"></p>')
+                .replace(/\n/gim, '<br>');
+        }
+
+        async function loadCaseStudy() {
+            currentProjectId = getProjectIdFromUrl();
+            document.getElementById('cs-project-slug').textContent = currentProjectId;
+
+            const meta = projectsData.find(p => p.id === currentProjectId) || projectsData[0];
+            const enTrans = translations.en?.projects?.find(p => p.id === currentProjectId) || { title: currentProjectId, description: '' };
+
+            // Fill Hero
+            document.getElementById('cs-project-title').textContent = enTrans.title;
+            document.getElementById('cs-project-desc').textContent = enTrans.description;
+            document.getElementById('cs-project-date').textContent = meta.date || '2024';
+            
+            if (meta.metric) {
+                document.getElementById('cs-project-metric').textContent = meta.metric;
+            }
+
+            // Fill Tech Tags
+            const techContainer = document.getElementById('cs-project-tech');
+            techContainer.innerHTML = '';
+            (meta.technologies || []).forEach(tech => {
+                const tag = document.createElement('span');
+                tag.className = 'px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300 font-semibold';
+                tag.textContent = tech;
+                techContainer.appendChild(tag);
+            });
+
+            // Action Links
+            const btnGithub = document.getElementById('btn-github');
+            if (meta.githubUrl) {
+                btnGithub.href = meta.githubUrl;
+            } else {
+                btnGithub.href = `https://github.com/mohammed-el-baraka/${currentProjectId}`;
+            }
+
+            const btnDemo = document.getElementById('btn-demo');
+            if (meta.demoUrl) {
+                btnDemo.href = meta.demoUrl;
+                btnDemo.classList.remove('hidden');
+            }
+
+            const btnReport = document.getElementById('btn-report');
+            if (meta.reportUrl) {
+                btnReport.href = meta.reportUrl;
+            }
+
+            const btnPresentation = document.getElementById('btn-presentation');
+            if (meta.presentationUrl) {
+                btnPresentation.href = meta.presentationUrl;
+            }
+
+            // Pagination setup
+            const currentIdx = projectsData.findIndex(p => p.id === currentProjectId);
+            const prevIdx = currentIdx > 0 ? currentIdx - 1 : projectsData.length - 1;
+            const nextIdx = currentIdx < projectsData.length - 1 ? currentIdx + 1 : 0;
+
+            const prevProject = projectsData[prevIdx];
+            const nextProject = projectsData[nextIdx];
+
+            const prevTrans = translations.en?.projects?.find(p => p.id === prevProject.id);
+            const nextTrans = translations.en?.projects?.find(p => p.id === nextProject.id);
+
+            document.getElementById('nav-prev-project').href = `project.html?id=${prevProject.id}`;
+            document.getElementById('prev-project-name').textContent = prevTrans?.title || 'Previous';
+
+            document.getElementById('nav-next-project').href = `project.html?id=${nextProject.id}`;
+            document.getElementById('next-project-name').textContent = nextTrans?.title || 'Next';
+
+            // Fetch Markdown Report
+            try {
+                const res = await fetch(`projects/${currentProjectId}.md`);
+                if (res.ok) {
+                    currentProjectRawMarkdown = await res.text();
+                    document.getElementById('cs-markdown-body').innerHTML = formatMarkdownToHTML(currentProjectRawMarkdown);
+                } else {
+                    document.getElementById('cs-markdown-body').innerHTML = `
+                        <h2 class="text-xl font-bold text-white mb-2">Project Overview</h2>
+                        <p class="text-gray-300 leading-relaxed">${enTrans.description}</p>
+                    `;
+                }
+            } catch (err) {
+                document.getElementById('cs-markdown-body').innerHTML = `
+                    <h2 class="text-xl font-bold text-white mb-2">Project Overview</h2>
+                    <p class="text-gray-300 leading-relaxed">${enTrans.description}</p>
+                `;
+            }
+        }
+
+        async function askAiAboutCurrentProject(action) {
+            const aiArea = document.getElementById('ai-response-area');
+            aiArea.innerHTML = '<div class="flex items-center gap-2 text-violet-300"><div class="animate-spin w-4 h-4 border-2 border-violet-400 border-t-transparent rounded-full"></div><span>Analyzing technical report via serverless AI...</span></div>';
+
+            const localApiKey = localStorage.getItem('gemini_api_key') || localStorage.getItem('ai_api_key');
+
+            // 1. Try Netlify Serverless Function first
+            try {
+                const netlifyRes = await fetch('/.netlify/functions/ai', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        action,
+                        projectId: currentProjectId,
+                        reportMarkdown: currentProjectRawMarkdown,
+                        language: 'en'
+                    })
+                });
+
+                if (netlifyRes.ok) {
+                    const data = await netlifyRes.json();
+                    if (data.text) {
+                        aiArea.innerHTML = `<div class="space-y-2 text-sm leading-relaxed">${formatMarkdownToHTML(data.text)}</div>`;
+                        return;
+                    }
+                }
+            } catch (e) {
+                console.log('Netlify function not reachable, trying direct fallback...');
+            }
+
+            // 2. Fallback to client-side Gemini call if local key exists
+            if (localApiKey) {
+                try {
+                    const prompt = action === 'explain' 
+                        ? `Explain this engineering project in 3 concise paragraphs:\n\n${currentProjectRawMarkdown}`
+                        : `Provide a 3-bullet executive summary of this engineering project:\n\n${currentProjectRawMarkdown}`;
+
+                    const directRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${localApiKey}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                    });
+
+                    if (directRes.ok) {
+                        const directData = await directRes.json();
+                        const text = directData.candidates?.[0]?.content?.parts?.[0]?.text;
+                        if (text) {
+                            aiArea.innerHTML = `<div class="space-y-2 text-sm leading-relaxed">${formatMarkdownToHTML(text)}</div>`;
+                            return;
+                        }
+                    }
+                } catch (e) {
+                    console.warn('Direct AI query failed', e);
+                }
+            }
+
+            // 3. Fallback to structured markdown display
+            aiArea.innerHTML = `
+                <div class="space-y-2 text-sm text-gray-300">
+                    <p><strong>Executive Note:</strong> ${action === 'explain' ? 'Technical Architecture and formulation summary available in the report below.' : 'Summary extracted from project documentation.'}</p>
+                    <div class="mt-2 pt-2 border-t border-white/10 text-xs text-gray-400">
+                        To enable live serverless AI responses, configure your <code>GEMINI_API_KEY</code> in your Netlify Dashboard environment variables.
+                    </div>
+                </div>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadCaseStudy);
+    </script>
+</body>
+</html>

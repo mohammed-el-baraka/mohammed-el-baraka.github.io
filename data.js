@@ -30,6 +30,20 @@ const translations = {
         project_button_report: "Report",
         project_button_presentation: "Presentation",
         project_button_explore_ai: "Explore with AI",
+        ai_assistant_title: "AI Assistant: {title}",
+        ai_chip_methodology: "✨ How was this built?",
+        ai_chip_summary: "⚡ 3-Bullet Summary",
+        ai_chip_math: "📐 Math & Algorithms",
+        ai_chip_results: "📈 Results & Impact",
+        ai_prompt_math_query: "What mathematical models, formulas, and optimization algorithms were used in this project?",
+        ai_prompt_results_query: "What were the key measurable outcomes, accuracy metrics, and real-world results?",
+        ai_initial_title: "What would you like to explore about this project?",
+        ai_initial_desc: "Ask any question below or choose a suggestion chip above to see the methodology, mathematical model, or results.",
+        ai_input_placeholder: "Ask anything about this project... (e.g. How does the model work?)",
+        ai_send_button: "Ask",
+        ai_analyzing: "Analyzing project engineering context...",
+        ai_fallback_title: "The AI is not working for the moment.",
+        ai_fallback_desc: "Please feel free to explore the project deliverables or contact Mohammed directly.",
         modal_explaining_title: `AI Assistant: {title}`,
         modal_skill_projects_title: `Projects with {skill}`,
         modal_list_intro: `Here are the projects where I used <strong>{skill}</strong>:`,
@@ -41,6 +55,8 @@ const translations = {
              { id: 'red-fruit-optimization', title: 'Optimization of Red Fruit Production', description: 'Designed and implemented a Linear Programming model to maximize profit for red fruit production in greenhouses, considering various constraints and scenarios.' },
              { id: 'powerbi-dashboard', title: 'Bank Statement Integration with Power BI', description: 'Developed an interactive Power BI dashboard to integrate and visualize key financial metrics from bank statements and delivery notes for a connected data view.' },
              { id: 'rsa-cryptography', title: 'Attacks Against Shared Module RSA', description: 'Studied and simulated attacks against the RSA cryptosystem, focusing on vulnerabilities from shared modules to demonstrate cryptographic weaknesses.' },
+             { id: 'acoustic-noise-reduction', title: 'Road Traffic Noise Pollution Reduction', description: 'Investigated and modeled acoustic wave propagation and noise barrier optimization using porous materials. Conducted experimental Kundt tube impedance testing comparing compact vs. open-cell cellular foams.' },
+             { id: 'wood-behavior-mmc', title: 'Wood Behavior Law (MMC Project)', description: 'Studied the mechanical properties of wood, modeled its orthotropic elastic behavior, and conducted compression and bending tests to measure Young\'s modulus and breaking strength.' },
              { id: 'biomedical-diffusion', title: 'Oxygen Diffusion in Pulmonary Acinus', description: 'Conducted a biomedical engineering project to model oxygen diffusion in the pulmonary acinus, resolving the 2D diffusion equation using numerical methods.' },
              { id: 'robotics-vision', title: 'Robotics and Image Detection', description: 'Developed a complete robotic system with image detection capabilities, from 3D modeling in SolidWorks to implementing image processing algorithms in Python.' }
         ],
@@ -92,6 +108,20 @@ const translations = {
         project_button_report: "Rapport",
         project_button_presentation: "Présentation",
         project_button_explore_ai: "Explorer avec l'IA",
+        ai_assistant_title: "Assistant IA : {title}",
+        ai_chip_methodology: "✨ Comment cela a été conçu ?",
+        ai_chip_summary: "⚡ Résumé en 3 points",
+        ai_chip_math: "📐 Mathématiques & Algorithmes",
+        ai_chip_results: "📈 Résultats & Impact",
+        ai_prompt_math_query: "Quels modèles mathématiques, formules et algorithmes d'optimisation ont été utilisés dans ce projet ?",
+        ai_prompt_results_query: "Quels ont été les principaux résultats mesurables, métriques de précision et impacts réels ?",
+        ai_initial_title: "Que souhaitez-vous explorer sur ce projet ?",
+        ai_initial_desc: "Posez une question ci-dessous ou cliquez sur une suggestion pour explorer la méthodologie, les équations ou les résultats.",
+        ai_input_placeholder: "Posez une question sur ce projet... (ex: Comment fonctionne le modèle ?)",
+        ai_send_button: "Demander",
+        ai_analyzing: "Analyse du contexte technique du projet...",
+        ai_fallback_title: "L'IA ne fonctionne pas pour le moment.",
+        ai_fallback_desc: "N'hésitez pas à explorer les livrables du projet ou à contacter Mohammed directement.",
         modal_explaining_title: `Assistant IA : {title}`,
         modal_skill_projects_title: `Projets avec {skill}`,
         modal_list_intro: `Voici les projets où j'ai utilisé <strong>{skill}</strong> :`,
@@ -103,6 +133,8 @@ const translations = {
             { id: 'red-fruit-optimization', title: 'Optimisation de la Production de Fruits Rouges', description: 'Conception et mise en œuvre d\'un modèle de programmation linéaire pour maximiser le profit de la production de fruits rouges en serre, en tenant compte de diverses contraintes et scénarios.' },
             { id: 'powerbi-dashboard', title: 'Intégration de Relevés Bancaires avec Power BI', description: 'Développement d\'un tableau de bord Power BI interactif pour intégrer et visualiser les indicateurs financiers clés des relevés bancaires et des bons de livraison pour une vue de données connectée.' },
             { id: 'rsa-cryptography', title: 'Attaque contre le RSA à Module Partagé', description: 'Étude et simulation d\'attaques contre le cryptosystème RSA, en se concentrant sur les vulnérabilités des modules partagés pour démontrer les faiblesses cryptographiques.' },
+            { id: 'acoustic-noise-reduction', title: 'Réduction de la Pollution Sonore du Trafic Routier (TIPE)', description: 'Étude théorique et modélisation de la propagation des ondes acoustiques et optimisation de murs antibruit utilisant des matériaux poreux. Validation expérimentale au tube de Kundt comparant mousses compactes et alvéolées.' },
+            { id: 'wood-behavior-mmc', title: 'Loi de Comportement du Bois (Projet MMC)', description: 'Étude des propriétés mécaniques du bois, modélisation de son comportement élastique orthotrope, et réalisation d\'essais de compression et de flexion pour mesurer le module de Young et la résistance à la rupture.' },
             { id: 'biomedical-diffusion', title: 'Diffusion d\'Oxygène dans l\'Acinus Pulmonaire', description: 'Réalisation d\'un projet d\'ingénierie biomédicale pour modéliser la diffusion d\'oxygène dans l\'acinus pulmonaire, en résolvant l\'équation de diffusion 2D par des méthodes numériques.' },
             { id: 'robotics-vision', title: 'Robotique et Détection d\'Images', description: 'Développement d\'un système robotique complet avec des capacités de détection d\'images, de la modélisation 3D sur SolidWorks à la mise en œuvre d\'algorithmes de traitement d\'images en Python.' }
         ],
@@ -154,6 +186,20 @@ const translations = {
         project_button_report: "التقرير",
         project_button_presentation: "التقديم",
         project_button_explore_ai: "استكشف بالذكاء الاصطناعي",
+        ai_assistant_title: "المساعد الذكي: {title}",
+        ai_chip_methodology: "✨ كيف تم بناء هذا؟",
+        ai_chip_summary: "⚡ ملخص في 3 نقاط",
+        ai_chip_math: "📐 الرياضيات والخوارزميات",
+        ai_chip_results: "📈 النتائج والأثر",
+        ai_prompt_math_query: "ما هي النماذج الرياضية والمعادلات وخوارزميات التحسين المستخدمة في هذا المشروع؟",
+        ai_prompt_results_query: "ما هي النتائج الرئيسية القابلة للقياس ومقاييس الدقة والأثر الفعلي؟",
+        ai_initial_title: "ما الذي ترغب في استكشافه حول هذا المشروع؟",
+        ai_initial_desc: "اطرح أي سؤال أدناه أو اختر أحد الاقتراحات أعلاه لاستكشاف المنهجية، النماذج الرياضية، أو النتائج.",
+        ai_input_placeholder: "اسأل أي شيء عن هذا المشروع... (مثال: كيف يعمل النموذج؟)",
+        ai_send_button: "اسأل",
+        ai_analyzing: "جارٍ تحليل السياق الهندسي للمشروع...",
+        ai_fallback_title: "الذكاء الاصطناعي لا يعمل في الوقت الحالي.",
+        ai_fallback_desc: "لا تتردد في استكشاف مخرجات المشروع أو التواصل مع محمد مباشرة.",
         modal_explaining_title: `المساعد الذكي: {title}`,
         modal_skill_projects_title: `مشاريع تستخدم {skill}`,
         modal_list_intro: `هذه هي المشاريع التي استخدمت فيها <strong>{skill}</strong>:`,
@@ -165,6 +211,8 @@ const translations = {
              { id: 'red-fruit-optimization', title: 'تحسين إنتاج الفواكه الحمراء', description: 'تصميم وتنفيذ نموذج برمجة خطية لتعظيم الربح من إنتاج الفاكهة الحمراء في البيوت المحمية، مع مراعاة مختلف القيود والسيناريوهات.' },
              { id: 'powerbi-dashboard', title: 'دمج كشوف الحسابات البنكية مع Power BI', description: 'تطوير لوحة تحكم Power BI تفاعلية لدمج وتصور المقاييس المالية الرئيسية من كشوف الحسابات البنكية ومذكرات التسليم للحصول على عرض بيانات متصل.' },
              { id: 'rsa-cryptography', title: 'هجمات ضد RSA ذات المعامل المشترك', description: 'دراسة ومحاكاة الهجمات ضد نظام التشفير RSA، مع التركيز على نقاط الضعف الناتجة عن الوحدات المشتركة لإظهار نقاط الضعف في التشفير.' },
+             { id: 'acoustic-noise-reduction', title: 'الحد من التلوث السمعي الناتج عن حركة المرور', description: 'دراسة ونمذجة انتشار الموجات الصوتية وتحسين الجدران العازلة للصوت باستخدام المواد المسامية. إجراء تجارب بأنبوب كوندت لمقارنة امتصاص الرغوة المدمجة والرغوة الخلوية.' },
+             { id: 'wood-behavior-mmc', title: 'قانون سلوك الخشب (مشروع MMC)', description: 'دراسة الخواص الميكانيكية للخشب ونمذجة سلوكه المرن، مع إجراء اختبارات الضغط والانحناء لقياس معامل يونغ ومقاومة الكسر.' },
              { id: 'biomedical-diffusion', title: 'انتشار الأكسجين في الحويصلات الرئوية', description: 'إجراء مشروع هندسة طبية حيوية لنمذجة انتشار الأكسجين في الحويصلات الرئوية، وحل معادلة الانتشار ثنائية الأبعاد باستخدام الطرق العددية.' },
              { id: 'robotics-vision', title: 'الروبوتات وكشف الصور', description: 'تطوير نظام روبوتي كامل مع إمكانات كشف الصور، من النمذجة ثلاثية الأبعاد في SolidWorks إلى تنفيذ خوارزميات معالجة الصور في Python.' }
         ],
@@ -216,6 +264,20 @@ const translations = {
         project_button_report: "Informe",
         project_button_presentation: "Presentación",
         project_button_explore_ai: "Explorar con IA",
+        ai_assistant_title: "Asistente IA: {title}",
+        ai_chip_methodology: "✨ ¿Cómo fue construido?",
+        ai_chip_summary: "⚡ Resumen en 3 puntos",
+        ai_chip_math: "📐 Matemáticas y Algoritmos",
+        ai_chip_results: "📈 Resultados e Impacto",
+        ai_prompt_math_query: "¿Qué modelos matemáticos, fórmulas y algoritmos de optimización se utilizaron en este proyecto?",
+        ai_prompt_results_query: "¿Cuáles fueron los principales resultados medibles, métricas de precisión e impacto real?",
+        ai_initial_title: "¿Qué te gustaría explorar sobre este proyecto?",
+        ai_initial_desc: "Haz una pregunta abajo o elige una sugerencia arriba para ver la metodología, modelos matemáticos o resultados.",
+        ai_input_placeholder: "Pregunta lo que sea sobre este proyecto... (ej. ¿Cómo funciona el modelo?)",
+        ai_send_button: "Preguntar",
+        ai_analyzing: "Analizando el contexto de ingeniería del proyecto...",
+        ai_fallback_title: "La IA no está funcionando por el momento.",
+        ai_fallback_desc: "No dudes en explorar los entregables del proyecto o contactar a Mohammed directamente.",
         modal_explaining_title: `Asistente IA: {title}`,
         modal_skill_projects_title: `Proyectos con {skill}`,
         modal_list_intro: `Aquí están los proyectos donde usé <strong>{skill}</strong>:`,
@@ -227,6 +289,8 @@ const translations = {
             { id: 'red-fruit-optimization', title: 'Optimización de la Producción de Frutos Rojos', description: 'Diseñé e implementé un modelo de Programación Lineal para maximizar el beneficio de la producción de frutos rojos en invernaderos, considerando diversas restricciones y escenarios.' },
             { id: 'powerbi-dashboard', title: 'Integración de Extractos Bancarios con Power BI', description: 'Desarrollé un panel de Power BI interactivo para integrar y visualizar métricas financieras clave de extractos bancarios y albaranes de entrega para una vista de datos conectada.' },
             { id: 'rsa-cryptography', title: 'Ataques Contra RSA de Módulo Compartido', description: 'Estudié y simulé ataques contra el criptosistema RSA, centrándome en las vulnerabilidades de los módulos compartidos para demostrar las debilidades criptográficas.' },
+            { id: 'acoustic-noise-reduction', title: 'Reducción de la Contaminación Acústica del Tráfico Vial', description: 'Investigación y modelado de la propagación de ondas acústicas y optimización de barreras acústicas mediante materiales porosos. Ensayos experimentales con tubo de Kundt comparando espumas compactas y alveolares.' },
+            { id: 'wood-behavior-mmc', title: 'Ley de Comportamiento de la Madera (Proyecto MMC)', description: 'Estudió las propiedades mecánicas de la madera, modeló su comportamiento elástico ortotrópico y realizó pruebas de compresión y flexión para medir el módulo de Young y la resistencia a la rotura.' },
             { id: 'biomedical-diffusion', title: 'Difusión de Oxígeno en el Acino Pulmonar', description: 'Realicé un proyecto de ingeniería biomédica para modelar la difusión de oxígeno en el acino pulmonar, resolviendo la ecuación de difusión 2D utilizando métodos numéricos.' },
             { id: 'robotics-vision', title: 'Robótica y Detección de Imágenes', description: 'Desarrollé un sistema robótico completo con capacidades de detección de imágenes, desde el modelado 3D en SolidWorks hasta la implementación de algoritmos de procesamiento de imágenes en Python.' }
         ],
@@ -278,6 +342,20 @@ const translations = {
         project_button_report: "报告",
         project_button_presentation: "演示",
         project_button_explore_ai: "使用 AI 探索",
+        ai_assistant_title: "AI 助手: {title}",
+        ai_chip_methodology: "✨ 如何构建的？",
+        ai_chip_summary: "⚡ 3点摘要",
+        ai_chip_math: "📐 数学与算法",
+        ai_chip_results: "📈 结果与影响",
+        ai_prompt_math_query: "该项目使用了哪些数学模型、公式和优化算法？",
+        ai_prompt_results_query: "主要的量化成果、准确率指标和实际效益是什么？",
+        ai_initial_title: "你想了解该项目的哪些方面？",
+        ai_initial_desc: "在下方输入任何问题，或点击上方建议标签，了解工程方法、数学建模或项目成果。",
+        ai_input_placeholder: "询问关于该项目的任何问题...（例如：模型是如何工作的？）",
+        ai_send_button: "提问",
+        ai_analyzing: "正在分析项目工程背景...",
+        ai_fallback_title: "AI 助手目前暂停服务。",
+        ai_fallback_desc: "欢迎查阅项目成果或直接联系 Mohammed。",
         modal_explaining_title: `AI 助手：{title}`,
         modal_skill_projects_title: `使用 {skill} 的项目`,
         modal_list_intro: `这是我使用 <strong>{skill}</strong> 的项目：`,
@@ -289,6 +367,8 @@ const translations = {
             { id: 'red-fruit-optimization', title: '红果生产优化', description: '设计并实施了一个线性规划模型，以最大化温室中红果生产的利润，同时考虑了各种约束和情景。' },
             { id: 'powerbi-dashboard', title: '银行对账单与Power BI集成', description: '开发了一个交互式Power BI仪表板，用于整合和可视化银行对账单和交货单中的关键财务指标，以实现连接的数据视图。' },
             { id: 'rsa-cryptography', title: '针对共享模数RSA的攻击', description: '研究并模拟了针对RSA密码系统的攻击，重点关注共享模数带来的漏洞，以展示密码学弱点。' },
+            { id: 'acoustic-noise-reduction', title: '道路交通噪声污染消除与声屏障优化', description: '研究并模拟了声波在多孔介质中的传播与声屏障吸声优化。使用昆特管（Kundt Tube）实验测试并对比了致密泡沫与蜂窝多孔泡沫的吸声系数。' },
+            { id: 'wood-behavior-mmc', title: '木材行为定律（MMC项目）', description: '研究了木材的机械性能，对其正交各向异性弹性行为进行了建模，并进行了压缩和弯曲测试以测量杨氏模量和断裂强度。' },
             { id: 'biomedical-diffusion', title: '肺腺泡中的氧气扩散', description: '进行了一个生物医学工程项目，对肺腺泡中的氧气扩散进行建模，使用数值方法求解二维扩散方程。' },
             { id: 'robotics-vision', title: '机器人技术与图像检测', description: '开发了一个完整的具有图像检测功能的机器人系统，从在SolidWorks中进行3D建模到在Python中实现图像处理算法。' }
         ],
@@ -340,6 +420,20 @@ const translations = {
         project_button_report: "Relatório",
         project_button_presentation: "Apresentação",
         project_button_explore_ai: "Explorar com IA",
+        ai_assistant_title: "Assistente de IA: {title}",
+        ai_chip_methodology: "✨ Como foi construído?",
+        ai_chip_summary: "⚡ Resumo em 3 pontos",
+        ai_chip_math: "📐 Matemática e Algoritmos",
+        ai_chip_results: "📈 Resultados e Impacto",
+        ai_prompt_math_query: "Quais modelos matemáticos, fórmulas e algoritmos de otimização foram usados neste projeto?",
+        ai_prompt_results_query: "Quais foram os principais resultados mensuráveis, métricas de precisão e impacto real?",
+        ai_initial_title: "O que você gostaria de explorar sobre este projeto?",
+        ai_initial_desc: "Faça uma pergunta abaixo ou clique em uma sugestão acima para ver a metodologia, modelagem matemática ou resultados.",
+        ai_input_placeholder: "Pergunte algo sobre este projeto... (ex: Como o modelo funciona?)",
+        ai_send_button: "Perguntar",
+        ai_analyzing: "Analisando o contexto de engenharia do projeto...",
+        ai_fallback_title: "A IA não está funcionando no momento.",
+        ai_fallback_desc: "Fique à vontade para explorar as entregas do projeto ou entrar em contato com Mohammed diretamente.",
         modal_explaining_title: `Assistente IA: {title}`,
         modal_skill_projects_title: `Projetos com {skill}`,
         modal_list_intro: `Aqui estão os projetos onde usei <strong>{skill}</strong>:`,
@@ -351,6 +445,8 @@ const translations = {
             { id: 'red-fruit-optimization', title: 'Otimização da Produção de Frutas Vermelhas', description: 'Projetei e implementei um modelo de Programação Linear para maximizar o lucro da produção de frutas vermelhas em estufas, considerando várias restrições e cenários.' },
             { id: 'powerbi-dashboard', title: 'Integração de Extratos Bancários com Power BI', description: 'Desenvolvi um painel interativo do Power BI para integrar e visualizar métricas financeiras chave de extratos bancários e notas de entrega para uma visão de dados conectada.' },
             { id: 'rsa-cryptography', title: 'Ataques Contra RSA de Módulo Compartilhado', description: 'Estudei e simulei ataques contra o criptossistema RSA, focando nas vulnerabilidades de módulos compartilhados para demonstrar fraquezas criptográficas.' },
+            { id: 'acoustic-noise-reduction', title: 'Redução da Poluição Sonora Causada pelo Tráfego Rodoviário', description: 'Estudo e modelagem da propagação de ondas acústicas e otimização de barreiras acústicas com materiais porosos. Ensaios experimentais com tubo de Kundt comparando espumas compactas e alveolares.' },
+            { id: 'wood-behavior-mmc', title: 'Lei de Comportamento da Madeira (Projeto MMC)', description: 'Estudou as propriedades mecânicas da madeira, modelou seu comportamento elástico ortotrópico e realizou testes de compressão e flexão para medir o módulo de Young e a resistência à ruptura.' },
             { id: 'biomedical-diffusion', title: 'Difusão de Oxigênio no Ácino Pulmonar', description: 'Conduzi um projeto de engenharia biomédica para modelar a difusão de oxigênio no ácino pulmonar, resolvendo a equação de difusão 2D usando métodos numéricos.' },
             { id: 'robotics-vision', title: 'Robótica e Detecção de Imagem', description: 'Desenvolvi um sistema robótico completo com capacidades de detecção de imagem, desde a modelagem 3D no SolidWorks até a implementação de algoritmos de processamento de imagem em Python.' }
         ],
@@ -394,6 +490,20 @@ const translations = {
         project_button_report: "Bericht",
         project_button_presentation: "Präsentation",
         project_button_explore_ai: "Mit KI erkunden",
+        ai_assistant_title: "KI-Assistent: {title}",
+        ai_chip_methodology: "✨ Wie wurde das gebaut?",
+        ai_chip_summary: "⚡ 3-Punkte-Zusammenfassung",
+        ai_chip_math: "📐 Mathematik & Algorithmen",
+        ai_chip_results: "📈 Ergebnisse & Wirkung",
+        ai_prompt_math_query: "Welche mathematischen Modelle, Formeln und Optimierungsalgorithmen wurden in diesem Projekt verwendet?",
+        ai_prompt_results_query: "Was waren die wichtigsten messbaren Ergebnisse, Genauigkeitsmetriken und praktischen Auswirkungen?",
+        ai_initial_title: "Was möchtest du an diesem Projekt erkunden?",
+        ai_initial_desc: "Stelle unten eine Frage oder wähle oben einen Themenvorschlag, um Methodik, mathematische Modelle oder Ergebnisse zu sehen.",
+        ai_input_placeholder: "Frage etwas zu diesem Projekt... (z.B. Wie funktioniert das Modell?)",
+        ai_send_button: "Fragen",
+        ai_analyzing: "Analysiere den technischen Projektkontext...",
+        ai_fallback_title: "Die KI funktioniert derzeit nicht.",
+        ai_fallback_desc: "Schau dir gerne die Projektergebnisse an oder kontaktiere Mohammed direkt.",
         modal_explaining_title: `KI-Assistent: {title}`,
         modal_skill_projects_title: `Projekte mit {skill}`,
         modal_list_intro: `Hier sind die Projekte, bei denen ich <strong>{skill}</strong> verwendet habe:`,
@@ -405,6 +515,8 @@ const translations = {
             { id: 'red-fruit-optimization', title: 'Optimierung der Beerenobstproduktion', description: 'Entwurf und Implementierung eines linearen Programmierungsmodells zur Gewinnmaximierung für die Beerenobstproduktion in Gewächshäusern unter Berücksichtigung verschiedener Einschränkungen und Szenarien.' },
             { id: 'powerbi-dashboard', title: 'Integration von Kontoauszügen mit Power BI', description: 'Entwicklung eines interaktiven Power BI-Dashboards zur Integration und Visualisierung wichtiger Finanzkennzahlen aus Kontoauszügen und Lieferscheinen für eine vernetzte Datenansicht.' },
             { id: 'rsa-cryptography', title: 'Angriffe gegen Shared-Module RSA', description: 'Untersuchung und Simulation von Angriffen auf das RSA-Kryptosystem mit Fokus auf Schwachstellen durch gemeinsam genutzte Module zur Demonstration kryptografischer Schwachstellen.' },
+            { id: 'acoustic-noise-reduction', title: 'Minderung der Lärmbelastung durch Straßenverkehr', description: 'Theoretische Untersuchung und Modellierung der Schallwellenausbreitung und Lärmschutzwand-Optimierung mittels poröser Materialien. Experimentelle Kundt-Rohr-Prüfung zum Vergleich kompakter und wabenförmiger Schaumstoffe.' },
+            { id: 'wood-behavior-mmc', title: 'Verhaltensgesetz des Holzes (MMC-Projekt)', description: 'Untersuchung der mechanischen Eigenschaften von Holz, Modellierung seines orthotropen elastischen Verhaltens und Durchführung von Druck- und Biegeversuchen zur Messung des Elastizitätsmoduls und der Bruchfestigkeit.' },
             { id: 'biomedical-diffusion', title: 'Sauerstoffdiffusion im Lungenazinus', description: 'Durchführung eines biomedizinischen Projekts zur Modellierung der Sauerstoffdiffusion im Lungenazinus durch numerische Lösung der 2D-Diffusionsgleichung.' },
             { id: 'robotics-vision', title: 'Robotik und Bilderkennung', description: 'Entwicklung eines kompletten Robotersystems mit Bilderkennungsfunktionen, von der 3D-Modellierung in SolidWorks bis zur Implementierung von Bildverarbeitungsalgorithmen in Python.' }
         ],
@@ -466,6 +578,26 @@ const projectsData = [
         metric: 'O(log e) Attack Runtime',
         reportUrl: 'https://drive.google.com/file/d/1e3hIOIsfj5ZOvqIK-ey-Bew5HXZwI69l/view?usp=sharing', 
         presentationUrl: 'https://drive.google.com/file/d/14zBJ0cRRHfBgGoerNRfXe2z7y9sv5oZ-/view?usp=sharing' 
+    },
+    { 
+        id: 'acoustic-noise-reduction', 
+        date: '2023-05', 
+        technologies: ['Wave Physics', 'Acoustic Modeling', 'Applied Mathematics', 'Kundt Tube', 'Porous Materials', 'Python'], 
+        githubUrl: 'https://github.com/mohammed-el-baraka/acoustic-noise-reduction-tipe',
+        demoUrl: '',
+        metric: 'Kundt Tube Absorption Tested',
+        reportUrl: 'https://drive.google.com/file/d/14U3nLz8w2iV2TIusfK5Fy8QKrb7gC-6A/view?usp=sharing', 
+        presentationUrl: 'https://drive.google.com/file/d/1LiZUNbtWEKffJB-2NEuO6LGwAiveMU5u/view?usp=sharing' 
+    },
+    { 
+        id: 'wood-behavior-mmc', 
+        date: '2023-12', 
+        technologies: ['Mechanics of Continuous Media (MMC)', 'Wood Properties', 'Material Science', 'Compression Testing', 'Hooke\'s Law'], 
+        githubUrl: '',
+        demoUrl: '',
+        metric: 'Young\'s Modulus Measured (6.88 GPa)',
+        reportUrl: 'https://drive.google.com/file/d/1uJx700n5rsV01_TxFt1SjGru976V2hpM/view?usp=sharing', 
+        presentationUrl: 'https://drive.google.com/file/d/1Ed_wbZb5coNSasPSqVPowhtC5vPzfDS6/view?usp=sharing' 
     },
     { 
         id: 'biomedical-diffusion', 
@@ -708,6 +840,163 @@ By iterating through the convergents of continued fractions, $d$ is recovered in
   2. Adoption of Optimal Asymmetric Encryption Padding (**OAEP**) to introduce probabilistic ciphertext randomization.
   3. Minimum private exponent thresholds ($d > N^{0.292}$) to safeguard against Coppersmith and Wiener lattice-reduction attacks.`,
 
+    'wood-behavior-mmc': `# Projet MMC : Loi de Comportement du Bois
+
+**Auteurs / Réalisé par :** Wissal BELABBESS, Aya KAMOUNI, H'nia HARRAS, Mohammed ELBARAKA  
+**Encadré par :** Ahmed ROUABHI  
+
+---
+
+## Sommaire
+1. Introduction
+2. Le bois en quelques chiffres et données !
+3. Les propriétés mécaniques du bois
+4. Mesure du module de Young
+5. Mesure de la résistance de rupture
+6. Conclusion
+
+---
+
+## 1. Introduction
+
+### 1.1. Nature et Structure Chimique
+- Le bois est un matériau **naturel, organique et renouvelable** composé :
+  - De fibres de **cellulose** à haute masse molaire.
+  - D'**hémicelluloses**, qui sont des polymères ramifiés à basse masse molaire.
+  - De **lignine**.
+
+### 1.2. Organisation Cellulaire et Directionnalité
+- Le bois possède une structure interne spécifique où les cellules sont alignées de manière verticale et parallèle dans les parois cellulaires.
+- Cette disposition permet aux arbres de résister efficacement aux forces extérieures (comme le vent).
+- **Conséquence mécanique :** Le bois présente une résistance nettement supérieure dans la direction parallèle aux fibres (**longitudinale**) comparativement aux directions perpendiculaires (**radiale** et **tangentielle**).
+
+### 1.3. Caractère Orthotrope du Bois
+- Le bois est un matériau **orthotrope** : ses propriétés varient en fonction de la direction de sollicitation.
+- **Axes principaux :**
+  - **L (Longitudinal) :** Direction parallèle au fil des fibres (propriétés mécaniques maximales).
+  - **R (Radial) :** Direction perpendiculaire aux cernes d'accroissement (perpendiculaire à la surface).
+  - **T (Tangentiel) :** Direction tangente aux cernes de croissance (perpendiculaire aux fibres).
+- **Plans de référence (plan ligneux) :**
+  - Plan transverse : **(RT)**
+  - Plan radial : **(LR)**
+  - Plan tangentiel : **(LT)**
+
+---
+
+## 2. Le Bois en Quelques Chiffres et Données
+
+- **Consommation mondiale :** En 2019, la consommation mondiale de bois de construction a atteint environ **430 millions de mètres cubes**.
+
+### Répartition de l'Utilisation de l'Arbre
+
+| Fraction | Pourcentage | Usages & Applications |
+| :--- | :---: | :--- |
+| **Sciage** | **42 %** | Bois de construction, bois d'ingénierie (poutres assemblées pour structures). |
+| **Copeaux** | **38 %** | Fabrication de papiers (journal notamment), pâte kraft pour papier tissu, cartons et bioproduits (biocarburants, bioplastiques). |
+| **Écorce** | **10 %** | Combustible énergétique. |
+| **Sciure et rabotures** | **10 %** | Particules minces récupérées et transformées en granulés pour le chauffage. |
+
+---
+
+## 3. Les Propriétés Mécaniques du Bois
+
+Dans le domaine élastique, le **module d'Young** (module d'élasticité) est le paramètre prépondérant. Il est influencé par :
+1. La densité
+2. La teneur en humidité
+3. La température
+
+### 3.1. Influence de la Densité
+- La densité apparente (prenant en compte la porosité) est le principal facteur déterminant la rigidité entre différentes essences de bois.
+- **Loi statistique (loi puissance) :**
+  $$Y = a \\cdot D^b$$
+  - $Y$ : Propriété élastique (module)
+  - $D$ : Densité du bois
+  - $a, b$ : Constantes tabulées selon l'espèce de bois (corrélation établie généralement à 12 % d'humidité relative).
+
+### 3.2. Influence de la Température
+- L'élévation de la température abaisse la pente de la courbe contrainte-déformation (réduction de la rigidité).
+- **Relation d'évolution :**
+  $$E_2 = E_1 [1 - \\alpha (T_2 - T_1)]$$
+  - $E_1, E_2$ : Modules d'élasticité aux températures $T_1$ et $T_2$
+  - $\\alpha$ : Coefficient de dilatation thermique
+
+### 3.3. Influence de la Teneur en Humidité
+- Le module d'Young décroît de manière quasi-linéaire avec l'augmentation de l'humidité jusqu'au **Point de Saturation des Fibres (PSF $\\approx 30\\,\\%$)**.
+- L'effet de l'humidité sur le module d'Young tangentiel est plus marqué chez le **chêne** et le **bouleau** que chez le **pin**.
+- Sous le PSF, les variations d'humidité induisent des changements dimensionnels macroscopiques (**retrait ou gonflement**).
+
+---
+
+## 4. Modélisation du Comportement Élastique Orthotrope
+
+### 4.1. Loi de Hooke Généralisée (3D)
+Sous l'hypothèse des petites perturbations (HPP) en élasticité linéaire :
+$$\\varepsilon_{ij} = s_{ijkl} \\cdot \\sigma_{kl} \\quad \\text{et} \\quad \\sigma_{ij} = C_{ijkl} \\cdot \\varepsilon_{kl}$$
+- $\\sigma_{ij}$ : Tenseur des contraintes
+- $\\varepsilon_{ij}$ : Tenseur des déformations
+- $C_{ijkl}$ / $C_{ij}$ : Tenseur / matrice des rigidités
+- $s_{ijkl}$ / $s_{ij}$ : Tenseur / matrice des complaisances
+
+### 4.2. Matrice de Complaisance en Repère Orthotrope $(R, T, L)$
+En notation d'ingénieur compacte :
+$$\\begin{pmatrix} \\varepsilon_R \\\\ \\varepsilon_T \\\\ \\varepsilon_L \\\\ \\gamma_{TL} \\\\ \\gamma_{RL} \\\\ \\gamma_{RT} \\end{pmatrix} = \\begin{pmatrix} \\frac{1}{E_R} & -\\frac{\\nu_{TR}}{E_T} & -\\frac{\\nu_{LR}}{E_L} & 0 & 0 & 0 \\\\ -\\frac{\\nu_{RT}}{E_R} & \\frac{1}{E_T} & -\\frac{\\nu_{LT}}{E_L} & 0 & 0 & 0 \\\\ -\\frac{\\nu_{RL}}{E_R} & -\\frac{\\nu_{TL}}{E_T} & \\frac{1}{E_L} & 0 & 0 & 0 \\\\ 0 & 0 & 0 & \\frac{1}{G_{TL}} & 0 & 0 \\\\ 0 & 0 & 0 & 0 & \\frac{1}{G_{RL}} & 0 \\\\ 0 & 0 & 0 & 0 & 0 & \\frac{1}{G_{RT}} \\end{pmatrix} \\begin{pmatrix} \\sigma_R \\\\ \\sigma_T \\\\ \\sigma_L \\\\ \\sigma_{TL} \\\\ \\sigma_{RL} \\\\ \\sigma_{RT} \\end{pmatrix}$$
+
+- $E_R, E_T, E_L$ : Modules de Young axiaux.
+- $G_{TL}, G_{RL}, G_{RT}$ : Modules de cisaillement.
+- $\\nu_{ij}$ : Coefficients de Poisson.
+
+---
+
+## 5. Mesure Expérimentale du Module de Young (Essai de Compression)
+
+- **Objectifs :** Déterminer le module de Young $E$ du **pin**, mesurer la déformation axiale $\\varepsilon$ jusqu'à rupture et vérifier la loi de Hooke.
+- **Protocole :**
+  - Éprouvette : Échantillon cubique de **$25\\text{ mm} \\times 25\\text{ mm} \\times 25\\text{ mm}$**.
+  - Machine d'essai : **SYNTAX BR**.
+  - Vitesse de chargement : **$v = 0{,}5\\text{ mm/min}$**.
+- **Tenseurs appliqués :**
+  $$\\boldsymbol{\\sigma} = \\begin{pmatrix} 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & \\sigma \\end{pmatrix} \\quad \\text{avec } \\sigma = -\\frac{N}{S}$$
+  $$\\boldsymbol{\\varepsilon} = \\begin{pmatrix} \\frac{\\partial u_r}{\\partial r} & 0 & 0 \\\\ 0 & u_{rr} & 0 \\\\ 0 & 0 & \\varepsilon_{zz} \\end{pmatrix}$$
+- **Résultats obtenus & Conclusion partielle 1 :**
+  - La loi de Hooke est vérifiée : $\\sigma = 6{,}88\\,\\text{GPa} \\cdot \\varepsilon$.
+  - **Module de Young expérimental (Pin) :** $E = 6{,}88\\text{ GPa}$.
+
+---
+
+## 6. Mesure de la Résistance de Rupture (Essai de Flexion)
+
+- **Définition :** La résistance de rupture ($R_m$) représente la contrainte maximale supportable par la pièce avant endommagement/rupture, intervenant dans le domaine plastique après écoulement élastique limite ($R_{el}, \\varepsilon_{el}$).
+- **Objectif :** Comparer la résistance en flexion du **bois d'ingénierie** face au **bois de sciage traditionnel** (charpente légère).
+- **Protocole :**
+  - Éprouvette : Parallélépipède de **$20\\text{ mm} \\times 20\\text{ mm} \\times 80\\text{ mm}$**.
+  - Machine : **SYNTAX BR** en configuration flexion 3 points.
+  - Vitesse de chargement : **$v = 3\\text{ mm/min}$**.
+
+### Résultats Comparatifs
+
+| Type de Bois | Résistance de Rupture en Flexion | Comportement & Endommagement |
+| :--- | :---: | :--- |
+| **Bois d'ingénierie** | **$43\\text{ MPa}$** | Déformation infime, résistance accrue due à sa rigidité structurelle. |
+| **Bois de sciage traditionnel** | **$16\\text{ MPa}$** | Fissures nettement remarquables accompagnées de ruptures franches des fibres. |
+
+- **Conclusion partielle 2 :**
+  - La résistance en flexion du bois d'ingénierie ($43\\text{ MPa}$) est largement supérieure à celle du bois de sciage ($16\\text{ MPa}$).
+  - Mise en évidence de l'orthotropie : une coupe **longitudinale** résiste beaucoup mieux à la fissuration et met plus de temps à rompre qu'une coupe **transversale**.
+
+---
+
+## 7. Durabilité et Impact Écologique du Bois
+
+- **Performances structurales et durabilité :** Meilleure résilience face aux intempéries/insectes par rapport à la brique ou au béton et excellente efficacité énergétique (isolant thermique).
+- **Empreinte environnementale :** Matériau renouvelable et recyclable issu de forêts gérées durablement ; rôle de puits de carbone réduisant le $\\text{CO}_2$ atmosphérique.
+
+---
+
+## 8. Bibliographie
+
+1. *Fissuration du bois en climat variable sous charges de longues durées : applications aux essences européennes et gabonaises* (\`hal.science\`).
+2. *Modélisation du comportement mécanique du bois au cours du séchage* (\`ulaval.ca\`).`,
+
     'biomedical-diffusion': `# Oxygen Diffusion in the Pulmonary Acinus: Numerical Modeling
 
 ## Executive Summary & Engineering Problem
@@ -740,6 +1029,43 @@ $$\\frac{C^{n+1} - C^{n+1/2}}{\\Delta t / 2} = D \\left( \\delta_x^2 C^{n+1/2} +
 * **Numerical Convergence:** Tridiagonal matrix systems solved with the Thomas Algorithm, achieving $L_2$ norm residual error $< 10^{-5}$.
 * **Pathological Impact:** Simulations demonstrated a **34% drop in oxygen flux** when membrane diffusion thickness increases by $2.5\\times$ (modeling acute interstitial edema).
 * **Clinical Value:** Provides quantifiable parametric modeling to evaluate mechanical ventilation oxygenation efficacy.`,
+
+    'acoustic-noise-reduction': `# TIPE : Réduction de la Pollution Sonore Causée par le Trafic Routier
+
+## Motivation & Contexte d'Ingénierie
+Le bruit urbain généré par le trafic routier continu représente une nuisance sanitaire majeure (troubles du sommeil, pertes auditives, perturbation cognitive). Selon l'OMS, l'exposition continue au-delà de 85 dB constitue un danger avéré pour l'organisme humain. Ce projet d'ingénierie TIPE analyse la propagation ondulatoire du bruit routier et optimise l'efficacité des écrans antibruit grâce à l'intégration de matériaux absorbants poreux.
+
+---
+
+## Modélisation Physique & Formulations Mathématiques
+
+### 1. Physique des Ondes Acoustiques & Pression
+La pression acoustique totale s'exprime comme la superposition de la pression atmosphérique au repos et de la surpression acoustique instantanée :
+$$P_{\\text{totale}} = P_0 + p(t)$$
+* **Impédance acoustique caractéristique de l'air :** $Z_0 = \\rho_0 \\cdot c_0$ (où $\\rho_0 \\approx 1.2\\,\\text{kg/m}^3$ et $c_0 \\approx 340\\,\\text{m/s}$).
+* **Intensité acoustique instantanée :**
+  $$I = p(t) \\cdot v(t) = \\frac{p^2}{\\rho_0 c_0}$$
+
+### 2. Modélisation Spectrale du Bruit Routier
+Le bruit émis par le flux automobile (moteur GMP, contact pneumatique-chaussée, échappement, bruits aérodynamiques) est décomposé en série de Fourier :
+$$s(t) = \\sum_{n=1}^N A_n \\sin(\\omega_n t + \\phi_n)$$
+
+### 3. Propriétés des Matériaux Poreux & Bilan Énergétique
+Un matériau poreux absorbant est caractérisé par :
+* **Porosité ouverte $\\Phi$ :** $\\Phi = \\frac{V_{\\text{fluide}}}{V_{\\text{total}}}$
+* **Résistivité au passage de l'air $\\sigma$ ($\\,\\text{N}\\cdot\\text{s}\\cdot\\text{m}^{-4}$) :** quantifie les pertes d'énergie acoustique par frottements visqueux du fluide sur le squelette solide.
+* **Bilan de conservation énergétique sur l'écran antibruit :**
+  $$1 = T + R + \\alpha$$
+  Pour un écran opaque où la transmission $T \\approx 0$ :
+  $$\\alpha = 1 - R = 1 - |r|^2$$
+  où $\\alpha$ est le coefficient d'absorption acoustique et $r$ le coefficient de réflexion complexe.
+
+---
+
+## Dispositif Expérimental & Résultats (Tube de Kundt)
+* **Protocole Expérimental :** Mesure d'ondes stationnaires acoustiques au Tube de Kundt pour déterminer le coefficient d'absorption $\\alpha(f)$ en fonction de la fréquence.
+* **Matériaux Comparés :** Mousse compacte vs. Mousse alvéolée / cellulaire.
+* **Résultats :** La mousse alvéolée présente un pic d'absorption acoustique $\\alpha > 0.85$ sur la plage fréquentielle critique du bruit de roulement urbain ($500\\,\\text{Hz} - 2000\\,\\text{Hz}$), validant son utilisation optimale pour le garnissage des parois de murs antibruit.`,
 
     'robotics-vision': `# Robotics and Real-Time Computer Vision Object Detection
 

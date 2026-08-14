@@ -28,17 +28,27 @@ exports.handler = async function(event, context) {
         const { action, reportMarkdown, language = 'en', customPrompt } = body;
 
         let systemPrompt = '';
-        const langName = language === 'fr' ? 'French' : 'English';
+        const langMap = {
+            'en': 'English',
+            'fr': 'French',
+            'ar': 'Arabic',
+            'es': 'Spanish',
+            'de': 'German',
+            'zh': 'Simplified Chinese',
+            'pt': 'Portuguese'
+        };
+        const langName = langMap[language] || 'English';
         const mathInstruction = " When writing formulas, variables, optimization objectives, or mathematical models, always use clean standard LaTeX notation formatted with $...$ for inline math and $$...$$ for block equations.";
+        const langInstruction = ` Write your response in ${langName}. If the user asks a question in a specific language, always answer in that same language.`;
 
         if (action === 'explain') {
-            systemPrompt = `You are an AI engineering assistant for Mohammed El Baraka's portfolio. Using the following technical project report, provide a clear, structured 3-paragraph explanation: 1. Core Engineering Problem & Context, 2. Technical & Mathematical Architecture (algorithms/tools), 3. Key Results & Value. Write in ${langName}.${mathInstruction}\n\nReport:\n${reportMarkdown || ''}`;
+            systemPrompt = `You are an AI engineering assistant for Mohammed El Baraka's portfolio. Using the following technical project report, provide a clear, structured 3-paragraph explanation: 1. Core Engineering Problem & Context, 2. Technical & Mathematical Architecture (algorithms/tools), 3. Key Results & Value.${langInstruction}${mathInstruction}\n\nReport:\n${reportMarkdown || ''}`;
         } else if (action === 'summarize') {
-            systemPrompt = `You are an AI assistant for Mohammed El Baraka's engineering portfolio. Using the following technical project report, provide a punchy 3-bullet executive summary covering what was built, algorithms used, and measurable results. Use bold keywords. Write in ${langName}.${mathInstruction}\n\nReport:\n${reportMarkdown || ''}`;
+            systemPrompt = `You are an AI assistant for Mohammed El Baraka's engineering portfolio. Using the following technical project report, provide a punchy 3-bullet executive summary covering what was built, algorithms used, and measurable results. Use bold keywords.${langInstruction}${mathInstruction}\n\nReport:\n${reportMarkdown || ''}`;
         } else if (customPrompt) {
-            systemPrompt = `You are an AI engineering assistant for Mohammed El Baraka's portfolio. Answer the following question based on the project report in ${langName}.${mathInstruction}\n\nQuestion: ${customPrompt}\n\nReport:\n${reportMarkdown || ''}`;
+            systemPrompt = `You are an AI engineering assistant for Mohammed El Baraka's portfolio. Answer the following question based on the project report.${langInstruction}${mathInstruction}\n\nQuestion: ${customPrompt}\n\nReport:\n${reportMarkdown || ''}`;
         } else {
-            systemPrompt = `Summarize this engineering project report in ${langName}.${mathInstruction}\n\n${reportMarkdown || ''}`;
+            systemPrompt = `Summarize this engineering project report.${langInstruction}${mathInstruction}\n\n${reportMarkdown || ''}`;
         }
 
         const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${apiKey}`;

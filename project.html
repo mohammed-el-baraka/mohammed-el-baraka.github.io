@@ -182,7 +182,16 @@
             </a>
 
             <div class="flex items-center gap-3">
-                <span class="text-xs text-gray-400 font-mono" id="cs-project-slug">project-id</span>
+                <select id="cs-language-select" class="bg-black/50 text-gray-200 border border-violet-500/30 hover:border-violet-500/60 rounded-xl px-3 py-1.5 text-xs font-semibold cursor-pointer transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-violet-500/50 shadow-inner">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="ar">🇲🇦 العربية</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="zh">🇨🇳 中文</option>
+                    <option value="pt">🇧🇷 Português</option>
+                </select>
+                <span class="text-xs text-gray-400 font-mono hidden sm:inline" id="cs-project-slug">project-id</span>
             </div>
         </nav>
 
@@ -290,6 +299,7 @@
     <script>
         let currentProjectId = '';
         let currentProjectRawMarkdown = '';
+        let currentLang = localStorage.getItem('preferredLanguage') || 'en';
 
         function getProjectIdFromUrl() {
             const params = new URLSearchParams(window.location.search);
@@ -312,16 +322,18 @@
                 .replace(/\n/gim, '<br>');
         }
 
-        async function loadCaseStudy() {
-            currentProjectId = getProjectIdFromUrl();
-            document.getElementById('cs-project-slug').textContent = currentProjectId;
-
+        function renderCaseStudyContent() {
+            const t = translations[currentLang] || translations['en'];
+            const projectTrans = t.projects?.find(p => p.id === currentProjectId) || { title: currentProjectId, description: '' };
             const meta = projectsData.find(p => p.id === currentProjectId) || projectsData[0];
-            const enTrans = translations.en?.projects?.find(p => p.id === currentProjectId) || { title: currentProjectId, description: '' };
+
+            // Update document direction
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
 
             // Fill Hero
-            document.getElementById('cs-project-title').textContent = enTrans.title;
-            document.getElementById('cs-project-desc').textContent = enTrans.description;
+            document.getElementById('cs-project-title').textContent = projectTrans.title;
+            document.getElementById('cs-project-desc').textContent = projectTrans.description;
             document.getElementById('cs-project-date').textContent = meta.date || '2024';
             
             if (meta.metric) {
@@ -362,6 +374,58 @@
                 btnPresentation.href = meta.presentationUrl;
             }
 
+            // AI Assistant Card Localization
+            const chipMethodology = t.ai_chip_methodology || '✨ How was this built?';
+            const chipSummary = t.ai_chip_summary || '⚡ 3-Bullet Summary';
+            const chipMath = t.ai_chip_math || '📐 Math & Algorithms';
+            const chipResults = t.ai_chip_results || '📈 Results & Impact';
+            const mathQuery = (t.ai_prompt_math_query || 'What mathematical models, formulas, and optimization algorithms were used in this project?').replace(/'/g, "\\'");
+            const resultsQuery = (t.ai_prompt_results_query || 'What were the key measurable outcomes, accuracy metrics, and real-world results?').replace(/'/g, "\\'");
+            const initTitle = t.ai_initial_title || 'What would you like to explore about this project?';
+            const initDesc = t.ai_initial_desc || 'Ask any question below or choose a suggestion chip above to see the methodology, mathematical model, or results.';
+            const inputPlaceholder = t.ai_input_placeholder || 'Ask anything about this project... (e.g. How does the model work?)';
+            const sendButton = t.ai_send_button || 'Ask';
+
+            const aiCard = document.querySelector('.ai-assistant-card');
+            if (aiCard) {
+                aiCard.innerHTML = `
+                    <div class="mb-5">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-violet-900/50 border border-violet-500/40 text-violet-300">AI Assistant</span>
+                            <h2 class="text-xl font-bold text-white">${t.ai_assistant_title ? t.ai_assistant_title.replace('{title}', projectTrans.title) : 'AI Assistant: ' + projectTrans.title}</h2>
+                        </div>
+                        <p class="text-xs text-gray-400">
+                            ${initDesc}
+                        </p>
+                    </div>
+
+                    <!-- Quick Action Prompt Chips -->
+                    <div class="flex gap-2 flex-wrap mb-4">
+                        <button type="button" onclick="runCaseStudyAiQuery('explain')" class="ai-chip-pill">${chipMethodology}</button>
+                        <button type="button" onclick="runCaseStudyAiQuery('summarize')" class="ai-chip-pill">${chipSummary}</button>
+                        <button type="button" onclick="runCaseStudyAiQuery(null, '${mathQuery}')" class="ai-chip-pill">${chipMath}</button>
+                        <button type="button" onclick="runCaseStudyAiQuery(null, '${resultsQuery}')" class="ai-chip-pill">${chipResults}</button>
+                    </div>
+
+                    <!-- AI Response Box -->
+                    <div id="cs-ai-response" class="ai-response-card mb-4">
+                        <div class="text-center py-5 px-3">
+                            <p class="text-sm text-gray-200 mb-1 font-semibold">${initTitle}</p>
+                            <p class="text-xs text-gray-400">${initDesc}</p>
+                        </div>
+                    </div>
+
+                    <!-- Input Query Form -->
+                    <form onsubmit="event.preventDefault(); submitCaseStudyAiQuestion();" class="ai-input-wrapper">
+                        <input type="text" id="cs-ai-input" class="ai-input-field" placeholder="${inputPlaceholder}">
+                        <button type="submit" class="ai-send-btn">
+                            <span>${sendButton}</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>
+                        </button>
+                    </form>
+                `;
+            }
+
             // Pagination setup
             const currentIdx = projectsData.findIndex(p => p.id === currentProjectId);
             const prevIdx = currentIdx > 0 ? currentIdx - 1 : projectsData.length - 1;
@@ -370,14 +434,32 @@
             const prevProject = projectsData[prevIdx];
             const nextProject = projectsData[nextIdx];
 
-            const prevTrans = translations.en?.projects?.find(p => p.id === prevProject.id);
-            const nextTrans = translations.en?.projects?.find(p => p.id === nextProject.id);
+            const prevTrans = t.projects?.find(p => p.id === prevProject.id);
+            const nextTrans = t.projects?.find(p => p.id === nextProject.id);
 
             document.getElementById('nav-prev-project').href = `project.html?id=${prevProject.id}`;
             document.getElementById('prev-project-name').textContent = prevTrans?.title || 'Previous';
 
             document.getElementById('nav-next-project').href = `project.html?id=${nextProject.id}`;
             document.getElementById('next-project-name').textContent = nextTrans?.title || 'Next';
+        }
+
+        async function loadCaseStudy() {
+            currentProjectId = getProjectIdFromUrl();
+            document.getElementById('cs-project-slug').textContent = currentProjectId;
+
+            // Set language dropdown
+            const langSelect = document.getElementById('cs-language-select');
+            if (langSelect) {
+                langSelect.value = currentLang;
+                langSelect.addEventListener('change', (e) => {
+                    currentLang = e.target.value;
+                    localStorage.setItem('preferredLanguage', currentLang);
+                    renderCaseStudyContent();
+                });
+            }
+
+            renderCaseStudyContent();
 
             // Preload report markdown for AI backend
             if (typeof projectReports !== 'undefined' && projectReports[currentProjectId]) {
@@ -405,10 +487,13 @@
             const responseBox = document.getElementById('cs-ai-response');
             if (!responseBox) return;
 
+            const t = translations[currentLang] || translations['en'];
+            const analyzingText = t.ai_analyzing || 'Analyzing project engineering context...';
+
             responseBox.innerHTML = `
                 <div class="flex items-center gap-3 text-violet-300 text-sm py-4">
                     <div class="animate-spin w-4 h-4 border-2 border-violet-400 border-t-transparent rounded-full"></div>
-                    <span>Analyzing project engineering context...</span>
+                    <span>${analyzingText}</span>
                 </div>
             `;
 
@@ -441,7 +526,7 @@
                         customPrompt,
                         projectId: currentProjectId,
                         reportMarkdown: currentProjectRawMarkdown,
-                        language: 'en'
+                        language: currentLang
                     })
                 });
 
@@ -461,13 +546,24 @@
             const localApiKey = localStorage.getItem('gemini_api_key') || localStorage.getItem('ai_api_key');
             if (localApiKey) {
                 try {
+                    const langMap = {
+                        'en': 'English',
+                        'fr': 'French',
+                        'ar': 'Arabic',
+                        'es': 'Spanish',
+                        'de': 'German',
+                        'zh': 'Simplified Chinese',
+                        'pt': 'Portuguese'
+                    };
+                    const targetLang = langMap[currentLang] || 'English';
+
                     let prompt = '';
                     if (action === 'explain') {
-                        prompt = `Explain this engineering project in 3 concise paragraphs:\n\n${currentProjectRawMarkdown}`;
+                        prompt = `Explain this engineering project in 3 concise paragraphs in ${targetLang}. If the question is in another language, answer in that question's language:\n\n${currentProjectRawMarkdown}`;
                     } else if (action === 'summarize') {
-                        prompt = `Provide a 3-bullet executive summary of this engineering project:\n\n${currentProjectRawMarkdown}`;
+                        prompt = `Provide a 3-bullet executive summary of this engineering project in ${targetLang}. If the question is in another language, answer in that question's language:\n\n${currentProjectRawMarkdown}`;
                     } else {
-                        prompt = `Answer this question about the engineering project based on the report:\n\nQuestion: ${customPrompt}\n\nReport:\n${currentProjectRawMarkdown}`;
+                        prompt = `Answer this question about the engineering project based on the report in ${targetLang}. If the question is in another language, answer in that question's language:\n\nQuestion: ${customPrompt}\n\nReport:\n${currentProjectRawMarkdown}`;
                     }
 
                     const directRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${localApiKey}`, {
@@ -491,10 +587,12 @@
             }
 
             // 3. Fallback when AI is not responding
+            const fallbackTitle = t.ai_fallback_title || 'The AI is not working for the moment.';
+            const fallbackDesc = t.ai_fallback_desc || 'Please feel free to explore the project deliverables or contact Mohammed directly.';
             responseBox.innerHTML = `
                 <div class="p-4 text-center text-sm text-gray-300">
-                    <p class="text-violet-200 font-semibold mb-1">The AI is not working for the moment.</p>
-                    <p class="text-xs text-gray-400">Please feel free to explore the project deliverables or contact Mohammed directly.</p>
+                    <p class="text-violet-200 font-semibold mb-1">${fallbackTitle}</p>
+                    <p class="text-xs text-gray-400">${fallbackDesc}</p>
                 </div>
             `;
         }

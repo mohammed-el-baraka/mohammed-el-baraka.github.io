@@ -29,6 +29,9 @@ const translations = {
         contact_modal_call: "Make a Call",
         project_button_report: "Report",
         project_button_presentation: "Presentation",
+        project_button_demo: "Website",
+        project_button_poster: "Poster",
+        project_button_business_model: "Business Model",
         project_button_explore_ai: "Explore with AI",
         ai_assistant_title: "AI Assistant: {title}",
         ai_chip_methodology: "✨ How was this built?",
@@ -56,9 +59,12 @@ const translations = {
              { id: 'powerbi-dashboard', title: 'Bank Statement Integration with Power BI', description: 'Developed an interactive Power BI dashboard to integrate and visualize key financial metrics from bank statements and delivery notes for a connected data view.' },
              { id: 'rsa-cryptography', title: 'Attacks Against Shared Module RSA', description: 'Studied and simulated attacks against the RSA cryptosystem, focusing on vulnerabilities from shared modules to demonstrate cryptographic weaknesses.' },
              { id: 'acoustic-noise-reduction', title: 'Road Traffic Noise Pollution Reduction', description: 'Investigated and modeled acoustic wave propagation and noise barrier optimization using porous materials. Conducted experimental Kundt tube impedance testing comparing compact vs. open-cell cellular foams.' },
+             { id: 'geology-internship', title: 'Geology & Geophysics Internship', description: 'Conducted field studies in Oulmès covering geology, geophysics, and hydrogeology. Applied electrical resistivity tomography and groundwater analysis techniques.' },
              { id: 'wood-behavior-mmc', title: 'Wood Behavior Law (MMC Project)', description: 'Studied the mechanical properties of wood, modeled its orthotropic elastic behavior, and conducted compression and bending tests to measure Young\'s modulus and breaking strength.' },
              { id: 'biomedical-diffusion', title: 'Oxygen Diffusion in Pulmonary Acinus', description: 'Conducted a biomedical engineering project to model oxygen diffusion in the pulmonary acinus, resolving the 2D diffusion equation using numerical methods.' },
-             { id: 'robotics-vision', title: 'Robotics and Image Detection', description: 'Developed a complete robotic system with image detection capabilities, from 3D modeling in SolidWorks to implementing image processing algorithms in Python.' }
+             { id: 'robotics-vision', title: 'Robotics and Image Detection', description: 'Developed a complete robotic system with image detection capabilities, from 3D modeling in SolidWorks to implementing image processing algorithms in Python.' },
+             { id: 'tourist-planner', title: 'Tourist Visit Planner', description: 'Built a full-stack web application for planning and optimizing tourist itineraries using the Traveling Salesman Problem (TSP) algorithm, React, Django, and Google Maps API.' },
+             { id: 'teachy-platform', title: 'Teachy: Online Language Learning Platform', description: 'Designed an innovative online language learning platform connecting learners with native speakers for live interactive immersion, personalized courses, and pedagogical resources.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsorship Manager', description: 'As Sponsorship Manager, my core responsibility is securing vital partnerships and sponsorships to power EJE\'s impactful portfolio of student hackathons. I actively seek sponsors for major events including the OP&X Hackathon, Strategic Consulting Hackathon (SCH), DataQuest Hackathon, and the Finance Hackathon. By connecting companies with these platforms, I help them engage Morocco\'s brightest students and fuel future talent development.' },
@@ -107,6 +113,9 @@ const translations = {
         contact_modal_call: "Passer un appel",
         project_button_report: "Rapport",
         project_button_presentation: "Présentation",
+        project_button_demo: "Site Web",
+        project_button_poster: "Poster",
+        project_button_business_model: "Business Model",
         project_button_explore_ai: "Explorer avec l'IA",
         ai_assistant_title: "Assistant IA : {title}",
         ai_chip_methodology: "✨ Comment cela a été conçu ?",
@@ -134,9 +143,12 @@ const translations = {
             { id: 'powerbi-dashboard', title: 'Intégration de Relevés Bancaires avec Power BI', description: 'Développement d\'un tableau de bord Power BI interactif pour intégrer et visualiser les indicateurs financiers clés des relevés bancaires et des bons de livraison pour une vue de données connectée.' },
             { id: 'rsa-cryptography', title: 'Attaque contre le RSA à Module Partagé', description: 'Étude et simulation d\'attaques contre le cryptosystème RSA, en se concentrant sur les vulnérabilités des modules partagés pour démontrer les faiblesses cryptographiques.' },
             { id: 'acoustic-noise-reduction', title: 'Réduction de la Pollution Sonore du Trafic Routier (TIPE)', description: 'Étude théorique et modélisation de la propagation des ondes acoustiques et optimisation de murs antibruit utilisant des matériaux poreux. Validation expérimentale au tube de Kundt comparant mousses compactes et alvéolées.' },
+            { id: 'geology-internship', title: 'Stage de Géologie et Géophysique', description: 'Études de terrain à Oulmès couvrant la géologie, la géophysique et l\'hydrogéologie. Application de la tomographie de résistivité électrique et analyse des eaux souterraines.' },
             { id: 'wood-behavior-mmc', title: 'Loi de Comportement du Bois (Projet MMC)', description: 'Étude des propriétés mécaniques du bois, modélisation de son comportement élastique orthotrope, et réalisation d\'essais de compression et de flexion pour mesurer le module de Young et la résistance à la rupture.' },
             { id: 'biomedical-diffusion', title: 'Diffusion d\'Oxygène dans l\'Acinus Pulmonaire', description: 'Réalisation d\'un projet d\'ingénierie biomédicale pour modéliser la diffusion d\'oxygène dans l\'acinus pulmonaire, en résolvant l\'équation de diffusion 2D par des méthodes numériques.' },
-            { id: 'robotics-vision', title: 'Robotique et Détection d\'Images', description: 'Développement d\'un système robotique complet avec des capacités de détection d\'images, de la modélisation 3D sur SolidWorks à la mise en œuvre d\'algorithmes de traitement d\'images en Python.' }
+            { id: 'robotics-vision', title: 'Robotique et Détection d\'Images', description: 'Développement d\'un système robotique complet avec des capacités de détection d\'images, de la modélisation 3D sur SolidWorks à la mise en œuvre d\'algorithmes de traitement d\'images en Python.' },
+            { id: 'tourist-planner', title: 'Planificateur de Visites Touristiques', description: 'Développement d\'une application web full-stack pour la planification et l\'optimisation d\'itinéraires touristiques utilisant l\'algorithme du voyageur de commerce (TSP), React, Django et l\'API Google Maps.' },
+            { id: 'teachy-platform', title: 'Teachy : Plateforme d\'Apprentissage des Langues', description: 'Conception d\'une plateforme innovante d\'apprentissage des langues connectant apprenants et locuteurs natifs pour une immersion interactive en direct, cours personnalisés et ressources pédagogiques.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Responsable Sponsoring', description: 'En tant que Responsable Sponsoring, ma responsabilité principale est de sécuriser des partenariats et des sponsorings essentiels pour alimenter le portefeuille percutant de hackathons étudiants d\'EJE. Je recherche activement des sponsors pour des événements majeurs tels que le Hackathon OP&X, le Hackathon de Conseil Stratégique (SCH), le Hackathon DataQuest et le Hackathon Finance. En connectant les entreprises à ces plateformes, je les aide à interagir avec les étudiants les plus brillants du Maroc et à stimuler le développement des futurs talents.' },
@@ -185,6 +197,9 @@ const translations = {
         contact_modal_call: "أجرِ مكالمة",
         project_button_report: "التقرير",
         project_button_presentation: "التقديم",
+        project_button_demo: "الموقع",
+        project_button_poster: "ملصق",
+        project_button_business_model: "نموذج العمل",
         project_button_explore_ai: "استكشف بالذكاء الاصطناعي",
         ai_assistant_title: "المساعد الذكي: {title}",
         ai_chip_methodology: "✨ كيف تم بناء هذا؟",
@@ -212,9 +227,12 @@ const translations = {
              { id: 'powerbi-dashboard', title: 'دمج كشوف الحسابات البنكية مع Power BI', description: 'تطوير لوحة تحكم Power BI تفاعلية لدمج وتصور المقاييس المالية الرئيسية من كشوف الحسابات البنكية ومذكرات التسليم للحصول على عرض بيانات متصل.' },
              { id: 'rsa-cryptography', title: 'هجمات ضد RSA ذات المعامل المشترك', description: 'دراسة ومحاكاة الهجمات ضد نظام التشفير RSA، مع التركيز على نقاط الضعف الناتجة عن الوحدات المشتركة لإظهار نقاط الضعف في التشفير.' },
              { id: 'acoustic-noise-reduction', title: 'الحد من التلوث السمعي الناتج عن حركة المرور', description: 'دراسة ونمذجة انتشار الموجات الصوتية وتحسين الجدران العازلة للصوت باستخدام المواد المسامية. إجراء تجارب بأنبوب كوندت لمقارنة امتصاص الرغوة المدمجة والرغوة الخلوية.' },
+             { id: 'geology-internship', title: 'تدريب في الجيولوجيا والجيوفيزياء', description: 'إجراء دراسات ميدانية في أولماس تغطي الجيولوجيا والجيوفيزياء والهيدروجيولوجيا. تطبيق تقنيات التصوير المقطعي بالمقاومة الكهربائية وتحليل المياه الجوفية.' },
              { id: 'wood-behavior-mmc', title: 'قانون سلوك الخشب (مشروع MMC)', description: 'دراسة الخواص الميكانيكية للخشب ونمذجة سلوكه المرن، مع إجراء اختبارات الضغط والانحناء لقياس معامل يونغ ومقاومة الكسر.' },
              { id: 'biomedical-diffusion', title: 'انتشار الأكسجين في الحويصلات الرئوية', description: 'إجراء مشروع هندسة طبية حيوية لنمذجة انتشار الأكسجين في الحويصلات الرئوية، وحل معادلة الانتشار ثنائية الأبعاد باستخدام الطرق العددية.' },
-             { id: 'robotics-vision', title: 'الروبوتات وكشف الصور', description: 'تطوير نظام روبوتي كامل مع إمكانات كشف الصور، من النمذجة ثلاثية الأبعاد في SolidWorks إلى تنفيذ خوارزميات معالجة الصور في Python.' }
+             { id: 'robotics-vision', title: 'الروبوتات وكشف الصور', description: 'تطوير نظام روبوتي كامل مع إمكانات كشف الصور، من النمذجة ثلاثية الأبعاد في SolidWorks إلى تنفيذ خوارزميات معالجة الصور في Python.' },
+             { id: 'tourist-planner', title: 'مخطط الزيارات السياحية', description: 'تطوير تطبيق ويب متكامل لتخطيط وتحسين مسارات الرحلات السياحية باستخدام خوارزمية مسألة البائع المتجول (TSP) وReact وDjango وGoogle Maps API.' },
+             { id: 'teachy-platform', title: 'Teachy: منصة تعليم اللغات عبر الإنترنت', description: 'تصميم منصة مبتكرة لتعلم اللغات عبر الإنترنت تربط المتعلمين بالمتحدثين الأصليين لتوفير انغماس تفاعلي مباشر، ودورات مخصصة، وموارد تعليمية متنوعة.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'EJE', role: 'مدير الرعاية', description: 'بصفتي مدير الرعاية، تتمثل مسؤوليتي الأساسية في تأمين الشراكات والرعاية الحيوية لدعم محفظة EJE المؤثرة من مسابقات البرمجة الطلابية. أبحث عن رعاة للأحداث الكبرى بما في ذلك مسابقة البرمجة OP&X Hackathon ومسابقة البرمجة الاستشارية الاستراتيجية (SCH) ومسابقة البرمجة DataQuest Hackathon ومسابقة البرمجة المالية Finance Hackathon. من خلال ربط الشركات بهذه المنصات، أساعدها على جذب ألمع الطلاب المغاربة ودعم تنمية المواهب المستقبلية.' },
@@ -263,6 +281,9 @@ const translations = {
         contact_modal_call: "Hacer una Llamada",
         project_button_report: "Informe",
         project_button_presentation: "Presentación",
+        project_button_demo: "Sitio Web",
+        project_button_poster: "Póster",
+        project_button_business_model: "Modelo de Negocio",
         project_button_explore_ai: "Explorar con IA",
         ai_assistant_title: "Asistente IA: {title}",
         ai_chip_methodology: "✨ ¿Cómo fue construido?",
@@ -290,9 +311,12 @@ const translations = {
             { id: 'powerbi-dashboard', title: 'Integración de Extractos Bancarios con Power BI', description: 'Desarrollé un panel de Power BI interactivo para integrar y visualizar métricas financieras clave de extractos bancarios y albaranes de entrega para una vista de datos conectada.' },
             { id: 'rsa-cryptography', title: 'Ataques Contra RSA de Módulo Compartido', description: 'Estudié y simulé ataques contra el criptosistema RSA, centrándome en las vulnerabilidades de los módulos compartidos para demostrar las debilidades criptográficas.' },
             { id: 'acoustic-noise-reduction', title: 'Reducción de la Contaminación Acústica del Tráfico Vial', description: 'Investigación y modelado de la propagación de ondas acústicas y optimización de barreras acústicas mediante materiales porosos. Ensayos experimentales con tubo de Kundt comparando espumas compactas y alveolares.' },
+            { id: 'geology-internship', title: 'Prácticas de Geología y Geofísica', description: 'Estudios de campo en Oulmès que cubren geología, geofísica e hidrogeología. Aplicación de tomografía de resistividad eléctrica y análisis de aguas subterráneas.' },
             { id: 'wood-behavior-mmc', title: 'Ley de Comportamiento de la Madera (Proyecto MMC)', description: 'Estudió las propiedades mecánicas de la madera, modeló su comportamiento elástico ortotrópico y realizó pruebas de compresión y flexión para medir el módulo de Young y la resistencia a la rotura.' },
             { id: 'biomedical-diffusion', title: 'Difusión de Oxígeno en el Acino Pulmonar', description: 'Realicé un proyecto de ingeniería biomédica para modelar la difusión de oxígeno en el acino pulmonar, resolviendo la ecuación de difusión 2D utilizando métodos numéricos.' },
-            { id: 'robotics-vision', title: 'Robótica y Detección de Imágenes', description: 'Desarrollé un sistema robótico completo con capacidades de detección de imágenes, desde el modelado 3D en SolidWorks hasta la implementación de algoritmos de procesamiento de imágenes en Python.' }
+            { id: 'robotics-vision', title: 'Robótica y Detección de Imágenes', description: 'Desarrollé un sistema robótico completo con capacidades de detección de imágenes, desde el modelado 3D en SolidWorks hasta la implementación de algoritmos de procesamiento de imágenes en Python.' },
+            { id: 'tourist-planner', title: 'Planificador de Visitas Turísticas', description: 'Desarrollo de una aplicación web full-stack para planificar y optimizar itinerarios turísticos utilizando el algoritmo del viajante de comercio (TSP), React, Django y la API de Google Maps.' },
+            { id: 'teachy-platform', title: 'Teachy: Plataforma de Aprendizaje de Idiomas', description: 'Diseño de una plataforma innovadora de aprendizaje de idiomas en línea que conecta a los estudiantes con hablantes nativos para una inmersión interactiva en vivo, cursos personalizados y recursos pedagógicos.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocinios', description: 'Como Gerente de Patrocinios, mi responsabilidad principal es asegurar alianzas y patrocinios vitales para impulsar el impactante portafolio de hackathons estudiantiles de EJE. Busco activamente patrocinadores para eventos importantes como el Hackathon OP&X, el Hackathon de Consultoría Estratégica (SCH), el Hackathon DataQuest y el Hackathon de Finanzas. Al conectar empresas con estas plataformas, les ayudo a interactuar con los estudiantes más brillantes de Marruecos y a fomentar el desarrollo de futuros talentos.' },
@@ -341,6 +365,9 @@ const translations = {
         contact_modal_call: "拨打电话",
         project_button_report: "报告",
         project_button_presentation: "演示",
+        project_button_demo: "网站",
+        project_button_poster: "海报",
+        project_button_business_model: "商业模式",
         project_button_explore_ai: "使用 AI 探索",
         ai_assistant_title: "AI 助手: {title}",
         ai_chip_methodology: "✨ 如何构建的？",
@@ -368,9 +395,12 @@ const translations = {
             { id: 'powerbi-dashboard', title: '银行对账单与Power BI集成', description: '开发了一个交互式Power BI仪表板，用于整合和可视化银行对账单和交货单中的关键财务指标，以实现连接的数据视图。' },
             { id: 'rsa-cryptography', title: '针对共享模数RSA的攻击', description: '研究并模拟了针对RSA密码系统的攻击，重点关注共享模数带来的漏洞，以展示密码学弱点。' },
             { id: 'acoustic-noise-reduction', title: '道路交通噪声污染消除与声屏障优化', description: '研究并模拟了声波在多孔介质中的传播与声屏障吸声优化。使用昆特管（Kundt Tube）实验测试并对比了致密泡沫与蜂窝多孔泡沫的吸声系数。' },
+            { id: 'geology-internship', title: '地质学与地球物理学实习', description: '在 Oulmès 进行涵盖地质学、地球物理学和水文地质学的野外研究。应用电阻率层析成像和地下水分析技术。' },
             { id: 'wood-behavior-mmc', title: '木材行为定律（MMC项目）', description: '研究了木材的机械性能，对其正交各向异性弹性行为进行了建模，并进行了压缩和弯曲测试以测量杨氏模量和断裂强度。' },
             { id: 'biomedical-diffusion', title: '肺腺泡中的氧气扩散', description: '进行了一个生物医学工程项目，对肺腺泡中的氧气扩散进行建模，使用数值方法求解二维扩散方程。' },
-            { id: 'robotics-vision', title: '机器人技术与图像检测', description: '开发了一个完整的具有图像检测功能的机器人系统，从在SolidWorks中进行3D建模到在Python中实现图像处理算法。' }
+            { id: 'robotics-vision', title: '机器人技术与图像检测', description: '开发了一个完整的具有图像检测功能的机器人系统，从在SolidWorks中进行3D建模到在Python中实现图像处理算法。' },
+            { id: 'tourist-planner', title: '旅游行程规划器', description: '开发了一个全栈Web应用程序，使用旅行商问题（TSP）算法、React、Django和Google Maps API来规划和优化旅游行程。' },
+            { id: 'teachy-platform', title: 'Teachy：在线语言学习平台', description: '设计了一个创新的在线语言学习平台，将语言学习者与母语者联系起来，提供实时互动沉浸式体验、个性化课程和教学资源。' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: '赞助经理', description: '作为赞助经理，我的核心职责是确保重要的合作伙伴关系和赞助，为EJE富有影响力的学生黑客马拉松系列活动提供支持。我积极为主要活动寻找赞助商，包括OP&X黑客马拉松、战略咨询黑客马拉松（SCH）、DataQuest黑客马拉松以及金融黑客马拉松。通过将公司与这些平台联系起来，我帮助他们接触到摩洛哥最优秀的学生，并为未来的人才发展提供动力。' },
@@ -419,6 +449,9 @@ const translations = {
         contact_modal_call: "Fazer uma Chamada",
         project_button_report: "Relatório",
         project_button_presentation: "Apresentação",
+        project_button_demo: "Website",
+        project_button_poster: "Pôster",
+        project_button_business_model: "Modelo de Negócios",
         project_button_explore_ai: "Explorar com IA",
         ai_assistant_title: "Assistente de IA: {title}",
         ai_chip_methodology: "✨ Como foi construído?",
@@ -446,9 +479,12 @@ const translations = {
             { id: 'powerbi-dashboard', title: 'Integração de Extratos Bancários com Power BI', description: 'Desenvolvi um painel interativo do Power BI para integrar e visualizar métricas financeiras chave de extratos bancários e notas de entrega para uma visão de dados conectada.' },
             { id: 'rsa-cryptography', title: 'Ataques Contra RSA de Módulo Compartilhado', description: 'Estudei e simulei ataques contra o criptossistema RSA, focando nas vulnerabilidades de módulos compartilhados para demonstrar fraquezas criptográficas.' },
             { id: 'acoustic-noise-reduction', title: 'Redução da Poluição Sonora Causada pelo Tráfego Rodoviário', description: 'Estudo e modelagem da propagação de ondas acústicas e otimização de barreiras acústicas com materiais porosos. Ensaios experimentais com tubo de Kundt comparando espumas compactas e alveolares.' },
+            { id: 'geology-internship', title: 'Estágio de Geologia e Geofísica', description: 'Estudos de campo em Oulmès abrangendo geologia, geofísica e hidrogeologia. Aplicação de tomografia de resistividade elétrica e análise de águas subterrâneas.' },
             { id: 'wood-behavior-mmc', title: 'Lei de Comportamento da Madeira (Projeto MMC)', description: 'Estudou as propriedades mecânicas da madeira, modelou seu comportamento elástico ortotrópico e realizou testes de compressão e flexão para medir o módulo de Young e a resistência à ruptura.' },
             { id: 'biomedical-diffusion', title: 'Difusão de Oxigênio no Ácino Pulmonar', description: 'Conduzi um projeto de engenharia biomédica para modelar a difusão de oxigênio no ácino pulmonar, resolvendo a equação de difusão 2D usando métodos numéricos.' },
-            { id: 'robotics-vision', title: 'Robótica e Detecção de Imagem', description: 'Desenvolvi um sistema robótico completo com capacidades de detecção de imagem, desde a modelagem 3D no SolidWorks até a implementação de algoritmos de processamento de imagem em Python.' }
+            { id: 'robotics-vision', title: 'Robótica e Detecção de Imagem', description: 'Desenvolvi um sistema robótico completo com capacidades de detecção de imagem, desde a modelagem 3D no SolidWorks até a implementação de algoritmos de processamento de imagem em Python.' },
+            { id: 'tourist-planner', title: 'Planificador de Visitas Turísticas', description: 'Desenvolvimento de uma aplicação web full-stack para planear e otimizar itinerários turísticos utilizando o algoritmo do caixeiro viajante (TSP), React, Django e a API do Google Maps.' },
+            { id: 'teachy-platform', title: 'Teachy: Plataforma de Aprendizagem de Idiomas', description: 'Desenvolveu uma plataforma inovadora de aprendizagem de idiomas online que conecta alunos a falantes nativos para imersão interativa ao vivo, cursos personalizados e recursos pedagógicos.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocínios', description: 'Como Gerente de Patrocínios, minha principal responsabilidade é garantir parcerias e patrocínios vitais para impulsionar o portfólio impactante de hackathons estudantis da EJE. Busco ativamente patrocinadores para grandes eventos, incluindo o Hackathon OP&X, o Hackathon de Consultoria Estratégica (SCH), o Hackathon DataQuest e o Hackathon de Finanças. Ao conectar empresas a essas plataformas, ajudo-as a interagir com os estudantes mais brilhantes de Marrocos e a impulsionar o desenvolvimento de futuros talentos.' },
@@ -489,6 +525,9 @@ const translations = {
         contact_modal_call: "Anrufen",
         project_button_report: "Bericht",
         project_button_presentation: "Präsentation",
+        project_button_demo: "Webseite",
+        project_button_poster: "Poster",
+        project_button_business_model: "Geschäftsmodell",
         project_button_explore_ai: "Mit KI erkunden",
         ai_assistant_title: "KI-Assistent: {title}",
         ai_chip_methodology: "✨ Wie wurde das gebaut?",
@@ -516,9 +555,12 @@ const translations = {
             { id: 'powerbi-dashboard', title: 'Integration von Kontoauszügen mit Power BI', description: 'Entwicklung eines interaktiven Power BI-Dashboards zur Integration und Visualisierung wichtiger Finanzkennzahlen aus Kontoauszügen und Lieferscheinen für eine vernetzte Datenansicht.' },
             { id: 'rsa-cryptography', title: 'Angriffe gegen Shared-Module RSA', description: 'Untersuchung und Simulation von Angriffen auf das RSA-Kryptosystem mit Fokus auf Schwachstellen durch gemeinsam genutzte Module zur Demonstration kryptografischer Schwachstellen.' },
             { id: 'acoustic-noise-reduction', title: 'Minderung der Lärmbelastung durch Straßenverkehr', description: 'Theoretische Untersuchung und Modellierung der Schallwellenausbreitung und Lärmschutzwand-Optimierung mittels poröser Materialien. Experimentelle Kundt-Rohr-Prüfung zum Vergleich kompakter und wabenförmiger Schaumstoffe.' },
+            { id: 'geology-internship', title: 'Geologie- und Geophysik-Praktikum', description: 'Feldstudien in Oulmès mit den Schwerpunkten Geologie, Geophysik und Hydrogeologie. Anwendung von elektrischer Widerstandstomographie und Grundwasseranalyse.' },
             { id: 'wood-behavior-mmc', title: 'Verhaltensgesetz des Holzes (MMC-Projekt)', description: 'Untersuchung der mechanischen Eigenschaften von Holz, Modellierung seines orthotropen elastischen Verhaltens und Durchführung von Druck- und Biegeversuchen zur Messung des Elastizitätsmoduls und der Bruchfestigkeit.' },
             { id: 'biomedical-diffusion', title: 'Sauerstoffdiffusion im Lungenazinus', description: 'Durchführung eines biomedizinischen Projekts zur Modellierung der Sauerstoffdiffusion im Lungenazinus durch numerische Lösung der 2D-Diffusionsgleichung.' },
-            { id: 'robotics-vision', title: 'Robotik und Bilderkennung', description: 'Entwicklung eines kompletten Robotersystems mit Bilderkennungsfunktionen, von der 3D-Modellierung in SolidWorks bis zur Implementierung von Bildverarbeitungsalgorithmen in Python.' }
+            { id: 'robotics-vision', title: 'Robotik und Bilderkennung', description: 'Entwicklung eines kompletten Robotersystems mit Bilderkennungsfunktionen, von der 3D-Modellierung in SolidWorks bis zur Implementierung von Bildverarbeitungsalgorithmen in Python.' },
+            { id: 'tourist-planner', title: 'Touristischer Besuchsplaner', description: 'Entwicklung einer Full-Stack-Webanwendung zur Planung und Optimierung touristischer Reiserouten mit dem Algorithmus des Handlungsreisenden (TSP), React, Django und der Google Maps API.' },
+            { id: 'teachy-platform', title: 'Teachy: Online-Sprachlernplattform', description: 'Entwicklung einer innovativen Online-Sprachlernplattform, die Lernende mit Muttersprachlern für interaktive Live-Immersion, personalisierte Kurse und pädagogische Ressourcen verbindet.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsoring-Manager', description: 'Als Sponsoring-Manager liegt meine Hauptverantwortung in der Sicherung wichtiger Partnerschaften und Sponsorings zur Finanzierung der studentischen Hackathons von EJE. Ich suche aktiv Sponsoren für Großveranstaltungen wie den OP&X Hackathon, den Strategic Consulting Hackathon (SCH), den DataQuest Hackathon und den Finance Hackathon. Durch die Verbindung von Unternehmen mit diesen Plattformen helfe ich ihnen, mit Marokkos klügsten Köpfen in Kontakt zu treten.' },
@@ -590,6 +632,16 @@ const projectsData = [
         presentationUrl: 'https://drive.google.com/file/d/1LiZUNbtWEKffJB-2NEuO6LGwAiveMU5u/view?usp=sharing' 
     },
     { 
+        id: 'geology-internship', 
+        date: '2023-11', 
+        technologies: ['Geophysics', 'Hydrogeology', 'Electrical Tomography', 'Structural Geology', 'GIS'], 
+        githubUrl: '',
+        demoUrl: '',
+        metric: 'Field Study & Tomography Performed',
+        reportUrl: '', 
+        presentationUrl: '' 
+    },
+    { 
         id: 'wood-behavior-mmc', 
         date: '2023-12', 
         technologies: ['Mechanics of Continuous Media (MMC)', 'Wood Properties', 'Material Science', 'Compression Testing', 'Hooke\'s Law'], 
@@ -601,13 +653,13 @@ const projectsData = [
     },
     { 
         id: 'biomedical-diffusion', 
-        date: '2023-01', 
+        date: '2023-12', 
         technologies: ['Mathematical Modeling', 'Numerical Methods', 'Python', 'NumPy', 'SciPy', 'Matplotlib'], 
         githubUrl: 'https://github.com/mohammed-el-baraka/biomedical-acinus-diffusion',
         demoUrl: '',
         metric: '2D Finite-Difference PDE Solver',
         reportUrl: 'https://drive.google.com/file/d/1X9aQBQ8qnkGaZF9ZD9vQb4T_A_D5GYnT/view?usp=sharing', 
-        presentationUrl: 'https://drive.google.com/file/d/1SOKxBawlC51whiwh9lZ1I8KE1WcRuN7L/view?usp=sharing' 
+        presentationUrl: 'https://drive.google.com/file/d/1VcPr3PjcBtcuJX7YnA0qzGj766P2whSb/view?usp=sharing' 
     },
     { 
         id: 'robotics-vision', 
@@ -618,6 +670,28 @@ const projectsData = [
         metric: '60 FPS Real-time Detection',
         reportUrl: 'https://drive.google.com/file/d/148jUa5mRyydjS2Ht8fpk8rGQDJ9yQJok/view?usp=sharing', 
         presentationUrl: 'https://drive.google.com/file/d/1VI5hfPQouqk4th9hAxw9NYShz_brn1Pi/view?usp=sharing' 
+    },
+    { 
+        id: 'tourist-planner', 
+        date: '2023-12', 
+        technologies: ['React', 'Django', 'Python', 'MySQL', 'Google Maps API', 'JWT', 'Axios', 'TSP Algorithm'], 
+        githubUrl: 'https://github.com/mohammed-el-baraka/tourist-planner',
+        demoUrl: 'https://mohammed-el-baraka.github.io/tourist-planner/index.html',
+        metric: 'TSP Optimization Algorithm',
+        reportUrl: 'https://drive.google.com/file/d/1CQtng0LZEmcfqrkqhZqTyjJ3O2jAnUhL/view?usp=sharing', 
+        presentationUrl: '' 
+    },
+    { 
+        id: 'teachy-platform', 
+        date: '2024-05', 
+        technologies: ['Entrepreneurship', 'EdTech', 'Business Modeling', 'Market Analysis', 'Web Platform', 'UI/UX Design', 'Competitive Strategy'], 
+        githubUrl: '',
+        demoUrl: 'https://mohammed-el-baraka.github.io/teachy-platform/',
+        metric: 'Interactive Language Immersion Platform',
+        reportUrl: 'https://drive.google.com/file/d/1_fh4pPhp7uDnNMgEXTlHG-hJj3XXmxe6/view?usp=sharing', 
+        presentationUrl: 'https://drive.google.com/file/d/1QX5jGZyH57h57IqW0aTBBePlABmecPos/view?usp=sharing',
+        posterUrl: 'https://drive.google.com/file/d/1D6K5MScxztkrJ3LcQI_f73jyMxNPoXCm/view?usp=sharing',
+        businessModelUrl: 'https://drive.google.com/file/d/1jmvULgqECrNlul_kFnTDpzqLjyyNX3he/view?usp=sharing'
     }
 ];
 
@@ -839,6 +913,85 @@ By iterating through the convergents of continued fractions, $d$ is recovered in
   1. Strict enforcement of unique modulus generation per entity.
   2. Adoption of Optimal Asymmetric Encryption Padding (**OAEP**) to introduce probabilistic ciphertext randomization.
   3. Minimum private exponent thresholds ($d > N^{0.292}$) to safeguard against Coppersmith and Wiener lattice-reduction attacks.`,
+
+    'geology-internship': `# STAGE DE GÉOLOGIE, GÉOPHYSIQUE ET HYDROGÉOLOGIE
+
+**EMINES DU 20 AU 25 NOVEMBRE**
+**OULMES**
+
+---
+
+## PARTIE 1 : GÉOLOGIE
+
+### Préambule
+Le stage d’observation en géologue s’est déroulé dans la région de Oulmès, du lundi 20 novembre 2023 au vendredi 24 novembre 2023, dont l’objectif était de développer le sens de l’observation, de l’analyse et de l’interprétation étant des compétences cruciales pour un ingénieur manager.
+
+### Introduction
+La géologie représente un pilier fondamental pour l'ingénieur, offrant un panorama crucial des bases terrestres sur lesquelles reposent de nombreuses industries et infrastructures. La région d'Oulmès présente une diversité géologique notable avec des formations comprenant des séries sédimentaires, des roches magmatiques et des structures tectoniques complexes. Ce territoire renferme une richesse minéralogique, notamment avec des gisements de minéraux variés tels que le quartz, l'andalousite et la muscovite.
+
+### Matériel utilisé
+Durant ce stage géologie, nous avons utilisé différents outils :
+1. **La boussole** : Pour s'orienter et mesurer la direction et l'inclinaison (pendage) des couches rocheuses.
+2. **Le marteau** : Pour collecter des échantillons et observer les affleurements.
+3. **Le GPS** : Pour cartographier précisément les emplacements des affleurements.
+4. **Cartes topographiques et géologiques** : Pour percevoir le relief, déterminer des altitudes et identifier les formations géologiques.
+
+### Profil topographique et Datation
+Lors de notre premier arrêt, nous avons observé deux couches : une couche jaunâtre (calcaire du Miocène) et une couche rougeâtre (argile du Trias).
+La datation des roches s'appuie sur des principes fondamentaux :
+1. **Le principe de superposition** : Les couches les plus anciennes se trouvent en bas.
+2. **Principe de recoupement** : Une formation qui en traverse une autre est plus jeune.
+3. **Principe d'inclusion** : Un morceau de roche inclus est plus ancien que la roche qui l'entoure.
+
+*Discordance Miocène-Trias :* Selon le tableau des temps géologiques, le Trias n'est pas suivi par le Miocène. Ce contact direct est une discordance.
+
+### Les failles, les plis, la schistosité
+- **Les failles :** Fractures avec déplacement des blocs (failles normales, inverses, cisaillantes).
+- **Les plis :** Déformations ductiles des roches (ex. pli couché observé sur le terrain).
+- **La schistosité :** Orientation prédominante des minéraux en feuillets. Nous avons observé trois schistosités superposées.
+
+### Roches métamorphiques et magmatiques
+- **Métamorphisme régional et de contact :** Le plateau d'Oulmès montre un métamorphisme régional affecté par un métamorphisme de contact dû à l'intrusion d'un pluton granitique d'Oulmès (290-300Ma).
+- **Roches magmatiques :** Observation de granite, de granite aplitique et de basalte. Le contact du basalte chaud avec les micaschistes a généré une roche de cuisson (kaolinite).
+
+### Mine d’El Karit
+Ancienne mine d’étain (cassitérite). L’extraction est associée à d'autres minéraux comme la tourmaline, le béryl, et la muscovite, formés par l'activité hydrothermale du magma granitique dans l'auréole de contact. La présence d’andalousite indique une exposition à forte température et faible pression.
+
+---
+
+## PARTIE 2 : GÉOPHYSIQUE ET HYDROGÉOLOGIE
+
+### Prospection géoélectrique
+Les géophysiciens s’intéressent aux propriétés électriques pour caractériser le sous-sol :
+- **Conductibilité électrolytique :** Dépend de la porosité, de la teneur en eau et de la salinité (Loi d'Archie).
+- **Les techniques géoélectriques :**
+  - **Le sondage électrique (SE) :** Exploration verticale (Dispositif de Schlumberger).
+  - **Le traîné électrique (TE) :** Exploration horizontale pour caractériser une zone à profondeur constante.
+  - **La tomographie électrique (ERT) :** Cartographie des résistivités apparentes en 2D ou 3D.
+
+### Applications sur le terrain
+**Site d’Al QIRIT :**
+- Tomographie électrique sur 355m (72 électrodes, pas de 5m). Résistivité calculée (erreur quadratique 3.5), chargeabilité (erreur 1.4). Les zones violettes indiquent le granite.
+- Sondage électrique vertical Schlumberger avec AB=1000m.
+
+**Site DAR LAAROUSSI :**
+- Tomographie électrique d’un profil de 950m avec un pas de 10m.
+
+### Hydrogéologie
+L'hydrogéologie étudie les eaux souterraines, leur infiltration, leur écoulement dans les aquifères, et leur interaction avec la géologie.
+
+**Mesures hydrogéologiques sur le plateau d’Oulmès :**
+1. **Source Ain Lalla Hayya** : Eau volcanique, bicarbonatée, sulfureuse. T = 37.78°C (hydrothermalisme), pH = 6.58.
+2. **Source Hammou-Agamgam (Aïn Atlas)** : Faciès bicarbonaté sodique. Sort à 930m d'altitude. T = 20.74°C, pH = 9.
+3. **Puits Dar Laaroussi** : T = 18.75°C, pH = 7.74.
+4. **Source Sidi Ali** : T = 19.3°C, pH = 8.1.
+
+### L'usine des Eaux Minérales d’Oulmès (Tarmilate)
+Créée en 1950 (première bouteille "Sidi Ali"). L'usine embouteille en PET et en verre, avec un contrôle continu de la qualité (physico-chimique et microbiologique) des sources Lalla Haya et Sidi Ali Chérif.
+
+---
+## Conclusion Générale
+Ce stage a permis un contact direct avec le terrain, développant l'esprit d'analyse et les compétences géologiques fondamentales. Il a mis en évidence l'importance de comprendre le sous-sol avant d'exploiter ses ressources naturelles, liant la géologie, la géophysique et l'hydrogéologie.`,
 
     'wood-behavior-mmc': `# Projet MMC : Loi de Comportement du Bois
 
@@ -1101,6 +1254,205 @@ Inverse kinematics equations were solved analytically to calculate joint angles 
 * **Target Centroid Extraction:**
   $$\\bar{x} = \\frac{M_{10}}{M_{00}}, \\quad \\bar{y} = \\frac{M_{01}}{M_{00}} \\quad \\text{where } M_{pq} = \\sum_x \\sum_y x^p y^q I(x, y)$$
 * **Sorting Accuracy:** **96.8%** successful pick-and-place operations on multi-colored moving conveyor payloads.
-* **System Latency:** End-to-end vision-to-motion response time of **$< 150\\,\\text{ms}$** operating at **30 FPS**.`
-};
+* **System Latency:** End-to-end vision-to-motion response time of **$< 150\\,\\text{ms}$** operating at **30 FPS**.`,
 
+    'tourist-planner': `# Planificateur de Visites Touristiques
+
+**Réalisé par :** Khadija DADI, Chaimae EL OUAHABI, Mohammed EL BARAKA
+**Encadré par :** Pr. Hamid HRIMECH
+
+---
+
+## Introduction
+Ce projet, initié par le Professeur Hamid HRIMECH de l'École EMINES (UM6P), consiste en le développement d'un système informatique dédié à la planification et l'optimisation des itinéraires touristiques. Les utilisateurs peuvent spécifier une ville de destination et une liste de sites touristiques, et la plateforme calcule automatiquement la trajectoire optimale pour chaque journée via un algorithme basé sur le Problème du Voyageur de Commerce (TSP).
+
+---
+
+## Cahier des Charges
+
+### Fonctionnalités Principales
+1. **Enregistrement des utilisateurs** : Création de comptes avec authentification sécurisée (JWT).
+2. **Gestion des destinations** : Ajout, modification et suppression de destinations touristiques.
+3. **Planification de visites** : Optimisation automatique des trajets tenant compte de la distance, des conditions de circulation et du mode de transport. Affichage sur carte interactive (Google Maps).
+4. **Historique du voyage** : Enregistrement automatique et consultation de tous les voyages précédents.
+5. **Flexibilité** : Possibilité d'ajouter des fonctionnalités supplémentaires pour améliorer l'expérience utilisateur.
+
+### Contraintes Techniques
+- Compatibilité multi-dispositifs (ordinateurs, tablettes, smartphones) et multi-navigateurs.
+- Gestion de bases de données massives (touristes et sites touristiques).
+- Utilisation de logiciels open source pour minimiser les coûts.
+
+---
+
+## Architecture Technique
+
+### Stack Technologique
+| Composant | Technologie |
+| :--- | :--- |
+| **Frontend** | React (interfaces interactives, cartes dynamiques) |
+| **Backend** | Django (Python, logique métier robuste) |
+| **Base de données** | MySQL |
+| **API cartographique** | Google Maps API |
+| **Communication** | Axios, urllib |
+| **Authentification** | JWT (JSON Web Token) |
+
+### Architecture Modulaire
+\`\`\`
+FRONTEND (React) ←→ REQUÊTES HTTP ←→ BACKEND (Django)
+       ↕                                    ↕
+   USER INTERFACE                    BASE DE DONNÉES (MySQL)
+       ↕                                    ↕
+  GOOGLE MAPS API  ←→  REQUÊTES HTTP  ←→  GOOGLE MAPS API
+\`\`\`
+
+---
+
+## Algorithme d'Optimisation (TSP)
+
+L'enjeu central du projet est la résolution du **Problème du Voyageur de Commerce (Traveling Salesman Problem)** pour minimiser la distance totale parcourue en visitant tous les sites souhaités.
+
+### Logique de l'algorithme
+1. **Formatage des données** pour compatibilité avec l'API Google Maps.
+2. **Génération exhaustive des permutations** de waypoints, intégrant points de départ et d'arrivée.
+3. **Obtention des temps de trajet** via l'API Google Maps pour chaque paire de points.
+4. **Sélection du meilleur itinéraire** minimisant la durée totale du voyage.
+
+### Paramètres d'entrée
+- Point de départ et d'arrivée
+- Points de passage (waypoints)
+- Mode de transport (à pied, en voiture, etc.)
+- Heure de départ
+
+---
+
+## Difficultés Rencontrées
+
+### 1. Obtention des données géographiques
+- L'API Google Maps requiert des informations de paiement.
+- L'API Overpass a échoué en raison de surcharges des serveurs OSM.
+- Les fichiers OSM (.osm.pbf) nécessitaient Osmium Tool, non disponible sur Windows.
+- **Solution :** Adoption pragmatique de Google Maps malgré les contraintes de coût.
+
+### 2. Liaison Frontend-Backend
+- Communication React-Django via Axios et Django REST Framework.
+- La fonctionnalité d'authentification a été correctement liée.
+- La transmission des données pour la génération d'itinéraire optimisé a rencontré des obstacles supplémentaires.
+
+---
+
+## Conclusion
+Le projet a permis d'acquérir une compréhension approfondie des exigences techniques du développement web full-stack, de la gestion de projet et de l'implémentation d'algorithmes d'optimisation combinatoire dans un contexte applicatif réel.`,
+
+    'teachy-platform': `# Teachy : Plateforme d'Apprentissage des Langues en Ligne
+
+**Auteurs / Réalisé par :** Mohammed EL BARAKA, Mohammed Amine TALHI  
+**Institution :** UM6P - EMINES (School of Industrial Management)  
+**Encadré par :** Nicolas CHEIMANOFF  
+**Date :** 30 Mai 2024  
+**Projet :** Acte d'Entreprendre  
+
+---
+
+## 1. Résumé Exécutif
+
+Teachy est une plateforme innovante d'apprentissage des langues en ligne conçue pour connecter les apprenants avec des locuteurs natifs et des enseignants qualifiés à travers le monde. Développé dans le cadre du projet d'entrepreneuriat ("Rapport d'ACTE D'ENTREPRENDRE") à l'Université Mohammed VI Polytechnique (UM6P), Teachy comble le fossé critique de l'apprentissage linguistique traditionnel et numérique : l'absence de pratique conversationnelle authentique, interactive et personnalisée. En combinant des ressources pédagogiques structurées avec une immersion en direct, Teachy vise à devenir la plateforme de référence pour les apprenants et les créateurs de contenu éducatif.
+
+---
+
+## 2. Contexte et Problématique
+
+### 2.1 Le Besoin Global en Compétences Linguistiques
+Dans un monde de plus en plus globalisé, la maîtrise des langues étrangères est une compétence essentielle pour s'intégrer dans des environnements multiculturels, améliorer les perspectives de carrière et enrichir les expériences personnelles. Cependant, les méthodes traditionnelles échouent souvent à fournir l'interactivité et l'immersion nécessaires pour maintenir la motivation et l'efficacité de l'apprenant. Les contraintes de temps, les barrières financières et le manque d'accès à des locuteurs natifs constituent des obstacles majeurs.
+
+### 2.2 Limites des Solutions Actuelles
+Les solutions numériques actuelles présentent des limites significatives :
+- **Manque d'interaction en temps réel :** Les apprenants souffrent de l'absence de conversations réelles avec des locuteurs natifs.
+- **Contenu monotone et générique :** Les plateformes existantes s'appuient sur des exercices répétitifs et des leçons standardisées non adaptées aux besoins individuels.
+- **Déséquilibre entre structure et interactivité :** Les solutions sont souvent soit très structurées mais sans interaction, soit interactives mais sans rigueur pédagogique.
+
+---
+
+## 3. La Solution Teachy
+
+### 3.1 Proposition de Valeur Unique
+> "Connecter les apprenants de langues avec des enseignants et des locuteurs natifs du monde entier pour une immersion linguistique interactive et personnalisée."
+
+Teachy révolutionne l'apprentissage des langues en intégrant harmonieusement une interactivité dynamique avec des cours méthodiquement structurés couvrant la grammaire, le vocabulaire, la prononciation et le contexte culturel.
+
+### 3.2 Fonctionnalités Clés de la Plateforme
+- **Conversations en Direct (Vidéo & Chat) :** Interaction directe avec des enseignants qualifiés et locuteurs natifs, offrant un retour immédiat et corrigeant la prononciation et les expressions idiomatiques.
+- **Cours Personnalisés :** Plans d'études sur mesure générés selon le niveau, les objectifs et les préférences de l'apprenant.
+- **Ressources Pédagogiques Variées :** Bibliothèque riche de vidéos éducatives, exercices interactifs, fiches de vocabulaire, articles, podcasts et jeux linguistiques.
+- **Séances de Tutorat Privé :** Accompagnement individualisé par des éducateurs qualifiés pour surmonter les points de blocage.
+- **Suivi des Progrès :** Outils d'évaluation intégrés pour mesurer l'évolution, définir des objectifs et adapter les méthodes.
+- **Communauté Mondiale & Partage Culturel :** Forums, groupes de conversation et projets collaboratifs favorisant l'échange culturel.
+
+**Domaines linguistiques pris en charge :**
+- Anglais
+- Espagnol
+- Français
+- Mandarin
+- Italien
+
+---
+
+## 4. Modèle Économique & Stratégie
+
+### 4.1 Segments de Clientèle
+1. **Apprenants Individuels :** Étudiants et professionnels cherchant une flexibilité d'accès 24/7 à des cours personnalisés.
+2. **Établissements Éducatifs :** Écoles et universités utilisant la plateforme comme complément pédagogique.
+3. **Touristes et Voyageurs :** Personnes préparant un séjour à l'étranger.
+4. **Expatriés et Immigrants :** Personnes en phase d'intégration socioprofessionnelle.
+
+### 4.2 Sources de Revenus & Structure des Coûts
+- **Revenus :**
+  - Abonnements mensuels ou annuels pour particuliers.
+  - Licences institutionnelles pour établissements scolaires.
+  - Forfaits d'entreprise pour la formation des collaborateurs.
+  - Sponsoring et partenariats.
+  - Tarification indicative : 20 à 100 DH par participant.
+- **Coûts :**
+  - Développement, hébergement et maintenance technique de la plateforme.
+  - Rémunération des tuteurs et développeurs.
+  - Marketing, acquisition client et communication.
+
+### 4.3 Canaux & Indicateurs de Performance (KPIs)
+- Site Web & Application Mobile.
+- Partenariats institutionnels et campagnes digitales.
+- KPIs : Utilisateurs Actifs Mensuels (MAU), Taux de Rétention, Taux de Satisfaction Utilisateur.
+
+---
+
+## 5. Analyse Concurrentielle
+
+| Fonctionnalité | Teachy | Duolingo | Babbel | Coursera |
+| :--- | :---: | :---: | :---: | :---: |
+| **Technologie & UI** | ✔ | ✔ | ✔ | ✔ |
+| **Prix & Modèle Économique** | ✔ | ✔ | ✘ | ✔ |
+| **Support & Assistance** | ✔ | ✔ | ✔ | ✘ |
+| **Communauté & Interaction** | ✔ | ✘ | ✘ | ✘ |
+| **Interactivité & Immersion** | ✔ | ✘ | ✔ | ✘ |
+
+---
+
+## 6. Partenariats Stratégiques
+
+- **Experts Linguistiques :** 3 professeurs de langues, 2 experts en didactique des langues, 2 étudiants en Master de linguistique appliquée.
+- **Instituts & Laboratoires :** Alliances avec le **Codex Center de Benguerir** et le **Language Lab de l'UM6P**.
+- **Établissements Éducatifs :** Intégration dans les programmes scolaires et universitaires.
+- **Enseignants Indépendants :** Création et publication de contenus propres sur la plateforme.
+
+---
+
+## 7. Défis Rencontrés & Perspectives
+
+1. **Implémentation Technique :** Conception UX/UI, architecture logicielle, gestion de base de données, sécurité et infrastructure serveur.
+2. **Adoption Utilisateur :** Convaincre les apprenants habitués aux cours en présentiel (40% de préférence en présentiel selon les sondages).
+3. **Négociations Partenaires :** Complexité de signature avec certains acteurs majeurs (ex. Centre de Langue Américain ayant privilégié sa propre solution interne).
+
+---
+
+## 8. Conclusion
+
+Teachy se positionne à l'avant-garde de l'éducation linguistique en ligne grâce à son engagement envers l'innovation, l'immersion interactive et l'échange culturel international.`
+};

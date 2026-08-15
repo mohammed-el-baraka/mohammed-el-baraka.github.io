@@ -55,12 +55,11 @@ Each engineering project features an interactive AI assistant that answers techn
 
 ---
 
-### 2. 📄 Dynamic Case Studies ([`project.html`](project.html))
-Dedicated project case study pages loaded dynamically via URL parameter (e.g. `project.html?id=mental-health-analytics`):
-* **Impact Metrics Badge:** Quick glance at project outcomes (e.g. `92.4% Classification Accuracy`, `+18.5% Margin Gain`).
-* **Direct Action Hub:** Direct links to **GitHub Repository**, **Live Interactive Demo**, **Technical Report (PDF)**, and **Slides & Presentation**.
-* **Integrated AI Q&A Assistant:** Real-time conversational interface specific to the selected project.
-* **Seamless Pagination:** Next/Previous project footer controls.
+### 2. ⚡ In-Card Interactive Action Hub
+Every project card on the home page dynamically provides direct access to all available deliverables:
+* **Direct Action Hub:** Direct access to **Live Interactive Demo / Web App**, **Technical Report (PDF)**, **Slides & Presentation**, **Project Poster**, **Business Model**, and **GitHub Repository**.
+* **Integrated Native Document Preview:** Built-in modal viewer for previewing PDFs without leaving the portfolio.
+* **Interactive AI Assistant:** Dedicated AI conversational modal for every project.
 
 ---
 
@@ -82,7 +81,7 @@ Native client-side language switching without page reloads, complete with countr
 ---
 
 ### 5. 📑 Integrated Native PDF Viewer
-* In-app document modals utilizing PDF.js for seamless viewing of project reports, presentation slide decks, and resume without external redirects.
+* In-app document modals utilizing Google Drive preview embeds for seamless viewing of project reports, presentation slide decks, posters, and resume without external redirects.
 
 ---
 
@@ -90,7 +89,6 @@ Native client-side language switching without page reloads, complete with countr
 
 ```text
 ├── index.html                   # Main landing page & portfolio overview
-├── project.html                 # Dynamic project case study showcase template
 ├── style.css                    # Liquid glassmorphism, Aurora animations & typography
 ├── app.js                       # Frontend state, i18n switcher, AI modal & timeline rendering
 ├── data.js                      # Centralized metadata for projects, skills & 7 languages

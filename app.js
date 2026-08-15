@@ -97,7 +97,7 @@ function renderProjects(lang) {
             const docButtons = [];
 
             if (pData.reportUrl || pData.id === 'geology-internship') {
-                const reportLabel = pData.id === 'geology-internship' ? 'Report 1' : (langStrings.project_button_report || 'Report');
+                const reportLabel = pData.id === 'geology-internship' ? (currentLang === 'fr' ? 'Rapport Géologie' : 'Geology Report') : (langStrings.project_button_report || 'Report');
                 docButtons.push(`
                     <button onclick="viewPdf('${pData.reportUrl}', 'report', '${pData.id}')" class="btn-doc-action">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
@@ -106,8 +106,8 @@ function renderProjects(lang) {
                 `);
             }
 
-            if (pData.presentationUrl || pData.id === 'geology-internship') {
-                const presLabel = pData.id === 'geology-internship' ? 'Report 2' : (langStrings.project_button_presentation || 'Presentation');
+            if (pData.presentationUrl || pData.id === 'geology-internship' || pData.id === 'biomass-co2-nareva') {
+                const presLabel = pData.id === 'geology-internship' ? (currentLang === 'fr' ? 'Rapport Géophysique' : 'Geophysics Report') : (langStrings.project_button_presentation || 'Presentation');
                 docButtons.push(`
                     <button onclick="viewPdf('${pData.presentationUrl}', 'presentation', '${pData.id}')" class="btn-doc-action">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" /></svg>
@@ -590,7 +590,11 @@ async function viewPdf(url, type, id) {
     } else {
          const project = translations[currentLang].projects.find(p => p.id === id);
          if (project) {
-            if (type === 'report') {
+            if (id === 'geology-internship') {
+                title = type === 'report' 
+                    ? (currentLang === 'fr' ? 'Rapport de Stage de Géologie' : 'Geology Field Internship Report')
+                    : (currentLang === 'fr' ? 'Rapport de Géophysique & Hydrogéologie' : 'Geophysics & Hydrogeology Report');
+            } else if (type === 'report') {
                 title = (langStrings.pdf_modal_title_report || '{title} Report').replace('{title}', project.title);
             } else if (type === 'presentation') {
                 title = (langStrings.pdf_modal_title_presentation || '{title} Presentation').replace('{title}', project.title);

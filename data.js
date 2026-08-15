@@ -64,7 +64,8 @@ const translations = {
              { id: 'biomedical-diffusion', title: 'Oxygen Diffusion in Pulmonary Acinus', description: 'Conducted a biomedical engineering project to model oxygen diffusion in the pulmonary acinus, resolving the 2D diffusion equation using numerical methods.' },
              { id: 'robotics-vision', title: 'Robotics and Image Detection', description: 'Developed a complete robotic system with image detection capabilities, from 3D modeling in SolidWorks to implementing image processing algorithms in Python.' },
              { id: 'tourist-planner', title: 'Tourist Visit Planner', description: 'Built a full-stack web application for planning and optimizing tourist itineraries using the Traveling Salesman Problem (TSP) algorithm, React, Django, and Google Maps API.' },
-             { id: 'teachy-platform', title: 'Teachy: Online Language Learning Platform', description: 'Designed an innovative online language learning platform connecting learners with native speakers for live interactive immersion, personalized courses, and pedagogical resources.' }
+             { id: 'teachy-platform', title: 'Teachy: Online Language Learning Platform', description: 'Designed an innovative online language learning platform connecting learners with native speakers for live interactive immersion, personalized courses, and pedagogical resources.' },
+             { id: 'biomass-co2-nareva', title: 'Biogenic CO2 Capture & E-Fuel Valorization (NAREVA)', description: 'Conducted a comprehensive techno-economic pre-feasibility study for capturing 150 kt/year of biogenic CO2 from biomass in Morocco to produce and export green e-methanol to Europe.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsorship Manager', description: 'As Sponsorship Manager, my core responsibility is securing vital partnerships and sponsorships to power EJE\'s impactful portfolio of student hackathons. I actively seek sponsors for major events including the OP&X Hackathon, Strategic Consulting Hackathon (SCH), DataQuest Hackathon, and the Finance Hackathon. By connecting companies with these platforms, I help them engage Morocco\'s brightest students and fuel future talent development.' },
@@ -148,7 +149,8 @@ const translations = {
             { id: 'biomedical-diffusion', title: 'Diffusion d\'Oxygène dans l\'Acinus Pulmonaire', description: 'Réalisation d\'un projet d\'ingénierie biomédicale pour modéliser la diffusion d\'oxygène dans l\'acinus pulmonaire, en résolvant l\'équation de diffusion 2D par des méthodes numériques.' },
             { id: 'robotics-vision', title: 'Robotique et Détection d\'Images', description: 'Développement d\'un système robotique complet avec des capacités de détection d\'images, de la modélisation 3D sur SolidWorks à la mise en œuvre d\'algorithmes de traitement d\'images en Python.' },
             { id: 'tourist-planner', title: 'Planificateur de Visites Touristiques', description: 'Développement d\'une application web full-stack pour la planification et l\'optimisation d\'itinéraires touristiques utilisant l\'algorithme du voyageur de commerce (TSP), React, Django et l\'API Google Maps.' },
-            { id: 'teachy-platform', title: 'Teachy : Plateforme d\'Apprentissage des Langues', description: 'Conception d\'une plateforme innovante d\'apprentissage des langues connectant apprenants et locuteurs natifs pour une immersion interactive en direct, cours personnalisés et ressources pédagogiques.' }
+            { id: 'teachy-platform', title: 'Teachy : Plateforme d\'Apprentissage des Langues', description: 'Conception d\'une plateforme innovante d\'apprentissage des langues connectant apprenants et locuteurs natifs pour une immersion interactive en direct, cours personnalisés et ressources pédagogiques.' },
+            { id: 'biomass-co2-nareva', title: 'Captage de CO2 Biogénique & E-Fuels (Projet NAREVA)', description: 'Étude de préfaisabilité technico-économique pour le captage de 150 kt/an de CO2 biogénique issu de la biomasse au Maroc pour la production et l\'exportation d\'e-méthanol vert vers l\'Europe.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Responsable Sponsoring', description: 'En tant que Responsable Sponsoring, ma responsabilité principale est de sécuriser des partenariats et des sponsorings essentiels pour alimenter le portefeuille percutant de hackathons étudiants d\'EJE. Je recherche activement des sponsors pour des événements majeurs tels que le Hackathon OP&X, le Hackathon de Conseil Stratégique (SCH), le Hackathon DataQuest et le Hackathon Finance. En connectant les entreprises à ces plateformes, je les aide à interagir avec les étudiants les plus brillants du Maroc et à stimuler le développement des futurs talents.' },
@@ -232,7 +234,8 @@ const translations = {
              { id: 'biomedical-diffusion', title: 'انتشار الأكسجين في الحويصلات الرئوية', description: 'إجراء مشروع هندسة طبية حيوية لنمذجة انتشار الأكسجين في الحويصلات الرئوية، وحل معادلة الانتشار ثنائية الأبعاد باستخدام الطرق العددية.' },
              { id: 'robotics-vision', title: 'الروبوتات وكشف الصور', description: 'تطوير نظام روبوتي كامل مع إمكانات كشف الصور، من النمذجة ثلاثية الأبعاد في SolidWorks إلى تنفيذ خوارزميات معالجة الصور في Python.' },
              { id: 'tourist-planner', title: 'مخطط الزيارات السياحية', description: 'تطوير تطبيق ويب متكامل لتخطيط وتحسين مسارات الرحلات السياحية باستخدام خوارزمية مسألة البائع المتجول (TSP) وReact وDjango وGoogle Maps API.' },
-             { id: 'teachy-platform', title: 'Teachy: منصة تعليم اللغات عبر الإنترنت', description: 'تصميم منصة مبتكرة لتعلم اللغات عبر الإنترنت تربط المتعلمين بالمتحدثين الأصليين لتوفير انغماس تفاعلي مباشر، ودورات مخصصة، وموارد تعليمية متنوعة.' }
+             { id: 'teachy-platform', title: 'Teachy: منصة تعليم اللغات عبر الإنترنت', description: 'تصميم منصة مبتكرة لتعلم اللغات عبر الإنترنت تربط المتعلمين بالمتحدثين الأصليين لتوفير انغماس تفاعلي مباشر، ودورات مخصصة، وموارد تعليمية متنوعة.' },
+             { id: 'biomass-co2-nareva', title: 'احتجاز الكربون الحيوي وإنتاج الوقود الإلكتروني (مشروع NAREVA)', description: 'دراسة جدوى تقنية واقتصادية لاحتجاز 150 ألف طن سنويًا من ثاني أكسيد الكربون الحيوي من الكتلة الحيوية في المغرب لإنتاج وتصدير الميثانول الأخضر إلى أوروبا.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'EJE', role: 'مدير الرعاية', description: 'بصفتي مدير الرعاية، تتمثل مسؤوليتي الأساسية في تأمين الشراكات والرعاية الحيوية لدعم محفظة EJE المؤثرة من مسابقات البرمجة الطلابية. أبحث عن رعاة للأحداث الكبرى بما في ذلك مسابقة البرمجة OP&X Hackathon ومسابقة البرمجة الاستشارية الاستراتيجية (SCH) ومسابقة البرمجة DataQuest Hackathon ومسابقة البرمجة المالية Finance Hackathon. من خلال ربط الشركات بهذه المنصات، أساعدها على جذب ألمع الطلاب المغاربة ودعم تنمية المواهب المستقبلية.' },
@@ -316,7 +319,8 @@ const translations = {
             { id: 'biomedical-diffusion', title: 'Difusión de Oxígeno en el Acino Pulmonar', description: 'Realicé un proyecto de ingeniería biomédica para modelar la difusión de oxígeno en el acino pulmonar, resolviendo la ecuación de difusión 2D utilizando métodos numéricos.' },
             { id: 'robotics-vision', title: 'Robótica y Detección de Imágenes', description: 'Desarrollé un sistema robótico completo con capacidades de detección de imágenes, desde el modelado 3D en SolidWorks hasta la implementación de algoritmos de procesamiento de imágenes en Python.' },
             { id: 'tourist-planner', title: 'Planificador de Visitas Turísticas', description: 'Desarrollo de una aplicación web full-stack para planificar y optimizar itinerarios turísticos utilizando el algoritmo del viajante de comercio (TSP), React, Django y la API de Google Maps.' },
-            { id: 'teachy-platform', title: 'Teachy: Plataforma de Aprendizaje de Idiomas', description: 'Diseño de una plataforma innovadora de aprendizaje de idiomas en línea que conecta a los estudiantes con hablantes nativos para una inmersión interactiva en vivo, cursos personalizados y recursos pedagógicos.' }
+            { id: 'teachy-platform', title: 'Teachy: Plataforma de Aprendizaje de Idiomas', description: 'Diseño de una plataforma innovadora de aprendizaje de idiomas en línea que conecta a los estudiantes con hablantes nativos para una inmersión interactiva en vivo, cursos personalizados y recursos pedagógicos.' },
+            { id: 'biomass-co2-nareva', title: 'Captura de CO2 Biogénico y E-Fuels (Proyecto NAREVA)', description: 'Estudio de prefactibilidad técnico-económica para la captura de 150 kt/año de CO2 biogénico a partir de biomasa en Marruecos para la producción y exportación de e-metanol verde a Europa.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocinios', description: 'Como Gerente de Patrocinios, mi responsabilidad principal es asegurar alianzas y patrocinios vitales para impulsar el impactante portafolio de hackathons estudiantiles de EJE. Busco activamente patrocinadores para eventos importantes como el Hackathon OP&X, el Hackathon de Consultoría Estratégica (SCH), el Hackathon DataQuest y el Hackathon de Finanzas. Al conectar empresas con estas plataformas, les ayudo a interactuar con los estudiantes más brillantes de Marruecos y a fomentar el desarrollo de futuros talentos.' },
@@ -400,7 +404,8 @@ const translations = {
             { id: 'biomedical-diffusion', title: '肺腺泡中的氧气扩散', description: '进行了一个生物医学工程项目，对肺腺泡中的氧气扩散进行建模，使用数值方法求解二维扩散方程。' },
             { id: 'robotics-vision', title: '机器人技术与图像检测', description: '开发了一个完整的具有图像检测功能的机器人系统，从在SolidWorks中进行3D建模到在Python中实现图像处理算法。' },
             { id: 'tourist-planner', title: '旅游行程规划器', description: '开发了一个全栈Web应用程序，使用旅行商问题（TSP）算法、React、Django和Google Maps API来规划和优化旅游行程。' },
-            { id: 'teachy-platform', title: 'Teachy：在线语言学习平台', description: '设计了一个创新的在线语言学习平台，将语言学习者与母语者联系起来，提供实时互动沉浸式体验、个性化课程和教学资源。' }
+            { id: 'teachy-platform', title: 'Teachy：在线语言学习平台', description: '设计了一个创新的在线语言学习平台，将语言学习者与母语者联系起来，提供实时互动沉浸式体验、个性化课程和教学资源。' },
+            { id: 'biomass-co2-nareva', title: '生物碳捕集与电子燃料合成研究（NAREVA项目）', description: '开展了从摩洛哥生物质中每年捕集15万吨生物碳用于生产绿色电子甲醇并出口欧洲的技术经济可行性前瞻研究。' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: '赞助经理', description: '作为赞助经理，我的核心职责是确保重要的合作伙伴关系和赞助，为EJE富有影响力的学生黑客马拉松系列活动提供支持。我积极为主要活动寻找赞助商，包括OP&X黑客马拉松、战略咨询黑客马拉松（SCH）、DataQuest黑客马拉松以及金融黑客马拉松。通过将公司与这些平台联系起来，我帮助他们接触到摩洛哥最优秀的学生，并为未来的人才发展提供动力。' },
@@ -484,7 +489,8 @@ const translations = {
             { id: 'biomedical-diffusion', title: 'Difusão de Oxigênio no Ácino Pulmonar', description: 'Conduzi um projeto de engenharia biomédica para modelar a difusão de oxigênio no ácino pulmonar, resolvendo a equação de difusão 2D usando métodos numéricos.' },
             { id: 'robotics-vision', title: 'Robótica e Detecção de Imagem', description: 'Desenvolvi um sistema robótico completo com capacidades de detecção de imagem, desde a modelagem 3D no SolidWorks até a implementação de algoritmos de processamento de imagem em Python.' },
             { id: 'tourist-planner', title: 'Planificador de Visitas Turísticas', description: 'Desenvolvimento de uma aplicação web full-stack para planear e otimizar itinerários turísticos utilizando o algoritmo do caixeiro viajante (TSP), React, Django e a API do Google Maps.' },
-            { id: 'teachy-platform', title: 'Teachy: Plataforma de Aprendizagem de Idiomas', description: 'Desenvolveu uma plataforma inovadora de aprendizagem de idiomas online que conecta alunos a falantes nativos para imersão interativa ao vivo, cursos personalizados e recursos pedagógicos.' }
+            { id: 'teachy-platform', title: 'Teachy: Plataforma de Aprendizagem de Idiomas', description: 'Desenvolveu uma plataforma inovadora de aprendizagem de idiomas online que conecta alunos a falantes nativos para imersão interativa ao vivo, cursos personalizados e recursos pedagógicos.' },
+            { id: 'biomass-co2-nareva', title: 'Captura de CO2 Biogênico & E-Fuels (Projeto NAREVA)', description: 'Estudo de pré-viabilidade técnico-econômica para captura de 150 kt/ano de CO2 biogênico a partir de biomassa em Marrocos para produção e exportação de e-metanol verde para a Europa.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocínios', description: 'Como Gerente de Patrocínios, minha principal responsabilidade é garantir parcerias e patrocínios vitais para impulsionar o portfólio impactante de hackathons estudantis da EJE. Busco ativamente patrocinadores para grandes eventos, incluindo o Hackathon OP&X, o Hackathon de Consultoria Estratégica (SCH), o Hackathon DataQuest e o Hackathon de Finanças. Ao conectar empresas a essas plataformas, ajudo-as a interagir com os estudantes mais brilhantes de Marrocos e a impulsionar o desenvolvimento de futuros talentos.' },
@@ -560,7 +566,8 @@ const translations = {
             { id: 'biomedical-diffusion', title: 'Sauerstoffdiffusion im Lungenazinus', description: 'Durchführung eines biomedizinischen Projekts zur Modellierung der Sauerstoffdiffusion im Lungenazinus durch numerische Lösung der 2D-Diffusionsgleichung.' },
             { id: 'robotics-vision', title: 'Robotik und Bilderkennung', description: 'Entwicklung eines kompletten Robotersystems mit Bilderkennungsfunktionen, von der 3D-Modellierung in SolidWorks bis zur Implementierung von Bildverarbeitungsalgorithmen in Python.' },
             { id: 'tourist-planner', title: 'Touristischer Besuchsplaner', description: 'Entwicklung einer Full-Stack-Webanwendung zur Planung und Optimierung touristischer Reiserouten mit dem Algorithmus des Handlungsreisenden (TSP), React, Django und der Google Maps API.' },
-            { id: 'teachy-platform', title: 'Teachy: Online-Sprachlernplattform', description: 'Entwicklung einer innovativen Online-Sprachlernplattform, die Lernende mit Muttersprachlern für interaktive Live-Immersion, personalisierte Kurse und pädagogische Ressourcen verbindet.' }
+            { id: 'teachy-platform', title: 'Teachy: Online-Sprachlernplattform', description: 'Entwicklung einer innovativen Online-Sprachlernplattform, die Lernende mit Muttersprachlern für interaktive Live-Immersion, personalisierte Kurse und pädagogische Ressourcen verbindet.' },
+            { id: 'biomass-co2-nareva', title: 'Biogene CO2-Abscheidung & E-Fuels (NAREVA-Projekt)', description: 'Technisch-ökonomische Machbarkeitsstudie zur Abscheidung von 150 kt/Jahr biogenem CO2 aus Biomasse in Marokko zur Produktion und zum Export von grünem E-Methanol nach Europa.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsoring-Manager', description: 'Als Sponsoring-Manager liegt meine Hauptverantwortung in der Sicherung wichtiger Partnerschaften und Sponsorings zur Finanzierung der studentischen Hackathons von EJE. Ich suche aktiv Sponsoren für Großveranstaltungen wie den OP&X Hackathon, den Strategic Consulting Hackathon (SCH), den DataQuest Hackathon und den Finance Hackathon. Durch die Verbindung von Unternehmen mit diesen Plattformen helfe ich ihnen, mit Marokkos klügsten Köpfen in Kontakt zu treten.' },
@@ -625,7 +632,7 @@ const projectsData = [
         id: 'acoustic-noise-reduction', 
         date: '2023-05', 
         technologies: ['Wave Physics', 'Acoustic Modeling', 'Applied Mathematics', 'Kundt Tube', 'Porous Materials', 'Python'], 
-        githubUrl: 'https://github.com/mohammed-el-baraka/acoustic-noise-reduction-tipe',
+        githubUrl: '',
         demoUrl: '',
         metric: 'Kundt Tube Absorption Tested',
         reportUrl: 'https://drive.google.com/file/d/14U3nLz8w2iV2TIusfK5Fy8QKrb7gC-6A/view?usp=sharing', 
@@ -638,8 +645,8 @@ const projectsData = [
         githubUrl: '',
         demoUrl: '',
         metric: 'Field Study & Tomography Performed',
-        reportUrl: '', 
-        presentationUrl: '' 
+        reportUrl: 'https://drive.google.com/file/d/1Zu0eHqIdwwmkVfz34e6DXQbqvaXkMjLL/view?usp=sharing', 
+        presentationUrl: 'https://drive.google.com/file/d/1p-sjQqen9vHyODqoeCh-E-w7YDYkwLuU/view?usp=sharing' 
     },
     { 
         id: 'wood-behavior-mmc', 
@@ -692,6 +699,16 @@ const projectsData = [
         presentationUrl: 'https://drive.google.com/file/d/1QX5jGZyH57h57IqW0aTBBePlABmecPos/view?usp=sharing',
         posterUrl: 'https://drive.google.com/file/d/1D6K5MScxztkrJ3LcQI_f73jyMxNPoXCm/view?usp=sharing',
         businessModelUrl: 'https://drive.google.com/file/d/1jmvULgqECrNlul_kFnTDpzqLjyyNX3he/view?usp=sharing'
+    },
+    { 
+        id: 'biomass-co2-nareva', 
+        date: '2024-03', 
+        technologies: ['Techno-Economic Analysis', 'Power-to-X', 'Carbon Capture (CCU)', 'Biomass Valuation', 'E-Methanol & E-Fuels', 'CAPEX / OPEX Modeling', 'Industrial Management'], 
+        githubUrl: '',
+        demoUrl: '',
+        metric: '150 kt/yr CO2 & 103.8 kt/yr E-Methanol Model',
+        reportUrl: '', 
+        presentationUrl: 'https://drive.google.com/file/d/1vWQIe7tKa1JjmLsIIkTGLtcJV9Uu2SEC/view?usp=sharing' 
     }
 ];
 
@@ -1454,5 +1471,91 @@ Teachy révolutionne l'apprentissage des langues en intégrant harmonieusement u
 
 ## 8. Conclusion
 
-Teachy se positionne à l'avant-garde de l'éducation linguistique en ligne grâce à son engagement envers l'innovation, l'immersion interactive et l'échange culturel international.`
+Teachy se positionne à l'avant-garde de l'éducation linguistique en ligne grâce à son engagement envers l'innovation, l'immersion interactive et l'échange culturel international.`,
+
+    'biomass-co2-nareva': `# Potentiel de l’Exploitation de la Biomasse pour Valoriser le CO2 Biogénique au Maroc
+
+**Client Industriel :** NAREVA  
+**Auteur / Équipe de projet :** Mohammed EL BARAKA & Équipe (EMINES - UM6P)  
+**Date de Soutenance :** 01 Mars 2024  
+**Discipline :** Initiation au Management Industriel & Ingénierie des Procédés Énergétiques  
+
+---
+
+## 1. Contexte & Mission Industrielle
+
+### 1.1 Le Client : NAREVA
+NAREVA est un acteur marocain de référence dans le secteur de l'énergie et la production électrique à partir de ressources renouvelables. NAREVA ambitionne de développer la filière **Power-to-X** au Maroc pour produire des e-carburants durables (*electro-fuels / e-fuels*) à destination des marchés européens.
+
+### 1.2 Cahier des Charges & Objectifs
+* **Cible de production :** Capturer et valoriser **150 000 tonnes (150 kt) de $CO_2$ biogénique par an**.
+* **Produit fini :** Synthèse d'**e-méthanol vert** à partir de $CO_2$ biogénique et d'hydrogène vert ($H_2$) issu d'électrolyse renouvelable.
+* **Périmètre d'étude :**
+  1. Évaluation et cartographie de l'approvisionnement en biomasse au Maroc.
+  2. Benchmark technologique des procédés de captage de $CO_2$ (Précombustion, Oxycombustion, Post-combustion).
+  3. Dimensionnement énergétique et modélisation économique (CAPEX, OPEX, Coût actualisé du $CO_2$ / LCO2, Coût nivelé du E-méthanol).
+  4. Analyse du marché européen, régulation (EU-ETS, MACF/CBAM, ReFuelEU Aviation, FuelEU Maritime) et viabilité financière.
+
+---
+
+## 2. Approvisionnement en Biomasse au Maroc
+
+Quatre gisements majeurs de biomasse ont été évalués selon 5 critères : Teneur en carbone, localisation, coût d'acquisition, réglementation et tendance d'évolution.
+
+| Type de Biomasse | Teneur en Carbone | Coût d'Acquisition | Verdict & Justification |
+| :--- | :---: | :---: | :--- |
+| **Bois Forestier** | Élevée (1kg bois $\\rightarrow$ 1.83kg $CO_2$) | Variable / Restreint | ❌ **Rejeté :** Secteur en crise, surexploitation (3x la capacité), coupe soumise à permis strict (HCEFLCD/ANEF). |
+| **Boues d'Épuration (STEP)** | 19% C (38% MOS) | 800 - 900 MAD/t | ⚠️ **Secondaire :** 27 000 tMOS/an exploitable, gisement localisé (Casa-Settat, Rabat, Marrakech). |
+| **Déchets Ménagers (DMA)** | Variable (Casa: 122 kt C, Rabat: 85 kt C) | ~1500 MAD/t (TMB + transport) | ⚠️ **Complexe :** Tri mécanobiologique et gestion contractuelle déléguée (Ecomed, Suez, Pizzorno). |
+| **Fumier Bovin** | **32% de Carbone (MS)** | **215 - 280 MAD/t** | ✅ **Sélectionné :** Gisement massif (40.3 Mt en 2022 $\\rightarrow$ 45.6 Mt en 2030), disponibilité rurale concentrée (Casa-Settat, Rabat-Salé-Kénitra, Fès-Meknès). |
+
+### Logistique & Prétraitement du Fumier :
+* **Besoin quotidien :** 293 t/jour de biomasse brute.
+* **Flotte logistique :** 8 camions de 40t (CAPEX: 2.535 MMAD HT, OPEX: 75 000 MAD/an).
+* **Unité de prétraitement :** 6 séchoirs (5 t/h, 335 kW) + 3 broyeurs (10 t/h, 22 kW). Conformité Loi N° 28-00 sur les déchets.
+
+---
+
+## 3. Benchmark Technologique du Captage de $CO_2$ (150 kt/an)
+
+| Technologie | Principe & Procédé | TRL | Coût Actualisé ($/t $CO_2$) | Bilan Énergétique & Technique |
+| :--- | :--- | :---: | :---: | :--- |
+| **Post-combustion (Amine MEA)** | Centrale CHP Biomasse (58.6 MW) + Absorption chimique aux amines | **TRL 9** | **119 USD/tonne** | **Choix Optimal.** Chaleur et électricité coproduites. Surplus d'électricité revendu à 53 $/MWh. CAPEX: 64 M$. |
+| **Oxycombustion** | Combustion en atmosphère $O_2/CO_2$ recyclé + Unité de séparation d'air (USA) | **TRL 7** | **130 USD/tonne** | CAPEX élevé (90.56 M$), besoin énergétique interne de 56.9 GWh/an (USA + compression). |
+| **Précombustion (Gazéification)** | Gazéification en syngas ($CO + H_2$) + Water-gas shift + Adsorption PSA | **TRL 8** | **180 USD/tonne** | Rendement dépendant de la valorisation de l'hydrogène coproduit (1.26 $/kg). |
+
+---
+
+## 4. Use-Case Industriel : Synthèse d'E-Méthanol Vert
+
+$$\\text{CO}_2 + 3\\text{H}_2 \\xrightarrow{\\text{Catalyseur Cu/ZnO/Al}_2\\text{O}_3} \\text{CH}_3\\text{OH} + \\text{H}_2\\text{O}$$
+
+### 4.1 Bilan Matière & Énergie de l'Installation
+* **Entrées :**
+  - **$CO_2$ biogénique :** 150 000 t/an (capté par post-combustion à partir de 112 500 t/an de biomasse séchée).
+  - **Hydrogène vert ($H_2$) :** 20 600 t/an issu d'un électrolyseur de 58.6 MW alimenté par un parc éolien NAREVA de 100 MW.
+* **Sortie :**
+  - **E-Méthanol :** **103 840 tonnes / an**.
+
+### 4.2 Évaluation Économique & Structure des Coûts
+* **Coût actualisé de l'E-Méthanol :** **815 USD / tonne** (avec un coût $H_2$ de 3.03 $/kg et $CO_2$ à 118 $/t).
+* **Prix du marché méthanol fossile :** 200 à 550 USD / tonne.
+* **Surcharge verte :** +48% à +60% compensée par les mécanismes réglementaires européens.
+
+---
+
+## 5. Marché, Réglementation & Mécanismes de Soutien
+
+1. **ReFuelEU Aviation & FuelEU Maritime :** Mandats progressifs imposant l'incorporation de carburants de synthèse (e-fuels) dans le transport aérien (10% en 2040, 35% en 2050) et maritime.
+2. **Mécanisme d'Ajustement Carbone aux Frontières (MACF / CBAM) & EU-ETS :** Avec un quota $CO_2$ oscillant autour de 90 €/t, l'utilisation de $CO_2$ biogénique certifié exonère les producteurs des taxes carbone européennes à l'importation.
+3. **Pacte Vert & Net Zero Industry Act :** Contrats carbone pour différence (*Carbon Contracts for Difference*) garantissant la rentabilité des pionniers du Power-to-X au Maroc.
+
+---
+
+## 6. Conclusion du Projet
+
+L'étude valide la faisabilité technico-économique de l'écosystème proposé :
+1. **Source :** Fumier bovin collecté dans l'axe Casablanca-Rabat-Gharb (7.8 M$/an).
+2. **Captage :** Centrale CHP biomasse post-combustion aux amines (17.7 M$/an amorti, $119/t $CO_2$).
+3. **Synthèse Power-to-X :** Production de 103.8 kt/an d'e-méthanol vert prêt à l'export vers les hubs maritimes et industriels européens.`
 };

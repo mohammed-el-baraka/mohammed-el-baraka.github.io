@@ -570,6 +570,10 @@ section + section::before {
     transform: translateY(-2px);
 }
 
+.col-span-2 {
+    grid-column: span 2 / span 2;
+}
+
 .btn-ai-action {
     background: linear-gradient(135deg, rgba(167, 139, 250, 0.14), rgba(124, 58, 237, 0.2));
     border: 1px solid rgba(167, 139, 250, 0.35);
@@ -762,6 +766,118 @@ section + section::before {
 }
 @keyframes shine {
     to { background-position: 200% center; }
+}
+
+/* --- AI Modal Markdown Typography, Tables & Visual Formatting --- */
+.ai-modal-content h1,
+.ai-modal-content h2 {
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.ai-modal-content h3 {
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+}
+.ai-modal-content h4,
+.ai-modal-content h5,
+.ai-modal-content h6 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #e5e7eb;
+    margin-top: 0.75rem;
+    margin-bottom: 0.35rem;
+}
+.ai-modal-content hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin: 1.25rem 0;
+}
+.ai-modal-content ul {
+    list-style-type: disc;
+    margin-left: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+.ai-modal-content ol {
+    list-style-type: decimal;
+    margin-left: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+.ai-modal-content li {
+    margin-bottom: 0.3rem;
+    color: #d1d5db;
+    line-height: 1.6;
+}
+.ai-modal-content p {
+    margin-bottom: 0.75rem;
+    color: #d1d5db;
+    line-height: 1.65;
+}
+.ai-modal-content strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+.ai-modal-content em {
+    color: #e5e7eb;
+}
+.ai-modal-content code {
+    background: rgba(0, 0, 0, 0.4);
+    color: #c4b5fd;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    font-size: 0.85em;
+    border: 1px solid rgba(167, 139, 250, 0.2);
+}
+.ai-modal-content pre {
+    background: rgba(15, 15, 20, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.85rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 0.75rem;
+}
+.ai-modal-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.ai-modal-content th {
+    background: rgba(167, 139, 250, 0.12);
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.ai-modal-content td {
+    padding: 0.55rem 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #d1d5db;
+}
+.ai-modal-content tr:last-child td {
+    border-bottom: none;
+}
+.ai-modal-content tr:hover td {
+    background: rgba(255, 255, 255, 0.03);
+}
+.ai-modal-content blockquote {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 0.75rem;
+    margin: 0.75rem 0;
+    color: #9ca3af;
+    font-style: italic;
 }
 
 /* Loader & PDF Viewer */

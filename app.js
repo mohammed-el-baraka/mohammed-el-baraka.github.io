@@ -152,6 +152,12 @@ function renderProjects(lang) {
                 `);
             }
 
+            // If odd number of action buttons, make the last button span both columns for a balanced design
+            if (docButtons.length % 2 === 1) {
+                const lastIdx = docButtons.length - 1;
+                docButtons[lastIdx] = docButtons[lastIdx].replace('class="btn-doc-action', 'class="btn-doc-action col-span-2');
+            }
+
             const buttonsContainerHTML = docButtons.length > 0
                 ? `<div class="grid grid-cols-2 gap-2 text-sm">${docButtons.join('')}</div>`
                 : '';
@@ -209,17 +215,72 @@ async function fetchProjectMarkdown(projectId) {
 
 function formatMarkdownToHTML(md) {
     if (!md) return '';
-    return md
-        .replace(/^# (.*$)/gim, '<h2 class="text-xl font-bold text-white mb-2 pb-1 border-b border-white/10">$1</h2>')
-        .replace(/^## (.*$)/gim, '<h3 class="text-lg font-semibold text-primary-color mt-4 mb-2">$1</h3>')
-        .replace(/^### (.*$)/gim, '<h4 class="text-base font-medium text-gray-200 mt-3 mb-1">$1</h4>')
-        .replace(/\*\*(.*?)\*\*/gim, '<strong class="text-white font-semibold">$1</strong>')
-        .replace(/\*(.*?)\*/gim, '<em class="text-gray-300">$1</em>')
-        .replace(/`([^`]+)`/gim, '<code class="bg-black/50 text-violet-300 px-1.5 py-0.5 rounded text-xs">$1</code>')
-        .replace(/^\s*-\s+(.*$)/gim, '<li class="ml-4 list-disc text-gray-300 mb-1">$1</li>')
-        .replace(/^\s*\d+\.\s+(.*$)/gim, '<li class="ml-4 list-decimal text-gray-300 mb-1">$1</li>')
-        .replace(/\n\n/gim, '<p class="mb-3 text-gray-300 leading-relaxed"></p>')
-        .replace(/\n/gim, '<br>');
+
+    // 1. Protect KaTeX Math expressions ($$...$$, $...$, \[...\], \(...\)) from markdown syntax mangling
+    const mathTokens = [];
+    let processed = md;
+
+    // Block math: $$ ... $$ and \[ ... \]
+    processed = processed.replace(/(\$\$[\s\S]*?\$\$|\\\[[\s\S]*?\\\])/g, (match) => {
+        const placeholder = `@@MATH_BLOCK_${mathTokens.length}@@`;
+        mathTokens.push({ placeholder, math: match });
+        return placeholder;
+    });
+
+    // Inline math: $ ... $ and \( ... \)
+    processed = processed.replace(/(\$[^$\n\r]+\$|\\\(.*?\\\))/g, (match) => {
+        const placeholder = `@@MATH_INLINE_${mathTokens.length}@@`;
+        mathTokens.push({ placeholder, math: match });
+        return placeholder;
+    });
+
+    let html = '';
+
+    // 2. Parse using marked.js if available
+    if (window.marked && typeof window.marked.parse === 'function') {
+        try {
+            window.marked.setOptions({
+                gfm: true,
+                breaks: true
+            });
+            html = window.marked.parse(processed);
+        } catch (e) {
+            console.warn('marked.parse error, using fallback parser', e);
+        }
+    }
+
+    // 3. Robust regex fallback parser if marked is unavailable or failed
+    if (!html) {
+        html = processed
+            // Headings
+            .replace(/^######\s*(.*?)$/gm, '<h6 class="text-xs font-semibold text-gray-300 mt-2 mb-1">$1</h6>')
+            .replace(/^#####\s*(.*?)$/gm, '<h5 class="text-sm font-semibold text-gray-300 mt-2 mb-1">$1</h5>')
+            .replace(/^####\s*(.*?)$/gm, '<h4 class="text-sm font-semibold text-gray-200 mt-3 mb-1">$1</h4>')
+            .replace(/^###\s*(.*?)$/gm, '<h4 class="text-base font-medium text-gray-200 mt-3 mb-1">$1</h4>')
+            .replace(/^##\s*(.*?)$/gm, '<h3 class="text-lg font-semibold text-primary-color mt-4 mb-2">$1</h3>')
+            .replace(/^#\s*(.*?)$/gm, '<h2 class="text-xl font-bold text-white mb-2 pb-1 border-b border-white/10">$1</h2>')
+            // Horizontal rule
+            .replace(/^\s*(?:---|___|\*\*\*)\s*$/gm, '<hr class="my-4 border-white/10">')
+            // Bold and Italic
+            .replace(/\*\*\*(.*?)\*\*\*/g, '<strong class="text-white font-semibold"><em>$1</em></strong>')
+            .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>')
+            .replace(/\*(.*?)\*/g, '<em class="text-gray-300">$1</em>')
+            // Inline code
+            .replace(/`([^`]+)`/g, '<code class="bg-black/50 text-violet-300 px-1.5 py-0.5 rounded text-xs border border-violet-500/20">$1</code>')
+            // Lists
+            .replace(/^\s*-\s+(.*$)/gm, '<li class="ml-4 list-disc text-gray-300 mb-1">$1</li>')
+            .replace(/^\s*\d+\.\s+(.*$)/gm, '<li class="ml-4 list-decimal text-gray-300 mb-1">$1</li>')
+            // Paragraphs and breaks
+            .replace(/\n\n/g, '<p class="mb-3 text-gray-300 leading-relaxed"></p>')
+            .replace(/\n/g, '<br>');
+    }
+
+    // 4. Restore math tokens verbatim for KaTeX auto-rendering
+    mathTokens.forEach(({ placeholder, math }) => {
+        html = html.replace(placeholder, math);
+    });
+
+    return html;
 }
 
 function renderMathInBox(container) {

@@ -606,7 +606,7 @@ const projectsData = [
         date: '2024-06', 
         technologies: ['Machine Learning', 'NLP', 'Python', 'Scikit-learn', 'NLTK', 'Classification Models'], 
         githubUrl: 'https://github.com/mohammed-el-baraka/mental-health-analytics',
-        demoUrl: '',
+        demoUrl: 'https://mohammed-el-baraka.github.io/mental-health-analytics/',
         metric: '92.4% Classification Accuracy',
         reportUrl: 'https://drive.google.com/file/d/1HOFF_SywL49TlsOnuertwlaaWZrOq8Vn/view?usp=sharing', 
         presentationUrl: 'https://drive.google.com/file/d/1N2X0nVZxP2OwwLzlIdJ-LYeLmeGt4_uu/view?usp=drive_link' 
@@ -740,7 +740,7 @@ const projectsData = [
         demoUrl: '',
         metric: '+19% Capacity (1M t/yr) & -75% Lead Time',
         reportUrl: '', 
-        presentationUrl: '' 
+        presentationUrl: 'https://drive.google.com/file/d/1Fg_3u52aXbdAiX1ZmJc387LCBDp8WYl4/view?usp=sharing' 
     }
 ];
 

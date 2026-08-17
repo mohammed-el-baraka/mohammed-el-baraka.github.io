@@ -106,11 +106,11 @@ function renderProjects(lang) {
                 `);
             }
 
-            if (pData.presentationUrl || pData.id === 'geology-internship' || pData.id === 'biomass-co2-nareva') {
+            if (pData.presentationUrl || pData.id === 'geology-internship' || pData.id === 'biomass-co2-nareva' || pData.id === 'vsm-ciam-steel') {
                 const presLabel = pData.id === 'geology-internship' ? (currentLang === 'fr' ? 'Rapport Géophysique' : 'Geophysics Report') : (langStrings.project_button_presentation || 'Presentation');
                 docButtons.push(`
                     <button onclick="viewPdf('${pData.presentationUrl}', 'presentation', '${pData.id}')" class="btn-doc-action">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" /></svg>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h12a2.25 2.25 0 002.25-2.25V3m-16.5 0h16.5M3 3h18M8.25 12V9m3.75 3V6.75m3.75 5.25V10.5m-9 9.75h10.5" /></svg>
                         <span>${presLabel}</span>
                     </button>
                 `);
@@ -125,7 +125,7 @@ function renderProjects(lang) {
                 `);
             }
 
-            if (pData.posterUrl) {
+            if (pData.posterUrl || pData.id === 'sociotechnical-controversy-africa') {
                 docButtons.push(`
                     <button onclick="viewPdf('${pData.posterUrl}', 'poster', '${pData.id}')" class="btn-doc-action">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" /></svg>

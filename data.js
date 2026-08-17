@@ -65,7 +65,9 @@ const translations = {
              { id: 'robotics-vision', title: 'Robotics and Image Detection', description: 'Developed a complete robotic system with image detection capabilities, from 3D modeling in SolidWorks to implementing image processing algorithms in Python.' },
              { id: 'tourist-planner', title: 'Tourist Visit Planner', description: 'Built a full-stack web application for planning and optimizing tourist itineraries using the Traveling Salesman Problem (TSP) algorithm, React, Django, and Google Maps API.' },
              { id: 'teachy-platform', title: 'Teachy: Online Language Learning Platform', description: 'Designed an innovative online language learning platform connecting learners with native speakers for live interactive immersion, personalized courses, and pedagogical resources.' },
-             { id: 'biomass-co2-nareva', title: 'Biogenic CO2 Capture & E-Fuel Valorization (NAREVA)', description: 'Conducted a comprehensive techno-economic pre-feasibility study for capturing 150 kt/year of biogenic CO2 from biomass in Morocco to produce and export green e-methanol to Europe.' }
+             { id: 'biomass-co2-nareva', title: 'Biogenic CO2 Capture & E-Fuel Valorization (NAREVA)', description: 'Conducted a comprehensive techno-economic pre-feasibility study for capturing 150 kt/year of biogenic CO2 from biomass in Morocco to produce and export green e-methanol to Europe.' },
+             { id: 'sociotechnical-controversy-africa', title: 'Sociotechnical Controversy: Technocracy in Africa', description: 'Conducted an in-depth sociotechnical controversy analysis exploring whether technocracy offers a viable pathway for African development, mapping systemic challenges and multi-stakeholder dynamics across 5 key sectors.' },
+             { id: 'vsm-ciam-steel', title: 'Lean Production & VSM: CIAM Steel Plant', description: 'Conducted an industrial Lean diagnostic and Value Stream Mapping (VSM/VSD) for CIAM steel manufacturing plant, formulating actionable 5S/SMED/TPM strategies to scale capacity to 1M tonnes/year and reduce lead times by 75%.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsorship Manager', description: 'As Sponsorship Manager, my core responsibility is securing vital partnerships and sponsorships to power EJE\'s impactful portfolio of student hackathons. I actively seek sponsors for major events including the OP&X Hackathon, Strategic Consulting Hackathon (SCH), DataQuest Hackathon, and the Finance Hackathon. By connecting companies with these platforms, I help them engage Morocco\'s brightest students and fuel future talent development.' },
@@ -150,7 +152,9 @@ const translations = {
             { id: 'robotics-vision', title: 'Robotique et Détection d\'Images', description: 'Développement d\'un système robotique complet avec des capacités de détection d\'images, de la modélisation 3D sur SolidWorks à la mise en œuvre d\'algorithmes de traitement d\'images en Python.' },
             { id: 'tourist-planner', title: 'Planificateur de Visites Touristiques', description: 'Développement d\'une application web full-stack pour la planification et l\'optimisation d\'itinéraires touristiques utilisant l\'algorithme du voyageur de commerce (TSP), React, Django et l\'API Google Maps.' },
             { id: 'teachy-platform', title: 'Teachy : Plateforme d\'Apprentissage des Langues', description: 'Conception d\'une plateforme innovante d\'apprentissage des langues connectant apprenants et locuteurs natifs pour une immersion interactive en direct, cours personnalisés et ressources pédagogiques.' },
-            { id: 'biomass-co2-nareva', title: 'Captage de CO2 Biogénique & E-Fuels (Projet NAREVA)', description: 'Étude de préfaisabilité technico-économique pour le captage de 150 kt/an de CO2 biogénique issu de la biomasse au Maroc pour la production et l\'exportation d\'e-méthanol vert vers l\'Europe.' }
+            { id: 'biomass-co2-nareva', title: 'Captage de CO2 Biogénique & E-Fuels (Projet NAREVA)', description: 'Étude de préfaisabilité technico-économique pour le captage de 150 kt/an de CO2 biogénique issu de la biomasse au Maroc pour la production et l\'exportation d\'e-méthanol vert vers l\'Europe.' },
+            { id: 'sociotechnical-controversy-africa', title: 'Controverse Sociotechnique : La Technocratie en Afrique', description: 'Analyse approfondie d\'une controverse sociotechnique sur le rôle de la technocratie dans le développement africain, cartographiant les défis structurels et le jeu d\'acteurs à travers 5 axes majeurs.' },
+            { id: 'vsm-ciam-steel', title: 'Système de Production & VSM : Usine CIAM', description: 'Diagnostic industriel Lean et Value Stream Mapping (VSM/VSD) de l\'usine sidérurgique CIAM, élaborant des plans d\'action 5S/SMED/TPM pour porter la capacité à 1M tonnes/an et réduire les délais de 75%.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Responsable Sponsoring', description: 'En tant que Responsable Sponsoring, ma responsabilité principale est de sécuriser des partenariats et des sponsorings essentiels pour alimenter le portefeuille percutant de hackathons étudiants d\'EJE. Je recherche activement des sponsors pour des événements majeurs tels que le Hackathon OP&X, le Hackathon de Conseil Stratégique (SCH), le Hackathon DataQuest et le Hackathon Finance. En connectant les entreprises à ces plateformes, je les aide à interagir avec les étudiants les plus brillants du Maroc et à stimuler le développement des futurs talents.' },
@@ -235,7 +239,9 @@ const translations = {
              { id: 'robotics-vision', title: 'الروبوتات وكشف الصور', description: 'تطوير نظام روبوتي كامل مع إمكانات كشف الصور، من النمذجة ثلاثية الأبعاد في SolidWorks إلى تنفيذ خوارزميات معالجة الصور في Python.' },
              { id: 'tourist-planner', title: 'مخطط الزيارات السياحية', description: 'تطوير تطبيق ويب متكامل لتخطيط وتحسين مسارات الرحلات السياحية باستخدام خوارزمية مسألة البائع المتجول (TSP) وReact وDjango وGoogle Maps API.' },
              { id: 'teachy-platform', title: 'Teachy: منصة تعليم اللغات عبر الإنترنت', description: 'تصميم منصة مبتكرة لتعلم اللغات عبر الإنترنت تربط المتعلمين بالمتحدثين الأصليين لتوفير انغماس تفاعلي مباشر، ودورات مخصصة، وموارد تعليمية متنوعة.' },
-             { id: 'biomass-co2-nareva', title: 'احتجاز الكربون الحيوي وإنتاج الوقود الإلكتروني (مشروع NAREVA)', description: 'دراسة جدوى تقنية واقتصادية لاحتجاز 150 ألف طن سنويًا من ثاني أكسيد الكربون الحيوي من الكتلة الحيوية في المغرب لإنتاج وتصدير الميثانول الأخضر إلى أوروبا.' }
+             { id: 'biomass-co2-nareva', title: 'احتجاز الكربون الحيوي وإنتاج الوقود الإلكتروني (مشروع NAREVA)', description: 'دراسة جدوى تقنية واقتصادية لاحتجاز 150 ألف طن سنويًا من ثاني أكسيد الكربون الحيوي من الكتلة الحيوية في المغرب لإنتاج وتصدير الميثانول الأخضر إلى أوروبا.' },
+             { id: 'sociotechnical-controversy-africa', title: 'الجدل الاجتماعي والتقني: التكنوقراطية في التنمية الأفريقية', description: 'تحليل معمق لجدل اجتماعي تقني يستكشف ما إذا كانت التكنوقراطية تمثل مسارًا للتنمية في أفريقيا، مع رسم خرائط للتحديات الهيكلية وتفاعل الفاعلين عبر 5 قطاعات رئيسية.' },
+             { id: 'vsm-ciam-steel', title: 'نظم الإنتاج واللوجستيات: تخطيط تدفق القيمة (مصنع CIAM)', description: 'تشخيص صناعي لمنهجية Lean وتخطيط تدفق القيمة (VSM/VSD) لمصنع الصلب CIAM، ووضع خطط عمل 5S/SMED/TPM لرفع الطاقة الإنتاجية إلى مليون طن سنوياً وتقليص المهل الزمنية بنسبة 75%.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'EJE', role: 'مدير الرعاية', description: 'بصفتي مدير الرعاية، تتمثل مسؤوليتي الأساسية في تأمين الشراكات والرعاية الحيوية لدعم محفظة EJE المؤثرة من مسابقات البرمجة الطلابية. أبحث عن رعاة للأحداث الكبرى بما في ذلك مسابقة البرمجة OP&X Hackathon ومسابقة البرمجة الاستشارية الاستراتيجية (SCH) ومسابقة البرمجة DataQuest Hackathon ومسابقة البرمجة المالية Finance Hackathon. من خلال ربط الشركات بهذه المنصات، أساعدها على جذب ألمع الطلاب المغاربة ودعم تنمية المواهب المستقبلية.' },
@@ -320,7 +326,9 @@ const translations = {
             { id: 'robotics-vision', title: 'Robótica y Detección de Imágenes', description: 'Desarrollé un sistema robótico completo con capacidades de detección de imágenes, desde el modelado 3D en SolidWorks hasta la implementación de algoritmos de procesamiento de imágenes en Python.' },
             { id: 'tourist-planner', title: 'Planificador de Visitas Turísticas', description: 'Desarrollo de una aplicación web full-stack para planificar y optimizar itinerarios turísticos utilizando el algoritmo del viajante de comercio (TSP), React, Django y la API de Google Maps.' },
             { id: 'teachy-platform', title: 'Teachy: Plataforma de Aprendizaje de Idiomas', description: 'Diseño de una plataforma innovadora de aprendizaje de idiomas en línea que conecta a los estudiantes con hablantes nativos para una inmersión interactiva en vivo, cursos personalizados y recursos pedagógicos.' },
-            { id: 'biomass-co2-nareva', title: 'Captura de CO2 Biogénico y E-Fuels (Proyecto NAREVA)', description: 'Estudio de prefactibilidad técnico-económica para la captura de 150 kt/año de CO2 biogénico a partir de biomasa en Marruecos para la producción y exportación de e-metanol verde a Europa.' }
+            { id: 'biomass-co2-nareva', title: 'Captura de CO2 Biogénico y E-Fuels (Proyecto NAREVA)', description: 'Estudio de prefactibilidad técnico-económica para la captura de 150 kt/año de CO2 biogénico a partir de biomasa en Marruecos para la producción y exportación de e-metanol verde a Europa.' },
+            { id: 'sociotechnical-controversy-africa', title: 'Controversia Sociotécnica: Tecnocracia en África', description: 'Análisis exhaustivo de una controversia sociotécnica sobre el papel de la tecnocracia en el desarrollo africano, mapeando desafíos estructurales y dinámicas de actores en 5 sectores clave.' },
+            { id: 'vsm-ciam-steel', title: 'Sistemas de Producción y VSM: Planta de Acero CIAM', description: 'Diagnóstico industrial Lean y Value Stream Mapping (VSM/VSD) para la planta siderúrgica CIAM, formulando planes de acción 5S/SMED/TPM para elevar la capacidad a 1M de toneladas/año y reducir los plazos en un 75%.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocinios', description: 'Como Gerente de Patrocinios, mi responsabilidad principal es asegurar alianzas y patrocinios vitales para impulsar el impactante portafolio de hackathons estudiantiles de EJE. Busco activamente patrocinadores para eventos importantes como el Hackathon OP&X, el Hackathon de Consultoría Estratégica (SCH), el Hackathon DataQuest y el Hackathon de Finanzas. Al conectar empresas con estas plataformas, les ayudo a interactuar con los estudiantes más brillantes de Marruecos y a fomentar el desarrollo de futuros talentos.' },
@@ -405,7 +413,9 @@ const translations = {
             { id: 'robotics-vision', title: '机器人技术与图像检测', description: '开发了一个完整的具有图像检测功能的机器人系统，从在SolidWorks中进行3D建模到在Python中实现图像处理算法。' },
             { id: 'tourist-planner', title: '旅游行程规划器', description: '开发了一个全栈Web应用程序，使用旅行商问题（TSP）算法、React、Django和Google Maps API来规划和优化旅游行程。' },
             { id: 'teachy-platform', title: 'Teachy：在线语言学习平台', description: '设计了一个创新的在线语言学习平台，将语言学习者与母语者联系起来，提供实时互动沉浸式体验、个性化课程和教学资源。' },
-            { id: 'biomass-co2-nareva', title: '生物碳捕集与电子燃料合成研究（NAREVA项目）', description: '开展了从摩洛哥生物质中每年捕集15万吨生物碳用于生产绿色电子甲醇并出口欧洲的技术经济可行性前瞻研究。' }
+            { id: 'biomass-co2-nareva', title: '生物碳捕集与电子燃料合成研究（NAREVA项目）', description: '开展了从摩洛哥生物质中每年捕集15万吨生物碳用于生产绿色电子甲醇并出口欧洲的技术经济可行性前瞻研究。' },
+            { id: 'sociotechnical-controversy-africa', title: '社会技术争议研究：技术官僚与非洲发展', description: '深入开展了关于技术官僚体制是否能够赋能非洲发展的社会技术争议分析，绘制了5大关键领域的核心挑战与多方利益相关者图谱。' },
+            { id: 'vsm-ciam-steel', title: '生产系统与价值流图（VSM）：CIAM钢铁厂精益诊断', description: '对CIAM钢铁制造厂进行了工业精益诊断与价值流图（VSM/VSD）分析，制定了5S/SMED/TPM行动计划，将年产能提升至100万吨并将交付周期缩短75%。' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: '赞助经理', description: '作为赞助经理，我的核心职责是确保重要的合作伙伴关系和赞助，为EJE富有影响力的学生黑客马拉松系列活动提供支持。我积极为主要活动寻找赞助商，包括OP&X黑客马拉松、战略咨询黑客马拉松（SCH）、DataQuest黑客马拉松以及金融黑客马拉松。通过将公司与这些平台联系起来，我帮助他们接触到摩洛哥最优秀的学生，并为未来的人才发展提供动力。' },
@@ -490,7 +500,8 @@ const translations = {
             { id: 'robotics-vision', title: 'Robótica e Detecção de Imagem', description: 'Desenvolvi um sistema robótico completo com capacidades de detecção de imagem, desde a modelagem 3D no SolidWorks até a implementação de algoritmos de processamento de imagem em Python.' },
             { id: 'tourist-planner', title: 'Planificador de Visitas Turísticas', description: 'Desenvolvimento de uma aplicação web full-stack para planear e otimizar itinerários turísticos utilizando o algoritmo do caixeiro viajante (TSP), React, Django e a API do Google Maps.' },
             { id: 'teachy-platform', title: 'Teachy: Plataforma de Aprendizagem de Idiomas', description: 'Desenvolveu uma plataforma inovadora de aprendizagem de idiomas online que conecta alunos a falantes nativos para imersão interativa ao vivo, cursos personalizados e recursos pedagógicos.' },
-            { id: 'biomass-co2-nareva', title: 'Captura de CO2 Biogênico & E-Fuels (Projeto NAREVA)', description: 'Estudo de pré-viabilidade técnico-econômica para captura de 150 kt/ano de CO2 biogênico a partir de biomassa em Marrocos para produção e exportação de e-metanol verde para a Europa.' }
+            { id: 'biomass-co2-nareva', title: 'Captura de CO2 Biogênico & E-Fuels (Projeto NAREVA)', description: 'Estudo de pré-viabilidade técnico-econômica para captura de 150 kt/ano de CO2 biogênico a partir de biomassa em Marrocos para produção e exportação de e-metanol verde para a Europa.' },
+            { id: 'sociotechnical-controversy-africa', title: 'Controvérsia Sociotécnica: Tecnocracia na África', description: 'Análise aprofundada de uma controvérsia sociotécnica sobre o papel da tecnocracia no desenvolvimento africano, mapeando desafios estruturais e dinâmicas de múltiplos atores em 5 setores-chave.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocínios', description: 'Como Gerente de Patrocínios, minha principal responsabilidade é garantir parcerias e patrocínios vitais para impulsionar o portfólio impactante de hackathons estudantis da EJE. Busco ativamente patrocinadores para grandes eventos, incluindo o Hackathon OP&X, o Hackathon de Consultoria Estratégica (SCH), o Hackathon DataQuest e o Hackathon de Finanças. Ao conectar empresas a essas plataformas, ajudo-as a interagir com os estudantes mais brilhantes de Marrocos e a impulsionar o desenvolvimento de futuros talentos.' },
@@ -567,7 +578,9 @@ const translations = {
             { id: 'robotics-vision', title: 'Robotik und Bilderkennung', description: 'Entwicklung eines kompletten Robotersystems mit Bilderkennungsfunktionen, von der 3D-Modellierung in SolidWorks bis zur Implementierung von Bildverarbeitungsalgorithmen in Python.' },
             { id: 'tourist-planner', title: 'Touristischer Besuchsplaner', description: 'Entwicklung einer Full-Stack-Webanwendung zur Planung und Optimierung touristischer Reiserouten mit dem Algorithmus des Handlungsreisenden (TSP), React, Django und der Google Maps API.' },
             { id: 'teachy-platform', title: 'Teachy: Online-Sprachlernplattform', description: 'Entwicklung einer innovativen Online-Sprachlernplattform, die Lernende mit Muttersprachlern für interaktive Live-Immersion, personalisierte Kurse und pädagogische Ressourcen verbindet.' },
-            { id: 'biomass-co2-nareva', title: 'Biogene CO2-Abscheidung & E-Fuels (NAREVA-Projekt)', description: 'Technisch-ökonomische Machbarkeitsstudie zur Abscheidung von 150 kt/Jahr biogenem CO2 aus Biomasse in Marokko zur Produktion und zum Export von grünem E-Methanol nach Europa.' }
+            { id: 'biomass-co2-nareva', title: 'Biogene CO2-Abscheidung & E-Fuels (NAREVA-Projekt)', description: 'Technisch-ökonomische Machbarkeitsstudie zur Abscheidung von 150 kt/Jahr biogenem CO2 aus Biomasse in Marokko zur Produktion und zum Export von grünem E-Methanol nach Europa.' },
+            { id: 'sociotechnical-controversy-africa', title: 'Soziotechnische Kontroverse: Technokratie in Afrika', description: 'Tiefgehende Analyse einer soziotechnischen Kontroverse zur Frage, ob Technokratie einen Entwicklungsimpuls für Afrika darstellt, mit systematischer Kartierung von Herausforderungen und Akteuren in 5 Kernsektoren.' },
+            { id: 'vsm-ciam-steel', title: 'Produktionssysteme & VSM: CIAM Stahlwerk', description: 'Industrielle Lean-Diagnose und Value Stream Mapping (VSM/VSD) für das CIAM-Stahlwerk mit 5S/SMED/TPM-Maßnahmenplänen zur Steigerung der Jahreskapazität auf 1M Tonnen und Reduzierung der Lieferzeiten um 75%.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsoring-Manager', description: 'Als Sponsoring-Manager liegt meine Hauptverantwortung in der Sicherung wichtiger Partnerschaften und Sponsorings zur Finanzierung der studentischen Hackathons von EJE. Ich suche aktiv Sponsoren für Großveranstaltungen wie den OP&X Hackathon, den Strategic Consulting Hackathon (SCH), den DataQuest Hackathon und den Finance Hackathon. Durch die Verbindung von Unternehmen mit diesen Plattformen helfe ich ihnen, mit Marokkos klügsten Köpfen in Kontakt zu treten.' },
@@ -602,7 +615,7 @@ const projectsData = [
         id: 'red-fruit-optimization', 
         date: '2024-01', 
         technologies: ['Linear Programming', 'Python', 'Pulp', 'Optimization Modeling', 'Algorithm Design'], 
-        githubUrl: 'https://github.com/mohammed-el-baraka/red-fruit-optimization',
+        githubUrl: '',
         demoUrl: '',
         metric: '+18.5% Greenhouse Margin Gain',
         reportUrl: 'https://drive.google.com/file/d/1pU34qkKTJsIPJPAfX8AUcACUQAjINbOG/view?usp=sharing', 
@@ -662,7 +675,7 @@ const projectsData = [
         id: 'biomedical-diffusion', 
         date: '2023-12', 
         technologies: ['Mathematical Modeling', 'Numerical Methods', 'Python', 'NumPy', 'SciPy', 'Matplotlib'], 
-        githubUrl: 'https://github.com/mohammed-el-baraka/biomedical-acinus-diffusion',
+        githubUrl: '',
         demoUrl: '',
         metric: '2D Finite-Difference PDE Solver',
         reportUrl: 'https://drive.google.com/file/d/1X9aQBQ8qnkGaZF9ZD9vQb4T_A_D5GYnT/view?usp=sharing', 
@@ -670,9 +683,9 @@ const projectsData = [
     },
     { 
         id: 'robotics-vision', 
-        date: '2022-06', 
+        date: '2024-07', 
         technologies: ['Robotics', 'Python', 'Image Detection', 'SolidWorks', 'OpenCV'], 
-        githubUrl: 'https://github.com/mohammed-el-baraka/robotics-computer-vision',
+        githubUrl: '',
         demoUrl: '',
         metric: '60 FPS Real-time Detection',
         reportUrl: 'https://drive.google.com/file/d/148jUa5mRyydjS2Ht8fpk8rGQDJ9yQJok/view?usp=sharing', 
@@ -709,6 +722,25 @@ const projectsData = [
         metric: '150 kt/yr CO2 & 103.8 kt/yr E-Methanol Model',
         reportUrl: '', 
         presentationUrl: 'https://drive.google.com/file/d/1vWQIe7tKa1JjmLsIIkTGLtcJV9Uu2SEC/view?usp=sharing' 
+    },
+    { 
+        id: 'sociotechnical-controversy-africa', 
+        date: '2024-05', 
+        technologies: ['Sociotechnical Analysis', 'Actor Mapping', 'African Development', 'Public Policy', 'Mind Mapping', 'Controversy Analysis'], 
+        githubUrl: '',
+        demoUrl: '',
+        metric: 'Actor & Structural Mapping (5 Key Domains)',
+        posterUrl: 'https://drive.google.com/file/d/1WbWFi6vvneAoW5yRZXOOzzP0P5-jGIDm/view?usp=sharing' 
+    },
+    { 
+        id: 'vsm-ciam-steel', 
+        date: '2024-04', 
+        technologies: ['Lean Manufacturing', 'Value Stream Mapping (VSM)', 'Value Stream Design (VSD)', 'Production Systems', 'Ishikawa (5M)', 'Industrial Logistics', 'Takt Time & OEE', 'Supply Chain Optimization'], 
+        githubUrl: '',
+        demoUrl: '',
+        metric: '+19% Capacity (1M t/yr) & -75% Lead Time',
+        reportUrl: '', 
+        presentationUrl: '' 
     }
 ];
 
@@ -1557,5 +1589,161 @@ $$\\text{CO}_2 + 3\\text{H}_2 \\xrightarrow{\\text{Catalyseur Cu/ZnO/Al}_2\\text
 L'étude valide la faisabilité technico-économique de l'écosystème proposé :
 1. **Source :** Fumier bovin collecté dans l'axe Casablanca-Rabat-Gharb (7.8 M$/an).
 2. **Captage :** Centrale CHP biomasse post-combustion aux amines (17.7 M$/an amorti, $119/t $CO_2$).
-3. **Synthèse Power-to-X :** Production de 103.8 kt/an d'e-méthanol vert prêt à l'export vers les hubs maritimes et industriels européens.`
+3. **Synthèse Power-to-X :** Production de 103.8 kt/an d'e-méthanol vert prêt à l'export vers les hubs maritimes et industriels européens.`,
+
+    'sociotechnical-controversy-africa': `# Carte Mentale / Poster : Controverse Sociotechnique
+
+**Sujet de recherche :** *« Est-ce que la technocratie est le nouveau souffle du développement africain ? »*  
+**Auteurs / Réalisé par :** BOULLAM Zakaria, LOTFI Imad, BELLOUAHI Mohamed, MHAIDI El Mehdi, EL BARAKA Mohammed  
+**Institution :** UM6P - EMINES (School of Industrial Management)  
+**Date :** Mai 2024  
+**Discipline :** Analyse des Controverses Sociotechniques & Développement Économique  
+
+---
+
+## 1. Définition & Cadrage de la Controverse
+
+### 1.1 Qu'est-ce que la Technocratie ?
+La technocratie est une forme de gouvernement et de prise de décision où la place des **experts techniques**, ingénieurs, économistes et scientifiques est centrale. Les décisions reposent sur des données empiriques, des modèles analytiques et des méthodologies rationnelles plutôt que sur des arbitrages partisans.
+* **Le profil technocratique exclut :** les politiciens de carrière, les idéologues partisans, les polémistes et les figures purement médiatiques.
+
+### 1.2 La Tension Centrale (Amorce)
+La technocratie oscille en Afrique entre deux pôles :
+1. **La louange :** Reconnue pour son efficacité opérationnelle, sa rigueur d'ingénierie et sa capacité à résoudre des problèmes d'infrastructures et de gestion de crise complexes.
+2. **La critique :** Décriée pour son risque de déficit démocratique, son risque d'élitisme et son potentiel aveuglement face aux réalités sociales, culturelles et humaines des populations locales.
+
+---
+
+## 2. Cartographie des Défis & Axes de Développement
+
+### A. Faible Croissance Économique
+* Instabilité de la gouvernance et volatilité institutionnelle.
+* Non-diversification des secteurs économiques et dépendance aux matières premières.
+* Sous-investissement chronique dans le capital humain et l'enseignement supérieur.
+* Incohésion sociale et fragilité des processus de réconciliation nationale.
+* Gestion conflictuelle et non planifiée des ressources naturelles.
+* Présence de corruption systémique entravant les investissements productifs.
+
+### B. Sécurité Alimentaire & Agriculture
+* Manque critique d'infrastructures logistiques pour le transport et la conservation des denrées.
+* Faible industrialisation du secteur agricole et dépendance aux méthodes traditionnelles.
+* Vulnérabilité extrême face aux chocs climatiques (sécheresses, inondations).
+* Trappes de pauvreté limitant l'accès aux intrants modernes et aux investissements technologiques.
+
+### C. Conflits Politiques & Souveraineté
+* Déficit de pression et de régulation internationale efficace.
+* Dépendance financière et stratégique vis-à-vis des institutions non-africaines.
+* Mauvaise gestion des tensions territoriales et politiques héritées de l'histoire.
+* Faiblesse de l'intégration économique et de l'esprit d'unité panafricaine.
+
+### D. Cohésion Sociale & Éducation
+* Taux d'analphabétisme élevé et inégalités d'accès à une formation de qualité.
+* Érosion des budgets sociaux due aux arbitrages macroéconomiques restrictifs.
+* Fractures territoriales et disparités d'infrastructures entre métropoles et zones rurales.
+* Tensions intercommunautaires exploitées lors des crises économiques.
+
+### E. Santé Publique & Résilience Sanitaire
+* Faiblesse de l'engagement politique prioritaire pour la santé universelle.
+* Sous-investissement chronique dans les infrastructures hospitalières.
+* Déficit en équipements médicaux de pointe et en chaînes d'approvisionnement pharmaceutiques locales.
+* Fuite des cerveaux médicaux et inégalités majeures d'accès aux soins.
+
+---
+
+## 3. Cartographie Multi-Acteurs
+
+| Catégorie d'Acteurs | Exemples & Rôles |
+| :--- | :--- |
+| **Technocrates de Formation & Praticiens** | <ul><li>**Ingénieurs d'iCow :** Agritech mobile révolutionnant l'élevage au Kenya</li><li>**Mehdi Jomaa :** Premier ministre technocrate de transition en Tunisie</li><li>**Hazim El Beblawi :** Économiste et chef de gouvernement égyptien</li><li>**Paul Kagame :** Modèle de planification méthodique et de digitalisation au Rwanda</li><li>**Zweli Mkhize :** Médecin et gestionnaire de crise sanitaire en Afrique du Sud</li><li>**Fouzi Lekjaa :** Haut fonctionnaire du budget et bâtisseur d'infrastructures sportives au Maroc</li></ul> |
+| **Figures Politiques, Sportives & Société Civile** | <ul><li>**George Weah / Nelson Mandela :** Légitimité charismatique et réconciliation</li><li>**Walid Regragui :** Management humain, leadership et cohésion d'équipe</li><li>**Haile Gebrselassie / Didier Drogba / Samuel Eto'o :** Investissements philanthropiques et influence sociale</li><li>**Muhammadu Buhari / Mokgweetsi Masisi :** Politiques institutionnelles traditionnelles</li></ul> |
+| **Organisations Intergouvernementales & Régionales** | <ul><li>**Union Africaine (UA) & CEDEAO :** Intégration économique et cadre de gouvernance</li><li>**IGAD & SADC :** Coopération régionale et résolution de conflits</li><li>**ONU & OMS (WHO) :** Normes sanitaires internationales et soutien au développement</li><li>**PPAAO & AGRA :** Programmes d'accélération de la productivité agricole africaine</li></ul> |
+
+---
+
+## 4. Synthèse & Conclusion
+
+La technocratie ne constitue pas une panacée isolée mais un **levier d'accélération indispensable** lorsqu'elle s'articule avec des institutions démocratiques inclusives, garantissant une vision technique d'excellence au service de la justice sociale et du progrès humain en Afrique.`,
+
+    'vsm-ciam-steel': `# Système de Production et Logistique : Value Stream Mapping — Usine CIAM
+
+**Institution :** EMINES – School of Industrial Management  
+**Discipline :** Systèmes de Production, Logistique Industrielle & Lean Manufacturing  
+**Date :** Avril 2024  
+**Équipe de projet :** ElMahdi ELBAKKAR, Abderrahman YOUSFI, Adam EL YAAGOUBI, Mohammed EL BARAKA, Amine ENNADZIM, Samia AMAHMID, Hamza ELMORJANI, Zakaria ET TORI, ElMehdi ER-RAGABI, Ammar HADDAD  
+
+---
+
+## 1. Présentation de l'Entreprise & Enjeux Industriels
+
+### 1.1 Contexte Industriel de l'Usine CIAM
+L'usine sidérurgique CIAM est spécialisée dans la transformation de billettes d'acier en produits laminés marchands :
+* **Matières premières :** Billettes d’acier (60% importées via le port, 40% approvisionnement local).
+* **Produits finis :** Ronds à béton et fils de machine destinés à l'industrie automobile, au BTP et à la construction.
+* **Capacité actuelle :** **840 000 tonnes / an**.
+* **Demande prévisionnelle du marché :** **1 000 000 tonnes / an** (+19% de croissance à absorber).
+
+### 1.2 Matrice des Objectifs Stratégiques
+
+| Axe de Performance | Situation Initiale | Objectif Cible VSD |
+| :--- | :--- | :--- |
+| **Capacité annuelle** | 840 000 tonnes/an | **1 000 000 tonnes/an (+19%)** |
+| **Délais de livraison** | 5 semaines | **1,25 semaine (-75%)** |
+| **Ratio Temps Valeur Ajoutée (VA)** | **40% VA** (60% Non-VA) | **> 75% Temps VA** |
+| **Disponibilité des équipements critiques** | Ripeur à 50%, compacteuse instable | **Taux de Rendement Synthétique (TRS) > 85%** |
+| **Stocks intermédiaires (WIP)** | Encombrement et stocks de crochets saturés | **Flux tiré / Juste-à-Temps piloté par ERP** |
+| **Conformité Qualité Nuances F3/F4** | Taux d'échec traction jusqu'à 44% | **Zéro Défaut / Taux de conformité > 98%** |
+
+---
+
+## 2. Diagnostic Qualité & Propriétés Mécaniques
+
+Tests de caractérisation mécanique normalisés réalisés sur les deux nuances phares :
+* $R_e$ : Limite supérieure d'écoulement ($N/mm^2$)
+* $R_m$ : Résistance à la traction ($N/mm^2$)
+* $A(\%)$ : Allongement à la rupture sur $L_0 = 5d$
+
+| Nuance d'Acier | Limite d'écoulement $R_e$ | Résistance à la Traction $R_m$ | Allongement à la Rupture $A(\%)$ |
+| :--- | :---: | :---: | :---: |
+| **Nuance F3** | **100% Conforme** | **71% Conforme** (29% Rebuts) | **98% Conforme** (2% Rebuts) |
+| **Nuance F4** | **69% Conforme** (31% Rebuts) | **56% Conforme** (44% Rebuts) | **80% Conforme** (20% Rebuts) |
+
+*Causes racines identifiées :* Manque de régulation thermique du four de préchauffage, déviations géométriques au laminage primaire et fortes vibrations du train finisseur.
+
+---
+
+## 3. Value Stream Mapping (VSM — Cartographie de l'État Actuel)
+
+$$\\text{Takt Time} = \\frac{\\text{Temps d'ouverture hebdomadaire}}{\\text{Demande hebdomadaire}}$$
+
+* **Goulot d'étranglement majeur :** Capacité thermique et temps d'enfournement/défournement du four ($>\\text{Takt Time}$).
+* **Pertes de flux majeures :**
+  1. *Amont :* Ripeur de transfert sous-dimensionné (disponibilité 50%).
+  2. *Laminoir :* Pannes récurrentes, déviations train primaire, absence d'amortissement de vibrations sur train finisseur.
+  3. *Zone aval :* Défaillances répétées de la compacteuse entraînant des retouches manuelles et rupture récurrente d'étiquetage.
+  4. *Flux d'information :* Ordonnancement manuel et absence de synchronisation entre service commercial et gestion de production.
+
+---
+
+## 4. Analyse des Causes Racines : Ishikawa & Diagramme des 5M
+
+### 4.1 Ishikawa Synthétique (Délai, Qualité, Coût)
+* **Milieu :** Pénibilité thermique, encombrement par déchets métalliques, dispersion spatiale des parcs de stockage.
+* **Matière :** Variations dimensionnelles et chimiques des billettes importées, déformations lors du transport portuaire.
+* **Machines :** Pannes imprévisibles, désynchronisation des cadences, manque de capteurs temps réel (IoT).
+* **Méthodes :** Absence de SMED pour les changements de gamme, procédures administratives manuelles lentes, gestion anarchique des crochets de transit.
+* **Main d'œuvre :** Déplacements inutiles, retards de coordination Maintenance-Production, formation insuffisante aux nouveaux standards.
+
+---
+
+## 5. Plan d'Action Structuré & Value Stream Design (VSD)
+
+### 5.1 Plan d'Action par Horizon
+* **Court Terme (Quick Wins) :** Déploiement des chantiers **5S**, application de la méthode **SMED** sur les cisailles/outils de coupe, maintenance préventive systématique sur le ripeur et la compacteuse, élimination des stocks dormants.
+* **Moyen Terme :** Réingénierie des flux de transfert, installation d'échangeurs pour la **récupération de chaleur fatale du four**, standardisation des contrôles qualité à réception.
+* **Long Terme :** Implémentation d'un **ERP industriel intégré**, automatisation du cerclage/étiquetage RFID, intégration d'infrastructures de **cogénération énergétique** et ajout d'un ripeur redondant.
+
+### 5.2 Résultats Attendus de l'État Futur Cible (VSD)
+1. Atteinte de la cible annuelle de **1 000 000 tonnes/an** sans surcoût d'exploitation majeur.
+2. Compression du Lead Time de **5 semaines à 1,25 semaine** (-75%).
+3. Élimination des goulots thermiques et mécaniques, propulsant le taux de VA à plus de **75%**.`
 };

@@ -77,7 +77,8 @@ const translations = {
              { id: 'renault5-electric-marketing', title: 'Renault 5 E-Tech 100% Electric: Marketing Strategy & Market Penetration', description: 'Conducted comprehensive marketing strategy, competitive benchmarking against Dacia/Peugeot/Fiat/BYD, customer persona segmentation, and macroeconomic EV sales forecasting (2026–2030 scaling to 8.75B MAD) for the Moroccan launch of the Renault 5 E-Tech.' },
              { id: 'mitsubishi-strategic-analysis', title: 'Strategic Management & SDV Pivot: Mitsubishi Motors Corporation', description: 'Conducted an in-depth corporate strategy audit of Mitsubishi Motors Corporation within the Renault-Nissan-Mitsubishi Alliance, analyzing its business model, ASEAN market leadership, PESTEL/Porter/SWOT dynamics, and formulating its Software-Defined Vehicle (SDV) & BEV transition roadmap.' },
              { id: 'wireless-pentest-ceh', title: 'Wireless Network Security & Penetration Testing (CEH Lab)', description: 'Conducted offensive Wi-Fi auditing and cryptographic analysis in a CEH lab covering WEP RC4 IV cracking, WPA2 4-Way Handshake capture via deauthentication, Evil Twin rogue APs with captive portals (Fluxion), Wireshark 802.11 forensics, and WPA3-SAE / 802.1X enterprise hardening.' },
-             { id: 'managerial-accounting-formaction', title: 'Management Accounting & Cost Control: ABC Modeling (FORMACTION)', description: 'Conducted full-scale Activity-Based Costing (ABC) and Direct Costing Évolué modeling for training institute FORMACTION (€678.7k revenue across 187 trainees), optimizing contribution margins and proving strategic retention of public-funded programs.' }
+             { id: 'managerial-accounting-formaction', title: 'Management Accounting & Cost Control: ABC Modeling (FORMACTION)', description: 'Conducted full-scale Activity-Based Costing (ABC) and Direct Costing Évolué modeling for training institute FORMACTION (€678.7k revenue across 187 trainees), optimizing contribution margins and proving strategic retention of public-funded programs.' },
+             { id: 'sap-s4hana-production-planning', title: 'SAP S/4HANA Production Planning & Industrial ERP (Global Bike Inc.)', description: 'Mastered full-lifecycle production planning and execution in SAP S/4HANA for Global Bike Inc., configuring multi-level BOMs, work centers, routings, standard costing (CK11N), SOP/MRP pyramids, MTS (Strategy 40) vs. ATO (Strategy 82), and shop floor execution.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsorship Manager', description: 'As Sponsorship Manager, my core responsibility is securing vital partnerships and sponsorships to power EJE\'s impactful portfolio of student hackathons. I actively seek sponsors for major events including the OP&X Hackathon, Strategic Consulting Hackathon (SCH), DataQuest Hackathon, and the Finance Hackathon. By connecting companies with these platforms, I help them engage Morocco\'s brightest students and fuel future talent development.' },
@@ -174,7 +175,8 @@ const translations = {
             { id: 'renault5-electric-marketing', title: 'Renault 5 E-Tech 100% Électrique : Stratégie Marketing & Pénétration de Marché', description: 'Élaboration de la stratégie marketing, positionnement concurrentiel (Dacia Spring, Peugeot e-208, Fiat 600e, BYD Atto 3), segmentation personas et projections de marché 2026–2030 (marché à 8,75 Mds MAD) pour le lancement de la Renault 5 E-Tech au Maroc.' },
             { id: 'mitsubishi-strategic-analysis', title: 'Analyse Stratégique : Mitsubishi Motors Corporation & Virage SDV', description: 'Audit stratégique approfondi de Mitsubishi Motors Corporation au sein de l\'Alliance Renault-Nissan-Mitsubishi, analysant le modèle économique, le leadership ASEAN, le diagnostic PESTEL/Porter/SWOT et la feuille de route vers le Software-Defined Vehicle (SDV) et le 100% électrique.' },
             { id: 'wireless-pentest-ceh', title: 'Sécurité des Réseaux Sans Fil & Tests d\'Intrusion (Laboratoire CEH)', description: 'Audit de sécurité offensif et analyse cryptographique des réseaux sans fil (Laboratoire CEH) : craquage WEP RC4, capture du 4-Way Handshake WPA2 par déauthentification, attaques Evil Twin à portail captif (Fluxion), forensics Wireshark 802.11 et durcissement WPA3-SAE / 802.1X EAP-TLS.' },
-            { id: 'managerial-accounting-formaction', title: 'Comptabilité Analytique & Contrôle de Gestion : Modélisation ABC (FORMACTION)', description: 'Modélisation des coûts par la méthode ABC (Activity-Based Costing) et Direct Costing Évolué pour l\'organisme FORMACTION (678,7 k€ de CA sur 187 stagiaires), analysant les marges de contribution et démontrant l\'intérêt stratégique du maintien des filières.' }
+            { id: 'managerial-accounting-formaction', title: 'Comptabilité Analytique & Contrôle de Gestion : Modélisation ABC (FORMACTION)', description: 'Modélisation des coûts par la méthode ABC (Activity-Based Costing) et Direct Costing Évolué pour l\'organisme FORMACTION (678,7 k€ de CA sur 187 stagiaires), analysant les marges de contribution et démontrant l\'intérêt stratégique du maintien des filières.' },
+            { id: 'sap-s4hana-production-planning', title: 'Planification et Gestion de Production sous SAP S/4HANA (Global Bike Inc.)', description: 'Mise en œuvre intégrale de la planification et de la gestion de production sous SAP S/4HANA pour Global Bike Inc. : paramétrage Master Data (nomenclatures multi-niveaux, gammes, postes de travail), calcul du coût de revient (CK11N), pyramide PIC/PDP/MRP, stratégies MTS (40) vs ATO (82) et boucle d\'exécution atelier.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Responsable Sponsoring', description: 'En tant que Responsable Sponsoring, ma responsabilité principale est de sécuriser des partenariats et des sponsorings essentiels pour alimenter le portefeuille percutant de hackathons étudiants d\'EJE. Je recherche activement des sponsors pour des événements majeurs tels que le Hackathon OP&X, le Hackathon de Conseil Stratégique (SCH), le Hackathon DataQuest et le Hackathon Finance. En connectant les entreprises à ces plateformes, je les aide à interagir avec les étudiants les plus brillants du Maroc et à stimuler le développement des futurs talents.' },
@@ -271,7 +273,8 @@ const translations = {
              { id: 'renault5-electric-marketing', title: 'رينو 5 إي-تيك الكهربائية 100%: استراتيجية التسويق واختراق السوق', description: 'إعداد استراتيجية تسويقية متكاملة، ودراسة مقارنة تنافسية (Dacia Spring, Peugeot e-208, Fiat 600e, BYD Atto 3)، وتحديد شرائح العملاء وتوقعات نمو سوق السيارات الكهربائية في المغرب للفترة 2026-2030 لتصل إلى 8.75 مليار درهم.' },
              { id: 'mitsubishi-strategic-analysis', title: 'التحليل الاستراتيجي: شركة ميتسوبيشي موتورز والتحول نحو المركبات المعرفة برمجياً', description: 'تدقيق استراتيجي شامل لشركة ميتسوبيشي موتورز ضمن تحالف رينو-نيسان-ميتسوبيشي، مع تحليل نموذج الأعمال وريادة سوق آسيان ومصفوفات PESTEL وبورتر وSWOT، وصياغة خارطة طريق التحول نحو المركبات المحددة بالبرمجيات (SDV) والمركبات الكهربائية.' },
              { id: 'wireless-pentest-ceh', title: 'أمن الشبكات اللاسلكية واختبار الاختراق (مختبر الهاكر الأخلاقي المعتمد CEH)', description: 'تدقيق أمني هجومي وتحليل تشفيري لشبكات الواي فاي (مختبر CEH) شمل كسر تشفير WEP RC4، واعتراض مصافحة WPA2 الرباعية عبر هجمات إلغاء المصادقة، وهجمات Evil Twin عبر بوابات Fluxion، وتحليل الحزم عبر Wireshark، وتطبيق حماية WPA3-SAE و802.1X.' },
-             { id: 'managerial-accounting-formaction', title: 'المحاسبة التحليلية ومراقبة التسيير: نمذجة التكاليف على أساس الأنشطة ABC (مؤسسة FORMACTION)', description: 'نمذجة متقدمة لمحاسبة التكاليف عبر منهجية التكلفة على أساس الأنشطة (ABC) ونظام التكلفة المباشرة المتطورة لمؤسسة FORMACTION (رقم معاملات 678.7 ألف يورو عبر 187 متدرباً) لتحليل هوامش المساهمة وتوجيه القرارات الإدارية.' }
+             { id: 'managerial-accounting-formaction', title: 'المحاسبة التحليلية ومراقبة التسيير: نمذجة التكاليف على أساس الأنشطة ABC (مؤسسة FORMACTION)', description: 'نمذجة متقدمة لمحاسبة التكاليف عبر منهجية التكلفة على أساس الأنشطة (ABC) ونظام التكلفة المباشرة المتطورة لمؤسسة FORMACTION (رقم معاملات 678.7 ألف يورو عبر 187 متدرباً) لتحليل هوامش المساهمة وتوجيه القرارات الإدارية.' },
+             { id: 'sap-s4hana-production-planning', title: 'تخطيط وإدارة الإنتاج عبر نظام SAP S/4HANA (شركة Global Bike Inc.)', description: 'تنفيذ وتكوين دورة تخطيط وإدارة الإنتاج الصناعي المتكاملة عبر نظام SAP S/4HANA لشركة Global Bike Inc.، مع ضبط البيانات الأساسية (هياكل المنتجات، مسارات التصنيع، مراكز العمل)، وحساب تكاليف الإنتاج المعيارية (CK11N)، وتطبيق استراتيجيات الصنع للمخزون (MTS) والتجميع حسب الطلب (ATO).' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'EJE', role: 'مدير الرعاية', description: 'بصفتي مدير الرعاية، تتمثل مسؤوليتي الأساسية في تأمين الشراكات والرعاية الحيوية لدعم محفظة EJE المؤثرة من مسابقات البرمجة الطلابية. أبحث عن رعاة للأحداث الكبرى بما في ذلك مسابقة البرمجة OP&X Hackathon ومسابقة البرمجة الاستشارية الاستراتيجية (SCH) ومسابقة البرمجة DataQuest Hackathon ومسابقة البرمجة المالية Finance Hackathon. من خلال ربط الشركات بهذه المنصات، أساعدها على جذب ألمع الطلاب المغاربة ودعم تنمية المواهب المستقبلية.' },
@@ -368,7 +371,8 @@ const translations = {
             { id: 'renault5-electric-marketing', title: 'Renault 5 E-Tech 100% Eléctrico: Estrategia de Marketing y Penetración de Mercado', description: 'Elaboración de la estrategia de marketing, posicionamiento competitivo frente a Dacia/Peugeot/Fiat/BYD, segmentación de personas y proyecciones de ventas de vehículos eléctricos 2026–2030 (mercado de 8.750 millones MAD) para el lanzamiento del Renault 5 E-Tech en Marruecos.' },
             { id: 'mitsubishi-strategic-analysis', title: 'Análisis Estratégico: Mitsubishi Motors Corporation y Viraje SDV', description: 'Auditoría estratégica corporativa de Mitsubishi Motors dentro de la Alianza Renault-Nissan-Mitsubishi, evaluando su modelo de negocio, liderazgo en ASEAN, diagnóstico PESTEL/Porter/SWOT y su hoja de ruta hacia Vehículos Definidos por Software (SDV) y electrificación BEV.' },
             { id: 'wireless-pentest-ceh', title: 'Seguridad de Redes Inalámbricas y Pruebas de Penetración (Laboratorio CEH)', description: 'Auditoría ofensiva y análisis criptográfico de redes Wi-Fi (Laboratorio CEH): descifrado de WEP RC4, captura del 4-Way Handshake de WPA2 mediante desautenticación, ataques Evil Twin con portales cautivos (Fluxion), análisis forense 802.11 con Wireshark y blindaje empresarial WPA3-SAE / 802.1X.' },
-            { id: 'managerial-accounting-formaction', title: 'Contabilidad Analítica y Control de Gestión: Modelado ABC (FORMACTION)', description: 'Modelado integral de costes mediante Activity-Based Costing (ABC) y Direct Costing Evolucionado para el centro FORMACTION (678,7 k€ de ingresos sobre 187 alumnos), optimizando márgenes de contribución y auditando la rentabilidad de programas formativos.' }
+            { id: 'managerial-accounting-formaction', title: 'Contabilidad Analítica y Control de Gestión: Modelado ABC (FORMACTION)', description: 'Modelado integral de costes mediante Activity-Based Costing (ABC) y Direct Costing Evolucionado para el centro FORMACTION (678,7 k€ de ingresos sobre 187 alumnos), optimizando márgenes de contribución y auditando la rentabilidad de programas formativos.' },
+            { id: 'sap-s4hana-production-planning', title: 'Planificación y Gestión de Producción en SAP S/4HANA (Global Bike Inc.)', description: 'Implementación y configuración integral del ciclo de planificación y ejecución de producción en SAP S/4HANA para Global Bike Inc., parametrizando listas de materiales (BOM), puestos de trabajo, rutas, cálculo de costes estándar (CK11N), pirámide SOP/MRP y estrategias MTS frente a ATO.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocinios', description: 'Como Gerente de Patrocinios, mi responsabilidad principal es asegurar alianzas y patrocinios vitales para impulsar el impactante portafolio de hackathons estudiantiles de EJE. Busco activamente patrocinadores para eventos importantes como el Hackathon OP&X, el Hackathon de Consultoría Estratégica (SCH), el Hackathon DataQuest y el Hackathon de Finanzas. Al conectar empresas con estas plataformas, les ayudo a interactuar con los estudiantes más brillantes de Marruecos y a fomentar el desarrollo de futuros talentos.' },
@@ -465,7 +469,8 @@ const translations = {
             { id: 'renault5-electric-marketing', title: '雷诺5 E-Tech纯电动汽车：摩洛哥市场营销战略与渗透预测（2026–2030）', description: '针对雷诺5 E-Tech纯电动汽车在摩洛哥的上市开展全方位市场营销战略设计、与达契亚/标致/菲亚特/比亚迪的深度竞品对标、用户画像与细分市场定位，以及2026–2030年规模达87.5亿迪拉姆的宏观电动车销量预测。' },
             { id: 'mitsubishi-strategic-analysis', title: '企业战略管理与软件定义汽车（SDV）转型：三菱汽车公司深度分析', description: '对雷诺-日产-三菱联盟框架下的三菱汽车公司开展深度企业战略审计，系统解析商业模式画布、东盟（ASEAN）市场主导地位、PESTEL/波特五力/SWOT全景诊断，并制定软件定义汽车（SDV）与纯电BEV转型路线图。' },
             { id: 'wireless-pentest-ceh', title: '无线网络安全与渗透测试攻防实践（CEH道德黑客实战实验室）', description: '在CEH道德黑客实验室内开展无线网络攻防与密码学深度剖析：涵盖WEP RC4弱IV破解、WPA2四次握手包重放捕获、Fluxion流氓AP钓鱼门户（Evil Twin）、Wireshark 802.11无线报文取证，以及WPA3-SAE / 802.1X RADIUS纵深防御架构。' },
-            { id: 'managerial-accounting-formaction', title: '管理会计与成本控制：作业成本法（ABC）与边际贡献建模（FORMACTION案例）', description: '针对法国职业培训机构FORMACTION（年营收67.87万欧元，覆盖187名学员）开展全流程作业成本法（ABC）与演进直接成本法建模，深度解析成本动因、分部边际贡献率，并提供关键业务保留决策支持。' }
+            { id: 'managerial-accounting-formaction', title: '管理会计与成本控制：作业成本法（ABC）与边际贡献建模（FORMACTION案例）', description: '针对法国职业培训机构FORMACTION（年营收67.87万欧元，覆盖187名学员）开展全流程作业成本法（ABC）与演进直接成本法建模，深度解析成本动因、分部边际贡献率，并提供关键业务保留决策支持。' },
+            { id: 'sap-s4hana-production-planning', title: 'SAP S/4HANA工业生产计划与ERP端到端智造实践（Global Bike案例）', description: '在SAP S/4HANA工业制造系统中完成全流程生产计划与车间执行落地：端到端配置多级BOM、工作中心、工艺路线、标准成本核算（CK11N）、SOP/MRP计划金字塔，深入对比按库存生产（MTS-40）与按订单装配（ATO-82）策略。' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: '赞助经理', description: '作为赞助经理，我的核心职责是确保重要的合作伙伴关系和赞助，为EJE富有影响力的学生黑客马拉松系列活动提供支持。我积极为主要活动寻找赞助商，包括OP&X黑客马拉松、战略咨询黑客马拉松（SCH）、DataQuest黑客马拉松以及金融黑客马拉松。通过将公司与这些平台联系起来，我帮助他们接触到摩洛哥最优秀的学生，并为未来的人才发展提供动力。' },
@@ -559,7 +564,8 @@ const translations = {
             { id: 'renault5-electric-marketing', title: 'Renault 5 E-Tech 100% Elétrico: Estratégia de Marketing e Penetração de Mercado', description: 'Elaboração da estratégia de marketing, posicionamento competitivo contra Dacia/Peugeot/Fiat/BYD, segmentação de personas e projeções de vendas de veículos elétricos 2026–2030 (mercado de 8,75 bilhões MAD) para o lançamento do Renault 5 E-Tech em Marrocos.' },
             { id: 'mitsubishi-strategic-analysis', title: 'Análise Estratégica: Mitsubishi Motors Corporation e Transição SDV', description: 'Auditoria estratégica corporativa da Mitsubishi Motors Corporation na Aliança Renault-Nissan-Mitsubishi, analisando o modelo de negócios, liderança na ASEAN, diagnóstico PESTEL/Porter/SWOT e o roteiro para Veículos Definidos por Software (SDV) e BEV.' },
             { id: 'wireless-pentest-ceh', title: 'Segurança de Redes Sem Fio e Testes de Intrusão (Laboratório CEH)', description: 'Auditoria ofensiva e análise criptográfica de redes sem fio (Laboratório CEH): quebra de WEP RC4, captura de 4-Way Handshake WPA2 por desautenticação, ataques Evil Twin com portais cativos (Fluxion), perícia forense 802.11 com Wireshark e defesa WPA3-SAE / 802.1X.' },
-            { id: 'managerial-accounting-formaction', title: 'Contabilidade Analítica e Controlo de Gestão: Modelagem ABC (FORMACTION)', description: 'Modelagem de custos pelo método ABC (Activity-Based Costing) e Direct Costing Evoluído para a instituição FORMACTION (678,7 mil € de receita sobre 187 formandos), analisando margens de contribuição e auditando a rentabilidade estratégica.' }
+            { id: 'managerial-accounting-formaction', title: 'Contabilidade Analítica e Controlo de Gestão: Modelagem ABC (FORMACTION)', description: 'Modelagem de custos pelo método ABC (Activity-Based Costing) e Direct Costing Evoluído para a instituição FORMACTION (678,7 mil € de receita sobre 187 formandos), analisando margens de contribuição e auditando a rentabilidade estratégica.' },
+            { id: 'sap-s4hana-production-planning', title: 'Planeamento e Gestão de Produção em SAP S/4HANA (Global Bike Inc.)', description: 'Implementação e configuração integral do ciclo de planeamento e execução de produção no SAP S/4HANA para a Global Bike Inc., parametrizando listas de materiais (BOM), centros de trabalho, roteiros, cálculo de custo padrão (CK11N), pirâmide SOP/MRP e estratégias MTS vs ATO.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocínios', description: 'Como Gerente de Patrocínios, minha principal responsabilidade é garantir parcerias e patrocínios vitais para impulsionar o portfólio impactante de hackathons estudantis da EJE. Busco ativamente patrocinadores para grandes eventos, incluindo o Hackathon OP&X, o Hackathon de Consultoria Estratégica (SCH), o Hackathon DataQuest e o Hackathon de Finanças. Ao conectar empresas a essas plataformas, ajudo-as a interagir com os estudantes mais brilhantes de Marrocos e a impulsionar o desenvolvimento de futuros talentos.' },
@@ -645,7 +651,8 @@ const translations = {
             { id: 'renault5-electric-marketing', title: 'Renault 5 E-Tech 100% Elektrisch: Marketingstrategie & Marktdurchdringung', description: 'Entwicklung der Marketingstrategie, Wettbewerbsanalyse (Dacia Spring, Peugeot e-208, Fiat 600e, BYD Atto 3), Persona-Segmentierung und EV-Marktprognosen für 2026–2030 (Marktvolumen 8,75 Mrd. MAD) für den Launch des Renault 5 E-Tech in Marokko.' },
             { id: 'mitsubishi-strategic-analysis', title: 'Strategische Analyse & SDV-Transformation: Mitsubishi Motors Corporation', description: 'Umfassendes strategisches Unternehmens-Audit der Mitsubishi Motors Corporation innerhalb der Renault-Nissan-Mitsubishi-Allianz mit Analyse des Geschäftsmodells, der ASEAN-Marktführerschaft, PESTEL/Porter/SWOT und der Roadmap für Software-Defined Vehicles (SDV) & BEV.' },
             { id: 'wireless-pentest-ceh', title: 'WLAN-Sicherheit & Penetration Testing (CEH-Labor)', description: 'Offensive Sicherheitsüberprüfung und kryptographische Analyse im CEH-Labor: WEP RC4-Knacken, WPA2 4-Way Handshake-Erfassung via Deauthentifizierung, Evil-Twin Rogue-APs mit Captive-Portals (Fluxion), Wireshark 802.11-Forensik und WPA3-SAE / 802.1X-Härtung.' },
-            { id: 'managerial-accounting-formaction', title: 'Kosten- und Leistungsrechnung & Controlling: Prozesskostenrechnung (FORMACTION)', description: 'Entwicklung einer Prozesskostenrechnung (Activity-Based Costing) und mehrstufigen Deckungsbeitragsrechnung für das Bildungsinstitut FORMACTION (678,7 T€ Umsatz über 187 Teilnehmer) zur Rentabilitätssteuerung und Entscheidungsfindung.' }
+            { id: 'managerial-accounting-formaction', title: 'Kosten- und Leistungsrechnung & Controlling: Prozesskostenrechnung (FORMACTION)', description: 'Entwicklung einer Prozesskostenrechnung (Activity-Based Costing) und mehrstufigen Deckungsbeitragsrechnung für das Bildungsinstitut FORMACTION (678,7 T€ Umsatz über 187 Teilnehmer) zur Rentabilitätssteuerung und Entscheidungsfindung.' },
+            { id: 'sap-s4hana-production-planning', title: 'SAP S/4HANA Produktionsplanung & Fertigungssteuerung (Global Bike Inc.)', description: 'Umfassende Implementierung der Produktionsplanung und -steuerung in SAP S/4HANA für Global Bike Inc.: Konfiguration von mehrstufigen Stücklisten (BOM), Arbeitsplätzen, Arbeitsplänen, Standardkalkulation (CK11N), SOP/MRP-Pyramide und Vergleich von MTS- (40) vs. ATO-Strategien (82).' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsoring-Manager', description: 'Als Sponsoring-Manager liegt meine Hauptverantwortung in der Sicherung wichtiger Partnerschaften und Sponsorings zur Finanzierung der studentischen Hackathons von EJE. Ich suche aktiv Sponsoren für Großveranstaltungen wie den OP&X Hackathon, den Strategic Consulting Hackathon (SCH), den DataQuest Hackathon und den Finance Hackathon. Durch die Verbindung von Unternehmen mit diesen Plattformen helfe ich ihnen, mit Marokkos klügsten Köpfen in Kontakt zu treten.' },
@@ -900,7 +907,7 @@ const projectsData = [
     },
     { 
         id: 'managerial-accounting-formaction', 
-        date: '2025-03', 
+        date: '2026-03', 
         technologies: ['Management Accounting', 'Cost Accounting & ABC Method', 'Direct Costing Évolué', 'Financial Modeling (Excel)', 'Contribution Margin Analysis', 'Cost Driver Allocation', 'LaTeX / Tectonic'], 
         githubUrl: '',
         demoUrl: '',
@@ -908,6 +915,16 @@ const projectsData = [
         reportUrl: 'https://drive.google.com/file/d/1o_2IINiqPpkoJNkfxwUdoYx_Xi5AoZ_g/view?usp=sharing', 
         presentationUrl: '',
         spreadsheetUrl: 'https://docs.google.com/spreadsheets/d/1-1Mkjm3tDsgAZrnpuZyo3bywb6gYe8j3/edit?usp=sharing&ouid=107640705930252991470&rtpof=true&sd=true'
+    },
+    { 
+        id: 'sap-s4hana-production-planning', 
+        date: '2026-02', 
+        technologies: ['SAP S/4HANA Enterprise Management', 'Production Planning (PP Module)', 'Materials Management (MM)', 'Sales & Distribution (SD)', 'Controlling & Costing (CO/CCR)', 'MRP II & SOP/PIC Pyramids', 'LaTeX / TikZ (49-Page Spec)'], 
+        githubUrl: '',
+        demoUrl: '',
+        metric: 'Master Data (BOM/Routing), MRP/SOP, MTS/ATO Strategies & 49-Page Manual',
+        reportUrl: 'https://drive.google.com/file/d/1IiDFYl9Lh0uIg0ISTaKc2K4TvAsQmKsu/view?usp=sharing', 
+        presentationUrl: ''
     }
 ];
 
@@ -2439,7 +2456,7 @@ Maquette multi-systèmes d'entreprise :
 **Cas d'Analyse des Coûts et Pilotage de la Rentabilité**  
 **Institution :** EMINES – School of Industrial Management, Université Mohammed VI Polytechnique (UM6P)  
 **Auteur :** Mohammed EL BARAKA  
-**Date :** Mars 2025  
+**Date :** Mars 2026  
 
 ---
 
@@ -2496,5 +2513,53 @@ L'organisme **FORMACTION** forme 187 stagiaires sur deux filières tertiaires et
 
 1. **Remplissage des Groupes :** Recrutement de +14 stagiaires dans les groupes existants (passer de 42 à 56 stagiaires) $\\rightarrow$ **$+29\\,744\\,\\text{€}$ de MCS additionnelle**.
 2. **Mix Commercial OPCO :** Viser $50\\%$ de contrats pro entreprises à $8{,}00\\,\\text{€/h}$ $\\rightarrow$ **$+17\\,820\\,\\text{€}$ de CA additionnel**.
-3. **Mutualisation Transversale :** Regroupement des enseignements généraux compatibles $\\rightarrow$ **$+3\\,500\\,\\text{€}$ d'économies logistiques**.\``
+3. **Mutualisation Transversale :** Regroupement des enseignements généraux compatibles $\\rightarrow$ **$+3\\,500\\,\\text{€}$ d'économies logistiques**.\``,
+
+    'sap-s4hana-production-planning': `# Planification et Gestion de Production sous SAP S/4HANA
+
+**Rapport de Synthèse de Projet — Module PP (Production Planning)**  
+**Institution :** EMINES – School of Industrial Management, Université Mohammed VI Polytechnique (UM6P)  
+**Auteur :** Mohammed EL BARAKA (Session \`learn-112\`)  
+**Environnement :** SAP S/4HANA Enterprise Management (Technologie In-Memory HANA)  
+**Entreprise d'Étude :** Global Bike Inc. (GBI) — Usine de Dallas (\`DL00\`)  
+**Date :** Février 2026  
+
+---
+
+## 1. Contexte & Intégration Transversale ERP
+
+Ce projet couvre l'intégralité du cycle manufacturier sous SAP S/4HANA et ses interactions transversales :
+* **SD (Ventes) :** Déclenchement de la demande et consommation des prévisions.
+* **PP (Production) :** PIC/SOP, PDP, Calcul des Besoins Nets (MRP), et ordonnancement d'atelier.
+* **MM (Stocks & Achats) :** Réservations automatiques, sorties matières (\`MIGO 261\`) et réceptions (\`MIGO 101\`).
+* **FI/CO (Finance & Contrôle) :** Calcul du coût de revient standard (\`CK11N / CK24\`), imputations sur centres de coûts et analyse des écarts.
+
+---
+
+## 2. Données de Base de Production (Master Data)
+
+* **Articles & Nomenclatures (BOM) :** Produit fini (\`LEARN-F112\`, FERT $1\\,400\\,\\$$), sous-ensemble cadre semi-fini (\`LEARN-B112\`, HALB $800\\,\\$$) et composants matières (\`ROH\`).
+* **Postes de Travail (Work Centers) :** \`ASSY1000\` (Montage), \`INSP1000\` (Contrôle qualité), \`PACK1000\` (Emballage) rattachés aux centres de coûts (\`NAAS1000\`, \`NAIN1000\`, \`NAPA1000\`).
+* **Gammes & Versions de Fabrication (\`C223\`) :** Séquencement des 5 opérations et liaison indissociable BOM/Gamme.
+* **Calcul du Coût de Revient Standard (\`CK11N / CK24\`) :** Explosion multi-niveaux, marquage et libération du prix standard dans le Grand Livre.
+
+---
+
+## 3. Pyramide de Planification & Scénarios Industriels
+
+1. **PIC / SOP (\`MC81 / MC84\`) :** Planification agrégée à long terme ($50\\,\\text{vélos/mois}$ lissés sur 6 mois).
+2. **Transfert Demande (\`MC75 \\rightarrow MD63\`) :** Génération des Besoins Indépendants Prévisionnels (PIR).
+3. **Calcul MRP / CBN (\`MD02\`) :** Explosion nette multi-niveaux (NETCH) et génération des Ordres Planifiés & DA.
+4. **Stratégie 40 (Fabrication sur Stock) :** Consommation directe des prévisions PIR par les commandes clients fermes (\`VA01\`).
+5. **Stratégie 82 (Assemblage à la Commande - ATO) :** Génération automatique d'un Ordre de Fabrication rattaché en segment Stock Client dédié (\`StkCli\`).
+
+---
+
+## 4. Exécution d'Atelier & Contrôle des Coûts
+
+* **Conversion & Ordonnancement :** \`MD04 \\rightarrow CO01 / CO02\` (Statut REL).
+* **Sortie Matières (\`MIGO 261\`) :** Débit du compte de consommation d'atelier.
+* **Confirmation d'Atelier (\`CO15 / CO11N\`) :** Déclaration de la quantité bonne ($50\\,\\text{pièces}$) et des heures réelles.
+* **Entrée en Stock (\`MIGO 101\`) :** Réception en magasin \`FG00\` et crédit de l'OF.
+* **Clôture Technique & Analytique (TECO) :** Rapprochement et calcul des écarts de fabrication.`
 };

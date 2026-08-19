@@ -62,12 +62,17 @@ const translations = {
              { id: 'geology-internship', title: 'Geology & Geophysics Internship', description: 'Conducted field studies in Oulmès covering geology, geophysics, and hydrogeology. Applied electrical resistivity tomography and groundwater analysis techniques.' },
              { id: 'wood-behavior-mmc', title: 'Wood Behavior Law (MMC Project)', description: 'Studied the mechanical properties of wood, modeled its orthotropic elastic behavior, and conducted compression and bending tests to measure Young\'s modulus and breaking strength.' },
              { id: 'biomedical-diffusion', title: 'Oxygen Diffusion in Pulmonary Acinus', description: 'Conducted a biomedical engineering project to model oxygen diffusion in the pulmonary acinus, resolving the 2D diffusion equation using numerical methods.' },
-             { id: 'robotics-vision', title: 'Robotics and Image Detection', description: 'Developed a complete robotic system with image detection capabilities, from 3D modeling in SolidWorks to implementing image processing algorithms in Python.' },
+             { id: 'robotics-vision', title: 'Robotic Arm Design, Fabrication & Computer Vision', description: 'Designed, manufactured, and assembled an autonomous articulated robotic arm from the ground up—spanning 3D CAD modeling in SolidWorks, physical prototyping and mechatronics, through to inverse kinematics and real-time OpenCV computer vision for object detection and sorting.' },
              { id: 'tourist-planner', title: 'Tourist Visit Planner', description: 'Built a full-stack web application for planning and optimizing tourist itineraries using the Traveling Salesman Problem (TSP) algorithm, React, Django, and Google Maps API.' },
              { id: 'teachy-platform', title: 'Teachy: Online Language Learning Platform', description: 'Designed an innovative online language learning platform connecting learners with native speakers for live interactive immersion, personalized courses, and pedagogical resources.' },
              { id: 'biomass-co2-nareva', title: 'Biogenic CO2 Capture & E-Fuel Valorization (NAREVA)', description: 'Conducted a comprehensive techno-economic pre-feasibility study for capturing 150 kt/year of biogenic CO2 from biomass in Morocco to produce and export green e-methanol to Europe.' },
              { id: 'sociotechnical-controversy-africa', title: 'Sociotechnical Controversy: Technocracy in Africa', description: 'Conducted an in-depth sociotechnical controversy analysis exploring whether technocracy offers a viable pathway for African development, mapping systemic challenges and multi-stakeholder dynamics across 5 key sectors.' },
-             { id: 'vsm-ciam-steel', title: 'Lean Production & VSM: CIAM Steel Plant', description: 'Conducted an industrial Lean diagnostic and Value Stream Mapping (VSM/VSD) for CIAM steel manufacturing plant, formulating actionable 5S/SMED/TPM strategies to scale capacity to 1M tonnes/year and reduce lead times by 75%.' }
+             { id: 'vsm-ciam-steel', title: 'Lean Production & VSM: CIAM Steel Plant', description: 'Conducted an industrial Lean diagnostic and Value Stream Mapping (VSM/VSD) for CIAM steel manufacturing plant, formulating actionable 5S/SMED/TPM strategies to scale capacity to 1M tonnes/year and reduce lead times by 75%.' },
+             { id: 'pg-brand-management-shadowing', title: 'Brand Management & Operations (Procter & Gamble)', description: 'Immersive executive shadowing within P&G\'s Hair Care Division and Multi-Functional Teams (MFT), analyzing brand strategy, retail execution (DPSM), Supply Network Operations (SNO), margin architecture, and data-driven marketing across 54,000+ retail stores.' },
+             { id: 'redstart-reusable-booster', title: 'Redstart: Reusable Rocket Booster Descent & Landing', description: 'Modeled and simulated the nonlinear 2D flight dynamics, gimbaled thrust vector control, and soft landing trajectory of a reusable rocket booster (Falcon 9-inspired) using SciPy, SymPy, and Marimo.' },
+             { id: 'academic-career-success', title: 'Academic & Career Success: Statistical Modeling', description: 'Conducted an econometric and statistical study on 5,000 university graduates using multiple linear regression (R² = 0.825), Chi-squared & Cramér\'s V tests, and k-Means clustering to model key drivers of starting salaries and career satisfaction.' },
+             { id: 'lithium-brine-extraction', title: 'Lithium Brine Production & Solar Evaporation Modeling', description: 'Conducted a comprehensive techno-economic, geochemical, and process modeling benchmark of 6 South American lithium salars, analyzing solar evaporation kinetics, Mg/Li impurity selectivity, and capital intensity ($3,200/t OPEX).' },
+             { id: 'petropolis-landslide-modeling', title: 'Physically-Based Landslide Modeling (Petrópolis, Brazil)', description: 'Geospatial data engineering and physical modeling of rainfall-triggered shallow landslides in Petrópolis, Brazil, utilizing the USGS TRIGRS v2.1.0 transient infiltration engine, QGIS, GRASS, and Mohr-Coulomb slope stability mechanics across 795 km².' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsorship Manager', description: 'As Sponsorship Manager, my core responsibility is securing vital partnerships and sponsorships to power EJE\'s impactful portfolio of student hackathons. I actively seek sponsors for major events including the OP&X Hackathon, Strategic Consulting Hackathon (SCH), DataQuest Hackathon, and the Finance Hackathon. By connecting companies with these platforms, I help them engage Morocco\'s brightest students and fuel future talent development.' },
@@ -149,12 +154,17 @@ const translations = {
             { id: 'geology-internship', title: 'Stage de Géologie et Géophysique', description: 'Études de terrain à Oulmès couvrant la géologie, la géophysique et l\'hydrogéologie. Application de la tomographie de résistivité électrique et analyse des eaux souterraines.' },
             { id: 'wood-behavior-mmc', title: 'Loi de Comportement du Bois (Projet MMC)', description: 'Étude des propriétés mécaniques du bois, modélisation de son comportement élastique orthotrope, et réalisation d\'essais de compression et de flexion pour mesurer le module de Young et la résistance à la rupture.' },
             { id: 'biomedical-diffusion', title: 'Diffusion d\'Oxygène dans l\'Acinus Pulmonaire', description: 'Réalisation d\'un projet d\'ingénierie biomédicale pour modéliser la diffusion d\'oxygène dans l\'acinus pulmonaire, en résolvant l\'équation de diffusion 2D par des méthodes numériques.' },
-            { id: 'robotics-vision', title: 'Robotique et Détection d\'Images', description: 'Développement d\'un système robotique complet avec des capacités de détection d\'images, de la modélisation 3D sur SolidWorks à la mise en œuvre d\'algorithmes de traitement d\'images en Python.' },
+            { id: 'robotics-vision', title: 'Conception, Fabrication Robotique & Vision par Ordinateur', description: 'Conception, fabrication mécanique et assemblage complet d\'un bras robotisé articulé—de la modélisation CAO 3D sur SolidWorks, du prototypage physique et de la mécatronique, jusqu\'aux calculs cinématiques et au modèle de vision par ordinateur OpenCV pour la détection et le tri en temps réel.' },
             { id: 'tourist-planner', title: 'Planificateur de Visites Touristiques', description: 'Développement d\'une application web full-stack pour la planification et l\'optimisation d\'itinéraires touristiques utilisant l\'algorithme du voyageur de commerce (TSP), React, Django et l\'API Google Maps.' },
             { id: 'teachy-platform', title: 'Teachy : Plateforme d\'Apprentissage des Langues', description: 'Conception d\'une plateforme innovante d\'apprentissage des langues connectant apprenants et locuteurs natifs pour une immersion interactive en direct, cours personnalisés et ressources pédagogiques.' },
             { id: 'biomass-co2-nareva', title: 'Captage de CO2 Biogénique & E-Fuels (Projet NAREVA)', description: 'Étude de préfaisabilité technico-économique pour le captage de 150 kt/an de CO2 biogénique issu de la biomasse au Maroc pour la production et l\'exportation d\'e-méthanol vert vers l\'Europe.' },
             { id: 'sociotechnical-controversy-africa', title: 'Controverse Sociotechnique : La Technocratie en Afrique', description: 'Analyse approfondie d\'une controverse sociotechnique sur le rôle de la technocratie dans le développement africain, cartographiant les défis structurels et le jeu d\'acteurs à travers 5 axes majeurs.' },
-            { id: 'vsm-ciam-steel', title: 'Système de Production & VSM : Usine CIAM', description: 'Diagnostic industriel Lean et Value Stream Mapping (VSM/VSD) de l\'usine sidérurgique CIAM, élaborant des plans d\'action 5S/SMED/TPM pour porter la capacité à 1M tonnes/an et réduire les délais de 75%.' }
+            { id: 'vsm-ciam-steel', title: 'Système de Production & VSM : Usine CIAM', description: 'Diagnostic industriel Lean et Value Stream Mapping (VSM/VSD) de l\'usine sidérurgique CIAM, élaborant des plans d\'action 5S/SMED/TPM pour porter la capacité à 1M tonnes/an et réduire les délais de 75%.' },
+            { id: 'pg-brand-management-shadowing', title: 'Stage Shadowing : Brand Management & Opérations (P&G)', description: 'Immersion managériale au sein de la division Hair Care et des équipes multifonctionnelles (MFT) de Procter & Gamble, analysant la stratégie de marque, l\'exécution commerciale (DPSM), la chaîne d\'approvisionnement (SNO) et le pricing stratégique sur 54 000+ points de vente.' },
+            { id: 'redstart-reusable-booster', title: 'Redstart : Atterrissage Contrôlé de Lanceur Réutilisable', description: 'Modélisation et simulation des équations différentielles non linéaires, du contrôle vectoriel de poussée par tuyère orientable et de la trajectoire d\'atterrissage doux d\'un propulseur réutilisable sous SciPy, SymPy et Marimo.' },
+            { id: 'academic-career-success', title: 'Analyse de la Réussite Académique et Professionnelle', description: 'Étude statistique et économétrique sur 5 000 diplômés modélisant les déterminants de l\'insertion professionnelle par régression linéaire multiple (R² = 0.825), tests du Chi-2, V de Cramér et clustering k-Means.' },
+            { id: 'lithium-brine-extraction', title: 'Production de Lithium à partir de Saumures par Évaporation Solaire', description: 'Étude technico-économique et modélisation géochimique de l\'extraction de lithium sur 6 salars sud-américains, analysant la cinétique d\'évaporation, la sélectivité des impuretés Mg/Li et l\'intensité capitalistique (OPEX 3 200 $/t).' },
+            { id: 'petropolis-landslide-modeling', title: 'Modélisation Physique du Risque de Glissements de Terrain (Petrópolis, Brésil)', description: 'Préparation de données géospatiales et modélisation physique des glissements de terrain induits par les pluies torrentielles à Petrópolis (Brésil), couplant le modèle d\'infiltration transitoire USGS TRIGRS v2.1.0, QGIS, GRASS et la stabilité des pentes sur 795 km².' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Responsable Sponsoring', description: 'En tant que Responsable Sponsoring, ma responsabilité principale est de sécuriser des partenariats et des sponsorings essentiels pour alimenter le portefeuille percutant de hackathons étudiants d\'EJE. Je recherche activement des sponsors pour des événements majeurs tels que le Hackathon OP&X, le Hackathon de Conseil Stratégique (SCH), le Hackathon DataQuest et le Hackathon Finance. En connectant les entreprises à ces plateformes, je les aide à interagir avec les étudiants les plus brillants du Maroc et à stimuler le développement des futurs talents.' },
@@ -236,12 +246,17 @@ const translations = {
              { id: 'geology-internship', title: 'تدريب في الجيولوجيا والجيوفيزياء', description: 'إجراء دراسات ميدانية في أولماس تغطي الجيولوجيا والجيوفيزياء والهيدروجيولوجيا. تطبيق تقنيات التصوير المقطعي بالمقاومة الكهربائية وتحليل المياه الجوفية.' },
              { id: 'wood-behavior-mmc', title: 'قانون سلوك الخشب (مشروع MMC)', description: 'دراسة الخواص الميكانيكية للخشب ونمذجة سلوكه المرن، مع إجراء اختبارات الضغط والانحناء لقياس معامل يونغ ومقاومة الكسر.' },
              { id: 'biomedical-diffusion', title: 'انتشار الأكسجين في الحويصلات الرئوية', description: 'إجراء مشروع هندسة طبية حيوية لنمذجة انتشار الأكسجين في الحويصلات الرئوية، وحل معادلة الانتشار ثنائية الأبعاد باستخدام الطرق العددية.' },
-             { id: 'robotics-vision', title: 'الروبوتات وكشف الصور', description: 'تطوير نظام روبوتي كامل مع إمكانات كشف الصور، من النمذجة ثلاثية الأبعاد في SolidWorks إلى تنفيذ خوارزميات معالجة الصور في Python.' },
+             { id: 'robotics-vision', title: 'تصميم وتصنيع ذراع روبوتية مع الرؤية الحاسوبية', description: 'تصميم وتصنيع وتجميع ذراع روبوتية مفصلية متكاملة من البداية—بدءًا من النمذجة ثلاثية الأبعاد (CAD) على SolidWorks، والتصنيع الميكانيكي والميكاترونيكس، وصولاً إلى الحسابات الحركية ونماذج الرؤية الحاسوبية OpenCV لكشف وفرز الأجسام في الوقت الفعلي.' },
              { id: 'tourist-planner', title: 'مخطط الزيارات السياحية', description: 'تطوير تطبيق ويب متكامل لتخطيط وتحسين مسارات الرحلات السياحية باستخدام خوارزمية مسألة البائع المتجول (TSP) وReact وDjango وGoogle Maps API.' },
              { id: 'teachy-platform', title: 'Teachy: منصة تعليم اللغات عبر الإنترنت', description: 'تصميم منصة مبتكرة لتعلم اللغات عبر الإنترنت تربط المتعلمين بالمتحدثين الأصليين لتوفير انغماس تفاعلي مباشر، ودورات مخصصة، وموارد تعليمية متنوعة.' },
              { id: 'biomass-co2-nareva', title: 'احتجاز الكربون الحيوي وإنتاج الوقود الإلكتروني (مشروع NAREVA)', description: 'دراسة جدوى تقنية واقتصادية لاحتجاز 150 ألف طن سنويًا من ثاني أكسيد الكربون الحيوي من الكتلة الحيوية في المغرب لإنتاج وتصدير الميثانول الأخضر إلى أوروبا.' },
              { id: 'sociotechnical-controversy-africa', title: 'الجدل الاجتماعي والتقني: التكنوقراطية في التنمية الأفريقية', description: 'تحليل معمق لجدل اجتماعي تقني يستكشف ما إذا كانت التكنوقراطية تمثل مسارًا للتنمية في أفريقيا، مع رسم خرائط للتحديات الهيكلية وتفاعل الفاعلين عبر 5 قطاعات رئيسية.' },
-             { id: 'vsm-ciam-steel', title: 'نظم الإنتاج واللوجستيات: تخطيط تدفق القيمة (مصنع CIAM)', description: 'تشخيص صناعي لمنهجية Lean وتخطيط تدفق القيمة (VSM/VSD) لمصنع الصلب CIAM، ووضع خطط عمل 5S/SMED/TPM لرفع الطاقة الإنتاجية إلى مليون طن سنوياً وتقليص المهل الزمنية بنسبة 75%.' }
+             { id: 'vsm-ciam-steel', title: 'نظم الإنتاج واللوجستيات: تخطيط تدفق القيمة (مصنع CIAM)', description: 'تشخيص صناعي لمنهجية Lean وتخطيط تدفق القيمة (VSM/VSD) لمصنع الصلب CIAM، ووضع خطط عمل 5S/SMED/TPM لرفع الطاقة الإنتاجية إلى مليون طن سنوياً وتقليص المهل الزمنية بنسبة 75%.' },
+             { id: 'pg-brand-management-shadowing', title: 'إدارة العلامات التجارية والعمليات (Procter & Gamble)', description: 'تدريب معايشة مهني رفيع المستوى داخل قسم العناية بالشعر والفرق متعددة الوظائف (MFT) في شركة P&G، مع دراسة استراتيجيات العلامات التجارية، والتنفيذ التجاري (DPSM)، وسلسلة الإمداد (SNO)، وهيكلة التسعير عبر أكثر من 54000 نقطة بيع.' },
+             { id: 'redstart-reusable-booster', title: 'Redstart: محاكاة هبوط الصواريخ الفضائية القابلة لإعادة الاستخدام', description: 'نمذجة ومحاكاة الديناميكا غير الخطية للتحكم في الدفع الموجه ومسار الهبوط العمودي السلس لصاروخ فضائي قابل لإعادة الاستخدام باستخدام SciPy وSymPy وMarimo.' },
+             { id: 'academic-career-success', title: 'التحليل الإحصائي للنجاح الأكاديمي والمهني', description: 'دراسة إحصائية واقتصادية قياسية شملت 5000 خريج لنمذجة محددات الرواتب والاندماج المهني باستخدام الانحدار الخطي المتعدد (R² = 0.825)، واختبارات كاي تربيع، وتجميع k-Means.' },
+             { id: 'lithium-brine-extraction', title: 'إنتاج الليثيوم من المحاليل الملحية بالتبخير الشمسي', description: 'دراسة تقنية واقتصادية ونمذجة جيوكيميائية لاستخراج الليثيوم عبر 6 سبخات ملحية في أمريكا الجنوبية، مع تحليل حركية التبخير وفصل الشوائب (Mg/Li) والتكلفة التشغيلية (3200 دولار/طن).' },
+             { id: 'petropolis-landslide-modeling', title: 'النمذجة الفيزيائية لمخاطر الانهيارات الأرضية (بيتروبوليس، البرازيل)', description: 'إعداد البيانات الجغرافية المكانية والنمذجة الفيزيائية للانهيارات الأرضية الناجمة عن الأمطار في بيتروبوليس بالبرازيل، باستخدام نموذج الارتشاح المؤقت USGS TRIGRS v2.1.0 وميكانيكا استقرار المنحدرات ونظم المعلومات الجغرافية QGIS عبر 795 كم².' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'EJE', role: 'مدير الرعاية', description: 'بصفتي مدير الرعاية، تتمثل مسؤوليتي الأساسية في تأمين الشراكات والرعاية الحيوية لدعم محفظة EJE المؤثرة من مسابقات البرمجة الطلابية. أبحث عن رعاة للأحداث الكبرى بما في ذلك مسابقة البرمجة OP&X Hackathon ومسابقة البرمجة الاستشارية الاستراتيجية (SCH) ومسابقة البرمجة DataQuest Hackathon ومسابقة البرمجة المالية Finance Hackathon. من خلال ربط الشركات بهذه المنصات، أساعدها على جذب ألمع الطلاب المغاربة ودعم تنمية المواهب المستقبلية.' },
@@ -319,16 +334,21 @@ const translations = {
             { id: 'red-fruit-optimization', title: 'Optimización de la Producción de Frutos Rojos', description: 'Diseñé e implementé un modelo de Programación Lineal para maximizar el beneficio de la producción de frutos rojos en invernaderos, considerando diversas restricciones y escenarios.' },
             { id: 'powerbi-dashboard', title: 'Integración de Extractos Bancarios con Power BI', description: 'Desarrollé un panel de Power BI interactivo para integrar y visualizar métricas financieras clave de extractos bancarios y albaranes de entrega para una vista de datos conectada.' },
             { id: 'rsa-cryptography', title: 'Ataques Contra RSA de Módulo Compartido', description: 'Estudié y simulé ataques contra el criptosistema RSA, centrándome en las vulnerabilidades de los módulos compartidos para demostrar las debilidades criptográficas.' },
-            { id: 'acoustic-noise-reduction', title: 'Reducción de la Contaminación Acústica del Tráfico Vial', description: 'Investigación y modelado de la propagación de ondas acústicas y optimización de barreras acústicas mediante materiales porosos. Ensayos experimentales con tubo de Kundt comparando espumas compactas y alveolares.' },
+            { id: 'acoustic-noise-reduction', title: 'Redución de la Contaminación Acústica del Tráfico Vial', description: 'Investigación y modelado de la propagación de ondas acústicas y optimización de barreras acústicas mediante materiales porosos. Ensayos experimentales con tubo de Kundt comparando espumas compactas y alveolares.' },
             { id: 'geology-internship', title: 'Prácticas de Geología y Geofísica', description: 'Estudios de campo en Oulmès que cubren geología, geofísica e hidrogeología. Aplicación de tomografía de resistividad eléctrica y análisis de aguas subterráneas.' },
             { id: 'wood-behavior-mmc', title: 'Ley de Comportamiento de la Madera (Proyecto MMC)', description: 'Estudió las propiedades mecánicas de la madera, modeló su comportamiento elástico ortotrópico y realizó pruebas de compresión y flexión para medir el módulo de Young y la resistencia a la rotura.' },
             { id: 'biomedical-diffusion', title: 'Difusión de Oxígeno en el Acino Pulmonar', description: 'Realicé un proyecto de ingeniería biomédica para modelar la difusión de oxígeno en el acino pulmonar, resolviendo la ecuación de difusión 2D utilizando métodos numéricos.' },
-            { id: 'robotics-vision', title: 'Robótica y Detección de Imágenes', description: 'Desarrollé un sistema robótico completo con capacidades de detección de imágenes, desde el modelado 3D en SolidWorks hasta la implementación de algoritmos de procesamiento de imágenes en Python.' },
+            { id: 'robotics-vision', title: 'Diseño, Fabricación Robótica y Visión por Computadora', description: 'Diseñé, fabriqué y ensamblé un brazo robótico articulado autónomo desde cero: desde el modelado CAD 3D en SolidWorks, prototipado físico y mecatrónica, hasta cinemática inversa y visión por computadora con OpenCV para detección y clasificación en tiempo real.' },
             { id: 'tourist-planner', title: 'Planificador de Visitas Turísticas', description: 'Desarrollo de una aplicación web full-stack para planificar y optimizar itinerarios turísticos utilizando el algoritmo del viajante de comercio (TSP), React, Django y la API de Google Maps.' },
             { id: 'teachy-platform', title: 'Teachy: Plataforma de Aprendizaje de Idiomas', description: 'Diseño de una plataforma innovadora de aprendizaje de idiomas en línea que conecta a los estudiantes con hablantes nativos para una inmersión interactiva en vivo, cursos personalizados y recursos pedagógicos.' },
             { id: 'biomass-co2-nareva', title: 'Captura de CO2 Biogénico y E-Fuels (Proyecto NAREVA)', description: 'Estudio de prefactibilidad técnico-económica para la captura de 150 kt/año de CO2 biogénico a partir de biomasa en Marruecos para la producción y exportación de e-metanol verde a Europa.' },
             { id: 'sociotechnical-controversy-africa', title: 'Controversia Sociotécnica: Tecnocracia en África', description: 'Análisis exhaustivo de una controversia sociotécnica sobre el papel de la tecnocracia en el desarrollo africano, mapeando desafíos estructurales y dinámicas de actores en 5 sectores clave.' },
-            { id: 'vsm-ciam-steel', title: 'Sistemas de Producción y VSM: Planta de Acero CIAM', description: 'Diagnóstico industrial Lean y Value Stream Mapping (VSM/VSD) para la planta siderúrgica CIAM, formulando planes de acción 5S/SMED/TPM para elevar la capacidad a 1M de toneladas/año y reducir los plazos en un 75%.' }
+            { id: 'vsm-ciam-steel', title: 'Sistemas de Producción y VSM: Planta de Acero CIAM', description: 'Diagnóstico industrial Lean y Value Stream Mapping (VSM/VSD) para la planta siderúrgica CIAM, formulando planes de acción 5S/SMED/TPM para elevar la capacidad a 1M de toneladas/año y reducir los plazos en un 75%.' },
+            { id: 'pg-brand-management-shadowing', title: 'Gestión de Marca y Operaciones (Procter & Gamble)', description: 'Pasantía de inmersión ejecutiva en la división Hair Care y equipos multifuncionales (MFT) de P&G, analizando estrategia de marca, ejecución minorista (DPSM), operaciones de cadena de suministro (SNO) y arquitectura de precios en más de 54,000 puntos de venta.' },
+            { id: 'redstart-reusable-booster', title: 'Redstart: Descenso y Aterrizaje de Cohete Reutilizable', description: 'Modelado y simulación de la dinámica de vuelo 2D no lineal, control vectorial de empuje y trayectoria de aterrizaje suave de un cohete propulsor reutilizable con SciPy, SymPy y Marimo.' },
+            { id: 'academic-career-success', title: 'Análisis Estadístico del Éxito Académico y Profesional', description: 'Estudio estadístico y econométrico sobre 5,000 graduados modelando los determinantes del salario inicial mediante regresión lineal múltiple (R² = 0.825), pruebas de Chi-cuadrado, V de Cramér y clustering k-Means.' },
+            { id: 'lithium-brine-extraction', title: 'Producción de Litio a partir de Salmueras por Evaporación Solar', description: 'Estudio técnico-económico y modelado geoquímico de la extracción de litio en 6 salares sudamericanos, analizando la cinética de evaporación, selectividad de impurezas Mg/Li y costos operativos (OPEX 3.200 USD/t).' },
+            { id: 'petropolis-landslide-modeling', title: 'Modelado Físico de Susceptibilidad a Deslizamientos (Petrópolis, Brasil)', description: 'Preparación de datos geoespaciales y modelado físico de deslizamientos de tierra inducidos por lluvias torrenciales en Petrópolis (Brasil), acoplando el modelo de infiltración transitoria USGS TRIGRS v2.1.0, QGIS, GRASS y estabilidad de taludes sobre 795 km².' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocinios', description: 'Como Gerente de Patrocinios, mi responsabilidad principal es asegurar alianzas y patrocinios vitales para impulsar el impactante portafolio de hackathons estudiantiles de EJE. Busco activamente patrocinadores para eventos importantes como el Hackathon OP&X, el Hackathon de Consultoría Estratégica (SCH), el Hackathon DataQuest y el Hackathon de Finanzas. Al conectar empresas con estas plataformas, les ayudo a interactuar con los estudiantes más brillantes de Marruecos y a fomentar el desarrollo de futuros talentos.' },
@@ -357,12 +377,12 @@ const translations = {
         nav_contact: "联系",
         hero_title: "工业管理<br>与数据科学",
         hero_typing: ["工业管理", "数据科学"],
-        hero_subtitle: "一名EMINES-UM6P的工程专业毕业生，主修工业管理，热衷于优化、数据科学，并利用技术解决现实世界中的挑战。(Pinyin: Yī míng EMINES-UM6P de gōngchéng zhuānyè bìyèshēng, zhǔ xiū gōngyè guǎnlǐ, rèzhōng yú yōuhuà, shùjù kēxué, bìng lìyòng jìshù jiějué xiànshí shìjiè zhōng de tiǎozhàn.)",
+        hero_subtitle: "一名EMINES-UM6P的工程专业毕业生，主修工业管理，热衷于优化、数据科学，并利用技术解决现实世界中的挑战。",
         hero_cta_button: "查看我的作品",
         about_title: "关于我",
-        about_p1: "你好！我是Mohammed EL BARAKA，是著名的穆罕默德六世理工大学（UM6P）工业管理工程专业的 graduate。我的学术旅程始于数学和物理的强化课程，这培养了我强大的分析和解决问题的思维能力。(Pinyin: Nǐ hǎo! Wǒ shì Mohammed EL BARAKA, shì zhùmíng de Mùhǎnmòdé liùshì lǐgōng dàxué (UM6P) gōngyè guǎnlǐ gōngchéng zhuānyè de bìyèshēng. Wǒ de xuéshù lǚchéng shǐ yú shùxué hé wùlǐ de qiánghuà kèchéng, zhè péiyǎngle wǒ qiángdà de fēnxī hé jiějué wèntí de sīwéi nénglì.)",
-        about_p2: "我被解决复杂问题的挑战所驱动，特别是通过应用数据科学、机器学习和优化算法。我的工作理念是弥合理论知识与实际应用之间的差距，以创造切实的成果。(Pinyin: Wǒ bèi jiějué fùzá wèntí de tiǎozhàn suǒ qūdòng, tèbié ISO tōngguò yìngyòng shùjù kēxué, jīqì xuéxí hé yōuhuà suànfǎ. Wǒ de gōngzuò lǐniàn shì míhé lǐlùn zhīshì yǔ shíjì yìngyòng zhī jiān de chājù, yǐ chuàngzào qièshí de chéngguǒ.)",
-        about_p3: "我是一个积极主动的领导者，精通阿拉伯语、法语和英语，并总是渴望学习、合作，并将我的技能应用于有影响力的场景中。(Pinyin: Wǒ shì yīgè jījí zhǔdòng de lǐngdǎo zhě, jīngtōng ā lābó yǔ, fǎyǔ hé yīngyǔ, bìng zǒng shì kěwàng xuéxí, hézuò, bìng jiāng wǒ de jìnéng yìngyòng yú yǒu yǐngxiǎng lì de chǎngjǐng zhōng.)",
+        about_p1: "你好！我是Mohammed EL BARAKA，是著名的穆罕默德六世理工大学（UM6P）工业管理工程专业的 graduate。我的学术旅程始于数学和物理的强化课程，这培养了我强大的分析和解决问题的思维能力。",
+        about_p2: "我被解决复杂问题的挑战所驱动，特别是通过应用数据科学、机器学习和优化算法。我的工作理念是弥合理论知识与实际应用之间的差距，以创造切实的成果。",
+        about_p3: "我是一个积极主动的领导者，精通阿拉伯语、法语和英语，并总是渴望学习、合作，并将我的技能应用于有影响力的场景中。",
         view_resume_button: "查看我的简历",
         projects_title: "我的项目",
         skills_title: "技术技能",
@@ -410,12 +430,17 @@ const translations = {
             { id: 'geology-internship', title: '地质学与地球物理学实习', description: '在 Oulmès 进行涵盖地质学、地球物理学和水文地质学的野外研究。应用电阻率层析成像和地下水分析技术。' },
             { id: 'wood-behavior-mmc', title: '木材行为定律（MMC项目）', description: '研究了木材的机械性能，对其正交各向异性弹性行为进行了建模，并进行了压缩和弯曲测试以测量杨氏模量和断裂强度。' },
             { id: 'biomedical-diffusion', title: '肺腺泡中的氧气扩散', description: '进行了一个生物医学工程项目，对肺腺泡中的氧气扩散进行建模，使用数值方法求解二维扩散方程。' },
-            { id: 'robotics-vision', title: '机器人技术与图像检测', description: '开发了一个完整的具有图像检测功能的机器人系统，从在SolidWorks中进行3D建模到在Python中实现图像处理算法。' },
+            { id: 'robotics-vision', title: '机械臂结构设计、加工制造与计算机视觉检测', description: '从零开始完成了自主多关节机械臂的完整设计、制造与装配——涵盖SolidWorks三维CAD建模、机械加工与机电一体化系统集成，直至运动学逆解求解与基于OpenCV的高性能实时视觉识别与分拣。' },
             { id: 'tourist-planner', title: '旅游行程规划器', description: '开发了一个全栈Web应用程序，使用旅行商问题（TSP）算法、React、Django和Google Maps API来规划和优化旅游行程。' },
             { id: 'teachy-platform', title: 'Teachy：在线语言学习平台', description: '设计了一个创新的在线语言学习平台，将语言学习者与母语者联系起来，提供实时互动沉浸式体验、个性化课程和教学资源。' },
             { id: 'biomass-co2-nareva', title: '生物碳捕集与电子燃料合成研究（NAREVA项目）', description: '开展了从摩洛哥生物质中每年捕集15万吨生物碳用于生产绿色电子甲醇并出口欧洲的技术经济可行性前瞻研究。' },
             { id: 'sociotechnical-controversy-africa', title: '社会技术争议研究：技术官僚与非洲发展', description: '深入开展了关于技术官僚体制是否能够赋能非洲发展的社会技术争议分析，绘制了5大关键领域的核心挑战与多方利益相关者图谱。' },
-            { id: 'vsm-ciam-steel', title: '生产系统与价值流图（VSM）：CIAM钢铁厂精益诊断', description: '对CIAM钢铁制造厂进行了工业精益诊断与价值流图（VSM/VSD）分析，制定了5S/SMED/TPM行动计划，将年产能提升至100万吨并将交付周期缩短75%。' }
+            { id: 'vsm-ciam-steel', title: '生产系统与价值流图（VSM）：CIAM钢铁厂精益诊断', description: '对CIAM钢铁制造厂进行了工业精益诊断与价值流图（VSM/VSD）分析，制定了5S/SMED/TPM行动计划，将年产能提升至100万吨并将交付周期缩短75%。' },
+            { id: 'pg-brand-management-shadowing', title: '品牌管理与商业运营实战（宝洁公司 P&G）', description: '深度跟岗参与宝洁（P&G）洗护发品类部及跨职能团队（MFT）运营，全面解析品牌全链路战略、零售卓越执行（DPSM金字塔）、供应链网络运营（SNO）与战略定价体系，覆盖逾54,000家零售终端。' },
+            { id: 'redstart-reusable-booster', title: 'Redstart：可回收火箭助推器动力学与自主软着陆控制', description: '基于SciPy、SymPy与Marimo构建了类猎鹰9号可回收火箭助推器的二维非线性动力学方程、摆动发动机矢量推力控制以及精确垂直软着陆轨迹优化仿真系统。' },
+            { id: 'academic-career-success', title: '学业表现与职业成功的多元统计建模与分析', description: '基于5000名大学毕业生数据集开展多元统计与计量经济学研究，运用多元线性回归（R² = 0.825）、卡方检验、Cramér\'s V系数与k-Means聚类深入剖析起薪决定因素与人才画像。' },
+            { id: 'lithium-brine-extraction', title: '盐湖卤水太阳能蒸发提锂技术与技术经济综合建模', description: '对南美6大标志性盐湖锂矿开展了技术经济与地球化学全流程基准对标，深入分析了太阳能梯度蒸发动力学、镁锂比（Mg/Li）除杂分离工艺及3200美元/吨高竞争力运营成本。' },
+            { id: 'petropolis-landslide-modeling', title: '基于物理机制的滑坡易发性数值模拟研究（巴西彼得罗波利斯）', description: '针对巴西里约热内卢州彼得罗波利斯795平方公里高危山区，开展地理空间数据工程处理与降雨诱发浅层滑坡物理机制数值模拟，深度整合USGS TRIGRS v2.1.0非定常入渗模型、QGIS、GRASS与无限边坡稳定性力学分析。' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: '赞助经理', description: '作为赞助经理，我的核心职责是确保重要的合作伙伴关系和赞助，为EJE富有影响力的学生黑客马拉松系列活动提供支持。我积极为主要活动寻找赞助商，包括OP&X黑客马拉松、战略咨询黑客马拉松（SCH）、DataQuest黑客马拉松以及金融黑客马拉松。通过将公司与这些平台联系起来，我帮助他们接触到摩洛哥最优秀的学生，并为未来的人才发展提供动力。' },
@@ -497,11 +522,14 @@ const translations = {
             { id: 'geology-internship', title: 'Estágio de Geologia e Geofísica', description: 'Estudos de campo em Oulmès abrangendo geologia, geofísica e hidrogeologia. Aplicação de tomografia de resistividade elétrica e análise de águas subterrâneas.' },
             { id: 'wood-behavior-mmc', title: 'Lei de Comportamento da Madeira (Projeto MMC)', description: 'Estudou as propriedades mecânicas da madeira, modelou seu comportamento elástico ortotrópico e realizou testes de compressão e flexão para medir o módulo de Young e a resistência à ruptura.' },
             { id: 'biomedical-diffusion', title: 'Difusão de Oxigênio no Ácino Pulmonar', description: 'Conduzi um projeto de engenharia biomédica para modelar a difusão de oxigênio no ácino pulmonar, resolvendo a equação de difusão 2D usando métodos numéricos.' },
-            { id: 'robotics-vision', title: 'Robótica e Detecção de Imagem', description: 'Desenvolvi um sistema robótico completo com capacidades de detecção de imagem, desde a modelagem 3D no SolidWorks até a implementação de algoritmos de processamento de imagem em Python.' },
+            { id: 'robotics-vision', title: 'Design, Fabricação Robótica e Visão Computacional', description: 'Projetou, fabricou e montou um braço robótico articulado autônomo do zero—desde modelagem 3D em SolidWorks, prototipagem física e mecatrônica, até cinemática inversa e visão computacional com OpenCV para detecção e classificação em tempo real.' },
             { id: 'tourist-planner', title: 'Planificador de Visitas Turísticas', description: 'Desenvolvimento de uma aplicação web full-stack para planear e otimizar itinerários turísticos utilizando o algoritmo do caixeiro viajante (TSP), React, Django e a API do Google Maps.' },
             { id: 'teachy-platform', title: 'Teachy: Plataforma de Aprendizagem de Idiomas', description: 'Desenvolveu uma plataforma inovadora de aprendizagem de idiomas online que conecta alunos a falantes nativos para imersão interativa ao vivo, cursos personalizados e recursos pedagógicos.' },
             { id: 'biomass-co2-nareva', title: 'Captura de CO2 Biogênico & E-Fuels (Projeto NAREVA)', description: 'Estudo de pré-viabilidade técnico-econômica para captura de 150 kt/ano de CO2 biogênico a partir de biomassa em Marrocos para produção e exportação de e-metanol verde para a Europa.' },
-            { id: 'sociotechnical-controversy-africa', title: 'Controvérsia Sociotécnica: Tecnocracia na África', description: 'Análise aprofundada de uma controvérsia sociotécnica sobre o papel da tecnocracia no desenvolvimento africano, mapeando desafios estruturais e dinâmicas de múltiplos atores em 5 setores-chave.' }
+            { id: 'sociotechnical-controversy-africa', title: 'Controvérsia Sociotécnica: Tecnocracia na África', description: 'Análise aprofundada de uma controvérsia sociotécnica sobre o papel da tecnocracia no desenvolvimento africano, mapeando desafios estruturais e dinâmicas de múltiplos atores em 5 setores-chave.' },
+            { id: 'academic-career-success', title: 'Análise Estatística do Sucesso Acadêmico e Profissional', description: 'Estudo estatístico e econométrico sobre 5.000 graduados modelando os determinantes do salário inicial mediante regressão linear múltipla (R² = 0.825), testes de Chi-cuadrado, V de Cramér e clustering k-Means.' },
+            { id: 'lithium-brine-extraction', title: 'Produção de Lítio a partir de Salmouras por Evaporação Solar', description: 'Estudo técnico-econômico e modelagem geoquímica da extração de lítio em 6 salares sul-americanos, analisando a cinética de evaporação, seletividade de impurezas Mg/Li e custos operacionais (OPEX 3.200 USD/t).' },
+            { id: 'petropolis-landslide-modeling', title: 'Modelagem Física da Suscetibilidade a Deslizamentos (Petrópolis, RJ)', description: 'Preparação de dados geoespaciais e modelagem física de escorregamentos translacionais induzidos por chuvas intensas em Petrópolis (Brasil), acoplando o modelo de infiltração transiente USGS TRIGRS v2.1.0, QGIS, GRASS e mecânica de taludes sobre 795 km².' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocínios', description: 'Como Gerente de Patrocínios, minha principal responsabilidade é garantir parcerias e patrocínios vitais para impulsionar o portfólio impactante de hackathons estudantis da EJE. Busco ativamente patrocinadores para grandes eventos, incluindo o Hackathon OP&X, o Hackathon de Consultoria Estratégica (SCH), o Hackathon DataQuest e o Hackathon de Finanças. Ao conectar empresas a essas plataformas, ajudo-as a interagir com os estudantes mais brilhantes de Marrocos e a impulsionar o desenvolvimento de futuros talentos.' },
@@ -575,12 +603,14 @@ const translations = {
             { id: 'geology-internship', title: 'Geologie- und Geophysik-Praktikum', description: 'Feldstudien in Oulmès mit den Schwerpunkten Geologie, Geophysik und Hydrogeologie. Anwendung von elektrischer Widerstandstomographie und Grundwasseranalyse.' },
             { id: 'wood-behavior-mmc', title: 'Verhaltensgesetz des Holzes (MMC-Projekt)', description: 'Untersuchung der mechanischen Eigenschaften von Holz, Modellierung seines orthotropen elastischen Verhaltens und Durchführung von Druck- und Biegeversuchen zur Messung des Elastizitätsmoduls und der Bruchfestigkeit.' },
             { id: 'biomedical-diffusion', title: 'Sauerstoffdiffusion im Lungenazinus', description: 'Durchführung eines biomedizinischen Projekts zur Modellierung der Sauerstoffdiffusion im Lungenazinus durch numerische Lösung der 2D-Diffusionsgleichung.' },
-            { id: 'robotics-vision', title: 'Robotik und Bilderkennung', description: 'Entwicklung eines kompletten Robotersystems mit Bilderkennungsfunktionen, von der 3D-Modellierung in SolidWorks bis zur Implementierung von Bildverarbeitungsalgorithmen in Python.' },
+            { id: 'robotics-vision', title: 'Roboterarm-Design, Fertigung & Computer Vision', description: 'Entwurf, mechanische Fertigung und Montage eines autonomen Knickarmroboters von Grund auf—von der 3D-CAD-Modellierung in SolidWorks über Prototypenbau und Mechatronik bis hin zur inversen Kinematik und Echtzeit-Bildverarbeitung mit OpenCV.' },
             { id: 'tourist-planner', title: 'Touristischer Besuchsplaner', description: 'Entwicklung einer Full-Stack-Webanwendung zur Planung und Optimierung touristischer Reiserouten mit dem Algorithmus des Handlungsreisenden (TSP), React, Django und der Google Maps API.' },
             { id: 'teachy-platform', title: 'Teachy: Online-Sprachlernplattform', description: 'Entwicklung einer innovativen Online-Sprachlernplattform, die Lernende mit Muttersprachlern für interaktive Live-Immersion, personalisierte Kurse und pädagogische Ressourcen verbindet.' },
             { id: 'biomass-co2-nareva', title: 'Biogene CO2-Abscheidung & E-Fuels (NAREVA-Projekt)', description: 'Technisch-ökonomische Machbarkeitsstudie zur Abscheidung von 150 kt/Jahr biogenem CO2 aus Biomasse in Marokko zur Produktion und zum Export von grünem E-Methanol nach Europa.' },
             { id: 'sociotechnical-controversy-africa', title: 'Soziotechnische Kontroverse: Technokratie in Afrika', description: 'Tiefgehende Analyse einer soziotechnischen Kontroverse zur Frage, ob Technokratie einen Entwicklungsimpuls für Afrika darstellt, mit systematischer Kartierung von Herausforderungen und Akteuren in 5 Kernsektoren.' },
-            { id: 'vsm-ciam-steel', title: 'Produktionssysteme & VSM: CIAM Stahlwerk', description: 'Industrielle Lean-Diagnose und Value Stream Mapping (VSM/VSD) für das CIAM-Stahlwerk mit 5S/SMED/TPM-Maßnahmenplänen zur Steigerung der Jahreskapazität auf 1M Tonnen und Reduzierung der Lieferzeiten um 75%.' }
+            { id: 'academic-career-success', title: 'Statistische Analyse des Akademischen & Beruflichen Erfolgs', description: 'Ökonometrische und statistische Analyse von 5.000 Hochschulabsolventen zur Modellierung der Einstiegsgehälter mittels multipler linearer Regression (R² = 0.825), Chi-Quadrat-Tests, Cramérs V und k-Means-Clustering.' },
+            { id: 'lithium-brine-extraction', title: 'Lithiumgewinnung aus Sole durch Solare Verdunstung', description: 'Technisch-ökonomische und geochemische Modellierung der Lithiumgewinnung aus 6 südamerikanischen Salzseen mit Analyse der Verdunstungskinetik, Mg/Li-Selektivität und OPEX-Optimierung (3.200 USD/t).' },
+            { id: 'petropolis-landslide-modeling', title: 'Physikalische Hangstabilitäts- & Erdrutschmodellierung (Petrópolis, Brasilien)', description: 'Geodatenaufbereitung und physikalisch-basierte Modellierung niederschlagsinduzierter Hangrutschungen in Petrópolis (Brasilien) mittels des USGS TRIGRS v2.1.0 Infiltrationsmodells, QGIS, GRASS und Mohr-Coulomb-Stabilitätsanalyse über 795 km².' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsoring-Manager', description: 'Als Sponsoring-Manager liegt meine Hauptverantwortung in der Sicherung wichtiger Partnerschaften und Sponsorings zur Finanzierung der studentischen Hackathons von EJE. Ich suche aktiv Sponsoren für Großveranstaltungen wie den OP&X Hackathon, den Strategic Consulting Hackathon (SCH), den DataQuest Hackathon und den Finance Hackathon. Durch die Verbindung von Unternehmen mit diesen Plattformen helfe ich ihnen, mit Marokkos klügsten Köpfen in Kontakt zu treten.' },
@@ -603,7 +633,7 @@ const translations = {
 const projectsData = [
     { 
         id: 'mental-health-analytics', 
-        date: '2024-06', 
+        date: '2025-01', 
         technologies: ['Machine Learning', 'NLP', 'Python', 'Scikit-learn', 'NLTK', 'Classification Models'], 
         githubUrl: 'https://github.com/mohammed-el-baraka/mental-health-analytics',
         demoUrl: 'https://mohammed-el-baraka.github.io/mental-health-analytics/',
@@ -613,7 +643,7 @@ const projectsData = [
     },
     { 
         id: 'red-fruit-optimization', 
-        date: '2024-01', 
+        date: '2024-06', 
         technologies: ['Linear Programming', 'Python', 'Pulp', 'Optimization Modeling', 'Algorithm Design'], 
         githubUrl: '',
         demoUrl: '',
@@ -623,9 +653,9 @@ const projectsData = [
     },
     { 
         id: 'powerbi-dashboard', 
-        date: '2023-11', 
+        date: '2024-07', 
         technologies: ['Power BI', 'Excel', 'Data Analysis', 'Dashboard Design', 'VBA'], 
-        githubUrl: 'https://github.com/mohammed-el-baraka/powerbi-financial-dashboard',
+        githubUrl: '',
         demoUrl: '',
         metric: '100% Automated Reconciliation',
         reportUrl: 'https://drive.google.com/file/d/1hprde0Kd4Tsi4D9BBQsdlpKLj5D3WIFj/view?usp=sharing', 
@@ -633,7 +663,7 @@ const projectsData = [
     },
     { 
         id: 'rsa-cryptography', 
-        date: '2023-05', 
+        date: '2024-11', 
         technologies: ['Cryptography', 'RSA Algorithm', 'Cryptanalysis', 'Number Theory', 'SageMath', 'Python'], 
         githubUrl: 'https://github.com/mohammed-el-baraka/rsa-shared-modulus-attacks',
         demoUrl: '',
@@ -683,11 +713,11 @@ const projectsData = [
     },
     { 
         id: 'robotics-vision', 
-        date: '2024-07', 
-        technologies: ['Robotics', 'Python', 'Image Detection', 'SolidWorks', 'OpenCV'], 
+        date: '2025-05', 
+        technologies: ['CAD / SolidWorks', 'Mechanical Fabrication', 'Mechatronics & Kinematics', 'Computer Vision (OpenCV)', 'Python', 'Real-time Detection'], 
         githubUrl: '',
         demoUrl: '',
-        metric: '60 FPS Real-time Detection',
+        metric: '4-DOF Fabricated Arm & 60 FPS Vision',
         reportUrl: 'https://drive.google.com/file/d/148jUa5mRyydjS2Ht8fpk8rGQDJ9yQJok/view?usp=sharing', 
         presentationUrl: 'https://drive.google.com/file/d/1VI5hfPQouqk4th9hAxw9NYShz_brn1Pi/view?usp=sharing' 
     },
@@ -734,13 +764,64 @@ const projectsData = [
     },
     { 
         id: 'vsm-ciam-steel', 
-        date: '2024-04', 
+        date: '2024-11', 
         technologies: ['Lean Manufacturing', 'Value Stream Mapping (VSM)', 'Value Stream Design (VSD)', 'Production Systems', 'Ishikawa (5M)', 'Industrial Logistics', 'Takt Time & OEE', 'Supply Chain Optimization'], 
         githubUrl: '',
         demoUrl: '',
         metric: '+19% Capacity (1M t/yr) & -75% Lead Time',
         reportUrl: '', 
         presentationUrl: 'https://drive.google.com/file/d/1Fg_3u52aXbdAiX1ZmJc387LCBDp8WYl4/view?usp=sharing' 
+    },
+    { 
+        id: 'pg-brand-management-shadowing', 
+        date: '2025-05', 
+        technologies: ['Brand Management', 'FMCG Operations', 'Market Strategy & Planning (MS&P)', 'Supply Network Operations (SNO)', 'Pricing Dynamics & P&L', 'Power BI & Advanced Excel', 'Retail Execution (DPSM)'], 
+        githubUrl: '',
+        demoUrl: '',
+        metric: 'P&G Hair Care & Cross-Functional Operations',
+        reportUrl: 'https://drive.google.com/file/d/1R2XBIpMTFLKdOC5vt7a59A_EWP9uVuOS/view?usp=sharing', 
+        presentationUrl: 'https://drive.google.com/file/d/1eeveC5dSpna4M_2eXn0FHfqbT-M8kTcw/view?usp=sharing' 
+    },
+    { 
+        id: 'redstart-reusable-booster', 
+        date: '2025-02', 
+        technologies: ['Python', 'SciPy & NumPy', 'Autograd & SymPy', 'ODE Numerical Integration', 'Gimbaled Thrust Control', 'Marimo & Pixi', 'Matplotlib Animation'], 
+        githubUrl: 'https://github.com/mohammed-el-baraka/redstart-reusable-booster',
+        demoUrl: '',
+        metric: '6-State Nonlinear ODE & Soft Landing Trajectory',
+        reportUrl: '', 
+        presentationUrl: '' 
+    },
+    { 
+        id: 'academic-career-success', 
+        date: '2025-05', 
+        technologies: ['Applied Statistics', 'Multiple Linear Regression', 'k-Means Clustering', 'Hypothesis Testing (Chi-2)', 'Econometrics', 'Python (Scikit-Learn, SciPy)', 'Data Visualization (Seaborn)'], 
+        githubUrl: '',
+        demoUrl: '',
+        metric: 'R² = 0.825 & k-Means Clustering (5k Cohort)',
+        reportUrl: 'https://drive.google.com/file/d/1Oz1zTtNyZ9HTMv9So30yxIeAYXHfpBpW/view?usp=sharing', 
+        presentationUrl: 'https://drive.google.com/file/d/1lqLUJISnFfJFqTREFfoRatx1mNmeo4X5/view?usp=sharing' 
+    },
+    { 
+        id: 'lithium-brine-extraction', 
+        date: '2025-05', 
+        technologies: ['Mining Engineering', 'Mineral Processing', 'Techno-Economic Modeling', 'Geochemistry & Hydrogeology', 'Process Optimization', 'Lithium Extraction (DLE & Evaporation)', 'Energy Transition & ESG'], 
+        githubUrl: '',
+        demoUrl: '',
+        metric: '72% Recovery, $3,200/t OPEX & 6 Salars Benchmarked',
+        reportUrl: 'https://drive.google.com/file/d/19agqfj7ih2LU1CaHCN9t3agcUAiUTfGj/view?usp=sharing', 
+        presentationUrl: '' 
+    },
+    { 
+        id: 'petropolis-landslide-modeling', 
+        date: '2025-09', 
+        technologies: ['Geosciences & Geohazards', 'USGS TRIGRS (Fortran)', 'QGIS & GRASS GIS', 'Digital Elevation Models (DEM/LiDAR)', 'Soil Mechanics & Slope Stability', 'Hydrological Modeling', 'GDAL / Python'], 
+        githubUrl: '',
+        demoUrl: '',
+        metric: 'TRIGRS Infiltration & Slope Stability Modeling (795 km²)',
+        reportUrl: 'https://drive.google.com/file/d/1oiInoAHtG344m9ZCdsKebILFN0JANaKk/view?usp=sharing', 
+        presentationUrl: 'https://drive.google.com/file/d/1DVbIjmzNxF5iWUYgVY6F3reZwA1TWzB5/view?usp=sharing',
+        culturalPresentationUrl: 'https://drive.google.com/file/d/1HyptDfACjDz1DCeKaNOUQA_Lq9eSe7PL/view?usp=sharing'
     }
 ];
 
@@ -1535,7 +1616,7 @@ NAREVA est un acteur marocain de référence dans le secteur de l'énergie et la
 Quatre gisements majeurs de biomasse ont été évalués selon 5 critères : Teneur en carbone, localisation, coût d'acquisition, réglementation et tendance d'évolution.
 
 | Type de Biomasse | Teneur en Carbone | Coût d'Acquisition | Verdict & Justification |
-| :--- | :---: | :---: | :--- |
+| :--- | :--- | :--- | :--- |
 | **Bois Forestier** | Élevée (1kg bois $\\rightarrow$ 1.83kg $CO_2$) | Variable / Restreint | ❌ **Rejeté :** Secteur en crise, surexploitation (3x la capacité), coupe soumise à permis strict (HCEFLCD/ANEF). |
 | **Boues d'Épuration (STEP)** | 19% C (38% MOS) | 800 - 900 MAD/t | ⚠️ **Secondaire :** 27 000 tMOS/an exploitable, gisement localisé (Casa-Settat, Rabat, Marrakech). |
 | **Déchets Ménagers (DMA)** | Variable (Casa: 122 kt C, Rabat: 85 kt C) | ~1500 MAD/t (TMB + transport) | ⚠️ **Complexe :** Tri mécanobiologique et gestion contractuelle déléguée (Ecomed, Suez, Pizzorno). |
@@ -1551,7 +1632,7 @@ Quatre gisements majeurs de biomasse ont été évalués selon 5 critères : Ten
 ## 3. Benchmark Technologique du Captage de $CO_2$ (150 kt/an)
 
 | Technologie | Principe & Procédé | TRL | Coût Actualisé ($/t $CO_2$) | Bilan Énergétique & Technique |
-| :--- | :--- | :---: | :---: | :--- |
+| :--- | :--- | :--- | :--- | :--- |
 | **Post-combustion (Amine MEA)** | Centrale CHP Biomasse (58.6 MW) + Absorption chimique aux amines | **TRL 9** | **119 USD/tonne** | **Choix Optimal.** Chaleur et électricité coproduites. Surplus d'électricité revendu à 53 $/MWh. CAPEX: 64 M$. |
 | **Oxycombustion** | Combustion en atmosphère $O_2/CO_2$ recyclé + Unité de séparation d'air (USA) | **TRL 7** | **130 USD/tonne** | CAPEX élevé (90.56 M$), besoin énergétique interne de 56.9 GWh/an (USA + compression). |
 | **Précombustion (Gazéification)** | Gazéification en syngas ($CO + H_2$) + Water-gas shift + Adsorption PSA | **TRL 8** | **180 USD/tonne** | Rendement dépendant de la valorisation de l'hydrogène coproduit (1.26 $/kg). |
@@ -1668,7 +1749,7 @@ La technocratie ne constitue pas une panacée isolée mais un **levier d'accél�
 
 **Institution :** EMINES – School of Industrial Management  
 **Discipline :** Systèmes de Production, Logistique Industrielle & Lean Manufacturing  
-**Date :** Avril 2024  
+**Date :** Novembre 2024  
 **Équipe de projet :** ElMahdi ELBAKKAR, Abderrahman YOUSFI, Adam EL YAAGOUBI, Mohammed EL BARAKA, Amine ENNADZIM, Samia AMAHMID, Hamza ELMORJANI, Zakaria ET TORI, ElMehdi ER-RAGABI, Ammar HADDAD  
 
 ---
@@ -1745,5 +1826,304 @@ $$\\text{Takt Time} = \\frac{\\text{Temps d'ouverture hebdomadaire}}{\\text{Dema
 ### 5.2 Résultats Attendus de l'État Futur Cible (VSD)
 1. Atteinte de la cible annuelle de **1 000 000 tonnes/an** sans surcoût d'exploitation majeur.
 2. Compression du Lead Time de **5 semaines à 1,25 semaine** (-75%).
-3. Élimination des goulots thermiques et mécaniques, propulsant le taux de VA à plus de **75%**.`
+3. Élimination des goulots thermiques et mécaniques, propulsant le taux de VA à plus de **75%**.`,
+
+    'pg-brand-management-shadowing': `# Shadowing Internship Report: Brand Management & Operations
+
+**Company:** Procter & Gamble Morocco & Algeria (Casablanca Office)  
+**Division:** Hair Care Brand Management & Multi-Functional Teams (MFT)  
+**Supervisor Shadowed:** Laila — Brand Manager, Hair Care  
+**Date:** May 2025  
+
+---
+
+## 1. Executive Summary & Corporate Ecosystem
+
+This report synthesizes the executive frameworks, cross-functional operations, and commercial mechanics observed during an intensive shadowing internship at **Procter & Gamble (P&G) Morocco & Algeria** in Casablanca.
+
+* **Heritage & Local Footprint:** Established in Morocco for **67 years**.
+* **Manufacturing Hub:** Ain Sebaa Factory (Casablanca) producing Ariel and Tide powder detergents for Morocco and regional exports (~$5 Million exported to Algeria).
+* **Distribution Scale (via Dislog Group):**
+  * **Modern Trade (MT):** 4,000+ stores (Hypermarkets: Marjane, Carrefour, Aswak Assalam; Discounters: BIM, Kazyon).
+  * **Traditional Trade (TT / Moul L7anout):** 50,000+ High Frequency Stores (HFS) accounting for **70% of Hair Care sales volume**.
+
+---
+
+## 2. Multi-Functional Team (MFT) Structure & Governance
+
+P&G operates through autonomous, highly coordinated Multi-Functional Teams (MFT) where the Brand Manager acts as a **mini-CEO** orchestrating category growth:
+* **Brand Manager (BM):** Strategy, innovation, P&L ownership, and regional leadership interface (AMA/NWA).
+* **Market Strategy & Planning (MS&P):** Commercial execution bridge between Brand Strategy and Sales.
+* **Finance & Accounting (F&A):** Profit margin architecture, rolling monthly/quarterly forecasting, and factory cost variance tracking.
+* **Supply Network Operations (SNO):** End-to-end demand planning, safety stock sizing, and logistics crisis resolution.
+* **Brand Operations (BOP):** Agency negotiation, in-store POS installations, and campaign theatralisation.
+
+---
+
+## 3. Strategic Frameworks & Commercial Execution
+
+### 3.1 The 5 Vectors of Superiority & Moments of Truth
+1. **Packaging:** Structural design, shelf impact, and premium feel.
+2. **Product (SMOT — Second Moment of Truth):** In-home consumer delight and formulation superiority.
+3. **Retail Execution (FMOT — First Moment of Truth):** In-store placement, visibility, and pricing compliance.
+4. **Awareness & Communication (ZMOT — Zero Moment of Truth):** Digital storytelling, influencer partnerships (KOLs), and TikTok/Reels/YouTube media planning ($250k budget).
+
+### 3.2 The Pyramid of Sales (DPSM Framework)
+$$\\text{Share of Shelf} \\approx \\text{Share of Market}$$
+* **D — Distribution:** Maximizing weighted & numeric distribution across Modern Trade and Traditional Trade.
+* **P — Pricing:** Setting competitive list prices and trade margins (Ariel 4L at 100 DH vs. Magix CPI = 167%).
+* **S — Shelving:** Eye-level planogram compliance (e.g., Head & Shoulders holding ~33% market share with 35% shelf space).
+* **M — Merchandising:** Driving impulse purchases via secondary displays, parasite merchandising (Gillette in hair aisle), and promotional bundles.
+
+---
+
+## 4. Supply Network Operations (SNO) & Crisis Management
+
+* **Gillette Out-of-Stock Crisis:** Managed emergency batch injection (2,000 units/store), absorbed working capital to protect market share against BIC, and applied 10–15% tactical discounts.
+* **Dynamic SNO Planning:** Sizing safety stocks monthly, modeling promotional uplift (TPR), and coordinating multi-origin sourcing (Bangkok vs. Bangalore vs. Europe).
+
+---
+
+## 5. Supplementary Analytical Modeling: Linear Regression
+
+Parameter estimation for price elasticity and promotional uplift:
+$$\\hat{\\beta} = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum_{i=1}^n (x_i - \\bar{x})^2}$$
+This mathematical foundation underpins baseline sales decomposition, ROI modeling in Excel/Power BI, and forecasting accuracy across SKU portfolios.
+
+---
+
+## 6. Key P&G Business Metrics Summary
+
+* **Heritage:** 67 Years in Morocco
+* **Retail Reach:** 4,000+ MT Stores / 50,000+ TT Shops
+* **Hair Care Channel Split:** TT: 70% | MT: 23% | Preferred Accounts: 9%
+* **Market Leader:** Head & Shoulders holding ~33% Market Share (35% Shelf Share)
+* **Digital Media Budget:** $250,000 across digital video & social media platforms`,
+
+    'redstart-reusable-booster': `# Redstart: A Lightweight Reusable Rocket Booster Simulation
+
+**Coursework Project:** Physics Simulation, Optimal Control & Trajectory Optimization  
+**Supervisor / Academic Director:** Sébastien Boisgérault (Mines Paris - PSL / EMINES)  
+**Environment & Tech Stack:** Python, SciPy, NumPy, Autograd, SymPy, Marimo, Pixi, Matplotlib  
+**GitHub Repository:** [github.com/mohammed-el-baraka/redstart-reusable-booster](https://github.com/mohammed-el-baraka/redstart-reusable-booster)  
+
+---
+
+## 1. Project Overview & Physical Model
+
+Redstart is an advanced physics simulation and optimal control systems project focused on modeling the 2D descent, attitude dynamics, and powered soft landing of a reusable rocket booster (inspired by SpaceX Falcon 9 / Falcon Heavy launch vehicles).
+
+### Physical Parameters & Specifications:
+* **Booster Mass:** $M = 1\\,\\text{kg}$
+* **Total Length:** $2\\ell = 2\\,\\text{m}$ (half-length $\\ell = 1\\,\\text{m}$)
+* **Gravitational Acceleration:** $g = 1\\,\\text{m/s}^2$
+* **Moment of Inertia:** Modeled as a uniform rigid cylindrical rod rotating about its center of mass:
+  $$J = \\frac{1}{3} M \\ell^2 = \\frac{1}{3}\\,\\text{kg}\\cdot\\text{m}^2$$
+
+---
+
+## 2. Mathematical Modeling & Dynamical Derivations
+
+### 2.1 Gimbaled Reactor Thrust Vectoring
+The rocket engine at the base is orientable with gimbal angle $\\phi(t)$ and variable thrust amplitude $f(t)$. In the local booster frame tilted by angle $\\theta(t)$, the 2D global thrust vector is:
+$$\\begin{bmatrix} f_x \\\\ f_y \\end{bmatrix} = R(\\theta) \\begin{bmatrix} -f \\sin\\phi \\\\ f \\cos\\phi \\end{bmatrix} = \\begin{bmatrix} -f \\sin(\\theta + \\phi) \\\\ f \\cos(\\theta + \\phi) \\end{bmatrix}$$
+
+### 2.2 Center of Mass Translational Equations of Motion
+$$\\ddot{x}(t) = \\frac{f_x}{M} = -\\frac{f(t)}{M} \\sin(\\theta(t) + \\phi(t))$$
+$$\\ddot{y}(t) = \\frac{f_y}{M} - g = \\frac{f(t)}{M} \\cos(\\theta(t) + \\phi(t)) - g$$
+
+### 2.3 Rotational Dynamics & Attitude Control
+Torque $\\tau$ applied at the base of the booster generates angular acceleration:
+$$\\tau(t) = -\\ell f(t) \\sin\\phi(t) \\implies \\ddot{\\theta}(t) = -\\frac{\\ell f(t)}{J} \\sin\\phi(t) = -\\frac{3 f(t)}{M \\ell} \\sin\\phi(t)$$
+
+---
+
+## 3. Simulation Engine & Numerical Integration
+
+The system is formulated as a 6-state continuous ODE dynamical system:
+$$\\mathbf{y}(t) = \\begin{bmatrix} x(t) & \\dot{x}(t) & y(t) & \\dot{y}(t) & \\theta(t) & \\dot{\\theta}(t) \\end{bmatrix}^T$$
+$$\\dot{\\mathbf{y}}(t) = \\begin{bmatrix} \\dot{x} & -\\frac{f}{M}\\sin(\\theta+\\phi) & \\dot{y} & \\frac{f}{M}\\cos(\\theta+\\phi)-g & \\dot{\\theta} & -\\frac{3f}{M\\ell}\\sin\\phi \\end{bmatrix}^T$$
+
+* Implemented in Python via \`scipy.integrate.solve_ivp\` supporting arbitrary time horizons, initial state vectors, and dynamic state-feedback control laws.
+
+---
+
+## 4. Controlled Soft Landing Trajectory
+
+Formulated and solved the two-point boundary value problem for a vertical soft touchdown:
+* **Initial State ($t=0\\,\\text{s}$):** $y(0) = 10\\,\\text{m}, \\quad \\dot{y}(0) = 0\\,\\text{m/s}, \\quad \\theta(0) = 0$
+* **Target Landing State ($t=5\\,\\text{s}$):** $y(5) = \\ell = 1\\,\\text{m}, \\quad \\dot{y}(5) = 0\\,\\text{m/s}, \\quad \\theta(5) = 0$
+* Derived the optimal polynomial thrust schedule $f(t)$ delivering zero impact velocity and precise zero-tilt touchdown at ground level.
+
+---
+
+## 5. Animation & Video Rendering Pipeline
+
+* Built automated visualizers with \`matplotlib.animation.FuncAnimation\` and \`FFMpegWriter\`.
+* Real-time rendering of fuselage spatial coordinates $(x,y)$, attitude tilt $\\theta$, dynamically deflected flame vector $\\phi$, and target landing pad.`,
+
+    'academic-career-success': `# Analyse de la Réussite Académique et Professionnelle
+
+**Projet Statistique — Année Universitaire 2024-2025**  
+**Institution :** EMINES – School of Industrial Management, Université Mohammed VI Polytechnique (UM6P)  
+**Date de soutenance :** 13 Mai 2025  
+**Encadrants :** Prof. Mohamed EL MACHKOURI, Prof. Idir OUASSOU  
+**Auteurs (Groupe 11) :** Mohammed EL BARAKA, Yassine BOUAZAMI, Ayoub AGMAH, Mohammed Amine TALHI  
+
+---
+
+## 1. Résumé Exécutif du Projet
+
+Ce projet statistique propose une analyse multidimensionnelle approfondie des déterminants de l'insertion et de la réussite professionnelle des jeunes diplômés universitaires. Fondée sur un jeu de données de **5 000 observations** et **20 variables** (\`education-career-success.csv\`), cette étude explore les interactions entre les performances académiques, les compétences comportementales (*soft skills*), l'expérience pratique (stages et projets), ainsi que les retombées professionnelles (salaire de départ, nombre d'offres d'emploi, satisfaction de carrière et équilibre de vie).
+
+---
+
+## 2. Démarche Méthodologique & Pipeline Statistique
+
+1. **Nettoyage & Standardisation :** Complétude vérifiée (0 valeur manquante) et normalisation *StandardScaler* ($\\mu=0, \\sigma=1$).
+2. **Analyse Exploratoire Univariée :** Distributions de l'University GPA (médiane $3.26$), du salaire initial (médiane $\$52,300$), des soft skills (médiane $6.0/10$) et du nombre d'offres (médiane $3.0$).
+3. **Analyse Multivariée & Corrélations de Pearson :**
+   * Forte corrélation Salaire $\\leftrightarrow$ Nombre d'offres ($r = 0.74$) et GPA ($r = 0.69$).
+   * **Orthogonalité fondamentale :** Corrélation quasi-nulle ($r = 0.01$) entre le GPA et le score de Soft Skills, démontrant l'indépendance de ces deux dimensions de compétences.
+4. **Tests d'Association & Inférence :**
+   * Rejet de l'hypothèse de normalité univariée (Shapiro-Wilk $p < 0.05$).
+   * Association significative au test du $\\chi^2$ et V de Cramér ($V = 0.54$ pour Offres $\\leftrightarrow$ Salaire, $V = 0.50$ pour GPA $\\leftrightarrow$ Stages).
+5. **Modélisation par Régression Linéaire Multiple :**
+   $$\\widehat{\\text{Starting\\_Salary}} = 4\\,234 + 10\\,102 \\cdot \\text{GPA} + 4\\,936 \\cdot \\text{Job\\_Offers} + 49 \\cdot \\text{Internships} + 72 \\cdot \\text{Soft\\_Skills}$$
+   * **Performance :** $R^2 = 0.825$ (82.5% de variance expliquée), $\\text{RMSE} = \\$4\\,025.81$, validation croisée 5-fold $R^2 = 0.8260$.
+   * **Résidus :** Normalité confirmée (Shapiro-Wilk $p=0.54 > 0.05$) et homoscédasticité validée.
+
+---
+
+## 3. Typologie des Diplômés (Segmentation $k$-Means)
+
+* **Profil 1 — "Les Hauts Potentiels / Élite" :** GPA élevé ($>3.7$), stages multiples ($\ge 5$), soft skills solides $\\rightarrow$ offres maximales ($\ge 4$) et salaires $>\\$65\\,000$.
+* **Profil 2 — "Les Praticiens Équilibrés" :** GPA ($3.0-3.4$), forte immersion projets/stages, soft skills élevés $\\rightarrow$ salaires $\$52\\,000-\\$58\\,000$ et haute satisfaction.
+* **Profil 3 — "Les Profils Académiques Purs" :** Très bon GPA mais faible score relationnel $\\rightarrow$ levier de négociation initial plus modéré.
+* **Profil 4 — "Les Profils en Développement" :** GPA et expériences pratiques plus limités.
+
+---
+
+## 4. Recommandations Pédagogiques & Managériales
+
+* **Étudiants :** Préserver l'excellence académique tout en développant proactivement les soft skills et l'aisance relationnelle dès les premières années.
+* **Institutions (EMINES / UM6P) :** Intégrer des modules de négociation, prise de parole et leadership au sein des cursus d'ingénierie.
+* **Recruteurs :** Déployer des grilles d'évaluation multicritères équilibrant compétences techniques et potentiel relationnel.`,
+
+    'lithium-brine-extraction': `# Ressources Minérales pour la Transition Énergétique : Production de Lithium à partir de Saumures par Évaporation Naturelle
+
+**Projet Académique & Industriel — EMINES – School of Industrial Management**  
+**Institution :** Université Mohammed VI Polytechnique (UM6P)  
+**Auteurs (Équipe 10) :** Zakaria ET TORI, Laila MONSIF, Mohammed EL BARAKA, Wissal BELABBESS, Othmane TAHFI  
+**Date :** Mai 2025  
+
+---
+
+## 1. Contexte Stratégique & Procédé d'Évaporation Solaire
+
+Le lithium est un métal stratégique incontournable pour les batteries Li-ion de la transition énergétique. L'exploitation des saumures continentales des *salars* sud-américains constitue la filière la plus compétitive :
+1. **Pompage :** Extraction souterraine de saumure saturée en sels minéraux.
+2. **Évaporation fractionnée :** Cascade de bassins ouverts sur 12 à 18 mois exploitant le rayonnement solaire et le vent.
+3. **Précipitation sélective :** Cristallisation progressive des sels (NaCl, KCl, sels de Mg et Ca).
+4. **Purification & Conversion :** Chaulage pour élimination du Mg, puis carbonatation au $\\text{Na}_2\\text{CO}_3$ pour obtenir le carbonate de lithium ($\\text{Li}_2\\text{CO}_3$, LCE) de pureté batterie.
+
+---
+
+## 2. Benchmark Industriel Comparatif (6 Projets Majeurs)
+
+| Indicateur / Paramètre | Sal de Vida (Catamarca) | Sal de Olaroz (Jujuy) | Solaroz (Jujuy) |
+| :--- | :---: | :---: | :---: |
+| **Volume de saumure exploitable** | $1\\,299{,}20\\,\\text{Mm}^3$ (5.6 Mt LCE) | **$3\\,180{,}00\\,\\text{Mm}^3$** (6.4 Mt LCE) | $2\\,008{,}00\\,\\text{Mm}^3$ |
+| **Concentration en Lithium** | **$806\\,\\text{mg/L}$** | $630\\,\\text{mg/L}$ | $400\\,\\text{mg/L}$ |
+| **Ratio $\\text{Mg}/\\text{Li}$** | **$1{,}5$ (Très favorable)** | $2{,}27$ | $2{,}1$ |
+| **Taux de récupération métallique** | **$72\\%$** | $60\\%$ | En cours d'ingénierie |
+| **Capacité journalière de traitement** | $19\\,068\\,\\text{m}^3/\\text{jour}$ | **$34\\,054\\,\\text{m}^3/\\text{jour}$** | $12\\,000\\,\\text{m}^3/\\text{jour}$ |
+| **Intensité énergétique** | **$24{,}14\\,\\text{MJ/m}^3$** ($5{,}6\\,\\text{GJ/t LCE}$) | $42{,}00\\,\\text{MJ/m}^3$ | N/A |
+| **Émissions carbone spécifiques** | $0{,}0138\\,\\text{t CO}_2/\\text{m}^3$ | **$0{,}0021\\,\\text{t CO}_2/\\text{m}^3$** | N/A |
+| **CAPEX Total consolidé** | $1\\,321\\,\\text{M USD}$ | **$1\\,044\\,\\text{M USD}$** | $1\\,282{,}6\\,\\text{M USD}$ |
+| **OPEX unitaire de production** | **$3\\,200\\,\\text{USD/tonne LCE}$** | $4\\,149\\,\\text{USD/tonne LCE}$ | $4\\,611\\,\\text{USD/tonne LCE}$ |
+| **CAPEX spécifique annuel** | **$20\\,000\\,\\text{USD/t/an}$** | $26\\,100\\,\\text{USD/t/an}$ | $32\\,065\\,\\text{USD/t/an}$ |
+
+---
+
+## 3. Analyse des Corrélations Multivariées
+
+* **Rendement Métallique vs Volume :** Pas de corrélation linéaire directe. Le rendement dépend de la géochimie ($\text{Mg}/\text{Li}$) et de la conception des bassins, non de la taille brute du gisement.
+* **Teneur en Li vs Échelle :** Corrélation négative modérée ; les salars compacts bénéficient souvent d'une concentration hydrogéologique plus dense.
+* **CAPEX vs OPEX :** Corrélation inverse démontrant qu'une intensité d'investissement initiale bien ciblée permet de déployer des technologies sobres et d'abaisser les coûts opérationnels unitaires.
+
+---
+
+## 4. Recommandations Stratégiques
+
+1. **Priorité à la qualité géochimique :** Cibler en priorité des saumures à ratio $\\text{Mg}/\\text{Li} < 2$ pour minimiser la consommation de chaux et les pertes en lithium.
+2. **Hybridation DLE :** Coupler l'évaporation solaire avec l'extraction directe du lithium (*Direct Lithium Extraction*) pour hisser les rendements au-delà de $80\\%$ et réduire le temps de cycle de 18 mois à quelques heures.
+3. **Décarbonation intégrale :** Alimenter les unités de pompage et de traitement par des champs solaires photovoltaïques dédiés sur site.`,
+
+    'petropolis-landslide-modeling': `# Geospatial Data Preparation & Physically-Based Modeling for Landslide Susceptibility Analysis: Petrópolis, Brazil
+
+**Academic & Research Internship Report — September 2025**  
+**Host Institution:** Laboratório de Geotecnologia e Hidrologia, Escola de Engenharia, Universidade Federal Fluminense (UFF), Niterói, RJ, Brazil  
+**Home Institution:** EMINES – School of Industrial Management, Université Mohammed VI Polytechnique (UM6P), Ben Guerir, Morocco  
+**Author:** Mohammed EL BARAKA  
+**Supervisors:** Dr. Gean Paulo MICHEL (UFF / UFRGS), Dr. Danubia LISBOA (UFF)  
+
+---
+
+## 1. Executive Summary & Geomorphological Context
+
+This research established a high-resolution, computationally validated GIS-to-physics modeling pipeline coupling terrain data engineering with the **USGS TRIGRS v2.1.0** (Transient Rainfall Infiltration and Grid-Based Regional Slope-Stability) model to assess shallow translational landslide hazards across the mountainous municipality of **Petrópolis, Rio de Janeiro, Brazil ($795\\,\\text{km}^2$)**.
+
+* **Serra do Mar Setting:** Steep coastal escarpment subject to catastrophic convective summer downpours (e.g. Feb 15, 2022 disaster: **$>260\\,\\text{mm}$ in 4 hours** triggering hundreds of slope failures).
+* **Core Pipeline:**
+  1. Geodetic harmonization to **SIRGAS 2000 / UTM Zone 23S (EPSG: 31983)**.
+  2. Hydrological conditioning and topographic derivative extraction (slope gradient, D8 flow accumulation, and upslope contributing area $m^2$).
+  3. High-resolution LiDAR ($1\\,\\text{m}$, 3.7 GB TIN DEM) computational scalability and memory profiling.
+  4. Linux Fortran compilation (\`gfortran -O3\`), input deck (\`tr_in.txt\`) parameterization, and steady-state/transient factor of safety modeling.
+
+---
+
+## 2. Theoretical Mechanics: Infinite Slope Stability & Infiltration
+
+### 2.1 Mohr-Coulomb Limit Equilibrium & Factor of Safety
+Shallow translational landslides with failure planes parallel to ground surface at depth $z$:
+$$\\tau_f = c' + (\\sigma - u) \\tan \\phi'$$
+$$FS = \\frac{c_r + c' + (\\rho_s g z \\cos^2 \\theta - \\rho_w g h \\cos^2 \\theta) \\tan \\phi'}{\\rho_s g z \\sin \\theta \\cos \\theta}$$
+
+### 2.2 Transient Infiltration Dynamics (USGS TRIGRS)
+Pore-water pressure response $u(z,t)$ coupled with linearized 1D Richards diffusion:
+$$u(z, t) = (z - d)\\gamma_w \\cos^2 \\theta + \\sum_{n=1}^N \\Delta I_n \\cdot \\Psi(z, t - t_n)$$
+$$FS_{\\min}(x, y, t) = \\min_{0 \\le z \\le H} \\left\\{ \\frac{\\tan \\phi'}{\\tan \\theta} + \\frac{c' - u(z, t) \\tan \\phi'}{\\rho_s g z \\sin \\theta \\cos \\theta} \\right\\}$$
+
+---
+
+## 3. Geotechnical Parameterization for Petrópolis
+
+| Parameter | Symbol | Adopted Value | Physical Significance |
+| :--- | :---: | :---: | :--- |
+| **Effective Cohesion** | $c'$ | **$0.0\\,\\text{Pa}$** | Cohesionless saprolite colluvium baseline |
+| **Effective Friction Angle** | $\\phi'$ | **$33.0^\\circ$** | Sandy-clay internal friction angle |
+| **Saturated Unit Weight** | $\\gamma_{\\text{sat}}$ | **$18.0\\,\\text{kN/m}^3$** | Total saturated soil density |
+| **Soil Depth to Bedrock** | $H$ | **$1.5\\,\\text{m}$** | Mean regolith thickness |
+| **Hydraulic Conductivity** | $K_s$ | **$1.0 \\times 10^{-6}\\,\\text{m/s}$** | Saturated infiltration rate |
+| **Hydraulic Diffusivity** | $D_0$ | **$1.0 \\times 10^{-7}\\,\\text{m}^2/\\text{s}$** | Transmissivity / specific storage ratio |
+
+---
+
+## 4. Modeling Benchmarks: Deterministic vs. Stochastic
+
+| Evaluation Metric | SHALSTAB (Deterministic) | SINMAP (Stochastic) | Synthesis |
+| :--- | :---: | :---: | :--- |
+| **Success Index ($SuI$)** | $19.55\\%$ | **$94.12\\%$** | SINMAP maximizes hazard coverage |
+| **Error Index ($ErI$)** | **$6.35\\%$** | $30.22\\%$ | SHALSTAB minimizes false positives |
+| **Efficiency Ratio ($SuI/ErI$)** | **$3.11$** | $3.08$ | Comparable global performance |
+| **Catchment Unstable Area** | $\\approx 6\\%$ | $\\approx 30\\%$ | TRIGRS/SHALSTAB provide high spatial specificity |
+
+---
+
+## 5. Technical Highlights & Solved Challenges
+
+1. **CRS Transformation:** Resolved 0-byte clipping failures by harmonizing municipal vectors to EPSG:31983.
+2. **Memory Profiling:** Identified 28 GB RAM threshold for uncompressed 3.7 GB LiDAR arrays, establishing tiling protocols for HPC deployment.
+3. **Engine Validation:** Verified baseline physical stability: all slopes $\\theta < 33^\\circ$ maintain $FS > 1.0$, while $FS < 1.0$ is restricted strictly to steep rock outcrops $\\theta > 33^\\circ$.`
 };

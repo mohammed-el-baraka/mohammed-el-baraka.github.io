@@ -72,7 +72,8 @@ const translations = {
              { id: 'redstart-reusable-booster', title: 'Redstart: Reusable Rocket Booster Descent & Landing', description: 'Modeled and simulated the nonlinear 2D flight dynamics, gimbaled thrust vector control, and soft landing trajectory of a reusable rocket booster (Falcon 9-inspired) using SciPy, SymPy, and Marimo.' },
              { id: 'academic-career-success', title: 'Academic & Career Success: Statistical Modeling', description: 'Conducted an econometric and statistical study on 5,000 university graduates using multiple linear regression (R² = 0.825), Chi-squared & Cramér\'s V tests, and k-Means clustering to model key drivers of starting salaries and career satisfaction.' },
              { id: 'lithium-brine-extraction', title: 'Lithium Brine Production & Solar Evaporation Modeling', description: 'Conducted a comprehensive techno-economic, geochemical, and process modeling benchmark of 6 South American lithium salars, analyzing solar evaporation kinetics, Mg/Li impurity selectivity, and capital intensity ($3,200/t OPEX).' },
-             { id: 'petropolis-landslide-modeling', title: 'Physically-Based Landslide Modeling (Petrópolis, Brazil)', description: 'Geospatial data engineering and physical modeling of rainfall-triggered shallow landslides in Petrópolis, Brazil, utilizing the USGS TRIGRS v2.1.0 transient infiltration engine, QGIS, GRASS, and Mohr-Coulomb slope stability mechanics across 795 km².' }
+             { id: 'petropolis-landslide-modeling', title: 'Physically-Based Landslide Modeling (Petrópolis, Brazil)', description: 'Geospatial data engineering and physical modeling of rainfall-triggered shallow landslides in Petrópolis, Brazil, utilizing the USGS TRIGRS v2.1.0 transient infiltration engine, QGIS, GRASS, and Mohr-Coulomb slope stability mechanics across 795 km².' },
+             { id: 'cotton-hedging-inditex', title: 'Quantitative Cotton Price Hedging & Risk Management (Inditex Case Study)', description: 'Modeled stochastic cotton price dynamics under Geometric Brownian Motion and Black-Scholes cost-of-carry frameworks, executing 2,000-path Monte Carlo simulations and historical INSEE backtesting to evaluate Forward Swap and Option Call hedging strategies for Inditex.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsorship Manager', description: 'As Sponsorship Manager, my core responsibility is securing vital partnerships and sponsorships to power EJE\'s impactful portfolio of student hackathons. I actively seek sponsors for major events including the OP&X Hackathon, Strategic Consulting Hackathon (SCH), DataQuest Hackathon, and the Finance Hackathon. By connecting companies with these platforms, I help them engage Morocco\'s brightest students and fuel future talent development.' },
@@ -164,7 +165,8 @@ const translations = {
             { id: 'redstart-reusable-booster', title: 'Redstart : Atterrissage Contrôlé de Lanceur Réutilisable', description: 'Modélisation et simulation des équations différentielles non linéaires, du contrôle vectoriel de poussée par tuyère orientable et de la trajectoire d\'atterrissage doux d\'un propulseur réutilisable sous SciPy, SymPy et Marimo.' },
             { id: 'academic-career-success', title: 'Analyse de la Réussite Académique et Professionnelle', description: 'Étude statistique et économétrique sur 5 000 diplômés modélisant les déterminants de l\'insertion professionnelle par régression linéaire multiple (R² = 0.825), tests du Chi-2, V de Cramér et clustering k-Means.' },
             { id: 'lithium-brine-extraction', title: 'Production de Lithium à partir de Saumures par Évaporation Solaire', description: 'Étude technico-économique et modélisation géochimique de l\'extraction de lithium sur 6 salars sud-américains, analysant la cinétique d\'évaporation, la sélectivité des impuretés Mg/Li et l\'intensité capitalistique (OPEX 3 200 $/t).' },
-            { id: 'petropolis-landslide-modeling', title: 'Modélisation Physique du Risque de Glissements de Terrain (Petrópolis, Brésil)', description: 'Préparation de données géospatiales et modélisation physique des glissements de terrain induits par les pluies torrentielles à Petrópolis (Brésil), couplant le modèle d\'infiltration transitoire USGS TRIGRS v2.1.0, QGIS, GRASS et la stabilité des pentes sur 795 km².' }
+            { id: 'petropolis-landslide-modeling', title: 'Modélisation Physique du Risque de Glissements de Terrain (Petrópolis, Brésil)', description: 'Préparation de données géospatiales et modélisation physique des glissements de terrain induits par les pluies torrentielles à Petrópolis (Brésil), couplant le modèle d\'infiltration transitoire USGS TRIGRS v2.1.0, QGIS, GRASS et la stabilité des pentes sur 795 km².' },
+            { id: 'cotton-hedging-inditex', title: 'Finance de Marché & Couverture du Risque de Prix du Coton (Cas Inditex)', description: 'Modélisation stochastique par Mouvement Brownien Géométrique et valorisation Black-Scholes avec coût de portage, simulation Monte Carlo (2 000 trajectoires) et backtesting historique INSEE pour évaluer les stratégies de Swap Forward et Strip de Calls pour le groupe Inditex.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Responsable Sponsoring', description: 'En tant que Responsable Sponsoring, ma responsabilité principale est de sécuriser des partenariats et des sponsorings essentiels pour alimenter le portefeuille percutant de hackathons étudiants d\'EJE. Je recherche activement des sponsors pour des événements majeurs tels que le Hackathon OP&X, le Hackathon de Conseil Stratégique (SCH), le Hackathon DataQuest et le Hackathon Finance. En connectant les entreprises à ces plateformes, je les aide à interagir avec les étudiants les plus brillants du Maroc et à stimuler le développement des futurs talents.' },
@@ -256,7 +258,8 @@ const translations = {
              { id: 'redstart-reusable-booster', title: 'Redstart: محاكاة هبوط الصواريخ الفضائية القابلة لإعادة الاستخدام', description: 'نمذجة ومحاكاة الديناميكا غير الخطية للتحكم في الدفع الموجه ومسار الهبوط العمودي السلس لصاروخ فضائي قابل لإعادة الاستخدام باستخدام SciPy وSymPy وMarimo.' },
              { id: 'academic-career-success', title: 'التحليل الإحصائي للنجاح الأكاديمي والمهني', description: 'دراسة إحصائية واقتصادية قياسية شملت 5000 خريج لنمذجة محددات الرواتب والاندماج المهني باستخدام الانحدار الخطي المتعدد (R² = 0.825)، واختبارات كاي تربيع، وتجميع k-Means.' },
              { id: 'lithium-brine-extraction', title: 'إنتاج الليثيوم من المحاليل الملحية بالتبخير الشمسي', description: 'دراسة تقنية واقتصادية ونمذجة جيوكيميائية لاستخراج الليثيوم عبر 6 سبخات ملحية في أمريكا الجنوبية، مع تحليل حركية التبخير وفصل الشوائب (Mg/Li) والتكلفة التشغيلية (3200 دولار/طن).' },
-             { id: 'petropolis-landslide-modeling', title: 'النمذجة الفيزيائية لمخاطر الانهيارات الأرضية (بيتروبوليس، البرازيل)', description: 'إعداد البيانات الجغرافية المكانية والنمذجة الفيزيائية للانهيارات الأرضية الناجمة عن الأمطار في بيتروبوليس بالبرازيل، باستخدام نموذج الارتشاح المؤقت USGS TRIGRS v2.1.0 وميكانيكا استقرار المنحدرات ونظم المعلومات الجغرافية QGIS عبر 795 كم².' }
+             { id: 'petropolis-landslide-modeling', title: 'النمذجة الفيزيائية لمخاطر الانهيارات الأرضية (بيتروبوليس، البرازيل)', description: 'إعداد البيانات الجغرافية المكانية والنمذجة الفيزيائية للانهيارات الأرضية الناجمة عن الأمطار في بيتروبوليس بالبرازيل، باستخدام نموذج الارتشاح المؤقت USGS TRIGRS v2.1.0 وميكانيكا استقرار المنحدرات ونظم المعلومات الجغرافية QGIS عبر 795 كم².' },
+             { id: 'cotton-hedging-inditex', title: 'تمويل الأسواق وإدارة المخاطر: التقييم الكمي لاستراتيجيات التحوط لأسعار القطن (مجموعة إنديتكس)', description: 'نمذجة العشوائية لديناميكا أسعار القطن عبر الحركة البراونية الهندسية ونموذج بلاك-شولز، مع تنفيذ محاكاة مونت كارلو (2000 مسار) واختبارات رجعية لبيانات INSEE لتقييم استراتيجيات المبادلة الآجلة وعقود الخيارات لمجموعة إنديتكس.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'EJE', role: 'مدير الرعاية', description: 'بصفتي مدير الرعاية، تتمثل مسؤوليتي الأساسية في تأمين الشراكات والرعاية الحيوية لدعم محفظة EJE المؤثرة من مسابقات البرمجة الطلابية. أبحث عن رعاة للأحداث الكبرى بما في ذلك مسابقة البرمجة OP&X Hackathon ومسابقة البرمجة الاستشارية الاستراتيجية (SCH) ومسابقة البرمجة DataQuest Hackathon ومسابقة البرمجة المالية Finance Hackathon. من خلال ربط الشركات بهذه المنصات، أساعدها على جذب ألمع الطلاب المغاربة ودعم تنمية المواهب المستقبلية.' },
@@ -348,7 +351,8 @@ const translations = {
             { id: 'redstart-reusable-booster', title: 'Redstart: Descenso y Aterrizaje de Cohete Reutilizable', description: 'Modelado y simulación de la dinámica de vuelo 2D no lineal, control vectorial de empuje y trayectoria de aterrizaje suave de un cohete propulsor reutilizable con SciPy, SymPy y Marimo.' },
             { id: 'academic-career-success', title: 'Análisis Estadístico del Éxito Académico y Profesional', description: 'Estudio estadístico y econométrico sobre 5,000 graduados modelando los determinantes del salario inicial mediante regresión lineal múltiple (R² = 0.825), pruebas de Chi-cuadrado, V de Cramér y clustering k-Means.' },
             { id: 'lithium-brine-extraction', title: 'Producción de Litio a partir de Salmueras por Evaporación Solar', description: 'Estudio técnico-económico y modelado geoquímico de la extracción de litio en 6 salares sudamericanos, analizando la cinética de evaporación, selectividad de impurezas Mg/Li y costos operativos (OPEX 3.200 USD/t).' },
-            { id: 'petropolis-landslide-modeling', title: 'Modelado Físico de Susceptibilidad a Deslizamientos (Petrópolis, Brasil)', description: 'Preparación de datos geoespaciales y modelado físico de deslizamientos de tierra inducidos por lluvias torrenciales en Petrópolis (Brasil), acoplando el modelo de infiltración transitoria USGS TRIGRS v2.1.0, QGIS, GRASS y estabilidad de taludes sobre 795 km².' }
+            { id: 'petropolis-landslide-modeling', title: 'Modelado Físico de Susceptibilidad a Deslizamientos (Petrópolis, Brasil)', description: 'Preparación de datos geoespaciales y modelado físico de deslizamientos de tierra inducidos por lluvias torrenciales en Petrópolis (Brasil), acoplando el modelo de infiltración transitoria USGS TRIGRS v2.1.0, QGIS, GRASS y estabilidad de taludes sobre 795 km².' },
+            { id: 'cotton-hedging-inditex', title: 'Finanzas Cuantitativas y Cobertura del Riesgo de Precio del Algodón (Caso Inditex)', description: 'Modelado estocástico mediante Movimiento Browniano Geométrico y valoración Black-Scholes con coste de transporte, simulación de Monte Carlo (2.000 trayectorias) y backtesting histórico de datos INSEE para evaluar Swaps a plazo y Strips de Opciones Call para el Grupo Inditex.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocinios', description: 'Como Gerente de Patrocinios, mi responsabilidad principal es asegurar alianzas y patrocinios vitales para impulsar el impactante portafolio de hackathons estudiantiles de EJE. Busco activamente patrocinadores para eventos importantes como el Hackathon OP&X, el Hackathon de Consultoría Estratégica (SCH), el Hackathon DataQuest y el Hackathon de Finanzas. Al conectar empresas con estas plataformas, les ayudo a interactuar con los estudiantes más brillantes de Marruecos y a fomentar el desarrollo de futuros talentos.' },
@@ -440,7 +444,8 @@ const translations = {
             { id: 'redstart-reusable-booster', title: 'Redstart：可回收火箭助推器动力学与自主软着陆控制', description: '基于SciPy、SymPy与Marimo构建了类猎鹰9号可回收火箭助推器的二维非线性动力学方程、摆动发动机矢量推力控制以及精确垂直软着陆轨迹优化仿真系统。' },
             { id: 'academic-career-success', title: '学业表现与职业成功的多元统计建模与分析', description: '基于5000名大学毕业生数据集开展多元统计与计量经济学研究，运用多元线性回归（R² = 0.825）、卡方检验、Cramér\'s V系数与k-Means聚类深入剖析起薪决定因素与人才画像。' },
             { id: 'lithium-brine-extraction', title: '盐湖卤水太阳能蒸发提锂技术与技术经济综合建模', description: '对南美6大标志性盐湖锂矿开展了技术经济与地球化学全流程基准对标，深入分析了太阳能梯度蒸发动力学、镁锂比（Mg/Li）除杂分离工艺及3200美元/吨高竞争力运营成本。' },
-            { id: 'petropolis-landslide-modeling', title: '基于物理机制的滑坡易发性数值模拟研究（巴西彼得罗波利斯）', description: '针对巴西里约热内卢州彼得罗波利斯795平方公里高危山区，开展地理空间数据工程处理与降雨诱发浅层滑坡物理机制数值模拟，深度整合USGS TRIGRS v2.1.0非定常入渗模型、QGIS、GRASS与无限边坡稳定性力学分析。' }
+            { id: 'petropolis-landslide-modeling', title: '基于物理机制的滑坡易发性数值模拟研究（巴西彼得罗波利斯）', description: '针对巴西里约热内卢州彼得罗波利斯795平方公里高危山区，开展地理空间数据工程处理与降雨诱发浅层滑坡物理机制数值模拟，深度整合USGS TRIGRS v2.1.0非定常入渗模型、QGIS、GRASS与无限边坡稳定性力学分析。' },
+            { id: 'cotton-hedging-inditex', title: '量化金融与大宗商品风险管理：棉花价格对冲策略评估（Inditex案例）', description: '基于几何布朗运动（GBM）与Black-Scholes持有成本模型对棉花价格进行随机建模，运用2000条路径的蒙特卡洛仿真与法国INSEE历史真实数据回测，系统评估了远期互换（Swap）与看涨期权组合（Strip of Calls）对西班牙Inditex集团采购成本的对冲效果。' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: '赞助经理', description: '作为赞助经理，我的核心职责是确保重要的合作伙伴关系和赞助，为EJE富有影响力的学生黑客马拉松系列活动提供支持。我积极为主要活动寻找赞助商，包括OP&X黑客马拉松、战略咨询黑客马拉松（SCH）、DataQuest黑客马拉松以及金融黑客马拉松。通过将公司与这些平台联系起来，我帮助他们接触到摩洛哥最优秀的学生，并为未来的人才发展提供动力。' },
@@ -529,7 +534,8 @@ const translations = {
             { id: 'sociotechnical-controversy-africa', title: 'Controvérsia Sociotécnica: Tecnocracia na África', description: 'Análise aprofundada de uma controvérsia sociotécnica sobre o papel da tecnocracia no desenvolvimento africano, mapeando desafios estruturais e dinâmicas de múltiplos atores em 5 setores-chave.' },
             { id: 'academic-career-success', title: 'Análise Estatística do Sucesso Acadêmico e Profissional', description: 'Estudo estatístico e econométrico sobre 5.000 graduados modelando os determinantes do salário inicial mediante regressão linear múltipla (R² = 0.825), testes de Chi-cuadrado, V de Cramér e clustering k-Means.' },
             { id: 'lithium-brine-extraction', title: 'Produção de Lítio a partir de Salmouras por Evaporação Solar', description: 'Estudo técnico-econômico e modelagem geoquímica da extração de lítio em 6 salares sul-americanos, analisando a cinética de evaporação, seletividade de impurezas Mg/Li e custos operacionais (OPEX 3.200 USD/t).' },
-            { id: 'petropolis-landslide-modeling', title: 'Modelagem Física da Suscetibilidade a Deslizamentos (Petrópolis, RJ)', description: 'Preparação de dados geoespaciais e modelagem física de escorregamentos translacionais induzidos por chuvas intensas em Petrópolis (Brasil), acoplando o modelo de infiltração transiente USGS TRIGRS v2.1.0, QGIS, GRASS e mecânica de taludes sobre 795 km².' }
+            { id: 'petropolis-landslide-modeling', title: 'Modelagem Física da Suscetibilidade a Deslizamentos (Petrópolis, RJ)', description: 'Preparação de dados geoespaciais e modelagem física de escorregamentos translacionais induzidos por chuvas intensas em Petrópolis (Brasil), acoplando o modelo de infiltração transiente USGS TRIGRS v2.1.0, QGIS, GRASS e mecânica de taludes sobre 795 km².' },
+            { id: 'cotton-hedging-inditex', title: 'Finanças Quantitativas e Gestão de Risco: Cobertura do Preço do Algodão (Caso Inditex)', description: 'Modelagem estocástica por Movimento Browniano Geométrico e precificação Black-Scholes com custo de carregamento, simulação de Monte Carlo (2.000 trajetórias) e backtesting histórico INSEE para avaliar estratégias de Swap a termo e Strip de Opções Call para o Grupo Inditex.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocínios', description: 'Como Gerente de Patrocínios, minha principal responsabilidade é garantir parcerias e patrocínios vitais para impulsionar o portfólio impactante de hackathons estudantis da EJE. Busco ativamente patrocinadores para grandes eventos, incluindo o Hackathon OP&X, o Hackathon de Consultoria Estratégica (SCH), o Hackathon DataQuest e o Hackathon de Finanças. Ao conectar empresas a essas plataformas, ajudo-as a interagir com os estudantes mais brilhantes de Marrocos e a impulsionar o desenvolvimento de futuros talentos.' },
@@ -610,7 +616,8 @@ const translations = {
             { id: 'sociotechnical-controversy-africa', title: 'Soziotechnische Kontroverse: Technokratie in Afrika', description: 'Tiefgehende Analyse einer soziotechnischen Kontroverse zur Frage, ob Technokratie einen Entwicklungsimpuls für Afrika darstellt, mit systematischer Kartierung von Herausforderungen und Akteuren in 5 Kernsektoren.' },
             { id: 'academic-career-success', title: 'Statistische Analyse des Akademischen & Beruflichen Erfolgs', description: 'Ökonometrische und statistische Analyse von 5.000 Hochschulabsolventen zur Modellierung der Einstiegsgehälter mittels multipler linearer Regression (R² = 0.825), Chi-Quadrat-Tests, Cramérs V und k-Means-Clustering.' },
             { id: 'lithium-brine-extraction', title: 'Lithiumgewinnung aus Sole durch Solare Verdunstung', description: 'Technisch-ökonomische und geochemische Modellierung der Lithiumgewinnung aus 6 südamerikanischen Salzseen mit Analyse der Verdunstungskinetik, Mg/Li-Selektivität und OPEX-Optimierung (3.200 USD/t).' },
-            { id: 'petropolis-landslide-modeling', title: 'Physikalische Hangstabilitäts- & Erdrutschmodellierung (Petrópolis, Brasilien)', description: 'Geodatenaufbereitung und physikalisch-basierte Modellierung niederschlagsinduzierter Hangrutschungen in Petrópolis (Brasilien) mittels des USGS TRIGRS v2.1.0 Infiltrationsmodells, QGIS, GRASS und Mohr-Coulomb-Stabilitätsanalyse über 795 km².' }
+            { id: 'petropolis-landslide-modeling', title: 'Physikalische Hangstabilitäts- & Erdrutschmodellierung (Petrópolis, Brasilien)', description: 'Geodatenaufbereitung und physikalisch-basierte Modellierung niederschlagsinduzierter Hangrutschungen in Petrópolis (Brasilien) mittels des USGS TRIGRS v2.1.0 Infiltrationsmodells, QGIS, GRASS und Mohr-Coulomb-Stabilitätsanalyse über 795 km².' },
+            { id: 'cotton-hedging-inditex', title: 'Quantitative Finanzwirtschaft & Risikomanagement: Baumwollpreis-Hedging (Fallstudie Inditex)', description: 'Stochastische Modellierung der Baumwollpreise mittels Geometrischer Brownscher Bewegung und Black-Scholes-Carry-Modell, Durchführung von 2.000 Monte-Carlo-Pfaden und historischem INSEE-Backtesting zur Bewertung von Forward-Swaps und Call-Option-Strips für Inditex.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsoring-Manager', description: 'Als Sponsoring-Manager liegt meine Hauptverantwortung in der Sicherung wichtiger Partnerschaften und Sponsorings zur Finanzierung der studentischen Hackathons von EJE. Ich suche aktiv Sponsoren für Großveranstaltungen wie den OP&X Hackathon, den Strategic Consulting Hackathon (SCH), den DataQuest Hackathon und den Finance Hackathon. Durch die Verbindung von Unternehmen mit diesen Plattformen helfe ich ihnen, mit Marokkos klügsten Köpfen in Kontakt zu treten.' },
@@ -822,6 +829,16 @@ const projectsData = [
         reportUrl: 'https://drive.google.com/file/d/1oiInoAHtG344m9ZCdsKebILFN0JANaKk/view?usp=sharing', 
         presentationUrl: 'https://drive.google.com/file/d/1DVbIjmzNxF5iWUYgVY6F3reZwA1TWzB5/view?usp=sharing',
         culturalPresentationUrl: 'https://drive.google.com/file/d/1HyptDfACjDz1DCeKaNOUQA_Lq9eSe7PL/view?usp=sharing'
+    },
+    { 
+        id: 'cotton-hedging-inditex', 
+        date: '2026-01', 
+        technologies: ['Quantitative Finance', 'Market Risk Management', 'Stochastic Calculus & GBM', 'Monte Carlo Simulation', 'Black-Scholes & Greeks', 'Commodity Derivatives (Swaps & Calls)', 'Python (NumPy, SciPy, Matplotlib)'], 
+        githubUrl: '',
+        demoUrl: '',
+        metric: 'Monte Carlo (2,000 Paths), Black-Scholes & INSEE Backtesting',
+        reportUrl: 'https://drive.google.com/file/d/11QStX0-MVQjZ-tKjsBhTHCoozMtVATaw/view?usp=sharing', 
+        presentationUrl: 'https://drive.google.com/file/d/1awDOZXGVVKrasqMy_IJmtJv0EaN7H30l/view?usp=sharing'
     }
 ];
 
@@ -2125,5 +2142,68 @@ $$FS_{\\min}(x, y, t) = \\min_{0 \\le z \\le H} \\left\\{ \\frac{\\tan \\phi'}{\
 
 1. **CRS Transformation:** Resolved 0-byte clipping failures by harmonizing municipal vectors to EPSG:31983.
 2. **Memory Profiling:** Identified 28 GB RAM threshold for uncompressed 3.7 GB LiDAR arrays, establishing tiling protocols for HPC deployment.
-3. **Engine Validation:** Verified baseline physical stability: all slopes $\\theta < 33^\\circ$ maintain $FS > 1.0$, while $FS < 1.0$ is restricted strictly to steep rock outcrops $\\theta > 33^\\circ$.`
+3. **Engine Validation:** Verified baseline physical stability: all slopes $\\theta < 33^\\circ$ maintain $FS > 1.0$, while $FS < 1.0$ is restricted strictly to steep rock outcrops $\\theta > 33^\\circ$.`,
+
+    'cotton-hedging-inditex': `# Finance de Marché & Gestion des Risques : Évaluation Quantitative des Stratégies de Couverture du Risque de Prix du Coton
+
+**Modélisation Stochastique, Valorisation Dérivée et Couverture Stratégique**  
+**Étude de Cas Appliquée au Groupe Inditex (Zara, Pull&Bear, Massimo Dutti) : Simulation de Monte Carlo & Backtesting Historique**  
+**Institution :** EMINES – School of Industrial Management, Université Mohammed VI Polytechnique (UM6P)  
+**Auteur :** Mohammed EL BARAKA  
+**Date de Valorisation :** 10 Janvier 2026  
+**Horizons Couverts :** Avril 2026 – Mars 2027 (Simulation) | Décembre 2024 – Novembre 2025 (Backtesting INSEE)  
+
+---
+
+## 1. Contexte Opérationnel Inditex & Exposition Industrielle
+
+Le modèle *fast fashion* d'Inditex (cycles de 4 à 6 semaines, réassorts biseptimanaires, fixité relative des prix catalogue) impose une gestion rigoureuse des matières premières :
+* **Consommation annuelle :** $5\\,000\\,000\\,\\text{kg}$ ($416\\,666{,}67\\,\\text{kg/mois}$).
+* **Volatilité annuelle ($\sigma$) :** $26{,}00\\%$.
+* **Enjeu :** Une hausse de $+20\\%$ à $+30\\%$ du coton érode directement la marge brute et l'EBITDA, tandis qu'un verrouillage rigide crée un coût d'opportunité sévère en cas de marché baissier.
+
+---
+
+## 2. Modélisation Mathématique & Valorisation Dérivée
+
+### 2.1 Dynamique Stochastique (Mouvement Brownien Géométrique sous $\\mathbb{Q}$)
+$$dS_t = (r - q)S_t dt + \\sigma S_t dW_t^{\\mathbb{Q}}$$
+$$S(t_j) = S(t_{j-1}) \\exp\\left[ \\left(r - q - \\frac{1}{2}\\sigma^2\\right)\\Delta t_j + \\sigma \\sqrt{\\Delta t_j} Z_j \\right], \\quad Z_j \\sim \\mathcal{N}(0, 1)$$
+
+### 2.2 Cost-of-Carry, Swap Forward & Black-Scholes
+* **Prix Forward :** $F_0(T_j) = S_0 e^{(r-q)T_j}$ (Marché en Contango car $r=3{,}538\\% > q=0\\%$)
+* **Strike Unique Swap :** $K_{\\text{swap}} = \\frac{1}{12}\\sum F_0(T_j) = 1{,}425595\\,\\text{\\$/kg}$ $\\rightarrow$ Budget déterministe de **$7\\,127\\,977{,}35\\,\\$$**.
+* **Prime Call Européen (Black-Scholes) :**
+  $$c_j = S_0 e^{-q T_j} \\mathcal{N}(d_1) - K e^{-r T_j} \\mathcal{N}(d_2)$$
+  $$\\sum c_j = 1{,}4187\\,\\text{\\$/kg} \\quad (\\text{Prime totale} = 591\\,114\\,\\$)$$
+
+---
+
+## 3. Résultats Comparatifs Monte Carlo (2 000 Scénarios)
+
+| Indicateur Financier | Spot (Sans Couverture) | Swap Forward Fixe | Strip de Calls Asymétrique |
+| :--- | :---: | :---: | :---: |
+| **Coût Moyen Annuel ($\\mathbb{E}[B]$)** | $7\\,179\\,509{,}85\\,\\$$ | $7\\,127\\,977{,}35\\,\\$$ | **$7\\,122\\,623{,}38\\,\\$$** |
+| **Volatilité Budgétaire ($\\sigma_B$)** | $1\\,458\\,329{,}11\\,\\$$ | **$0{,}00\\,\\$$** | $693\\,634{,}72\\,\\$$ |
+| **Value at Risk ($\\text{VaR}_{95\\%}$)** | $9\\,807\\,186{,}76\\,\\$$ | **$7\\,127\\,977{,}35\\,\\$$** | $7\\,730\\,171{,}39\\,\\$$ |
+| **Plafond Garanti (Pire Cas)** | $17\\,109\\,804{,}82\\,\\$$ | **$7\\,127\\,977{,}35\\,\\$$** | $7\\,730\\,171{,}39\\,\\$$ |
+| **Participation Baisse (Meilleur Cas)** | **$3\\,549\\,959{,}04\\,\\$$** | $7\\,127\\,977{,}35\\,\\$$ | $4\\,152\\,153{,}08\\,\\$$ |
+
+---
+
+## 4. Backtesting Empirique Réel (Série INSEE 2024 – 2025)
+
+Sur 12 mois réels de livraisons (déc. 2024 – nov. 2025) dans un marché baissier ($S_0=1{,}84\\,\\$$ $\\rightarrow$ $S_{\\text{fin}}=1{,}66\\,\\$$) :
+* **Coût Réel Spot :** $8\\,591\\,666{,}67\\,\\$$
+* **Coût Réel Swap :** $9\\,406\\,149{,}65\\,\\$$ (Perte d'opportunité de $+814\\,483\\,\\$$)
+* **Coût Réel Strip de Calls :** **$9\\,046\\,515{,}21\\,\\$$** (Économie nette de **$+359\\,634{,}44\\,\\$$** par rapport au Swap)
+
+---
+
+## 5. Recommandations Managériales & Stratégie Hybride
+
+1. **Architecture Core / Satellite :**
+   * **Socle Fixe ($50-60\\%$) :** Swap Forward pour sécuriser le seuil de marge brute opérationnelle.
+   * **Poche Optionnelle ($40-50\\%$) :** Strip de Calls ou *Zero-Cost Collars* pour capter les baisses de cours.
+2. **Conformité Comptable IFRS 9 :** Qualification en *Cash Flow Hedge* pour éliminer la volatilité P&L.`
 };

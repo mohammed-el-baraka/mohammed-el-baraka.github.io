@@ -73,7 +73,8 @@ const translations = {
              { id: 'academic-career-success', title: 'Academic & Career Success: Statistical Modeling', description: 'Conducted an econometric and statistical study on 5,000 university graduates using multiple linear regression (R² = 0.825), Chi-squared & Cramér\'s V tests, and k-Means clustering to model key drivers of starting salaries and career satisfaction.' },
              { id: 'lithium-brine-extraction', title: 'Lithium Brine Production & Solar Evaporation Modeling', description: 'Conducted a comprehensive techno-economic, geochemical, and process modeling benchmark of 6 South American lithium salars, analyzing solar evaporation kinetics, Mg/Li impurity selectivity, and capital intensity ($3,200/t OPEX).' },
              { id: 'petropolis-landslide-modeling', title: 'Physically-Based Landslide Modeling (Petrópolis, Brazil)', description: 'Geospatial data engineering and physical modeling of rainfall-triggered shallow landslides in Petrópolis, Brazil, utilizing the USGS TRIGRS v2.1.0 transient infiltration engine, QGIS, GRASS, and Mohr-Coulomb slope stability mechanics across 795 km².' },
-             { id: 'cotton-hedging-inditex', title: 'Quantitative Cotton Price Hedging & Risk Management (Inditex Case Study)', description: 'Modeled stochastic cotton price dynamics under Geometric Brownian Motion and Black-Scholes cost-of-carry frameworks, executing 2,000-path Monte Carlo simulations and historical INSEE backtesting to evaluate Forward Swap and Option Call hedging strategies for Inditex.' }
+             { id: 'cotton-hedging-inditex', title: 'Quantitative Cotton Price Hedging & Risk Management (Inditex Case Study)', description: 'Modeled stochastic cotton price dynamics under Geometric Brownian Motion and Black-Scholes cost-of-carry frameworks, executing 2,000-path Monte Carlo simulations and historical INSEE backtesting to evaluate Forward Swap and Option Call hedging strategies for Inditex.' },
+             { id: 'renault5-electric-marketing', title: 'Renault 5 E-Tech 100% Electric: Marketing Strategy & Market Penetration', description: 'Conducted comprehensive marketing strategy, competitive benchmarking against Dacia/Peugeot/Fiat/BYD, customer persona segmentation, and macroeconomic EV sales forecasting (2026–2030 scaling to 8.75B MAD) for the Moroccan launch of the Renault 5 E-Tech.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsorship Manager', description: 'As Sponsorship Manager, my core responsibility is securing vital partnerships and sponsorships to power EJE\'s impactful portfolio of student hackathons. I actively seek sponsors for major events including the OP&X Hackathon, Strategic Consulting Hackathon (SCH), DataQuest Hackathon, and the Finance Hackathon. By connecting companies with these platforms, I help them engage Morocco\'s brightest students and fuel future talent development.' },
@@ -166,7 +167,8 @@ const translations = {
             { id: 'academic-career-success', title: 'Analyse de la Réussite Académique et Professionnelle', description: 'Étude statistique et économétrique sur 5 000 diplômés modélisant les déterminants de l\'insertion professionnelle par régression linéaire multiple (R² = 0.825), tests du Chi-2, V de Cramér et clustering k-Means.' },
             { id: 'lithium-brine-extraction', title: 'Production de Lithium à partir de Saumures par Évaporation Solaire', description: 'Étude technico-économique et modélisation géochimique de l\'extraction de lithium sur 6 salars sud-américains, analysant la cinétique d\'évaporation, la sélectivité des impuretés Mg/Li et l\'intensité capitalistique (OPEX 3 200 $/t).' },
             { id: 'petropolis-landslide-modeling', title: 'Modélisation Physique du Risque de Glissements de Terrain (Petrópolis, Brésil)', description: 'Préparation de données géospatiales et modélisation physique des glissements de terrain induits par les pluies torrentielles à Petrópolis (Brésil), couplant le modèle d\'infiltration transitoire USGS TRIGRS v2.1.0, QGIS, GRASS et la stabilité des pentes sur 795 km².' },
-            { id: 'cotton-hedging-inditex', title: 'Finance de Marché & Couverture du Risque de Prix du Coton (Cas Inditex)', description: 'Modélisation stochastique par Mouvement Brownien Géométrique et valorisation Black-Scholes avec coût de portage, simulation Monte Carlo (2 000 trajectoires) et backtesting historique INSEE pour évaluer les stratégies de Swap Forward et Strip de Calls pour le groupe Inditex.' }
+            { id: 'cotton-hedging-inditex', title: 'Finance de Marché & Couverture du Risque de Prix du Coton (Cas Inditex)', description: 'Modélisation stochastique par Mouvement Brownien Géométrique et valorisation Black-Scholes avec coût de portage, simulation Monte Carlo (2 000 trajectoires) et backtesting historique INSEE pour évaluer les stratégies de Swap Forward et Strip de Calls pour le groupe Inditex.' },
+            { id: 'renault5-electric-marketing', title: 'Renault 5 E-Tech 100% Électrique : Stratégie Marketing & Pénétration de Marché', description: 'Élaboration de la stratégie marketing, positionnement concurrentiel (Dacia Spring, Peugeot e-208, Fiat 600e, BYD Atto 3), segmentation personas et projections de marché 2026–2030 (marché à 8,75 Mds MAD) pour le lancement de la Renault 5 E-Tech au Maroc.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Responsable Sponsoring', description: 'En tant que Responsable Sponsoring, ma responsabilité principale est de sécuriser des partenariats et des sponsorings essentiels pour alimenter le portefeuille percutant de hackathons étudiants d\'EJE. Je recherche activement des sponsors pour des événements majeurs tels que le Hackathon OP&X, le Hackathon de Conseil Stratégique (SCH), le Hackathon DataQuest et le Hackathon Finance. En connectant les entreprises à ces plateformes, je les aide à interagir avec les étudiants les plus brillants du Maroc et à stimuler le développement des futurs talents.' },
@@ -259,7 +261,8 @@ const translations = {
              { id: 'academic-career-success', title: 'التحليل الإحصائي للنجاح الأكاديمي والمهني', description: 'دراسة إحصائية واقتصادية قياسية شملت 5000 خريج لنمذجة محددات الرواتب والاندماج المهني باستخدام الانحدار الخطي المتعدد (R² = 0.825)، واختبارات كاي تربيع، وتجميع k-Means.' },
              { id: 'lithium-brine-extraction', title: 'إنتاج الليثيوم من المحاليل الملحية بالتبخير الشمسي', description: 'دراسة تقنية واقتصادية ونمذجة جيوكيميائية لاستخراج الليثيوم عبر 6 سبخات ملحية في أمريكا الجنوبية، مع تحليل حركية التبخير وفصل الشوائب (Mg/Li) والتكلفة التشغيلية (3200 دولار/طن).' },
              { id: 'petropolis-landslide-modeling', title: 'النمذجة الفيزيائية لمخاطر الانهيارات الأرضية (بيتروبوليس، البرازيل)', description: 'إعداد البيانات الجغرافية المكانية والنمذجة الفيزيائية للانهيارات الأرضية الناجمة عن الأمطار في بيتروبوليس بالبرازيل، باستخدام نموذج الارتشاح المؤقت USGS TRIGRS v2.1.0 وميكانيكا استقرار المنحدرات ونظم المعلومات الجغرافية QGIS عبر 795 كم².' },
-             { id: 'cotton-hedging-inditex', title: 'تمويل الأسواق وإدارة المخاطر: التقييم الكمي لاستراتيجيات التحوط لأسعار القطن (مجموعة إنديتكس)', description: 'نمذجة العشوائية لديناميكا أسعار القطن عبر الحركة البراونية الهندسية ونموذج بلاك-شولز، مع تنفيذ محاكاة مونت كارلو (2000 مسار) واختبارات رجعية لبيانات INSEE لتقييم استراتيجيات المبادلة الآجلة وعقود الخيارات لمجموعة إنديتكس.' }
+             { id: 'cotton-hedging-inditex', title: 'تمويل الأسواق وإدارة المخاطر: التقييم الكمي لاستراتيجيات التحوط لأسعار القطن (مجموعة إنديتكس)', description: 'نمذجة العشوائية لديناميكا أسعار القطن عبر الحركة البراونية الهندسية ونموذج بلاك-شولز، مع تنفيذ محاكاة مونت كارلو (2000 مسار) واختبارات رجعية لبيانات INSEE لتقييم استراتيجيات المبادلة الآجلة وعقود الخيارات لمجموعة إنديتكس.' },
+             { id: 'renault5-electric-marketing', title: 'رينو 5 إي-تيك الكهربائية 100%: استراتيجية التسويق واختراق السوق', description: 'إعداد استراتيجية تسويقية متكاملة، ودراسة مقارنة تنافسية (Dacia Spring, Peugeot e-208, Fiat 600e, BYD Atto 3)، وتحديد شرائح العملاء وتوقعات نمو سوق السيارات الكهربائية في المغرب للفترة 2026-2030 لتصل إلى 8.75 مليار درهم.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'EJE', role: 'مدير الرعاية', description: 'بصفتي مدير الرعاية، تتمثل مسؤوليتي الأساسية في تأمين الشراكات والرعاية الحيوية لدعم محفظة EJE المؤثرة من مسابقات البرمجة الطلابية. أبحث عن رعاة للأحداث الكبرى بما في ذلك مسابقة البرمجة OP&X Hackathon ومسابقة البرمجة الاستشارية الاستراتيجية (SCH) ومسابقة البرمجة DataQuest Hackathon ومسابقة البرمجة المالية Finance Hackathon. من خلال ربط الشركات بهذه المنصات، أساعدها على جذب ألمع الطلاب المغاربة ودعم تنمية المواهب المستقبلية.' },
@@ -352,7 +355,8 @@ const translations = {
             { id: 'academic-career-success', title: 'Análisis Estadístico del Éxito Académico y Profesional', description: 'Estudio estadístico y econométrico sobre 5,000 graduados modelando los determinantes del salario inicial mediante regresión lineal múltiple (R² = 0.825), pruebas de Chi-cuadrado, V de Cramér y clustering k-Means.' },
             { id: 'lithium-brine-extraction', title: 'Producción de Litio a partir de Salmueras por Evaporación Solar', description: 'Estudio técnico-económico y modelado geoquímico de la extracción de litio en 6 salares sudamericanos, analizando la cinética de evaporación, selectividad de impurezas Mg/Li y costos operativos (OPEX 3.200 USD/t).' },
             { id: 'petropolis-landslide-modeling', title: 'Modelado Físico de Susceptibilidad a Deslizamientos (Petrópolis, Brasil)', description: 'Preparación de datos geoespaciales y modelado físico de deslizamientos de tierra inducidos por lluvias torrenciales en Petrópolis (Brasil), acoplando el modelo de infiltración transitoria USGS TRIGRS v2.1.0, QGIS, GRASS y estabilidad de taludes sobre 795 km².' },
-            { id: 'cotton-hedging-inditex', title: 'Finanzas Cuantitativas y Cobertura del Riesgo de Precio del Algodón (Caso Inditex)', description: 'Modelado estocástico mediante Movimiento Browniano Geométrico y valoración Black-Scholes con coste de transporte, simulación de Monte Carlo (2.000 trayectorias) y backtesting histórico de datos INSEE para evaluar Swaps a plazo y Strips de Opciones Call para el Grupo Inditex.' }
+            { id: 'cotton-hedging-inditex', title: 'Finanzas Cuantitativas y Cobertura del Riesgo de Precio del Algodón (Caso Inditex)', description: 'Modelado estocástico mediante Movimiento Browniano Geométrico y valoración Black-Scholes con coste de transporte, simulación de Monte Carlo (2.000 trayectorias) y backtesting histórico de datos INSEE para evaluar Swaps a plazo y Strips de Opciones Call para el Grupo Inditex.' },
+            { id: 'renault5-electric-marketing', title: 'Renault 5 E-Tech 100% Eléctrico: Estrategia de Marketing y Penetración de Mercado', description: 'Elaboración de la estrategia de marketing, posicionamiento competitivo frente a Dacia/Peugeot/Fiat/BYD, segmentación de personas y proyecciones de ventas de vehículos eléctricos 2026–2030 (mercado de 8.750 millones MAD) para el lanzamiento del Renault 5 E-Tech en Marruecos.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocinios', description: 'Como Gerente de Patrocinios, mi responsabilidad principal es asegurar alianzas y patrocinios vitales para impulsar el impactante portafolio de hackathons estudiantiles de EJE. Busco activamente patrocinadores para eventos importantes como el Hackathon OP&X, el Hackathon de Consultoría Estratégica (SCH), el Hackathon DataQuest y el Hackathon de Finanzas. Al conectar empresas con estas plataformas, les ayudo a interactuar con los estudiantes más brillantes de Marruecos y a fomentar el desarrollo de futuros talentos.' },
@@ -445,7 +449,8 @@ const translations = {
             { id: 'academic-career-success', title: '学业表现与职业成功的多元统计建模与分析', description: '基于5000名大学毕业生数据集开展多元统计与计量经济学研究，运用多元线性回归（R² = 0.825）、卡方检验、Cramér\'s V系数与k-Means聚类深入剖析起薪决定因素与人才画像。' },
             { id: 'lithium-brine-extraction', title: '盐湖卤水太阳能蒸发提锂技术与技术经济综合建模', description: '对南美6大标志性盐湖锂矿开展了技术经济与地球化学全流程基准对标，深入分析了太阳能梯度蒸发动力学、镁锂比（Mg/Li）除杂分离工艺及3200美元/吨高竞争力运营成本。' },
             { id: 'petropolis-landslide-modeling', title: '基于物理机制的滑坡易发性数值模拟研究（巴西彼得罗波利斯）', description: '针对巴西里约热内卢州彼得罗波利斯795平方公里高危山区，开展地理空间数据工程处理与降雨诱发浅层滑坡物理机制数值模拟，深度整合USGS TRIGRS v2.1.0非定常入渗模型、QGIS、GRASS与无限边坡稳定性力学分析。' },
-            { id: 'cotton-hedging-inditex', title: '量化金融与大宗商品风险管理：棉花价格对冲策略评估（Inditex案例）', description: '基于几何布朗运动（GBM）与Black-Scholes持有成本模型对棉花价格进行随机建模，运用2000条路径的蒙特卡洛仿真与法国INSEE历史真实数据回测，系统评估了远期互换（Swap）与看涨期权组合（Strip of Calls）对西班牙Inditex集团采购成本的对冲效果。' }
+            { id: 'cotton-hedging-inditex', title: '量化金融与大宗商品风险管理：棉花价格对冲策略评估（Inditex案例）', description: '基于几何布朗运动（GBM）与Black-Scholes持有成本模型对棉花价格进行随机建模，运用2000条路径的蒙特卡洛仿真与法国INSEE历史真实数据回测，系统评估了远期互换（Swap）与看涨期权组合（Strip of Calls）对西班牙Inditex集团采购成本的对冲效果。' },
+            { id: 'renault5-electric-marketing', title: '雷诺5 E-Tech纯电动汽车：摩洛哥市场营销战略与渗透预测（2026–2030）', description: '针对雷诺5 E-Tech纯电动汽车在摩洛哥的上市开展全方位市场营销战略设计、与达契亚/标致/菲亚特/比亚迪的深度竞品对标、用户画像与细分市场定位，以及2026–2030年规模达87.5亿迪拉姆的宏观电动车销量预测。' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: '赞助经理', description: '作为赞助经理，我的核心职责是确保重要的合作伙伴关系和赞助，为EJE富有影响力的学生黑客马拉松系列活动提供支持。我积极为主要活动寻找赞助商，包括OP&X黑客马拉松、战略咨询黑客马拉松（SCH）、DataQuest黑客马拉松以及金融黑客马拉松。通过将公司与这些平台联系起来，我帮助他们接触到摩洛哥最优秀的学生，并为未来的人才发展提供动力。' },
@@ -535,7 +540,8 @@ const translations = {
             { id: 'academic-career-success', title: 'Análise Estatística do Sucesso Acadêmico e Profissional', description: 'Estudo estatístico e econométrico sobre 5.000 graduados modelando os determinantes do salário inicial mediante regressão linear múltipla (R² = 0.825), testes de Chi-cuadrado, V de Cramér e clustering k-Means.' },
             { id: 'lithium-brine-extraction', title: 'Produção de Lítio a partir de Salmouras por Evaporação Solar', description: 'Estudo técnico-econômico e modelagem geoquímica da extração de lítio em 6 salares sul-americanos, analisando a cinética de evaporação, seletividade de impurezas Mg/Li e custos operacionais (OPEX 3.200 USD/t).' },
             { id: 'petropolis-landslide-modeling', title: 'Modelagem Física da Suscetibilidade a Deslizamentos (Petrópolis, RJ)', description: 'Preparação de dados geoespaciais e modelagem física de escorregamentos translacionais induzidos por chuvas intensas em Petrópolis (Brasil), acoplando o modelo de infiltração transiente USGS TRIGRS v2.1.0, QGIS, GRASS e mecânica de taludes sobre 795 km².' },
-            { id: 'cotton-hedging-inditex', title: 'Finanças Quantitativas e Gestão de Risco: Cobertura do Preço do Algodão (Caso Inditex)', description: 'Modelagem estocástica por Movimento Browniano Geométrico e precificação Black-Scholes com custo de carregamento, simulação de Monte Carlo (2.000 trajetórias) e backtesting histórico INSEE para avaliar estratégias de Swap a termo e Strip de Opções Call para o Grupo Inditex.' }
+            { id: 'cotton-hedging-inditex', title: 'Finanças Quantitativas e Gestão de Risco: Cobertura do Preço do Algodão (Caso Inditex)', description: 'Modelagem estocástica por Movimento Browniano Geométrico e precificação Black-Scholes com custo de carregamento, simulação de Monte Carlo (2.000 trajetórias) e backtesting histórico INSEE para avaliar estratégias de Swap a termo e Strip de Opções Call para o Grupo Inditex.' },
+            { id: 'renault5-electric-marketing', title: 'Renault 5 E-Tech 100% Elétrico: Estratégia de Marketing e Penetração de Mercado', description: 'Elaboração da estratégia de marketing, posicionamento competitivo contra Dacia/Peugeot/Fiat/BYD, segmentação de personas e projeções de vendas de veículos elétricos 2026–2030 (mercado de 8,75 bilhões MAD) para o lançamento do Renault 5 E-Tech em Marrocos.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocínios', description: 'Como Gerente de Patrocínios, minha principal responsabilidade é garantir parcerias e patrocínios vitais para impulsionar o portfólio impactante de hackathons estudantis da EJE. Busco ativamente patrocinadores para grandes eventos, incluindo o Hackathon OP&X, o Hackathon de Consultoria Estratégica (SCH), o Hackathon DataQuest e o Hackathon de Finanças. Ao conectar empresas a essas plataformas, ajudo-as a interagir com os estudantes mais brilhantes de Marrocos e a impulsionar o desenvolvimento de futuros talentos.' },
@@ -617,7 +623,8 @@ const translations = {
             { id: 'academic-career-success', title: 'Statistische Analyse des Akademischen & Beruflichen Erfolgs', description: 'Ökonometrische und statistische Analyse von 5.000 Hochschulabsolventen zur Modellierung der Einstiegsgehälter mittels multipler linearer Regression (R² = 0.825), Chi-Quadrat-Tests, Cramérs V und k-Means-Clustering.' },
             { id: 'lithium-brine-extraction', title: 'Lithiumgewinnung aus Sole durch Solare Verdunstung', description: 'Technisch-ökonomische und geochemische Modellierung der Lithiumgewinnung aus 6 südamerikanischen Salzseen mit Analyse der Verdunstungskinetik, Mg/Li-Selektivität und OPEX-Optimierung (3.200 USD/t).' },
             { id: 'petropolis-landslide-modeling', title: 'Physikalische Hangstabilitäts- & Erdrutschmodellierung (Petrópolis, Brasilien)', description: 'Geodatenaufbereitung und physikalisch-basierte Modellierung niederschlagsinduzierter Hangrutschungen in Petrópolis (Brasilien) mittels des USGS TRIGRS v2.1.0 Infiltrationsmodells, QGIS, GRASS und Mohr-Coulomb-Stabilitätsanalyse über 795 km².' },
-            { id: 'cotton-hedging-inditex', title: 'Quantitative Finanzwirtschaft & Risikomanagement: Baumwollpreis-Hedging (Fallstudie Inditex)', description: 'Stochastische Modellierung der Baumwollpreise mittels Geometrischer Brownscher Bewegung und Black-Scholes-Carry-Modell, Durchführung von 2.000 Monte-Carlo-Pfaden und historischem INSEE-Backtesting zur Bewertung von Forward-Swaps und Call-Option-Strips für Inditex.' }
+            { id: 'cotton-hedging-inditex', title: 'Quantitative Finanzwirtschaft & Risikomanagement: Baumwollpreis-Hedging (Fallstudie Inditex)', description: 'Stochastische Modellierung der Baumwollpreise mittels Geometrischer Brownscher Bewegung und Black-Scholes-Carry-Modell, Durchführung von 2.000 Monte-Carlo-Pfaden und historischem INSEE-Backtesting zur Bewertung von Forward-Swaps und Call-Option-Strips für Inditex.' },
+            { id: 'renault5-electric-marketing', title: 'Renault 5 E-Tech 100% Elektrisch: Marketingstrategie & Marktdurchdringung', description: 'Entwicklung der Marketingstrategie, Wettbewerbsanalyse (Dacia Spring, Peugeot e-208, Fiat 600e, BYD Atto 3), Persona-Segmentierung und EV-Marktprognosen für 2026–2030 (Marktvolumen 8,75 Mrd. MAD) für den Launch des Renault 5 E-Tech in Marokko.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsoring-Manager', description: 'Als Sponsoring-Manager liegt meine Hauptverantwortung in der Sicherung wichtiger Partnerschaften und Sponsorings zur Finanzierung der studentischen Hackathons von EJE. Ich suche aktiv Sponsoren für Großveranstaltungen wie den OP&X Hackathon, den Strategic Consulting Hackathon (SCH), den DataQuest Hackathon und den Finance Hackathon. Durch die Verbindung von Unternehmen mit diesen Plattformen helfe ich ihnen, mit Marokkos klügsten Köpfen in Kontakt zu treten.' },
@@ -839,6 +846,16 @@ const projectsData = [
         metric: 'Monte Carlo (2,000 Paths), Black-Scholes & INSEE Backtesting',
         reportUrl: 'https://drive.google.com/file/d/11QStX0-MVQjZ-tKjsBhTHCoozMtVATaw/view?usp=sharing', 
         presentationUrl: 'https://drive.google.com/file/d/1awDOZXGVVKrasqMy_IJmtJv0EaN7H30l/view?usp=sharing'
+    },
+    { 
+        id: 'renault5-electric-marketing', 
+        date: '2026-01', 
+        technologies: ['Strategic Marketing', 'Electric Vehicle (EV) Market Analysis', 'Competitive Benchmarking', 'Market Penetration Strategy', 'Pricing Architecture & TCO', 'Customer Segmentation & Personas', 'Sales Forecasting (2026–2030)'], 
+        githubUrl: '',
+        demoUrl: '',
+        metric: 'Market Penetration Strategy & 2026–2030 EV Projections (8.75B MAD)',
+        reportUrl: '', 
+        presentationUrl: 'https://drive.google.com/file/d/1S3DTr9z0pvsvpPMMv44PRM7ZcX7tu5C9/view?usp=sharing'
     }
 ];
 
@@ -2205,5 +2222,64 @@ Sur 12 mois réels de livraisons (déc. 2024 – nov. 2025) dans un marché bais
 1. **Architecture Core / Satellite :**
    * **Socle Fixe ($50-60\\%$) :** Swap Forward pour sécuriser le seuil de marge brute opérationnelle.
    * **Poche Optionnelle ($40-50\\%$) :** Strip de Calls ou *Zero-Cost Collars* pour capter les baisses de cours.
-2. **Conformité Comptable IFRS 9 :** Qualification en *Cash Flow Hedge* pour éliminer la volatilité P&L.`
+2. **Conformité Comptable IFRS 9 :** Qualification en *Cash Flow Hedge* pour éliminer la volatilité P&L.`,
+
+    'renault5-electric-marketing': `# Renault 5 E-Tech 100% Électrique : Stratégie Marketing & Pénétration de Marché
+
+**Présentation Stratégique Marketing — 05 Janvier 2026**  
+**Institution :** EMINES – School of Industrial Management, Université Mohammed VI Polytechnique (UM6P)  
+**Auteurs :** Yassine BOUAZAMI, Amine BOUZID, Othmane TAHFI, Mohammed Amine TALHI, Mohamed EL BARAKA, Mohamed FANNI  
+**Date :** Janvier 2026  
+
+---
+
+## 1. Synthèse Exécutive du Projet
+
+La **Renault 5 E-Tech 100% Électrique** réinvente une icône automobile rétro en une citadine technologique, fun et accessible sous la signature **« La Révolution Pop Électrique »**. Ce projet stratégique définit les leviers d'occupation du marché marocain face aux acteurs établis (Dacia Spring, Peugeot e-208, Fiat 600e, BYD Atto 3).
+
+---
+
+## 2. Spécifications Techniques & Piliers de Marque
+
+* **Batterie & Autonomie :** $52\\,\\text{kWh}$ pour $390\\,\\text{km}$ WLTP.
+* **Motorisation :** $150\\,\\text{ch}$ ($110\\,\\text{kW}$).
+* **Temps de Charge :** AC : **$3\\,\\text{h }15\\,\\text{min}$** | DC rapide : **$30\\,\\text{min}$** ($10\\%$ à $80\\%$).
+* **Positionnement :** *« Ce n'est pas juste une voiture électrique, c'est une icône émotionnelle. Elle a changé. Pas vous. »*
+
+---
+
+## 3. Benchmark Concurrentiel Comparatif
+
+| Modèle Électrique | Segment | Batterie (kWh) | Autonomie (km) | Puissance | Temps Charge (AC/DC) | Positionnement Prix Indicatif |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **Dacia Spring** | Micro-citadine Budget | $26{,}8$ | $305$ | $48\\,\\text{ch}$ | 5h / 45 min | $210\\,000\\,\\text{DH}$ |
+| **Peugeot e-208** | Polyvalente Premium | $48{,}1$ | $400$ | $156\\,\\text{ch}$ | 4h / 30 min | $360\\,000\\,\\text{DH}$ |
+| **Fiat 600e** | Crossover Rétro | $50{,}8$ | $406$ | $156\\,\\text{ch}$ | 4h / 30 min | $390\\,000\\,\\text{DH}$ |
+| **BYD Atto 3** | SUV Compact | $61{,}0$ | $565$ | $204\\,\\text{ch}$ | 4h30 / 30 min | $340\\,000\\,\\text{DH}$ |
+| **Renault 5 E-Tech** | **Citadine Néo-Rétro** | **$52{,}0$** | **$390$** | **$150\\,\\text{ch}$** | **3h15 / 30 min** | **Offensive Tarifaire ($< 330\\,000\\,\\text{DH}$)** |
+
+---
+
+## 4. Projections du Marché Marocain des VE (2023 – 2030)
+
+| Année | Ventes Marché (Unités) | Prix Moyen Estimé (DH) | Chiffre d'Affaires Global (Milliards MAD) |
+| :---: | :---: | :---: | :---: |
+| **2023** | $463$ | $450\\,000\\,\\text{DH}$ | $0{,}21\\,\\text{MM MAD}$ |
+| **2024** | $1\\,135$ | $400\\,000\\,\\text{DH}$ | $0{,}45\\,\\text{MM MAD}$ |
+| **2025** | $3\\,500$ | $380\\,000\\,\\text{DH}$ | $1{,}33\\,\\text{MM MAD}$ |
+| **2026** | **$7\\,200$** | **$330\\,000\\,\\text{DH}$** | **$2{,}37\\,\\text{MM MAD}$** |
+| **2027** | $11\\,500$ | $300\\,000\\,\\text{DH}$ | $3{,}45\\,\\text{MM MAD}$ |
+| **2028** | $18\\,000$ | $280\\,000\\,\\text{DH}$ | $5{,}04\\,\\text{MM MAD}$ |
+| **2029** | $26\\,000$ | $260\\,000\\,\\text{DH}$ | $6{,}76\\,\\text{MM MAD}$ |
+| **2030** | **$35\\,000$** | **$250\\,000\\,\\text{DH}$** | **$8{,}75\\,\\text{MM MAD}$** |
+
+* Multiplications par $\\approx 30$ des volumes annuels d'ici 2030 et expansion du CA global à **$8{,}75\\,\\text{Milliards MAD}$**.
+
+---
+
+## 5. Recommandations & Plan d'Action Stratégique
+
+1. **Occupation Immédiate dès 2026 :** Capter le point d'inflexion du marché ($7\\,200\\,\\text{unités}$) pour verrouiller les parts de marché.
+2. **Repositionnement Prix Agressif :** Placer la R5 entre $290\\,000\\,\\text{DH}$ et $330\\,000\\,\\text{DH}$ pour sous-coter la concurrence Stellantis.
+3. **Synergie Écosystème Renault Maroc :** Formules tout-en-un (Wallbox offerte, réseau après-vente le plus dense du Maroc, campagnes média immersives).`
 };

@@ -75,7 +75,8 @@ const translations = {
              { id: 'petropolis-landslide-modeling', title: 'Physically-Based Landslide Modeling (Petrópolis, Brazil)', description: 'Geospatial data engineering and physical modeling of rainfall-triggered shallow landslides in Petrópolis, Brazil, utilizing the USGS TRIGRS v2.1.0 transient infiltration engine, QGIS, GRASS, and Mohr-Coulomb slope stability mechanics across 795 km².' },
              { id: 'cotton-hedging-inditex', title: 'Quantitative Cotton Price Hedging & Risk Management (Inditex Case Study)', description: 'Modeled stochastic cotton price dynamics under Geometric Brownian Motion and Black-Scholes cost-of-carry frameworks, executing 2,000-path Monte Carlo simulations and historical INSEE backtesting to evaluate Forward Swap and Option Call hedging strategies for Inditex.' },
              { id: 'renault5-electric-marketing', title: 'Renault 5 E-Tech 100% Electric: Marketing Strategy & Market Penetration', description: 'Conducted comprehensive marketing strategy, competitive benchmarking against Dacia/Peugeot/Fiat/BYD, customer persona segmentation, and macroeconomic EV sales forecasting (2026–2030 scaling to 8.75B MAD) for the Moroccan launch of the Renault 5 E-Tech.' },
-             { id: 'mitsubishi-strategic-analysis', title: 'Strategic Management & SDV Pivot: Mitsubishi Motors Corporation', description: 'Conducted an in-depth corporate strategy audit of Mitsubishi Motors Corporation within the Renault-Nissan-Mitsubishi Alliance, analyzing its business model, ASEAN market leadership, PESTEL/Porter/SWOT dynamics, and formulating its Software-Defined Vehicle (SDV) & BEV transition roadmap.' }
+             { id: 'mitsubishi-strategic-analysis', title: 'Strategic Management & SDV Pivot: Mitsubishi Motors Corporation', description: 'Conducted an in-depth corporate strategy audit of Mitsubishi Motors Corporation within the Renault-Nissan-Mitsubishi Alliance, analyzing its business model, ASEAN market leadership, PESTEL/Porter/SWOT dynamics, and formulating its Software-Defined Vehicle (SDV) & BEV transition roadmap.' },
+             { id: 'wireless-pentest-ceh', title: 'Wireless Network Security & Penetration Testing (CEH Lab)', description: 'Conducted offensive Wi-Fi auditing and cryptographic analysis in a CEH lab covering WEP RC4 IV cracking, WPA2 4-Way Handshake capture via deauthentication, Evil Twin rogue APs with captive portals (Fluxion), Wireshark 802.11 forensics, and WPA3-SAE / 802.1X enterprise hardening.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsorship Manager', description: 'As Sponsorship Manager, my core responsibility is securing vital partnerships and sponsorships to power EJE\'s impactful portfolio of student hackathons. I actively seek sponsors for major events including the OP&X Hackathon, Strategic Consulting Hackathon (SCH), DataQuest Hackathon, and the Finance Hackathon. By connecting companies with these platforms, I help them engage Morocco\'s brightest students and fuel future talent development.' },
@@ -170,7 +171,8 @@ const translations = {
             { id: 'petropolis-landslide-modeling', title: 'Modélisation Physique du Risque de Glissements de Terrain (Petrópolis, Brésil)', description: 'Préparation de données géospatiales et modélisation physique des glissements de terrain induits par les pluies torrentielles à Petrópolis (Brésil), couplant le modèle d\'infiltration transitoire USGS TRIGRS v2.1.0, QGIS, GRASS et la stabilité des pentes sur 795 km².' },
             { id: 'cotton-hedging-inditex', title: 'Finance de Marché & Couverture du Risque de Prix du Coton (Cas Inditex)', description: 'Modélisation stochastique par Mouvement Brownien Géométrique et valorisation Black-Scholes avec coût de portage, simulation Monte Carlo (2 000 trajectoires) et backtesting historique INSEE pour évaluer les stratégies de Swap Forward et Strip de Calls pour le groupe Inditex.' },
             { id: 'renault5-electric-marketing', title: 'Renault 5 E-Tech 100% Électrique : Stratégie Marketing & Pénétration de Marché', description: 'Élaboration de la stratégie marketing, positionnement concurrentiel (Dacia Spring, Peugeot e-208, Fiat 600e, BYD Atto 3), segmentation personas et projections de marché 2026–2030 (marché à 8,75 Mds MAD) pour le lancement de la Renault 5 E-Tech au Maroc.' },
-            { id: 'mitsubishi-strategic-analysis', title: 'Analyse Stratégique : Mitsubishi Motors Corporation & Virage SDV', description: 'Audit stratégique approfondi de Mitsubishi Motors Corporation au sein de l\'Alliance Renault-Nissan-Mitsubishi, analysant le modèle économique, le leadership ASEAN, le diagnostic PESTEL/Porter/SWOT et la feuille de route vers le Software-Defined Vehicle (SDV) et le 100% électrique.' }
+            { id: 'mitsubishi-strategic-analysis', title: 'Analyse Stratégique : Mitsubishi Motors Corporation & Virage SDV', description: 'Audit stratégique approfondi de Mitsubishi Motors Corporation au sein de l\'Alliance Renault-Nissan-Mitsubishi, analysant le modèle économique, le leadership ASEAN, le diagnostic PESTEL/Porter/SWOT et la feuille de route vers le Software-Defined Vehicle (SDV) et le 100% électrique.' },
+            { id: 'wireless-pentest-ceh', title: 'Sécurité des Réseaux Sans Fil & Tests d\'Intrusion (Laboratoire CEH)', description: 'Audit de sécurité offensif et analyse cryptographique des réseaux sans fil (Laboratoire CEH) : craquage WEP RC4, capture du 4-Way Handshake WPA2 par déauthentification, attaques Evil Twin à portail captif (Fluxion), forensics Wireshark 802.11 et durcissement WPA3-SAE / 802.1X EAP-TLS.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Responsable Sponsoring', description: 'En tant que Responsable Sponsoring, ma responsabilité principale est de sécuriser des partenariats et des sponsorings essentiels pour alimenter le portefeuille percutant de hackathons étudiants d\'EJE. Je recherche activement des sponsors pour des événements majeurs tels que le Hackathon OP&X, le Hackathon de Conseil Stratégique (SCH), le Hackathon DataQuest et le Hackathon Finance. En connectant les entreprises à ces plateformes, je les aide à interagir avec les étudiants les plus brillants du Maroc et à stimuler le développement des futurs talents.' },
@@ -265,7 +267,8 @@ const translations = {
              { id: 'petropolis-landslide-modeling', title: 'النمذجة الفيزيائية لمخاطر الانهيارات الأرضية (بيتروبوليس، البرازيل)', description: 'إعداد البيانات الجغرافية المكانية والنمذجة الفيزيائية للانهيارات الأرضية الناجمة عن الأمطار في بيتروبوليس بالبرازيل، باستخدام نموذج الارتشاح المؤقت USGS TRIGRS v2.1.0 وميكانيكا استقرار المنحدرات ونظم المعلومات الجغرافية QGIS عبر 795 كم².' },
              { id: 'cotton-hedging-inditex', title: 'تمويل الأسواق وإدارة المخاطر: التقييم الكمي لاستراتيجيات التحوط لأسعار القطن (مجموعة إنديتكس)', description: 'نمذجة العشوائية لديناميكا أسعار القطن عبر الحركة البراونية الهندسية ونموذج بلاك-شولز، مع تنفيذ محاكاة مونت كارلو (2000 مسار) واختبارات رجعية لبيانات INSEE لتقييم استراتيجيات المبادلة الآجلة وعقود الخيارات لمجموعة إنديتكس.' },
              { id: 'renault5-electric-marketing', title: 'رينو 5 إي-تيك الكهربائية 100%: استراتيجية التسويق واختراق السوق', description: 'إعداد استراتيجية تسويقية متكاملة، ودراسة مقارنة تنافسية (Dacia Spring, Peugeot e-208, Fiat 600e, BYD Atto 3)، وتحديد شرائح العملاء وتوقعات نمو سوق السيارات الكهربائية في المغرب للفترة 2026-2030 لتصل إلى 8.75 مليار درهم.' },
-             { id: 'mitsubishi-strategic-analysis', title: 'التحليل الاستراتيجي: شركة ميتسوبيشي موتورز والتحول نحو المركبات المعرفة برمجياً', description: 'تدقيق استراتيجي شامل لشركة ميتسوبيشي موتورز ضمن تحالف رينو-نيسان-ميتسوبيشي، مع تحليل نموذج الأعمال وريادة سوق آسيان ومصفوفات PESTEL وبورتر وSWOT، وصياغة خارطة طريق التحول نحو المركبات المحددة بالبرمجيات (SDV) والمركبات الكهربائية.' }
+             { id: 'mitsubishi-strategic-analysis', title: 'التحليل الاستراتيجي: شركة ميتسوبيشي موتورز والتحول نحو المركبات المعرفة برمجياً', description: 'تدقيق استراتيجي شامل لشركة ميتسوبيشي موتورز ضمن تحالف رينو-نيسان-ميتسوبيشي، مع تحليل نموذج الأعمال وريادة سوق آسيان ومصفوفات PESTEL وبورتر وSWOT، وصياغة خارطة طريق التحول نحو المركبات المحددة بالبرمجيات (SDV) والمركبات الكهربائية.' },
+             { id: 'wireless-pentest-ceh', title: 'أمن الشبكات اللاسلكية واختبار الاختراق (مختبر الهاكر الأخلاقي المعتمد CEH)', description: 'تدقيق أمني هجومي وتحليل تشفيري لشبكات الواي فاي (مختبر CEH) شمل كسر تشفير WEP RC4، واعتراض مصافحة WPA2 الرباعية عبر هجمات إلغاء المصادقة، وهجمات Evil Twin عبر بوابات Fluxion، وتحليل الحزم عبر Wireshark، وتطبيق حماية WPA3-SAE و802.1X.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'EJE', role: 'مدير الرعاية', description: 'بصفتي مدير الرعاية، تتمثل مسؤوليتي الأساسية في تأمين الشراكات والرعاية الحيوية لدعم محفظة EJE المؤثرة من مسابقات البرمجة الطلابية. أبحث عن رعاة للأحداث الكبرى بما في ذلك مسابقة البرمجة OP&X Hackathon ومسابقة البرمجة الاستشارية الاستراتيجية (SCH) ومسابقة البرمجة DataQuest Hackathon ومسابقة البرمجة المالية Finance Hackathon. من خلال ربط الشركات بهذه المنصات، أساعدها على جذب ألمع الطلاب المغاربة ودعم تنمية المواهب المستقبلية.' },
@@ -360,7 +363,8 @@ const translations = {
             { id: 'petropolis-landslide-modeling', title: 'Modelado Físico de Susceptibilidad a Deslizamientos (Petrópolis, Brasil)', description: 'Preparación de datos geoespaciales y modelado físico de deslizamientos de tierra inducidos por lluvias torrenciales en Petrópolis (Brasil), acoplando el modelo de infiltración transitoria USGS TRIGRS v2.1.0, QGIS, GRASS y estabilidad de taludes sobre 795 km².' },
             { id: 'cotton-hedging-inditex', title: 'Finanzas Cuantitativas y Cobertura del Riesgo de Precio del Algodón (Caso Inditex)', description: 'Modelado estocástico mediante Movimiento Browniano Geométrico y valoración Black-Scholes con coste de transporte, simulación de Monte Carlo (2.000 trayectorias) y backtesting histórico de datos INSEE para evaluar Swaps a plazo y Strips de Opciones Call para el Grupo Inditex.' },
             { id: 'renault5-electric-marketing', title: 'Renault 5 E-Tech 100% Eléctrico: Estrategia de Marketing y Penetración de Mercado', description: 'Elaboración de la estrategia de marketing, posicionamiento competitivo frente a Dacia/Peugeot/Fiat/BYD, segmentación de personas y proyecciones de ventas de vehículos eléctricos 2026–2030 (mercado de 8.750 millones MAD) para el lanzamiento del Renault 5 E-Tech en Marruecos.' },
-            { id: 'mitsubishi-strategic-analysis', title: 'Análisis Estratégico: Mitsubishi Motors Corporation y Viraje SDV', description: 'Auditoría estratégica corporativa de Mitsubishi Motors dentro de la Alianza Renault-Nissan-Mitsubishi, evaluando su modelo de negocio, liderazgo en ASEAN, diagnóstico PESTEL/Porter/SWOT y su hoja de ruta hacia Vehículos Definidos por Software (SDV) y electrificación BEV.' }
+            { id: 'mitsubishi-strategic-analysis', title: 'Análisis Estratégico: Mitsubishi Motors Corporation y Viraje SDV', description: 'Auditoría estratégica corporativa de Mitsubishi Motors dentro de la Alianza Renault-Nissan-Mitsubishi, evaluando su modelo de negocio, liderazgo en ASEAN, diagnóstico PESTEL/Porter/SWOT y su hoja de ruta hacia Vehículos Definidos por Software (SDV) y electrificación BEV.' },
+            { id: 'wireless-pentest-ceh', title: 'Seguridad de Redes Inalámbricas y Pruebas de Penetración (Laboratorio CEH)', description: 'Auditoría ofensiva y análisis criptográfico de redes Wi-Fi (Laboratorio CEH): descifrado de WEP RC4, captura del 4-Way Handshake de WPA2 mediante desautenticación, ataques Evil Twin con portales cautivos (Fluxion), análisis forense 802.11 con Wireshark y blindaje empresarial WPA3-SAE / 802.1X.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocinios', description: 'Como Gerente de Patrocinios, mi responsabilidad principal es asegurar alianzas y patrocinios vitales para impulsar el impactante portafolio de hackathons estudiantiles de EJE. Busco activamente patrocinadores para eventos importantes como el Hackathon OP&X, el Hackathon de Consultoría Estratégica (SCH), el Hackathon DataQuest y el Hackathon de Finanzas. Al conectar empresas con estas plataformas, les ayudo a interactuar con los estudiantes más brillantes de Marruecos y a fomentar el desarrollo de futuros talentos.' },
@@ -455,7 +459,8 @@ const translations = {
             { id: 'petropolis-landslide-modeling', title: '基于物理机制的滑坡易发性数值模拟研究（巴西彼得罗波利斯）', description: '针对巴西里约热内卢州彼得罗波利斯795平方公里高危山区，开展地理空间数据工程处理与降雨诱发浅层滑坡物理机制数值模拟，深度整合USGS TRIGRS v2.1.0非定常入渗模型、QGIS、GRASS与无限边坡稳定性力学分析。' },
             { id: 'cotton-hedging-inditex', title: '量化金融与大宗商品风险管理：棉花价格对冲策略评估（Inditex案例）', description: '基于几何布朗运动（GBM）与Black-Scholes持有成本模型对棉花价格进行随机建模，运用2000条路径的蒙特卡洛仿真与法国INSEE历史真实数据回测，系统评估了远期互换（Swap）与看涨期权组合（Strip of Calls）对西班牙Inditex集团采购成本的对冲效果。' },
             { id: 'renault5-electric-marketing', title: '雷诺5 E-Tech纯电动汽车：摩洛哥市场营销战略与渗透预测（2026–2030）', description: '针对雷诺5 E-Tech纯电动汽车在摩洛哥的上市开展全方位市场营销战略设计、与达契亚/标致/菲亚特/比亚迪的深度竞品对标、用户画像与细分市场定位，以及2026–2030年规模达87.5亿迪拉姆的宏观电动车销量预测。' },
-            { id: 'mitsubishi-strategic-analysis', title: '企业战略管理与软件定义汽车（SDV）转型：三菱汽车公司深度分析', description: '对雷诺-日产-三菱联盟框架下的三菱汽车公司开展深度企业战略审计，系统解析商业模式画布、东盟（ASEAN）市场主导地位、PESTEL/波特五力/SWOT全景诊断，并制定软件定义汽车（SDV）与纯电BEV转型路线图。' }
+            { id: 'mitsubishi-strategic-analysis', title: '企业战略管理与软件定义汽车（SDV）转型：三菱汽车公司深度分析', description: '对雷诺-日产-三菱联盟框架下的三菱汽车公司开展深度企业战略审计，系统解析商业模式画布、东盟（ASEAN）市场主导地位、PESTEL/波特五力/SWOT全景诊断，并制定软件定义汽车（SDV）与纯电BEV转型路线图。' },
+            { id: 'wireless-pentest-ceh', title: '无线网络安全与渗透测试攻防实践（CEH道德黑客实战实验室）', description: '在CEH道德黑客实验室内开展无线网络攻防与密码学深度剖析：涵盖WEP RC4弱IV破解、WPA2四次握手包重放捕获、Fluxion流氓AP钓鱼门户（Evil Twin）、Wireshark 802.11无线报文取证，以及WPA3-SAE / 802.1X RADIUS纵深防御架构。' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: '赞助经理', description: '作为赞助经理，我的核心职责是确保重要的合作伙伴关系和赞助，为EJE富有影响力的学生黑客马拉松系列活动提供支持。我积极为主要活动寻找赞助商，包括OP&X黑客马拉松、战略咨询黑客马拉松（SCH）、DataQuest黑客马拉松以及金融黑客马拉松。通过将公司与这些平台联系起来，我帮助他们接触到摩洛哥最优秀的学生，并为未来的人才发展提供动力。' },
@@ -547,7 +552,8 @@ const translations = {
             { id: 'petropolis-landslide-modeling', title: 'Modelagem Física da Suscetibilidade a Deslizamentos (Petrópolis, RJ)', description: 'Preparação de dados geoespaciais e modelagem física de escorregamentos translacionais induzidos por chuvas intensas em Petrópolis (Brasil), acoplando o modelo de infiltração transiente USGS TRIGRS v2.1.0, QGIS, GRASS e mecânica de taludes sobre 795 km².' },
             { id: 'cotton-hedging-inditex', title: 'Finanças Quantitativas e Gestão de Risco: Cobertura do Preço do Algodão (Caso Inditex)', description: 'Modelagem estocástica por Movimento Browniano Geométrico e precificação Black-Scholes com custo de carregamento, simulação de Monte Carlo (2.000 trajetórias) e backtesting histórico INSEE para avaliar estratégias de Swap a termo e Strip de Opções Call para o Grupo Inditex.' },
             { id: 'renault5-electric-marketing', title: 'Renault 5 E-Tech 100% Elétrico: Estratégia de Marketing e Penetração de Mercado', description: 'Elaboração da estratégia de marketing, posicionamento competitivo contra Dacia/Peugeot/Fiat/BYD, segmentação de personas e projeções de vendas de veículos elétricos 2026–2030 (mercado de 8,75 bilhões MAD) para o lançamento do Renault 5 E-Tech em Marrocos.' },
-            { id: 'mitsubishi-strategic-analysis', title: 'Análise Estratégica: Mitsubishi Motors Corporation e Transição SDV', description: 'Auditoria estratégica corporativa da Mitsubishi Motors Corporation na Aliança Renault-Nissan-Mitsubishi, analisando o modelo de negócios, liderança na ASEAN, diagnóstico PESTEL/Porter/SWOT e o roteiro para Veículos Definidos por Software (SDV) e BEV.' }
+            { id: 'mitsubishi-strategic-analysis', title: 'Análise Estratégica: Mitsubishi Motors Corporation e Transição SDV', description: 'Auditoria estratégica corporativa da Mitsubishi Motors Corporation na Aliança Renault-Nissan-Mitsubishi, analisando o modelo de negócios, liderança na ASEAN, diagnóstico PESTEL/Porter/SWOT e o roteiro para Veículos Definidos por Software (SDV) e BEV.' },
+            { id: 'wireless-pentest-ceh', title: 'Segurança de Redes Sem Fio e Testes de Intrusão (Laboratório CEH)', description: 'Auditoria ofensiva e análise criptográfica de redes sem fio (Laboratório CEH): quebra de WEP RC4, captura de 4-Way Handshake WPA2 por desautenticação, ataques Evil Twin com portais cativos (Fluxion), perícia forense 802.11 com Wireshark e defesa WPA3-SAE / 802.1X.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocínios', description: 'Como Gerente de Patrocínios, minha principal responsabilidade é garantir parcerias e patrocínios vitais para impulsionar o portfólio impactante de hackathons estudantis da EJE. Busco ativamente patrocinadores para grandes eventos, incluindo o Hackathon OP&X, o Hackathon de Consultoria Estratégica (SCH), o Hackathon DataQuest e o Hackathon de Finanças. Ao conectar empresas a essas plataformas, ajudo-as a interagir com os estudantes mais brilhantes de Marrocos e a impulsionar o desenvolvimento de futuros talentos.' },
@@ -631,7 +637,8 @@ const translations = {
             { id: 'petropolis-landslide-modeling', title: 'Physikalische Hangstabilitäts- & Erdrutschmodellierung (Petrópolis, Brasilien)', description: 'Geodatenaufbereitung und physikalisch-basierte Modellierung niederschlagsinduzierter Hangrutschungen in Petrópolis (Brasilien) mittels des USGS TRIGRS v2.1.0 Infiltrationsmodells, QGIS, GRASS und Mohr-Coulomb-Stabilitätsanalyse über 795 km².' },
             { id: 'cotton-hedging-inditex', title: 'Quantitative Finanzwirtschaft & Risikomanagement: Baumwollpreis-Hedging (Fallstudie Inditex)', description: 'Stochastische Modellierung der Baumwollpreise mittels Geometrischer Brownscher Bewegung und Black-Scholes-Carry-Modell, Durchführung von 2.000 Monte-Carlo-Pfaden und historischem INSEE-Backtesting zur Bewertung von Forward-Swaps und Call-Option-Strips für Inditex.' },
             { id: 'renault5-electric-marketing', title: 'Renault 5 E-Tech 100% Elektrisch: Marketingstrategie & Marktdurchdringung', description: 'Entwicklung der Marketingstrategie, Wettbewerbsanalyse (Dacia Spring, Peugeot e-208, Fiat 600e, BYD Atto 3), Persona-Segmentierung und EV-Marktprognosen für 2026–2030 (Marktvolumen 8,75 Mrd. MAD) für den Launch des Renault 5 E-Tech in Marokko.' },
-            { id: 'mitsubishi-strategic-analysis', title: 'Strategische Analyse & SDV-Transformation: Mitsubishi Motors Corporation', description: 'Umfassendes strategisches Unternehmens-Audit der Mitsubishi Motors Corporation innerhalb der Renault-Nissan-Mitsubishi-Allianz mit Analyse des Geschäftsmodells, der ASEAN-Marktführerschaft, PESTEL/Porter/SWOT und der Roadmap für Software-Defined Vehicles (SDV) & BEV.' }
+            { id: 'mitsubishi-strategic-analysis', title: 'Strategische Analyse & SDV-Transformation: Mitsubishi Motors Corporation', description: 'Umfassendes strategisches Unternehmens-Audit der Mitsubishi Motors Corporation innerhalb der Renault-Nissan-Mitsubishi-Allianz mit Analyse des Geschäftsmodells, der ASEAN-Marktführerschaft, PESTEL/Porter/SWOT und der Roadmap für Software-Defined Vehicles (SDV) & BEV.' },
+            { id: 'wireless-pentest-ceh', title: 'WLAN-Sicherheit & Penetration Testing (CEH-Labor)', description: 'Offensive Sicherheitsüberprüfung und kryptographische Analyse im CEH-Labor: WEP RC4-Knacken, WPA2 4-Way Handshake-Erfassung via Deauthentifizierung, Evil-Twin Rogue-APs mit Captive-Portals (Fluxion), Wireshark 802.11-Forensik und WPA3-SAE / 802.1X-Härtung.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsoring-Manager', description: 'Als Sponsoring-Manager liegt meine Hauptverantwortung in der Sicherung wichtiger Partnerschaften und Sponsorings zur Finanzierung der studentischen Hackathons von EJE. Ich suche aktiv Sponsoren für Großveranstaltungen wie den OP&X Hackathon, den Strategic Consulting Hackathon (SCH), den DataQuest Hackathon und den Finance Hackathon. Durch die Verbindung von Unternehmen mit diesen Plattformen helfe ich ihnen, mit Marokkos klügsten Köpfen in Kontakt zu treten.' },
@@ -873,6 +880,16 @@ const projectsData = [
         metric: 'PESTEL, Porter\'s 5 Forces, SWOT & Software-Defined Vehicle (SDV) Pivot',
         reportUrl: '', 
         presentationUrl: 'https://drive.google.com/file/d/1g9JGOlP4Tlijar2wqVLzq4wYp_5OQQ2L/view?usp=sharing'
+    },
+    { 
+        id: 'wireless-pentest-ceh', 
+        date: '2025-05', 
+        technologies: ['Cybersecurity & Pentesting', 'Certified Ethical Hacker (CEH)', 'IEEE 802.11 & Wireshark Forensics', 'Aircrack-ng Suite & Hashcat', 'Rogue AP & Evil Twin (Fluxion)', 'WPA3 / 802.1X / RADIUS (EAP-TLS)', 'Linux / Kali Linux'], 
+        githubUrl: '',
+        demoUrl: '',
+        metric: 'WEP/WPA2 Cracking, Evil Twin (Fluxion), 802.11 Forensics & WPA3 Defense',
+        reportUrl: '', 
+        presentationUrl: 'https://drive.google.com/file/d/1cX8q2fkhNz-ZNrlZ5ONsZPKWrQSQ0mDy/view?usp=sharing'
     }
 ];
 
@@ -2346,5 +2363,56 @@ La **Renault 5 E-Tech 100% Électrique** réinvente une icône automobile rétro
 ## 4. Recommandations : Le Virage du Software-Defined SUV
 
 1. **Offensive BEV sur l'ASEAN :** Déployer des SUV et pick-ups électriques compétitifs sur plateforme CMF-EV pour contrer l'offensive chinoise.
-2. **Plateforme SDV & Mises à Jour OTA :** Monétiser les services connectés, la maintenance prédictive et l'assurance basée sur l'usage (*Usage-Based Insurance*) via des mises à jour logicielles à distance (*Over-The-Air*).`
+2. **Plateforme SDV & Mises à Jour OTA :** Monétiser les services connectés, la maintenance prédictive et l'assurance basée sur l'usage (*Usage-Based Insurance*) via des mises à jour logicielles à distance (*Over-The-Air*).`,
+
+    'wireless-pentest-ceh': `# Projet de Cybersécurité : Sécurité des Réseaux Sans Fil & Tests d'Intrusion
+
+**Institution :** EMINES – School of Industrial Management, Université Mohammed VI Polytechnique (UM6P)  
+**Module :** Certified Ethical Hacker (CEH) – Laboratoire de Cybersécurité  
+**Auteur :** Mohammed EL BARAKA  
+**Date :** Mai 2025  
+
+---
+
+## 1. Contexte & Architecture du Laboratoire
+
+Maquette multi-systèmes d'entreprise :
+* **Station Offensive :** Kali Linux avec carte réseau USB en mode moniteur (RFMON) et injection de paquets (chipset Atheros AR9271).
+* **Serveurs d'Entreprise :** Windows Server 2019 (Active Directory DS, DNS, IIS, FTP, RDS) et CentOS Linux (Apache, SSH).
+* **Stations Cibles :** Postes clients Windows 7 et Windows 10.
+
+---
+
+## 2. Vecteurs d'Attaque & Démonstrations Pratiques
+
+### 2.1 Craquage du Protocole WEP (RC4 & Faiblesse des IVs)
+* Exploitation des 24 bits d'IV par injection active ARP (\`aireplay-ng -3\`) et dérivation statistique FMS/PTW (\`aircrack-ng\`).
+* Extraction de la clé 128-bit en moins de 3 minutes avec ~25 000 IVs capturés.
+
+### 2.2 Attaque WPA/WPA2-PSK par 4-Way Handshake
+* Émission de trames de déauthentification (\`aireplay-ng -0\`) forçant la reconnexion de la victime.
+* Capture du 4-Way Handshake (EAPOL) et cassage par dictionnaire (\`aircrack-ng\` / Hashcat GPU mode 22000).
+
+### 2.3 Attaque Rogue AP & Evil Twin (Fluxion)
+* Déploiement d'un faux point d'accès jumeau avec brouillage du vrai routeur.
+* Redirection DNS vers un portail captif d'ingénierie sociale et validation instantanée de la clé saisie contre le handshake capturé.
+
+### 2.4 Forensics Réseau & Analyse de Trames Wireshark
+* Filtrage EAPOL (\`eapol\`), détection d'attaques DoS par déauthentification (\`wlan.fc.type_subtype == 0x000c\`) et trames Beacon (\`wlan.fc.type_subtype == 0x0008\`).
+
+---
+
+## 3. Post-Exploitation & Pivots Internes
+
+* **Rogue DHCP & Man-in-the-Middle :** Interception de flux non chiffrés via Bettercap/Ettercap.
+* **Compromission Active Directory :** Extraction des hashs NTLM (Mimikatz/pwdump) et attaques par rejeu *Pass-the-Hash*.
+
+---
+
+## 4. Contremesures & Défense en Profondeur
+
+1. **Migration vers WPA3-SAE (Dragonfly) :** Échange de clé résistant aux attaques par dictionnaire hors-ligne.
+2. **Trames de Gestion Protégées (802.11w PMF) :** Chiffrement et signature des trames de déauthentification.
+3. **Authentification Entreprise IEEE 802.1X / RADIUS (EAP-TLS) :** Certificats numériques X.509 individuels remplaçant les passphrases statiques.
+4. **Systèmes de Détection et Prévention (WIDS/WIPS) :** Surveillance 24/7 de l'espace radio hertzien.`
 };

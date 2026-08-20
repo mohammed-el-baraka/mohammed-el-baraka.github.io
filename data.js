@@ -78,7 +78,8 @@ const translations = {
              { id: 'mitsubishi-strategic-analysis', title: 'Strategic Management & SDV Pivot: Mitsubishi Motors Corporation', description: 'Conducted an in-depth corporate strategy audit of Mitsubishi Motors Corporation within the Renault-Nissan-Mitsubishi Alliance, analyzing its business model, ASEAN market leadership, PESTEL/Porter/SWOT dynamics, and formulating its Software-Defined Vehicle (SDV) & BEV transition roadmap.' },
              { id: 'wireless-pentest-ceh', title: 'Wireless Network Security & Penetration Testing (CEH Lab)', description: 'Conducted offensive Wi-Fi auditing and cryptographic analysis in a CEH lab covering WEP RC4 IV cracking, WPA2 4-Way Handshake capture via deauthentication, Evil Twin rogue APs with captive portals (Fluxion), Wireshark 802.11 forensics, and WPA3-SAE / 802.1X enterprise hardening.' },
              { id: 'managerial-accounting-formaction', title: 'Management Accounting & Cost Control: ABC Modeling (FORMACTION)', description: 'Conducted full-scale Activity-Based Costing (ABC) and Direct Costing Évolué modeling for training institute FORMACTION (€678.7k revenue across 187 trainees), optimizing contribution margins and proving strategic retention of public-funded programs.' },
-             { id: 'sap-s4hana-production-planning', title: 'SAP S/4HANA Production Planning & Industrial ERP (Global Bike Inc.)', description: 'Mastered full-lifecycle production planning and execution in SAP S/4HANA for Global Bike Inc., configuring multi-level BOMs, work centers, routings, standard costing (CK11N), SOP/MRP pyramids, MTS (Strategy 40) vs. ATO (Strategy 82), and shop floor execution.' }
+             { id: 'sap-s4hana-production-planning', title: 'SAP S/4HANA Production Planning & Industrial ERP (Global Bike Inc.)', description: 'Mastered full-lifecycle production planning and execution in SAP S/4HANA for Global Bike Inc., configuring multi-level BOMs, work centers, routings, standard costing (CK11N), SOP/MRP pyramids, MTS (Strategy 40) vs. ATO (Strategy 82), and shop floor execution.' },
+             { id: 'data-science-track', title: 'Data Science Specialization Track: 8-Week Advanced Curriculum', description: 'Completed an intensive 8-week specialization directed by Prof. Éric Moulines (French Academy of Sciences / École Polytechnique), mastering multivariate optimization, PAC theory, CNNs & CAVI, ill-posed inverse problems, generative AI (GANs/VAEs/Diffusion), NLP Transformers, and Reinforcement Learning.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsorship Manager', description: 'As Sponsorship Manager, my core responsibility is securing vital partnerships and sponsorships to power EJE\'s impactful portfolio of student hackathons. I actively seek sponsors for major events including the OP&X Hackathon, Strategic Consulting Hackathon (SCH), DataQuest Hackathon, and the Finance Hackathon. By connecting companies with these platforms, I help them engage Morocco\'s brightest students and fuel future talent development.' },
@@ -176,7 +177,8 @@ const translations = {
             { id: 'mitsubishi-strategic-analysis', title: 'Analyse Stratégique : Mitsubishi Motors Corporation & Virage SDV', description: 'Audit stratégique approfondi de Mitsubishi Motors Corporation au sein de l\'Alliance Renault-Nissan-Mitsubishi, analysant le modèle économique, le leadership ASEAN, le diagnostic PESTEL/Porter/SWOT et la feuille de route vers le Software-Defined Vehicle (SDV) et le 100% électrique.' },
             { id: 'wireless-pentest-ceh', title: 'Sécurité des Réseaux Sans Fil & Tests d\'Intrusion (Laboratoire CEH)', description: 'Audit de sécurité offensif et analyse cryptographique des réseaux sans fil (Laboratoire CEH) : craquage WEP RC4, capture du 4-Way Handshake WPA2 par déauthentification, attaques Evil Twin à portail captif (Fluxion), forensics Wireshark 802.11 et durcissement WPA3-SAE / 802.1X EAP-TLS.' },
             { id: 'managerial-accounting-formaction', title: 'Comptabilité Analytique & Contrôle de Gestion : Modélisation ABC (FORMACTION)', description: 'Modélisation des coûts par la méthode ABC (Activity-Based Costing) et Direct Costing Évolué pour l\'organisme FORMACTION (678,7 k€ de CA sur 187 stagiaires), analysant les marges de contribution et démontrant l\'intérêt stratégique du maintien des filières.' },
-            { id: 'sap-s4hana-production-planning', title: 'Planification et Gestion de Production sous SAP S/4HANA (Global Bike Inc.)', description: 'Mise en œuvre intégrale de la planification et de la gestion de production sous SAP S/4HANA pour Global Bike Inc. : paramétrage Master Data (nomenclatures multi-niveaux, gammes, postes de travail), calcul du coût de revient (CK11N), pyramide PIC/PDP/MRP, stratégies MTS (40) vs ATO (82) et boucle d\'exécution atelier.' }
+            { id: 'sap-s4hana-production-planning', title: 'Planification et Gestion de Production sous SAP S/4HANA (Global Bike Inc.)', description: 'Mise en œuvre intégrale de la planification et de la gestion de production sous SAP S/4HANA pour Global Bike Inc. : paramétrage Master Data (nomenclatures multi-niveaux, gammes, postes de travail), calcul du coût de revient (CK11N), pyramide PIC/PDP/MRP, stratégies MTS (40) vs ATO (82) et boucle d\'exécution atelier.' },
+            { id: 'data-science-track', title: 'Option Data Science : Parcours d\'Excellence Approfondi (8 Semaines)', description: 'Spécialisation intensive de 8 semaines sous la direction de Prof. Éric Moulines (Académie des Sciences / École Polytechnique) : optimisation multivariée, théorie PAC, CNN & CAVI, problèmes inverses, IA générative (GANs/VAEs/Diffusion), NLP Transformers et apprentissage par renforcement.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Responsable Sponsoring', description: 'En tant que Responsable Sponsoring, ma responsabilité principale est de sécuriser des partenariats et des sponsorings essentiels pour alimenter le portefeuille percutant de hackathons étudiants d\'EJE. Je recherche activement des sponsors pour des événements majeurs tels que le Hackathon OP&X, le Hackathon de Conseil Stratégique (SCH), le Hackathon DataQuest et le Hackathon Finance. En connectant les entreprises à ces plateformes, je les aide à interagir avec les étudiants les plus brillants du Maroc et à stimuler le développement des futurs talents.' },
@@ -274,7 +276,8 @@ const translations = {
              { id: 'mitsubishi-strategic-analysis', title: 'التحليل الاستراتيجي: شركة ميتسوبيشي موتورز والتحول نحو المركبات المعرفة برمجياً', description: 'تدقيق استراتيجي شامل لشركة ميتسوبيشي موتورز ضمن تحالف رينو-نيسان-ميتسوبيشي، مع تحليل نموذج الأعمال وريادة سوق آسيان ومصفوفات PESTEL وبورتر وSWOT، وصياغة خارطة طريق التحول نحو المركبات المحددة بالبرمجيات (SDV) والمركبات الكهربائية.' },
              { id: 'wireless-pentest-ceh', title: 'أمن الشبكات اللاسلكية واختبار الاختراق (مختبر الهاكر الأخلاقي المعتمد CEH)', description: 'تدقيق أمني هجومي وتحليل تشفيري لشبكات الواي فاي (مختبر CEH) شمل كسر تشفير WEP RC4، واعتراض مصافحة WPA2 الرباعية عبر هجمات إلغاء المصادقة، وهجمات Evil Twin عبر بوابات Fluxion، وتحليل الحزم عبر Wireshark، وتطبيق حماية WPA3-SAE و802.1X.' },
              { id: 'managerial-accounting-formaction', title: 'المحاسبة التحليلية ومراقبة التسيير: نمذجة التكاليف على أساس الأنشطة ABC (مؤسسة FORMACTION)', description: 'نمذجة متقدمة لمحاسبة التكاليف عبر منهجية التكلفة على أساس الأنشطة (ABC) ونظام التكلفة المباشرة المتطورة لمؤسسة FORMACTION (رقم معاملات 678.7 ألف يورو عبر 187 متدرباً) لتحليل هوامش المساهمة وتوجيه القرارات الإدارية.' },
-             { id: 'sap-s4hana-production-planning', title: 'تخطيط وإدارة الإنتاج عبر نظام SAP S/4HANA (شركة Global Bike Inc.)', description: 'تنفيذ وتكوين دورة تخطيط وإدارة الإنتاج الصناعي المتكاملة عبر نظام SAP S/4HANA لشركة Global Bike Inc.، مع ضبط البيانات الأساسية (هياكل المنتجات، مسارات التصنيع، مراكز العمل)، وحساب تكاليف الإنتاج المعيارية (CK11N)، وتطبيق استراتيجيات الصنع للمخزون (MTS) والتجميع حسب الطلب (ATO).' }
+             { id: 'sap-s4hana-production-planning', title: 'تخطيط وإدارة الإنتاج عبر نظام SAP S/4HANA (شركة Global Bike Inc.)', description: 'تنفيذ وتكوين دورة تخطيط وإدارة الإنتاج الصناعي المتكاملة عبر نظام SAP S/4HANA لشركة Global Bike Inc.، مع ضبط البيانات الأساسية (هياكل المنتجات، مسارات التصنيع، مراكز العمل)، وحساب تكاليف الإنتاج المعيارية (CK11N)، وتطبيق استراتيجيات الصنع للمخزون (MTS) والتجميع حسب الطلب (ATO).' },
+             { id: 'data-science-track', title: 'مسار التخصص المتقدم في علوم البيانات والذكاء الاصطناعي (برنامج 8 أسابيع)', description: 'إتمام مسار تخصصي مكثف في علوم البيانات مدته 8 أسابيع بإشراف البروفيسور إريك مولين (الأكاديمية الفرنسية للعلوم / بوليتكنيك): التحسين الرياضي، نظرية PAC، التعلم العميق، المسائل العكسية، النماذج التوليدية، معالجة اللغات الطبيعية، والتعلم المعزز.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'EJE', role: 'مدير الرعاية', description: 'بصفتي مدير الرعاية، تتمثل مسؤوليتي الأساسية في تأمين الشراكات والرعاية الحيوية لدعم محفظة EJE المؤثرة من مسابقات البرمجة الطلابية. أبحث عن رعاة للأحداث الكبرى بما في ذلك مسابقة البرمجة OP&X Hackathon ومسابقة البرمجة الاستشارية الاستراتيجية (SCH) ومسابقة البرمجة DataQuest Hackathon ومسابقة البرمجة المالية Finance Hackathon. من خلال ربط الشركات بهذه المنصات، أساعدها على جذب ألمع الطلاب المغاربة ودعم تنمية المواهب المستقبلية.' },
@@ -372,7 +375,8 @@ const translations = {
             { id: 'mitsubishi-strategic-analysis', title: 'Análisis Estratégico: Mitsubishi Motors Corporation y Viraje SDV', description: 'Auditoría estratégica corporativa de Mitsubishi Motors dentro de la Alianza Renault-Nissan-Mitsubishi, evaluando su modelo de negocio, liderazgo en ASEAN, diagnóstico PESTEL/Porter/SWOT y su hoja de ruta hacia Vehículos Definidos por Software (SDV) y electrificación BEV.' },
             { id: 'wireless-pentest-ceh', title: 'Seguridad de Redes Inalámbricas y Pruebas de Penetración (Laboratorio CEH)', description: 'Auditoría ofensiva y análisis criptográfico de redes Wi-Fi (Laboratorio CEH): descifrado de WEP RC4, captura del 4-Way Handshake de WPA2 mediante desautenticación, ataques Evil Twin con portales cautivos (Fluxion), análisis forense 802.11 con Wireshark y blindaje empresarial WPA3-SAE / 802.1X.' },
             { id: 'managerial-accounting-formaction', title: 'Contabilidad Analítica y Control de Gestión: Modelado ABC (FORMACTION)', description: 'Modelado integral de costes mediante Activity-Based Costing (ABC) y Direct Costing Evolucionado para el centro FORMACTION (678,7 k€ de ingresos sobre 187 alumnos), optimizando márgenes de contribución y auditando la rentabilidad de programas formativos.' },
-            { id: 'sap-s4hana-production-planning', title: 'Planificación y Gestión de Producción en SAP S/4HANA (Global Bike Inc.)', description: 'Implementación y configuración integral del ciclo de planificación y ejecución de producción en SAP S/4HANA para Global Bike Inc., parametrizando listas de materiales (BOM), puestos de trabajo, rutas, cálculo de costes estándar (CK11N), pirámide SOP/MRP y estrategias MTS frente a ATO.' }
+            { id: 'sap-s4hana-production-planning', title: 'Planificación y Gestión de Producción en SAP S/4HANA (Global Bike Inc.)', description: 'Implementación y configuración integral del ciclo de planificación y ejecución de producción en SAP S/4HANA para Global Bike Inc., parametrizando listas de materiales (BOM), puestos de trabajo, rutas, cálculo de costes estándar (CK11N), pirámide SOP/MRP y estrategias MTS frente a ATO.' },
+            { id: 'data-science-track', title: 'Especialización en Ciencia de Datos: Programa Avanzado de 8 Semanas', description: 'Especialización intensiva de 8 semanas dirigida por el Prof. Éric Moulines (Academia de Ciencias de Francia / École Polytechnique): optimización convexa, teoría PAC, CNN y CAVI, problemas inversos, IA generativa (GANs/VAEs/Difusión), Transformers y Aprendizaje por Refuerzo.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocinios', description: 'Como Gerente de Patrocinios, mi responsabilidad principal es asegurar alianzas y patrocinios vitales para impulsar el impactante portafolio de hackathons estudiantiles de EJE. Busco activamente patrocinadores para eventos importantes como el Hackathon OP&X, el Hackathon de Consultoría Estratégica (SCH), el Hackathon DataQuest y el Hackathon de Finanzas. Al conectar empresas con estas plataformas, les ayudo a interactuar con los estudiantes más brillantes de Marruecos y a fomentar el desarrollo de futuros talentos.' },
@@ -470,7 +474,8 @@ const translations = {
             { id: 'mitsubishi-strategic-analysis', title: '企业战略管理与软件定义汽车（SDV）转型：三菱汽车公司深度分析', description: '对雷诺-日产-三菱联盟框架下的三菱汽车公司开展深度企业战略审计，系统解析商业模式画布、东盟（ASEAN）市场主导地位、PESTEL/波特五力/SWOT全景诊断，并制定软件定义汽车（SDV）与纯电BEV转型路线图。' },
             { id: 'wireless-pentest-ceh', title: '无线网络安全与渗透测试攻防实践（CEH道德黑客实战实验室）', description: '在CEH道德黑客实验室内开展无线网络攻防与密码学深度剖析：涵盖WEP RC4弱IV破解、WPA2四次握手包重放捕获、Fluxion流氓AP钓鱼门户（Evil Twin）、Wireshark 802.11无线报文取证，以及WPA3-SAE / 802.1X RADIUS纵深防御架构。' },
             { id: 'managerial-accounting-formaction', title: '管理会计与成本控制：作业成本法（ABC）与边际贡献建模（FORMACTION案例）', description: '针对法国职业培训机构FORMACTION（年营收67.87万欧元，覆盖187名学员）开展全流程作业成本法（ABC）与演进直接成本法建模，深度解析成本动因、分部边际贡献率，并提供关键业务保留决策支持。' },
-            { id: 'sap-s4hana-production-planning', title: 'SAP S/4HANA工业生产计划与ERP端到端智造实践（Global Bike案例）', description: '在SAP S/4HANA工业制造系统中完成全流程生产计划与车间执行落地：端到端配置多级BOM、工作中心、工艺路线、标准成本核算（CK11N）、SOP/MRP计划金字塔，深入对比按库存生产（MTS-40）与按订单装配（ATO-82）策略。' }
+            { id: 'sap-s4hana-production-planning', title: 'SAP S/4HANA工业生产计划与ERP端到端智造实践（Global Bike案例）', description: '在SAP S/4HANA工业制造系统中完成全流程生产计划与车间执行落地：端到端配置多级BOM、工作中心、工艺路线、标准成本核算（CK11N）、SOP/MRP计划金字塔，深入对比按库存生产（MTS-40）与按订单装配（ATO-82）策略。' },
+            { id: 'data-science-track', title: '数据科学与人工智能前沿专业方向（8周强化体系）', description: '在法国科学院院士、巴黎综合理工学院教授 Éric Moulines 亲自主导下完成8周高强度精英培养体系：全方位覆盖多元数值优化、PAC可学习理论、统计深度学习、反问题图像重建、生成式AI（GAN/VAE/扩散模型）、大模型NLP及强化学习。' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: '赞助经理', description: '作为赞助经理，我的核心职责是确保重要的合作伙伴关系和赞助，为EJE富有影响力的学生黑客马拉松系列活动提供支持。我积极为主要活动寻找赞助商，包括OP&X黑客马拉松、战略咨询黑客马拉松（SCH）、DataQuest黑客马拉松以及金融黑客马拉松。通过将公司与这些平台联系起来，我帮助他们接触到摩洛哥最优秀的学生，并为未来的人才发展提供动力。' },
@@ -565,7 +570,8 @@ const translations = {
             { id: 'mitsubishi-strategic-analysis', title: 'Análise Estratégica: Mitsubishi Motors Corporation e Transição SDV', description: 'Auditoria estratégica corporativa da Mitsubishi Motors Corporation na Aliança Renault-Nissan-Mitsubishi, analisando o modelo de negócios, liderança na ASEAN, diagnóstico PESTEL/Porter/SWOT e o roteiro para Veículos Definidos por Software (SDV) e BEV.' },
             { id: 'wireless-pentest-ceh', title: 'Segurança de Redes Sem Fio e Testes de Intrusão (Laboratório CEH)', description: 'Auditoria ofensiva e análise criptográfica de redes sem fio (Laboratório CEH): quebra de WEP RC4, captura de 4-Way Handshake WPA2 por desautenticação, ataques Evil Twin com portais cativos (Fluxion), perícia forense 802.11 com Wireshark e defesa WPA3-SAE / 802.1X.' },
             { id: 'managerial-accounting-formaction', title: 'Contabilidade Analítica e Controlo de Gestão: Modelagem ABC (FORMACTION)', description: 'Modelagem de custos pelo método ABC (Activity-Based Costing) e Direct Costing Evoluído para a instituição FORMACTION (678,7 mil € de receita sobre 187 formandos), analisando margens de contribuição e auditando a rentabilidade estratégica.' },
-            { id: 'sap-s4hana-production-planning', title: 'Planeamento e Gestão de Produção em SAP S/4HANA (Global Bike Inc.)', description: 'Implementação e configuração integral do ciclo de planeamento e execução de produção no SAP S/4HANA para a Global Bike Inc., parametrizando listas de materiais (BOM), centros de trabalho, roteiros, cálculo de custo padrão (CK11N), pirâmide SOP/MRP e estratégias MTS vs ATO.' }
+            { id: 'sap-s4hana-production-planning', title: 'Planeamento e Gestão de Produção em SAP S/4HANA (Global Bike Inc.)', description: 'Implementação e configuração integral do ciclo de planeamento e execução de produção no SAP S/4HANA para a Global Bike Inc., parametrizando listas de materiais (BOM), centros de trabalho, roteiros, cálculo de custo padrão (CK11N), pirâmide SOP/MRP e estratégias MTS vs ATO.' },
+            { id: 'data-science-track', title: 'Especialização em Ciência de Dados: Programa Avanzado de 8 Semanas', description: 'Especialização intensiva de 8 semanas dirigida pelo Prof. Éric Moulines (Academia Francesa de Ciências / École Polytechnique): otimização convexa, teoria PAC, CNN e CAVI, problemas inversos, IA generativa (GANs/VAEs/Difusão), Transformers e Aprendizado por Reforço.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocínios', description: 'Como Gerente de Patrocínios, minha principal responsabilidade é garantir parcerias e patrocínios vitais para impulsionar o portfólio impactante de hackathons estudantis da EJE. Busco ativamente patrocinadores para grandes eventos, incluindo o Hackathon OP&X, o Hackathon de Consultoria Estratégica (SCH), o Hackathon DataQuest e o Hackathon de Finanças. Ao conectar empresas a essas plataformas, ajudo-as a interagir com os estudantes mais brilhantes de Marrocos e a impulsionar o desenvolvimento de futuros talentos.' },
@@ -652,7 +658,8 @@ const translations = {
             { id: 'mitsubishi-strategic-analysis', title: 'Strategische Analyse & SDV-Transformation: Mitsubishi Motors Corporation', description: 'Umfassendes strategisches Unternehmens-Audit der Mitsubishi Motors Corporation innerhalb der Renault-Nissan-Mitsubishi-Allianz mit Analyse des Geschäftsmodells, der ASEAN-Marktführerschaft, PESTEL/Porter/SWOT und der Roadmap für Software-Defined Vehicles (SDV) & BEV.' },
             { id: 'wireless-pentest-ceh', title: 'WLAN-Sicherheit & Penetration Testing (CEH-Labor)', description: 'Offensive Sicherheitsüberprüfung und kryptographische Analyse im CEH-Labor: WEP RC4-Knacken, WPA2 4-Way Handshake-Erfassung via Deauthentifizierung, Evil-Twin Rogue-APs mit Captive-Portals (Fluxion), Wireshark 802.11-Forensik und WPA3-SAE / 802.1X-Härtung.' },
             { id: 'managerial-accounting-formaction', title: 'Kosten- und Leistungsrechnung & Controlling: Prozesskostenrechnung (FORMACTION)', description: 'Entwicklung einer Prozesskostenrechnung (Activity-Based Costing) und mehrstufigen Deckungsbeitragsrechnung für das Bildungsinstitut FORMACTION (678,7 T€ Umsatz über 187 Teilnehmer) zur Rentabilitätssteuerung und Entscheidungsfindung.' },
-            { id: 'sap-s4hana-production-planning', title: 'SAP S/4HANA Produktionsplanung & Fertigungssteuerung (Global Bike Inc.)', description: 'Umfassende Implementierung der Produktionsplanung und -steuerung in SAP S/4HANA für Global Bike Inc.: Konfiguration von mehrstufigen Stücklisten (BOM), Arbeitsplätzen, Arbeitsplänen, Standardkalkulation (CK11N), SOP/MRP-Pyramide und Vergleich von MTS- (40) vs. ATO-Strategien (82).' }
+            { id: 'sap-s4hana-production-planning', title: 'SAP S/4HANA Produktionsplanung & Fertigungssteuerung (Global Bike Inc.)', description: 'Umfassende Implementierung der Produktionsplanung und -steuerung in SAP S/4HANA für Global Bike Inc.: Konfiguration von mehrstufigen Stücklisten (BOM), Arbeitsplätzen, Arbeitsplänen, Standardkalkulation (CK11N), SOP/MRP-Pyramide und Vergleich von MTS- (40) vs. ATO-Strategien (82).' },
+            { id: 'data-science-track', title: 'Spezialisierung Data Science & KI: 8-Wöchiges Exzellenzcurriculum', description: 'Intensives 8-Wochen-Spezialisierungsprogramm unter Leitung von Prof. Éric Moulines (Französische Akademie der Wissenschaften / École Polytechnique): Optimierung, PAC-Theorie, CNNs & CAVI, inverse Probleme, generative KI (GANs/VAEs/Diffusion), NLP und Reinforcement Learning.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsoring-Manager', description: 'Als Sponsoring-Manager liegt meine Hauptverantwortung in der Sicherung wichtiger Partnerschaften und Sponsorings zur Finanzierung der studentischen Hackathons von EJE. Ich suche aktiv Sponsoren für Großveranstaltungen wie den OP&X Hackathon, den Strategic Consulting Hackathon (SCH), den DataQuest Hackathon und den Finance Hackathon. Durch die Verbindung von Unternehmen mit diesen Plattformen helfe ich ihnen, mit Marokkos klügsten Köpfen in Kontakt zu treten.' },
@@ -924,6 +931,17 @@ const projectsData = [
         demoUrl: '',
         metric: 'Master Data (BOM/Routing), MRP/SOP, MTS/ATO Strategies & 49-Page Manual',
         reportUrl: 'https://drive.google.com/file/d/1IiDFYl9Lh0uIg0ISTaKc2K4TvAsQmKsu/view?usp=sharing', 
+        presentationUrl: ''
+    },
+    { 
+        id: 'data-science-track', 
+        date: '2026-02', 
+        technologies: ['Data Science & AI Specialization', 'Convex Optimization', 'PAC Theory & CNNs', 'Variational Inference (ELBO/CAVI)', 'Inverse Problems & High-Res Imaging', 'Generative AI (GANs/VAEs/Diffusion)', 'NLP & Transformers (BERT/GPT)', 'Reinforcement Learning (Bandits/MDPs)'], 
+        githubUrl: '',
+        demoUrl: '',
+        hubUrl: 'data-science.html',
+        metric: '8 Modules, 8 Faculty Experts & Complete ML/AI Lifecycle Mastery',
+        reportUrl: '', 
         presentationUrl: ''
     }
 ];
@@ -2561,5 +2579,171 @@ Ce projet couvre l'intégralité du cycle manufacturier sous SAP S/4HANA et ses 
 * **Sortie Matières (\`MIGO 261\`) :** Débit du compte de consommation d'atelier.
 * **Confirmation d'Atelier (\`CO15 / CO11N\`) :** Déclaration de la quantité bonne ($50\\,\\text{pièces}$) et des heures réelles.
 * **Entrée en Stock (\`MIGO 101\`) :** Réception en magasin \`FG00\` et crédit de l'OF.
-* **Clôture Technique & Analytique (TECO) :** Rapprochement et calcul des écarts de fabrication.`
+* **Clôture Technique & Analytique (TECO) :** Rapprochement et calcul des écarts de fabrication.\``,
+
+    'data-science-track': `# Programme de Cours — Option Data Science & Intelligence Artificielle
+
+**EMINES School of Industrial Management, Université Mohammed VI Polytechnique (UM6P)**  
+**Période :** Septembre 2025 – Février 2026  
+**Responsable d'option :** Prof. Éric Moulines (Membre de l'Académie des Sciences, Professeur à l'École Polytechnique)  
+**Hub Interactif Dédié :** [Consulter la page interactive de l'Option Data Science](data-science.html)  
+
+---
+
+## 1. Objectif Général de la Spécialisation
+
+Former des ingénieurs d'élite capables de maîtriser l'ensemble du cycle de vie de la Science des Données et de l'IA :
+* **Inspection & Formulation Mathématique :** Formulation rigoureuse des problèmes, analyse d'espaces vectoriels et compromis biais-variance.
+* **Optimisation & Algorithmique :** Conditions KKT, méthodes proximales, optimisation stochastique (SGD/Adam) et échantillonnage MCMC.
+* **Architectures Profondes & Modèles Génératifs :** CNNs, Variational Autoencoders (VAEs), Generative Adversarial Networks (GANs), et Modèles de Diffusion (SDEs).
+* **Traitement du Langage Naturel & LLMs :** Word2Vec, mécanisme d'attention multi-têtes Transformers, fine-tuning BERT et prompt engineering GPT.
+* **Prise de Décision Séquentielle :** Bandits manchots stochastiques, équations de Bellman et Q-Learning.
+
+---
+
+## 2. Synthèse des 8 Modules Thématiques
+
+1. **Période 1 : Régression et classification supervisée** — *Prof. Randal Douc* (Télécom SudParis / École Polytechnique)
+   * Moindres carrés, Ridge, Lasso, Elastic-Net, frontière bayésienne, régression logistique, algorithme EM (GMM), ACP et Forêts Aléatoires.
+2. **Période 2 : Optimisation Mathématique pour la Data Science** — *Convexité, KKT, Proximal & SGD*
+   * Analyse convexe, conditions KKT, opérateurs proximaux (ISTA/FISTA), analyse de convergence SGD/Momentum, sous-gradients et dualité SVM.
+3. **Période 3 : Introduction à l'Apprentissage Artificiel** — *Prof. Laurent Miclet*
+   * Théorie PAC de Valiant, Arbres de décision (ID3/C4.5/CART), fenêtres de Parzen, Perceptrons multicouches, et calcul hyperdimensionnel (HDC).
+4. **Période 4 : Apprentissage Statistique & Réseaux Profonds** — *Prof. Sylvain Lecorff* (Sorbonne Université / ENSIIE)
+   * Contrôle du risque statistique, CNNs, modèles probabilistes à variables latentes, borne ELBO et algorithme CAVI.
+5. **Période 5 : Inversion et Imagerie Haute Résolution** — *Prof. Jean-François Giovannelli* (IMS Bordeaux / Université de Bordeaux)
+   * Problèmes inverses mal-posés, déconvolution, régularisation de Tikhonov, Lagrangien augmenté (ADMM), MCMC et échantillonnage de diffusion a posteriori.
+6. **Période 6 : Topics in Generative Machine Learning** — *Prof. Matthieu Jonckheere* (CNRS / LAAS)
+   * RBMs, VAEs avec astuce de reparamétrisation, GANs minimax / WGAN-GP, et modèles de diffusion continus/discrets basés sur le score.
+7. **Période 7 : Représentations Vectorielles des Mots & LLMs** — *Dr. Julien Perez* (Naver Labs Europe)
+   * Sémantique distributionnelle, Word2Vec, architecture Transformer, fine-tuning BERT (SST-2, SQuAD), génération GPT et pipelines Hugging Face.
+8. **Période 8 : Apprentissage par Renforcement & Processus Markoviens** — *Prof. Mohammed El Machkouri* (EMINES / Univ. Rouen)
+   * Bandits stochastiques (borne de Lai-Robbins, UCB1, Thompson Sampling), Processus de Décision Markoviens (MDP), équations de Bellman et Q-Learning.`,
+
+    'ds-module-1': `# Module 01 : Régression et Classification Supervisée
+
+**Enseignant :** Prof. Randal Douc (Télécom SudParis / École Polytechnique)  
+**Période :** 29 Septembre – 03 Octobre 2025  
+
+---
+
+## 1. Principes Théoriques & Modélisation
+* **Régression Linéaire & Pénalisation :** Estimateur MCO, régression Ridge ($L_2$), Lasso ($L_1$) pour la parcimonie et Elastic-Net.
+* **Décomposition Biais-Variance :** $\\text{MSE}(\\hat{\\theta}) = \\text{Biais}(\\hat{\\theta})^2 + \\text{Var}(\\hat{\\theta})$.
+* **Classification :** Frontière de Bayes optimale, régression logistique bi-classe et multi-classes via optimisation Newton-Raphson.
+* **Modèles Probabilistes & Clustering :** Algorithme EM pour mélanges de Gaussiennes (GMM), ACP et $k$-Means.`,
+
+    'ds-module-2': `# Module 02 : Optimisation pour la Science des Données
+
+**Période :** 06 Octobre – 10 Octobre 2025  
+
+---
+
+## 1. Analyse Convexe & Conditions d'Optimalité
+* Fonctions convexes, différentiables et fortement convexes.
+* **Conditions KKT :** Formulation primale, duale, et multiplicateurs de Lagrange pour l'optimisation sous contraintes.
+
+## 2. Algorithmes Proximal & Stochastiques
+* **Opérateur Proximal :** $\\text{prox}_{\\gamma g}(x) = \\arg\\min_z \\left( g(z) + \\frac{1}{2\\gamma} \\|z - x\\|_2^2 \\right)$, algorithmes ISTA/FISTA.
+* **SGD & Variantes :** Analyse de convergence du gradient stochastique, accélération par Momentum et Adam.
+* **Dualité SVM :** Formulation de Wolfe et astuce du noyau (*Kernel Trick*).`,
+
+    'ds-module-3': `# Module 03 : Introduction à l'Apprentissage Artificiel & Théorie PAC
+
+**Enseignant :** Prof. Laurent Miclet  
+**Période :** 13 Octobre – 17 Octobre 2025  
+
+---
+
+## 1. Théorie de l'Apprentissage PAC
+* Définition de la complexité d'échantillonnage de Valiant et dimension de Vapnik-Chervonenkis (VC-dimension).
+
+## 2. Arbres de Décision & Méthodes Ensemblistes
+* Algorithmes ID3, C4.5 et CART : gain d'information (entropie de Shannon) et indice de Gini.
+* Bagging, Boosting (AdaBoost), et Forêts Aléatoires.
+
+## 3. Réseaux de Neurones & Calcul Hyperdimensionnel (HDC)
+* Rétropropagation du gradient dans les MLP, fonctions d'activation.
+* Vecteurs hyperdimensionnels pour l'apprentissage en une seule passe (*Single-Pass Learning*) et réseaux de Hopfield.`,
+
+    'ds-module-4': `# Module 04 : Apprentissage Statistique & Réseaux Profonds
+
+**Enseignant :** Prof. Sylvain Lecorff (Sorbonne Université / ENSIIE)  
+**Période :** 20 Octobre – 24 Octobre 2025  
+
+---
+
+## 1. Contrôle du Risque Statistique
+* Risque empirique vs risque vrai, inégalités de concentration de Hoeffding et McDiarmid.
+* Propriétés de consistance de sélection du Lasso (condition d'irreprésentabilité).
+
+## 2. Réseaux Convolutifs (CNN) & Inférence Variationnelle
+* Architectures CNN et couches résiduelles (ResNet).
+* **Modèles à variables latentes & ELBO :** $\\log p(X) \\ge \\mathbb{E}_{q(Z)}[\\log p(X, Z)] - \\text{KL}(q(Z) \\parallel p(Z))$.
+* **Algorithme CAVI :** Optimisation alternée des facteurs variationnels sous hypothèse de champ moyen.`,
+
+    'ds-module-5': `# Module 05 : Problèmes Inverses & Imagerie Haute Résolution
+
+**Enseignant :** Prof. Jean-François Giovannelli (IMS Bordeaux / Université de Bordeaux)  
+**Période :** 24 Novembre – 28 Novembre 2025  
+
+---
+
+## 1. Problèmes Inverses Mal-Posés
+* Modèle convolutif dégradé : $Y = HX + N$.
+* Régularisation de Tikhonov et filtrage de Wiener : $\\min_X \\|Y - HX\\|_2^2 + \\lambda \\|DX\\|_2^2$.
+
+## 2. Optimisation sous Contraintes & Approches Bayésiennes
+* Algorithme du Lagrangien augmenté (ADMM) pour contraintes de positivité et support.
+* Méthodes MCMC (Gibbs, Metropolis-Hastings) pour l'estimation autodidacte d'hyperparamètres.
+* Échantillonnage guidé a posteriori par modèles de diffusion (*Diffusion Posterior Sampling*).`,
+
+    'ds-module-6': `# Module 06 : Topics in Generative Machine Learning
+
+**Enseignant :** Prof. Matthieu Jonckheere (CNRS / LAAS Toulouse)  
+**Période :** 15 Décembre – 19 Décembre 2025  
+
+---
+
+## 1. Variational Autoencoders (VAEs)
+* Fonction de coût ELBO et astuce de reparamétrisation : $z = \\mu(x) + \\sigma(x) \\odot \\epsilon$ avec $\\epsilon \\sim \\mathcal{N}(0, I)$.
+
+## 2. Generative Adversarial Networks (GANs)
+* Jeu minimax $\\min_G \\max_D V(D, G)$ et Wasserstein GANs avec pénalité de gradient (WGAN-GP).
+
+## 3. Modèles de Diffusion & SDEs
+* Processus de diffusion direct et inverse dirigé par score de Langevin.
+* Modèles DDPM et DDIM en espaces continus et discrets.`,
+
+    'ds-module-7': `# Module 07 : Représentations Vectorielles des Mots & LLMs
+
+**Enseignant :** Dr. Julien Perez (Principal Scientist, Naver Labs Europe)  
+**Période :** 13 Janvier – 23 Janvier 2026  
+
+---
+
+## 1. Sémantique Distributionnelle & Word2Vec
+* Modèles Skip-Gram et CBOW avec échantillonnage négatif (*Negative Sampling*).
+* Algèbre sémantique vectorielle (ex. $\\vec{v}_{\\text{roi}} - \\vec{v}_{\\text{homme}} + \\vec{v}_{\\text{femme}} \\approx \\vec{v}_{\\text{reine}}$).
+
+## 2. Architecture Transformer & Modèles Pré-entraînés
+* Mécanisme d'Auto-Attention Multi-Têtes : $\\text{Attention}(Q, K, V) = \\text{softmax}\\left( \\frac{QK^T}{\\sqrt{d_k}} \\right) V$.
+* Fine-tuning de modèles BERT sur SST-2, CoNLL-2003, et SQuAD via Hugging Face.
+* Modèles génératifs causaux GPT, stratégies de décodage (Top-$k$, Top-$p$ Nucleus sampling) et Prompt Engineering.`,
+
+    'ds-module-8': `# Module 08 : Apprentissage par Renforcement & Processus Markoviens
+
+**Enseignant :** Prof. Mohammed El Machkouri (EMINES / Université de Rouen)  
+**Période :** 16 Février – 20 Février 2026  
+
+---
+
+## 1. Bandits Manchots Stochastiques
+* Compromis Exploration-Exploitation, borne de Lai-Robbins.
+* Algorithme UCB1 : $A_t = \\arg\\max_a \\left[ \\hat{\\mu}_a + \\sqrt{\\frac{2 \\ln t}{N_a(t)}} \\right]$ et échantillonnage de Thompson.
+
+## 2. Processus de Décision Markoviens (MDP) & Q-Learning
+* Tuple $(S, A, P, R, \\gamma)$, fonctions de valeur $V^*(s)$ et $Q^*(s, a)$.
+* **Équations d'Optimalité de Bellman :** $Q^*(s, a) = R(s, a) + \\gamma \\sum_{s'} P(s' \\mid s, a) \\max_{a'} Q^*(s', a')$.
+* Algorithme Q-Learning et introduction au Deep Q-Learning (DQN).`
 };

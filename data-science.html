@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Option Data Science & AI Specialization - EMINES School of Industrial Management, UM6P. An 8-week intensive curriculum directed by Prof. Éric Moulines.">
+    <title>Option Data Science & AI Specialization — Mohammed El Baraka</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Lato:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- KaTeX for mathematical formulas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <!-- Marked for full GFM Markdown & Table rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.1/marked.min.js"></script>
+
+    <style>
+        .hub-banner {
+            background: linear-gradient(135deg, rgba(167, 139, 250, 0.12) 0%, rgba(99, 102, 241, 0.08) 50%, rgba(15, 23, 42, 0.6) 100%);
+            border: 1px solid rgba(167, 139, 250, 0.25);
+            border-radius: 1.25rem;
+            padding: 2.5rem 2rem;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+        }
+        .hub-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            background: rgba(167, 139, 250, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(167, 139, 250, 0.3);
+        }
+        .module-badge {
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.375rem;
+            background: linear-gradient(135deg, #7c3aed, #4f46e5);
+            color: white;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .instructor-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.825rem;
+            color: #e0e7ff;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 0.25rem 0.65rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .syllabus-preview {
+            color: #94a3b8;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+        .syllabus-preview li {
+            margin-left: 1.25rem;
+            margin-bottom: 0.35rem;
+        }
+    </style>
+</head>
+
+<body id="page-top" class="antialiased">
+    <div id="scroll-progress"></div>
+    <div class="hero-background"></div>
+    <div class="ambient-aurora blob-1"></div>
+    <div class="ambient-aurora blob-2"></div>
+    <div class="ambient-aurora blob-3"></div>
+
+    <header class="fixed w-full top-0 z-50 animate-header" id="header">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="brand-name flex items-center gap-2">
+                <svg class="w-5 h-5 text-primary-color" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+                <span>Mohammed EL BARAKA</span>
+            </a>
+            <div class="flex items-center space-x-4 md:space-x-6">
+                <a href="index.html#projects" class="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-gray-300 hover:text-white transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" /></svg>
+                    <span id="nav-back-text">Portfolio</span>
+                </a>
+                <select id="lang-selector" onchange="switchTrackLanguage(this.value)" class="text-sm">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="ar">🇲🇦 العربية</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="zh">🇨🇳 中文</option>
+                    <option value="pt">🇧🇷 Português</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-28 pb-20">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <!-- Breadcrumb Navigation -->
+            <div class="flex items-center gap-2 text-sm text-gray-400 mb-6">
+                <a href="index.html" class="hover:text-white transition-colors">Portfolio</a>
+                <span>/</span>
+                <a href="index.html#projects" class="hover:text-white transition-colors">Projects</a>
+                <span>/</span>
+                <span class="text-primary-color font-semibold">Option Data Science</span>
+            </div>
+
+            <!-- Hero Banner -->
+            <div class="hub-banner mb-12 shadow-2xl reveal-fade-in">
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                    <span class="hub-tag">
+                        <svg class="w-4 h-4 text-primary-color" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
+                        </svg>
+                        <span id="banner-institution">EMINES – School of Industrial Management (UM6P)</span>
+                    </span>
+                    <span class="text-sm font-semibold text-gray-400">Sept. 2025 – Fév. 2026</span>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight" id="track-title">
+                    Option Data Science & Intelligence Artificielle
+                </h1>
+                <p class="text-gray-300 text-lg leading-relaxed mb-6 max-w-4xl" id="track-subtitle">
+                    Programme d'excellence intensif en 8 semaines sous la direction de <strong class="text-white">Prof. Éric Moulines</strong> (Membre de l'Académie des Sciences, Professeur à l'École Polytechnique). Formation complète couvrant le spectre complet des Sciences des Données : optimisation variationnelle, fondements PAC, apprentissage profond, problèmes inverses, modèles génératifs, NLP/Transformers et apprentissage par renforcement.
+                </p>
+                <div class="flex flex-wrap items-center gap-3">
+                    <button onclick="openTrackAiModal()" class="btn-primary flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                        </svg>
+                        <span id="btn-full-syllabus-text">Explore Full Program with AI</span>
+                    </button>
+                    <a href="index.html#projects" class="btn-doc-action" style="text-decoration:none; padding: 0.65rem 1.25rem;">
+                        <span id="btn-return-portfolio">← Return to All Projects</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Modules Grid (8 Cards) -->
+            <div class="mb-8 flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-1" id="section-modules-title">8 Thematic Modules</h2>
+                    <p class="text-sm text-gray-400" id="section-modules-desc">Structured across fundamental mathematical blocks and specialized practical domains.</p>
+                </div>
+            </div>
+
+            <div id="modules-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Dynamically populated module cards -->
+            </div>
+        </div>
+    </main>
+
+    <!-- AI Markdown Modal -->
+    <div id="project-ai-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden transition-opacity duration-300">
+        <div class="bg-gray-900 border border-white/20 rounded-2xl w-11/12 max-w-4xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden relative animate-scale-up">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-white/5">
+                <div class="flex items-center space-x-3">
+                    <span class="flex h-3 w-3 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-primary-color"></span>
+                    </span>
+                    <h3 id="modal-project-title" class="text-lg font-bold text-white truncate max-w-lg"></h3>
+                </div>
+                <button onclick="closeProjectAiModal()" class="text-gray-400 hover:text-white p-1 rounded-lg hover:bg-white/10 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+            <div id="modal-project-content" class="p-6 md:p-8 overflow-y-auto text-gray-300 leading-relaxed space-y-4 markdown-body">
+            </div>
+            <div class="px-6 py-3 border-t border-white/10 bg-white/5 flex justify-between items-center text-xs text-gray-400">
+                <span>Option Data Science — EMINES-UM6P</span>
+                <button onclick="closeProjectAiModal()" class="px-4 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold transition-colors">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+        const dsModulesData = [
+            {
+                id: 'ds-p1-regression-classification',
+                periodNumber: 1,
+                date: '2025-10',
+                instructor: 'Prof. Randal Douc',
+                institution: 'Télécom SudParis / École Polytechnique',
+                title: {
+                    en: 'Supervised Regression & Classification',
+                    fr: 'Régression & Classification Supervisée',
+                    ar: 'الانحدار والتصنيف الخاضع للإشراف',
+                    es: 'Regresión y Clasificación Supervisada',
+                    zh: '监督回归与分类理论及实践',
+                    pt: 'Regressão e Classificação Supervisionada',
+                    de: 'Supervised Regression & Klassifikation'
+                },
+                description: {
+                    en: 'Rigorous theoretical and practical grounding in supervised learning: Ordinary Least Squares (OLS), Ridge/Lasso/Elastic-Net regularizations, Bayesian decision theory, logistic regression, EM Gaussian Mixtures, PCA, and Random Forests.',
+                    fr: 'Fondements théoriques et pratiques de l\'apprentissage supervisé : Moindres Carrés Ordinaires (MCO), régularisations Ridge/Lasso/Elastic-Net, théorie bayésienne de la décision, régression logistique, algorithme EM (GMM), ACP et Forêts Aléatoires.',
+                    ar: 'الأسس النظرية والتطبيقية للتعلم الخاضع للإشراف: المربعات الصغرى العادية (OLS)، تقنيات تسوية Ridge وLasso وElastic-Net، نظرية القرار البايزي، الانحدار اللوجستي، خوارزمية EM، وتجميع الغابات العشوائية.',
+                    es: 'Fundamentos teóricos y prácticos del aprendizaje supervisado: Mínimos Cuadrados Ordinarios (MCO), regularizaciones Ridge/Lasso/Elastic-Net, teoría de decisión bayesiana, regresión logística, algoritmo EM y Bosques Aleatorios.',
+                    zh: '系统掌握监督学习理论与实践：普通最小二乘法（OLS）、Ridge/Lasso/Elastic-Net正则化约束、贝叶斯决策论、逻辑回归、高斯混合模型EM算法、主成分分析与随机森林。',
+                    pt: 'Fundamentos teóricos e práticos do aprendizado supervisionado: Mínimos Quadrados Ordinários (OLS), regularizações Ridge/Lasso/Elastic-Net, teoria de decisão bayesiana, regressão logística, algoritmo EM e Random Forests.',
+                    de: 'Theoretische und praktische Grundlagen des überwachten Lernens: OLS, Ridge/Lasso/Elastic-Net-Regularisierung, Bayessche Entscheidungstheorie, logistische Regression, EM-Algorithmus (GMM), PCA und Random Forests.'
+                },
+                topics: ['Ridge / Lasso / Elastic-Net', 'Bayesian Decision Boundary', 'Logistic Regression (Newton-Raphson)', 'EM Algorithm & Gaussian Mixtures', 'Bias-Variance Tradeoff'],
+                tech: ['Python', 'Scikit-Learn', 'NumPy', 'SciPy', 'Matplotlib']
+            },
+            {
+                id: 'ds-p2-optimization',
+                periodNumber: 2,
+                date: '2025-10',
+                instructor: 'Data Science Faculty',
+                institution: 'EMINES – UM6P',
+                title: {
+                    en: 'Mathematical Optimization for Data Science',
+                    fr: 'Optimisation Mathématique pour la Science des Données',
+                    ar: 'التحسين الرياضي لعلوم البيانات',
+                    es: 'Optimización Matemática para Ciencia de Datos',
+                    zh: '数据科学数学优化与凸分析',
+                    pt: 'Otimização Matemática para Ciência de Dados',
+                    de: 'Mathematische Optimierung für Data Science'
+                },
+                description: {
+                    en: 'Multivariate optimization theory and algorithms: convex analysis, Karush-Kuhn-Tucker (KKT) conditions, proximal gradient methods (ISTA/FISTA), Stochastic Gradient Descent (SGD) with momentum, subgradient calculus, and SVM duality.',
+                    fr: 'Théorie et algorithmes d\'optimisation multivariée : analyse convexe, conditions KKT, méthodes proximales (ISTA/FISTA), descente de gradient stochastique (SGD avec momentum), calcul de sous-gradient et dualité de Wolfe pour les SVM.',
+                    ar: 'نظرية وخوارزميات التحسين متعدد المتغيرات: التحليل المحدب، شروط KKT، الطرق التقاربية (ISTA/FISTA)، الانحدار التدرجي العشوائي (SGD)، حساب شبه التدرج، وثنائية فولف في آلات المتجهات الداعمة SVM.',
+                    es: 'Teoría y algoritmos de optimización multivariante: análisis convexo, condiciones KKT, métodos proximales (ISTA/FISTA), gradiente descendente estocástico (SGD con momentum), subgradientes y dualidad SVM.',
+                    zh: '多元数值优化理论与算法：凸分析、KKT最优性条件、近端梯度法（ISTA/FISTA）、带动量的随机梯度下降（SGD）、次梯度微积分以及SVM对偶理论。',
+                    pt: 'Teoria e algoritmos de otimização multivariada: análise convexa, condições KKT, métodos proximais (ISTA/FISTA), gradiente descendente estocástico (SGD com momentum), subgradientes e dualidade SVM.',
+                    de: 'Multivariate Optimierungstheorie und -algorithmen: Konvexe Analysis, KKT-Bedingungen, proximale Gradientenverfahren (ISTA/FISTA), Stochastischer Gradientenabstieg (SGD) mit Momentum und SVM-Dualität.'
+                },
+                topics: ['Convex Analysis & Variational Minima', 'KKT Optimality Conditions', 'Proximal Operators (Lasso / Sparsity)', 'SGD & Momentum Convergence', 'SVM Primal / Dual Formulations'],
+                tech: ['Optimization Theory', 'KKT Karush-Kuhn-Tucker', 'Proximal Splitting', 'SGD / Adam', 'SVD / PCA']
+            },
+            {
+                id: 'ds-p3-artificial-learning',
+                periodNumber: 3,
+                date: '2025-10',
+                instructor: 'Prof. Laurent Miclet',
+                institution: 'EMINES – UM6P',
+                title: {
+                    en: 'Artificial Learning & PAC Theory',
+                    fr: 'Introduction à l\'Apprentissage Artificiel & Théorie PAC',
+                    ar: 'التعلم الآلي الاصطناعي ونظرية PAC',
+                    es: 'Aprendizaje Artificial y Teoría PAC',
+                    zh: '人工智能学习基础与PAC可学习理论',
+                    pt: 'Aprendizado Artificial e Teoria PAC',
+                    de: 'Künstliches Lernen & PAC-Theorie'
+                },
+                description: {
+                    en: 'Theoretical and algorithmic foundations of artificial learning: Valiant\'s PAC learning framework, Decision Trees (ID3/C4.5/CART), Parzen Windows, Multilayer Perceptrons, Ensemble Boosting/Bagging, and Hyperdimensional Computing (HDC).',
+                    fr: 'Fondements conceptuels et algorithmiques de l\'apprentissage artificiel : théorie PAC de Valiant, Arbres de Décision (ID3/C4.5/CART), fenêtres de Parzen, Perceptrons multicouches, méthodes d\'ensemble (Bagging, Boosting) et calcul hyperdimensionnel (HDC).',
+                    ar: 'الأسس المفاهيمية والخوارزمية للتعلم الاصطناعي: نظرية التعلم PAC لفاليانت، أشجار القرار (ID3/C4.5/CART)، نوافذ بارزن، الشبكات العصبية متعددة الطبقات، طرق التجميع، والحوسبة فائقة الأبعاد (HDC).',
+                    es: 'Fundamentos conceptuales del aprendizaje artificial: teoría PAC de Valiant, Árboles de Decisión (ID3/C4.5/CART), ventanas de Parzen, Perceptrón multicapa, métodos de ensamble (Bagging, Boosting) y Computación Hiperdimensional (HDC).',
+                    zh: '人工智能学习与理论基础：Valiant PAC可学习框架、决策树（ID3/C4.5/CART与剪枝）、Parzen窗密度估计、多层感知机反向传播、集成学习与高维计算（HDC）。',
+                    pt: 'Fundamentos conceituais do aprendizado artificial: teoria PAC de Valiant, Árvores de Decisão (ID3/C4.5/CART), janelas de Parzen, Perceptron multicamada, métodos de ensemble e Computação Hiperdimensional (HDC).',
+                    de: 'Theoretische und algorithmische Grundlagen des künstlichen Lernens: Valiants PAC-Lerntheorie, Entscheidungsbäume (ID3/C4.5/CART), Parzen-Fenster, mehrlagige Perzeptren, Ensemble-Methoden und Hyperdimensional Computing.'
+                },
+                topics: ['Valiant PAC Learning Framework', 'Decision Trees (ID3, C4.5, CART)', 'Parzen Window Density Estimation', 'Multilayer Perceptron Backprop', 'Hyperdimensional Computing (HDC)'],
+                tech: ['PAC Learning Theory', 'Scikit-Learn', 'Decision Trees', 'Ensemble Boosting', 'Hopfield Networks']
+            },
+            {
+                id: 'ds-p4-statistical-learning',
+                periodNumber: 4,
+                date: '2025-10',
+                instructor: 'Prof. Sylvain Lecorff',
+                institution: 'Sorbonne Université / ENSIIE',
+                title: {
+                    en: 'Statistical Learning & Deep Neural Networks',
+                    fr: 'Apprentissage Statistique & Réseaux de Neurones Profonds',
+                    ar: 'التعلم الإحصائي والشبكات العصبية العميقة',
+                    es: 'Aprendizaje Estadístico y Redes Neuronales Profundas',
+                    zh: '统计学习理论与深度卷积神经网络',
+                    pt: 'Aprendizado Estatístico e Redes Neurais Profundas',
+                    de: 'Statistisches Lernen & Tiefe Neuronale Netze'
+                },
+                description: {
+                    en: 'Mathematical formulation of statistical risk bounds, regularized regression, Dense & Convolutional Neural Networks (CNNs), Latent Variable Models, Variational Inference, Evidence Lower Bound (ELBO), and Coordinate Ascent (CAVI).',
+                    fr: 'Cadre mathématique du contrôle du risque statistique, régularisation Ridge/Lasso, réseaux denses et convolutifs (CNN), modèles à variables latentes, inférence variationnelle (ELBO) et algorithme CAVI (Coordinate Ascent Variational Inference).',
+                    ar: 'الصياغة الرياضية للتحكم في المخاطر الإحصائية، الشبكات العصبية العميقة والتلافيفية (CNN)، النماذج ذات المتغيرات الكامنة، والاستدلال التغايري عبر الحد الأدنى للإثبات (ELBO) وخوارزمية CAVI.',
+                    es: 'Marco matemático del control del riesgo estadístico, redes densas y convolucionales (CNN), modelos con variables latentes, inferencia variacional (ELBO) y algoritmo CAVI.',
+                    zh: '统计风险泛化界限数学建模、Ridge/Lasso支撑集筛选条件、深度密集与卷积神经网络（CNN）、潜变量概率模型、变分推断（ELBO）与CAVI坐标上升算法。',
+                    pt: 'Estrutura matemática do controle de risco estatístico, redes neurais densas e convolucionais (CNN), modelos com variáveis latentes, inferência variacional (ELBO) e algoritmo CAVI.',
+                    de: 'Mathematische Fundierung statistischer Risikoschranken, tiefe und faltende neuronale Netze (CNNs), latente Variablenmodelle, Variationsinferenz (ELBO) und CAVI-Algorithmus.'
+                },
+                topics: ['Statistical Risk & Concentration Bounds', 'Convolutional Neural Networks (CNNs)', 'Latent Variable Probabilistic Models', 'Evidence Lower Bound (ELBO)', 'Coordinate Ascent Variational Inference (CAVI)'],
+                tech: ['PyTorch', 'Statistical Risk Bounds', 'CNN Architectures', 'Variational Inference', 'CAVI Algorithm']
+            },
+            {
+                id: 'ds-p5-inverse-problems-imaging',
+                periodNumber: 5,
+                date: '2025-11',
+                instructor: 'Prof. Jean-François Giovannelli',
+                institution: 'IMS Bordeaux / Université de Bordeaux',
+                title: {
+                    en: 'Inverse Problems & High-Resolution Imaging',
+                    fr: 'Problèmes Inverses & Imagerie Haute Résolution',
+                    ar: 'المسائل العكسية والتصوير عالي الدقة',
+                    es: 'Problemas Inversos e Imágenes de Alta Resolución',
+                    zh: '反问题求解与高分辨率图像反卷积重建',
+                    pt: 'Problemas Inversos e Imagens de Alta Resolução',
+                    de: 'Inverse Probleme & Hochauflösende Bildgebung'
+                },
+                description: {
+                    en: 'Mathematical and Bayesian regularization for ill-posed inverse problems: deconvolution, Tikhonov & Wiener filtering, Augmented Lagrangian (ADMM) under physical constraints, non-linear half-quadratic criteria, and Diffusion Posterior Sampling.',
+                    fr: 'Traitement mathématique et bayésien des problèmes inverses mal-posés : déconvolution, régularisation de Tikhonov, filtrage de Wiener, Lagrangien augmenté (ADMM), critères non-linéaires semi-quadratiques et échantillonnage de diffusion a posteriori.',
+                    ar: 'المعالجة الرياضية والبايزية للمسائل العكسية غير جيدة التحديد: فك الالتفاف، تسوية تيخونوف وواينر، لاغرانج المعمم (ADMM)، والمعايير غير الخطية، وتوليد العينات البعدية عبر نماذج الانتشار.',
+                    es: 'Tratamiento matemático y bayesiano de problemas inversos: deconvolución, regularización de Tikhonov y Wiener, Lagrangiano aumentado (ADMM), criterios semicuadráticos no lineales y muestreo a posteriori con difusión.',
+                    zh: '不适定反问题数学与贝叶斯正则化重建：图像去卷积、Tikhonov/Wiener滤波、增广拉格朗日ADMM约束优化、半二次非线性边缘保持，以及基于扩散模型的后验采样（DPS）。',
+                    pt: 'Tratamento matemático e bayesiano de problemas inversos: deconvolução, regularização de Tikhonov e Wiener, Lagrangiano Aumentado (ADMM), critérios não lineares e amostragem posterior por difusão.',
+                    de: 'Mathematische und Bayessche Behandlung schlecht gestellter inverser Probleme: Entfaltung, Tikhonov- & Wiener-Filterung, Augmented Lagrangian (ADMM) und Diffusion Posterior Sampling.'
+                },
+                topics: ['Ill-Posed Inverse Problems (Hadamard)', 'Tikhonov Regularization & Wiener Filtering', 'Augmented Lagrangian (ADMM) Constraints', 'Bayesian MCMC Stochastic Sampling', 'Diffusion Posterior Sampling (DPS)'],
+                tech: ['Inverse Problems', 'ADMM Optimization', 'MCMC & Gibbs Sampling', 'Toeplitz Deconvolution', 'Diffusion Priors']
+            },
+            {
+                id: 'ds-p6-generative-machine-learning',
+                periodNumber: 6,
+                date: '2025-12',
+                instructor: 'Prof. Matthieu Jonckheere',
+                institution: 'CNRS / LAAS Toulouse',
+                title: {
+                    en: 'Generative Machine Learning: GANs, VAEs & Diffusion',
+                    fr: 'Machine Learning Génératif : GANs, VAEs & Modèles de Diffusion',
+                    ar: 'التعلم الآلي التوليدي: شبكات GANs ونماذج VAEs ونماذج الانتشار',
+                    es: 'Machine Learning Generativo: GANs, VAEs y Modelos de Difusión',
+                    zh: '生成式机器学习前沿：GAN、VAE与扩散模型',
+                    pt: 'Machine Learning Generativo: GANs, VAEs e Modelos de Difusão',
+                    de: 'Generatives Machine Learning: GANs, VAEs & Diffusionsmodelle'
+                },
+                description: {
+                    en: 'Deep probabilistic and generative modeling: Restricted Boltzmann Machines (RBM), Variational Autoencoders (VAEs with reparameterization trick), Generative Adversarial Networks (Minimax & WGAN-GP), and Score-Based / SDE Diffusion Models.',
+                    fr: 'Modélisation générative profonde : Machines de Boltzmann Restreintes (RBM), Variational Autoencoders (astuce de reparamétrisation VAE), Generative Adversarial Networks (jeu minimax & WGAN-GP), et Modèles de Diffusion basés sur le score (SDEs).',
+                    ar: 'النمذجة التوليدية العميقة: آلات بولتزمان المقيدة (RBM)، المشفرات التلقائية التباينية (VAEs)، شبكات التوليد الخصومية (GANs & WGAN-GP)، ونماذج الانتشار المبنية على المعادلات التفاضلية العشوائية (SDEs).',
+                    es: 'Modelado generativo profundo: Máquinas de Boltzmann Restringidas (RBM), Variational Autoencoders (truco de reparametrización VAE), Redes Generativas Antagónicas (GANs y WGAN-GP) y Modelos de Difusión basados en puntuación.',
+                    zh: '深度概率生成模型：受限玻尔兹曼机（RBM）、变分自编码器（VAE重参数化技巧与层次化扩展）、生成对抗网络（Minimax博弈与WGAN-GP梯度惩罚）以及基于随机微分方程（SDE）与分数匹配的扩散模型。',
+                    pt: 'Modelagem generativa profunda: Máquinas de Boltzmann Restritas (RBM), Variational Autoencoders (truque de reparametrização), Redes Adversárias Generativas (GANs e WGAN-GP) e Modelos de Difusão baseados em score.',
+                    de: 'Tiefe generative Modellierung: Restricted Boltzmann Machines (RBM), Variational Autoencoders (VAEs), Generative Adversarial Networks (Minimax & WGAN-GP) und Score-basierte Diffusionsmodelle (SDEs).'
+                },
+                topics: ['Variational Autoencoders & Reparameterization', 'Minimax GANs & Wasserstein WGAN-GP', 'Hierarchical Latent Variable Models', 'Score-Based SDE Diffusion Models', 'DDPM / DDIM Continuous & Discrete Spaces'],
+                tech: ['PyTorch', 'VAE Architecture', 'GANs / WGAN-GP', 'Score Matching SDEs', 'DDPM Diffusion']
+            },
+            {
+                id: 'ds-p7-nlp-word-embeddings',
+                periodNumber: 7,
+                date: '2026-01',
+                instructor: 'Dr. Julien Perez',
+                institution: 'Naver Labs Europe',
+                title: {
+                    en: 'NLP, Vector Embeddings & Transformers / LLMs',
+                    fr: 'Représentations Vectorielles des Mots, Transformers & LLMs',
+                    ar: 'التمثيل المتجهي للكلمات ونماذج المحولات اللغوية LLMs',
+                    es: 'Procesamiento de Lenguaje Natural, Embeddings y LLMs',
+                    zh: '自然语言处理：词向量表征、Transformer架构与大语言模型',
+                    pt: 'Processamento de Linguagem Natural, Embeddings e LLMs',
+                    de: 'NLP, Vektor-Embeddings & Transformer / LLMs'
+                },
+                description: {
+                    en: 'End-to-end Natural Language Processing: Distributional semantics, Word2Vec (CBOW/Skip-Gram), Multi-Head Self-Attention Transformers, Contextual embeddings (BERT fine-tuning), Autoregressive text generation (GPT), Prompt Engineering, and Hugging Face pipelines.',
+                    fr: 'Traitement du Langage Naturel de bout en bout : sémantique distributionnelle, Word2Vec (CBOW/Skip-Gram), architecture Transformer à auto-attention multi-têtes, embeddings contextuels (fine-tuning BERT), génération autorégressive (GPT), ingénierie de prompt et pipelines Hugging Face.',
+                    ar: 'معالجة اللغات الطبيعية الشاملة: الدلالات التوزيعية، Word2Vec، بنية المحولات ذاتية الانتباه Multi-Head Attention، التضمينات السياقية لنموذج BERT، التوليد التلقائي لنموذج GPT، هندسة التوجيهات (Prompting)، وخطوط أنابيب Hugging Face.',
+                    es: 'Procesamiento de Lenguaje Natural integral: semántica distribucional, Word2Vec, Transformers con autoatención multicabezal, embeddings contextuales (BERT fine-tuning), generación autorregresiva (GPT), Prompt Engineering y Hugging Face.',
+                    zh: '端到端自然语言处理：分布语义学、Word2Vec（CBOW/Skip-Gram与负采样）、Multi-Head自注意力Transformer架构、BERT上下文微调、GPT因果自回归生成、Prompt Engineering及Hugging Face工业流水线部署。',
+                    pt: 'Processamento de Linguagem Natural de ponta a ponta: semântica distribucional, Word2Vec, Transformers com auto-atenção, embeddings contextuais (BERT), geração autorregressiva (GPT), Prompt Engineering e Hugging Face.',
+                    de: 'End-to-End Natural Language Processing: Distributionelle Semantik, Word2Vec, Multi-Head Self-Attention Transformer, BERT Fine-Tuning, autoregressive Textgenerierung (GPT), Prompt Engineering und Hugging Face.'
+                },
+                topics: ['Word2Vec (Skip-Gram, CBOW, Negative Sampling)', 'Multi-Head Scaled Dot-Product Attention', 'BERT Contextual Fine-Tuning (SST-2, SQuAD)', 'Autoregressive Decoding (Top-k, Nucleus Top-p)', 'Prompt Engineering & Production Pipelines'],
+                tech: ['Hugging Face Transformers', 'PyTorch NLP', 'BERT & GPT-2', 'Tokenizers (BPE/WordPiece)', 'SpaCy & LangChain']
+            },
+            {
+                id: 'ds-p8-reinforcement-learning',
+                periodNumber: 8,
+                date: '2026-02',
+                instructor: 'Prof. Mohammed El Machkouri',
+                institution: 'EMINES / Université de Rouen',
+                title: {
+                    en: 'Reinforcement Learning & Markov Decision Processes',
+                    fr: 'Apprentissage par Renforcement & Processus Markoviens',
+                    ar: 'التعلم المعزز وعمليات اتخاذ القرار الماركوفية MDPs',
+                    es: 'Aprendizaje por Refuerzo y Procesos de Decisión de Markov',
+                    zh: '强化学习理论与马尔可夫决策过程（MDPs）',
+                    pt: 'Aprendizado por Reforço e Processos de Decisão de Markov',
+                    de: 'Reinforcement Learning & Markov-Entscheidungsprozesse'
+                },
+                description: {
+                    en: 'Sequential decision making and reinforcement learning: Stochastic Multi-Armed Bandits, Lai-Robbins lower bound, UCB1, Thompson Sampling, Markov Decision Processes (MDPs), Bellman optimality equations, Policy/Value Iteration, and Q-Learning.',
+                    fr: 'Prise de décision séquentielle et apprentissage par renforcement : bandits manchots stochastiques, borne de Lai-Robbins, algorithme UCB1, échantillonnage de Thompson, processus de décision markoviens (MDP), équations d\'optimalité de Bellman, Policy/Value Iteration et Q-Learning.',
+                    ar: 'اتخاذ القرارات التتابعية والتعلم المعزز: معضلات البانديت العشوائية، حد لاي-روبنز الأدنى، خوارزمية UCB1، عينات تومسون، عمليات اتخاذ القرار الماركوفية (MDPs)، معادلات بيلمان المثلى، وخوارزميات Q-Learning.',
+                    es: 'Toma de decisiones secuenciales y aprendizaje por refuerzo: bandidos multibrazo estocásticos, cota de Lai-Robbins, UCB1, Thompson Sampling, Procesos de Decisión de Markov (MDP), ecuaciones de Bellman y Q-Learning.',
+                    zh: '序贯决策与强化学习数学基础：多臂老虎机（Multi-Armed Bandits）、Lai-Robbins渐进下界、UCB1置信上限算法、Thompson采样、马尔可夫决策过程（MDPs）、Bellman最优方程、动态规划策略迭代与Q-Learning。',
+                    pt: 'Tomada de decisão sequencial e aprendizado por reforço: bandidos estocásticos multibraço, limite de Lai-Robbins, UCB1, Thompson Sampling, Processos de Decisão de Markov (MDP), equações de Bellman e Q-Learning.',
+                    de: 'Sequenzielle Entscheidungsfindung & Reinforcement Learning: Stochastische Multi-Armed Bandits, Lai-Robbins-Schranke, UCB1, Thompson Sampling, Markov-Entscheidungsprozesse (MDPs), Bellman-Gleichungen und Q-Learning.'
+                },
+                topics: ['Stochastic Multi-Armed Bandits & Lai-Robbins Bound', 'Upper Confidence Bound (UCB1) & Thompson Sampling', 'Markov Decision Processes (MDP Tuple)', 'Bellman Optimality Equations & Dynamic Programming', 'Temporal Difference Learning & Q-Learning'],
+                tech: ['Reinforcement Learning', 'Bellman Optimality', 'Q-Learning & DQN', 'Multi-Armed Bandits', 'Gymnasium / Python']
+            }
+        ];
+
+        let currentTrackLang = 'en';
+
+        function renderModules(lang) {
+            currentTrackLang = lang;
+            const container = document.getElementById('modules-container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            const isRTL = lang === 'ar';
+            document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+
+            // Update Header & Banner UI strings
+            const langLabels = {
+                en: {
+                    back: 'Portfolio',
+                    bannerInst: 'EMINES – School of Industrial Management (UM6P)',
+                    trackTitle: 'Data Science & Artificial Intelligence Specialization',
+                    trackSubtitle: 'An intensive 8-week advanced curriculum directed by Prof. Éric Moulines (Member of the French Academy of Sciences, École Polytechnique). Comprehensive mastery spanning multivariate optimization, PAC theory, deep statistical learning, inverse problems, generative AI, NLP/Transformers, and reinforcement learning.',
+                    exploreBtn: 'Explore Full Track with AI',
+                    returnBtn: '← Return to All Projects',
+                    modulesTitle: '8 Thematic Specialization Modules',
+                    modulesDesc: 'Structured across fundamental mathematical foundations and specialized practical domains.',
+                    exploreModuleBtn: 'Explore Syllabus & AI Report',
+                    periodPrefix: 'Module'
+                },
+                fr: {
+                    back: 'Portfolio',
+                    bannerInst: 'EMINES – School of Industrial Management (UM6P)',
+                    trackTitle: 'Option Data Science & Intelligence Artificielle',
+                    trackSubtitle: 'Programme d\'excellence intensif en 8 semaines sous la direction de Prof. Éric Moulines (Membre de l\'Académie des Sciences, Professeur à l\'École Polytechnique). Formation complète couvrant l\'optimisation variationnelle, les fondements PAC, l\'apprentissage profond, les problèmes inverses, les modèles génératifs, le NLP/Transformers et l\'apprentissage par renforcement.',
+                    exploreBtn: 'Consulter le Programme Global avec l\'IA',
+                    returnBtn: '← Retour à tous les projets',
+                    modulesTitle: '8 Modules Thématiques',
+                    modulesDesc: 'Organisés en un bloc fondamental théorique et des cours approfondis d\'application.',
+                    exploreModuleBtn: 'Consulter le Syllabus & Rapport IA',
+                    periodPrefix: 'Module'
+                },
+                ar: {
+                    back: 'المعرض الشخصي',
+                    bannerInst: 'EMINES – مدرسة الإدارة الصناعية (جامعة محمد السادس متعددة التخصصات التقنية UM6P)',
+                    trackTitle: 'مسار التخصص في علوم البيانات والذكاء الاصطناعي',
+                    trackSubtitle: 'برنامج امتياز مكثف يمتد لـ 8 أسابيع بإشراف البروفيسور إريك مولين (عضو الأكاديمية الفرنسية للعلوم، أستاذ بـ École Polytechnique). تغطية شاملة لنظريات التحسين، وأسس التعلم الآلي، والتعلم العميق، ونماذج الانتشار والتوليد، ومعالجة اللغات الطبيعية، والتعلم المعزز.',
+                    exploreBtn: 'استعراض المسار الكامل بالذكاء الاصطناعي',
+                    returnBtn: '← العودة إلى جميع المشاريع',
+                    modulesTitle: '8 وحدات دراسية متخصصة',
+                    modulesDesc: 'منظمة بين الأسس الرياضية النظرية والتطبيقات الصناعية المتقدمة.',
+                    exploreModuleBtn: 'استعراض المنهج وتقرير الذكاء الاصطناعي',
+                    periodPrefix: 'الوحدة'
+                },
+                es: {
+                    back: 'Portafolio',
+                    bannerInst: 'EMINES – School of Industrial Management (UM6P)',
+                    trackTitle: 'Especialización en Ciencia de Datos e Inteligencia Artificial',
+                    trackSubtitle: 'Programa intensivo de 8 semanas bajo la dirección del Prof. Éric Moulines (Miembro de la Academia Francesa de Ciencias, École Polytechnique). Dominio integral desde optimización convexa, teoría PAC, Deep Learning, problemas inversos, IA generativa, NLP y aprendizaje por refuerzo.',
+                    exploreBtn: 'Explorar Programa Completo con IA',
+                    returnBtn: '← Volver a Todos los Proyectos',
+                    modulesTitle: '8 Módulos Temáticos de Especialización',
+                    modulesDesc: 'Estructurados entre fundamentos matemáticos y aplicaciones prácticas avanzadas.',
+                    exploreModuleBtn: 'Ver Syllabus y Reporte IA',
+                    periodPrefix: 'Módulo'
+                },
+                de: {
+                    back: 'Portfolio',
+                    bannerInst: 'EMINES – School of Industrial Management (UM6P)',
+                    trackTitle: 'Spezialisierung Data Science & Künstliche Intelligenz',
+                    trackSubtitle: 'Intensives 8-Wochen-Exzellenzprogramm unter der Leitung von Prof. Éric Moulines (Mitglied der Französischen Akademie der Wissenschaften, École Polytechnique). Fundierte Beherrschung von Optimierung, PAC-Theorie, Deep Learning, inversen Problemen, generativer KI, NLP und Reinforcement Learning.',
+                    exploreBtn: 'Gesamtprogramm mit KI erkunden',
+                    returnBtn: '← Zurück zu allen Projekten',
+                    modulesTitle: '8 Thematische Module',
+                    modulesDesc: 'Gegliedert in mathematische Fundamente und anwendungsorientierte Spezialgebiete.',
+                    exploreModuleBtn: 'Syllabus & KI-Bericht anzeigen',
+                    periodPrefix: 'Modul'
+                },
+                zh: {
+                    back: '作品集主页',
+                    bannerInst: 'EMINES 工业管理学院（穆罕默德六世理工大学 UM6P）',
+                    trackTitle: '数据科学与人工智能前沿专业方向（8周强化体系）',
+                    trackSubtitle: '在法国科学院院士、巴黎综合理工学院教授 Éric Moulines 亲自主导下的8周高强度精英培养体系。全方位覆盖凸优化、PAC可学习理论、统计深度学习、反问题图像重建、生成式AI、大语言模型NLP及强化学习。',
+                    exploreBtn: '使用AI全面解析培养方案',
+                    returnBtn: '← 返回全部项目列表',
+                    modulesTitle: '8大专题核心培养模块',
+                    modulesDesc: '涵盖严格的数学理论基石与前沿工业级实战应用。',
+                    exploreModuleBtn: '查看课程大纲与AI精读报告',
+                    periodPrefix: '模块'
+                },
+                pt: {
+                    back: 'Portfólio',
+                    bannerInst: 'EMINES – School of Industrial Management (UM6P)',
+                    trackTitle: 'Especialização em Ciência de Dados e Inteligência Artificial',
+                    trackSubtitle: 'Programa intensivo de excelência de 8 semanas dirigido pelo Prof. Éric Moulines (Membro da Academia Francesa de Ciências, École Polytechnique). Domínio completo de otimização convexa, teoria PAC, aprendizado profundo, problemas inversos, IA generativa, NLP e aprendizado por reforço.',
+                    exploreBtn: 'Explorar Programa Completo com IA',
+                    returnBtn: '← Voltar a Todos os Projetos',
+                    modulesTitle: '8 Módulos Temáticos',
+                    modulesDesc: 'Estruturados entre fundamentos matemáticos e especializações práticas avançadas.',
+                    exploreModuleBtn: 'Ver Syllabus e Relatório IA',
+                    periodPrefix: 'Módulo'
+                }
+            };
+
+            const str = langLabels[lang] || langLabels.en;
+            document.getElementById('nav-back-text').textContent = str.back;
+            document.getElementById('banner-institution').textContent = str.bannerInst;
+            document.getElementById('track-title').textContent = str.trackTitle;
+            document.getElementById('track-subtitle').innerHTML = str.trackSubtitle;
+            document.getElementById('btn-full-syllabus-text').textContent = str.exploreBtn;
+            document.getElementById('btn-return-portfolio').textContent = str.returnBtn;
+            document.getElementById('section-modules-title').textContent = str.modulesTitle;
+            document.getElementById('section-modules-desc').textContent = str.modulesDesc;
+
+            dsModulesData.forEach((mod, idx) => {
+                const title = mod.title[lang] || mod.title.en;
+                const desc = mod.description[lang] || mod.description.en;
+
+                const card = document.createElement('div');
+                card.className = 'item-card reveal-scale-up';
+                card.style.transitionDelay = `${idx * 0.06}s`;
+
+                const techBadges = mod.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
+                const topicItems = mod.topics.map(tp => `<li>${tp}</li>`).join('');
+
+                card.innerHTML = `
+                    <div class="card-body">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <span class="module-badge">${str.periodPrefix} 0${mod.periodNumber}</span>
+                                <span class="project-time-tag">
+                                    <svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                    <span>${mod.date}</span>
+                                </span>
+                            </div>
+                            <h3 class="card-title text-xl mb-2 font-bold cursor-pointer hover:text-primary-color transition-colors" onclick="openModuleAiModal(${mod.periodNumber})">
+                                ${title}
+                            </h3>
+                            <div class="mb-3">
+                                <span class="instructor-chip">
+                                    <svg class="w-3.5 h-3.5 text-primary-color" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
+                                    <strong>${mod.instructor}</strong> (${mod.institution})
+                                </span>
+                            </div>
+                            <p class="card-text text-gray-400 mb-4 text-sm leading-relaxed">${desc}</p>
+                            <div class="mb-4 p-3 bg-white/5 border border-white/10 rounded-xl">
+                                <span class="text-xs font-bold text-gray-300 uppercase tracking-wider block mb-2">Key Mathematical & Algorithmic Pillars</span>
+                                <ul class="syllabus-preview">
+                                    ${topicItems}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-white/10">
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                ${techBadges}
+                            </div>
+                            <button onclick="openModuleAiModal(${mod.periodNumber})" class="btn-doc-action w-full flex items-center justify-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                                </svg>
+                                <span>${str.exploreModuleBtn}</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        function switchTrackLanguage(lang) {
+            renderModules(lang);
+            const selector = document.getElementById('lang-selector');
+            if (selector) selector.value = lang;
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        function openTrackAiModal() {
+            const rawContent = projectReports['data-science-track'] || '# Option Data Science\n\nProgramme en 8 semaines.';
+            displayModalContent('Option Data Science — EMINES-UM6P (Dir. Prof. Éric Moulines)', rawContent);
+        }
+
+        function openModuleAiModal(periodNum) {
+            const keys = {
+                1: 'ds-module-1',
+                2: 'ds-module-2',
+                3: 'ds-module-3',
+                4: 'ds-module-4',
+                5: 'ds-module-5',
+                6: 'ds-module-6',
+                7: 'ds-module-7',
+                8: 'ds-module-8'
+            };
+            const rawContent = projectReports[keys[periodNum]] || projectReports['data-science-track'];
+            const mod = dsModulesData.find(m => m.periodNumber === periodNum);
+            const title = mod ? `${mod.title[currentTrackLang] || mod.title.en} (${mod.instructor})` : `Module 0${periodNum}`;
+            displayModalContent(title, rawContent);
+        }
+
+        function displayModalContent(title, markdownContent) {
+            const modal = document.getElementById('project-ai-modal');
+            const titleEl = document.getElementById('modal-project-title');
+            const contentEl = document.getElementById('modal-project-content');
+            if (!modal || !titleEl || !contentEl) return;
+
+            titleEl.textContent = title;
+            contentEl.innerHTML = marked.parse(markdownContent);
+
+            if (window.renderMathInElement) {
+                renderMathInElement(contentEl, {
+                    delimiters: [
+                        { left: '$$', right: '$$', display: true },
+                        { left: '$', right: '$', display: false }
+                    ],
+                    throwOnError: false
+                });
+            }
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectAiModal() {
+            const modal = document.getElementById('project-ai-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLang') || 'en';
+            switchTrackLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>

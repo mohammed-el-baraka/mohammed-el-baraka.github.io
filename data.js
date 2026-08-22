@@ -1010,7 +1010,7 @@ const projectsData = [
         huggingfaceUrl: 'https://huggingface.co/mohammed-el-baraka/KhulasaAI',
         demoUrl: 'https://huggingface.co/mohammed-el-baraka/KhulasaAI',
         metric: '14× Parameter Compression (Qwen2.5 7B→0.5B), ROUGE-1: 62.21, BERTScore: 0.861 & 8.3MB Adapter',
-        reportUrl: 'https://drive.google.com/file/d/1ECmEpHfjnuhxfKLxIzhNmMNtNW5eu8K3/view?usp=sharing', 
+        reportUrl: 'https://drive.google.com/file/d/1YFgBGlyM0teTh5jACORafmyxjygEigTZ/view?usp=sharing', 
         presentationUrl: ''
     }
 ];
@@ -3103,7 +3103,7 @@ Traditional static thermostats operate on fixed setpoints and exhibit major inef
 **Author:** Mohammed EL BARAKA  
 **Hugging Face Model:** [https://huggingface.co/mohammed-el-baraka/KhulasaAI](https://huggingface.co/mohammed-el-baraka/KhulasaAI)  
 **GitHub Repository:** [https://github.com/mohammed-el-baraka/KhulasaAI](https://github.com/mohammed-el-baraka/KhulasaAI)  
-**Research Report (PDF):** [Google Drive Document](https://drive.google.com/file/d/1ECmEpHfjnuhxfKLxIzhNmMNtNW5eu8K3/view?usp=sharing)  
+**Research Report (PDF):** [Google Drive Document](https://drive.google.com/file/d/1YFgBGlyM0teTh5jACORafmyxjygEigTZ/view?usp=sharing)  
 
 ---
 

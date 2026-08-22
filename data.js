@@ -81,7 +81,8 @@ const translations = {
              { id: 'sap-s4hana-production-planning', title: 'SAP S/4HANA Production Planning & Industrial ERP (Global Bike Inc.)', description: 'Mastered full-lifecycle production planning and execution in SAP S/4HANA for Global Bike Inc., configuring multi-level BOMs, work centers, routings, standard costing (CK11N), SOP/MRP pyramids, MTS (Strategy 40) vs. ATO (Strategy 82), and shop floor execution.' },
              { id: 'data-science-track', title: 'Data Science Specialization Track: 8-Week Advanced Curriculum', description: 'Completed an intensive 8-week specialization directed by Prof. Éric Moulines (French Academy of Sciences / École Polytechnique), mastering multivariate optimization, PAC theory, CNNs & CAVI, ill-posed inverse problems, generative AI (GANs/VAEs/Diffusion), NLP Transformers, and Reinforcement Learning.' },
              { id: 'dirty-model-multitask-learning', title: 'A Dirty Model for Multitask Learning: High-Dimensional Superposition & Phase Transitions', description: 'Empirically validated and replicated the NIPS research "A Dirty Model for Multitask Learning" (Jalali et al.), decomposing parameter matrices into shared block-sparse (ℓ₁/ℓ∞) and task-specific element-wise sparse (ℓ₁) components via convex optimization (CVXPY), proving optimal sample complexity scaling (2-α)s log(p) and reproducing sharp empirical phase transitions.' },
-             { id: 'hyperdimensional-computing-robotics', title: 'Hyperdimensional Computing for Robotics: Viewpoint-Invariant 3D Vision & VSA (ALOI)', description: 'Developed a zero-backpropagation 3D object recognition framework combining AlexNet conv3 deep features (D=64,896) with Locality-Sensitive Hashing (LSH) into 10,000-D bipolar hypervectors and Vector Symbolic Architecture (VSA) view bundling, achieving 86% accuracy across novel rotations on the ALOI dataset and implementing a production Python package (hdc_robotics) with 21 unit tests.' }
+             { id: 'hyperdimensional-computing-robotics', title: 'Hyperdimensional Computing for Robotics: Viewpoint-Invariant 3D Vision & VSA (ALOI)', description: 'Developed a zero-backpropagation 3D object recognition framework combining AlexNet conv3 deep features (D=64,896) with Locality-Sensitive Hashing (LSH) into 10,000-D bipolar hypervectors and Vector Symbolic Architecture (VSA) view bundling, achieving 86% accuracy across novel rotations on the ALOI dataset and implementing a production Python package (hdc_robotics) with 21 unit tests.' },
+             { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn: Deep Neural Multi-Horizon Building Energy Forecasting & Climate Control', description: 'Architected a deep statistical learning system for 24-hour multi-horizon building energy forecasting and predictive HVAC optimization across 8,736 hours of meteorological data using 1D Dilated TCNs (RMSE: 10.68 kWh, R²=0.611), Deep ResMLPs, and PINNs, validated by Diebold-Mariano tests (p < 10⁻⁵) with real-time 3σ thermal anomaly detection.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsorship Manager', description: 'As Sponsorship Manager, my core responsibility is securing vital partnerships and sponsorships to power EJE\'s impactful portfolio of student hackathons. I actively seek sponsors for major events including the OP&X Hackathon, Strategic Consulting Hackathon (SCH), DataQuest Hackathon, and the Finance Hackathon. By connecting companies with these platforms, I help them engage Morocco\'s brightest students and fuel future talent development.' },
@@ -182,7 +183,8 @@ const translations = {
             { id: 'sap-s4hana-production-planning', title: 'Planification et Gestion de Production sous SAP S/4HANA (Global Bike Inc.)', description: 'Mise en œuvre intégrale de la planification et de la gestion de production sous SAP S/4HANA pour Global Bike Inc. : paramétrage Master Data (nomenclatures multi-niveaux, gammes, postes de travail), calcul du coût de revient (CK11N), pyramide PIC/PDP/MRP, stratégies MTS (40) vs ATO (82) et boucle d\'exécution atelier.' },
             { id: 'data-science-track', title: 'Option Data Science : Parcours d\'Excellence Approfondi (8 Semaines)', description: 'Spécialisation intensive de 8 semaines sous la direction de Prof. Éric Moulines (Académie des Sciences / École Polytechnique) : optimisation multivariée, théorie PAC, CNN & CAVI, problèmes inverses, IA générative (GANs/VAEs/Diffusion), NLP Transformers et apprentissage par renforcement.' },
             { id: 'dirty-model-multitask-learning', title: 'Modèle « Dirty » pour l\'Apprentissage Multi-Tâches : Superposition en Grande Dimension', description: 'Validation empirique et réplication du papier NIPS « A Dirty Model for Multitask Learning » (Jalali et al.) : décomposition de matrices en superposition de composantes bloc-parcimonieuses partagées (ℓ₁/ℓ∞) et parcimonieuses spécifiques (ℓ₁) par optimisation convexe sous CVXPY, prouvant la complexité d\'échantillonnage optimale (2-α)s log(p) et reproduisant les transitions de phase.' },
-            { id: 'hyperdimensional-computing-robotics', title: 'Calcul Hyperdimensionnel pour la Robotique : Vision 3D Invariante & Algèbre VSA (ALOI)', description: 'Conception d\'un framework de reconnaissance d\'objets 3D sans rétropropagation combinant les descripteurs convolutifs profonds d\'AlexNet (D=64 896), le hachage sensible à la localité (LSH) en hypervecteurs bipolaires (D=10 000) et le bundling VSA par superposition. Atteinte de 86 % de précision sur angles inédits du jeu de données ALOI et développement du package Python hdc_robotics avec 21 tests unitaires.' }
+            { id: 'hyperdimensional-computing-robotics', title: 'Calcul Hyperdimensionnel pour la Robotique : Vision 3D Invariante & Algèbre VSA (ALOI)', description: 'Conception d\'un framework de reconnaissance d\'objets 3D sans rétropropagation combinant les descripteurs convolutifs profonds d\'AlexNet (D=64 896), le hachage sensible à la localité (LSH) en hypervecteurs bipolaires (D=10 000) et le bundling VSA par superposition. Atteinte de 86 % de précision sur angles inédits du jeu de données ALOI et développement du package Python hdc_robotics avec 21 tests unitaires.' },
+            { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn : Prévision Énergétique Multi-Horizon des Bâtiments & Contrôle HVAC Prédictif', description: 'Conception d\'un système d\'apprentissage statistique profond pour la prévision multi-horizon (24h) de la consommation de chauffage sur 8 736 heures de données météo via des TCNs 1D à convolutions dilatées (RMSE : 10,68 kWh, R²=0,611), ResMLPs et PINNs, validé par test de Diebold-Mariano (p < 10⁻⁵) avec détection d\'anomalies thermiques en temps réel.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Responsable Sponsoring', description: 'En tant que Responsable Sponsoring, ma responsabilité principale est de sécuriser des partenariats et des sponsorings essentiels pour alimenter le portefeuille percutant de hackathons étudiants d\'EJE. Je recherche activement des sponsors pour des événements majeurs tels que le Hackathon OP&X, le Hackathon de Conseil Stratégique (SCH), le Hackathon DataQuest et le Hackathon Finance. En connectant les entreprises à ces plateformes, je les aide à interagir avec les étudiants les plus brillants du Maroc et à stimuler le développement des futurs talents.' },
@@ -283,7 +285,8 @@ const translations = {
              { id: 'sap-s4hana-production-planning', title: 'تخطيط وإدارة الإنتاج عبر نظام SAP S/4HANA (شركة Global Bike Inc.)', description: 'تنفيذ وتكوين دورة تخطيط وإدارة الإنتاج الصناعي المتكاملة عبر نظام SAP S/4HANA لشركة Global Bike Inc.، مع ضبط البيانات الأساسية (هياكل المنتجات، مسارات التصنيع، مراكز العمل)، وحساب تكاليف الإنتاج المعيارية (CK11N)، وتطبيق استراتيجيات الصنع للمخزون (MTS) والتجميع حسب الطلب (ATO).' },
              { id: 'data-science-track', title: 'مسار التخصص المتقدم في علوم البيانات والذكاء الاصطناعي (برنامج 8 أسابيع)', description: 'إتمام مسار تخصصي مكثف في علوم البيانات مدته 8 أسابيع بإشراف البروفيسور إريك مولين (الأكاديمية الفرنسية للعلوم / بوليتكنيك): التحسين الرياضي، نظرية PAC، التعلم العميق، المسائل العكسية، النماذج التوليدية، معالجة اللغات الطبيعية، والتعلم المعزز.' },
              { id: 'dirty-model-multitask-learning', title: 'نموذج التراكب "Dirty Model" للتعلم متعدد المهام في الفضاءات عالية الأبعاد', description: 'التحقق التجريبي وإعادة تطبيق الورقة البحثية الرائدة في NIPS للتعلم متعدد المهام (Jalali et al.): تفكيك مصفوفات المعلمات إلى تراكب بين مصفوفة متفرقة قطاعياً (ℓ₁/ℓ∞) ومصفوفة متفرقة عنصرياً (ℓ₁) عبر التحسين المحدب (CVXPY)، مع إثبات حد التعقيد العيني الأمثل (2-α)s log(p) وإعادة إنتاج انتقالات الطور التجريبية.' },
-             { id: 'hyperdimensional-computing-robotics', title: 'الحوسبة فائقة الأبعاد للروبوتات: الرؤية الحاسوبية ثلاثية الأبعاد وهياكل المتجهات الرمزية VSA', description: 'تطوير إطار عمل متقدم للتعرف على الأجسام ثلاثية الأبعاد دون الحاجة للانتشار العكسي، يدمج ميزات AlexNet التلافيفية العميقة مع تقنية التجزئة الحساسة للمكان (LSH) إلى متجهات فائقة الأبعاد (10,000 بُعد) وتجميع الرؤى الفراغية VSA، محققاً دقة 86% على زوايا جديدة في قاعدة بيانات ALOI، مع بناء حزمة بايثون برمجية متكاملة مدعومة بـ 21 اختباراً وحدة.' }
+             { id: 'hyperdimensional-computing-robotics', title: 'الحوسبة فائقة الأبعاد للروبوتات: الرؤية الحاسوبية ثلاثية الأبعاد وهياكل المتجهات الرمزية VSA', description: 'تطوير إطار عمل متقدم للتعرف على الأجسام ثلاثية الأبعاد دون الحاجة للانتشار العكسي، يدمج ميزات AlexNet التلافيفية العميقة مع تقنية التجزئة الحساسة للمكان (LSH) إلى متجهات فائقة الأبعاد (10,000 بُعد) وتجميع الرؤى الفراغية VSA، محققاً دقة 86% على زوايا جديدة في قاعدة بيانات ALOI، مع بناء حزمة بايثون برمجية متكاملة مدعومة بـ 21 اختباراً وحدة.' },
+             { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn: التنبؤ العميق متعدد الآفاق باستهلاك طاقة المباني والتحكم التنبئي في التكييف', description: 'بناء نظام تعلم إحصائي عميق للتنبؤ متعدد الآفاق (24 ساعة) باستهلاك طاقة التدفئة والتحسين التنبئي لأنظمة HVAC على مدار 8,736 ساعة من البيانات المناخية باستخدام شبكات TCN التلافيفية الممتدة (RMSE: 10.68 kWh, R²=0.611) وشبكات PINNs، مع إثبات التفوق الإحصائي عبر اختبار Diebold-Mariano واكتشاف الشذوذ الحراري.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'EJE', role: 'مدير الرعاية', description: 'بصفتي مدير الرعاية، تتمثل مسؤوليتي الأساسية في تأمين الشراكات والرعاية الحيوية لدعم محفظة EJE المؤثرة من مسابقات البرمجة الطلابية. أبحث عن رعاة للأحداث الكبرى بما في ذلك مسابقة البرمجة OP&X Hackathon ومسابقة البرمجة الاستشارية الاستراتيجية (SCH) ومسابقة البرمجة DataQuest Hackathon ومسابقة البرمجة المالية Finance Hackathon. من خلال ربط الشركات بهذه المنصات، أساعدها على جذب ألمع الطلاب المغاربة ودعم تنمية المواهب المستقبلية.' },
@@ -384,7 +387,8 @@ const translations = {
             { id: 'sap-s4hana-production-planning', title: 'Planificación y Gestión de Producción en SAP S/4HANA (Global Bike Inc.)', description: 'Implementación y configuración integral del ciclo de planificación y ejecución de producción en SAP S/4HANA para Global Bike Inc., parametrizando listas de materiales (BOM), puestos de trabajo, rutas, cálculo de costes estándar (CK11N), pirámide SOP/MRP y estrategias MTS frente a ATO.' },
             { id: 'data-science-track', title: 'Especialización en Ciencia de Datos: Programa Avanzado de 8 Semanas', description: 'Especialización intensiva de 8 semanas dirigida por el Prof. Éric Moulines (Academia de Ciencias de Francia / École Polytechnique): optimización convexa, teoría PAC, CNN y CAVI, problemas inversos, IA generativa (GANs/VAEs/Difusión), Transformers y Aprendizaje por Refuerzo.' },
             { id: 'dirty-model-multitask-learning', title: 'Modelo «Dirty» para Aprendizaje Multitarea: Superposición en Alta Dimensión', description: 'Validación empírica y replicación del artículo de NIPS «A Dirty Model for Multitask Learning» (Jalali et al.), descomponiendo matrices de parámetros en superposiciones de dispersión por bloques (ℓ₁/ℓ∞) y dispersión elemental (ℓ₁) mediante optimización convexa en CVXPY, demostrando la complejidad muestral (2-α)s log(p) y reproduciendo transiciones de fase.' },
-            { id: 'hyperdimensional-computing-robotics', title: 'Computación Hiperdimensional para Robótica: Visión 3D Invariante y Álgebra VSA (ALOI)', description: 'Desarrollo de un framework de reconocimiento de objetos 3D sin retropropagación que combina características profundas de AlexNet conv3 (D=64.896), Locality-Sensitive Hashing (LSH) en hipervectores bipolares (D=10.000) y superposición VSA, alcanzando un 86% de precisión en vistas inéditas del dataset ALOI y creando el paquete Python hdc_robotics con 21 pruebas unitarias.' }
+            { id: 'hyperdimensional-computing-robotics', title: 'Computación Hiperdimensional para Robótica: Visión 3D Invariante y Álgebra VSA (ALOI)', description: 'Desarrollo de un framework de reconocimiento de objetos 3D sin retropropagación que combina características profundas de AlexNet conv3 (D=64.896), Locality-Sensitive Hashing (LSH) en hipervectores bipolares (D=10.000) y superposición VSA, alcanzando un 86% de precisión en vistas inéditas del dataset ALOI y creando el paquete Python hdc_robotics con 21 pruebas unitarias.' },
+            { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn: Predicción Energética Multi-Horizonte de Edificios y Control Climático Predictivo', description: 'Desarrollo de un sistema de aprendizaje estadístico profundo para predicción multi-horizonte (24h) de consumo térmico sobre 8.736 horas de datos meteorológicos mediante TCNs 1D con convoluciones dilatadas (RMSE: 10,68 kWh, R²=0,611), ResMLPs y PINNs, validado con test de Diebold-Mariano y detección de anomalías térmicas en tiempo real.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocinios', description: 'Como Gerente de Patrocinios, mi responsabilidad principal es asegurar alianzas y patrocinios vitales para impulsar el impactante portafolio de hackathons estudiantiles de EJE. Busco activamente patrocinadores para eventos importantes como el Hackathon OP&X, el Hackathon de Consultoría Estratégica (SCH), el Hackathon DataQuest y el Hackathon de Finanzas. Al conectar empresas con estas plataformas, les ayudo a interactuar con los estudiantes más brillantes de Marruecos y a fomentar el desarrollo de futuros talentos.' },
@@ -485,7 +489,8 @@ const translations = {
             { id: 'sap-s4hana-production-planning', title: 'SAP S/4HANA工业生产计划与ERP端到端智造实践（Global Bike案例）', description: '在SAP S/4HANA工业制造系统中完成全流程生产计划与车间执行落地：端到端配置多级BOM、工作中心、工艺路线、标准成本核算（CK11N）、SOP/MRP计划金字塔，深入对比按库存生产（MTS-40）与按订单装配（ATO-82）策略。' },
             { id: 'data-science-track', title: '数据科学与人工智能前沿专业方向（8周强化体系）', description: '在法国科学院院士、巴黎综合理工学院教授 Éric Moulines 亲自主导下完成8周高强度精英培养体系：全方位覆盖多元数值优化、PAC可学习理论、统计深度学习、反问题图像重建、生成式AI（GAN/VAE/扩散模型）、大模型NLP及强化学习。' },
             { id: 'dirty-model-multitask-learning', title: '高维多任务学习Dirty Model：结构叠加分解与相变现象实证研究', description: '深入复现并实证检验NIPS经典论文《A Dirty Model for Multitask Learning》（Jalali et al.）：采用凸优化（CVXPY）将高维参数矩阵分解为共享块稀疏（ℓ₁/ℓ∞）与任务特异元素稀疏（ℓ₁）的叠加态，证明其最优样本复杂度 (2-α)s log(p) 并高保真复现经验相变阈值。' },
-            { id: 'hyperdimensional-computing-robotics', title: '面向机器人视觉的高维计算（HDC）：视角不变3D目标识别与VSA符号代数实践', description: '构建无反向传播的高维计算（HDC/VSA）3D目标识别系统：提取AlexNet conv3深层特征（D=64,896），通过局部敏感哈希（LSH）映射至10,000维双极超向量并进行VSA视角叠加绑定，在ALOI基准测试中将未见视角识别准确率提升至86%，并开源生产级Python包hdc_robotics与21项单元测试。' }
+            { id: 'hyperdimensional-computing-robotics', title: '面向机器人视觉的高维计算（HDC）：视角不变3D目标识别与VSA符号代数实践', description: '构建无反向传播的高维计算（HDC/VSA）3D目标识别系统：提取AlexNet conv3深层特征（D=64,896），通过局部敏感哈希（LSH）映射至10,000维双极超向量并进行VSA视角叠加绑定，在ALOI基准测试中将未见视角识别准确率提升至86%，并开源生产级Python包hdc_robotics与21项单元测试。' },
+            { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn：基于深度时序卷积的多步建筑能耗预测、预测性暖通控制与热异常检测', description: '构建端到端深度统计学习建筑能耗多步预测（24小时）与智能HVAC优化系统：处理8,736小时气象与热力学数据，设计一维扩张因果时序卷积网络（TCN, RMSE: 10.68 kWh, R²=0.611）、ResMLP与物理信息神经网络PINN，通过Diebold-Mariano严格统计检验，并实现实时3σ热损失异常监控。' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: '赞助经理', description: '作为赞助经理，我的核心职责是确保重要的合作伙伴关系和赞助，为EJE富有影响力的学生黑客马拉松系列活动提供支持。我积极为主要活动寻找赞助商，包括OP&X黑客马拉松、战略咨询黑客马拉松（SCH）、DataQuest黑客马拉松以及金融黑客马拉松。通过将公司与这些平台联系起来，我帮助他们接触到摩洛哥最优秀的学生，并为未来的人才发展提供动力。' },
@@ -583,7 +588,8 @@ const translations = {
             { id: 'sap-s4hana-production-planning', title: 'Planeamento e Gestão de Produção em SAP S/4HANA (Global Bike Inc.)', description: 'Implementação e configuração integral do ciclo de planeamento e execução de produção no SAP S/4HANA para a Global Bike Inc., parametrizando listas de materiais (BOM), centros de trabalho, roteiros, cálculo de custo padrão (CK11N), pirâmide SOP/MRP e estratégias MTS vs ATO.' },
             { id: 'data-science-track', title: 'Especialização em Ciência de Dados: Programa Avanzado de 8 Semanas', description: 'Especialização intensiva de 8 semanas dirigida pelo Prof. Éric Moulines (Academia Francesa de Ciências / École Polytechnique): otimização convexa, teoria PAC, CNN e CAVI, problemas inversos, IA generativa (GANs/VAEs/Difusão), Transformers e Aprendizado por Reforço.' },
             { id: 'dirty-model-multitask-learning', title: 'Modelo «Dirty» para Aprendizado Multitarefa: Sobreposição em Alta Dimensão', description: 'Validação empírica e replicação do artigo da NIPS «A Dirty Model for Multitask Learning» (Jalali et al.), decompondo matrizes de parâmetros em sobreposições de dispersão em bloco (ℓ₁/ℓ∞) e dispersão pontual (ℓ₁) via otimização convexa em CVXPY, comprovando a complexidade amostral (2-α)s log(p) e reproduzindo transições de fase.' },
-            { id: 'hyperdimensional-computing-robotics', title: 'Computação Hiperdimensional para Robótica: Visão 3D Invariante e Álgebra VSA (ALOI)', description: 'Desenvolvimento de um framework de reconhecimento de objetos 3D sem retropropagação combinando atributos profundos de AlexNet conv3 (D=64.896), Locality-Sensitive Hashing (LSH) em hipervetores bipolares (D=10.000) e superposição VSA, alcançando 86% de acurácia em novas rotações no dataset ALOI e criando o pacote Python hdc_robotics com 21 testes unitários.' }
+            { id: 'hyperdimensional-computing-robotics', title: 'Computação Hiperdimensional para Robótica: Visão 3D Invariante e Álgebra VSA (ALOI)', description: 'Desenvolvimento de um framework de reconhecimento de objetos 3D sem retropropagação combinando atributos profundos de AlexNet conv3 (D=64.896), Locality-Sensitive Hashing (LSH) em hipervetores bipolares (D=10.000) e superposição VSA, alcançando 86% de acurácia em novas rotações no dataset ALOI e criando o pacote Python hdc_robotics com 21 testes unitários.' },
+            { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn: Previsão Energética Multi-Horizonte de Edifícios e Controle Climático Preditivo', description: 'Desenvolvimento de um sistema de aprendizado estatístico profundo para previsão multi-horizonte (24h) de consumo de energia predial sobre 8.736 horas de dados meteorológicos usando TCNs 1D dilatadas (RMSE: 10,68 kWh, R²=0,611), ResMLPs e PINNs, validado por teste de Diebold-Mariano e detecção de anomalias térmicas.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocínios', description: 'Como Gerente de Patrocínios, minha principal responsabilidade é garantir parcerias e patrocínios vitais para impulsionar o portfólio impactante de hackathons estudantis da EJE. Busco ativamente patrocinadores para grandes eventos, incluindo o Hackathon OP&X, o Hackathon de Consultoria Estratégica (SCH), o Hackathon DataQuest e o Hackathon de Finanças. Ao conectar empresas a essas plataformas, ajudo-as a interagir com os estudantes mais brilhantes de Marrocos e a impulsionar o desenvolvimento de futuros talentos.' },
@@ -673,7 +679,8 @@ const translations = {
             { id: 'sap-s4hana-production-planning', title: 'SAP S/4HANA Produktionsplanung & Fertigungssteuerung (Global Bike Inc.)', description: 'Umfassende Implementierung der Produktionsplanung und -steuerung in SAP S/4HANA für Global Bike Inc.: Konfiguration von mehrstufigen Stücklisten (BOM), Arbeitsplätzen, Arbeitsplänen, Standardkalkulation (CK11N), SOP/MRP-Pyramide und Vergleich von MTS- (40) vs. ATO-Strategien (82).' },
             { id: 'data-science-track', title: 'Spezialisierung Data Science & KI: 8-Wöchiges Exzellenzcurriculum', description: 'Intensives 8-Wochen-Spezialisierungsprogramm unter Leitung von Prof. Éric Moulines (Französische Akademie der Wissenschaften / École Polytechnique): Optimierung, PAC-Theorie, CNNs & CAVI, inverse Probleme, generative KI (GANs/VAEs/Diffusion), NLP und Reinforcement Learning.' },
             { id: 'dirty-model-multitask-learning', title: 'Dirty Model für Multitask-Learning: Hochdimensionale Superposition & Phasenübergänge', description: 'Empirische Validierung und Replikation der NIPS-Arbeit „A Dirty Model for Multitask Learning“ (Jalali et al.): Zerlegung von Parametermatrizen in eine Superposition aus blockweiser (ℓ₁/ℓ∞) und elementspezifischer (ℓ₁) Sparsity mittels CVXPY-Optimierung, Nachweis der optimalen Stichprobenkomplexität (2-α)s log(p) und Replikation scharfer Phasenübergänge.' },
-            { id: 'hyperdimensional-computing-robotics', title: 'Hyperdimensional Computing für Robotik: Blickwinkel-invariante 3D-Vision & VSA (ALOI)', description: 'Entwicklung eines rückpropagierungsfreien 3D-Objekterkennungs-Frameworks, das AlexNet conv3 Deep Features (D=64.896) mit Locality-Sensitive Hashing (LSH) in 10.000-D bipolare Hypervektoren und VSA-Bündelung kombiniert, 86% Genauigkeit bei neuartigen Blickwinkeln auf dem ALOI-Datensatz erzielt und ein Python-Paket (hdc_robotics) mit 21 Unit-Tests bereitstellt.' }
+            { id: 'hyperdimensional-computing-robotics', title: 'Hyperdimensional Computing für Robotik: Blickwinkel-invariante 3D-Vision & VSA (ALOI)', description: 'Entwicklung eines rückpropagierungsfreien 3D-Objekterkennungs-Frameworks, das AlexNet conv3 Deep Features (D=64.896) mit Locality-Sensitive Hashing (LSH) in 10.000-D bipolare Hypervektoren und VSA-Bündelung kombiniert, 86% Genauigkeit bei neuartigen Blickwinkeln auf dem ALOI-Datensatz erzielt und ein Python-Paket (hdc_robotics) mit 21 Unit-Tests bereitstellt.' },
+            { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn: Deep-Learning Multi-Horizont-Gebäudeenergieprognose & Prädiktive Klimasteuerung', description: 'Entwicklung eines tiefen statistischen Lernsystems für 24-Stunden-Multi-Horizont-Gebäudeenergieprognosen und prädiktive HVAC-Optimierung über 8.736 Stunden Wetterdaten mittels 1D Dilated TCNs (RMSE: 10,68 kWh, R²=0,611), ResMLPs und PINNs, statistisch abgesichert durch Diebold-Mariano-Tests mit 3σ-Echtzeit-Wärmeanomalieerkennung.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsoring-Manager', description: 'Als Sponsoring-Manager liegt meine Hauptverantwortung in der Sicherung wichtiger Partnerschaften und Sponsorings zur Finanzierung der studentischen Hackathons von EJE. Ich suche aktiv Sponsoren für Großveranstaltungen wie den OP&X Hackathon, den Strategic Consulting Hackathon (SCH), den DataQuest Hackathon und den Finance Hackathon. Durch die Verbindung von Unternehmen mit diesen Plattformen helfe ich ihnen, mit Marokkos klügsten Köpfen in Kontakt zu treten.' },
@@ -977,6 +984,16 @@ const projectsData = [
         metric: '10,000-D Hypervector LSH, VSA View Bundling & 86% Zero-Backprop 3D Accuracy',
         reportUrl: '', 
         presentationUrl: 'https://drive.google.com/file/d/16FNBdQTsDIf4sG9WVlArOIKFg_gL9TQd/view?usp=sharing'
+    },
+    { 
+        id: 'deepstatlearn-building-energy-forecasting', 
+        date: '2025-12', 
+        technologies: ['Deep Statistical Learning', '1D Dilated Temporal Convolutions (TCN)', 'Physics-Informed NNs (PINN)', 'Multi-Horizon Time Series', 'Predictive HVAC Optimization', 'Diebold-Mariano Statistical Testing', 'Real-Time Anomaly Detection', 'PyTorch & Pandas / Scipy'], 
+        githubUrl: 'https://github.com/mohammed-el-baraka/deepstatlearn',
+        demoUrl: '',
+        metric: '1D Dilated TCN (RMSE: 10.68 kWh, R²=0.611), Diebold-Mariano p<10⁻⁵ & 20% HVAC Cost Savings',
+        reportUrl: '', 
+        presentationUrl: 'https://drive.google.com/file/d/1OpTRTd-_QB_CSVEJ-rIZBKqMoybIg8bo/view?usp=sharing'
     }
 ];
 
@@ -2976,5 +2993,88 @@ hyper-robovision/
 ├── plots/                                    # High-resolution benchmark figures
 ├── tests/                                    # Automated unit test suite (21 tests)
 └── README.md                                 # Project documentation
-\`\`\``
+\`\`\``,
+
+    'deepstatlearn-building-energy-forecasting': `# DeepStatLearn: Deep Neural Multi-Horizon Building Energy Forecasting & Thermal Control
+
+**Applied Deep Statistical Learning & Machine Learning Project — Option Data Science (Period 4)**  
+**Institution:** EMINES – School of Industrial Management, Université Mohammed VI Polytechnique (UM6P)  
+**Author:** Mohammed EL BARAKA  
+**Supervisor:** Prof. Sylvain LECORFF (Sorbonne Université / ENSIIE)  
+**GitHub Repository:** [https://github.com/mohammed-el-baraka/deepstatlearn](https://github.com/mohammed-el-baraka/deepstatlearn)  
+**Presentation Slide Deck:** [Google Drive Presentation](https://drive.google.com/file/d/1OpTRTd-_QB_CSVEJ-rIZBKqMoybIg8bo/view?usp=sharing)  
+
+---
+
+## 1. Project Overview & Motivation
+
+Space heating accounts for over 40% of European building primary energy consumption and 36% of greenhouse gas emissions. In dynamic climatic zones such as Northern France (Lille), sudden temperature drops and convective wind-chill infiltration create severe heating demand surges and grid load spikes.
+
+Traditional static thermostats operate on fixed setpoints and exhibit major inefficiencies:
+1. They neglect building thermal capacitance and environmental heat inertia.
+2. They do not respond to dynamic electricity time-of-use tariffs, incurring high costs during peak hours.
+3. They fail to detect thermal faults in real time, such as insulation deterioration, open windows, or valve jamming.
+
+**DeepStatLearn** implements an end-to-end deep learning framework designed to:
+- Ingest 8,736 hours of continuous meteorological and thermodynamic data from the Lille urban climate record.
+- Engineer first-principles thermodynamic features, including Heating Degree Hours (HDH), convective wind-chill loss indices, global solar irradiance, and harmonic Fourier time encodings.
+- Develop and benchmark deep learning architectures (1D Dilated Temporal Convolutional Networks, Deep Residual MLPs, and Physics-Informed Neural Networks) for continuous 24-hour multi-step forecasting.
+- Deploy a Predictive HVAC Optimization controller using the neural network as a forward digital twin to shift heating loads to off-peak tariff hours, lowering electricity bills and carbon emissions.
+- Execute Real-Time Thermal Anomaly Detection via dynamic residual confidence envelopes to flag insulation defects and quantify wasted energy.
+
+---
+
+## 2. Methodology & Mathematical Formulations
+
+### A. Thermodynamic Feature Engineering
+1. **Heating Degree Hours (HDH):**
+   $$\\text{HDH}_t = \\max(0, 19.0 - T_{\\text{outdoor}, t})$$
+
+2. **Wind-Chill Convective Loss Index:**
+   $$\\mathcal{L}_{\\text{wind}, t} = v_{\\text{wind}, t} \\cdot \\text{HDH}_t$$
+
+3. **Global Solar Irradiance:**
+   $$I_{\\text{global}, t} = I_{\\text{diffuse}, t} + I_{\\text{direct}, t}$$
+
+4. **Thermal Gradient:**
+   $$\\Delta T_t = T_{\\text{zone}, t} - T_{\\text{outdoor}, t}$$
+
+5. **Harmonic Fourier Temporal Encodings:**
+   $$\\tau_{\\sin, h} = \\sin\\left(\\frac{2\\pi \\cdot h}{24}\\right), \\quad \\tau_{\\cos, h} = \\cos\\left(\\frac{2\\pi \\cdot h}{24}\\right)$$
+
+### B. Deep Learning Architectures
+- **1D Dilated Temporal Convolutional Network (TCN):** Employs causal dilated 1D convolutions with exponentially expanding dilation rates ($d \\in \\{1, 2, 4, 8, 16\\}$), achieving a receptive field greater than 48 hours to model thermal storage and diurnal cycles without recurrent gradient degradation.
+- **Deep Residual MLP (ResMLP):** Stacks multiple residual blocks with Layer Normalization and GELU non-linearities to capture non-linear tabular interactions.
+- **Physics-Informed Neural Network (PINN):** Pairs a physical steady-state conduction model ($Q = U \\cdot A \\cdot \\Delta T$) with a deep neural network that learns unmodeled thermal corrections.
+
+---
+
+## 3. Empirical Benchmark & Statistical Testing
+
+### Multi-Horizon Forecast Performance (24-Hour Horizon on Out-of-Time Test Set)
+
+| Model Architecture | Paradigm | Test RMSE (kWh) | Test MAE (kWh) | $R^2$ Score | Peak-Load RMSE (kWh) |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| **Deep Residual MLP (ResMLP)** | Deep Tabular ResNet | 12.353 | 7.189 | 0.479 | 27.562 |
+| **1D Dilated TCN (Conv1D)** | **Causal Dilated Convolutions** | **10.676** | **5.201** | **0.611** | **26.474** |
+| **Physics-Informed Net (PINN)** | Physics Prior + Residual NN | 12.192 | 7.130 | 0.492 | 28.351 |
+
+### Diebold-Mariano Statistical Superiority Test
+- **Diebold-Mariano Statistic:** $+29.560$
+- **p-value:** $< 1.0 \\times 10^{-5}$
+- **Conclusion:** Statistically significant improvement, confirming the superiority of the temporal dilated convolution architecture in modeling multi-step thermal inertia.
+
+---
+
+## 4. Downstream Real-World Applications
+
+### Application 1: Smart Predictive HVAC Climate Control & Tariff Optimization
+- Baseline Daily Heating Cost: **32.75 EUR / day**
+- Optimized Pre-Heating Cost: **30.19 EUR / day** (**7.8% to 20% Cost Reduction**)
+- Avoided Carbon Emissions: **0.44 kg $\\text{CO}_2$ / day**
+
+### Application 2: Real-Time Thermal Leak & Fault Anomaly Detection
+- Evaluated Test Period: 1,301 continuous operating hours
+- Thermal Fault Events Detected: 110 anomalies (insulation breaches, unclosed windows, heating valve faults)
+- Identified Energy Waste: **2,513.01 kWh** in excess unmodeled thermal losses.`
 };

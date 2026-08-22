@@ -958,7 +958,7 @@ const projectsData = [
         githubUrl: '',
         demoUrl: '',
         metric: 'Superposition Decomposition (B+S), Phase Transitions & (2-α)s log(p) Sample Complexity',
-        reportUrl: '', 
+        reportUrl: 'https://drive.google.com/file/d/1v9wUXX6ioTi-N6IWI9JseFPJ-X_QTcTu/view?usp=sharing', 
         presentationUrl: ''
     }
 ];

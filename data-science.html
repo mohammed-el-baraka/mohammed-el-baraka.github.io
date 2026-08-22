@@ -244,12 +244,15 @@
                         <span class="tech-tag">Convex Optimization (CVXPY)</span>
                         <span class="tech-tag">Sparse Superposition (ℓ₁ / ℓ₁/ℓ∞)</span>
                         <span class="tech-tag">Phase Transition Sweeps</span>
-                        <span class="tech-tag">Python & NumPy / SciPy</span>
                     </div>
 
                     <div class="flex flex-wrap items-center gap-3">
+                        <a href="https://drive.google.com/file/d/1v9wUXX6ioTi-N6IWI9JseFPJ-X_QTcTu/view?usp=sharing" target="_blank" class="btn-primary flex items-center gap-2" style="text-decoration:none;">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                            <span id="btn-dirty-model-pdf">View Research Report (PDF)</span>
+                        </a>
                         <button onclick="openDirtyModelAiModal()" class="btn-doc-action flex items-center gap-2">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" /></svg>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" /></svg>
                             <span id="btn-dirty-model-modal">Explore Full Report & Math (AI)</span>
                         </button>
                     </div>
@@ -533,6 +536,7 @@
                 dirtySectionTitle: 'Cornerstone Project: Weeks 1 & 2',
                 dirtyCardTitle: 'Understanding & Validating "A Dirty Model for Multi-task Learning"',
                 dirtyCardDesc: 'Conducted an empirical validation and mathematical replication of the seminal research by Jalali et al. (NIPS 2010). Formulated a convex composite estimator that decomposes high-dimensional parameter matrices into a superposition of shared block-sparse components (ℓ₁/ℓ∞) and task-specific element-wise sparse components (ℓ₁). Solved via CVXPY and validated the theoretical sample complexity threshold (2-α)s log p through Monte Carlo phase transition sweeps.',
+                dirtyBtnPdf: 'View Research Report (PDF)',
                 dirtyBtnModal: 'Explore Full Report & Math (AI)',
                 modulesSectionTitle: '8 Thematic Specialization Modules',
                 exploreModuleBtn: 'Explore Syllabus & AI Report',
@@ -554,6 +558,7 @@
                 dirtySectionTitle: 'Projet Majeur : Semaines 1 & 2',
                 dirtyCardTitle: 'Modèle « Dirty » pour l\'Apprentissage Multi-Tâches (NIPS 2010)',
                 dirtyCardDesc: 'Validation empirique et réplication du papier de recherche fondateur de Jalali et al. (NIPS 2010). Décomposition de matrices de paramètres en superposition de composantes bloc-parcimonieuses partagées (ℓ₁/ℓ∞) et parcimonieuses individuelles (ℓ₁) par optimisation convexe sous CVXPY, prouvant la complexité d\'échantillonnage optimale (2-α)s log(p) et reproduisant les transitions de phase.',
+                dirtyBtnPdf: 'Consulter le Rapport (PDF)',
                 dirtyBtnModal: 'Consulter le Rapport & Maths (IA)',
                 modulesSectionTitle: '8 Modules Thématiques',
                 exploreModuleBtn: 'Consulter le Syllabus & Rapport IA',
@@ -575,6 +580,7 @@
                 dirtySectionTitle: 'المشروع التطبيقي: الأسبوعان 1 و 2',
                 dirtyCardTitle: 'نموذج التراكب "Dirty Model" للتعلم متعدد المهام (NIPS 2010)',
                 dirtyCardDesc: 'التحقق التجريبي وإعادة تطبيق الورقة البحثية الرائدة في NIPS للتعلم متعدد المهام (Jalali et al.): تفكيك مصفوفات المعلمات إلى تراكب بين مصفوفة متفرقة قطاعياً ومصفوفة متفرقة عنصرياً عبر التحسين المحدب (CVXPY)، مع إثبات حد التعقيد العيني الأمثل وإعادة إنتاج انتقالات الطور التجريبية.',
+                dirtyBtnPdf: 'عرض تقرير البحث (PDF)',
                 dirtyBtnModal: 'استعراض التقرير والمعادلات (IA)',
                 modulesSectionTitle: '8 وحدات دراسية متخصصة',
                 exploreModuleBtn: 'استعراض المنهج وتقرير الذكاء الاصطناعي',
@@ -596,6 +602,7 @@
                 dirtySectionTitle: 'Proyecto Principal: Semanas 1 y 2',
                 dirtyCardTitle: 'Modelo «Dirty» para Aprendizaje Multitarea (NIPS 2010)',
                 dirtyCardDesc: 'Validación empírica y replicación del artículo de NIPS «A Dirty Model for Multitask Learning» (Jalali et al.), descomponiendo matrices de parámetros en superposiciones de dispersión por bloques y elemental mediante optimización convexa en CVXPY.',
+                dirtyBtnPdf: 'Ver Informe de Investigación (PDF)',
                 dirtyBtnModal: 'Ver Reporte Completo y Matemáticas (IA)',
                 modulesSectionTitle: '8 Módulos Temáticos de Especialización',
                 exploreModuleBtn: 'Ver Syllabus y Reporte IA',
@@ -617,6 +624,7 @@
                 dirtySectionTitle: 'Schwerpunktprojekt: Wochen 1 & 2',
                 dirtyCardTitle: 'Dirty Model für Multitask-Learning (NIPS 2010)',
                 dirtyCardDesc: 'Empirische Validierung und Replikation der NIPS-Arbeit „A Dirty Model for Multitask Learning“ (Jalali et al.): Zerlegung von Parametermatrizen in eine Superposition aus blockweiser und elementspezifischer Sparsity mittels CVXPY.',
+                dirtyBtnPdf: 'Forschungsbericht ansehen (PDF)',
                 dirtyBtnModal: 'Bericht & Formeln mit KI öffnen',
                 modulesSectionTitle: '8 Thematische Module',
                 exploreModuleBtn: 'Syllabus & KI-Bericht anzeigen',
@@ -638,6 +646,7 @@
                 dirtySectionTitle: '第1-2周核心攻关项目',
                 dirtyCardTitle: '高维多任务学习Dirty Model：结构叠加分解与相变实证（NIPS 2010）',
                 dirtyCardDesc: '深入复现并实证检验NIPS经典论文《A Dirty Model for Multitask Learning》（Jalali et al.）：采用凸优化（CVXPY）将高维参数矩阵分解为共享块稀疏与任务特异元素稀疏的叠加态，证明其最优样本复杂度并高保真复现经验相变阈值。',
+                dirtyBtnPdf: '查看学术研究全景报告（PDF）',
                 dirtyBtnModal: '使用AI精读论文复现全景报告',
                 modulesSectionTitle: '8大专题核心培养模块',
                 exploreModuleBtn: '查看课程大纲与AI精读报告',
@@ -659,6 +668,7 @@
                 dirtySectionTitle: 'Projeto Principal: Semanas 1 e 2',
                 dirtyCardTitle: 'Modelo «Dirty» para Aprendizado Multitarefa (NIPS 2010)',
                 dirtyCardDesc: 'Validação empírica e replicação do artigo da NIPS «A Dirty Model for Multitask Learning» (Jalali et al.), decompondo matrizes de parâmetros em sobreposições de dispersão em bloco e dispersão pontual via otimização convexa em CVXPY.',
+                dirtyBtnPdf: 'Ver Relatório de Pesquisa (PDF)',
                 dirtyBtnModal: 'Ver Relatório e Matemática (IA)',
                 modulesSectionTitle: '8 Módulos Temáticos',
                 exploreModuleBtn: 'Ver Syllabus e Relatório IA',
@@ -701,6 +711,9 @@
             document.getElementById('dirty-model-section-title').textContent = str.dirtySectionTitle;
             document.getElementById('dirty-model-card-title').textContent = str.dirtyCardTitle;
             document.getElementById('dirty-model-card-desc').textContent = str.dirtyCardDesc;
+            if (document.getElementById('btn-dirty-model-pdf')) {
+                document.getElementById('btn-dirty-model-pdf').textContent = str.dirtyBtnPdf;
+            }
             document.getElementById('btn-dirty-model-modal').textContent = str.dirtyBtnModal;
 
             // Modules Section Title

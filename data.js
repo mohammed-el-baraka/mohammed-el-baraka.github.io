@@ -80,7 +80,8 @@ const translations = {
              { id: 'managerial-accounting-formaction', title: 'Management Accounting & Cost Control: ABC Modeling (FORMACTION)', description: 'Conducted full-scale Activity-Based Costing (ABC) and Direct Costing Évolué modeling for training institute FORMACTION (€678.7k revenue across 187 trainees), optimizing contribution margins and proving strategic retention of public-funded programs.' },
              { id: 'sap-s4hana-production-planning', title: 'SAP S/4HANA Production Planning & Industrial ERP (Global Bike Inc.)', description: 'Mastered full-lifecycle production planning and execution in SAP S/4HANA for Global Bike Inc., configuring multi-level BOMs, work centers, routings, standard costing (CK11N), SOP/MRP pyramids, MTS (Strategy 40) vs. ATO (Strategy 82), and shop floor execution.' },
              { id: 'data-science-track', title: 'Data Science Specialization Track: 8-Week Advanced Curriculum', description: 'Completed an intensive 8-week specialization directed by Prof. Éric Moulines (French Academy of Sciences / École Polytechnique), mastering multivariate optimization, PAC theory, CNNs & CAVI, ill-posed inverse problems, generative AI (GANs/VAEs/Diffusion), NLP Transformers, and Reinforcement Learning.' },
-             { id: 'dirty-model-multitask-learning', title: 'A Dirty Model for Multitask Learning: High-Dimensional Superposition & Phase Transitions', description: 'Empirically validated and replicated the NIPS research "A Dirty Model for Multitask Learning" (Jalali et al.), decomposing parameter matrices into shared block-sparse (ℓ₁/ℓ∞) and task-specific element-wise sparse (ℓ₁) components via convex optimization (CVXPY), proving optimal sample complexity scaling (2-α)s log(p) and reproducing sharp empirical phase transitions.' }
+             { id: 'dirty-model-multitask-learning', title: 'A Dirty Model for Multitask Learning: High-Dimensional Superposition & Phase Transitions', description: 'Empirically validated and replicated the NIPS research "A Dirty Model for Multitask Learning" (Jalali et al.), decomposing parameter matrices into shared block-sparse (ℓ₁/ℓ∞) and task-specific element-wise sparse (ℓ₁) components via convex optimization (CVXPY), proving optimal sample complexity scaling (2-α)s log(p) and reproducing sharp empirical phase transitions.' },
+             { id: 'hyperdimensional-computing-robotics', title: 'Hyperdimensional Computing for Robotics: Viewpoint-Invariant 3D Vision & VSA (ALOI)', description: 'Developed a zero-backpropagation 3D object recognition framework combining AlexNet conv3 deep features (D=64,896) with Locality-Sensitive Hashing (LSH) into 10,000-D bipolar hypervectors and Vector Symbolic Architecture (VSA) view bundling, achieving 86% accuracy across novel rotations on the ALOI dataset and implementing a production Python package (hdc_robotics) with 21 unit tests.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsorship Manager', description: 'As Sponsorship Manager, my core responsibility is securing vital partnerships and sponsorships to power EJE\'s impactful portfolio of student hackathons. I actively seek sponsors for major events including the OP&X Hackathon, Strategic Consulting Hackathon (SCH), DataQuest Hackathon, and the Finance Hackathon. By connecting companies with these platforms, I help them engage Morocco\'s brightest students and fuel future talent development.' },
@@ -180,7 +181,8 @@ const translations = {
             { id: 'managerial-accounting-formaction', title: 'Comptabilité Analytique & Contrôle de Gestion : Modélisation ABC (FORMACTION)', description: 'Modélisation des coûts par la méthode ABC (Activity-Based Costing) et Direct Costing Évolué pour l\'organisme FORMACTION (678,7 k€ de CA sur 187 stagiaires), analysant les marges de contribution et démontrant l\'intérêt stratégique du maintien des filières.' },
             { id: 'sap-s4hana-production-planning', title: 'Planification et Gestion de Production sous SAP S/4HANA (Global Bike Inc.)', description: 'Mise en œuvre intégrale de la planification et de la gestion de production sous SAP S/4HANA pour Global Bike Inc. : paramétrage Master Data (nomenclatures multi-niveaux, gammes, postes de travail), calcul du coût de revient (CK11N), pyramide PIC/PDP/MRP, stratégies MTS (40) vs ATO (82) et boucle d\'exécution atelier.' },
             { id: 'data-science-track', title: 'Option Data Science : Parcours d\'Excellence Approfondi (8 Semaines)', description: 'Spécialisation intensive de 8 semaines sous la direction de Prof. Éric Moulines (Académie des Sciences / École Polytechnique) : optimisation multivariée, théorie PAC, CNN & CAVI, problèmes inverses, IA générative (GANs/VAEs/Diffusion), NLP Transformers et apprentissage par renforcement.' },
-            { id: 'dirty-model-multitask-learning', title: 'Modèle « Dirty » pour l\'Apprentissage Multi-Tâches : Superposition en Grande Dimension', description: 'Validation empirique et réplication du papier NIPS « A Dirty Model for Multitask Learning » (Jalali et al.) : décomposition de matrices en superposition de composantes bloc-parcimonieuses partagées (ℓ₁/ℓ∞) et parcimonieuses spécifiques (ℓ₁) par optimisation convexe sous CVXPY, prouvant la complexité d\'échantillonnage optimale (2-α)s log(p) et reproduisant les transitions de phase.' }
+            { id: 'dirty-model-multitask-learning', title: 'Modèle « Dirty » pour l\'Apprentissage Multi-Tâches : Superposition en Grande Dimension', description: 'Validation empirique et réplication du papier NIPS « A Dirty Model for Multitask Learning » (Jalali et al.) : décomposition de matrices en superposition de composantes bloc-parcimonieuses partagées (ℓ₁/ℓ∞) et parcimonieuses spécifiques (ℓ₁) par optimisation convexe sous CVXPY, prouvant la complexité d\'échantillonnage optimale (2-α)s log(p) et reproduisant les transitions de phase.' },
+            { id: 'hyperdimensional-computing-robotics', title: 'Calcul Hyperdimensionnel pour la Robotique : Vision 3D Invariante & Algèbre VSA (ALOI)', description: 'Conception d\'un framework de reconnaissance d\'objets 3D sans rétropropagation combinant les descripteurs convolutifs profonds d\'AlexNet (D=64 896), le hachage sensible à la localité (LSH) en hypervecteurs bipolaires (D=10 000) et le bundling VSA par superposition. Atteinte de 86 % de précision sur angles inédits du jeu de données ALOI et développement du package Python hdc_robotics avec 21 tests unitaires.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Responsable Sponsoring', description: 'En tant que Responsable Sponsoring, ma responsabilité principale est de sécuriser des partenariats et des sponsorings essentiels pour alimenter le portefeuille percutant de hackathons étudiants d\'EJE. Je recherche activement des sponsors pour des événements majeurs tels que le Hackathon OP&X, le Hackathon de Conseil Stratégique (SCH), le Hackathon DataQuest et le Hackathon Finance. En connectant les entreprises à ces plateformes, je les aide à interagir avec les étudiants les plus brillants du Maroc et à stimuler le développement des futurs talents.' },
@@ -280,7 +282,8 @@ const translations = {
              { id: 'managerial-accounting-formaction', title: 'المحاسبة التحليلية ومراقبة التسيير: نمذجة التكاليف على أساس الأنشطة ABC (مؤسسة FORMACTION)', description: 'نمذجة متقدمة لمحاسبة التكاليف عبر منهجية التكلفة على أساس الأنشطة (ABC) ونظام التكلفة المباشرة المتطورة لمؤسسة FORMACTION (رقم معاملات 678.7 ألف يورو عبر 187 متدرباً) لتحليل هوامش المساهمة وتوجيه القرارات الإدارية.' },
              { id: 'sap-s4hana-production-planning', title: 'تخطيط وإدارة الإنتاج عبر نظام SAP S/4HANA (شركة Global Bike Inc.)', description: 'تنفيذ وتكوين دورة تخطيط وإدارة الإنتاج الصناعي المتكاملة عبر نظام SAP S/4HANA لشركة Global Bike Inc.، مع ضبط البيانات الأساسية (هياكل المنتجات، مسارات التصنيع، مراكز العمل)، وحساب تكاليف الإنتاج المعيارية (CK11N)، وتطبيق استراتيجيات الصنع للمخزون (MTS) والتجميع حسب الطلب (ATO).' },
              { id: 'data-science-track', title: 'مسار التخصص المتقدم في علوم البيانات والذكاء الاصطناعي (برنامج 8 أسابيع)', description: 'إتمام مسار تخصصي مكثف في علوم البيانات مدته 8 أسابيع بإشراف البروفيسور إريك مولين (الأكاديمية الفرنسية للعلوم / بوليتكنيك): التحسين الرياضي، نظرية PAC، التعلم العميق، المسائل العكسية، النماذج التوليدية، معالجة اللغات الطبيعية، والتعلم المعزز.' },
-             { id: 'dirty-model-multitask-learning', title: 'نموذج التراكب "Dirty Model" للتعلم متعدد المهام في الفضاءات عالية الأبعاد', description: 'التحقق التجريبي وإعادة تطبيق الورقة البحثية الرائدة في NIPS للتعلم متعدد المهام (Jalali et al.): تفكيك مصفوفات المعلمات إلى تراكب بين مصفوفة متفرقة قطاعياً (ℓ₁/ℓ∞) ومصفوفة متفرقة عنصرياً (ℓ₁) عبر التحسين المحدب (CVXPY)، مع إثبات حد التعقيد العيني الأمثل (2-α)s log(p) وإعادة إنتاج انتقالات الطور التجريبية.' }
+             { id: 'dirty-model-multitask-learning', title: 'نموذج التراكب "Dirty Model" للتعلم متعدد المهام في الفضاءات عالية الأبعاد', description: 'التحقق التجريبي وإعادة تطبيق الورقة البحثية الرائدة في NIPS للتعلم متعدد المهام (Jalali et al.): تفكيك مصفوفات المعلمات إلى تراكب بين مصفوفة متفرقة قطاعياً (ℓ₁/ℓ∞) ومصفوفة متفرقة عنصرياً (ℓ₁) عبر التحسين المحدب (CVXPY)، مع إثبات حد التعقيد العيني الأمثل (2-α)s log(p) وإعادة إنتاج انتقالات الطور التجريبية.' },
+             { id: 'hyperdimensional-computing-robotics', title: 'الحوسبة فائقة الأبعاد للروبوتات: الرؤية الحاسوبية ثلاثية الأبعاد وهياكل المتجهات الرمزية VSA', description: 'تطوير إطار عمل متقدم للتعرف على الأجسام ثلاثية الأبعاد دون الحاجة للانتشار العكسي، يدمج ميزات AlexNet التلافيفية العميقة مع تقنية التجزئة الحساسة للمكان (LSH) إلى متجهات فائقة الأبعاد (10,000 بُعد) وتجميع الرؤى الفراغية VSA، محققاً دقة 86% على زوايا جديدة في قاعدة بيانات ALOI، مع بناء حزمة بايثون برمجية متكاملة مدعومة بـ 21 اختباراً وحدة.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'EJE', role: 'مدير الرعاية', description: 'بصفتي مدير الرعاية، تتمثل مسؤوليتي الأساسية في تأمين الشراكات والرعاية الحيوية لدعم محفظة EJE المؤثرة من مسابقات البرمجة الطلابية. أبحث عن رعاة للأحداث الكبرى بما في ذلك مسابقة البرمجة OP&X Hackathon ومسابقة البرمجة الاستشارية الاستراتيجية (SCH) ومسابقة البرمجة DataQuest Hackathon ومسابقة البرمجة المالية Finance Hackathon. من خلال ربط الشركات بهذه المنصات، أساعدها على جذب ألمع الطلاب المغاربة ودعم تنمية المواهب المستقبلية.' },
@@ -380,7 +383,8 @@ const translations = {
             { id: 'managerial-accounting-formaction', title: 'Contabilidad Analítica y Control de Gestión: Modelado ABC (FORMACTION)', description: 'Modelado integral de costes mediante Activity-Based Costing (ABC) y Direct Costing Evolucionado para el centro FORMACTION (678,7 k€ de ingresos sobre 187 alumnos), optimizando márgenes de contribución y auditando la rentabilidad de programas formativos.' },
             { id: 'sap-s4hana-production-planning', title: 'Planificación y Gestión de Producción en SAP S/4HANA (Global Bike Inc.)', description: 'Implementación y configuración integral del ciclo de planificación y ejecución de producción en SAP S/4HANA para Global Bike Inc., parametrizando listas de materiales (BOM), puestos de trabajo, rutas, cálculo de costes estándar (CK11N), pirámide SOP/MRP y estrategias MTS frente a ATO.' },
             { id: 'data-science-track', title: 'Especialización en Ciencia de Datos: Programa Avanzado de 8 Semanas', description: 'Especialización intensiva de 8 semanas dirigida por el Prof. Éric Moulines (Academia de Ciencias de Francia / École Polytechnique): optimización convexa, teoría PAC, CNN y CAVI, problemas inversos, IA generativa (GANs/VAEs/Difusión), Transformers y Aprendizaje por Refuerzo.' },
-            { id: 'dirty-model-multitask-learning', title: 'Modelo «Dirty» para Aprendizaje Multitarea: Superposición en Alta Dimensión', description: 'Validación empírica y replicación del artículo de NIPS «A Dirty Model for Multitask Learning» (Jalali et al.), descomponiendo matrices de parámetros en superposiciones de dispersión por bloques (ℓ₁/ℓ∞) y dispersión elemental (ℓ₁) mediante optimización convexa en CVXPY, demostrando la complejidad muestral (2-α)s log(p) y reproduciendo transiciones de fase.' }
+            { id: 'dirty-model-multitask-learning', title: 'Modelo «Dirty» para Aprendizaje Multitarea: Superposición en Alta Dimensión', description: 'Validación empírica y replicación del artículo de NIPS «A Dirty Model for Multitask Learning» (Jalali et al.), descomponiendo matrices de parámetros en superposiciones de dispersión por bloques (ℓ₁/ℓ∞) y dispersión elemental (ℓ₁) mediante optimización convexa en CVXPY, demostrando la complejidad muestral (2-α)s log(p) y reproduciendo transiciones de fase.' },
+            { id: 'hyperdimensional-computing-robotics', title: 'Computación Hiperdimensional para Robótica: Visión 3D Invariante y Álgebra VSA (ALOI)', description: 'Desarrollo de un framework de reconocimiento de objetos 3D sin retropropagación que combina características profundas de AlexNet conv3 (D=64.896), Locality-Sensitive Hashing (LSH) en hipervectores bipolares (D=10.000) y superposición VSA, alcanzando un 86% de precisión en vistas inéditas del dataset ALOI y creando el paquete Python hdc_robotics con 21 pruebas unitarias.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocinios', description: 'Como Gerente de Patrocinios, mi responsabilidad principal es asegurar alianzas y patrocinios vitales para impulsar el impactante portafolio de hackathons estudiantiles de EJE. Busco activamente patrocinadores para eventos importantes como el Hackathon OP&X, el Hackathon de Consultoría Estratégica (SCH), el Hackathon DataQuest y el Hackathon de Finanzas. Al conectar empresas con estas plataformas, les ayudo a interactuar con los estudiantes más brillantes de Marruecos y a fomentar el desarrollo de futuros talentos.' },
@@ -480,7 +484,8 @@ const translations = {
             { id: 'managerial-accounting-formaction', title: '管理会计与成本控制：作业成本法（ABC）与边际贡献建模（FORMACTION案例）', description: '针对法国职业培训机构FORMACTION（年营收67.87万欧元，覆盖187名学员）开展全流程作业成本法（ABC）与演进直接成本法建模，深度解析成本动因、分部边际贡献率，并提供关键业务保留决策支持。' },
             { id: 'sap-s4hana-production-planning', title: 'SAP S/4HANA工业生产计划与ERP端到端智造实践（Global Bike案例）', description: '在SAP S/4HANA工业制造系统中完成全流程生产计划与车间执行落地：端到端配置多级BOM、工作中心、工艺路线、标准成本核算（CK11N）、SOP/MRP计划金字塔，深入对比按库存生产（MTS-40）与按订单装配（ATO-82）策略。' },
             { id: 'data-science-track', title: '数据科学与人工智能前沿专业方向（8周强化体系）', description: '在法国科学院院士、巴黎综合理工学院教授 Éric Moulines 亲自主导下完成8周高强度精英培养体系：全方位覆盖多元数值优化、PAC可学习理论、统计深度学习、反问题图像重建、生成式AI（GAN/VAE/扩散模型）、大模型NLP及强化学习。' },
-            { id: 'dirty-model-multitask-learning', title: '高维多任务学习Dirty Model：结构叠加分解与相变现象实证研究', description: '深入复现并实证检验NIPS经典论文《A Dirty Model for Multitask Learning》（Jalali et al.）：采用凸优化（CVXPY）将高维参数矩阵分解为共享块稀疏（ℓ₁/ℓ∞）与任务特异元素稀疏（ℓ₁）的叠加态，证明其最优样本复杂度 (2-α)s log(p) 并高保真复现经验相变阈值。' }
+            { id: 'dirty-model-multitask-learning', title: '高维多任务学习Dirty Model：结构叠加分解与相变现象实证研究', description: '深入复现并实证检验NIPS经典论文《A Dirty Model for Multitask Learning》（Jalali et al.）：采用凸优化（CVXPY）将高维参数矩阵分解为共享块稀疏（ℓ₁/ℓ∞）与任务特异元素稀疏（ℓ₁）的叠加态，证明其最优样本复杂度 (2-α)s log(p) 并高保真复现经验相变阈值。' },
+            { id: 'hyperdimensional-computing-robotics', title: '面向机器人视觉的高维计算（HDC）：视角不变3D目标识别与VSA符号代数实践', description: '构建无反向传播的高维计算（HDC/VSA）3D目标识别系统：提取AlexNet conv3深层特征（D=64,896），通过局部敏感哈希（LSH）映射至10,000维双极超向量并进行VSA视角叠加绑定，在ALOI基准测试中将未见视角识别准确率提升至86%，并开源生产级Python包hdc_robotics与21项单元测试。' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: '赞助经理', description: '作为赞助经理，我的核心职责是确保重要的合作伙伴关系和赞助，为EJE富有影响力的学生黑客马拉松系列活动提供支持。我积极为主要活动寻找赞助商，包括OP&X黑客马拉松、战略咨询黑客马拉松（SCH）、DataQuest黑客马拉松以及金融黑客马拉松。通过将公司与这些平台联系起来，我帮助他们接触到摩洛哥最优秀的学生，并为未来的人才发展提供动力。' },
@@ -577,7 +582,8 @@ const translations = {
             { id: 'managerial-accounting-formaction', title: 'Contabilidade Analítica e Controlo de Gestão: Modelagem ABC (FORMACTION)', description: 'Modelagem de custos pelo método ABC (Activity-Based Costing) e Direct Costing Evoluído para a instituição FORMACTION (678,7 mil € de receita sobre 187 formandos), analisando margens de contribuição e auditando a rentabilidade estratégica.' },
             { id: 'sap-s4hana-production-planning', title: 'Planeamento e Gestão de Produção em SAP S/4HANA (Global Bike Inc.)', description: 'Implementação e configuração integral do ciclo de planeamento e execução de produção no SAP S/4HANA para a Global Bike Inc., parametrizando listas de materiais (BOM), centros de trabalho, roteiros, cálculo de custo padrão (CK11N), pirâmide SOP/MRP e estratégias MTS vs ATO.' },
             { id: 'data-science-track', title: 'Especialização em Ciência de Dados: Programa Avanzado de 8 Semanas', description: 'Especialização intensiva de 8 semanas dirigida pelo Prof. Éric Moulines (Academia Francesa de Ciências / École Polytechnique): otimização convexa, teoria PAC, CNN e CAVI, problemas inversos, IA generativa (GANs/VAEs/Difusão), Transformers e Aprendizado por Reforço.' },
-            { id: 'dirty-model-multitask-learning', title: 'Modelo «Dirty» para Aprendizado Multitarefa: Sobreposição em Alta Dimensão', description: 'Validação empírica e replicação do artigo da NIPS «A Dirty Model for Multitask Learning» (Jalali et al.), decompondo matrizes de parâmetros em sobreposições de dispersão em bloco (ℓ₁/ℓ∞) e dispersão pontual (ℓ₁) via otimização convexa em CVXPY, comprovando a complexidade amostral (2-α)s log(p) e reproduzindo transições de fase.' }
+            { id: 'dirty-model-multitask-learning', title: 'Modelo «Dirty» para Aprendizado Multitarefa: Sobreposição em Alta Dimensão', description: 'Validação empírica e replicação do artigo da NIPS «A Dirty Model for Multitask Learning» (Jalali et al.), decompondo matrizes de parâmetros em sobreposições de dispersão em bloco (ℓ₁/ℓ∞) e dispersão pontual (ℓ₁) via otimização convexa em CVXPY, comprovando a complexidade amostral (2-α)s log(p) e reproduzindo transições de fase.' },
+            { id: 'hyperdimensional-computing-robotics', title: 'Computação Hiperdimensional para Robótica: Visão 3D Invariante e Álgebra VSA (ALOI)', description: 'Desenvolvimento de um framework de reconhecimento de objetos 3D sem retropropagação combinando atributos profundos de AlexNet conv3 (D=64.896), Locality-Sensitive Hashing (LSH) em hipervetores bipolares (D=10.000) e superposição VSA, alcançando 86% de acurácia em novas rotações no dataset ALOI e criando o pacote Python hdc_robotics com 21 testes unitários.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocínios', description: 'Como Gerente de Patrocínios, minha principal responsabilidade é garantir parcerias e patrocínios vitais para impulsionar o portfólio impactante de hackathons estudantis da EJE. Busco ativamente patrocinadores para grandes eventos, incluindo o Hackathon OP&X, o Hackathon de Consultoria Estratégica (SCH), o Hackathon DataQuest e o Hackathon de Finanças. Ao conectar empresas a essas plataformas, ajudo-as a interagir com os estudantes mais brilhantes de Marrocos e a impulsionar o desenvolvimento de futuros talentos.' },
@@ -666,7 +672,8 @@ const translations = {
             { id: 'managerial-accounting-formaction', title: 'Kosten- und Leistungsrechnung & Controlling: Prozesskostenrechnung (FORMACTION)', description: 'Entwicklung einer Prozesskostenrechnung (Activity-Based Costing) und mehrstufigen Deckungsbeitragsrechnung für das Bildungsinstitut FORMACTION (678,7 T€ Umsatz über 187 Teilnehmer) zur Rentabilitätssteuerung und Entscheidungsfindung.' },
             { id: 'sap-s4hana-production-planning', title: 'SAP S/4HANA Produktionsplanung & Fertigungssteuerung (Global Bike Inc.)', description: 'Umfassende Implementierung der Produktionsplanung und -steuerung in SAP S/4HANA für Global Bike Inc.: Konfiguration von mehrstufigen Stücklisten (BOM), Arbeitsplätzen, Arbeitsplänen, Standardkalkulation (CK11N), SOP/MRP-Pyramide und Vergleich von MTS- (40) vs. ATO-Strategien (82).' },
             { id: 'data-science-track', title: 'Spezialisierung Data Science & KI: 8-Wöchiges Exzellenzcurriculum', description: 'Intensives 8-Wochen-Spezialisierungsprogramm unter Leitung von Prof. Éric Moulines (Französische Akademie der Wissenschaften / École Polytechnique): Optimierung, PAC-Theorie, CNNs & CAVI, inverse Probleme, generative KI (GANs/VAEs/Diffusion), NLP und Reinforcement Learning.' },
-            { id: 'dirty-model-multitask-learning', title: 'Dirty Model für Multitask-Learning: Hochdimensionale Superposition & Phasenübergänge', description: 'Empirische Validierung und Replikation der NIPS-Arbeit „A Dirty Model for Multitask Learning“ (Jalali et al.): Zerlegung von Parametermatrizen in eine Superposition aus blockweiser (ℓ₁/ℓ∞) und elementspezifischer (ℓ₁) Sparsity mittels CVXPY-Optimierung, Nachweis der optimalen Stichprobenkomplexität (2-α)s log(p) und Replikation scharfer Phasenübergänge.' }
+            { id: 'dirty-model-multitask-learning', title: 'Dirty Model für Multitask-Learning: Hochdimensionale Superposition & Phasenübergänge', description: 'Empirische Validierung und Replikation der NIPS-Arbeit „A Dirty Model for Multitask Learning“ (Jalali et al.): Zerlegung von Parametermatrizen in eine Superposition aus blockweiser (ℓ₁/ℓ∞) und elementspezifischer (ℓ₁) Sparsity mittels CVXPY-Optimierung, Nachweis der optimalen Stichprobenkomplexität (2-α)s log(p) und Replikation scharfer Phasenübergänge.' },
+            { id: 'hyperdimensional-computing-robotics', title: 'Hyperdimensional Computing für Robotik: Blickwinkel-invariante 3D-Vision & VSA (ALOI)', description: 'Entwicklung eines rückpropagierungsfreien 3D-Objekterkennungs-Frameworks, das AlexNet conv3 Deep Features (D=64.896) mit Locality-Sensitive Hashing (LSH) in 10.000-D bipolare Hypervektoren und VSA-Bündelung kombiniert, 86% Genauigkeit bei neuartigen Blickwinkeln auf dem ALOI-Datensatz erzielt und ein Python-Paket (hdc_robotics) mit 21 Unit-Tests bereitstellt.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsoring-Manager', description: 'Als Sponsoring-Manager liegt meine Hauptverantwortung in der Sicherung wichtiger Partnerschaften und Sponsorings zur Finanzierung der studentischen Hackathons von EJE. Ich suche aktiv Sponsoren für Großveranstaltungen wie den OP&X Hackathon, den Strategic Consulting Hackathon (SCH), den DataQuest Hackathon und den Finance Hackathon. Durch die Verbindung von Unternehmen mit diesen Plattformen helfe ich ihnen, mit Marokkos klügsten Köpfen in Kontakt zu treten.' },
@@ -960,6 +967,16 @@ const projectsData = [
         metric: 'Superposition Decomposition (B+S), Phase Transitions & (2-α)s log(p) Sample Complexity',
         reportUrl: 'https://drive.google.com/file/d/1v9wUXX6ioTi-N6IWI9JseFPJ-X_QTcTu/view?usp=sharing', 
         presentationUrl: ''
+    },
+    { 
+        id: 'hyperdimensional-computing-robotics', 
+        date: '2025-11', 
+        technologies: ['Hyperdimensional Computing (HDC)', 'Vector Symbolic Architectures (VSA)', 'Locality-Sensitive Hashing (LSH)', 'AlexNet Deep Features', 'Multi-View 3D Vision (ALOI)', 'High-Dimensional Geometry', 'Python Package (hdc_robotics)', 'PyTorch & NumPy / SciPy'], 
+        githubUrl: 'https://github.com/mohammed-el-baraka/hyper-robovision',
+        demoUrl: '',
+        metric: '10,000-D Hypervector LSH, VSA View Bundling & 86% Zero-Backprop 3D Accuracy',
+        reportUrl: '', 
+        presentationUrl: 'https://drive.google.com/file/d/16FNBdQTsDIf4sG9WVlArOIKFg_gL9TQd/view?usp=sharing'
     }
 ];
 
@@ -2863,5 +2880,101 @@ Conducted Monte Carlo simulations on synthetic Gaussian designs ($p = 256$, $s =
 | **$\\alpha = 0.67$ (Boundary Case)** | **$\\theta \\approx 1.0$** | $\\theta \\approx 2.0$ | $\\theta \\approx 2.0$ |
 | **$\\alpha = 0.80$ (High Overlap)** | **$\\theta \\approx 1.0$** | $\\theta \\approx 2.0$ | $\\theta \\approx 1.5$ |
 
-**Conclusion:** The Dirty Model consistently triggers its phase transition at $\\theta \\approx 1.0$, empirically validating its sample optimality across all feature sharing regimes.`
+**Conclusion:** The Dirty Model consistently triggers its phase transition at $\\theta \\approx 1.0$, empirically validating its sample optimality across all feature sharing regimes.\``,
+
+    'hyperdimensional-computing-robotics': `# Hyperdimensional Computing for Robotics: A Practical Implementation and Analysis
+
+**Academic & Research Project — Option Data Science (Period 3)**  
+**Institution:** EMINES – School of Industrial Management, Université Mohammed VI Polytechnique (UM6P)  
+**Author:** Mohammed EL BARAKA  
+**Supervisors:** Laurent MICLET & Badr MOUFAD  
+**GitHub Repository:** [https://github.com/mohammed-el-baraka/hyper-robovision](https://github.com/mohammed-el-baraka/hyper-robovision)  
+**Presentation Slide Deck:** [Google Drive Presentation](https://drive.google.com/file/d/16FNBdQTsDIf4sG9WVlArOIKFg_gL9TQd/view?usp=sharing)  
+
+---
+
+## 1. Executive Summary & Robotic Motivation
+
+Traditional deep learning models, while highly accurate, present fundamental hurdles when deployed on edge robotic systems: they demand massive labeled datasets, consume substantial battery and memory resources, operate as opaque black boxes, and suffer from **metric flattening** in high dimensions (*Curse of Dimensionality*).
+
+This project presents a modular, production-ready framework for **Hyperdimensional Computing (HDC)** / **Vector Symbolic Architectures (VSA)** applied to **Viewpoint-Invariant 3D Object Recognition** on the **ALOI (Amsterdam Library of Object Images)** benchmark.
+
+By combining intermediate convolutional features (AlexNet \`conv3\`, $D = 64,896$) with **Locality-Sensitive Hashing (LSH)** ($D = 10,000$) and **VSA View Bundling** (superposition), our system forms compact, noise-resilient object memory prototypes. Empirical results confirm that bundling multiple 2D camera angles progressively elevates novel-view recognition accuracy from **~60% (1 view)** to **>86% (4+ views)** without backpropagation.
+
+---
+
+## 2. Theoretical Foundations
+
+### 2.1 High-Dimensional Capacity
+In a bipolar hypervector space $\\mathcal{H} = \\{-1, +1\\}^D$, the representational capacity scales exponentially:
+$$\\text{Capacity} = 2^D$$
+For $D = 10,000$, $\\text{Capacity} = 2^{10000} \\approx 10^{3010}$, vastly exceeding the estimated number of atoms in the observable universe ($\\sim 10^{80}$). Even in sparse binary spaces with density $d \\in (0, 1)$, the capacity $C = \\sum_{k=0}^{\\lfloor nd \\rfloor} \\binom{n}{k}$ provides immense capacity for symbolic knowledge representation.
+
+### 2.2 Concentration of Measure & Near-Orthogonality
+As dimension $n \\to \\infty$, the surface area of the unit sphere $S^{n-1}$ concentrates overwhelmingly in an equatorial slice. The angular probability density $p(\\theta, n)$ between two uniformly distributed random unit vectors is:
+$$p(\\theta, n) = \\frac{\\Gamma(n/2)}{\\sqrt{\\pi}\\Gamma((n-1)/2)} (\\sin\\theta)^{n-2}, \\quad \\theta \\in [0, \\pi]$$
+For $D \\ge 10,000$, $p(\\theta, n)$ collapses to a sharp peak at $\\theta = \\pi/2$ ($90^\\circ$). Any two random hypervectors are almost surely **nearly orthogonal** ($\\cos(u, v) \\approx 0$).
+
+### 2.3 Distance Law & KNN Collapse (Laurent-Massart Bounds)
+For $N$ Gaussian vectors $X_1, \\dots, X_N \\sim \\mathcal{N}(0, I_n)$ and query $x_0$, the Euclidean distance $D = \\|X_i - x_0\\|$ has:
+$$\\mathbb{E}[D^2] = 2n, \\qquad \\mathrm{Var}(D^2) = 8n$$
+By Laurent-Massart bounds, the relative contrast satisfies:
+$$\\frac{D_{\\max} - D_{\\min}}{D_{\\min}} = \\mathcal{O}\\left(\\sqrt{\\frac{\\log N}{n}}\\right) \\xrightarrow[n \\to \\infty]{} 0$$
+Euclidean distance rankings become indistinguishable in raw high dimensions, demonstrating why traditional Euclidean KNN fails and motivating cosine/hyperdimensional symbolic projection.
+
+### 2.4 Noise Resilience
+Adding zero-mean Gaussian noise $\\tilde{x} = x + \\eta$ ($\\eta \\sim \\mathcal{N}(0, \\sigma^2 I)$) retains high cosine similarity with the clean vector:
+$$\\cos(\\tilde{x}, x) \\approx \\frac{1}{\\sqrt{1 + \\sigma^2}} \\gg \\cos(\\tilde{x}, y)$$
+The random noise components fall almost entirely in orthogonal subspaces.
+
+---
+
+## 3. Vector Symbolic Architectures (VSA) Toolkit
+
+| Operation | Mathematical Notation | Algebraic Formula | Output Property | Primary Robotic Use Case |
+|---|---|---|---|---|
+| **Bundling (Superposition)** | $A + B$ | $C = \\sum_{i=1}^K V_i$ | $\\cos(C, V_i) > 0$ (similar to constituents) | Multi-view prototype aggregation, noise cancellation |
+| **Binding (Multiplication)** | $A \\odot B$ | $C = A \\odot B$ (Hadamard / XOR) | $\\cos(C, A) \\approx 0, \\cos(C, B) \\approx 0$ | Variable-value binding, relational structuring |
+| **Permutation (Shift)** | $\\Pi(A)$ | $C = \\mathrm{roll}(A, \\Delta)$ | $\\cos(C, A) \\approx 0$ | Spatial / temporal sequence indexing |
+
+---
+
+## 4. Empirical Benchmark Results on ALOI Dataset
+
+### Object Recognition Accuracy vs. Number of Bundled Views
+Evaluated across **50 objects from the ALOI dataset** over novel, unseen test query viewpoints:
+
+| Number of Bundled Views ($K$) | View Selection Strategy | Novel-View Recognition Accuracy |
+|:---:|:---:|:---:|
+| **1 View** | $0^\\circ$ | **60.0%** |
+| **2 Views** | $0^\\circ, 180^\\circ$ | **66.0%** |
+| **3 Views** | $0^\\circ, 120^\\circ, 240^\\circ$ | **82.0%** |
+| **4 Views** | $0^\\circ, 90^\\circ, 180^\\circ, 270^\\circ$ (B4) | **86.0%** |
+| **5 Views** | Uniform 5-point rotation | **86.0%** |
+
+*Conclusion:* Bundling multiple viewpoints creates a single robust 3D prototype vector that dramatically improves generalization on unseen viewpoints.
+
+---
+
+## 5. Python Architecture & Package Structure (\`hdc_robotics\`)
+
+\`\`\`
+hyper-robovision/
+├── hdc_robotics/                             # Production Python package
+│   ├── __init__.py                           # Public exports & metadata
+│   ├── math_theory.py                        # Analytical proofs, capacity & sphere geometry
+│   ├── vsa.py                                # VSA algebra (Bundle, Bind, Permute, Cosine)
+│   ├── lsh.py                                # Locality-Sensitive Hashing & binarization
+│   ├── feature_extractor.py                  # AlexNet conv3 feature extraction pipeline
+│   ├── dataset.py                            # ALOI dataset loader & multi-view splits
+│   ├── pipeline.py                           # Object memory builder, query search & eval
+│   ├── benchmarks.py                         # Automated benchmark runners
+│   └── visualization.py                     # Publication-grade plotting module
+├── Hyperdimensional_Computing_Robotics.ipynb # Pre-executed research notebook with inline outputs
+├── presentation.pdf                          # Project presentation slide deck
+├── main.py                                   # Command-line interface
+├── plots/                                    # High-resolution benchmark figures
+├── tests/                                    # Automated unit test suite (21 tests)
+└── README.md                                 # Project documentation
+\`\`\``
 };

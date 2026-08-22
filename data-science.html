@@ -377,8 +377,11 @@
                     pt: 'Fundamentos conceituais do aprendizado artificial: teoria PAC de Valiant, Árvores de Decisão (ID3/C4.5/CART), janelas de Parzen, Perceptron multicamada, métodos de ensemble e Computação Hiperdimensional (HDC).',
                     de: 'Theoretische und algorithmische Grundlagen des künstlichen Lernens: Valiants PAC-Lerntheorie, Entscheidungsbäume (ID3/C4.5/CART), Parzen-Fenster, mehrlagige Perzeptren, Ensemble-Methoden und Hyperdimensional Computing.'
                 },
-                topics: ['Valiant PAC Learning Framework & Sample Complexity', 'Decision Trees (ID3, C4.5, Cost-Complexity Pruning)', 'Parzen Window & Non-Parametric Density Estimation', 'Multilayer Perceptron (MLP) Backpropagation', 'Hyperdimensional Computing (HDC) Single-Pass Learning'],
-                tech: ['PAC Learning Theory', 'Scikit-Learn', 'Decision Trees', 'Ensemble Boosting', 'Hopfield Networks']
+                topics: ['Valiant PAC Learning Framework & Sample Complexity', 'Decision Trees (ID3, C4.5, Cost-Complexity Pruning)', 'Parzen Window & Non-Parametric Density Estimation', 'Multilayer Perceptron (MLP) Backpropagation', 'Hyperdimensional Computing (HDC) & VSA 3D Vision'],
+                tech: ['HDC / VSA', 'AlexNet Deep Features', 'Locality-Sensitive Hashing', 'PyTorch & NumPy', 'ALOI 3D Dataset'],
+                githubUrl: 'https://github.com/mohammed-el-baraka/hyper-robovision',
+                presentationUrl: 'https://drive.google.com/file/d/16FNBdQTsDIf4sG9WVlArOIKFg_gL9TQd/view?usp=sharing',
+                projectReportKey: 'hyperdimensional-computing-robotics'
             },
             {
                 id: 'ds-p4-statistical-learning',
@@ -757,16 +760,30 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="mt-auto pt-4 border-t border-white/10">
-                            <div class="flex flex-wrap gap-1.5 mb-4">
+                        <div class="mt-auto pt-4 border-t border-white/10 space-y-3">
+                            <div class="flex flex-wrap gap-1.5">
                                 ${techBadges}
                             </div>
-                            <button onclick="openModuleAiModal(${mod.periodNumber})" class="btn-doc-action w-full flex items-center justify-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-                                </svg>
-                                <span>${str.exploreModuleBtn}</span>
-                            </button>
+                            <div class="flex flex-wrap items-center gap-2">
+                                ${mod.githubUrl ? `
+                                    <a href="${mod.githubUrl}" target="_blank" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/20 text-white flex items-center gap-1.5 transition-colors" style="text-decoration:none;">
+                                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                        <span>GitHub</span>
+                                    </a>
+                                ` : ''}
+                                ${mod.presentationUrl ? `
+                                    <a href="${mod.presentationUrl}" target="_blank" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-violet-600/30 hover:bg-violet-600/50 text-violet-200 border border-violet-500/30 flex items-center gap-1.5 transition-colors" style="text-decoration:none;">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                                        <span>Slides</span>
+                                    </a>
+                                ` : ''}
+                                <button onclick="openModuleAiModal(${mod.periodNumber})" class="btn-doc-action flex-1 flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                                    </svg>
+                                    <span>${str.exploreModuleBtn}</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -816,8 +833,9 @@
                 7: 'ds-module-7',
                 8: 'ds-module-8'
             };
-            const rawContent = projectReports[keys[periodNum]] || projectReports['data-science-track'];
             const mod = dsModulesData.find(m => m.periodNumber === periodNum);
+            const reportKey = (mod && mod.projectReportKey) ? mod.projectReportKey : keys[periodNum];
+            const rawContent = projectReports[reportKey] || projectReports[keys[periodNum]] || projectReports['data-science-track'];
             const title = mod ? `${mod.title[currentTrackLang] || mod.title.en} (${mod.instructor})` : `Module 0${periodNum}`;
             displayModalContent(title, rawContent);
         }

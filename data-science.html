@@ -766,14 +766,21 @@
 
                 let projectSnippetHtml = '';
                 if (mod.project) {
+                    const projTrans = (translations[lang]?.projects || translations.en?.projects || []).find(p => p.id === mod.project.id);
+                    const projTitle = projTrans ? projTrans.title : mod.project.title;
+                    const projDesc = projTrans ? projTrans.description : '';
+
                     projectSnippetHtml = `
                         <div class="project-card-box">
-                            <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <div class="flex items-center justify-between gap-2 mb-2">
                                 <span class="project-highlight-badge">Featured Applied Project</span>
                                 <span class="text-xs text-primary-color font-semibold">${mod.date}</span>
                             </div>
-                            <h4 class="text-base font-bold text-white mb-1.5">${mod.project.title}</h4>
-                            <p class="text-xs text-gray-300 mb-3">${mod.project.metric}</p>
+                            <h4 class="text-base font-bold text-white mb-1.5">${projTitle}</h4>
+                            ${projDesc ? `<p class="text-xs text-gray-300 mb-2.5 leading-relaxed">${projDesc}</p>` : ''}
+                            <div class="mb-3 px-2.5 py-1.5 bg-white/5 rounded-lg border border-white/5">
+                                <span class="text-xs text-violet-300 font-medium">⚡ <strong>Benchmark / Key Result:</strong> ${mod.project.metric}</span>
+                            </div>
                             
                             <div class="flex flex-wrap items-center gap-2">
                                 ${mod.project.githubUrl ? `

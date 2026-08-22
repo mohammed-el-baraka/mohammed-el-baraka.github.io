@@ -28,31 +28,72 @@
     <script src="https://cdn.jsdelivr.net/npm/marked@12.0.1/marked.min.js"></script>
 
     <style>
-        .hub-banner {
-            background: linear-gradient(135deg, rgba(167, 139, 250, 0.12) 0%, rgba(99, 102, 241, 0.08) 50%, rgba(15, 23, 42, 0.6) 100%);
-            border: 1px solid rgba(167, 139, 250, 0.25);
-            border-radius: 1.25rem;
-            padding: 2.5rem 2rem;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(12px);
-        }
-        .hub-tag {
+        .hero-track-pill {
             display: inline-flex;
             align-items: center;
-            gap: 0.35rem;
-            padding: 0.35rem 0.85rem;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
             border-radius: 9999px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            background: rgba(167, 139, 250, 0.15);
+            background: rgba(167, 139, 250, 0.12);
             color: #c4b5fd;
             border: 1px solid rgba(167, 139, 250, 0.3);
+            margin-bottom: 1.25rem;
+            backdrop-filter: blur(8px);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1rem;
+            padding: 1.25rem 1rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(167, 139, 250, 0.35);
+        }
+        .stat-number {
+            font-family: var(--heading-font);
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+        .stat-label {
+            font-size: 0.825rem;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+        .featured-project-card {
+            background: linear-gradient(135deg, rgba(31, 31, 35, 0.9) 0%, rgba(20, 20, 24, 0.95) 100%);
+            border: 1px solid rgba(167, 139, 250, 0.25);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(16px);
+        }
+        .featured-project-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #7c3aed, #a78bfa, #3b82f6);
         }
         .module-badge {
             font-size: 0.75rem;
             font-weight: 800;
-            padding: 0.2rem 0.6rem;
+            padding: 0.25rem 0.65rem;
             border-radius: 0.375rem;
             background: linear-gradient(135deg, #7c3aed, #4f46e5);
             color: white;
@@ -66,13 +107,13 @@
             font-size: 0.825rem;
             color: #e0e7ff;
             background: rgba(255, 255, 255, 0.06);
-            padding: 0.25rem 0.65rem;
+            padding: 0.3rem 0.75rem;
             border-radius: 0.5rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .syllabus-preview {
             color: #94a3b8;
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             line-height: 1.6;
         }
         .syllabus-preview li {
@@ -91,17 +132,14 @@
 
     <header class="fixed w-full top-0 z-50 animate-header" id="header">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="index.html" class="brand-name flex items-center gap-2">
-                <svg class="w-5 h-5 text-primary-color" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                </svg>
-                <span>Mohammed EL BARAKA</span>
-            </a>
+            <a href="index.html" class="brand-name">Mohammed EL BARAKA</a>
             <div class="flex items-center space-x-4 md:space-x-6">
-                <a href="index.html#projects" class="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-gray-300 hover:text-white transition-colors">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" /></svg>
-                    <span id="nav-back-text">Portfolio</span>
-                </a>
+                <nav class="hidden md:flex space-x-6 font-bold">
+                    <a href="index.html#projects" class="hover:text-primary-color transition-colors" data-key="nav_all_projects">← All Projects</a>
+                    <a href="#dirty-model" class="hover:text-primary-color transition-colors" data-key="nav_dirty_model">Dirty Model</a>
+                    <a href="#modules" class="hover:text-primary-color transition-colors" data-key="nav_modules">8 Modules</a>
+                    <a href="index.html#contact" class="hover:text-primary-color transition-colors" data-key="nav_contact">Contact</a>
+                </nav>
                 <select id="lang-selector" onchange="switchTrackLanguage(this.value)" class="text-sm">
                     <option value="en">🇬🇧 English</option>
                     <option value="fr">🇫🇷 Français</option>
@@ -115,59 +153,120 @@
         </div>
     </header>
 
-    <main class="pt-28 pb-20">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <!-- Breadcrumb Navigation -->
-            <div class="flex items-center gap-2 text-sm text-gray-400 mb-6">
-                <a href="index.html" class="hover:text-white transition-colors">Portfolio</a>
-                <span>/</span>
-                <a href="index.html#projects" class="hover:text-white transition-colors">Projects</a>
-                <span>/</span>
-                <span class="text-primary-color font-semibold">Option Data Science</span>
-            </div>
-
-            <!-- Hero Banner -->
-            <div class="hub-banner mb-12 shadow-2xl reveal-fade-in">
-                <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
-                    <span class="hub-tag">
-                        <svg class="w-4 h-4 text-primary-color" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
-                        </svg>
-                        <span id="banner-institution">EMINES – School of Industrial Management (UM6P)</span>
-                    </span>
-                    <span class="text-sm font-semibold text-gray-400">Sept. 2025 – Fév. 2026</span>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero relative overflow-hidden" style="min-height: 80vh; padding-top: 7rem;">
+            <div class="hero-content relative z-10 max-w-4xl mx-auto px-6 text-center">
+                <div class="hero-track-pill animate-hero-title">
+                    <svg class="w-4 h-4 text-primary-color" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
+                    </svg>
+                    <span id="banner-institution">EMINES – School of Industrial Management (UM6P) • 2025–2026</span>
                 </div>
-                <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight" id="track-title">
-                    Option Data Science & Intelligence Artificielle
+
+                <h1 class="hero-title animate-hero-title text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight" id="track-title">
+                    Option Data Science & AI Specialization
                 </h1>
-                <p class="text-gray-300 text-lg leading-relaxed mb-6 max-w-4xl" id="track-subtitle">
-                    Programme d'excellence intensif en 8 semaines sous la direction de <strong class="text-white">Prof. Éric Moulines</strong> (Membre de l'Académie des Sciences, Professeur à l'École Polytechnique). Formation complète couvrant le spectre complet des Sciences des Données : optimisation variationnelle, fondements PAC, apprentissage profond, problèmes inverses, modèles génératifs, NLP/Transformers et apprentissage par renforcement.
+
+                <p class="animate-hero-subtitle text-gray-300 text-lg md:text-xl leading-relaxed mb-6 max-w-3xl mx-auto" id="track-subtitle">
+                    An intensive 8-week curriculum directed by <strong class="text-white">Prof. Éric Moulines</strong> (Member of the French Academy of Sciences, Professor at École Polytechnique), delivering full-spectrum mastery from convex optimization and PAC bounds to deep generative AI, Transformers, and reinforcement learning.
                 </p>
-                <div class="flex flex-wrap items-center gap-3">
+
+                <!-- Quick Stats -->
+                <div class="stats-grid animate-hero-cta">
+                    <div class="stat-card">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label" id="stat-label-modules">Intensive Weeks</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label" id="stat-label-faculty">Distinguished Faculty</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label" id="stat-label-lifecycle">Theory to Code Lifecycle</div>
+                    </div>
+                </div>
+
+                <div class="animate-hero-cta flex flex-wrap items-center justify-center gap-4 mt-8">
                     <button onclick="openTrackAiModal()" class="btn-primary flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
                         </svg>
                         <span id="btn-full-syllabus-text">Explore Full Program with AI</span>
                     </button>
-                    <a href="index.html#projects" class="btn-doc-action" style="text-decoration:none; padding: 0.65rem 1.25rem;">
-                        <span id="btn-return-portfolio">← Return to All Projects</span>
+                    <a href="#dirty-model" class="btn-doc-action flex items-center gap-2" style="text-decoration:none;">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                        <span id="btn-dirty-model-jump">View Dirty Model Project</span>
                     </a>
                 </div>
             </div>
+        </section>
 
-            <!-- Modules Grid (8 Cards) -->
-            <div class="mb-8 flex items-center justify-between">
-                <div>
-                    <h2 class="text-2xl font-bold text-white mb-1" id="section-modules-title">8 Thematic Modules</h2>
-                    <p class="text-sm text-gray-400" id="section-modules-desc">Structured across fundamental mathematical blocks and specialized practical domains.</p>
+        <!-- Featured Project: Dirty Model -->
+        <section id="dirty-model" class="py-20 scroll-mt-16 relative overflow-hidden">
+            <div class="container mx-auto px-6 max-w-5xl relative z-10">
+                <h2 class="section-title reveal-fade-in" id="dirty-model-section-title">Cornerstone Project: Weeks 1 & 2</h2>
+                
+                <div class="featured-project-card reveal-scale-up">
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                        <span class="module-badge">NIPS 2010 Validation</span>
+                        <span class="project-time-tag">
+                            <svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <span>2025-11</span>
+                        </span>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white mb-3 cursor-pointer hover:text-primary-color transition-colors" onclick="openDirtyModelAiModal()" id="dirty-model-card-title">
+                        Understanding & Validating "A Dirty Model for Multi-task Learning"
+                    </h3>
+
+                    <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6" id="dirty-model-card-desc">
+                        Conducted an empirical validation and mathematical replication of the seminal research by Jalali et al. (NIPS 2010). Formulated a convex composite estimator that decomposes high-dimensional parameter matrices into a superposition of shared block-sparse components ($\ell_1/\ell_\infty$) and task-specific element-wise sparse components ($\ell_1$). Solved via CVXPY and validated the theoretical sample complexity threshold $(2-\alpha)s\log p$ through Monte Carlo phase transition sweeps.
+                    </p>
+
+                    <!-- Math & Key Findings Box -->
+                    <div class="mb-6 p-4 bg-white/5 border border-white/10 rounded-xl space-y-2 text-sm text-gray-300">
+                        <div class="font-semibold text-primary-color">Core Problem Formulation:</div>
+                        <div class="overflow-x-auto py-1">
+                            $$\Theta = B + S \quad \text{with} \quad (\hat{S}, \hat{B}) = \arg\min_{S, B} \frac{1}{2n}\sum_{k=1}^r \|y^{(k)} - X^{(k)}(S^{(k)}+B^{(k)})\|_2^2 + \lambda_s \|S\|_{1,1} + \lambda_b \|B\|_{1,\infty}$$
+                        </div>
+                        <div class="flex flex-wrap gap-x-6 gap-y-1 text-xs text-gray-400 pt-2 border-t border-white/10">
+                            <span>✓ Proved sample complexity $(2-\alpha)s\log p$ beats independent Lasso</span>
+                            <span>✓ Replicated sharp phase transition at $\theta \approx 1.0$ across 3 overlap regimes</span>
+                            <span>✓ Implemented with CVXPY and log-scale grid search hyperparameter tuning</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tech-tag">High-Dimensional Statistics</span>
+                        <span class="tech-tag">Multitask Learning (MTL)</span>
+                        <span class="tech-tag">Convex Optimization (CVXPY)</span>
+                        <span class="tech-tag">Sparse Superposition (ℓ₁ / ℓ₁/ℓ∞)</span>
+                        <span class="tech-tag">Phase Transition Sweeps</span>
+                        <span class="tech-tag">Python & NumPy / SciPy</span>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3">
+                        <button onclick="openDirtyModelAiModal()" class="btn-doc-action flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" /></svg>
+                            <span id="btn-dirty-model-modal">Explore Full Report & Math (AI)</span>
+                        </button>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div id="modules-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Dynamically populated module cards -->
+        <!-- 8 Modules Grid -->
+        <section id="modules" class="py-20 scroll-mt-16 relative overflow-hidden">
+            <div class="container mx-auto px-6 max-w-6xl relative z-10">
+                <h2 class="section-title reveal-fade-in" id="section-modules-title">8 Thematic Specialization Modules</h2>
+                
+                <div id="modules-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Dynamically populated module cards -->
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- AI Markdown Modal -->
@@ -221,7 +320,7 @@
                     pt: 'Fundamentos teóricos e práticos do aprendizado supervisionado: Mínimos Quadrados Ordinários (OLS), regularizações Ridge/Lasso/Elastic-Net, teoria de decisão bayesiana, regressão logística, algoritmo EM e Random Forests.',
                     de: 'Theoretische und praktische Grundlagen des überwachten Lernens: OLS, Ridge/Lasso/Elastic-Net-Regularisierung, Bayessche Entscheidungstheorie, logistische Regression, EM-Algorithmus (GMM), PCA und Random Forests.'
                 },
-                topics: ['Ridge / Lasso / Elastic-Net', 'Bayesian Decision Boundary', 'Logistic Regression (Newton-Raphson)', 'EM Algorithm & Gaussian Mixtures', 'Bias-Variance Tradeoff'],
+                topics: ['Ridge / Lasso / Elastic-Net ($L_1 / L_2$ Penalties)', 'Bayesian Decision Boundary & MAP Rule', 'Logistic Regression (Newton-Raphson Optim)', 'EM Algorithm & Gaussian Mixture Models (GMM)', 'Bias-Variance Decomposition & Generalization'],
                 tech: ['Python', 'Scikit-Learn', 'NumPy', 'SciPy', 'Matplotlib']
             },
             {
@@ -248,8 +347,8 @@
                     pt: 'Teoria e algoritmos de otimização multivariada: análise convexa, condições KKT, métodos proximais (ISTA/FISTA), gradiente descendente estocástico (SGD com momentum), subgradientes e dualidade SVM.',
                     de: 'Multivariate Optimierungstheorie und -algorithmen: Konvexe Analysis, KKT-Bedingungen, proximale Gradientenverfahren (ISTA/FISTA), Stochastischer Gradientenabstieg (SGD) mit Momentum und SVM-Dualität.'
                 },
-                topics: ['Convex Analysis & Variational Minima', 'KKT Optimality Conditions', 'Proximal Operators (Lasso / Sparsity)', 'SGD & Momentum Convergence', 'SVM Primal / Dual Formulations'],
-                tech: ['Optimization Theory', 'KKT Karush-Kuhn-Tucker', 'Proximal Splitting', 'SGD / Adam', 'SVD / PCA']
+                topics: ['Convex Analysis & Variational Minima Characterization', 'KKT (Karush-Kuhn-Tucker) Optimality Conditions', 'Proximal Operators & Splitting (ISTA / FISTA)', 'SGD & Momentum Convergence Bounds', 'SVM Primal / Dual Formulations & Kernel Trick'],
+                tech: ['Optimization Theory', 'KKT Conditions', 'Proximal Splitting', 'SGD / Adam', 'SVD / PCA']
             },
             {
                 id: 'ds-p3-artificial-learning',
@@ -275,7 +374,7 @@
                     pt: 'Fundamentos conceituais do aprendizado artificial: teoria PAC de Valiant, Árvores de Decisão (ID3/C4.5/CART), janelas de Parzen, Perceptron multicamada, métodos de ensemble e Computação Hiperdimensional (HDC).',
                     de: 'Theoretische und algorithmische Grundlagen des künstlichen Lernens: Valiants PAC-Lerntheorie, Entscheidungsbäume (ID3/C4.5/CART), Parzen-Fenster, mehrlagige Perzeptren, Ensemble-Methoden und Hyperdimensional Computing.'
                 },
-                topics: ['Valiant PAC Learning Framework', 'Decision Trees (ID3, C4.5, CART)', 'Parzen Window Density Estimation', 'Multilayer Perceptron Backprop', 'Hyperdimensional Computing (HDC)'],
+                topics: ['Valiant PAC Learning Framework & Sample Complexity', 'Decision Trees (ID3, C4.5, Cost-Complexity Pruning)', 'Parzen Window & Non-Parametric Density Estimation', 'Multilayer Perceptron (MLP) Backpropagation', 'Hyperdimensional Computing (HDC) Single-Pass Learning'],
                 tech: ['PAC Learning Theory', 'Scikit-Learn', 'Decision Trees', 'Ensemble Boosting', 'Hopfield Networks']
             },
             {
@@ -302,7 +401,7 @@
                     pt: 'Estrutura matemática do controle de risco estatístico, redes neurais densas e convolucionais (CNN), modelos com variáveis latentes, inferência variacional (ELBO) e algoritmo CAVI.',
                     de: 'Mathematische Fundierung statistischer Risikoschranken, tiefe und faltende neuronale Netze (CNNs), latente Variablenmodelle, Variationsinferenz (ELBO) und CAVI-Algorithmus.'
                 },
-                topics: ['Statistical Risk & Concentration Bounds', 'Convolutional Neural Networks (CNNs)', 'Latent Variable Probabilistic Models', 'Evidence Lower Bound (ELBO)', 'Coordinate Ascent Variational Inference (CAVI)'],
+                topics: ['Statistical Risk Bounds & Concentration Inequalities', 'Convolutional Neural Networks (CNNs) & Residual Layers', 'Latent Variable Probabilistic Models', 'Evidence Lower Bound (ELBO) Decomposition', 'Coordinate Ascent Variational Inference (CAVI)'],
                 tech: ['PyTorch', 'Statistical Risk Bounds', 'CNN Architectures', 'Variational Inference', 'CAVI Algorithm']
             },
             {
@@ -329,7 +428,7 @@
                     pt: 'Tratamento matemático e bayesiano de problemas inversos: deconvolução, regularização de Tikhonov e Wiener, Lagrangiano Aumentado (ADMM), critérios não lineares e amostragem posterior por difusão.',
                     de: 'Mathematische und Bayessche Behandlung schlecht gestellter inverser Probleme: Entfaltung, Tikhonov- & Wiener-Filterung, Augmented Lagrangian (ADMM) und Diffusion Posterior Sampling.'
                 },
-                topics: ['Ill-Posed Inverse Problems (Hadamard)', 'Tikhonov Regularization & Wiener Filtering', 'Augmented Lagrangian (ADMM) Constraints', 'Bayesian MCMC Stochastic Sampling', 'Diffusion Posterior Sampling (DPS)'],
+                topics: ['Ill-Posed Inverse Problems (Hadamard Criteria)', 'Tikhonov Regularization & Wiener Frequency Filtering', 'Augmented Lagrangian (ADMM) with Positivity Constraints', 'Markov Chain Monte Carlo (MCMC) Hyperparameter Tuning', 'Diffusion Posterior Sampling (DPS) Filtering'],
                 tech: ['Inverse Problems', 'ADMM Optimization', 'MCMC & Gibbs Sampling', 'Toeplitz Deconvolution', 'Diffusion Priors']
             },
             {
@@ -356,7 +455,7 @@
                     pt: 'Modelagem generativa profunda: Máquinas de Boltzmann Restritas (RBM), Variational Autoencoders (truque de reparametrização), Redes Adversárias Generativas (GANs e WGAN-GP) e Modelos de Difusão baseados em score.',
                     de: 'Tiefe generative Modellierung: Restricted Boltzmann Machines (RBM), Variational Autoencoders (VAEs), Generative Adversarial Networks (Minimax & WGAN-GP) und Score-basierte Diffusionsmodelle (SDEs).'
                 },
-                topics: ['Variational Autoencoders & Reparameterization', 'Minimax GANs & Wasserstein WGAN-GP', 'Hierarchical Latent Variable Models', 'Score-Based SDE Diffusion Models', 'DDPM / DDIM Continuous & Discrete Spaces'],
+                topics: ['Variational Autoencoders & Reparameterization Trick', 'Minimax GANs & Wasserstein WGAN-GP Loss', 'Hierarchical Latent Variable Generative Structures', 'Continuous & Discrete Score-Based SDE Diffusion', 'DDPM / DDIM Langevin Sampling Equations'],
                 tech: ['PyTorch', 'VAE Architecture', 'GANs / WGAN-GP', 'Score Matching SDEs', 'DDPM Diffusion']
             },
             {
@@ -383,7 +482,7 @@
                     pt: 'Processamento de Linguagem Natural de ponta a ponta: semântica distribucional, Word2Vec, Transformers com auto-atenção, embeddings contextuais (BERT), geração autorregressiva (GPT), Prompt Engineering e Hugging Face.',
                     de: 'End-to-End Natural Language Processing: Distributionelle Semantik, Word2Vec, Multi-Head Self-Attention Transformer, BERT Fine-Tuning, autoregressive Textgenerierung (GPT), Prompt Engineering und Hugging Face.'
                 },
-                topics: ['Word2Vec (Skip-Gram, CBOW, Negative Sampling)', 'Multi-Head Scaled Dot-Product Attention', 'BERT Contextual Fine-Tuning (SST-2, SQuAD)', 'Autoregressive Decoding (Top-k, Nucleus Top-p)', 'Prompt Engineering & Production Pipelines'],
+                topics: ['Word2Vec (Skip-Gram, CBOW with Negative Sampling)', 'Multi-Head Scaled Dot-Product Self-Attention', 'BERT Contextual Fine-Tuning (SST-2, CoNLL, SQuAD)', 'Autoregressive Decoding (Top-k, Nucleus Top-p)', 'Prompt Engineering & End-to-End Industrial Pipelines'],
                 tech: ['Hugging Face Transformers', 'PyTorch NLP', 'BERT & GPT-2', 'Tokenizers (BPE/WordPiece)', 'SpaCy & LangChain']
             },
             {
@@ -410,12 +509,162 @@
                     pt: 'Tomada de decisão sequencial e aprendizado por reforço: bandidos estocásticos multibraço, limite de Lai-Robbins, UCB1, Thompson Sampling, Processos de Decisão de Markov (MDP), equações de Bellman e Q-Learning.',
                     de: 'Sequenzielle Entscheidungsfindung & Reinforcement Learning: Stochastische Multi-Armed Bandits, Lai-Robbins-Schranke, UCB1, Thompson Sampling, Markov-Entscheidungsprozesse (MDPs), Bellman-Gleichungen und Q-Learning.'
                 },
-                topics: ['Stochastic Multi-Armed Bandits & Lai-Robbins Bound', 'Upper Confidence Bound (UCB1) & Thompson Sampling', 'Markov Decision Processes (MDP Tuple)', 'Bellman Optimality Equations & Dynamic Programming', 'Temporal Difference Learning & Q-Learning'],
+                topics: ['Stochastic Multi-Armed Bandits & Lai-Robbins Bound', 'Upper Confidence Bound (UCB1) & Thompson Sampling', 'Markov Decision Processes (MDP $(S, A, P, R, \\gamma)$)', 'Bellman Optimality Equations & Dynamic Programming', 'Temporal Difference Learning & Q-Learning / DQN'],
                 tech: ['Reinforcement Learning', 'Bellman Optimality', 'Q-Learning & DQN', 'Multi-Armed Bandits', 'Gymnasium / Python']
             }
         ];
 
         let currentTrackLang = 'en';
+
+        const trackTranslations = {
+            en: {
+                navAll: '← All Projects',
+                navDirty: 'Dirty Model',
+                navModules: '8 Modules',
+                navContact: 'Contact',
+                bannerInst: 'EMINES – School of Industrial Management (UM6P) • 2025–2026',
+                trackTitle: 'Option Data Science & AI Specialization',
+                trackSubtitle: 'An intensive 8-week curriculum directed by <strong class="text-white">Prof. Éric Moulines</strong> (Member of the French Academy of Sciences, Professor at École Polytechnique), delivering full-spectrum mastery from convex optimization and PAC bounds to deep generative AI, Transformers, and reinforcement learning.',
+                statModules: 'Intensive Weeks',
+                statFaculty: 'Distinguished Faculty',
+                statLifecycle: 'Theory to Code Lifecycle',
+                exploreBtn: 'Explore Full Program with AI',
+                jumpDirtyBtn: 'View Dirty Model Project',
+                dirtySectionTitle: 'Cornerstone Project: Weeks 1 & 2',
+                dirtyCardTitle: 'Understanding & Validating "A Dirty Model for Multi-task Learning"',
+                dirtyCardDesc: 'Conducted an empirical validation and mathematical replication of the seminal research by Jalali et al. (NIPS 2010). Formulated a convex composite estimator that decomposes high-dimensional parameter matrices into a superposition of shared block-sparse components (ℓ₁/ℓ∞) and task-specific element-wise sparse components (ℓ₁). Solved via CVXPY and validated the theoretical sample complexity threshold (2-α)s log p through Monte Carlo phase transition sweeps.',
+                dirtyBtnModal: 'Explore Full Report & Math (AI)',
+                modulesSectionTitle: '8 Thematic Specialization Modules',
+                exploreModuleBtn: 'Explore Syllabus & AI Report',
+                periodPrefix: 'Module'
+            },
+            fr: {
+                navAll: '← Tous les Projets',
+                navDirty: 'Projet Dirty Model',
+                navModules: '8 Modules',
+                navContact: 'Contact',
+                bannerInst: 'EMINES – School of Industrial Management (UM6P) • 2025–2026',
+                trackTitle: 'Option Data Science & Intelligence Artificielle',
+                trackSubtitle: 'Programme d\'excellence intensif en 8 semaines sous la direction de <strong class="text-white">Prof. Éric Moulines</strong> (Membre de l\'Académie des Sciences, Professeur à l\'École Polytechnique). Formation complète couvrant l\'optimisation variationnelle, les fondements PAC, l\'apprentissage profond, les problèmes inverses, les modèles génératifs, le NLP/Transformers et l\'apprentissage par renforcement.',
+                statModules: 'Semaines Intensives',
+                statFaculty: 'Professeurs de Renom',
+                statLifecycle: 'Du Fondement au Déploiement',
+                exploreBtn: 'Consulter le Programme Global avec l\'IA',
+                jumpDirtyBtn: 'Voir le Projet Dirty Model',
+                dirtySectionTitle: 'Projet Majeur : Semaines 1 & 2',
+                dirtyCardTitle: 'Modèle « Dirty » pour l\'Apprentissage Multi-Tâches (NIPS 2010)',
+                dirtyCardDesc: 'Validation empirique et réplication du papier de recherche fondateur de Jalali et al. (NIPS 2010). Décomposition de matrices de paramètres en superposition de composantes bloc-parcimonieuses partagées (ℓ₁/ℓ∞) et parcimonieuses individuelles (ℓ₁) par optimisation convexe sous CVXPY, prouvant la complexité d\'échantillonnage optimale (2-α)s log(p) et reproduisant les transitions de phase.',
+                dirtyBtnModal: 'Consulter le Rapport & Maths (IA)',
+                modulesSectionTitle: '8 Modules Thématiques',
+                exploreModuleBtn: 'Consulter le Syllabus & Rapport IA',
+                periodPrefix: 'Module'
+            },
+            ar: {
+                navAll: '← جميع المشاريع',
+                navDirty: 'مشروع Dirty Model',
+                navModules: '8 وحدات دراسية',
+                navContact: 'اتصال',
+                bannerInst: 'EMINES – مدرسة الإدارة الصناعية (جامعة UM6P) • 2025–2026',
+                trackTitle: 'مسار التخصص في علوم البيانات والذكاء الاصطناعي',
+                trackSubtitle: 'برنامج امتياز مكثف يمتد لـ 8 أسابيع بإشراف <strong class="text-white">البروفيسور إريك مولين</strong> (عضو الأكاديمية الفرنسية للعلوم، أستاذ بـ École Polytechnique). تغطية شاملة لنظريات التحسين المحدب، وأسس التعلم الآلي، والتعلم العميق، ونماذج الانتشار والتوليد، ومعالجة اللغات الطبيعية، والتعلم المعزز.',
+                statModules: 'أسابيع مكثفة',
+                statFaculty: 'أساتذة وباحثون دوليون',
+                statLifecycle: 'دورة التعلم المتكاملة',
+                exploreBtn: 'استعراض المسار الكامل بالذكاء الاصطناعي',
+                jumpDirtyBtn: 'عرض مشروع Dirty Model',
+                dirtySectionTitle: 'المشروع التطبيقي: الأسبوعان 1 و 2',
+                dirtyCardTitle: 'نموذج التراكب "Dirty Model" للتعلم متعدد المهام (NIPS 2010)',
+                dirtyCardDesc: 'التحقق التجريبي وإعادة تطبيق الورقة البحثية الرائدة في NIPS للتعلم متعدد المهام (Jalali et al.): تفكيك مصفوفات المعلمات إلى تراكب بين مصفوفة متفرقة قطاعياً ومصفوفة متفرقة عنصرياً عبر التحسين المحدب (CVXPY)، مع إثبات حد التعقيد العيني الأمثل وإعادة إنتاج انتقالات الطور التجريبية.',
+                dirtyBtnModal: 'استعراض التقرير والمعادلات (IA)',
+                modulesSectionTitle: '8 وحدات دراسية متخصصة',
+                exploreModuleBtn: 'استعراض المنهج وتقرير الذكاء الاصطناعي',
+                periodPrefix: 'الوحدة'
+            },
+            es: {
+                navAll: '← Todos los Proyectos',
+                navDirty: 'Proyecto Dirty Model',
+                navModules: '8 Módulos',
+                navContact: 'Contacto',
+                bannerInst: 'EMINES – School of Industrial Management (UM6P) • 2025–2026',
+                trackTitle: 'Especialización en Ciencia de Datos e Inteligencia Artificial',
+                trackSubtitle: 'Programa intensivo de 8 semanas bajo la dirección del <strong class="text-white">Prof. Éric Moulines</strong> (Miembro de la Academia Francesa de Ciencias, École Polytechnique). Dominio integral desde optimización convexa, teoría PAC, Deep Learning, problemas inversos, IA generativa, NLP y aprendizaje por refuerzo.',
+                statModules: 'Semanas Intensivas',
+                statFaculty: 'Profesores Distinguidos',
+                statLifecycle: 'De la Teoría al Código',
+                exploreBtn: 'Explorar Programa Completo con IA',
+                jumpDirtyBtn: 'Ver Proyecto Dirty Model',
+                dirtySectionTitle: 'Proyecto Principal: Semanas 1 y 2',
+                dirtyCardTitle: 'Modelo «Dirty» para Aprendizaje Multitarea (NIPS 2010)',
+                dirtyCardDesc: 'Validación empírica y replicación del artículo de NIPS «A Dirty Model for Multitask Learning» (Jalali et al.), descomponiendo matrices de parámetros en superposiciones de dispersión por bloques y elemental mediante optimización convexa en CVXPY.',
+                dirtyBtnModal: 'Ver Reporte Completo y Matemáticas (IA)',
+                modulesSectionTitle: '8 Módulos Temáticos de Especialización',
+                exploreModuleBtn: 'Ver Syllabus y Reporte IA',
+                periodPrefix: 'Módulo'
+            },
+            de: {
+                navAll: '← Alle Projekte',
+                navDirty: 'Dirty-Model-Projekt',
+                navModules: '8 Module',
+                navContact: 'Kontakt',
+                bannerInst: 'EMINES – School of Industrial Management (UM6P) • 2025–2026',
+                trackTitle: 'Spezialisierung Data Science & Künstliche Intelligenz',
+                trackSubtitle: 'Intensives 8-Wochen-Exzellenzprogramm unter der Leitung von <strong class="text-white">Prof. Éric Moulines</strong> (Mitglied der Französischen Akademie der Wissenschaften, École Polytechnique). Fundierte Beherrschung von Optimierung, PAC-Theorie, Deep Learning, inversen Problemen, generativer KI, NLP und Reinforcement Learning.',
+                statModules: 'Intensive Wochen',
+                statFaculty: 'Führende Professoren',
+                statLifecycle: 'Theorie bis Deployment',
+                exploreBtn: 'Gesamtprogramm mit KI erkunden',
+                jumpDirtyBtn: 'Dirty-Model-Projekt ansehen',
+                dirtySectionTitle: 'Schwerpunktprojekt: Wochen 1 & 2',
+                dirtyCardTitle: 'Dirty Model für Multitask-Learning (NIPS 2010)',
+                dirtyCardDesc: 'Empirische Validierung und Replikation der NIPS-Arbeit „A Dirty Model for Multitask Learning“ (Jalali et al.): Zerlegung von Parametermatrizen in eine Superposition aus blockweiser und elementspezifischer Sparsity mittels CVXPY.',
+                dirtyBtnModal: 'Bericht & Formeln mit KI öffnen',
+                modulesSectionTitle: '8 Thematische Module',
+                exploreModuleBtn: 'Syllabus & KI-Bericht anzeigen',
+                periodPrefix: 'Modul'
+            },
+            zh: {
+                navAll: '← 返回全部项目',
+                navDirty: 'Dirty Model 项目',
+                navModules: '8大核心模块',
+                navContact: '联系',
+                bannerInst: 'EMINES 工业管理学院（穆罕默德六世理工大学 UM6P）• 2025–2026',
+                trackTitle: '数据科学与人工智能前沿专业方向（8周强化体系）',
+                trackSubtitle: '在法国科学院院士、巴黎综合理工学院教授 <strong class="text-white">Éric Moulines</strong> 亲自主导下的8周高强度精英培养体系。全方位覆盖凸优化、PAC可学习理论、统计深度学习、反问题图像重建、生成式AI、大语言模型NLP及强化学习。',
+                statModules: '8周高强度培养',
+                statFaculty: '8位国际顶尖学者',
+                statLifecycle: '理论推导到工程落地',
+                exploreBtn: '使用AI全面解析培养方案',
+                jumpDirtyBtn: '查看 Dirty Model 实证研究',
+                dirtySectionTitle: '第1-2周核心攻关项目',
+                dirtyCardTitle: '高维多任务学习Dirty Model：结构叠加分解与相变实证（NIPS 2010）',
+                dirtyCardDesc: '深入复现并实证检验NIPS经典论文《A Dirty Model for Multitask Learning》（Jalali et al.）：采用凸优化（CVXPY）将高维参数矩阵分解为共享块稀疏与任务特异元素稀疏的叠加态，证明其最优样本复杂度并高保真复现经验相变阈值。',
+                dirtyBtnModal: '使用AI精读论文复现全景报告',
+                modulesSectionTitle: '8大专题核心培养模块',
+                exploreModuleBtn: '查看课程大纲与AI精读报告',
+                periodPrefix: '模块'
+            },
+            pt: {
+                navAll: '← Todos os Projetos',
+                navDirty: 'Projeto Dirty Model',
+                navModules: '8 Módulos',
+                navContact: 'Contato',
+                bannerInst: 'EMINES – School of Industrial Management (UM6P) • 2025–2026',
+                trackTitle: 'Especialização em Ciência de Dados e Inteligência Artificial',
+                trackSubtitle: 'Programa intensivo de excelência de 8 semanas dirigido pelo <strong class="text-white">Prof. Éric Moulines</strong> (Membro da Academia Francesa de Ciências, École Polytechnique). Domínio completo de otimização convexa, teoria PAC, aprendizado profundo, problemas inversos, IA generativa, NLP e aprendizado por reforço.',
+                statModules: 'Semanas Intensivas',
+                statFaculty: 'Professores Notáveis',
+                statLifecycle: 'Da Teoria ao Código',
+                exploreBtn: 'Explorar Programa Completo com IA',
+                jumpDirtyBtn: 'Ver Projeto Dirty Model',
+                dirtySectionTitle: 'Projeto Principal: Semanas 1 e 2',
+                dirtyCardTitle: 'Modelo «Dirty» para Aprendizado Multitarefa (NIPS 2010)',
+                dirtyCardDesc: 'Validação empírica e replicação do artigo da NIPS «A Dirty Model for Multitask Learning» (Jalali et al.), decompondo matrizes de parâmetros em sobreposições de dispersão em bloco e dispersão pontual via otimização convexa em CVXPY.',
+                dirtyBtnModal: 'Ver Relatório e Matemática (IA)',
+                modulesSectionTitle: '8 Módulos Temáticos',
+                exploreModuleBtn: 'Ver Syllabus e Relatório IA',
+                periodPrefix: 'Módulo'
+            }
+        };
 
         function renderModules(lang) {
             currentTrackLang = lang;
@@ -427,103 +676,35 @@
             document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
             document.documentElement.lang = lang;
 
-            // Update Header & Banner UI strings
-            const langLabels = {
-                en: {
-                    back: 'Portfolio',
-                    bannerInst: 'EMINES – School of Industrial Management (UM6P)',
-                    trackTitle: 'Data Science & Artificial Intelligence Specialization',
-                    trackSubtitle: 'An intensive 8-week advanced curriculum directed by Prof. Éric Moulines (Member of the French Academy of Sciences, École Polytechnique). Comprehensive mastery spanning multivariate optimization, PAC theory, deep statistical learning, inverse problems, generative AI, NLP/Transformers, and reinforcement learning.',
-                    exploreBtn: 'Explore Full Track with AI',
-                    returnBtn: '← Return to All Projects',
-                    modulesTitle: '8 Thematic Specialization Modules',
-                    modulesDesc: 'Structured across fundamental mathematical foundations and specialized practical domains.',
-                    exploreModuleBtn: 'Explore Syllabus & AI Report',
-                    periodPrefix: 'Module'
-                },
-                fr: {
-                    back: 'Portfolio',
-                    bannerInst: 'EMINES – School of Industrial Management (UM6P)',
-                    trackTitle: 'Option Data Science & Intelligence Artificielle',
-                    trackSubtitle: 'Programme d\'excellence intensif en 8 semaines sous la direction de Prof. Éric Moulines (Membre de l\'Académie des Sciences, Professeur à l\'École Polytechnique). Formation complète couvrant l\'optimisation variationnelle, les fondements PAC, l\'apprentissage profond, les problèmes inverses, les modèles génératifs, le NLP/Transformers et l\'apprentissage par renforcement.',
-                    exploreBtn: 'Consulter le Programme Global avec l\'IA',
-                    returnBtn: '← Retour à tous les projets',
-                    modulesTitle: '8 Modules Thématiques',
-                    modulesDesc: 'Organisés en un bloc fondamental théorique et des cours approfondis d\'application.',
-                    exploreModuleBtn: 'Consulter le Syllabus & Rapport IA',
-                    periodPrefix: 'Module'
-                },
-                ar: {
-                    back: 'المعرض الشخصي',
-                    bannerInst: 'EMINES – مدرسة الإدارة الصناعية (جامعة محمد السادس متعددة التخصصات التقنية UM6P)',
-                    trackTitle: 'مسار التخصص في علوم البيانات والذكاء الاصطناعي',
-                    trackSubtitle: 'برنامج امتياز مكثف يمتد لـ 8 أسابيع بإشراف البروفيسور إريك مولين (عضو الأكاديمية الفرنسية للعلوم، أستاذ بـ École Polytechnique). تغطية شاملة لنظريات التحسين، وأسس التعلم الآلي، والتعلم العميق، ونماذج الانتشار والتوليد، ومعالجة اللغات الطبيعية، والتعلم المعزز.',
-                    exploreBtn: 'استعراض المسار الكامل بالذكاء الاصطناعي',
-                    returnBtn: '← العودة إلى جميع المشاريع',
-                    modulesTitle: '8 وحدات دراسية متخصصة',
-                    modulesDesc: 'منظمة بين الأسس الرياضية النظرية والتطبيقات الصناعية المتقدمة.',
-                    exploreModuleBtn: 'استعراض المنهج وتقرير الذكاء الاصطناعي',
-                    periodPrefix: 'الوحدة'
-                },
-                es: {
-                    back: 'Portafolio',
-                    bannerInst: 'EMINES – School of Industrial Management (UM6P)',
-                    trackTitle: 'Especialización en Ciencia de Datos e Inteligencia Artificial',
-                    trackSubtitle: 'Programa intensivo de 8 semanas bajo la dirección del Prof. Éric Moulines (Miembro de la Academia Francesa de Ciencias, École Polytechnique). Dominio integral desde optimización convexa, teoría PAC, Deep Learning, problemas inversos, IA generativa, NLP y aprendizaje por refuerzo.',
-                    exploreBtn: 'Explorar Programa Completo con IA',
-                    returnBtn: '← Volver a Todos los Proyectos',
-                    modulesTitle: '8 Módulos Temáticos de Especialización',
-                    modulesDesc: 'Estructurados entre fundamentos matemáticos y aplicaciones prácticas avanzadas.',
-                    exploreModuleBtn: 'Ver Syllabus y Reporte IA',
-                    periodPrefix: 'Módulo'
-                },
-                de: {
-                    back: 'Portfolio',
-                    bannerInst: 'EMINES – School of Industrial Management (UM6P)',
-                    trackTitle: 'Spezialisierung Data Science & Künstliche Intelligenz',
-                    trackSubtitle: 'Intensives 8-Wochen-Exzellenzprogramm unter der Leitung von Prof. Éric Moulines (Mitglied der Französischen Akademie der Wissenschaften, École Polytechnique). Fundierte Beherrschung von Optimierung, PAC-Theorie, Deep Learning, inversen Problemen, generativer KI, NLP und Reinforcement Learning.',
-                    exploreBtn: 'Gesamtprogramm mit KI erkunden',
-                    returnBtn: '← Zurück zu allen Projekten',
-                    modulesTitle: '8 Thematische Module',
-                    modulesDesc: 'Gegliedert in mathematische Fundamente und anwendungsorientierte Spezialgebiete.',
-                    exploreModuleBtn: 'Syllabus & KI-Bericht anzeigen',
-                    periodPrefix: 'Modul'
-                },
-                zh: {
-                    back: '作品集主页',
-                    bannerInst: 'EMINES 工业管理学院（穆罕默德六世理工大学 UM6P）',
-                    trackTitle: '数据科学与人工智能前沿专业方向（8周强化体系）',
-                    trackSubtitle: '在法国科学院院士、巴黎综合理工学院教授 Éric Moulines 亲自主导下的8周高强度精英培养体系。全方位覆盖凸优化、PAC可学习理论、统计深度学习、反问题图像重建、生成式AI、大语言模型NLP及强化学习。',
-                    exploreBtn: '使用AI全面解析培养方案',
-                    returnBtn: '← 返回全部项目列表',
-                    modulesTitle: '8大专题核心培养模块',
-                    modulesDesc: '涵盖严格的数学理论基石与前沿工业级实战应用。',
-                    exploreModuleBtn: '查看课程大纲与AI精读报告',
-                    periodPrefix: '模块'
-                },
-                pt: {
-                    back: 'Portfólio',
-                    bannerInst: 'EMINES – School of Industrial Management (UM6P)',
-                    trackTitle: 'Especialização em Ciência de Dados e Inteligência Artificial',
-                    trackSubtitle: 'Programa intensivo de excelência de 8 semanas dirigido pelo Prof. Éric Moulines (Membro da Academia Francesa de Ciências, École Polytechnique). Domínio completo de otimização convexa, teoria PAC, aprendizado profundo, problemas inversos, IA generativa, NLP e aprendizado por reforço.',
-                    exploreBtn: 'Explorar Programa Completo com IA',
-                    returnBtn: '← Voltar a Todos os Projetos',
-                    modulesTitle: '8 Módulos Temáticos',
-                    modulesDesc: 'Estruturados entre fundamentos matemáticos e especializações práticas avançadas.',
-                    exploreModuleBtn: 'Ver Syllabus e Relatório IA',
-                    periodPrefix: 'Módulo'
-                }
-            };
+            const str = trackTranslations[lang] || trackTranslations.en;
 
-            const str = langLabels[lang] || langLabels.en;
-            document.getElementById('nav-back-text').textContent = str.back;
+            // Nav links
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const k = el.getAttribute('data-key');
+                if (k === 'nav_all_projects') el.textContent = str.navAll;
+                if (k === 'nav_dirty_model') el.textContent = str.navDirty;
+                if (k === 'nav_modules') el.textContent = str.navModules;
+                if (k === 'nav_contact') el.textContent = str.navContact;
+            });
+
+            // Hero Strings
             document.getElementById('banner-institution').textContent = str.bannerInst;
             document.getElementById('track-title').textContent = str.trackTitle;
             document.getElementById('track-subtitle').innerHTML = str.trackSubtitle;
+            document.getElementById('stat-label-modules').textContent = str.statModules;
+            document.getElementById('stat-label-faculty').textContent = str.statFaculty;
+            document.getElementById('stat-label-lifecycle').textContent = str.statLifecycle;
             document.getElementById('btn-full-syllabus-text').textContent = str.exploreBtn;
-            document.getElementById('btn-return-portfolio').textContent = str.returnBtn;
-            document.getElementById('section-modules-title').textContent = str.modulesTitle;
-            document.getElementById('section-modules-desc').textContent = str.modulesDesc;
+            document.getElementById('btn-dirty-model-jump').textContent = str.jumpDirtyBtn;
+
+            // Dirty Model Card Strings
+            document.getElementById('dirty-model-section-title').textContent = str.dirtySectionTitle;
+            document.getElementById('dirty-model-card-title').textContent = str.dirtyCardTitle;
+            document.getElementById('dirty-model-card-desc').textContent = str.dirtyCardDesc;
+            document.getElementById('btn-dirty-model-modal').textContent = str.dirtyBtnModal;
+
+            // Modules Section Title
+            document.getElementById('section-modules-title').textContent = str.modulesSectionTitle;
 
             dsModulesData.forEach((mod, idx) => {
                 const title = mod.title[lang] || mod.title.en;
@@ -531,7 +712,7 @@
 
                 const card = document.createElement('div');
                 card.className = 'item-card reveal-scale-up';
-                card.style.transitionDelay = `${idx * 0.06}s`;
+                card.style.transitionDelay = `${idx * 0.05}s`;
 
                 const techBadges = mod.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
                 const topicItems = mod.topics.map(tp => `<li>${tp}</li>`).join('');
@@ -579,6 +760,19 @@
 
                 container.appendChild(card);
             });
+
+            // Re-render KaTeX on math equations in cards
+            if (window.renderMathInElement) {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        { left: '$$', right: '$$', display: true },
+                        { left: '$', right: '$', display: false }
+                    ],
+                    throwOnError: false
+                });
+            }
+
+            initScrollObserver();
         }
 
         function switchTrackLanguage(lang) {
@@ -591,6 +785,11 @@
         function openTrackAiModal() {
             const rawContent = projectReports['data-science-track'] || '# Option Data Science\n\nProgramme en 8 semaines.';
             displayModalContent('Option Data Science — EMINES-UM6P (Dir. Prof. Éric Moulines)', rawContent);
+        }
+
+        function openDirtyModelAiModal() {
+            const rawContent = projectReports['dirty-model-multitask-learning'] || '# Dirty Model for Multi-task Learning';
+            displayModalContent('A Dirty Model for Multitask Learning (Jalali et al. / NIPS 2010)', rawContent);
         }
 
         function openModuleAiModal(periodNum) {
@@ -641,9 +840,96 @@
             }
         }
 
+        // Scroll Observer for Hardware-Accelerated Reveal Animations
+        function initScrollObserver() {
+            const reveals = document.querySelectorAll('.reveal-fade-in, .reveal-scale-up, .reveal-slide-left');
+            if (!('IntersectionObserver' in window)) {
+                reveals.forEach(el => el.classList.add('active'));
+                return;
+            }
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+            reveals.forEach(el => observer.observe(el));
+        }
+
+        // Floating particles
+        function initParticles() {
+            const container = document.body;
+            const numParticles = 12;
+            for (let i = 0; i < numParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                particle.style.opacity = (Math.random() * 0.3 + 0.1).toString();
+                particle.style.animation = `float-particle ${Math.random() * 8 + 6}s infinite ease-in-out alternate`;
+                container.appendChild(particle);
+            }
+        }
+
+        // 3D Tilt for cards
+        document.addEventListener('mousemove', (e) => {
+            const card = e.target.closest('.item-card, .featured-project-card');
+            if (!card) return;
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -4;
+            const rotateY = ((x - centerX) / centerX) * 4;
+            card.style.transition = 'none';
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
+        }, { passive: true });
+
+        document.addEventListener('mouseout', (e) => {
+            const card = e.target.closest('.item-card, .featured-project-card');
+            if (!card) return;
+            card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        }, { passive: true });
+
+        // Scroll Progress Bar
+        const scrollProgressEl = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = height > 0 ? (winScroll / height) : 0;
+            if (scrollProgressEl) {
+                scrollProgressEl.style.transform = `scaleX(${scrolled})`;
+            }
+        }, { passive: true });
+
+        // Header Blur & Shrink on Scroll
+        const headerEl = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                headerEl.style.boxShadow = '0 12px 35px rgba(0, 0, 0, 0.6)';
+            } else {
+                headerEl.style.boxShadow = 'inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 10px 30px rgba(0, 0, 0, 0.4)';
+            }
+        }, { passive: true });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeProjectAiModal();
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferredLang') || 'en';
             switchTrackLanguage(savedLang);
+            initParticles();
         });
     </script>
 </body>

@@ -173,6 +173,15 @@ function renderProjects(lang) {
                 `);
             }
 
+            if (pData.huggingfaceUrl) {
+                docButtons.push(`
+                    <a href="${pData.huggingfaceUrl}" target="_blank" class="btn-doc-action" style="text-decoration:none;">
+                        <span style="font-size: 0.95rem; line-height: 1;">🤗</span>
+                        <span>Hugging Face</span>
+                    </a>
+                `);
+            }
+
             if (pData.githubUrl) {
                 docButtons.push(`
                     <a href="${pData.githubUrl}" target="_blank" class="btn-doc-action" style="text-decoration:none;">

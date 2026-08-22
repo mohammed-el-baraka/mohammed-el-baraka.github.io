@@ -82,7 +82,8 @@ const translations = {
              { id: 'data-science-track', title: 'Data Science Specialization Track: 8-Week Advanced Curriculum', description: 'Completed an intensive 8-week specialization directed by Prof. Éric Moulines (French Academy of Sciences / École Polytechnique), mastering multivariate optimization, PAC theory, CNNs & CAVI, ill-posed inverse problems, generative AI (GANs/VAEs/Diffusion), NLP Transformers, and Reinforcement Learning.' },
              { id: 'dirty-model-multitask-learning', title: 'A Dirty Model for Multitask Learning: High-Dimensional Superposition & Phase Transitions', description: 'Empirically validated and replicated the NIPS research "A Dirty Model for Multitask Learning" (Jalali et al.), decomposing parameter matrices into shared block-sparse (ℓ₁/ℓ∞) and task-specific element-wise sparse (ℓ₁) components via convex optimization (CVXPY), proving optimal sample complexity scaling (2-α)s log(p) and reproducing sharp empirical phase transitions.' },
              { id: 'hyperdimensional-computing-robotics', title: 'Hyperdimensional Computing for Robotics: Viewpoint-Invariant 3D Vision & VSA (ALOI)', description: 'Developed a zero-backpropagation 3D object recognition framework combining AlexNet conv3 deep features (D=64,896) with Locality-Sensitive Hashing (LSH) into 10,000-D bipolar hypervectors and Vector Symbolic Architecture (VSA) view bundling, achieving 86% accuracy across novel rotations on the ALOI dataset and implementing a production Python package (hdc_robotics) with 21 unit tests.' },
-             { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn: Deep Neural Multi-Horizon Building Energy Forecasting & Climate Control', description: 'Architected a deep statistical learning system for 24-hour multi-horizon building energy forecasting and predictive HVAC optimization across 8,736 hours of meteorological data using 1D Dilated TCNs (RMSE: 10.68 kWh, R²=0.611), Deep ResMLPs, and PINNs, validated by Diebold-Mariano tests (p < 10⁻⁵) with real-time 3σ thermal anomaly detection.' }
+             { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn: Deep Neural Multi-Horizon Building Energy Forecasting & Climate Control', description: 'Architected a deep statistical learning system for 24-hour multi-horizon building energy forecasting and predictive HVAC optimization across 8,736 hours of meteorological data using 1D Dilated TCNs (RMSE: 10.68 kWh, R²=0.611), Deep ResMLPs, and PINNs, validated by Diebold-Mariano tests (p < 10⁻⁵) with real-time 3σ thermal anomaly detection.' },
+             { id: 'khulasa-ai-arabic-summarization', title: 'KhulasaAI: Arabic Text Summarization via Knowledge Distillation & QLoRA', description: 'Engineered an end-to-end knowledge distillation and parameter-efficient fine-tuning (QLoRA) pipeline compressing a Qwen2.5-7B teacher into a lightweight Qwen2.5-0.5B student across 5,000 Modern Standard Arabic Wikipedia articles. Achieved 14× parameter reduction with ROUGE-1: 62.21, ROUGE-2: 41.17, and BERTScore: 0.861, published open-source on Hugging Face Hub (8.3 MB adapter).' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsorship Manager', description: 'As Sponsorship Manager, my core responsibility is securing vital partnerships and sponsorships to power EJE\'s impactful portfolio of student hackathons. I actively seek sponsors for major events including the OP&X Hackathon, Strategic Consulting Hackathon (SCH), DataQuest Hackathon, and the Finance Hackathon. By connecting companies with these platforms, I help them engage Morocco\'s brightest students and fuel future talent development.' },
@@ -184,7 +185,8 @@ const translations = {
             { id: 'data-science-track', title: 'Option Data Science : Parcours d\'Excellence Approfondi (8 Semaines)', description: 'Spécialisation intensive de 8 semaines sous la direction de Prof. Éric Moulines (Académie des Sciences / École Polytechnique) : optimisation multivariée, théorie PAC, CNN & CAVI, problèmes inverses, IA générative (GANs/VAEs/Diffusion), NLP Transformers et apprentissage par renforcement.' },
             { id: 'dirty-model-multitask-learning', title: 'Modèle « Dirty » pour l\'Apprentissage Multi-Tâches : Superposition en Grande Dimension', description: 'Validation empirique et réplication du papier NIPS « A Dirty Model for Multitask Learning » (Jalali et al.) : décomposition de matrices en superposition de composantes bloc-parcimonieuses partagées (ℓ₁/ℓ∞) et parcimonieuses spécifiques (ℓ₁) par optimisation convexe sous CVXPY, prouvant la complexité d\'échantillonnage optimale (2-α)s log(p) et reproduisant les transitions de phase.' },
             { id: 'hyperdimensional-computing-robotics', title: 'Calcul Hyperdimensionnel pour la Robotique : Vision 3D Invariante & Algèbre VSA (ALOI)', description: 'Conception d\'un framework de reconnaissance d\'objets 3D sans rétropropagation combinant les descripteurs convolutifs profonds d\'AlexNet (D=64 896), le hachage sensible à la localité (LSH) en hypervecteurs bipolaires (D=10 000) et le bundling VSA par superposition. Atteinte de 86 % de précision sur angles inédits du jeu de données ALOI et développement du package Python hdc_robotics avec 21 tests unitaires.' },
-            { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn : Prévision Énergétique Multi-Horizon des Bâtiments & Contrôle HVAC Prédictif', description: 'Conception d\'un système d\'apprentissage statistique profond pour la prévision multi-horizon (24h) de la consommation de chauffage sur 8 736 heures de données météo via des TCNs 1D à convolutions dilatées (RMSE : 10,68 kWh, R²=0,611), ResMLPs et PINNs, validé par test de Diebold-Mariano (p < 10⁻⁵) avec détection d\'anomalies thermiques en temps réel.' }
+            { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn : Prévision Énergétique Multi-Horizon des Bâtiments & Contrôle HVAC Prédictif', description: 'Conception d\'un système d\'apprentissage statistique profond pour la prévision multi-horizon (24h) de la consommation de chauffage sur 8 736 heures de données météo via des TCNs 1D à convolutions dilatées (RMSE : 10,68 kWh, R²=0,611), ResMLPs et PINNs, validé par test de Diebold-Mariano (p < 10⁻⁵) avec détection d\'anomalies thermiques en temps réel.' },
+            { id: 'khulasa-ai-arabic-summarization', title: 'KhulasaAI : Résumé Automatique de Textes Arabes par Distillation de Connaissances & QLoRA', description: 'Conception d\'un pipeline complet de distillation de connaissances et de fine-tuning efficace (QLoRA) compressant un modèle enseignant Qwen2.5-7B vers un modèle élève Qwen2.5-0.5B sur 5 000 articles Wikipédia en arabe standard moderne. Réduction de 14× des paramètres avec ROUGE-1 : 62,21, ROUGE-2 : 41,17 et BERTScore : 0,861, publié en open source sur Hugging Face Hub (adaptateur de 8,3 Mo).' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Responsable Sponsoring', description: 'En tant que Responsable Sponsoring, ma responsabilité principale est de sécuriser des partenariats et des sponsorings essentiels pour alimenter le portefeuille percutant de hackathons étudiants d\'EJE. Je recherche activement des sponsors pour des événements majeurs tels que le Hackathon OP&X, le Hackathon de Conseil Stratégique (SCH), le Hackathon DataQuest et le Hackathon Finance. En connectant les entreprises à ces plateformes, je les aide à interagir avec les étudiants les plus brillants du Maroc et à stimuler le développement des futurs talents.' },
@@ -286,7 +288,8 @@ const translations = {
              { id: 'data-science-track', title: 'مسار التخصص المتقدم في علوم البيانات والذكاء الاصطناعي (برنامج 8 أسابيع)', description: 'إتمام مسار تخصصي مكثف في علوم البيانات مدته 8 أسابيع بإشراف البروفيسور إريك مولين (الأكاديمية الفرنسية للعلوم / بوليتكنيك): التحسين الرياضي، نظرية PAC، التعلم العميق، المسائل العكسية، النماذج التوليدية، معالجة اللغات الطبيعية، والتعلم المعزز.' },
              { id: 'dirty-model-multitask-learning', title: 'نموذج التراكب "Dirty Model" للتعلم متعدد المهام في الفضاءات عالية الأبعاد', description: 'التحقق التجريبي وإعادة تطبيق الورقة البحثية الرائدة في NIPS للتعلم متعدد المهام (Jalali et al.): تفكيك مصفوفات المعلمات إلى تراكب بين مصفوفة متفرقة قطاعياً (ℓ₁/ℓ∞) ومصفوفة متفرقة عنصرياً (ℓ₁) عبر التحسين المحدب (CVXPY)، مع إثبات حد التعقيد العيني الأمثل (2-α)s log(p) وإعادة إنتاج انتقالات الطور التجريبية.' },
              { id: 'hyperdimensional-computing-robotics', title: 'الحوسبة فائقة الأبعاد للروبوتات: الرؤية الحاسوبية ثلاثية الأبعاد وهياكل المتجهات الرمزية VSA', description: 'تطوير إطار عمل متقدم للتعرف على الأجسام ثلاثية الأبعاد دون الحاجة للانتشار العكسي، يدمج ميزات AlexNet التلافيفية العميقة مع تقنية التجزئة الحساسة للمكان (LSH) إلى متجهات فائقة الأبعاد (10,000 بُعد) وتجميع الرؤى الفراغية VSA، محققاً دقة 86% على زوايا جديدة في قاعدة بيانات ALOI، مع بناء حزمة بايثون برمجية متكاملة مدعومة بـ 21 اختباراً وحدة.' },
-             { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn: التنبؤ العميق متعدد الآفاق باستهلاك طاقة المباني والتحكم التنبئي في التكييف', description: 'بناء نظام تعلم إحصائي عميق للتنبؤ متعدد الآفاق (24 ساعة) باستهلاك طاقة التدفئة والتحسين التنبئي لأنظمة HVAC على مدار 8,736 ساعة من البيانات المناخية باستخدام شبكات TCN التلافيفية الممتدة (RMSE: 10.68 kWh, R²=0.611) وشبكات PINNs، مع إثبات التفوق الإحصائي عبر اختبار Diebold-Mariano واكتشاف الشذوذ الحراري.' }
+             { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn: التنبؤ العميق متعدد الآفاق باستهلاك طاقة المباني والتحكم التنبئي في التكييف', description: 'بناء نظام تعلم إحصائي عميق للتنبؤ متعدد الآفاق (24 ساعة) باستهلاك طاقة التدفئة والتحسين التنبئي لأنظمة HVAC على مدار 8,736 ساعة من البيانات المناخية باستخدام شبكات TCN التلافيفية الممتدة (RMSE: 10.68 kWh, R²=0.611) وشبكات PINNs، مع إثبات التفوق الإحصائي عبر اختبار Diebold-Mariano واكتشاف الشذوذ الحراري.' },
+             { id: 'khulasa-ai-arabic-summarization', title: 'خلاصة KhulasaAI: تلخيص النصوص العربية عبر التقطير المعرفي وتقنية QLoRA', description: 'بناء خط معالجة متكامل للتقطير المعرفي والضبط الدقيق عالي الكفاءة (QLoRA) لضغط نموذج Qwen2.5-7B المعلم إلى نموذج Qwen2.5-0.5B المتعلم عبر 5,000 مقال من ويكيبيديا العربية الفصحى. تحقيق خفض في المعلمات بمقدار 14 ضعفاً مع درجات ROUGE-1: 62.21 وBERTScore: 0.861، ونشر النموذج كمصدر مفتوح على منصة Hugging Face بحجم مهايئ 8.3 ميغابايت.' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'EJE', role: 'مدير الرعاية', description: 'بصفتي مدير الرعاية، تتمثل مسؤوليتي الأساسية في تأمين الشراكات والرعاية الحيوية لدعم محفظة EJE المؤثرة من مسابقات البرمجة الطلابية. أبحث عن رعاة للأحداث الكبرى بما في ذلك مسابقة البرمجة OP&X Hackathon ومسابقة البرمجة الاستشارية الاستراتيجية (SCH) ومسابقة البرمجة DataQuest Hackathon ومسابقة البرمجة المالية Finance Hackathon. من خلال ربط الشركات بهذه المنصات، أساعدها على جذب ألمع الطلاب المغاربة ودعم تنمية المواهب المستقبلية.' },
@@ -388,7 +391,8 @@ const translations = {
             { id: 'data-science-track', title: 'Especialización en Ciencia de Datos: Programa Avanzado de 8 Semanas', description: 'Especialización intensiva de 8 semanas dirigida por el Prof. Éric Moulines (Academia de Ciencias de Francia / École Polytechnique): optimización convexa, teoría PAC, CNN y CAVI, problemas inversos, IA generativa (GANs/VAEs/Difusión), Transformers y Aprendizaje por Refuerzo.' },
             { id: 'dirty-model-multitask-learning', title: 'Modelo «Dirty» para Aprendizaje Multitarea: Superposición en Alta Dimensión', description: 'Validación empírica y replicación del artículo de NIPS «A Dirty Model for Multitask Learning» (Jalali et al.), descomponiendo matrices de parámetros en superposiciones de dispersión por bloques (ℓ₁/ℓ∞) y dispersión elemental (ℓ₁) mediante optimización convexa en CVXPY, demostrando la complejidad muestral (2-α)s log(p) y reproduciendo transiciones de fase.' },
             { id: 'hyperdimensional-computing-robotics', title: 'Computación Hiperdimensional para Robótica: Visión 3D Invariante y Álgebra VSA (ALOI)', description: 'Desarrollo de un framework de reconocimiento de objetos 3D sin retropropagación que combina características profundas de AlexNet conv3 (D=64.896), Locality-Sensitive Hashing (LSH) en hipervectores bipolares (D=10.000) y superposición VSA, alcanzando un 86% de precisión en vistas inéditas del dataset ALOI y creando el paquete Python hdc_robotics con 21 pruebas unitarias.' },
-            { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn: Predicción Energética Multi-Horizonte de Edificios y Control Climático Predictivo', description: 'Desarrollo de un sistema de aprendizaje estadístico profundo para predicción multi-horizonte (24h) de consumo térmico sobre 8.736 horas de datos meteorológicos mediante TCNs 1D con convoluciones dilatadas (RMSE: 10,68 kWh, R²=0,611), ResMLPs y PINNs, validado con test de Diebold-Mariano y detección de anomalías térmicas en tiempo real.' }
+            { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn: Predicción Energética Multi-Horizonte de Edificios y Control Climático Predictivo', description: 'Desarrollo de un sistema de aprendizaje estadístico profundo para predicción multi-horizonte (24h) de consumo térmico sobre 8.736 horas de datos meteorológicos mediante TCNs 1D con convoluciones dilatadas (RMSE: 10,68 kWh, R²=0,611), ResMLPs y PINNs, validado con test de Diebold-Mariano y detección de anomalías térmicas en tiempo real.' },
+            { id: 'khulasa-ai-arabic-summarization', title: 'KhulasaAI: Resumen Automático de Textos en Árabe mediante Destilación de Conocimiento y QLoRA', description: 'Desarrollo de un pipeline integral de destilación de conocimiento y fine-tuning eficiente (QLoRA) comprimiendo un modelo maestro Qwen2.5-7B en un alumno ligero Qwen2.5-0.5B sobre 5.000 artículos de Wikipedia en árabe estándar. Reducción de 14× en parámetros con ROUGE-1: 62,21 y BERTScore: 0,861, publicado en Hugging Face Hub (adaptador de 8,3 MB).' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocinios', description: 'Como Gerente de Patrocinios, mi responsabilidad principal es asegurar alianzas y patrocinios vitales para impulsar el impactante portafolio de hackathons estudiantiles de EJE. Busco activamente patrocinadores para eventos importantes como el Hackathon OP&X, el Hackathon de Consultoría Estratégica (SCH), el Hackathon DataQuest y el Hackathon de Finanzas. Al conectar empresas con estas plataformas, les ayudo a interactuar con los estudiantes más brillantes de Marruecos y a fomentar el desarrollo de futuros talentos.' },
@@ -490,7 +494,8 @@ const translations = {
             { id: 'data-science-track', title: '数据科学与人工智能前沿专业方向（8周强化体系）', description: '在法国科学院院士、巴黎综合理工学院教授 Éric Moulines 亲自主导下完成8周高强度精英培养体系：全方位覆盖多元数值优化、PAC可学习理论、统计深度学习、反问题图像重建、生成式AI（GAN/VAE/扩散模型）、大模型NLP及强化学习。' },
             { id: 'dirty-model-multitask-learning', title: '高维多任务学习Dirty Model：结构叠加分解与相变现象实证研究', description: '深入复现并实证检验NIPS经典论文《A Dirty Model for Multitask Learning》（Jalali et al.）：采用凸优化（CVXPY）将高维参数矩阵分解为共享块稀疏（ℓ₁/ℓ∞）与任务特异元素稀疏（ℓ₁）的叠加态，证明其最优样本复杂度 (2-α)s log(p) 并高保真复现经验相变阈值。' },
             { id: 'hyperdimensional-computing-robotics', title: '面向机器人视觉的高维计算（HDC）：视角不变3D目标识别与VSA符号代数实践', description: '构建无反向传播的高维计算（HDC/VSA）3D目标识别系统：提取AlexNet conv3深层特征（D=64,896），通过局部敏感哈希（LSH）映射至10,000维双极超向量并进行VSA视角叠加绑定，在ALOI基准测试中将未见视角识别准确率提升至86%，并开源生产级Python包hdc_robotics与21项单元测试。' },
-            { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn：基于深度时序卷积的多步建筑能耗预测、预测性暖通控制与热异常检测', description: '构建端到端深度统计学习建筑能耗多步预测（24小时）与智能HVAC优化系统：处理8,736小时气象与热力学数据，设计一维扩张因果时序卷积网络（TCN, RMSE: 10.68 kWh, R²=0.611）、ResMLP与物理信息神经网络PINN，通过Diebold-Mariano严格统计检验，并实现实时3σ热损失异常监控。' }
+            { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn：基于深度时序卷积的多步建筑能耗预测、预测性暖通控制与热异常检测', description: '构建端到端深度统计学习建筑能耗多步预测（24小时）与智能HVAC优化系统：处理8,736小时气象与热力学数据，设计一维扩张因果时序卷积网络（TCN, RMSE: 10.68 kWh, R²=0.611）、ResMLP与物理信息神经网络PINN，通过Diebold-Mariano严格统计检验，并实现实时3σ热损失异常监控。' },
+            { id: 'khulasa-ai-arabic-summarization', title: 'KhulasaAI：基于知识蒸馏与QLoRA微调的阿拉伯语端到端文本自动摘要系统', description: '构建端到端知识蒸馏与高效参数微调（QLoRA）流水线：利用4-bit量化Qwen2.5-7B教师大模型在5,000篇阿拉伯语维基百科文章上生成高质量摘要，并微调轻量化Qwen2.5-0.5B学生模型。在参数量压缩14倍的前提下取得ROUGE-1: 62.21、ROUGE-2: 41.17及BERTScore: 0.861，并在Hugging Face开源8.3MB适配器。' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: '赞助经理', description: '作为赞助经理，我的核心职责是确保重要的合作伙伴关系和赞助，为EJE富有影响力的学生黑客马拉松系列活动提供支持。我积极为主要活动寻找赞助商，包括OP&X黑客马拉松、战略咨询黑客马拉松（SCH）、DataQuest黑客马拉松以及金融黑客马拉松。通过将公司与这些平台联系起来，我帮助他们接触到摩洛哥最优秀的学生，并为未来的人才发展提供动力。' },
@@ -589,7 +594,8 @@ const translations = {
             { id: 'data-science-track', title: 'Especialização em Ciência de Dados: Programa Avanzado de 8 Semanas', description: 'Especialização intensiva de 8 semanas dirigida pelo Prof. Éric Moulines (Academia Francesa de Ciências / École Polytechnique): otimização convexa, teoria PAC, CNN e CAVI, problemas inversos, IA generativa (GANs/VAEs/Difusão), Transformers e Aprendizado por Reforço.' },
             { id: 'dirty-model-multitask-learning', title: 'Modelo «Dirty» para Aprendizado Multitarefa: Sobreposição em Alta Dimensão', description: 'Validação empírica e replicação do artigo da NIPS «A Dirty Model for Multitask Learning» (Jalali et al.), decompondo matrizes de parâmetros em sobreposições de dispersão em bloco (ℓ₁/ℓ∞) e dispersão pontual (ℓ₁) via otimização convexa em CVXPY, comprovando a complexidade amostral (2-α)s log(p) e reproduzindo transições de fase.' },
             { id: 'hyperdimensional-computing-robotics', title: 'Computação Hiperdimensional para Robótica: Visão 3D Invariante e Álgebra VSA (ALOI)', description: 'Desenvolvimento de um framework de reconhecimento de objetos 3D sem retropropagação combinando atributos profundos de AlexNet conv3 (D=64.896), Locality-Sensitive Hashing (LSH) em hipervetores bipolares (D=10.000) e superposição VSA, alcançando 86% de acurácia em novas rotações no dataset ALOI e criando o pacote Python hdc_robotics com 21 testes unitários.' },
-            { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn: Previsão Energética Multi-Horizonte de Edifícios e Controle Climático Preditivo', description: 'Desenvolvimento de um sistema de aprendizado estatístico profundo para previsão multi-horizonte (24h) de consumo de energia predial sobre 8.736 horas de dados meteorológicos usando TCNs 1D dilatadas (RMSE: 10,68 kWh, R²=0,611), ResMLPs e PINNs, validado por teste de Diebold-Mariano e detecção de anomalias térmicas.' }
+            { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn: Previsão Energética Multi-Horizonte de Edifícios e Controle Climático Preditivo', description: 'Desenvolvimento de um sistema de aprendizado estatístico profundo para previsão multi-horizonte (24h) de consumo de energia predial sobre 8.736 horas de dados meteorológicos usando TCNs 1D dilatadas (RMSE: 10,68 kWh, R²=0,611), ResMLPs e PINNs, validado por teste de Diebold-Mariano e detecção de anomalias térmicas.' },
+            { id: 'khulasa-ai-arabic-summarization', title: 'KhulasaAI: Sumarização de Textos em Árabe via Destilação de Conhecimento e QLoRA', description: 'Desenvolvimento de um pipeline completo de destilação de conhecimento e fine-tuning eficiente (QLoRA) comprimindo um modelo professor Qwen2.5-7B em um aluno leve Qwen2.5-0.5B sobre 5.000 artigos da Wikipedia em árabe. Redução de 14× em parâmetros com ROUGE-1: 62,21 e BERTScore: 0,861, publicado no Hugging Face Hub (adaptador de 8,3 MB).' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Gerente de Patrocínios', description: 'Como Gerente de Patrocínios, minha principal responsabilidade é garantir parcerias e patrocínios vitais para impulsionar o portfólio impactante de hackathons estudantis da EJE. Busco ativamente patrocinadores para grandes eventos, incluindo o Hackathon OP&X, o Hackathon de Consultoria Estratégica (SCH), o Hackathon DataQuest e o Hackathon de Finanças. Ao conectar empresas a essas plataformas, ajudo-as a interagir com os estudantes mais brilhantes de Marrocos e a impulsionar o desenvolvimento de futuros talentos.' },
@@ -680,7 +686,8 @@ const translations = {
             { id: 'data-science-track', title: 'Spezialisierung Data Science & KI: 8-Wöchiges Exzellenzcurriculum', description: 'Intensives 8-Wochen-Spezialisierungsprogramm unter Leitung von Prof. Éric Moulines (Französische Akademie der Wissenschaften / École Polytechnique): Optimierung, PAC-Theorie, CNNs & CAVI, inverse Probleme, generative KI (GANs/VAEs/Diffusion), NLP und Reinforcement Learning.' },
             { id: 'dirty-model-multitask-learning', title: 'Dirty Model für Multitask-Learning: Hochdimensionale Superposition & Phasenübergänge', description: 'Empirische Validierung und Replikation der NIPS-Arbeit „A Dirty Model for Multitask Learning“ (Jalali et al.): Zerlegung von Parametermatrizen in eine Superposition aus blockweiser (ℓ₁/ℓ∞) und elementspezifischer (ℓ₁) Sparsity mittels CVXPY-Optimierung, Nachweis der optimalen Stichprobenkomplexität (2-α)s log(p) und Replikation scharfer Phasenübergänge.' },
             { id: 'hyperdimensional-computing-robotics', title: 'Hyperdimensional Computing für Robotik: Blickwinkel-invariante 3D-Vision & VSA (ALOI)', description: 'Entwicklung eines rückpropagierungsfreien 3D-Objekterkennungs-Frameworks, das AlexNet conv3 Deep Features (D=64.896) mit Locality-Sensitive Hashing (LSH) in 10.000-D bipolare Hypervektoren und VSA-Bündelung kombiniert, 86% Genauigkeit bei neuartigen Blickwinkeln auf dem ALOI-Datensatz erzielt und ein Python-Paket (hdc_robotics) mit 21 Unit-Tests bereitstellt.' },
-            { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn: Deep-Learning Multi-Horizont-Gebäudeenergieprognose & Prädiktive Klimasteuerung', description: 'Entwicklung eines tiefen statistischen Lernsystems für 24-Stunden-Multi-Horizont-Gebäudeenergieprognosen und prädiktive HVAC-Optimierung über 8.736 Stunden Wetterdaten mittels 1D Dilated TCNs (RMSE: 10,68 kWh, R²=0,611), ResMLPs und PINNs, statistisch abgesichert durch Diebold-Mariano-Tests mit 3σ-Echtzeit-Wärmeanomalieerkennung.' }
+            { id: 'deepstatlearn-building-energy-forecasting', title: 'DeepStatLearn: Deep-Learning Multi-Horizont-Gebäudeenergieprognose & Prädiktive Klimasteuerung', description: 'Entwicklung eines tiefen statistischen Lernsystems für 24-Stunden-Multi-Horizont-Gebäudeenergieprognosen und prädiktive HVAC-Optimierung über 8.736 Stunden Wetterdaten mittels 1D Dilated TCNs (RMSE: 10,68 kWh, R²=0,611), ResMLPs und PINNs, statistisch abgesichert durch Diebold-Mariano-Tests mit 3σ-Echtzeit-Wärmeanomalieerkennung.' },
+            { id: 'khulasa-ai-arabic-summarization', title: 'KhulasaAI: Arabische Textzusammenfassung durch Knowledge Distillation & QLoRA', description: 'Entwicklung einer End-to-End-Pipeline für Knowledge Distillation und parameter-effizientes Fine-Tuning (QLoRA), die ein Qwen2.5-7B-Lehrermodell auf ein kompaktes Qwen2.5-0.5B-Schülermodell über 5.000 arabische Wikipedia-Artikel komprimiert. 14-fache Parameterreduktion bei ROUGE-1: 62,21 und BERTScore: 0,861, als Open-Source auf Hugging Face Hub veröffentlicht (8,3 MB Adapter).' }
         ],
         leadership: [
             { id: 'emines-junior-entreprise', title: 'Emines Junior Entreprise (EJE)', role: 'Sponsoring-Manager', description: 'Als Sponsoring-Manager liegt meine Hauptverantwortung in der Sicherung wichtiger Partnerschaften und Sponsorings zur Finanzierung der studentischen Hackathons von EJE. Ich suche aktiv Sponsoren für Großveranstaltungen wie den OP&X Hackathon, den Strategic Consulting Hackathon (SCH), den DataQuest Hackathon und den Finance Hackathon. Durch die Verbindung von Unternehmen mit diesen Plattformen helfe ich ihnen, mit Marokkos klügsten Köpfen in Kontakt zu treten.' },
@@ -994,6 +1001,17 @@ const projectsData = [
         metric: '1D Dilated TCN (RMSE: 10.68 kWh, R²=0.611), Diebold-Mariano p<10⁻⁵ & 20% HVAC Cost Savings',
         reportUrl: '', 
         presentationUrl: 'https://drive.google.com/file/d/1OpTRTd-_QB_CSVEJ-rIZBKqMoybIg8bo/view?usp=sharing'
+    },
+    { 
+        id: 'khulasa-ai-arabic-summarization', 
+        date: '2026-01', 
+        technologies: ['Knowledge Distillation', 'QLoRA & PEFT', 'Qwen2.5 (7B & 0.5B)', 'Arabic NLP (MSA)', 'Transformers & TRL', 'BERTScore & ROUGE Evaluation', '4-Bit NF4 Quantization', 'PyTorch'], 
+        githubUrl: 'https://github.com/mohammed-el-baraka/KhulasaAI',
+        huggingfaceUrl: 'https://huggingface.co/mohammed-el-baraka/KhulasaAI',
+        demoUrl: 'https://huggingface.co/mohammed-el-baraka/KhulasaAI',
+        metric: '14× Parameter Compression (Qwen2.5 7B→0.5B), ROUGE-1: 62.21, BERTScore: 0.861 & 8.3MB Adapter',
+        reportUrl: 'https://drive.google.com/file/d/1ECmEpHfjnuhxfKLxIzhNmMNtNW5eu8K3/view?usp=sharing', 
+        presentationUrl: ''
     }
 ];
 
@@ -3076,5 +3094,61 @@ Traditional static thermostats operate on fixed setpoints and exhibit major inef
 ### Application 2: Real-Time Thermal Leak & Fault Anomaly Detection
 - Evaluated Test Period: 1,301 continuous operating hours
 - Thermal Fault Events Detected: 110 anomalies (insulation breaches, unclosed windows, heating valve faults)
-- Identified Energy Waste: **2,513.01 kWh** in excess unmodeled thermal losses.`
+- Identified Energy Waste: **2,513.01 kWh** in excess unmodeled thermal losses.`,
+
+    'khulasa-ai-arabic-summarization': `# خلاصة · KhulasaAI: Arabic Text Summarization via Knowledge Distillation & QLoRA
+
+**Applied Natural Language Processing & Large Language Model Fine-Tuning — Option Data Science (Week 5)**  
+**Institution:** EMINES – School of Industrial Management, Université Mohammed VI Polytechnique (UM6P)  
+**Author:** Mohammed EL BARAKA  
+**Hugging Face Model:** [https://huggingface.co/mohammed-el-baraka/KhulasaAI](https://huggingface.co/mohammed-el-baraka/KhulasaAI)  
+**GitHub Repository:** [https://github.com/mohammed-el-baraka/KhulasaAI](https://github.com/mohammed-el-baraka/KhulasaAI)  
+**Research Report (PDF):** [Google Drive Document](https://drive.google.com/file/d/1ECmEpHfjnuhxfKLxIzhNmMNtNW5eu8K3/view?usp=sharing)  
+
+---
+
+## 1. Project Overview & Motivation
+
+Modern Standard Arabic (MSA) presents severe challenges for generative natural language processing: complex morpho-syntactic structures, non-concatenative root-and-pattern morphology, and a chronic scarcity of clean, high-quality instruction-tuning pairs for abstractive summarization.
+
+**KhulasaAI (خلاصة)** resolves this trilemma by architecting a full **Knowledge Distillation & QLoRA Fine-Tuning Pipeline**:
+1. **Teacher Generation**: Employs a 4-bit quantized frontier teacher model (**Qwen2.5-7B-Instruct**) to generate high-fidelity, abstractive synthetic reference summaries across 5,000 Modern Standard Arabic Wikipedia articles.
+2. **Student Distillation**: Fine-tunes an ultra-compact student model (**Qwen2.5-0.5B-Instruct**) via **Quantized Low-Rank Adaptation (QLoRA)** ($r=16, \\alpha=32$).
+3. **Extreme Efficiency**: Delivers near-teacher generation quality and fluent syntactic coherence at **14× parameter reduction** with an 8.3 MB adapter footprint.
+
+---
+
+## 2. Quantitative Benchmark & Empirical Evaluation
+
+Evaluated on a held-out test split of 500 Modern Standard Arabic articles:
+
+| Metric | Score | Industrial Interpretation |
+| :--- | :---: | :--- |
+| **ROUGE-1** | **62.21** | Unigram lexical overlap with reference summaries |
+| **ROUGE-2** | **41.17** | Bigram syntactic fluency and phrase collocation |
+| **ROUGE-L** | **60.66** | Longest Common Subsequence — discourse structure coherence |
+| **BERTScore (F1)** | **0.861** | Contextual semantic embedding alignment in Arabic latent space |
+
+> **Key Finding:** The 0.5B parameter student model captures **>93% of the 7B teacher's semantic quality** while reducing memory requirements from ~16 GB to under 1.2 GB VRAM, enabling sub-100ms real-time inference on edge devices and standard cloud CPU instances.
+
+---
+
+## 3. Methodology & Engineering Pipeline
+
+### Step 1: Dataset Selection & Linguistic Preprocessing
+- **Source Corpus:** Arabic Wikipedia (\`wikimedia/wikipedia\`, snapshot \`20231101.ar\`).
+- **Sample Size:** 5,000 randomly sampled Modern Standard Arabic articles ($seed=42$).
+- **Filtering:** Stripped wiki markup, HTML entities, citation tags; normalized Arabic diacritics and truncated to 2,000 characters.
+
+### Step 2: Synthetic Knowledge Distillation
+- **Teacher Model:** \`Qwen/Qwen2.5-7B-Instruct\` (4-bit NF4 quantized via \`bitsandbytes\`).
+- **Batch Processing:** Dynamic batch size 16 on a single NVIDIA Tesla T4 GPU (16 GB VRAM).
+- **Generation Settings:** Temperature $\\tau = 0.7$, top-$p = 0.9$, repetition penalty $1.15$.
+- **Annotation Throughput:** ~1h 53min total runtime across 5,000 documents.
+
+### Step 3: Efficient Parameter-Efficient Fine-Tuning (QLoRA)
+- **Student Model:** \`Qwen/Qwen2.5-0.5B-Instruct\`
+- **LoRA Configuration:** Rank $r = 16$, scaling factor $\\alpha = 32$, dropout $0.05$, target modules \`[q_proj, k_proj, v_proj, o_proj]\`.
+- **Training Time:** ~14 minutes (282 steps, 1 epoch, mixed-precision FP16).
+- **Artifact Footprint:** Final LoRA adapter file size is only **8.3 MB** (\`adapter_model.safetensors\`).`
 };
